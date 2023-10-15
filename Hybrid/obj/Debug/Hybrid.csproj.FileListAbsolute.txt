@@ -19,3 +19,7 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.CoreCompileInputs.cache
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.exe
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.pdb
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.DanhbaFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Lichhoc.LichhocFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Todo.TodoFrm.resources
