@@ -2,7 +2,6 @@
 D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\Hybrid.exe.config
 D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\Hybrid.exe
 D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\Hybrid.pdb
-D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
 D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
 D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\obj\Debug\Hybrid.csproj.AssemblyReference.cache
 D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\obj\Debug\Hybrid.Form1.resources
@@ -35,3 +34,7 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.exe
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.pdb
 >>>>>>> main
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\ComponentFactory.Krypton.Docking.pdb
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\ComponentFactory.Krypton.Navigator.pdb
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\ComponentFactory.Krypton.Ribbon.pdb
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\ComponentFactory.Krypton.Workspace.pdb
