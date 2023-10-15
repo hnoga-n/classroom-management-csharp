@@ -71,6 +71,7 @@ namespace Hybrid
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -81,7 +82,7 @@ namespace Hybrid
             // 
             // btnCalendar
             // 
-            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCalendar.Location = new System.Drawing.Point(0, 463);
             this.btnCalendar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCalendar.Name = "btnCalendar";
@@ -124,6 +125,7 @@ namespace Hybrid
             // 
             // btnContacts
             // 
+            this.btnContacts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContacts.Location = new System.Drawing.Point(0, 403);
             this.btnContacts.Margin = new System.Windows.Forms.Padding(0);
             this.btnContacts.Name = "btnContacts";
@@ -166,6 +168,7 @@ namespace Hybrid
             // 
             // btnTodo
             // 
+            this.btnTodo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTodo.Location = new System.Drawing.Point(0, 343);
             this.btnTodo.Margin = new System.Windows.Forms.Padding(0);
             this.btnTodo.Name = "btnTodo";
@@ -208,6 +211,7 @@ namespace Hybrid
             // 
             // btnHome
             // 
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.Location = new System.Drawing.Point(0, 283);
             this.btnHome.Margin = new System.Windows.Forms.Padding(0);
             this.btnHome.Name = "btnHome";
@@ -287,6 +291,7 @@ namespace Hybrid
             // 
             // btnMinimizeForm
             // 
+            this.btnMinimizeForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizeForm.Location = new System.Drawing.Point(18, 7);
             this.btnMinimizeForm.Name = "btnMinimizeForm";
             this.btnMinimizeForm.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
@@ -348,6 +353,7 @@ namespace Hybrid
             // 
             // btnCloseForm
             // 
+            this.btnCloseForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCloseForm.Location = new System.Drawing.Point(59, 7);
             this.btnCloseForm.Name = "btnCloseForm";
             this.btnCloseForm.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
