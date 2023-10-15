@@ -71,10 +71,46 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Class1.cs" />
+    <Compile Include="GUI\Danhba\DanhbaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\DanhbaFrm.Designer.cs">
+      <DependentUpon>DanhbaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\HomeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeFrm.Designer.cs">
+      <DependentUpon>HomeFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Lichhoc\LichhocFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Lichhoc\LichhocFrm.Designer.cs">
+      <DependentUpon>LichhocFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TodoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TodoFrm.Designer.cs">
+      <DependentUpon>TodoFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\DanhbaFrm.resx">
+      <DependentUpon>DanhbaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeFrm.resx">
+      <DependentUpon>HomeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Lichhoc\LichhocFrm.resx">
+      <DependentUpon>LichhocFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TodoFrm.resx">
+      <DependentUpon>TodoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,15 +136,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="icon\icons8-calendar-25 %281%29.png" />
+    <None Include="icon\icons8-user-25.png" />
+    <None Include="icon\icons8-note-book-25.png" />
     <None Include="icon\icons8-macos-close-30.png" />
     <None Include="icon\icons8-macos-full-screen-30.png" />
     <None Include="icon\icons8-macos-minimize-30.png" />
     <None Include="icon\icons8-close-30.png" />
     <None Include="icon\icons8-macos-minimize-30b.png" />
-    <None Include="icon\icons8-home-30.png" />
-    <None Include="icon\icons8-home-20.png" />
     <None Include="icon\icons8-home-25.png" />
     <Content Include="icon\yo yo ma meme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="image\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
