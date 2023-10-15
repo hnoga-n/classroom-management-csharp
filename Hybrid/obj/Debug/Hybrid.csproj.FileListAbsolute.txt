@@ -1,0 +1,13 @@
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\Hybrid.exe.config
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\Hybrid.exe
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\Hybrid.pdb
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\obj\Debug\Hybrid.csproj.AssemblyReference.cache
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\obj\Debug\Hybrid.Form1.resources
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\obj\Debug\Hybrid.Properties.Resources.resources
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\obj\Debug\Hybrid.csproj.GenerateResource.cache
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\obj\Debug\Hybrid.csproj.CoreCompileInputs.cache
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\obj\Debug\Hybrid.exe
+D:\WEZ\Wez_R_Coding\classroom-management-c#\Hybrid\obj\Debug\Hybrid.pdb
