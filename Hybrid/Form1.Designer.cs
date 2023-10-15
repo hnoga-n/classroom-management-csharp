@@ -259,7 +259,7 @@ namespace Hybrid
             this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel2.Location = new System.Drawing.Point(100, 0);
             this.kryptonPanel2.Name = "kryptonPanel2";
-            this.kryptonPanel2.Size = new System.Drawing.Size(1335, 45);
+            this.kryptonPanel2.Size = new System.Drawing.Size(1020, 50);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
             this.kryptonPanel2.StateCommon.Color2 = System.Drawing.Color.White;
             this.kryptonPanel2.StateNormal.Color1 = System.Drawing.Color.White;
@@ -282,7 +282,7 @@ namespace Hybrid
             this.kryptonPanel3.Controls.Add(this.btnMinimizeForm);
             this.kryptonPanel3.Controls.Add(this.btnCloseForm);
             this.kryptonPanel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.kryptonPanel3.Location = new System.Drawing.Point(1229, 0);
+            this.kryptonPanel3.Location = new System.Drawing.Point(930, 0);
             this.kryptonPanel3.Name = "kryptonPanel3";
             this.kryptonPanel3.Size = new System.Drawing.Size(106, 45);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.White;
@@ -415,8 +415,7 @@ namespace Hybrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1435, 835);
-            this.Controls.Add(this.pnlContainer);
+            this.ClientSize = new System.Drawing.Size(1100, 700);
             this.Controls.Add(this.kryptonPanel2);
             this.Controls.Add(this.kryptonPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
