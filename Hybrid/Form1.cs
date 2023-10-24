@@ -12,7 +12,7 @@ using Hybrid.GUI;
 using Hybrid.GUI.Danhba;
 using Hybrid.GUI.Home;
 using Hybrid.GUI.Todo;
-using Hybrid.GUI.Lichhoc;
+using Hybrid.GUI.LichHoc;
 
 namespace Hybrid
 {
@@ -62,7 +62,7 @@ namespace Hybrid
 
         private void btnCalendar_Click(object sender, EventArgs e)
         {
-            addFormtoPanelContainer(new LichhocFrm());
+            addFormtoPanelContainer(new Calendar());
         }
     }
 }

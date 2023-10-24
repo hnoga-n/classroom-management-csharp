@@ -70,6 +70,48 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\Baitap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\Baitap.Designer.cs">
+      <DependentUpon>Baitap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\DanhgiaBaitap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\DanhgiaBaitap.Designer.cs">
+      <DependentUpon>DanhgiaBaitap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\DanhsachHocsinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\DanhsachHocsinh.Designer.cs">
+      <DependentUpon>DanhsachHocsinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\HocsinhPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\HocsinhPanel.Designer.cs">
+      <DependentUpon>HocsinhPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\HocsinhNopbai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\HocsinhNopbai.Designer.cs">
+      <DependentUpon>HocsinhNopbai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\HocsinhNoptre.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\HocsinhNoptre.Designer.cs">
+      <DependentUpon>HocsinhNoptre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\Hocvien\Chuanop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\Hocvien\Chuanop.Designer.cs">
+      <DependentUpon>Chuanop.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Class1.cs" />
     <Compile Include="GUI\Danhba\DanhbaFrm.cs">
       <SubType>Form</SubType>
@@ -83,11 +125,51 @@
     <Compile Include="GUI\Home\HomeFrm.Designer.cs">
       <DependentUpon>HomeFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Lichhoc\LichhocFrm.cs">
+    <Compile Include="GUI\Lichhoc\Calendar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Lichhoc\LichhocFrm.Designer.cs">
-      <DependentUpon>LichhocFrm.cs</DependentUpon>
+    <Compile Include="GUI\Lichhoc\Calendar.Designer.cs">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\EmptyTodo.cs" />
+    <Compile Include="GUI\Todo\EmptyTodo.designer.cs">
+      <DependentUpon>EmptyTodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskDiscuss.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskDiscuss.designer.cs">
+      <DependentUpon>TaskDiscuss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskDoneButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskDoneButton.designer.cs">
+      <DependentUpon>TaskDoneButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskHomework.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskHomework.designer.cs">
+      <DependentUpon>TaskHomework.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskKiemtra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskKiemtra.designer.cs">
+      <DependentUpon>TaskKiemtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskList.designer.cs">
+      <DependentUpon>TaskList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskNotDoneButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskNotDoneButton.designer.cs">
+      <DependentUpon>TaskNotDoneButton.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Todo\TodoFrm.cs">
       <SubType>Form</SubType>
@@ -100,14 +182,53 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\Baitap.resx">
+      <DependentUpon>Baitap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\DanhgiaBaitap.resx">
+      <DependentUpon>DanhgiaBaitap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\DanhsachHocsinh.resx">
+      <DependentUpon>DanhsachHocsinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\HocsinhPanel.resx">
+      <DependentUpon>HocsinhPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\HocsinhNopbai.resx">
+      <DependentUpon>HocsinhNopbai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\HocsinhNoptre.resx">
+      <DependentUpon>HocsinhNoptre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\Hocvien\Chuanop.resx">
+      <DependentUpon>Chuanop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\DanhbaFrm.resx">
       <DependentUpon>DanhbaFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\HomeFrm.resx">
       <DependentUpon>HomeFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Lichhoc\LichhocFrm.resx">
-      <DependentUpon>LichhocFrm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Lichhoc\Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskDiscuss.resx">
+      <DependentUpon>TaskDiscuss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskDoneButton.resx">
+      <DependentUpon>TaskDoneButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskHomework.resx">
+      <DependentUpon>TaskHomework.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskKiemtra.resx">
+      <DependentUpon>TaskKiemtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskList.resx">
+      <DependentUpon>TaskList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskNotDoneButton.resx">
+      <DependentUpon>TaskNotDoneButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Todo\TodoFrm.resx">
       <DependentUpon>TodoFrm.cs</DependentUpon>
@@ -136,6 +257,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-back-30.png" />
+    <None Include="Resources\icons8-back-50.png" />
+    <None Include="Resources\icons8-discuss-30.png" />
+    <None Include="Resources\IMG_20220702_221801.jpg" />
+    <None Include="Resources\icons8-tick-50.png" />
+    <None Include="Resources\icons8-search-50.png" />
+    <None Include="Resources\icons8-search-30-2.png" />
+    <None Include="Resources\icons8-sandclock-50.png" />
+    <None Include="Resources\icons8-reset-30.png" />
+    <None Include="Resources\icons8-reload-50.png" />
+    <None Include="Resources\icons8-homework-100.png" />
+    <None Include="Resources\icons8-exam-91.png" />
+    <None Include="Resources\icons8-done-30.png" />
+    <None Include="Resources\icons8-discuss-91.png" />
     <None Include="icon\icons8-calendar-25 %281%29.png" />
     <None Include="icon\icons8-user-25.png" />
     <None Include="icon\icons8-note-book-25.png" />
@@ -148,6 +283,7 @@
     <Content Include="icon\yo yo ma meme.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="database\" />
     <Folder Include="image\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
