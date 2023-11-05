@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="ComponentFactory.Krypton.Docking">
       <HintPath>..\..\..\..\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
@@ -48,8 +51,110 @@
     <Reference Include="ComponentFactory.Krypton.Workspace">
       <HintPath>..\..\..\..\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="GumroadLicensing, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\GumroadLicensing.2.0.2\lib\net45\GumroadLicensing.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Kimtoo.BindingProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Kimtoo.BindingProvider.1.2.7\lib\net451\Kimtoo.BindingProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Kimtoo.ButtonGroup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Kimtoo.ButtonGroup.1.0.1\lib\net40\Kimtoo.ButtonGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Kimtoo.DbManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Kimtoo.DbManager.1.0.8\lib\net472\Kimtoo.DbManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Kimtoo.ValidationProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Kimtoo.ValidationProvider.1.0.8\lib\net452\Kimtoo.ValidationProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.26\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NavigationMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Kimtoo.NavigationMenu.1.0.2\lib\net40\NavigationMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=4.1.9.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>packages\Npgsql.4.1.9\lib\net461\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>packages\Oracle.ManagedDataAccess.19.13.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Common.6.0.2\lib\net472\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Interfaces.6.0.2\lib\net472\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.OrmLite.6.0.2\lib\net472\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.MySql, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.OrmLite.MySql.6.0.2\lib\net472\ServiceStack.OrmLite.MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.Oracle, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.OrmLite.Oracle.6.0.2\lib\net472\ServiceStack.OrmLite.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.PostgreSQL, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.OrmLite.PostgreSQL.6.0.2\lib\net472\ServiceStack.OrmLite.PostgreSQL.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.OrmLite.SqlServer.6.0.2\lib\net472\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Text.6.0.2\lib\net472\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,58 +164,86 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.26\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.26\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\Class1.cs" />
-    <Compile Include="DAO\Class1.cs" />
-    <Compile Include="DTO\Class1.cs" />
+    <Compile Include="BUS\BailambaitapBUS.cs" />
+    <Compile Include="BUS\BailamKiemtraBUS.cs" />
+    <Compile Include="BUS\BaiTapBUS.cs" />
+    <Compile Include="BUS\BanbeBUS.cs" />
+    <Compile Include="BUS\CauHoiBUS.cs" />
+    <Compile Include="BUS\CauTraLoiBUS.cs" />
+    <Compile Include="BUS\ChiTietBaiLamKiemTraBUS.cs" />
+    <Compile Include="BUS\ChiTietDeKiemTraBUS.cs" />
+    <Compile Include="BUS\ChuongBUS.cs" />
+    <Compile Include="BUS\DeKiemTraBUS.cs" />
+    <Compile Include="BUS\FileBaiLamBaiTapBUS.cs" />
+    <Compile Include="BUS\FileBaiTapBUS.cs" />
+    <Compile Include="BUS\FileHocLieuBUS.cs" />
+    <Compile Include="BUS\HocLieuBUS.cs" />
+    <Compile Include="BUS\LopHocBUS.cs" />
+    <Compile Include="BUS\NhomChatBUS.cs" />
+    <Compile Include="BUS\NhomQuyenBUS.cs" />
+    <Compile Include="BUS\Taikhoan\TaikhoanBUS.cs" />
+    <Compile Include="BUS\ThamGiaBUS.cs" />
+    <Compile Include="BUS\TinNhanBanBeBUS.cs" />
+    <Compile Include="BUS\TinNhanNhomChatBUS.cs" />
+    <Compile Include="Comparer\ChuongComparer.cs" />
+    <Compile Include="Comparer\LophocComparer.cs" />
+    <Compile Include="DAO\BailambaitapDAO.cs" />
+    <Compile Include="DAO\BailamKiemtraDAO.cs" />
+    <Compile Include="DAO\BaiTapDAO.cs" />
+    <Compile Include="DAO\BanbeDAO.cs" />
+    <Compile Include="DAO\CauHoiDAO.cs" />
+    <Compile Include="DAO\CauTraLoiDAO.cs" />
+    <Compile Include="DAO\ChiTietBaiLamKiemTraDAO.cs" />
+    <Compile Include="DAO\ChiTietDeKiemTraDAO.cs" />
+    <Compile Include="DAO\ChuongDAO.cs" />
+    <Compile Include="DAO\DeKiemTraDAO.cs" />
+    <Compile Include="DAO\FileBaiLamBaiTapDAO.cs" />
+    <Compile Include="DAO\FileBaiTapDAO.cs" />
+    <Compile Include="DAO\FileHocLieuDAO.cs" />
+    <Compile Include="DAO\HocLieuDAO.cs" />
+    <Compile Include="DAO\LopHocDAO.cs" />
+    <Compile Include="DAO\NhomChatDAO.cs" />
+    <Compile Include="DAO\NhomQuyenDAO.cs" />
+    <Compile Include="DAO\Taikhoan\TaikhoanDAO.cs" />
+    <Compile Include="DAO\ThamGiaDAO.cs" />
+    <Compile Include="DAO\TinNhanBanBeDAO.cs" />
+    <Compile Include="DAO\TinNhanNhomChatDAO.cs" />
+    <Compile Include="database\Ketnoisqlserver.cs" />
+    <Compile Include="DTO\BaiLamBaiTap.cs" />
+    <Compile Include="DTO\BaiLamKiemTra.cs" />
+    <Compile Include="DTO\BaiTap.cs" />
+    <Compile Include="DTO\BanbeDTO.cs" />
+    <Compile Include="DTO\CauHoi.cs" />
+    <Compile Include="DTO\CauTraLoi.cs" />
+    <Compile Include="DTO\ChiTietBaiLamKiemTra.cs" />
+    <Compile Include="DTO\ChiTietDeKiemTra.cs" />
+    <Compile Include="DTO\Chuong.cs" />
+    <Compile Include="DTO\DeKiemTra.cs" />
+    <Compile Include="DTO\FileBaiLamBaiTap.cs" />
+    <Compile Include="DTO\FileBaiTap.cs" />
+    <Compile Include="DTO\FileHocLieu.cs" />
+    <Compile Include="DTO\HocLieu.cs" />
+    <Compile Include="DTO\LopHoc.cs" />
+    <Compile Include="DTO\BanBe.cs" />
+    <Compile Include="DTO\NhomChat.cs" />
+    <Compile Include="DTO\NhomQuyen.cs" />
+    <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="DTO\ThamGia.cs" />
+    <Compile Include="DTO\TinNhanBanBe.cs" />
+    <Compile Include="DTO\TinNhanNhomChat.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\Baitap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\Baitap.Designer.cs">
-      <DependentUpon>Baitap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\DanhgiaBaitap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\DanhgiaBaitap.Designer.cs">
-      <DependentUpon>DanhgiaBaitap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\DanhsachHocsinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\DanhsachHocsinh.Designer.cs">
-      <DependentUpon>DanhsachHocsinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\HocsinhPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\HocsinhPanel.Designer.cs">
-      <DependentUpon>HocsinhPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\HocsinhNopbai.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\HocsinhNopbai.Designer.cs">
-      <DependentUpon>HocsinhNopbai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\HocsinhNoptre.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\HocsinhNoptre.Designer.cs">
-      <DependentUpon>HocsinhNoptre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\Hocvien\Chuanop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\Hocvien\Chuanop.Designer.cs">
-      <DependentUpon>Chuanop.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Class1.cs" />
     <Compile Include="GUI\Danhba\DanhbaFrm.cs">
@@ -119,57 +252,131 @@
     <Compile Include="GUI\Danhba\DanhbaFrm.Designer.cs">
       <DependentUpon>DanhbaFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Home\ChatFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\ChatFrm.Designer.cs">
+      <DependentUpon>ChatFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\ButtonBaiKT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\ButtonBaiKT.Designer.cs">
+      <DependentUpon>ButtonBaiKT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\ButtonBaiTap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\ButtonBaiTap.Designer.cs">
+      <DependentUpon>ButtonBaiTap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\ButtonClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\ButtonClass.Designer.cs">
+      <DependentUpon>ButtonClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\ButtonHocLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\ButtonHocLieu.Designer.cs">
+      <DependentUpon>ButtonHocLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\PanelChuongDropDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\PanelChuongDropDown.Designer.cs">
+      <DependentUpon>PanelChuongDropDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\PanelGiaoDienLopHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\PanelGiaoDienLopHoc.Designer.cs">
+      <DependentUpon>PanelGiaoDienLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home\HomeFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Home\HomeFrm.Designer.cs">
       <DependentUpon>HomeFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Lichhoc\Calendar.cs">
+    <Compile Include="GUI\Home\KhoaHocFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Lichhoc\Calendar.Designer.cs">
-      <DependentUpon>Calendar.cs</DependentUpon>
+    <Compile Include="GUI\Home\KhoaHocFrm.Designer.cs">
+      <DependentUpon>KhoaHocFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Todo\EmptyTodo.cs" />
-    <Compile Include="GUI\Todo\EmptyTodo.designer.cs">
-      <DependentUpon>EmptyTodo.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskDiscuss.cs">
+    <Compile Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.Designer.cs">
+      <DependentUpon>ChiTietCauHoiFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskDiscuss.designer.cs">
-      <DependentUpon>TaskDiscuss.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.Designer.cs">
+      <DependentUpon>ButtonCauHoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Todo\TaskDoneButton.cs">
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\PanelChiTietCauHoi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskDoneButton.designer.cs">
-      <DependentUpon>TaskDoneButton.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\PanelChiTietCauHoi.Designer.cs">
+      <DependentUpon>PanelChiTietCauHoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Todo\TaskHomework.cs">
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\PanelChiTietCauTraLoi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskHomework.designer.cs">
-      <DependentUpon>TaskHomework.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\PanelChiTietCauTraLoi.Designer.cs">
+      <DependentUpon>PanelChiTietCauTraLoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Todo\TaskKiemtra.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="GUI\Home\KiemTra\KiemTraFrm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskKiemtra.designer.cs">
-      <DependentUpon>TaskKiemtra.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\KiemTraFrm.Designer.cs">
+      <DependentUpon>KiemTraFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Todo\TaskList.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="GUI\Home\KiemTra\ThemCauHoiFrm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskList.designer.cs">
-      <DependentUpon>TaskList.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\ThemCauHoiFrm.Designer.cs">
+      <DependentUpon>ThemCauHoiFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Todo\TaskNotDoneButton.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="GUI\Home\TepFrm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskNotDoneButton.designer.cs">
-      <DependentUpon>TaskNotDoneButton.cs</DependentUpon>
+    <Compile Include="GUI\Home\TepFrm.Designer.cs">
+      <DependentUpon>TepFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\ThamGiaLopFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\ThamGiaLopFrm.Designer.cs">
+      <DependentUpon>ThamGiaLopFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\ThanhTichFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\ThanhTichFrm.Designer.cs">
+      <DependentUpon>ThanhTichFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\ThemChuongFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\ThemChuongFrm.Designer.cs">
+      <DependentUpon>ThemChuongFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\ThemLopFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\ThemLopFrm.Designer.cs">
+      <DependentUpon>ThemLopFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Lichhoc\LichhocFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Lichhoc\LichhocFrm.Designer.cs">
+      <DependentUpon>LichhocFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Todo\TodoFrm.cs">
       <SubType>Form</SubType>
@@ -182,53 +389,71 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Giaovien\Baitap.resx">
-      <DependentUpon>Baitap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Giaovien\DanhgiaBaitap.resx">
-      <DependentUpon>DanhgiaBaitap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Giaovien\DanhsachHocsinh.resx">
-      <DependentUpon>DanhsachHocsinh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\HocsinhPanel.resx">
-      <DependentUpon>HocsinhPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\HocsinhNopbai.resx">
-      <DependentUpon>HocsinhNopbai.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\HocsinhNoptre.resx">
-      <DependentUpon>HocsinhNoptre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Hocvien\Chuanop.resx">
-      <DependentUpon>Chuanop.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\DanhbaFrm.resx">
       <DependentUpon>DanhbaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\ChatFrm.resx">
+      <DependentUpon>ChatFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonBaiKT.resx">
+      <DependentUpon>ButtonBaiKT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonBaiTap.resx">
+      <DependentUpon>ButtonBaiTap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonClass.resx">
+      <DependentUpon>ButtonClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonHocLieu.resx">
+      <DependentUpon>ButtonHocLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\PanelChuongDropDown.resx">
+      <DependentUpon>PanelChuongDropDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\PanelGiaoDienLopHoc.resx">
+      <DependentUpon>PanelGiaoDienLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\HomeFrm.resx">
       <DependentUpon>HomeFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Lichhoc\Calendar.resx">
-      <DependentUpon>Calendar.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KhoaHocFrm.resx">
+      <DependentUpon>KhoaHocFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskDiscuss.resx">
-      <DependentUpon>TaskDiscuss.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.resx">
+      <DependentUpon>ChiTietCauHoiFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskDoneButton.resx">
-      <DependentUpon>TaskDoneButton.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.resx">
+      <DependentUpon>ButtonCauHoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskHomework.resx">
-      <DependentUpon>TaskHomework.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\PanelChiTietCauHoi.resx">
+      <DependentUpon>PanelChiTietCauHoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskKiemtra.resx">
-      <DependentUpon>TaskKiemtra.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\PanelChiTietCauTraLoi.resx">
+      <DependentUpon>PanelChiTietCauTraLoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskList.resx">
-      <DependentUpon>TaskList.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraFrm.resx">
+      <DependentUpon>KiemTraFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskNotDoneButton.resx">
-      <DependentUpon>TaskNotDoneButton.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\ThemCauHoiFrm.resx">
+      <DependentUpon>ThemCauHoiFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\TepFrm.resx">
+      <DependentUpon>TepFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\ThamGiaLopFrm.resx">
+      <DependentUpon>ThamGiaLopFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\ThanhTichFrm.resx">
+      <DependentUpon>ThanhTichFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\ThemChuongFrm.resx">
+      <DependentUpon>ThemChuongFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\ThemLopFrm.resx">
+      <DependentUpon>ThemLopFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Lichhoc\LichhocFrm.resx">
+      <DependentUpon>LichhocFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Todo\TodoFrm.resx">
       <DependentUpon>TodoFrm.cs</DependentUpon>
@@ -238,6 +463,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -257,20 +483,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-back-30.png" />
-    <None Include="Resources\icons8-back-50.png" />
-    <None Include="Resources\icons8-discuss-30.png" />
-    <None Include="Resources\IMG_20220702_221801.jpg" />
-    <None Include="Resources\icons8-tick-50.png" />
-    <None Include="Resources\icons8-search-50.png" />
-    <None Include="Resources\icons8-search-30-2.png" />
-    <None Include="Resources\icons8-sandclock-50.png" />
-    <None Include="Resources\icons8-reset-30.png" />
-    <None Include="Resources\icons8-reload-50.png" />
-    <None Include="Resources\icons8-homework-100.png" />
-    <None Include="Resources\icons8-exam-91.png" />
-    <None Include="Resources\icons8-done-30.png" />
-    <None Include="Resources\icons8-discuss-91.png" />
     <None Include="icon\icons8-calendar-25 %281%29.png" />
     <None Include="icon\icons8-user-25.png" />
     <None Include="icon\icons8-note-book-25.png" />
@@ -280,10 +492,10 @@
     <None Include="icon\icons8-close-30.png" />
     <None Include="icon\icons8-macos-minimize-30b.png" />
     <None Include="icon\icons8-home-25.png" />
+    <Content Include="database\Hybrid_query.sql" />
     <Content Include="icon\yo yo ma meme.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="database\" />
     <Folder Include="image\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

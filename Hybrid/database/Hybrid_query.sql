@@ -4,17 +4,17 @@ use hybrid;
 
 CREATE TABLE nhomquyen(
 	manhomquyen INT PRIMARY KEY,
-	ten varchar(50)
+	ten NVARCHAR(50)
 )
 
 CREATE TABLE taikhoan(
 	matk uniqueidentifier PRIMARY KEY,
 	manhomquyen INT,
-	hoten VARCHAR(255),
-	email VARCHAR(255),
-	matkhau VARCHAR(255),
-	sodienthoai VARCHAR(15),
-	anhdaidien VARCHAR(255),
+	hoten NVARCHAR(255),
+	email NVARCHAR(255),
+	matkhau NVARCHAR(255),
+	sodienthoai NVARCHAR(15),
+	anhdaidien NVARCHAR(255),
 	FOREIGN KEY (manhomquyen) REFERENCES nhomquyen(manhomquyen)
 )
 
@@ -24,8 +24,8 @@ ADD CONSTRAINT defaultUUID DEFAULT NEWID() FOR matk;
 
 CREATE TABLE lophoc(
 	malophoc uniqueidentifier PRIMARY KEY,
-	ten VARCHAR(255),
-	mota VARCHAR(500),
+	ten NVARCHAR(255),
+	mota NVARCHAR(500),
 	trangthai TINYINT,
 	magiangvien uniqueidentifier,
 	FOREIGN KEY (magiangvien) REFERENCES taikhoan(matk)
@@ -44,7 +44,7 @@ CREATE TABLE thamgialophoc(
 CREATE TABLE nhomchat(
 	manhomchat uniqueidentifier PRIMARY KEY,
 	malophoc uniqueidentifier,
-	ten VARCHAR(255),
+	ten NVARCHAR(255),
 	FOREIGN KEY (malophoc) REFERENCES lophoc(malophoc)
 )
 
@@ -55,7 +55,7 @@ CREATE TABLE tinnhan(
 	matinnhan uniqueidentifier PRIMARY KEY,
 	manhomchat uniqueidentifier,
 	mataikhoan uniqueidentifier,
-	noidung VARCHAR(300) ,
+	noidung NVARCHAR(300) ,
 	thoigiangui DATETIME,
 	antinnhan TINYINT,
 	FOREIGN KEY (manhomchat) REFERENCES nhomchat(manhomchat),
@@ -67,7 +67,7 @@ ADD CONSTRAINT defaultTinNhantUUID DEFAULT NEWID() FOR matinnhan;
 CREATE TABLE chuong(
 	machuong uniqueidentifier PRIMARY KEY,
 	malophoc uniqueidentifier,
-	ten varchar(100),
+	ten NVARCHAR(100),
 	thoigiantao DATETIME,
 	FOREIGN KEY (malophoc) REFERENCES lophoc(malophoc)
 )
@@ -78,8 +78,8 @@ ADD CONSTRAINT defaultChuongUUID DEFAULT NEWID() FOR machuong;
 CREATE TABLE hoclieu(
 	mahoclieu uniqueidentifier PRIMARY KEY,
 	machuong uniqueidentifier,
-	tieude varchar(100),
-	noidung varchar(300),
+	tieude NVARCHAR(100),
+	noidung NVARCHAR(300),
 	FOREIGN KEY (machuong) REFERENCES chuong(machuong)
 )
 
@@ -88,7 +88,7 @@ ADD CONSTRAINT defaultHocLieuUUID DEFAULT NEWID() FOR mahoclieu;
 
 CREATE TABLE filehoclieu(
 	mahoclieu uniqueidentifier,
-	link varchar(255),
+	link NVARCHAR(255),
 	FOREIGN KEY (mahoclieu) REFERENCES hoclieu(mahoclieu)
 )
 
@@ -97,6 +97,7 @@ CREATE TABLE banbe(
 	manguoiketban uniqueidentifier,
 	manguoiduocketban uniqueidentifier,
 	thoigianketban DATETIME,
+	trangthai TINYINT,
 	FOREIGN KEY (manguoiketban) REFERENCES taikhoan(matk),
 	FOREIGN KEY (manguoiduocketban) REFERENCES taikhoan(matk),
 )
@@ -109,7 +110,7 @@ CREATE TABLE tinnhanbanbe(
 	mabanbe uniqueidentifier,
 	manguoigui uniqueidentifier,
 	manguoinhan uniqueidentifier,
-	noidung varchar(300),
+	noidung NVARCHAR(300),
 	thoigiangui DATETIME,
 	trangthai TINYINT,
 	FOREIGN KEY (mabanbe) REFERENCES banbe(mabanbe),
@@ -123,11 +124,11 @@ ADD CONSTRAINT defaultTinhanbbUUID DEFAULT NEWID() FOR matinnhan;
 CREATE TABLE baitap(
 	mabaitap uniqueidentifier PRIMARY KEY,
 	machuong uniqueidentifier ,
-	tieude VARCHAR(100),
-	noidung VARCHAR(300),
+	tieude NVARCHAR(100),
+	noidung NVARCHAR(300),
 	thoigiantao DATETIME,
 	thoihan DATETIME,
-	FOREIGN KEY (machuong) REFERENCES taikhoan(matk)
+	FOREIGN KEY (machuong) REFERENCES chuong(machuong)
 )
 
 ALTER TABLE baitap
@@ -136,7 +137,7 @@ ADD CONSTRAINT defaultBaitapUUID DEFAULT NEWID() FOR mabaitap;
 CREATE TABLE dapanbaitap(
 	madapan  uniqueidentifier PRIMARY KEY,
 	mabaitap uniqueidentifier,
-	noidung VARCHAR(300),
+	noidung NVARCHAR(300),
 	xemdapan TINYINT,
 	FOREIGN KEY (mabaitap) REFERENCES baitap(mabaitap)
 )
@@ -146,13 +147,13 @@ ADD CONSTRAINT defaultDapanUUID DEFAULT NEWID() FOR madapan;
 
 CREATE TABLE filedapanbaitap(
 	madapan  uniqueidentifier,
-	link VARCHAR(100),
+	link NVARCHAR(100),
 	FOREIGN KEY (madapan) REFERENCES dapanbaitap(madapan)
 )
 
 CREATE TABLE filebaitap(
 	mabaitap  uniqueidentifier,
-	link VARCHAR(100),
+	link NVARCHAR(100),
 	FOREIGN KEY (mabaitap) REFERENCES baitap(mabaitap)
 )
 
@@ -160,9 +161,9 @@ CREATE TABLE bailambaitap(
 	mabailam uniqueidentifier PRIMARY KEY,
 	mataikhoan uniqueidentifier,
 	mabaitap uniqueidentifier,
-	noidung VARCHAR(500),
+	noidung NVARCHAR(500),
 	thoigiannopbai DATETIME,
-	nhanxet VARCHAR(200),
+	nhanxet NVARCHAR(200),
 	diem int,
 	FOREIGN KEY (mataikhoan) REFERENCES taikhoan(matk),
 	FOREIGN KEY (mabaitap) REFERENCES baitap(mabaitap)
@@ -173,15 +174,15 @@ ADD CONSTRAINT defaultBailamnUUID DEFAULT NEWID() FOR mabailam;
 
 CREATE TABLE filebailambaitap(
 	mabailam  uniqueidentifier,
-	link VARCHAR(100),
+	link NVARCHAR(100),
 	FOREIGN KEY (mabailam) REFERENCES bailambaitap(mabailam)
 )
 
 CREATE TABLE dekiemtra(
 	madekiemtra uniqueidentifier PRIMARY KEY, 
 	machuong uniqueidentifier,
-	tieude VARCHAR(50),
-	mota VARCHAR(200),
+	tieude NVARCHAR(50),
+	mota NVARCHAR(200),
 	thoigianbatdau DATETIME,
 	thoigianketthuc DATETIME,
 	xemdiem TINYINT,
@@ -194,10 +195,10 @@ ADD CONSTRAINT defaultDektUUID DEFAULT NEWID() FOR madekiemtra;
 
 CREATE TABLE cauhoi(
 	macauhoi uniqueidentifier PRIMARY KEY, 
-	machuong uniqueidentifier,
-	noidung VARCHAR(300),
-	giaithich VARCHAR(300),
-	FOREIGN KEY (machuong) REFERENCES chuong(machuong)
+	mataikhoan uniqueidentifier,
+	noidung NVARCHAR(300),
+	giaithich NVARCHAR(300),
+	FOREIGN KEY (mataikhoan) REFERENCES taikhoan(matk)
 )
 
 ALTER TABLE cauhoi
@@ -206,7 +207,7 @@ ADD CONSTRAINT defaultCauhoiUUID DEFAULT NEWID() FOR macauhoi;
 CREATE TABLE cautraloi(
 	macautraloi uniqueidentifier PRIMARY KEY, 
 	macauhoi uniqueidentifier ,
-	noidung VARCHAR(300),
+	noidung NVARCHAR(300),
 	lacautraloidung TINYINT,
 	FOREIGN KEY (macauhoi) REFERENCES cauhoi(macauhoi)
 )
@@ -242,3 +243,14 @@ CREATE TABLE chitietbailamkiemtra(
 	FOREIGN KEY (macauhoi) REFERENCES cauhoi(macauhoi),
 	FOREIGN KEY (dapanchon) REFERENCES cautraloi(macautraloi)
 )
+ALTER TABLE dekiemtra ADD thoigiantao DATETIME
+ALTER TABLE dekiemtra ADD troncauhoi TINYINT 
+ALTER TABLE baitap ADD dahoanthanh TINYINT
+ALTER TABLE dekiemtra ADD dahoanthanh TINYINT 
+
+ALTER TABLE dekiemtra DROP COLUMN mota 
+
+ALTER TABLE taikhoan ADD CONSTRAINT taikhoan_cons_uniq UNIQUE (email)
+ALTER TABLE cauhoi ADD trangthai TINYINT
+
+UPDATE cauhoi SET trangthai=1

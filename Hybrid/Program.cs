@@ -1,6 +1,4 @@
-﻿using Hybrid.GUI.Baitap;
-using Hybrid.GUI.Todo;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,7 +16,8 @@ namespace Hybrid
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DanhgiaBaitap());
+            Application.Run(new Form1());
+            //Application.Run(new KiemTraFrm());
         }
     }
 }
