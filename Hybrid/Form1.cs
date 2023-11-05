@@ -13,11 +13,15 @@ using Hybrid.GUI.Danhba;
 using Hybrid.GUI.Home;
 using Hybrid.GUI.Todo;
 using Hybrid.GUI.Lichhoc;
+using Hybrid.GUI.Home.HomeComponents;
+using Hybrid.DTO;
+using Hybrid.BUS;
 
 namespace Hybrid
 {
     public partial class Form1 : KryptonForm
     {
+        TaikhoanBUS taikhoanBus = new TaikhoanBUS(); 
         public Form1()
         {
             InitializeComponent();
@@ -40,6 +44,10 @@ namespace Hybrid
             Form f = Form as Form;
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
+            f.Controls.Add(this.btnMinimizeForm);
+            f.Controls.Add(this.btnCloseForm);
+            this.btnMinimizeForm.BringToFront();
+            this.btnCloseForm.BringToFront();
             this.pnlContainer.Controls.Add(f);
             this.pnlContainer.Tag = f;
             f.Show();
@@ -47,7 +55,8 @@ namespace Hybrid
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            addFormtoPanelContainer(new HomeFrm());
+            Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("machhaotuan@gmail.com");
+            addFormtoPanelContainer(new HomeFrm(tk));
         }
 
         private void btnTodo_Click(object sender, EventArgs e)
@@ -64,5 +73,11 @@ namespace Hybrid
         {
             addFormtoPanelContainer(new LichhocFrm());
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            btnHome_Click(this, EventArgs.Empty);
+        }
+        
     }
 }

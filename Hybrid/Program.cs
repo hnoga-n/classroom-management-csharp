@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hybrid.GUI.Home.KiemTra;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Hybrid
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            //Application.Run(new KiemTraFrm());
         }
     }
 }

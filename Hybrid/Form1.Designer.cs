@@ -38,19 +38,13 @@ namespace Hybrid
             this.btnContacts = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnTodo = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnHome = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.kryptonPanel3 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btnMinimizeForm = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnCloseForm = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pnlContainer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
-            this.kryptonPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).BeginInit();
-            this.kryptonPanel3.SuspendLayout();
+            this.pnlContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPanel1
@@ -252,47 +246,10 @@ namespace Hybrid
             this.btnHome.Values.Text = "Home";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // kryptonPanel2
-            // 
-            this.kryptonPanel2.Controls.Add(this.label1);
-            this.kryptonPanel2.Controls.Add(this.kryptonPanel3);
-            this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel2.Location = new System.Drawing.Point(100, 0);
-            this.kryptonPanel2.Name = "kryptonPanel2";
-            this.kryptonPanel2.Size = new System.Drawing.Size(1020, 50);
-            this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
-            this.kryptonPanel2.StateCommon.Color2 = System.Drawing.Color.White;
-            this.kryptonPanel2.StateNormal.Color1 = System.Drawing.Color.White;
-            this.kryptonPanel2.StateNormal.Color2 = System.Drawing.Color.White;
-            this.kryptonPanel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Roboto", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(616, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Hybrid";
-            // 
-            // kryptonPanel3
-            // 
-            this.kryptonPanel3.Controls.Add(this.btnMinimizeForm);
-            this.kryptonPanel3.Controls.Add(this.btnCloseForm);
-            this.kryptonPanel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.kryptonPanel3.Location = new System.Drawing.Point(930, 0);
-            this.kryptonPanel3.Name = "kryptonPanel3";
-            this.kryptonPanel3.Size = new System.Drawing.Size(106, 45);
-            this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.White;
-            this.kryptonPanel3.StateCommon.Color2 = System.Drawing.Color.White;
-            this.kryptonPanel3.TabIndex = 0;
-            // 
             // btnMinimizeForm
             // 
             this.btnMinimizeForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizeForm.Location = new System.Drawing.Point(18, 7);
+            this.btnMinimizeForm.Location = new System.Drawing.Point(1247, 6);
             this.btnMinimizeForm.Name = "btnMinimizeForm";
             this.btnMinimizeForm.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnMinimizeForm.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -301,13 +258,11 @@ namespace Hybrid
             this.btnMinimizeForm.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnMinimizeForm.OverrideDefault.Border.Rounding = 12;
             this.btnMinimizeForm.OverrideFocus.Back.Color1 = System.Drawing.Color.White;
             this.btnMinimizeForm.OverrideFocus.Back.Color2 = System.Drawing.Color.White;
             this.btnMinimizeForm.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnMinimizeForm.OverrideFocus.Border.Rounding = 12;
             this.btnMinimizeForm.Size = new System.Drawing.Size(35, 35);
             this.btnMinimizeForm.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnMinimizeForm.StateCommon.Back.Color2 = System.Drawing.Color.White;
@@ -318,7 +273,6 @@ namespace Hybrid
             this.btnMinimizeForm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnMinimizeForm.StateCommon.Border.Rounding = 20;
             this.btnMinimizeForm.StateDisabled.Back.Color1 = System.Drawing.Color.White;
             this.btnMinimizeForm.StateDisabled.Back.Color2 = System.Drawing.Color.White;
             this.btnMinimizeForm.StateNormal.Back.Color1 = System.Drawing.Color.White;
@@ -329,7 +283,6 @@ namespace Hybrid
             this.btnMinimizeForm.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnMinimizeForm.StateNormal.Border.Rounding = 20;
             this.btnMinimizeForm.StatePressed.Back.Color1 = System.Drawing.Color.White;
             this.btnMinimizeForm.StatePressed.Back.Color2 = System.Drawing.Color.White;
             this.btnMinimizeForm.StatePressed.Border.Color1 = System.Drawing.Color.White;
@@ -337,7 +290,6 @@ namespace Hybrid
             this.btnMinimizeForm.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnMinimizeForm.StatePressed.Border.Rounding = 20;
             this.btnMinimizeForm.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.btnMinimizeForm.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.btnMinimizeForm.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizeForm.StateTracking.Back.Image")));
@@ -354,10 +306,13 @@ namespace Hybrid
             // btnCloseForm
             // 
             this.btnCloseForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCloseForm.Location = new System.Drawing.Point(59, 7);
+            this.btnCloseForm.Location = new System.Drawing.Point(1288, 6);
             this.btnCloseForm.Name = "btnCloseForm";
             this.btnCloseForm.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnCloseForm.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnCloseForm.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnCloseForm.OverrideFocus.Back.Color1 = System.Drawing.Color.White;
             this.btnCloseForm.OverrideFocus.Back.Color2 = System.Drawing.Color.White;
             this.btnCloseForm.Size = new System.Drawing.Size(35, 35);
@@ -371,7 +326,6 @@ namespace Hybrid
             this.btnCloseForm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnCloseForm.StateCommon.Border.Rounding = 20;
             this.btnCloseForm.StateDisabled.Back.Color1 = System.Drawing.Color.White;
             this.btnCloseForm.StateDisabled.Back.Color2 = System.Drawing.Color.White;
             this.btnCloseForm.StateNormal.Back.Color1 = System.Drawing.Color.White;
@@ -381,7 +335,6 @@ namespace Hybrid
             this.btnCloseForm.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnCloseForm.StateNormal.Border.Rounding = 20;
             this.btnCloseForm.StatePressed.Back.Color1 = System.Drawing.Color.White;
             this.btnCloseForm.StatePressed.Back.Color2 = System.Drawing.Color.White;
             this.btnCloseForm.StatePressed.Border.Color1 = System.Drawing.Color.White;
@@ -389,7 +342,6 @@ namespace Hybrid
             this.btnCloseForm.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnCloseForm.StatePressed.Border.Rounding = 20;
             this.btnCloseForm.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.btnCloseForm.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.btnCloseForm.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseForm.StateTracking.Back.Image")));
@@ -398,25 +350,26 @@ namespace Hybrid
             this.btnCloseForm.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnCloseForm.StateTracking.Border.Rounding = 20;
             this.btnCloseForm.TabIndex = 2;
             this.btnCloseForm.Values.Text = "";
             this.btnCloseForm.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // pnlContainer
             // 
+            this.pnlContainer.Controls.Add(this.btnCloseForm);
+            this.pnlContainer.Controls.Add(this.btnMinimizeForm);
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContainer.Location = new System.Drawing.Point(100, 45);
+            this.pnlContainer.Location = new System.Drawing.Point(100, 0);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1335, 790);
+            this.pnlContainer.Size = new System.Drawing.Size(1335, 835);
             this.pnlContainer.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 700);
-            this.Controls.Add(this.kryptonPanel2);
+            this.ClientSize = new System.Drawing.Size(1435, 835);
+            this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.kryptonPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -441,14 +394,11 @@ namespace Hybrid
             this.StateInactive.Border.Rounding = 12;
             this.StateInactive.Border.Width = 0;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
-            this.kryptonPanel2.ResumeLayout(false);
-            this.kryptonPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).EndInit();
-            this.kryptonPanel3.ResumeLayout(false);
+            this.pnlContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -456,17 +406,14 @@ namespace Hybrid
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel3;
-        private System.Windows.Forms.Label label1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCloseForm;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnMinimizeForm;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnHome;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCalendar;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnContacts;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnTodo;
-        private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Panel pnlContainer;
     }
 }
 
