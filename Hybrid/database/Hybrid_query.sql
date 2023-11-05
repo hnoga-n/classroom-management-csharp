@@ -1,5 +1,4 @@
-﻿--Drop database hybrid;
-CREATE DATABASE hybrid;
+﻿CREATE DATABASE hybrid;
 
 use hybrid;
 

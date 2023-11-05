@@ -71,7 +71,7 @@ namespace Hybrid
 
         private void btnCalendar_Click(object sender, EventArgs e)
         {
-            addFormtoPanelContainer(new LichhocFrm());
+            addFormtoPanelContainer(new Calendar());
         }
 
         private void Form1_Load(object sender, EventArgs e)
