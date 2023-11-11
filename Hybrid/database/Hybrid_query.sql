@@ -254,3 +254,9 @@ ALTER TABLE taikhoan ADD CONSTRAINT taikhoan_cons_uniq UNIQUE (email)
 ALTER TABLE cauhoi ADD trangthai TINYINT
 
 UPDATE cauhoi SET trangthai=1
+ALTER TABLE chitietbaikiemtra ADD thutu TINYINT
+ALTER TABLE dekiemtra ADD daxoa TINYINT
+UPDATE dekiemtra SET daxoa=0
+
+ALTER TABLE chuong ADD daxoa TINYINT
+UPDATE chuong SET daxoa=0

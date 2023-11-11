@@ -37,7 +37,7 @@ namespace Hybrid.DAO
                     tmp.Macauhoi = dr["macauhoi"].ToString();
                     tmp.Matk = dr["mataikhoan"].ToString();
                     tmp.Noidung = dr["noidung"].ToString();
-                    tmp.Giaithich = dr["giaithich"].ToString();
+                    tmp.Trangthai = Convert.ToInt32(dr["trangthai"]);
                     listTmp.Add(tmp);
                 }
                 dr.Close();
@@ -57,7 +57,7 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_themcauhoi = "INSERT INTO cauhoi(macauhoi,noidung,giaithich,mataikhoan) VALUES (@macauhoi,N'"+cauhoi.Noidung+"',N'"+cauhoi.Giaithich+"',@mataikhoan)";
+                string sql_themcauhoi = "INSERT INTO cauhoi(macauhoi,noidung,mataikhoan,trangthai) VALUES (@macauhoi,N'"+cauhoi.Noidung+"',@mataikhoan,1)";
                 SqlCommand cmd_themcauhoi = new SqlCommand(sql_themcauhoi, Ketnoisqlserver.GetConnection());
                 cmd_themcauhoi.Parameters.AddWithValue("@macauhoi", Guid.Parse(cauhoi.Macauhoi));
                 cmd_themcauhoi.Parameters.AddWithValue("@mataikhoan", Guid.Parse(cauhoi.Matk));
@@ -68,7 +68,8 @@ namespace Hybrid.DAO
             } finally { 
                 Ketnoisqlserver.CloseConnection();
             }
-        }public void XoaCauHoi(string macauhoi)
+        }
+        public void XoaCauHoi(string macauhoi)
         {
             try
             {
@@ -80,6 +81,28 @@ namespace Hybrid.DAO
             {
                 MessageBox.Show("Lỗi xảy ra ở file CauhoiDAO:" + ex.Message);
             } finally { 
+                Ketnoisqlserver.CloseConnection();
+            }
+        }
+
+        public bool SuaCauHoi(CauHoi cauhoi)
+        {
+            try
+            {
+                string sql_suacauhoi = "UPDATE cauhoi SET noidung = N'"+cauhoi.Noidung+"', trangthai = @trangthai WHERE macauhoi = @macauhoi";
+                SqlCommand cmd_suacauhoi = new SqlCommand(sql_suacauhoi, Ketnoisqlserver.GetConnection());
+                cmd_suacauhoi.Parameters.AddWithValue("@trangthai", cauhoi.Trangthai);
+                cmd_suacauhoi.Parameters.AddWithValue("@macauhoi", Guid.Parse(cauhoi.Macauhoi));
+                cmd_suacauhoi.ExecNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file CauhoiDAO:" + ex.Message);
+                return false;
+            }
+            finally
+            {
                 Ketnoisqlserver.CloseConnection();
             }
         }
@@ -100,7 +123,7 @@ namespace Hybrid.DAO
                     tmp.Macauhoi = dr["macauhoi"].ToString();
                     tmp.Matk = dr["mataikhoan"].ToString();
                     tmp.Noidung = dr["noidung"].ToString();
-                    tmp.Giaithich = dr["giaithich"].ToString();
+                    tmp.Trangthai = Convert.ToInt32(dr["trangthai"]);
                     listTmp.Add(tmp);
                 }
                 dr.Close();

@@ -15,13 +15,28 @@ namespace Hybrid.GUI.Home
 {
     public partial class ThemChuongFrm : Form
     {
+        //them chuong
         KhoaHocFrm khfrm;
-        ChuongBUS chuongBUS;
+        ChuongBUS chuongBUS = new ChuongBUS();
+
+        //sua chuong
+        Chuong chuong;
+
         public ThemChuongFrm(KhoaHocFrm khfrm)
         {
             InitializeComponent();
             this.khfrm = khfrm;
-            chuongBUS = new ChuongBUS(); 
+            this.btnTaoChuong.Visible = true;
+            this.btnCapNhat.Visible = false;
+        }
+        public ThemChuongFrm(Chuong chuong)
+        {
+            InitializeComponent();
+            this.chuong = chuong;
+            this.Text = "Sửa chương";
+            this.btnTaoChuong.Visible = false;
+            this.btnCapNhat.Visible = true;
+            this.txtTenChuong.Text = chuong.Tenchuong;
         }
 
         private void txtTenChuong_Enter(object sender, EventArgs e)
@@ -62,9 +77,9 @@ namespace Hybrid.GUI.Home
                 txtTenChuong.Focus();
                 return;
             }
-            Chuong chuong = new Chuong(Guid.NewGuid().ToString(),txtTenChuong.Text,DateTime.Now,khfrm.Lophoc.Malop);
+            Chuong chuong = new Chuong(Guid.NewGuid().ToString(),txtTenChuong.Text,DateTime.Now,khfrm.Lophoc.Malop,0);
             if (chuongBUS.ThemChuong(chuong)){ 
-                PanelChuongDropDown pnlChuong = new PanelChuongDropDown(chuong);
+                PanelChuongDropDown pnlChuong = new PanelChuongDropDown(khfrm,chuong);
                 this.khfrm.PnlChuongContainer.Controls.Add(pnlChuong);
                 MessageBox.Show("Tạo Chương thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.Close();
@@ -78,6 +93,26 @@ namespace Hybrid.GUI.Home
         {
             this.TopMost = true;
             this.Focus();
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            if (txtTenChuong.Text.Length == 0 || txtTenChuong.Text == "Vui lòng điền tên chương(trong vòng 50 ký tự)")
+            {
+                MessageBox.Show("Tên Chương không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTenChuong.Focus();
+                return;
+            }
+            this.chuong.Tenchuong = txtTenChuong.Text;
+            if(chuongBUS.SuaChuong(chuong))
+            {
+                MessageBox.Show("Cập nhật chương thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật chương thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

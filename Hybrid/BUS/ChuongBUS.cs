@@ -33,27 +33,47 @@ namespace Hybrid.BUS
 
         public bool ThemChuong(Chuong chuong)
         {
-            if (chuong == null)
+            if (chuongDAO.ThemChuong(chuong))
             {
-                MessageBox.Show("Thông tin chương không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                this.list.Add(chuong);
+                return true;
             }
-            this.list.Add(chuong);
-            chuongDAO.ThemChuong(chuong);
-            return true;
+            return false;
+
         }
 
-        public bool XoaChuong(Chuong chuong)
+        public bool SuaChuong(Chuong chuong)
         {
-            if (chuong == null)
+            if (chuongDAO.SuaChuong(chuong))
             {
-                MessageBox.Show("Thông tin chương không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                foreach (Chuong c in this.list)
+                {
+                    if (c.Machuong.Equals(chuong.Machuong))
+                    {
+                        c.Tenchuong = chuong.Tenchuong;
+                        return true;
+                    }
+                }
                 return false;
             }
-            MessageBox.Show(chuong.Machuong);
-            this.list.Remove(chuong);
-            chuongDAO.XoaChuong(chuong.Machuong);
-            return true;
+            else
+                return false;
+        }
+        public bool XoaChuong(Chuong chuong)
+        {
+            if (chuongDAO.XoaChuong(chuong.Machuong))
+            {
+                foreach(Chuong c in this.list)
+                {
+                    if(c.Machuong.Equals(chuong.Machuong))
+                    {
+                        c.Daxoa = 1;
+                        return true;    
+                    }
+                }
+                return false;
+            }else
+                return false;
         }
 
         public Chuong getChuongWithMaChuong(string machuong)

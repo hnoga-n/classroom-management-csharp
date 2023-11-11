@@ -33,7 +33,7 @@ namespace Hybrid.DAO
                 {
                     ThamGia tmp = new ThamGia();
                     tmp.Malop = dr["malophoc"].ToString();
-                    tmp.Mataikhoan = dr["ThamGia"].ToString();
+                    tmp.Mataikhoan = dr["mataikhoan"].ToString();
                     listTmp.Add(tmp);
                 }
                 dr.Close();
@@ -47,6 +47,27 @@ namespace Hybrid.DAO
                 Ketnoisqlserver.CloseConnection();
             }
             return listTmp;
+        }
+
+        public bool ThemThamGia(ThamGia thamgia)
+        {
+            try
+            {
+                string sql_thamgia = "INSERT INTO thamgialophoc VALUES (@malophoc,@mataikhoan)";
+                SqlCommand cmd = new SqlCommand(sql_thamgia, Ketnoisqlserver.GetConnection());
+                cmd.Parameters.AddWithValue("@malophoc", Guid.Parse(thamgia.Malop));
+                cmd.Parameters.AddWithValue("@mataikhoan", Guid.Parse(thamgia.Mataikhoan));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file ThamgiaDAO:" + ex.Message);
+                return false;
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
         }
     }
 }

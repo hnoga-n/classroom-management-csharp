@@ -356,6 +356,7 @@ namespace Hybrid
             // 
             // pnlContainer
             // 
+            this.pnlContainer.BackColor = System.Drawing.Color.White;
             this.pnlContainer.Controls.Add(this.btnCloseForm);
             this.pnlContainer.Controls.Add(this.btnMinimizeForm);
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -380,14 +381,12 @@ namespace Hybrid
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.StateActive.Border.Rounding = 12;
-            this.StateActive.Border.Width = 0;
             this.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.StateCommon.Border.Color2 = System.Drawing.Color.Black;
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.StateCommon.Border.Rounding = 12;
-            this.StateCommon.Border.Width = 0;
             this.StateInactive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));

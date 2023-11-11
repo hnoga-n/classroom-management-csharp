@@ -1,4 +1,5 @@
 ﻿using Hybrid.DTO;
+using ServiceStack.OrmLite;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -34,6 +35,7 @@ namespace Hybrid.DAO
                     ChiTietDeKiemTra tmp = new ChiTietDeKiemTra();
                     tmp.Madekiemtra = dr["madekiemtra"].ToString();
                     tmp.Macauhoi = dr["macauhoi"].ToString();
+                    tmp.Thutu = Convert.ToInt32(dr["thutu"]);
                     listTmp.Add(tmp);
                 }
                 dr.Close();
@@ -48,6 +50,25 @@ namespace Hybrid.DAO
             }
             return listTmp;
         }
+        public void ThemChiTietDeKiemTra(ChiTietDeKiemTra ctdtk)
+        {
+            try
+            {
+                string sql_themchitietdekiemtra = "INSERT INTO chitietbaikiemtra(madekiemtra,macauhoi,thutu) VALUES (@madekiemtra,@macauhoi,@thutu)";
+                SqlCommand cmd_themchitietdekiemtra = new SqlCommand(sql_themchitietdekiemtra, Ketnoisqlserver.GetConnection());
+                cmd_themchitietdekiemtra.Parameters.AddWithValue("@madekiemtra", Guid.Parse(ctdtk.Madekiemtra));
+                cmd_themchitietdekiemtra.Parameters.AddWithValue("@macauhoi", Guid.Parse(ctdtk.Macauhoi));
+                cmd_themchitietdekiemtra.Parameters.AddWithValue("@thutu", ctdtk.Thutu);
+                cmd_themchitietdekiemtra.ExecNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file ChitietdekiemtraDAO:" + ex.Message);
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+        }
     }
-
 }

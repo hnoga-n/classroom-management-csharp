@@ -74,24 +74,27 @@ namespace Hybrid.DAO
             }
         }
 
-        /*public void XoaCauTraLoi(string macautraloi)
+        public bool SuaCauTraLoi(CauTraLoi cautraloi)
         {
             try
             {
-                string sql_xoacautraloi = "DELETE FROM cautraloi WHERE macautraloi = @macautraloi";
-                SqlCommand cmd_xoacautraloi = new SqlCommand(sql_xoacautraloi, Ketnoisqlserver.GetConnection());
-                cmd_xoacautraloi.Parameters.AddWithValue("@macautraloi", Guid.Parse(macautraloi));
-                cmd_xoacautraloi.ExecNonQuery();
+                string sql_suacautraloi = "UPDATE cautraloi SET noidung = N'"+cautraloi.Noidung+"',lacautraloidung = @lacautraloidung WHERE macautraloi = @macautraloi";
+                SqlCommand cmd_suacautraloi = new SqlCommand(sql_suacautraloi, Ketnoisqlserver.GetConnection());
+                cmd_suacautraloi.Parameters.AddWithValue("@macautraloi", Guid.Parse(cautraloi.Macautraloi));
+                cmd_suacautraloi.Parameters.AddWithValue("@lacautraloidung", cautraloi.Ladapan);
+                cmd_suacautraloi.ExecNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi xảy ra ở file CautraloiDAO:" + ex.Message);
+                return false;
             }
             finally
             {
                 Ketnoisqlserver.CloseConnection();
             }
-        }*/
+        }
     }
 
 }

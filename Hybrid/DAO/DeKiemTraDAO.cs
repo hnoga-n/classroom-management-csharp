@@ -1,4 +1,5 @@
 ﻿using Hybrid.DTO;
+using ServiceStack.OrmLite;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,6 +43,7 @@ namespace Hybrid.DAO
                     tmp.Thoigiantao = DateTime.Parse(dr["thoigiantao"].ToString());
                     tmp.Thoigianbatdau = DateTime.Parse(dr["thoigianbatdau"].ToString());
                     tmp.Thoigianketthuc = DateTime.Parse(dr["thoigianketthuc"].ToString());
+                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
                     listTmp.Add(tmp);
                 }
                 dr.Close();
@@ -55,6 +57,81 @@ namespace Hybrid.DAO
                 Ketnoisqlserver.CloseConnection();
             }
             return listTmp;
+        }
+
+        public bool ThemDeKiemTra(DeKiemTra dekiemtra)
+        {
+            try
+            {
+                string sql_themdekiemtra = "INSERT INTO dekiemtra(madekiemtra,machuong,tieude,thoigianbatdau,thoigianketthuc,xemdiem,xemdapan,thoigiantao,troncauhoi,dahoanthanh,daxoa) " +
+                    "VALUES (@madekiemtra,@machuong,N'" + dekiemtra.Tieude + "',@thoigianbatdau,@thoigianketthuc,@xemdiem,@xemdapan,@thoigiantao,@troncauhoi,@dahoanthanh,@daxoa)";
+                SqlCommand cmd_themdekiemtra = new SqlCommand(sql_themdekiemtra, Ketnoisqlserver.GetConnection());
+                cmd_themdekiemtra.Parameters.AddWithValue("@madekiemtra", Guid.Parse(dekiemtra.Madekiemtra));
+                cmd_themdekiemtra.Parameters.AddWithValue("@machuong", Guid.Parse(dekiemtra.Machuong));
+                cmd_themdekiemtra.Parameters.AddWithValue("@thoigianbatdau", dekiemtra.Thoigianbatdau);
+                cmd_themdekiemtra.Parameters.AddWithValue("@thoigianketthuc", dekiemtra.Thoigianketthuc);
+                cmd_themdekiemtra.Parameters.AddWithValue("@xemdiem", dekiemtra.Xemdiem);
+                cmd_themdekiemtra.Parameters.AddWithValue("@xemdapan", dekiemtra.Xemdapan);
+                cmd_themdekiemtra.Parameters.AddWithValue("@thoigiantao", dekiemtra.Thoigiantao);
+                cmd_themdekiemtra.Parameters.AddWithValue("@troncauhoi", dekiemtra.Troncauhoi);
+                cmd_themdekiemtra.Parameters.AddWithValue("@dahoanthanh",dekiemtra.Dahoanthanh);
+                cmd_themdekiemtra.Parameters.AddWithValue("@daxoa",dekiemtra.Daxoa);
+                cmd_themdekiemtra.ExecNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file DekiemtraDAO:" + ex.Message);
+                return false;
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+        }
+
+        public bool SuaDeKiemTra(DeKiemTra dekiemtra)
+        {
+            try
+            {
+                string sql_themdekiemtra = "UPDATE dekiemtra SET thoigianbatdau = @thoigianbatdau, thoigianketthuc = @thoigianketthuc WHERE madekiemtra = @madekiemtra";
+                SqlCommand cmd_themdekiemtra = new SqlCommand(sql_themdekiemtra, Ketnoisqlserver.GetConnection());
+                cmd_themdekiemtra.Parameters.AddWithValue("@madekiemtra", Guid.Parse(dekiemtra.Madekiemtra));
+                cmd_themdekiemtra.Parameters.AddWithValue("@thoigianbatdau", dekiemtra.Thoigianbatdau);
+                cmd_themdekiemtra.Parameters.AddWithValue("@thoigianketthuc", dekiemtra.Thoigianketthuc);
+                cmd_themdekiemtra.ExecNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file DekiemtraDAO:" + ex.Message);
+                return false;
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+        }
+
+        public bool XoaDeKiemTra(DeKiemTra dekiemtra)
+        {
+            try
+            {
+                string sql_xoadekiemtra = "UPDATE dekiemtra SET daxoa = 1 WHERE madekiemtra = @madekiemtra";
+                SqlCommand cmd_xoadekiemtra = new SqlCommand(sql_xoadekiemtra, Ketnoisqlserver.GetConnection());
+                cmd_xoadekiemtra.Parameters.AddWithValue("@madekiemtra", Guid.Parse(dekiemtra.Madekiemtra));
+                cmd_xoadekiemtra.ExecNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file DekiemtraDAO:" + ex.Message);
+                return false;
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
         }
     }
 }

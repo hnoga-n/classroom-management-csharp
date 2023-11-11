@@ -27,7 +27,7 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = dektDAO.loadList();
-            list.Sort();
+            //list.Sort();
         }
 
         //public Chuong getChuongWithMaChuong(string machuong)
@@ -49,5 +49,63 @@ namespace Hybrid.BUS
         //    }
         //    return listchuong;
         //}
+
+        public bool ThemDeKiemTra(DeKiemTra dekiemtra)
+        {
+            if( dekiemtra == null ) return false;
+            if(dektDAO.ThemDeKiemTra(dekiemtra))
+            {
+                this.list.Add( dekiemtra );
+                return true;
+            }
+            return false;
+        }
+
+        public bool SuaDeKiemTra(DeKiemTra dkt)
+        {
+            if(dektDAO.SuaDeKiemTra(dkt))
+            {
+                foreach(DeKiemTra d in this.list)
+                {
+                    if(d.Madekiemtra.Equals(dkt.Madekiemtra))
+                    {
+                        d.Thoigianbatdau = dkt.Thoigianbatdau;
+                        d.Thoigianketthuc = dkt.Thoigianketthuc;
+                        break;
+                    }
+                }
+                return true;
+            } else 
+                return false;
+        }
+        public bool XoaDeKiemTra(DeKiemTra dekiemtra)
+        {
+            if (dektDAO.XoaDeKiemTra(dekiemtra))
+            {
+                foreach(DeKiemTra dkt in this.list)
+                {
+                    if(dkt.Madekiemtra.Equals(dekiemtra.Madekiemtra))
+                    {
+                        dkt.Daxoa = 1;
+                        return true;
+                    }
+
+                }
+                return false;
+            }
+            else
+                return false;
+        }
+
+        public ArrayList GetDanhSachDeKiemTraTheoMaChuong(string machuong)
+        {
+            ArrayList rslist = new ArrayList();
+            foreach(DeKiemTra dkt in this.list)
+            {
+                if(dkt.Machuong.Equals(machuong))
+                    rslist.Add( dkt );  
+            }
+            return rslist;
+        } 
     }
 }

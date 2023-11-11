@@ -61,7 +61,7 @@ namespace Hybrid.GUI.Home
             "Bài tập",
             "Bài kiểm tra",
             "Học liệu"});
-            this.comboBox1.Location = new System.Drawing.Point(397, 17);
+            this.comboBox1.Location = new System.Drawing.Point(14, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(193, 32);
             this.comboBox1.TabIndex = 5;
@@ -73,7 +73,7 @@ namespace Hybrid.GUI.Home
             this.lblTimKiem.BackColor = System.Drawing.Color.White;
             this.lblTimKiem.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.lblTimKiem.Location = new System.Drawing.Point(175, 22);
+            this.lblTimKiem.Location = new System.Drawing.Point(235, 23);
             this.lblTimKiem.Name = "lblTimKiem";
             this.lblTimKiem.Size = new System.Drawing.Size(94, 24);
             this.lblTimKiem.TabIndex = 4;
@@ -81,9 +81,9 @@ namespace Hybrid.GUI.Home
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(163, 16);
+            this.txtTimKiem.Location = new System.Drawing.Point(223, 17);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(218, 36);
+            this.txtTimKiem.Size = new System.Drawing.Size(530, 36);
             this.txtTimKiem.StateActive.Border.Color1 = System.Drawing.Color.Black;
             this.txtTimKiem.StateActive.Border.Color2 = System.Drawing.Color.Black;
             this.txtTimKiem.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -101,7 +101,8 @@ namespace Hybrid.GUI.Home
             // 
             // btnTaoChuong
             // 
-            this.btnTaoChuong.Location = new System.Drawing.Point(21, 13);
+            this.btnTaoChuong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTaoChuong.Location = new System.Drawing.Point(768, 13);
             this.btnTaoChuong.Margin = new System.Windows.Forms.Padding(0);
             this.btnTaoChuong.Name = "btnTaoChuong";
             this.btnTaoChuong.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));

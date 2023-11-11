@@ -38,6 +38,7 @@ namespace Hybrid.DAO
                     tmp.Malop = dr["malophoc"].ToString();
                     tmp.Thoigiantao = DateTime.Parse(dr["thoigiantao"].ToString());
                     tmp.Tenchuong = dr["ten"].ToString();
+                    tmp.Daxoa = Convert.ToInt32(dr["daxoa"].ToString());
                     listTmp.Add(tmp);
                 }
                 dr.Close();
@@ -53,20 +54,23 @@ namespace Hybrid.DAO
             return listTmp;
         }
 
-        public void ThemChuong(Chuong chuong)
+        public bool ThemChuong(Chuong chuong)
         {
             try
             {
-                string sql_chuong = "INSERT INTO chuong(machuong,ten,thoigiantao,malophoc) VALUES (@machuong,N'" + chuong.Tenchuong + "',@thoigiantao,@malophoc)";
+                string sql_chuong = "INSERT INTO chuong(machuong,ten,thoigiantao,malophoc,daxoa) VALUES (@machuong,N'" + chuong.Tenchuong + "',@thoigiantao,@malophoc,@daxoa)";
                 SqlCommand cmd_chuong = new SqlCommand(sql_chuong, Ketnoisqlserver.GetConnection());
                 cmd_chuong.Parameters.AddWithValue("@machuong", Guid.Parse(chuong.Machuong));
                 cmd_chuong.Parameters.AddWithValue("@thoigiantao", chuong.Thoigiantao);
+                cmd_chuong.Parameters.AddWithValue("@daxoa", chuong.Daxoa);
                 cmd_chuong.Parameters.AddWithValue("@malophoc", Guid.Parse(chuong.Malop));
                 cmd_chuong.ExecNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi xảy ra ở file ChuongDAO:" + ex.Message);
+                return false;
             }
             finally
             {
@@ -74,18 +78,41 @@ namespace Hybrid.DAO
             }
         }
 
-        public void XoaChuong(string machuong)
+        public bool SuaChuong(Chuong chuong)
         {
             try
             {
-                string sql_chuong = "DELETE FROM chuong WHERE machuong = @machuong";
+                string sql_chuong = "UPDATE chuong SET ten = N'" + chuong.Tenchuong + "' WHERE machuong = @machuong";
                 SqlCommand cmd_chuong = new SqlCommand(sql_chuong, Ketnoisqlserver.GetConnection());
-                cmd_chuong.Parameters.AddWithValue("@machuong", Guid.Parse(machuong));
+                cmd_chuong.Parameters.AddWithValue("@machuong", Guid.Parse(chuong.Machuong));
                 cmd_chuong.ExecNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi xảy ra ở file ChuongDAO:" + ex.Message);
+                return false;
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+        }
+
+        public bool XoaChuong(string machuong)
+        {
+            try
+            {
+                string sql_chuong = "UPDATE chuong SET daxoa = 1 WHERE machuong = @machuong";
+                SqlCommand cmd_chuong = new SqlCommand(sql_chuong, Ketnoisqlserver.GetConnection());
+                cmd_chuong.Parameters.AddWithValue("@machuong", Guid.Parse(machuong));
+                cmd_chuong.ExecNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file ChuongDAO:" + ex.Message);
+                return false;
             }
             finally
             {

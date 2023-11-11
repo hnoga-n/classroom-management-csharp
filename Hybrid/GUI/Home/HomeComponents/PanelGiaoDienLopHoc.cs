@@ -1,4 +1,5 @@
-﻿using Hybrid.DTO;
+﻿using ComponentFactory.Krypton.Toolkit;
+using Hybrid.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,14 @@ namespace Hybrid.GUI.Home.HomeComponents
     public partial class PanelGiaoDienLopHoc : UserControl
     {
         LopHoc lophoc;
-        public PanelGiaoDienLopHoc(LopHoc lophoc)
+        Taikhoan taikhoan;
+        public PanelGiaoDienLopHoc(LopHoc lophoc,Taikhoan tk)
         {
             InitializeComponent();
             this.lophoc = lophoc;
+            this.taikhoan = tk;
             this.lblTenLop.Text = lophoc.Tenlop;
+            this.txtMaLop.Text = lophoc.Malop;
         }
 
         private void addFormtoPanelHomeContainer(object Form)
@@ -40,7 +44,7 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private void btnKhoaHoc_Click(object sender, EventArgs e)
         {
-            addFormtoPanelHomeContainer(new KhoaHocFrm(this.lophoc));
+            addFormtoPanelHomeContainer(new KhoaHocFrm(this.lophoc,taikhoan));
         }
 
         private void btnThanhTich_Click(object sender, EventArgs e)
@@ -52,6 +56,5 @@ namespace Hybrid.GUI.Home.HomeComponents
         {
             addFormtoPanelHomeContainer(new TepFrm());
         }
-
     }
 }

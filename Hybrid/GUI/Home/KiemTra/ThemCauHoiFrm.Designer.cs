@@ -32,10 +32,9 @@
             this.rtbNoiDung = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.rtbGiaiThich = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.btnThemCauHoi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pnlCauTraLoiContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCapNhatCauHoi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // label1
@@ -93,38 +92,10 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Đáp án";
             // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(12, 504);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 28);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Giải thích";
-            // 
-            // rtbGiaiThich
-            // 
-            this.rtbGiaiThich.Location = new System.Drawing.Point(17, 535);
-            this.rtbGiaiThich.MaxLength = 500;
-            this.rtbGiaiThich.Name = "rtbGiaiThich";
-            this.rtbGiaiThich.Size = new System.Drawing.Size(771, 133);
-            this.rtbGiaiThich.StateCommon.Border.Color1 = System.Drawing.Color.Black;
-            this.rtbGiaiThich.StateCommon.Border.Color2 = System.Drawing.Color.Black;
-            this.rtbGiaiThich.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.rtbGiaiThich.StateCommon.Border.Rounding = 5;
-            this.rtbGiaiThich.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rtbGiaiThich.TabIndex = 15;
-            this.rtbGiaiThich.Text = "";
-            // 
             // btnThemCauHoi
             // 
-            this.btnThemCauHoi.Location = new System.Drawing.Point(608, 683);
+            this.btnThemCauHoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemCauHoi.Location = new System.Drawing.Point(613, 526);
             this.btnThemCauHoi.Margin = new System.Windows.Forms.Padding(0);
             this.btnThemCauHoi.Name = "btnThemCauHoi";
             this.btnThemCauHoi.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
@@ -179,17 +150,65 @@
             this.pnlCauTraLoiContainer.TabIndex = 21;
             this.pnlCauTraLoiContainer.WrapContents = false;
             // 
+            // btnCapNhatCauHoi
+            // 
+            this.btnCapNhatCauHoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCapNhatCauHoi.Location = new System.Drawing.Point(613, 526);
+            this.btnCapNhatCauHoi.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCapNhatCauHoi.Name = "btnCapNhatCauHoi";
+            this.btnCapNhatCauHoi.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCapNhatCauHoi.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCapNhatCauHoi.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCapNhatCauHoi.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCapNhatCauHoi.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCapNhatCauHoi.OverrideDefault.Border.Rounding = 5;
+            this.btnCapNhatCauHoi.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCapNhatCauHoi.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCapNhatCauHoi.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCapNhatCauHoi.Size = new System.Drawing.Size(180, 40);
+            this.btnCapNhatCauHoi.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnCapNhatCauHoi.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnCapNhatCauHoi.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnCapNhatCauHoi.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnCapNhatCauHoi.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCapNhatCauHoi.StateCommon.Border.Rounding = 5;
+            this.btnCapNhatCauHoi.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, 2, -1, -1);
+            this.btnCapNhatCauHoi.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnCapNhatCauHoi.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnCapNhatCauHoi.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCapNhatCauHoi.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCapNhatCauHoi.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCapNhatCauHoi.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.btnCapNhatCauHoi.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.btnCapNhatCauHoi.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCapNhatCauHoi.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCapNhatCauHoi.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnCapNhatCauHoi.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCapNhatCauHoi.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnCapNhatCauHoi.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnCapNhatCauHoi.TabIndex = 22;
+            this.btnCapNhatCauHoi.Values.Text = "Cập nhật";
+            this.btnCapNhatCauHoi.Visible = false;
+            this.btnCapNhatCauHoi.Click += new System.EventHandler(this.btnCapNhatCauHoi_Click);
+            // 
             // ThemCauHoiFrm
             // 
             this.AcceptButton = this.btnThemCauHoi;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(802, 733);
+            this.ClientSize = new System.Drawing.Size(802, 575);
+            this.Controls.Add(this.btnCapNhatCauHoi);
             this.Controls.Add(this.pnlCauTraLoiContainer);
             this.Controls.Add(this.btnThemCauHoi);
-            this.Controls.Add(this.rtbGiaiThich);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rtbNoiDung);
@@ -210,9 +229,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox rtbNoiDung;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox rtbGiaiThich;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnThemCauHoi;
         private System.Windows.Forms.FlowLayoutPanel pnlCauTraLoiContainer;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnCapNhatCauHoi;
     }
 }

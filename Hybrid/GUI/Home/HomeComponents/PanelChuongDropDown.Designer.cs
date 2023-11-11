@@ -32,6 +32,7 @@ namespace Hybrid.GUI.Home
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelChuongDropDown));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDemTaiLieuChuong = new System.Windows.Forms.Label();
@@ -47,8 +48,9 @@ namespace Hybrid.GUI.Home
             this.kryptonContextMenuItem3 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem();
             this.lblTenChuong = new System.Windows.Forms.Label();
             this.btnMoRong = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlChuongComponent = new System.Windows.Forms.FlowLayoutPanel();
             this.kryptonContextMenuItems2 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuItems();
+            this.timerHieuUngDropDown = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,6 +141,7 @@ namespace Hybrid.GUI.Home
             this.btnXoa.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnXoa.TabIndex = 13;
             this.btnXoa.Values.Text = "";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -201,6 +204,7 @@ namespace Hybrid.GUI.Home
             this.btnSua.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnSua.TabIndex = 12;
             this.btnSua.Values.Text = "";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -402,23 +406,27 @@ namespace Hybrid.GUI.Home
             this.btnMoRong.Values.Text = "▼";
             this.btnMoRong.Click += new System.EventHandler(this.btnMoRong_Click);
             // 
-            // flowLayoutPanel1
+            // pnlChuongComponent
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 80);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(900, 0);
-            this.flowLayoutPanel1.TabIndex = 2;
-            this.flowLayoutPanel1.WrapContents = false;
+            this.pnlChuongComponent.AutoScroll = true;
+            this.pnlChuongComponent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChuongComponent.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnlChuongComponent.Location = new System.Drawing.Point(0, 80);
+            this.pnlChuongComponent.Name = "pnlChuongComponent";
+            this.pnlChuongComponent.Size = new System.Drawing.Size(900, 0);
+            this.pnlChuongComponent.TabIndex = 2;
+            this.pnlChuongComponent.WrapContents = false;
+            // 
+            // timerHieuUngDropDown
+            // 
+            this.timerHieuUngDropDown.Tick += new System.EventHandler(this.timerHieuUngDropDown_Tick);
             // 
             // PanelChuongDropDown
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.pnlChuongComponent);
             this.Controls.Add(this.panel1);
             this.Name = "PanelChuongDropDown";
             this.Size = new System.Drawing.Size(900, 80);
@@ -437,7 +445,7 @@ namespace Hybrid.GUI.Home
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSua;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnThem;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnMoRong;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel pnlChuongComponent;
         private Label lblDemTaiLieuChuong;
         private KryptonContextMenu menuThem;
         private KryptonContextMenuItems kryptonContextMenuItems1;
@@ -448,10 +456,11 @@ namespace Hybrid.GUI.Home
         private KryptonContextMenuSeparator kryptonContextMenuSeparator1;
         private KryptonContextMenuSeparator kryptonContextMenuSeparator2;
         private Label lblTenChuong;
+        private Timer timerHieuUngDropDown;
 
         public KryptonButton BtnXoa { get => btnXoa; set => btnXoa = value; }
         public KryptonButton BtnThem { get => btnThem; set => btnThem = value; }
-        public FlowLayoutPanel FlowLayoutPanel1 { get => flowLayoutPanel1; set => flowLayoutPanel1 = value; }
+        public FlowLayoutPanel PnlChuongComponent { get => pnlChuongComponent; set => pnlChuongComponent = value; }
         public Label LblDemTaiLieuChuong { get => lblDemTaiLieuChuong; set => lblDemTaiLieuChuong = value; }
     }
 }

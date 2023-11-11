@@ -12,7 +12,7 @@ using Hybrid.GUI;
 using Hybrid.GUI.Danhba;
 using Hybrid.GUI.Home;
 using Hybrid.GUI.Todo;
-using Hybrid.GUI.Lichhoc;
+using Hybrid.GUI.LichHoc;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.DTO;
 using Hybrid.BUS;
@@ -55,7 +55,8 @@ namespace Hybrid
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("machhaotuan@gmail.com");
+            //Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("machhaotuan@gmail.com");
+            Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("tranvihao@gmail.com");
             addFormtoPanelContainer(new HomeFrm(tk));
         }
 

@@ -295,6 +295,7 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
             // 
             // lblNoiDungCauHoi
             // 
+            this.lblNoiDungCauHoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblNoiDungCauHoi.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNoiDungCauHoi.Location = new System.Drawing.Point(98, 24);
             this.lblNoiDungCauHoi.MaximumSize = new System.Drawing.Size(130, 100);
@@ -302,6 +303,7 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
             this.lblNoiDungCauHoi.Size = new System.Drawing.Size(130, 50);
             this.lblNoiDungCauHoi.TabIndex = 23;
             this.lblNoiDungCauHoi.Text = "label1";
+            this.lblNoiDungCauHoi.Click += new System.EventHandler(this.lblNoiDungCauHoi_Click);
             // 
             // ButtonCauHoi
             // 

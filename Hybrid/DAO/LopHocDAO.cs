@@ -53,7 +53,7 @@ namespace Hybrid.DAO
             return listTmp;
         }
 
-        public void ThemLopHoc(LopHoc lophoc)
+        public bool ThemLopHoc(LopHoc lophoc)
         {
             try
             {
@@ -64,14 +64,54 @@ namespace Hybrid.DAO
                 cmd_themlophoc.Parameters.AddWithValue("@trangthai", lophoc.Trangthai);
                 cmd_themlophoc.Parameters.AddWithValue("@magiangvien",Guid.Parse(lophoc.Magiangvien));
                 cmd_themlophoc.ExecNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi xảy ra ở file LophocDAO:" + ex.Message);
+                return false;
             } finally
             {
                 Ketnoisqlserver.CloseConnection();
             }
+        }
+        public ArrayList GetDanhSachTatCaLopHocByMaTaiKhoan(string mataikhoan) 
+        {
+            ArrayList listTmp = new ArrayList();
+            try
+            {
+                string sql_get_all = "select l.* \r\n" +
+                    "from lophoc l join thamgialophoc tg on l.malophoc = tg.malophoc \r\n" +
+                    "join taikhoan tk on tk.matk = tg.mataikhoan\r\n" +
+                    "where tk.matk = @mataikhoan\r\n" +
+                    "UNION\r\n" +
+                    "select lophoc.* \r\n" +
+                    "from lophoc join taikhoan on lophoc.magiangvien = taikhoan.matk\r\n" +
+                    "where taikhoan.matk= @mataikhoan";
+                SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
+                cmd.Parameters.AddWithValue("@mataikhoan",mataikhoan);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    LopHoc tmp = new LopHoc();
+                    tmp.Malop = dr["malophoc"].ToString();
+                    tmp.Mota = dr["mota"].ToString();
+                    tmp.Trangthai = int.Parse(dr["trangthai"].ToString());
+                    tmp.Magiangvien = dr["magiangvien"].ToString();
+                    tmp.Tenlop = dr["ten"].ToString();
+                    listTmp.Add(tmp);
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file LophocDAO:" + ex.Message);
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+            return listTmp;
         }
     }
 }

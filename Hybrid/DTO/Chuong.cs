@@ -15,20 +15,24 @@ namespace Hybrid.DTO
         private string tenchuong;
         private DateTime thoigiantao;
         private string malop;
+        private int daxoa;
 
         public Chuong() { }
-        public Chuong(string machuong,string tenchuong, DateTime thoigiantao, string malop)
+        public Chuong(string machuong,string tenchuong, DateTime thoigiantao, string malop,int daxoa)
         {
             this.machuong = machuong;   
             this.tenchuong = tenchuong;
             this.thoigiantao = thoigiantao;
             this.malop = malop;
+            this.daxoa = daxoa;
         }
 
         public string Machuong { get => machuong; set => machuong = value; }
         public string Tenchuong { get => tenchuong; set => tenchuong = value; }
         public DateTime Thoigiantao { get => thoigiantao; set => thoigiantao = value; }
         public string Malop { get => malop; set => malop = value; }
+        public int Daxoa { get => daxoa; set => daxoa = value; }
+
         public int CompareTo(Object obj)
         {
             Chuong chuong = (Chuong)obj;
