@@ -31,23 +31,9 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblKyTu = new System.Windows.Forms.Label();
             this.rtbCauTraLoi = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.chkLaDapAn = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
-            // 
-            // lblKyTu
-            // 
-            this.lblKyTu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblKyTu.AutoSize = true;
-            this.lblKyTu.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblKyTu.Location = new System.Drawing.Point(3, 15);
-            this.lblKyTu.Name = "lblKyTu";
-            this.lblKyTu.Size = new System.Drawing.Size(27, 28);
-            this.lblKyTu.TabIndex = 9;
-            this.lblKyTu.Text = "A";
             // 
             // rtbCauTraLoi
             // 
@@ -73,6 +59,7 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
             this.chkLaDapAn.Size = new System.Drawing.Size(18, 17);
             this.chkLaDapAn.TabIndex = 27;
             this.chkLaDapAn.UseVisualStyleBackColor = true;
+            //this.chkLaDapAn.CheckedChanged += new System.EventHandler(this.chkLaDapAn_CheckedChanged);
             // 
             // PanelChiTietCauTraLoi
             // 
@@ -80,7 +67,6 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.chkLaDapAn);
             this.Controls.Add(this.rtbCauTraLoi);
-            this.Controls.Add(this.lblKyTu);
             this.Name = "PanelChiTietCauTraLoi";
             this.Size = new System.Drawing.Size(780, 60);
             this.ResumeLayout(false);
@@ -89,12 +75,9 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblKyTu;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox rtbCauTraLoi;
         private CheckBox chkLaDapAn;
 
-        public Label LblKyTu { get => lblKyTu; set => lblKyTu = value; }
         public KryptonRichTextBox RtbCauTraLoi { get => rtbCauTraLoi; set => rtbCauTraLoi = value; }
         public CheckBox ChkLaDapAn { get => chkLaDapAn; set => chkLaDapAn = value; }
     }

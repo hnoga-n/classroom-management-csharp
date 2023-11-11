@@ -1,4 +1,5 @@
 ﻿using Hybrid.DAO;
+using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +26,17 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = thamgiaDAO.loadList();
-            list.Sort();
+            //list.Sort();
+        }
+
+        public bool ThemThamGia(ThamGia thamgia)
+        {
+            if(thamgiaDAO.ThemThamGia(thamgia))
+            {
+                list.Add(thamgia);
+                return true;
+            } else 
+                return false;
         }
     }
 }

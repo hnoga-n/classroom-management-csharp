@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ubiety.Dns.Core.Records.NotUsed;
 
 namespace Hybrid.BUS
 {
@@ -30,6 +31,11 @@ namespace Hybrid.BUS
             list = lopDAO.loadList();
         }
 
+        public ArrayList GetDanhSachTatCaLopHocByMaTaiKhoan(string mataikhoan)
+        {
+            return lopDAO.GetDanhSachTatCaLopHocByMaTaiKhoan(mataikhoan);
+        }
+
         public LopHoc getLophocWithMaLop(string malop)
         {
             LophocComparer comparer = new LophocComparer();
@@ -40,18 +46,14 @@ namespace Hybrid.BUS
             return (LopHoc) list[index];
         }
 
-         
-
         public bool ThemLopHoc(LopHoc lophoc)
         {
-            if (lophoc == null)
+            if (lopDAO.ThemLopHoc(lophoc))
             {
-                MessageBox.Show("Thông tin lớp học không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                this.list.Add(lophoc);
+                return true;
             }
-            this.list.Add(lophoc);
-            lopDAO.ThemLopHoc(lophoc);
-            return true;
+            return false;
         }
         
         public LopHoc GetLopHocByMaLop(string malophoc)

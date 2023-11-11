@@ -28,7 +28,7 @@ namespace Hybrid.GUI.Home
         {
             if (this.homeFrm.PnlGiaoDienLopHocContainer.Controls.Count > 0)
                 this.homeFrm.PnlGiaoDienLopHocContainer.Controls.RemoveAt(0);
-            PanelGiaoDienLopHoc panelGDLH = new PanelGiaoDienLopHoc(this.lophoc);
+            PanelGiaoDienLopHoc panelGDLH = new PanelGiaoDienLopHoc(this.lophoc,homeFrm.Tk);
             this.homeFrm.PnlGiaoDienLopHocContainer.Controls.Add(panelGDLH);
             panelGDLH.Dock = DockStyle.Fill;
         }

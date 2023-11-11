@@ -35,11 +35,22 @@ namespace Hybrid.BUS
             cautlDAO.ThemCauTraLoi(cautraloi);
         }
 
-        /*public void XoaCauTraLoi(CauTraLoi cautraloi)
+        public bool SuaCauTraLoi(CauTraLoi cautraloi)
         {
-            this.list.Remove(cautraloi);
-            cautlDAO.XoaCauTraLoi(cautraloi.Macautraloi);
-        }*/
+            if(cautlDAO.SuaCauTraLoi(cautraloi)) {
+                foreach(CauTraLoi ctl in this.list)
+                {
+                    if(ctl.Macautraloi.Equals(cautraloi.Macautraloi))
+                    {
+                        ctl.Noidung = cautraloi.Noidung;
+                        ctl.Ladapan = cautraloi.Ladapan;
+                        break;
+                    }
+                }
+                return true;
+            } else 
+                return false;
+        }
 
         public ArrayList GetDanhSachCauTraLoiByMaCauHoi(string macauhoi)
         {

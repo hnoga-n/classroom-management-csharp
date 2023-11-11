@@ -23,6 +23,8 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
             HienThiChiTietCauHoi();
         }
 
+        public CauHoi Cauhoi { get => cauhoi; set => cauhoi = value; }
+
         public void HienThiChiTietCauHoi()
         {
             this.lblNoiDung.Text = cauhoi.Noidung;

@@ -18,10 +18,11 @@ namespace Hybrid.DTO
         private int troncauhoi;
         private int dahoanthanh;
         private string machuong;
+        private int daxoa;
 
         public DeKiemTra() { }
 
-        public DeKiemTra(string madekiemtra, string tieude, DateTime thoigiantao, DateTime thoigianbatdau, DateTime thoigianketthuc, int xemdiem, int xemdapan,int troncauhoi, string machuong, int dahoanthanh)
+        public DeKiemTra(string madekiemtra, string tieude, DateTime thoigiantao, DateTime thoigianbatdau, DateTime thoigianketthuc, int xemdiem, int xemdapan,int troncauhoi, string machuong, int dahoanthanh, int daxoa)
         {
             this.madekiemtra = madekiemtra;
             this.tieude = tieude;
@@ -33,6 +34,7 @@ namespace Hybrid.DTO
             this.troncauhoi = troncauhoi;
             this.machuong = machuong;
             this.Dahoanthanh = dahoanthanh;
+            this.daxoa = daxoa;
         }
 
         public string Madekiemtra { get => madekiemtra; set => madekiemtra = value; }
@@ -45,5 +47,6 @@ namespace Hybrid.DTO
         public string Machuong { get => machuong; set => machuong = value; }
         public int Troncauhoi { get => troncauhoi; set => troncauhoi = value; }
         public int Dahoanthanh { get => dahoanthanh; set => dahoanthanh = value; }
+        public int Daxoa { get => daxoa; set => daxoa = value; }
     }
 }

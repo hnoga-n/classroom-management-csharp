@@ -1,4 +1,5 @@
 ﻿using Hybrid.DAO;
+using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +26,26 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = ctdktDAO.loadList();
-            list.Sort();
+            //list.Sort();
+        }
+
+        public void ThemChiTietDeKiemTra(ChiTietDeKiemTra ctdkt)
+        {
+            list.Add(ctdkt);
+            ctdktDAO.ThemChiTietDeKiemTra(ctdkt);
+        }
+
+        public ArrayList GetMaCauHoiByMaDeKiemTra(string madekiemtra)
+        {
+            ArrayList rslist = new ArrayList();
+            foreach(ChiTietDeKiemTra ctdkt in this.list)
+            {
+                if(ctdkt.Madekiemtra.Equals(madekiemtra))
+                {
+                    rslist.Add(ctdkt);
+                }
+            }
+            return rslist;
         }
     }
 }

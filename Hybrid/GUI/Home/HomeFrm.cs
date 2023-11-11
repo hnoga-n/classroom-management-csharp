@@ -31,11 +31,12 @@ namespace Hybrid.GUI.Home
 
         public void HienThiDanhSachLopHoc()
         {
-            foreach(LopHoc lophoc in lophocBUS.GetLopHocByMaGiangVien(tk.Mataikhoan))
+            foreach(LopHoc lophoc in lophocBUS.GetDanhSachTatCaLopHocByMaTaiKhoan(tk.Mataikhoan))
             {
                 ButtonClass btnClass = new ButtonClass(lophoc,this);
                 pnlLopHocContainer.Controls.Add(btnClass);
             }
+
         }
         private void txtTimKiem_Leave(object sender, EventArgs e)
         {
@@ -63,8 +64,13 @@ namespace Hybrid.GUI.Home
 
         private void btnThamGia_Click(object sender, EventArgs e)
         {
-              ThamGiaLopFrm newForm = new ThamGiaLopFrm();
+              ThamGiaLopFrm newForm = new ThamGiaLopFrm(this);
               newForm.ShowDialog();         
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

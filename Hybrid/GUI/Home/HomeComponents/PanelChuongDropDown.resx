@@ -141,6 +141,13 @@
   <metadata name="menuThem.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="btnThem.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAENJREFUOE9jGCjgBsVUA1ehmGpg1EDKwcAbCEpjME3Y8A8oxiYHwyjplOoGEgIw
+        TVQDowZSDga/gaA0RlI6oxJgYAAAXKI0qUPlifwAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="kryptonContextMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -178,11 +185,7 @@
         eHwNRtbMM+ywhD/yn+HsB33P4c8kRP2F6cmZU6CUFxoPoh/Um/j5AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnThem.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAENJREFUOE9jGCjgBsVUA1ehmGpg1EDKwcAbCEpjME3Y8A8oxiYHwyjplOoGEgIw
-        TVQDowZSDga/gaA0RlI6oxJgYAAAXKI0qUPlifwAAAAASUVORK5CYII=
-</value>
-  </data>
+  <metadata name="timerHieuUngDropDown.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>151, 17</value>
+  </metadata>
 </root>

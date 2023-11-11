@@ -30,6 +30,7 @@ namespace Hybrid.GUI.Home.HomeComponents
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ButtonBaiKT));
             this.btnXoa = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSua = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -37,6 +38,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblTieuDeBKT = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.timerCapNhatTrangThai = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,11 +166,12 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnSua.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnSua.TabIndex = 19;
             this.btnSua.Values.Text = "";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // lblChiTietBKT
             // 
             this.lblChiTietBKT.BackColor = System.Drawing.Color.White;
-            this.lblChiTietBKT.Location = new System.Drawing.Point(117, 66);
+            this.lblChiTietBKT.Location = new System.Drawing.Point(117, 56);
             this.lblChiTietBKT.Name = "lblChiTietBKT";
             this.lblChiTietBKT.Size = new System.Drawing.Size(162, 25);
             this.lblChiTietBKT.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
@@ -234,6 +237,10 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.kryptonButton1.TabIndex = 15;
             this.kryptonButton1.Values.Text = "";
             // 
+            // timerCapNhatTrangThai
+            // 
+            this.timerCapNhatTrangThai.Tick += new System.EventHandler(this.timerCapNhatTrangThai_Tick);
+            // 
             // ButtonBaiKT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -261,6 +268,7 @@ namespace Hybrid.GUI.Home.HomeComponents
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTieuDeBKT;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
+        private System.Windows.Forms.Timer timerCapNhatTrangThai;
 
         public KryptonButton BtnXoa { get => btnXoa; set => btnXoa = value; }
     }

@@ -38,6 +38,7 @@
             this.btnKhoaHoc = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnChat = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pnlHomeContainer = new System.Windows.Forms.Panel();
+            this.txtMaLop = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
             this.kryptonPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).BeginInit();
@@ -46,6 +47,7 @@
             // 
             // kryptonPanel2
             // 
+            this.kryptonPanel2.Controls.Add(this.txtMaLop);
             this.kryptonPanel2.Controls.Add(this.lblTenLop);
             this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel2.Location = new System.Drawing.Point(0, 0);
@@ -344,6 +346,15 @@
             this.pnlHomeContainer.Size = new System.Drawing.Size(935, 700);
             this.pnlHomeContainer.TabIndex = 4;
             // 
+            // txtMaLop
+            // 
+            this.txtMaLop.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaLop.Location = new System.Drawing.Point(309, 11);
+            this.txtMaLop.Name = "txtMaLop";
+            this.txtMaLop.ReadOnly = true;
+            this.txtMaLop.Size = new System.Drawing.Size(430, 32);
+            this.txtMaLop.TabIndex = 9;
+            // 
             // PanelGiaoDienLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -373,5 +384,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnKhoaHoc;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnChat;
         private System.Windows.Forms.Panel pnlHomeContainer;
+        private System.Windows.Forms.TextBox txtMaLop;
     }
 }

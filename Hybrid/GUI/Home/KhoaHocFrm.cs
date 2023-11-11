@@ -15,39 +15,33 @@ namespace Hybrid.GUI.Home
     public partial class KhoaHocFrm : Form
     {
         LopHoc lophoc;
+        Taikhoan taikhoan;
         ChuongBUS chuongBUS = new ChuongBUS();
 
         public LopHoc Lophoc { get => lophoc; set => lophoc = value; }
         public ChuongBUS ChuongBUS { get => chuongBUS; set => chuongBUS = value; }
+        public Taikhoan Taikhoan { get => taikhoan; set => taikhoan = value; }
 
-        public KhoaHocFrm(LopHoc lophoc)
+        public KhoaHocFrm(LopHoc lophoc, Taikhoan taikhoan)
         {
             InitializeComponent();
             this.lophoc = lophoc;
+            this.taikhoan = taikhoan;
             HienThiDanhSachChuong();
+            if(!lophoc.Magiangvien.Equals(taikhoan.Mataikhoan))
+                btnTaoChuong.Visible = false;
         }
 
         public void HienThiDanhSachChuong()
         {
-            foreach(Chuong chuong in chuongBUS.getChuongWithMaLop(lophoc.Malop))
+            this.pnlChuongContainer.Controls.Clear();
+            foreach (Chuong chuong in chuongBUS.getChuongWithMaLop(lophoc.Malop).Cast<Chuong>().OrderBy(item => item.Thoigiantao))
             {
-                PanelChuongDropDown pnlChuong = new PanelChuongDropDown(chuong);
-                pnlChuong.BtnXoa.Click += new EventHandler((s, e) =>
+                if(chuong.Daxoa == 0)
                 {
-                    DialogResult ds = MessageBox.Show("Xác nhận xóa chương?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (ds == DialogResult.Yes)
-                    {
-                        if (chuongBUS.XoaChuong(chuong))
-                        {
-                            this.pnlChuongContainer.Controls.Remove(this);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Xóa chương thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                });
-                this.PnlChuongContainer.Controls.Add(pnlChuong);
+                    PanelChuongDropDown pnlChuong = new PanelChuongDropDown(this,chuong);
+                    this.PnlChuongContainer.Controls.Add(pnlChuong);
+                }
             }
         }
 

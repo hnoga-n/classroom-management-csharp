@@ -51,7 +51,7 @@ namespace Hybrid.GUI.Home
             this.btnLopHoc.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnLopHoc.Size = new System.Drawing.Size(380, 80);
+            this.btnLopHoc.Size = new System.Drawing.Size(360, 80);
             this.btnLopHoc.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnLopHoc.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btnLopHoc.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -118,7 +118,7 @@ namespace Hybrid.GUI.Home
             this.Controls.Add(this.btnLopHoc);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ButtonClass";
-            this.Size = new System.Drawing.Size(380, 80);
+            this.Size = new System.Drawing.Size(360, 80);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

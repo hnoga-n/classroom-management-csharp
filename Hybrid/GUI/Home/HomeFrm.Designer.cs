@@ -61,7 +61,7 @@ namespace Hybrid.GUI.Home
             this.pnlLopHocContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.pnlLopHocContainer.Location = new System.Drawing.Point(0, 155);
             this.pnlLopHocContainer.Name = "pnlLopHocContainer";
-            this.pnlLopHocContainer.Padding = new System.Windows.Forms.Padding(7, 7, 7, 0);
+            this.pnlLopHocContainer.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.pnlLopHocContainer.Size = new System.Drawing.Size(400, 635);
             this.pnlLopHocContainer.TabIndex = 4;
             this.pnlLopHocContainer.WrapContents = false;
@@ -160,6 +160,7 @@ namespace Hybrid.GUI.Home
             this.txtTimKiem.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTimKiem.TabIndex = 2;
             this.txtTimKiem.Text = "Tìm kiếm";
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             this.txtTimKiem.Enter += new System.EventHandler(this.txtTimKiem_Enter);
             this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);
             // 
@@ -228,6 +229,7 @@ namespace Hybrid.GUI.Home
             // 
             // pnlGiaoDienLopHocContainer
             // 
+            this.pnlGiaoDienLopHocContainer.BackColor = System.Drawing.Color.White;
             this.pnlGiaoDienLopHocContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGiaoDienLopHocContainer.Location = new System.Drawing.Point(400, 0);
             this.pnlGiaoDienLopHocContainer.Name = "pnlGiaoDienLopHocContainer";
