@@ -12,11 +12,9 @@ namespace Hybrid.DAO
 {
     public class NhomChatDAO
     {
-        private ArrayList list;
 
         public NhomChatDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()
@@ -34,7 +32,7 @@ namespace Hybrid.DAO
                     NhomChat tmp = new NhomChat();
                     tmp.Manhomchat = dr["manhomchat"].ToString();
                     tmp.Malop = dr["malophoc"].ToString();
-                    tmp.Mota = dr["ten"].ToString();
+                    tmp.Tennhomchat = dr["ten"].ToString();
                     listTmp.Add(tmp);
                 }
                 dr.Close();

@@ -12,11 +12,9 @@ namespace Hybrid.DAO
 {
     public class HocLieuDAO
     {
-        private ArrayList list;
 
         public HocLieuDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()
@@ -36,6 +34,7 @@ namespace Hybrid.DAO
                     tmp.Machuong = dr["machuong"].ToString();
                     tmp.Tieude = dr["tieude"].ToString();
                     tmp.Noidung= dr["noidung"].ToString();
+                    tmp.Daxoa=  Convert.ToInt32(dr["noidung"].ToString());
                     listTmp.Add(tmp);
                 }
                 dr.Close();

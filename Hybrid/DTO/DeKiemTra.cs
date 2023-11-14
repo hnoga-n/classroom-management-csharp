@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hybrid.Comparer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hybrid.DTO
 {
-    public class DeKiemTra
+    public class DeKiemTra : IComparable
     {
         private string madekiemtra;
         private string tieude;
@@ -16,13 +17,12 @@ namespace Hybrid.DTO
         private int xemdiem;
         private int xemdapan;
         private int troncauhoi;
-        private int dahoanthanh;
         private string machuong;
         private int daxoa;
 
         public DeKiemTra() { }
 
-        public DeKiemTra(string madekiemtra, string tieude, DateTime thoigiantao, DateTime thoigianbatdau, DateTime thoigianketthuc, int xemdiem, int xemdapan,int troncauhoi, string machuong, int dahoanthanh, int daxoa)
+        public DeKiemTra(string madekiemtra, string tieude, DateTime thoigiantao, DateTime thoigianbatdau, DateTime thoigianketthuc, int xemdiem, int xemdapan, int troncauhoi, string machuong, int daxoa)
         {
             this.madekiemtra = madekiemtra;
             this.tieude = tieude;
@@ -33,8 +33,7 @@ namespace Hybrid.DTO
             this.xemdapan = xemdapan;
             this.troncauhoi = troncauhoi;
             this.machuong = machuong;
-            this.Dahoanthanh = dahoanthanh;
-            this.daxoa = daxoa;
+            Daxoa = daxoa;
         }
 
         public string Madekiemtra { get => madekiemtra; set => madekiemtra = value; }
@@ -46,7 +45,23 @@ namespace Hybrid.DTO
         public int Xemdapan { get => xemdapan; set => xemdapan = value; }
         public string Machuong { get => machuong; set => machuong = value; }
         public int Troncauhoi { get => troncauhoi; set => troncauhoi = value; }
-        public int Dahoanthanh { get => dahoanthanh; set => dahoanthanh = value; }
         public int Daxoa { get => daxoa; set => daxoa = value; }
+
+        public int CompareTo(Object obj)
+        {
+            DeKiemTra chuong = (DeKiemTra)obj;
+            return this.machuong.CompareTo(chuong.machuong);
+        }
+        public int CompareTo(DeKiemTra c1, DekiemtraComparer.ComparisonType type)
+        {
+            switch (type)
+            {
+                case DekiemtraComparer.ComparisonType.machuong:
+                    return this.machuong.CompareTo(c1.machuong);
+                case DekiemtraComparer.ComparisonType.madekiemtra:
+                    return this.madekiemtra.CompareTo(c1.madekiemtra);
+            }
+            return 0;
+        }
     }
 }

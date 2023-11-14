@@ -9,18 +9,18 @@ namespace Hybrid.DTO
     public class NhomChat
     {
         private string manhomchat;
-        private string mota;
         private string malop;
+        private string ten;
 
-        public NhomChat(string manhomchat="", string mota = "", string malop = "")
+        public NhomChat(string manhomchat="", string ten = "", string malop = "")
         {
             this.manhomchat = manhomchat;
-            this.mota = mota;
+            this.ten = ten;
             this.malop = malop;
         }
 
         public string Manhomchat { get => manhomchat; set => manhomchat = value; }
-        public string Mota { get => mota; set => mota = value; }
+        public string Tennhomchat { get => ten; set => ten = value; }
         public string Malop { get => malop; set => malop = value; }
     }
 }

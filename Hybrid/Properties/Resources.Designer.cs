@@ -63,6 +63,16 @@ namespace Hybrid.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Animation___1699327889806 {
+            get {
+                object obj = ResourceManager.GetObject("Animation___1699327889806", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_back_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8_back_30", resourceCulture);
@@ -176,6 +186,16 @@ namespace Hybrid.Properties {
         internal static System.Drawing.Bitmap icons8_search_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8_search_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sort_down_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_sort_down_30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

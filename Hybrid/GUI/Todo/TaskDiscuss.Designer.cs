@@ -36,6 +36,7 @@
             this.lblDiscussTitle = new System.Windows.Forms.Label();
             this.pictureBoxDiscuss = new System.Windows.Forms.PictureBox();
             this.btnDoDicuss = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lblClass = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiscuss)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             this.kryptonButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonButton2.Location = new System.Drawing.Point(0, 0);
             this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(923, 80);
+            this.kryptonButton2.Size = new System.Drawing.Size(1000, 80);
             this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton2.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.kryptonButton2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -66,6 +67,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblClass);
             this.panel1.Controls.Add(this.lblDiscuss);
             this.panel1.Controls.Add(this.lblDeadline);
             this.panel1.Location = new System.Drawing.Point(214, 37);
@@ -88,9 +90,9 @@
             this.lblDeadline.AutoSize = true;
             this.lblDeadline.Location = new System.Drawing.Point(92, 6);
             this.lblDeadline.Name = "lblDeadline";
-            this.lblDeadline.Size = new System.Drawing.Size(301, 16);
+            this.lblDeadline.Size = new System.Drawing.Size(167, 16);
             this.lblDeadline.TabIndex = 4;
-            this.lblDeadline.Text = "23:23 03/03/2024 Hạn chót | Công nghệ phần mềm";
+            this.lblDeadline.Text = "23:23 03/03/2024 Hạn chót |";
             // 
             // lblDiscussTitle
             // 
@@ -118,8 +120,10 @@
             // 
             // btnDoDicuss
             // 
-            this.btnDoDicuss.Location = new System.Drawing.Point(778, 24);
+            this.btnDoDicuss.Location = new System.Drawing.Point(755, 24);
             this.btnDoDicuss.Name = "btnDoDicuss";
+            this.btnDoDicuss.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnDoDicuss.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnDoDicuss.Size = new System.Drawing.Size(113, 35);
             this.btnDoDicuss.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnDoDicuss.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
@@ -132,6 +136,15 @@
             this.btnDoDicuss.TabIndex = 12;
             this.btnDoDicuss.Values.Text = "Thảo luận";
             // 
+            // lblClass
+            // 
+            this.lblClass.AutoSize = true;
+            this.lblClass.Location = new System.Drawing.Point(265, 6);
+            this.lblClass.Name = "lblClass";
+            this.lblClass.Size = new System.Drawing.Size(138, 16);
+            this.lblClass.TabIndex = 5;
+            this.lblClass.Text = "Công nghệ phần mềm";
+            // 
             // TaskDiscuss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -143,7 +156,7 @@
             this.Controls.Add(this.kryptonButton2);
             this.Controls.Add(this.kryptonButton1);
             this.Name = "TaskDiscuss";
-            this.Size = new System.Drawing.Size(923, 80);
+            this.Size = new System.Drawing.Size(1000, 80);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiscuss)).EndInit();
@@ -162,5 +175,6 @@
         private System.Windows.Forms.Label lblDiscussTitle;
         private System.Windows.Forms.PictureBox pictureBoxDiscuss;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnDoDicuss;
+        private System.Windows.Forms.Label lblClass;
     }
 }

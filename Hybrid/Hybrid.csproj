@@ -193,7 +193,12 @@
     <Compile Include="BUS\ThamGiaBUS.cs" />
     <Compile Include="BUS\TinNhanBanBeBUS.cs" />
     <Compile Include="BUS\TinNhanNhomChatBUS.cs" />
+    <Compile Include="Comparer\BailambaitapComparer.cs" />
+    <Compile Include="Comparer\BailamkiemtraComparer.cs" />
+    <Compile Include="Comparer\CauhoiComparer.cs" />
+    <Compile Include="Comparer\CautraloiComparer.cs" />
     <Compile Include="Comparer\ChuongComparer.cs" />
+    <Compile Include="Comparer\DekiemtraComparer.cs" />
     <Compile Include="Comparer\LophocComparer.cs" />
     <Compile Include="DAO\BailambaitapDAO.cs" />
     <Compile Include="DAO\BailamKiemtraDAO.cs" />
@@ -220,7 +225,6 @@
     <Compile Include="DTO\BaiLamBaiTap.cs" />
     <Compile Include="DTO\BaiLamKiemTra.cs" />
     <Compile Include="DTO\BaiTap.cs" />
-    <Compile Include="DTO\BanbeDTO.cs" />
     <Compile Include="DTO\CauHoi.cs" />
     <Compile Include="DTO\CauTraLoi.cs" />
     <Compile Include="DTO\ChiTietBaiLamKiemTra.cs" />
@@ -288,11 +292,41 @@
       <DependentUpon>Chuanop.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Class1.cs" />
+    <Compile Include="GUI\Danhba\Banbe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\Banbe.designer.cs">
+      <DependentUpon>Banbe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\BanbeCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\BanbeCard.designer.cs">
+      <DependentUpon>BanbeCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Danhba\DanhbaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Danhba\DanhbaFrm.Designer.cs">
       <DependentUpon>DanhbaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\Lophoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\Lophoc.designer.cs">
+      <DependentUpon>Lophoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\LophocCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\LophocCard.designer.cs">
+      <DependentUpon>LophocCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\ThanhvienCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\ThanhvienCard.designer.cs">
+      <DependentUpon>ThanhvienCard.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\ChatFrm.cs">
       <SubType>Form</SubType>
@@ -384,6 +418,24 @@
     <Compile Include="GUI\Home\KiemTra\ThemCauHoiFrm.Designer.cs">
       <DependentUpon>ThemCauHoiFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Home\HomeComponents\CauhoiNavigate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\CauhoiNavigate.designer.cs">
+      <DependentUpon>CauhoiNavigate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\CauhoiPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\CauhoiPanel.designer.cs">
+      <DependentUpon>CauhoiPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\LamKiemTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\LamKiemTra.designer.cs">
+      <DependentUpon>LamKiemTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home\TepFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -420,51 +472,59 @@
     <Compile Include="GUI\Lichhoc\Calendar.Designer.cs">
       <DependentUpon>Calendar.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Todo\EmptyTodo.cs" />
-    <Compile Include="GUI\Todo\EmptyTodo.Designer.cs">
-      <DependentUpon>EmptyTodo.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Todo\TaskDiscuss.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskDiscuss.Designer.cs">
+    <Compile Include="GUI\Todo\TaskDiscuss.designer.cs">
       <DependentUpon>TaskDiscuss.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Todo\TaskDoneButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskDoneButton.Designer.cs">
+    <Compile Include="GUI\Todo\TaskDoneButton.designer.cs">
       <DependentUpon>TaskDoneButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskEmpty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskEmpty.designer.cs">
+      <DependentUpon>TaskEmpty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskExam.designer.cs">
+      <DependentUpon>TaskExam.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Todo\TaskHomework.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskHomework.Designer.cs">
+    <Compile Include="GUI\Todo\TaskHomework.designer.cs">
       <DependentUpon>TaskHomework.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskKiemtra.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskKiemtra.Designer.cs">
-      <DependentUpon>TaskKiemtra.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Todo\TaskList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskList.Designer.cs">
+    <Compile Include="GUI\Todo\TaskList.designer.cs">
       <DependentUpon>TaskList.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Todo\TaskNotDoneButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TaskNotDoneButton.Designer.cs">
+    <Compile Include="GUI\Todo\TaskNotDoneButton.designer.cs">
       <DependentUpon>TaskNotDoneButton.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Todo\TodoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Todo\TodoFrm.Designer.cs">
+    <Compile Include="GUI\Todo\TodoFrm.designer.cs">
       <DependentUpon>TodoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Utilities\loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Utilities\loading.Designer.cs">
+      <DependentUpon>loading.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -492,8 +552,23 @@
     <EmbeddedResource Include="GUI\Baitap\Hocvien\Chuanop.resx">
       <DependentUpon>Chuanop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\Banbe.resx">
+      <DependentUpon>Banbe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\BanbeCard.resx">
+      <DependentUpon>BanbeCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\DanhbaFrm.resx">
       <DependentUpon>DanhbaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\Lophoc.resx">
+      <DependentUpon>Lophoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\LophocCard.resx">
+      <DependentUpon>LophocCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\ThanhvienCard.resx">
+      <DependentUpon>ThanhvienCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ChatFrm.resx">
       <DependentUpon>ChatFrm.cs</DependentUpon>
@@ -540,6 +615,15 @@
     <EmbeddedResource Include="GUI\Home\KiemTra\ThemCauHoiFrm.resx">
       <DependentUpon>ThemCauHoiFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\CauhoiNavigate.resx">
+      <DependentUpon>CauhoiNavigate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\CauhoiPanel.resx">
+      <DependentUpon>CauhoiPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\LamKiemTra.resx">
+      <DependentUpon>LamKiemTra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\TepFrm.resx">
       <DependentUpon>TepFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -564,11 +648,14 @@
     <EmbeddedResource Include="GUI\Todo\TaskDoneButton.resx">
       <DependentUpon>TaskDoneButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskEmpty.resx">
+      <DependentUpon>TaskEmpty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskExam.resx">
+      <DependentUpon>TaskExam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Todo\TaskHomework.resx">
       <DependentUpon>TaskHomework.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskKiemtra.resx">
-      <DependentUpon>TaskKiemtra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Todo\TaskList.resx">
       <DependentUpon>TaskList.cs</DependentUpon>
@@ -578,6 +665,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Todo\TodoFrm.resx">
       <DependentUpon>TodoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Utilities\loading.resx">
+      <DependentUpon>loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -604,6 +694,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Animation - 1699327889806.gif" />
+    <None Include="Resources\icons8-sort-down-30.png" />
     <None Include="icon\icons8-calendar-25 %281%29.png" />
     <None Include="icon\icons8-user-25.png" />
     <None Include="icon\icons8-note-book-25.png" />
@@ -614,6 +706,7 @@
     <None Include="icon\icons8-macos-minimize-30b.png" />
     <None Include="icon\icons8-home-25.png" />
     <Content Include="database\Hybrid_query.sql" />
+    <Content Include="icon\Animation - 1699327889806.gif" />
     <Content Include="icon\yo yo ma meme.png" />
   </ItemGroup>
   <ItemGroup>

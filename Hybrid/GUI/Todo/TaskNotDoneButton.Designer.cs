@@ -28,35 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnChuaxuly = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.sangclockPic = new System.Windows.Forms.PictureBox();
             this.lblNotDone = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sangclockPic)).BeginInit();
             this.SuspendLayout();
             // 
-            // kryptonButton2
+            // btnChuaxuly
             // 
-            this.kryptonButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonButton2.Location = new System.Drawing.Point(0, 0);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(284, 74);
-            this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
-            this.kryptonButton2.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.kryptonButton2.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
-            this.kryptonButton2.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.kryptonButton2.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            this.kryptonButton2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto Medium", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButton2.StateCommon.Content.ShortText.Image = global::Hybrid.Properties.Resources.icons8_done_30;
-            this.kryptonButton2.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonButton2.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonButton2.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.kryptonButton2.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
-            this.kryptonButton2.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.kryptonButton2.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btnChuaxuly.Location = new System.Drawing.Point(0, 0);
+            this.btnChuaxuly.Name = "btnChuaxuly";
+            this.btnChuaxuly.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.Control;
+            this.btnChuaxuly.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnChuaxuly.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnChuaxuly.OverrideDefault.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnChuaxuly.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton2.TabIndex = 6;
-            this.kryptonButton2.Values.Text = "";
+            this.btnChuaxuly.Size = new System.Drawing.Size(284, 74);
+            this.btnChuaxuly.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
+            this.btnChuaxuly.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnChuaxuly.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
+            this.btnChuaxuly.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnChuaxuly.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
+            this.btnChuaxuly.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto Medium", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuaxuly.StateCommon.Content.ShortText.Image = global::Hybrid.Properties.Resources.icons8_done_30;
+            this.btnChuaxuly.StateCommon.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.btnChuaxuly.StateCommon.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.btnChuaxuly.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnChuaxuly.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnChuaxuly.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnChuaxuly.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnChuaxuly.TabIndex = 6;
+            this.btnChuaxuly.Values.Text = "";
             // 
             // sangclockPic
             // 
@@ -79,6 +85,8 @@
             this.lblNotDone.TabIndex = 10;
             this.lblNotDone.Text = "Chưa xử lý";
             this.lblNotDone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNotDone.MouseEnter += new System.EventHandler(this.lblNotDone_MouseEnter);
+            this.lblNotDone.MouseLeave += new System.EventHandler(this.lblNotDone_MouseLeave);
             // 
             // TaskNotDoneButton
             // 
@@ -86,7 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblNotDone);
             this.Controls.Add(this.sangclockPic);
-            this.Controls.Add(this.kryptonButton2);
+            this.Controls.Add(this.btnChuaxuly);
             this.Name = "TaskNotDoneButton";
             this.Size = new System.Drawing.Size(284, 74);
             ((System.ComponentModel.ISupportInitialize)(this.sangclockPic)).EndInit();
@@ -97,7 +105,7 @@
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnChuaxuly;
         private System.Windows.Forms.PictureBox sangclockPic;
         private System.Windows.Forms.Label lblNotDone;
     }

@@ -280,7 +280,7 @@ namespace Hybrid.GUI.Home.KiemTra
             DialogResult dr = MessageBox.Show("Vui lòng kiểm tra kĩ các thông tin trước khi đăng! Sau khi đăng, bài kiểm tra sẽ thông thể chỉnh sửa ngoại trừ thời gian bắt đầu và thời gian kết thúc.\n\nXác nhận tạo bài kiểm tra ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dr == DialogResult.Yes)
             {
-                DeKiemTra dekiemtra = new DeKiemTra(Guid.NewGuid().ToString(),txtTieuDeBaiKT.Text,DateTime.Now,dtpThoiGianBatDau.Value,dtpThoiGianKetThuc.Value,chkCongKhaiDiem.Checked ? 1 : 0,chkCongKhaiDapAn.Checked ? 1 : 0,chkDaoCauHoi.Checked ? 1 : 0,chuong.Machuong,0,0);
+                DeKiemTra dekiemtra = new DeKiemTra(Guid.NewGuid().ToString(),txtTieuDeBaiKT.Text,DateTime.Now,dtpThoiGianBatDau.Value,dtpThoiGianKetThuc.Value,chkCongKhaiDiem.Checked ? 1 : 0,chkCongKhaiDapAn.Checked ? 1 : 0,chkDaoCauHoi.Checked ? 1 : 0,chuong.Machuong,0);
                 if(dekiemtraBUS.ThemDeKiemTra(dekiemtra))
                 {
                     int thutu = 1;
