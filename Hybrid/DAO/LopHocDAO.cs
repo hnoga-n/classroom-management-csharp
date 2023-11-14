@@ -13,12 +13,8 @@ namespace Hybrid.DAO
 {
     public class LopHocDAO
     {
-        private ArrayList list;
-
         public LopHocDAO()
         {
-            list = loadList();
-
         }
 
         public ArrayList loadList()
@@ -35,9 +31,9 @@ namespace Hybrid.DAO
                 {
                     LopHoc tmp = new LopHoc();
                     tmp.Malop = dr["malophoc"].ToString();
-                    tmp.Mota = dr["mota"].ToString();
-                    tmp.Trangthai = int.Parse(dr["trangthai"].ToString());
                     tmp.Magiangvien = dr["magiangvien"].ToString();
+                    tmp.Mota = dr["mota"].ToString();
+                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
                     tmp.Tenlop = dr["ten"].ToString();
                     listTmp.Add(tmp);
                 }
@@ -57,11 +53,11 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_themlophoc = "INSERT INTO lophoc(malophoc,ten,mota,trangthai,magiangvien) VALUES (@malophoc,N'"+ lophoc.Tenlop + "',@mota,@trangthai,@magiangvien)";
+                string sql_themlophoc = "INSERT INTO lophoc(malophoc,ten,mota,daxoa,magiangvien) VALUES (@malophoc,N'"+ lophoc.Tenlop + "',@mota,@daxoa,@magiangvien)";
                 SqlCommand cmd_themlophoc = new SqlCommand(sql_themlophoc, Ketnoisqlserver.GetConnection());
                 cmd_themlophoc.Parameters.AddWithValue("@malophoc", lophoc.Malop);
                 cmd_themlophoc.Parameters.AddWithValue("@mota", lophoc.Mota);
-                cmd_themlophoc.Parameters.AddWithValue("@trangthai", lophoc.Trangthai);
+                cmd_themlophoc.Parameters.AddWithValue("@daxoa", lophoc.Daxoa);
                 cmd_themlophoc.Parameters.AddWithValue("@magiangvien",Guid.Parse(lophoc.Magiangvien));
                 cmd_themlophoc.ExecNonQuery();
                 return true;
@@ -82,12 +78,12 @@ namespace Hybrid.DAO
             {
                 string sql_get_all = "select l.* \r\n" +
                     "from lophoc l join thamgialophoc tg on l.malophoc = tg.malophoc \r\n" +
-                    "join taikhoan tk on tk.matk = tg.mataikhoan\r\n" +
-                    "where tk.matk = @mataikhoan\r\n" +
+                    "join taikhoan tk on tk.mataikhoan = tg.mataikhoan\r\n" +
+                    "where tk.mataikhoan = @mataikhoan\r\n" +
                     "UNION\r\n" +
                     "select lophoc.* \r\n" +
-                    "from lophoc join taikhoan on lophoc.magiangvien = taikhoan.matk\r\n" +
-                    "where taikhoan.matk= @mataikhoan";
+                    "from lophoc join taikhoan on lophoc.magiangvien = taikhoan.mataikhoan\r\n" +
+                    "where taikhoan.mataikhoan= @mataikhoan";
                 SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
                 cmd.Parameters.AddWithValue("@mataikhoan",mataikhoan);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -96,7 +92,7 @@ namespace Hybrid.DAO
                     LopHoc tmp = new LopHoc();
                     tmp.Malop = dr["malophoc"].ToString();
                     tmp.Mota = dr["mota"].ToString();
-                    tmp.Trangthai = int.Parse(dr["trangthai"].ToString());
+                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
                     tmp.Magiangvien = dr["magiangvien"].ToString();
                     tmp.Tenlop = dr["ten"].ToString();
                     listTmp.Add(tmp);

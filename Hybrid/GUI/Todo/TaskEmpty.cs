@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Hybrid.GUI.Todo
 {
-    public partial class TaskKiemtra : UserControl
+    public partial class TaskEmpty : UserControl
     {
-        public TaskKiemtra()
+        public TaskEmpty()
         {
             InitializeComponent();
+        }
+        public TaskEmpty(string title, string body)
+        {
+            InitializeComponent();
+            this.lblTitle.Text = title;
+            this.body.Text = body;
         }
     }
 }

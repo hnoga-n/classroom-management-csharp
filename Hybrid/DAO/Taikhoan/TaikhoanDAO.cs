@@ -16,7 +16,7 @@ namespace Hybrid.DAO
             List<Taikhoan> danhSachTaiKhoan = new List<Taikhoan>();
             using (SqlConnection connection = Ketnoisqlserver.GetConnection())
             {
-                string sqlQuery = "SELECT matk, hoten, email, matkhau, sodienthoai, anhdaidien, manhomquyen FROM dbo.taikhoan";
+                string sqlQuery = "SELECT * FROM dbo.taikhoan";
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -25,13 +25,14 @@ namespace Hybrid.DAO
                         {
                             Taikhoan taiKhoan = new Taikhoan
                             {
-                                Mataikhoan = reader["matk"].ToString(),
+                                Mataikhoan = reader["mataikhoan"].ToString(),
+                                Manhomquyen = Convert.ToInt32(reader["manhomquyen"]),
                                 Hoten = reader["hoten"].ToString(),
                                 Email = reader["email"].ToString(),
                                 Matkhau = reader["matkhau"].ToString(),
                                 Sodienthoai = reader["sodienthoai"].ToString(),
                                 Anhdaidien = reader["anhdaidien"].ToString(),
-                                Manhomquyen = Convert.ToInt32(reader["manhomquyen"])
+                                Daxoa = Convert.ToInt32(reader["daxoa"].ToString())
                             };
                             danhSachTaiKhoan.Add(taiKhoan);
                         }

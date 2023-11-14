@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Hybrid.BUS
 {
@@ -27,6 +28,20 @@ namespace Hybrid.BUS
             list = blktDAO.loadList();
             list.Sort();
         }
+        public void addChiTietBaiLam(ArrayList chitietbailam)
+        {
+            try
+            {
+                blktDAO.addChiTietBaiLamKiemTra(chitietbailam);
+                list.Add(chitietbailam);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file chitietbailamkiemtraBUS:" + ex.Message);
+                return;
+            }
+        }
     }
+
 
 }

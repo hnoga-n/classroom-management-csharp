@@ -13,11 +13,9 @@ namespace Hybrid.DAO
 {
     public class DeKiemTraDAO
     {
-        private ArrayList list;
 
         public DeKiemTraDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()
@@ -39,7 +37,6 @@ namespace Hybrid.DAO
                     tmp.Xemdiem = int.Parse(dr["xemdiem"].ToString());
                     tmp.Xemdapan = int.Parse(dr["xemdapan"].ToString());
                     tmp.Troncauhoi = int.Parse(dr["troncauhoi"].ToString());
-                    tmp.Dahoanthanh = int.Parse(dr["dahoanthanh"].ToString());
                     tmp.Thoigiantao = DateTime.Parse(dr["thoigiantao"].ToString());
                     tmp.Thoigianbatdau = DateTime.Parse(dr["thoigianbatdau"].ToString());
                     tmp.Thoigianketthuc = DateTime.Parse(dr["thoigianketthuc"].ToString());
@@ -63,8 +60,8 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_themdekiemtra = "INSERT INTO dekiemtra(madekiemtra,machuong,tieude,thoigianbatdau,thoigianketthuc,xemdiem,xemdapan,thoigiantao,troncauhoi,dahoanthanh,daxoa) " +
-                    "VALUES (@madekiemtra,@machuong,N'" + dekiemtra.Tieude + "',@thoigianbatdau,@thoigianketthuc,@xemdiem,@xemdapan,@thoigiantao,@troncauhoi,@dahoanthanh,@daxoa)";
+                string sql_themdekiemtra = "INSERT INTO dekiemtra(madekiemtra,machuong,tieude,thoigianbatdau,thoigianketthuc,xemdiem,xemdapan,thoigiantao,troncauhoi,daxoa) " +
+                    "VALUES (@madekiemtra,@machuong,N'" + dekiemtra.Tieude + "',@thoigianbatdau,@thoigianketthuc,@xemdiem,@xemdapan,@thoigiantao,@troncauhoi,@daxoa)";
                 SqlCommand cmd_themdekiemtra = new SqlCommand(sql_themdekiemtra, Ketnoisqlserver.GetConnection());
                 cmd_themdekiemtra.Parameters.AddWithValue("@madekiemtra", Guid.Parse(dekiemtra.Madekiemtra));
                 cmd_themdekiemtra.Parameters.AddWithValue("@machuong", Guid.Parse(dekiemtra.Machuong));
@@ -74,7 +71,6 @@ namespace Hybrid.DAO
                 cmd_themdekiemtra.Parameters.AddWithValue("@xemdapan", dekiemtra.Xemdapan);
                 cmd_themdekiemtra.Parameters.AddWithValue("@thoigiantao", dekiemtra.Thoigiantao);
                 cmd_themdekiemtra.Parameters.AddWithValue("@troncauhoi", dekiemtra.Troncauhoi);
-                cmd_themdekiemtra.Parameters.AddWithValue("@dahoanthanh",dekiemtra.Dahoanthanh);
                 cmd_themdekiemtra.Parameters.AddWithValue("@daxoa",dekiemtra.Daxoa);
                 cmd_themdekiemtra.ExecNonQuery();
                 return true;

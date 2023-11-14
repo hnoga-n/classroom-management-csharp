@@ -12,11 +12,8 @@ namespace Hybrid.DAO
 {
     public class NhomQuyenDAO
     {
-        private ArrayList list;
-
         public NhomQuyenDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()

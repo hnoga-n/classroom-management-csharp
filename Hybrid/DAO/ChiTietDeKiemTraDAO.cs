@@ -13,11 +13,9 @@ namespace Hybrid.DAO
 {
     public class ChiTietDeKiemTraDAO
     {
-        private ArrayList list;
 
         public ChiTietDeKiemTraDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()

@@ -33,7 +33,8 @@ namespace Hybrid.DAO
                 {
                     FileBaiLamBaiTap tmp = new FileBaiLamBaiTap();
                     tmp.Mabailam = dr["mabailam"].ToString();
-                    tmp.Linkdinhkem = dr["link"].ToString();
+                    tmp.Tenfile = dr["tenfile"].ToString();
+                    tmp.Id_file = dr["id_file"].ToString();
                     listTmp.Add(tmp);
                 }
                 dr.Close();

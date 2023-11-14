@@ -29,6 +29,14 @@ namespace Hybrid.BUS
             list = bailambtDAO.loadList();
             list.Sort();
         }
-
+        public int getBaiLamBaiTapWithMaBaiTap(string mabaitap)
+        {
+            BailambaitapComparer comparer = new BailambaitapComparer();
+            comparer.TypeToCompare = BailambaitapComparer.ComparisonType.mabaitap;
+            BaiLamBaiTap blbtSearch = new BaiLamBaiTap();
+            blbtSearch.Mabaitap = mabaitap.ToLower();
+            int index = list.BinarySearch(blbtSearch, comparer);
+            return index;
+        }
     }
 }

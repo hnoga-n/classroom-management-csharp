@@ -14,11 +14,9 @@ namespace Hybrid.DAO
 {
     public class CauHoiDAO
     {
-        private ArrayList list;
 
         public CauHoiDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()
@@ -35,9 +33,9 @@ namespace Hybrid.DAO
                 {
                     CauHoi tmp = new CauHoi();
                     tmp.Macauhoi = dr["macauhoi"].ToString();
-                    tmp.Matk = dr["mataikhoan"].ToString();
+                    tmp.Mataikhoan= dr["mataikhoan"].ToString();
                     tmp.Noidung = dr["noidung"].ToString();
-                    tmp.Trangthai = Convert.ToInt32(dr["trangthai"]);
+                    tmp.Daxoa = Convert.ToInt32(dr["daxoa"]);
                     listTmp.Add(tmp);
                 }
                 dr.Close();
@@ -57,10 +55,10 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_themcauhoi = "INSERT INTO cauhoi(macauhoi,noidung,mataikhoan,trangthai) VALUES (@macauhoi,N'"+cauhoi.Noidung+"',@mataikhoan,1)";
+                string sql_themcauhoi = "INSERT INTO cauhoi(macauhoi,noidung,mataikhoan,daxoa) VALUES (@macauhoi,N'"+cauhoi.Noidung+"',@mataikhoan,1)";
                 SqlCommand cmd_themcauhoi = new SqlCommand(sql_themcauhoi, Ketnoisqlserver.GetConnection());
                 cmd_themcauhoi.Parameters.AddWithValue("@macauhoi", Guid.Parse(cauhoi.Macauhoi));
-                cmd_themcauhoi.Parameters.AddWithValue("@mataikhoan", Guid.Parse(cauhoi.Matk));
+                cmd_themcauhoi.Parameters.AddWithValue("@mataikhoan", Guid.Parse(cauhoi.Mataikhoan));
                 cmd_themcauhoi.ExecNonQuery();
             } catch(Exception ex)
             {
@@ -73,7 +71,7 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_xoacauhoi = "UPDATE cauhoi SET trangthai = 0 WHERE macauhoi = @macauhoi";
+                string sql_xoacauhoi = "UPDATE cauhoi SET daxoa = 1 WHERE macauhoi = @macauhoi";
                 SqlCommand cmd_xoacauhoi = new SqlCommand(sql_xoacauhoi, Ketnoisqlserver.GetConnection());
                 cmd_xoacauhoi.Parameters.AddWithValue("@macauhoi", Guid.Parse(macauhoi));
                 cmd_xoacauhoi.ExecNonQuery();
@@ -89,9 +87,9 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_suacauhoi = "UPDATE cauhoi SET noidung = N'"+cauhoi.Noidung+"', trangthai = @trangthai WHERE macauhoi = @macauhoi";
+                string sql_suacauhoi = "UPDATE cauhoi SET noidung = N'"+cauhoi.Noidung+"', daxoa = @daxoa WHERE macauhoi = @macauhoi";
                 SqlCommand cmd_suacauhoi = new SqlCommand(sql_suacauhoi, Ketnoisqlserver.GetConnection());
-                cmd_suacauhoi.Parameters.AddWithValue("@trangthai", cauhoi.Trangthai);
+                cmd_suacauhoi.Parameters.AddWithValue("@daxoa", cauhoi.Daxoa);
                 cmd_suacauhoi.Parameters.AddWithValue("@macauhoi", Guid.Parse(cauhoi.Macauhoi));
                 cmd_suacauhoi.ExecNonQuery();
                 return true;
@@ -113,7 +111,7 @@ namespace Hybrid.DAO
             try
             {
 
-                string sql_get_all = "SELECT * FROM cauhoi WHERE mataikhoan = @mataikhoan AND trangthai = 1";
+                string sql_get_all = "SELECT * FROM cauhoi WHERE mataikhoan = @mataikhoan AND daxoa = 0";
                 SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
                 cmd.Parameters.AddWithValue("@mataikhoan",Guid.Parse(matk));
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -121,9 +119,9 @@ namespace Hybrid.DAO
                 {
                     CauHoi tmp = new CauHoi();
                     tmp.Macauhoi = dr["macauhoi"].ToString();
-                    tmp.Matk = dr["mataikhoan"].ToString();
+                    tmp.Mataikhoan = dr["mataikhoan"].ToString();
                     tmp.Noidung = dr["noidung"].ToString();
-                    tmp.Trangthai = Convert.ToInt32(dr["trangthai"]);
+                    tmp.Daxoa = Convert.ToInt32(dr["daxoa"]);
                     listTmp.Add(tmp);
                 }
                 dr.Close();

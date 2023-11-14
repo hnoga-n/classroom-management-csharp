@@ -28,14 +28,22 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = cauhoiDAO.loadList();
-            //list.Sort();
+            list.Sort();
         }
 
         public ArrayList GetDanhSachCauHoiByMaTaiKhoan(string mataikhoan)
         {
             return cauhoiDAO.GetDanhSachCauHoiByMaTaiKhoan(mataikhoan);
         }
-
+        public CauHoi getCauhoiWithMaCauHoi(string macauhoi)
+        {
+            CauhoiComparer comparer = new CauhoiComparer();
+            comparer.TypeToCompare = CauhoiComparer.ComparisonType.macauhoi;
+            CauHoi chSearch = new CauHoi();
+            chSearch.Macauhoi = macauhoi;
+            int index = list.BinarySearch(chSearch, comparer);
+            return (CauHoi)list[index];
+        }
 
         public bool ThemCauHoi(CauHoi cauhoi)
         {
@@ -51,7 +59,7 @@ namespace Hybrid.BUS
             {
                 if (ch.Macauhoi.Equals(cauhoi.Macauhoi))
                 {
-                    ch.Trangthai = 0;
+                    ch.Daxoa = 1;
                     break;
                 }
             }
@@ -66,7 +74,7 @@ namespace Hybrid.BUS
                 {
                     if(ch.Macauhoi.Equals(cauhoi.Macauhoi)) {
                         ch.Noidung = cauhoi.Noidung;
-                        ch.Trangthai = cauhoi.Trangthai; 
+                        ch.Daxoa = cauhoi.Daxoa; 
                         break;
                     }
                 }
@@ -80,7 +88,7 @@ namespace Hybrid.BUS
             ArrayList resultlist = new ArrayList();
             foreach (CauHoi cauhoi in GetDanhSachCauHoiByMaTaiKhoan(mataikhoan))
             {
-                if (cauhoi.Noidung.Contains(tukhoa) && cauhoi.Matk.Equals(mataikhoan) && cauhoi.Trangthai == 1)
+                if (cauhoi.Noidung.Contains(tukhoa) && cauhoi.Mataikhoan.Equals(mataikhoan) && cauhoi.Daxoa == 0)
                 {
                     resultlist.Add(cauhoi);
                 }
