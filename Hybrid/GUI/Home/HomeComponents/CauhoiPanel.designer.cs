@@ -35,6 +35,7 @@
             this.answer2 = new System.Windows.Forms.RadioButton();
             this.answer4 = new System.Windows.Forms.RadioButton();
             this.question = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.rightAnswer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // order
@@ -50,6 +51,7 @@
             // answer3
             // 
             this.answer3.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.answer3.ForeColor = System.Drawing.Color.Black;
             this.answer3.Location = new System.Drawing.Point(19, 279);
             this.answer3.Name = "answer3";
             this.answer3.Size = new System.Drawing.Size(1188, 65);
@@ -62,7 +64,10 @@
             // answer1
             // 
             this.answer1.AutoEllipsis = true;
+            this.answer1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.answer1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.answer1.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.answer1.ForeColor = System.Drawing.Color.Black;
             this.answer1.Location = new System.Drawing.Point(19, 137);
             this.answer1.Name = "answer1";
             this.answer1.Size = new System.Drawing.Size(1188, 65);
@@ -75,6 +80,7 @@
             // answer2
             // 
             this.answer2.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.answer2.ForeColor = System.Drawing.Color.Black;
             this.answer2.Location = new System.Drawing.Point(19, 208);
             this.answer2.Name = "answer2";
             this.answer2.Size = new System.Drawing.Size(1188, 65);
@@ -87,6 +93,7 @@
             // answer4
             // 
             this.answer4.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.answer4.ForeColor = System.Drawing.Color.Black;
             this.answer4.Location = new System.Drawing.Point(19, 350);
             this.answer4.Name = "answer4";
             this.answer4.Size = new System.Drawing.Size(1188, 65);
@@ -104,7 +111,7 @@
             this.question.ReadOnly = true;
             this.question.Size = new System.Drawing.Size(1188, 82);
             this.question.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
-            this.question.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.question.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.question.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.question.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -115,10 +122,22 @@
             this.question.TabIndex = 7;
             this.question.Text = resources.GetString("question.Text");
             // 
-            // cauhoi
+            // rightAnswer
+            // 
+            this.rightAnswer.AutoEllipsis = true;
+            this.rightAnswer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rightAnswer.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rightAnswer.Location = new System.Drawing.Point(16, 418);
+            this.rightAnswer.Name = "rightAnswer";
+            this.rightAnswer.Size = new System.Drawing.Size(1191, 38);
+            this.rightAnswer.TabIndex = 8;
+            this.rightAnswer.Text = resources.GetString("rightAnswer.Text");
+            // 
+            // CauhoiPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.rightAnswer);
             this.Controls.Add(this.question);
             this.Controls.Add(this.answer4);
             this.Controls.Add(this.answer2);
@@ -126,8 +145,8 @@
             this.Controls.Add(this.answer3);
             this.Controls.Add(this.order);
             this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.Name = "cauhoi";
-            this.Size = new System.Drawing.Size(1227, 456);
+            this.Name = "CauhoiPanel";
+            this.Size = new System.Drawing.Size(1227, 465);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +160,6 @@
         private System.Windows.Forms.RadioButton answer2;
         private System.Windows.Forms.RadioButton answer4;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox question;
+        private System.Windows.Forms.Label rightAnswer;
     }
 }

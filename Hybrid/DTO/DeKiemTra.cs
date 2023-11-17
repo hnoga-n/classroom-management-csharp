@@ -63,5 +63,18 @@ namespace Hybrid.DTO
             }
             return 0;
         }
+        public override string ToString()
+        {
+            return $"Madekiemtra: {madekiemtra}, " +
+                   $"Tieude: {tieude}, " +
+                   $"Thoigianbatdau: {thoigianbatdau}, " +
+                   $"Thoigianketthuc: {thoigianketthuc}, " +
+                   $"Thoigiantao: {thoigiantao}, " +
+                   $"Xemdiem: {xemdiem}, " +
+                   $"Xemdapan: {xemdapan}, " +
+                   $"Troncauhoi: {troncauhoi}, " +
+                   $"Machuong: {machuong}, " +
+                   $"Daxoa: {daxoa}";
+        }
     }
 }

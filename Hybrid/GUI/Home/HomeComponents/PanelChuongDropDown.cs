@@ -4,13 +4,6 @@ using Hybrid.DTO;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.GUI.Home.KiemTra;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Home
@@ -27,14 +20,15 @@ namespace Hybrid.GUI.Home
         public bool IsExpanded { get => isExpanded; set => isExpanded = value; }
         public int DemTaiLieuChuong { get => demTaiLieuChuong; set => demTaiLieuChuong = value; }
         public Chuong Chuong { get => chuong; set => chuong = value; }
+        public KhoaHocFrm Khfrm { get => khfrm; set => khfrm = value; }
 
 
         public PanelChuongDropDown(KhoaHocFrm khfrm,Chuong chuong)
         {
             InitializeComponent();
             this.chuong = chuong;
-            this.khfrm = khfrm;
-            if(!this.khfrm.Lophoc.Magiangvien.Equals(this.khfrm.Taikhoan.Mataikhoan))
+            this.Khfrm = khfrm;
+            if(!this.Khfrm.Lophoc.Magiangvien.Equals(this.Khfrm.Taikhoan.Mataikhoan))
             {
                 this.btnThem.Visible = false;
                 this.btnSua.Visible = false;
@@ -56,6 +50,7 @@ namespace Hybrid.GUI.Home
             {
                 if(dkt.Daxoa == 0)
                 {
+
                     ButtonBaiKT btn = new ButtonBaiKT(this,dkt);
                     this.pnlChuongComponent.Controls.Add(btn);
                     this.lblDemTaiLieuChuong.Text = "(" + ++demTaiLieuChuong + ")";
@@ -137,7 +132,7 @@ namespace Hybrid.GUI.Home
             {
                 if (chuongBUS.XoaChuong(chuong))
                 {
-                    this.khfrm.PnlChuongContainer.Controls.Remove(this);
+                    this.Khfrm.PnlChuongContainer.Controls.Remove(this);
                     MessageBox.Show("Xóa chương thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -150,7 +145,7 @@ namespace Hybrid.GUI.Home
         private void btnSua_Click(object sender, EventArgs e)
         {
             new ThemChuongFrm(chuong).ShowDialog();
-            this.khfrm.HienThiDanhSachChuong();
+            this.Khfrm.HienThiDanhSachChuong();
         }
     }
 }

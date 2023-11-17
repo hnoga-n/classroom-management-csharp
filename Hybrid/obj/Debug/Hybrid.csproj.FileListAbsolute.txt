@@ -228,3 +228,4 @@ D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiem
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiPanel.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.LamKiemTra.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Utilities.loading.resources
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.BaiLamHocSinh.resources

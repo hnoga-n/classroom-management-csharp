@@ -5,37 +5,28 @@ using Hybrid.DTO;
 using Hybrid.GUI.Utilities;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Kiemtra
 {
     public partial class LamKiemTra : Form
     {
+        private const int TOTAL_POINT = 10;
         private DeKiemTra dkt;
+        private DeKiemTraBUS dktBUS;
         private ChiTietDeKiemTraBUS ctdktBUS;
         private CauHoiBUS chBUS;
         private CauTraLoiBUS ctlBUS;
         private Taikhoan taikhoanhienhanh;
-        private DateTime thoigianbatdaulambai;
-        private DeKiemTraBUS dktBUS;
-        private const int TOTAL_POINT = 10;
         public LamKiemTra()
         {
             InitializeComponent();
         }
 
-        public LamKiemTra(DeKiemTra dkt,Taikhoan taikhoanhienhanh)
+        public LamKiemTra(DeKiemTra dkt, Taikhoan taikhoanhienhanh)
         {
             InitializeComponent();
             // TODO: check xem đã nộp bài chưa
@@ -45,9 +36,8 @@ namespace Hybrid.GUI.Kiemtra
             this.chBUS = new CauHoiBUS();
             this.ctlBUS = new CauTraLoiBUS();
             this.ctdktBUS = new ChiTietDeKiemTraBUS();
-            this.taikhoanhienhanh = taikhoanhienhanh;
+            this.taikhoanhienhanh = taikhoanhienhanh; ;
             loading.CloseForm();
-            thoigianbatdaulambai = DateTime.Now;
             loadDataIntoForm();
         }
 
@@ -62,13 +52,13 @@ namespace Hybrid.GUI.Kiemtra
             }
             listcauhoipanel.SuspendLayout();
             listcauhoipanel.Controls.Clear();
-            int index=0;
+            int index = 0;
             foreach (string macauhoi in listmacauhoi)
             {
                 //cauhoi
                 CauHoi tmp = this.chBUS.getCauhoiWithMaCauHoi(macauhoi);
                 listcautraloi = this.ctlBUS.getCauTraLoiWithMaCauHoi(tmp.Macauhoi);
-                CauhoiPanel chComponent = new CauhoiPanel(tmp,listcautraloi, useChose(tmp.Macauhoi));
+                CauhoiPanel chComponent = new CauhoiPanel(tmp, listcautraloi, userChose(tmp.Macauhoi), false);
                 chComponent.getOrder().Text = "Câu hỏi " + (++index);
                 //chComponent.getAnswer1Radbtn().Click += cauTraLoi_choose(index);
                 listcauhoipanel.Controls.Add(chComponent);
@@ -98,15 +88,9 @@ namespace Hybrid.GUI.Kiemtra
             this.timeEnd.Text = dkt.Thoigianketthuc.ToString();
         }
 
-        //private void cauTraLoi_choose(object sender, EventArgs e,int index)
-        //{
-        //    int index = (sender as CauhoiPanel).getOrder().Text[(sender as CauhoiPanel).getOrder().Text.Length - 1];
-        //    MessageBox.Show(index.ToString());
-        //    //navBtnChangeState(index);
-        //}
-        private string useChose(string macauhoi)
+        private string userChose(string macauhoi)
         {
-            string cautraloidachon=string.Empty;
+            string cautraloidachon = string.Empty;
             string sql_str1 = "SELECT madapanchon FROM luuvetbailamkiemtra WHERE email=@email AND madekiemtra=@made AND macauhoi=@macauhoi";
             SqlCommand command = new SqlCommand(sql_str1, Ketnoisqlserver.GetConnection());
             command.Parameters.Add(new SqlParameter("@email", SqlDbType.NVarChar, 50)).Value = this.taikhoanhienhanh.Email;
@@ -121,13 +105,15 @@ namespace Hybrid.GUI.Kiemtra
             Ketnoisqlserver.CloseConnection();
             return cautraloidachon;
         }
+
         private void btnPause_Click(object sender, EventArgs e)
         {
+            loading.ShowSplashScreen();
             //clean up
             string sql_str1 = "DELETE FROM luuvetbailamkiemtra WHERE email=@email AND madekiemtra=@made";
             SqlCommand command = new SqlCommand(sql_str1, Ketnoisqlserver.GetConnection());
             command.Parameters.Add(new SqlParameter("@email", SqlDbType.NVarChar, 50)).Value = this.taikhoanhienhanh.Email;
-            command.Parameters.Add(new SqlParameter("@made", SqlDbType.UniqueIdentifier)).Value =   Guid.Parse(this.dkt.Madekiemtra);
+            command.Parameters.Add(new SqlParameter("@made", SqlDbType.UniqueIdentifier)).Value = Guid.Parse(this.dkt.Madekiemtra);
             command.ExecuteNonQuery();
             Ketnoisqlserver.CloseConnection();
 
@@ -146,6 +132,7 @@ namespace Hybrid.GUI.Kiemtra
                 command2.ExecuteNonQuery();
             }
             Ketnoisqlserver.CloseConnection();
+            loading.CloseForm();
             MessageBox.Show("Đã lưu bản nháp!", "Thông báo !", MessageBoxButtons.OK);
         }
 
@@ -160,9 +147,9 @@ namespace Hybrid.GUI.Kiemtra
             DateTime thoigiannop = DateTime.Now;
             string mabailam = Guid.NewGuid().ToString();
             float pointsPerQuestion = TOTAL_POINT / this.listcauhoipanel.Controls.Count;
-            float point=0;
-            int socaudung=0;
-            ArrayList Bailam=new ArrayList(); // use for chitietbailam
+            float point = 0;
+            int socaudung = 0;
+            ArrayList Bailam = new ArrayList(); // use for chitietbailam
             foreach (CauhoiPanel cauhoipanel in this.listcauhoipanel.Controls)
             {
                 ChiTietBaiLamKiemTra ctbl = new ChiTietBaiLamKiemTra()
@@ -171,9 +158,9 @@ namespace Hybrid.GUI.Kiemtra
                     Macauhoi = cauhoipanel.Macauhoi,
                     Dapanchon = cauhoipanel.Madapanchon
                 };
-                Bailam.Add(ctbl) ;
-                if (ctlBUS.getCauTraLoiWithMaCauTraLoi(cauhoipanel.Madapanchon).Ladapan == 1)
-                { 
+                Bailam.Add(ctbl);
+                if (cauhoipanel.Madapanchon != null && ctlBUS.getCauTraLoiWithMaCauTraLoi(cauhoipanel.Madapanchon).Ladapan == 1)
+                {
                     point += pointsPerQuestion;
                     socaudung++;
                 }
@@ -182,14 +169,13 @@ namespace Hybrid.GUI.Kiemtra
             BaiLamKiemTra blkt = new BaiLamKiemTra()
             {
                 Mabailam = mabailam,
+                Madekiemtra = dkt.Madekiemtra,
+                Mataikhoan = taikhoanhienhanh.Mataikhoan,
                 Diem = float.Parse(Math.Round(point, 2).ToString()),
                 Thoigiannop = thoigiannop,
-                Thoigianvaokiemtra = thoigianbatdaulambai,
                 Socaudung = socaudung,
-                Mataikhoan = taikhoanhienhanh.Mataikhoan,
                 Noptre = (thoigiannop > dkt.Thoigianketthuc) ? 1 : 0
             };
-
             BailamKiemtraBUS blktbus = new BailamKiemtraBUS();
             if (!blktbus.addBaiLam(blkt))
             {
@@ -207,15 +193,14 @@ namespace Hybrid.GUI.Kiemtra
             this.Close();
         }
 
-        public void btnNavigate_Cliked(object sender,EventArgs e)
+        public void btnNavigate_Cliked(object sender, EventArgs e)
         {
             int targetChildIndex;
-            int.TryParse((sender as KryptonButton).Text,out targetChildIndex);
+            int.TryParse((sender as KryptonButton).Text, out targetChildIndex);
 
-            //MessageBox.Show(targetChildIndex.ToString());
             if (targetChildIndex >= 0 && targetChildIndex < navigatePanel.Controls.Count)
             {
-                Control targetControl = listcauhoipanel.Controls[targetChildIndex-1];
+                Control targetControl = listcauhoipanel.Controls[targetChildIndex - 1];
                 // Calculate the scroll position
                 int scrollX = targetControl.Left - listcauhoipanel.AutoScrollPosition.X;
                 int scrollY = targetControl.Top - listcauhoipanel.AutoScrollPosition.Y;
@@ -225,15 +210,12 @@ namespace Hybrid.GUI.Kiemtra
             }
         }
 
-        private void navBtnChangeState(int navBtnIndex)
+        private void btnCloseForm_Click(object sender, EventArgs e)
         {
-            
-            (navigatePanel.Controls[navBtnIndex] as KryptonButton).StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)| ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)| ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            (navigatePanel.Controls[navBtnIndex] as KryptonButton).StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
-            (navigatePanel.Controls[navBtnIndex] as KryptonButton).StateCommon.Border.Color2 = SystemColors.Control;
-            (navigatePanel.Controls[navBtnIndex] as KryptonButton).StateCommon.Border.Rounding = 25;
-            (navigatePanel.Controls[navBtnIndex] as KryptonButton).StateCommon.Border.Width = 2;
+            DialogResult confirm = MessageBox.Show("Xác nhận tạm dừng làm kiểm tra ?\nBài làm sẽ được lưu thành bản nháp.", "Thông báo !", MessageBoxButtons.YesNo);
+            if (confirm == DialogResult.No) return;
+            btnPause.PerformClick();
+            this.Close();
         }
-
     }
 }

@@ -19,7 +19,6 @@ namespace Hybrid.GUI.Todo
         private DeKiemTraBUS ktBUS;
         private ChuongBUS chuongBUS;
         private LopHocBUS lopHocBUS;
-
         private TaskNotDoneButton btnNot ;
         private TaskDoneButton btnDone ;
 

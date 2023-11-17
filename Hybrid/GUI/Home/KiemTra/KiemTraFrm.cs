@@ -68,7 +68,7 @@ namespace Hybrid.GUI.Home.KiemTra
         }
         public void HienThiDanhSachChiTietCauHoi()
         {
-            foreach(ChiTietDeKiemTra ctdkt in ctdktBUS.GetMaCauHoiByMaDeKiemTra(this.dekiemtra.Madekiemtra))
+            foreach(ChiTietDeKiemTra ctdkt in ctdktBUS.getMaCauhoiWithMaDeKiemTra(this.dekiemtra.Madekiemtra))
             {
                 PanelChiTietCauHoi panel = new PanelChiTietCauHoi(cauhoiBUS.GetCauHoiByMaCauHoi(ctdkt.Macauhoi));
                 panel.LblNoiDung.Text = ctdkt.Thutu + ". " + panel.LblNoiDung.Text;

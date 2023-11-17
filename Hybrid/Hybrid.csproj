@@ -382,11 +382,23 @@
     <Compile Include="GUI\Home\KhoaHocFrm.Designer.cs">
       <DependentUpon>KhoaHocFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Home\KiemTra\BaiLamHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\BaiLamHocSinh.Designer.cs">
+      <DependentUpon>BaiLamHocSinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.Designer.cs">
       <DependentUpon>ChiTietCauHoiFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\DanhSachBaiDaNop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\DanhSachBaiDaNop.Designer.cs">
+      <DependentUpon>DanhSachBaiDaNop.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.cs">
       <SubType>UserControl</SubType>
@@ -597,8 +609,14 @@
     <EmbeddedResource Include="GUI\Home\KhoaHocFrm.resx">
       <DependentUpon>KhoaHocFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\BaiLamHocSinh.resx">
+      <DependentUpon>BaiLamHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.resx">
       <DependentUpon>ChiTietCauHoiFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\DanhSachBaiDaNop.resx">
+      <DependentUpon>DanhSachBaiDaNop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.resx">
       <DependentUpon>ButtonCauHoi.cs</DependentUpon>
@@ -694,6 +712,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-close-30.png" />
+    <None Include="Resources\icons8-close-50.png" />
     <None Include="Resources\Animation - 1699327889806.gif" />
     <None Include="Resources\icons8-sort-down-30.png" />
     <None Include="icon\icons8-calendar-25 %281%29.png" />

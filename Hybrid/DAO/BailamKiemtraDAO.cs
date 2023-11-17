@@ -34,7 +34,6 @@ namespace Hybrid.DAO
                     tmp.Mabailam = dr["mabailam"].ToString();
                     tmp.Mataikhoan = dr["mataikhoan"].ToString();
                     tmp.Madekiemtra = dr["madekiemtra"].ToString();
-                    tmp.Thoigianvaokiemtra = DateTime.Parse(dr["thoigianbatdaulam"].ToString());
                     tmp.Thoigiannop = DateTime.Parse(dr["thoigiannop"].ToString());
                     tmp.Diem = float.Parse(dr["diem"].ToString());
                     tmp.Socaudung = int.Parse(dr["socaudung"].ToString());
@@ -55,12 +54,12 @@ namespace Hybrid.DAO
         }
         public int addBaiLamKiemTra(BaiLamKiemTra blkt)
         {
-            string sql = "INSERT INTO bailamkiemtra(mabailam,mataikhoan,diem,thoigianbatdaulam,thoigiannop,socaudung,noptre) VALUES (@mabailam,@mataikhoan,@diem,@thoigianbatdaulam,@thoigiannop,@socaudung,@noptre)";
+            string sql = "INSERT INTO bailamkiemtra(mabailam,mataikhoan,madekiemtra,diem,thoigiannop,socaudung,noptre) VALUES (@mabailam,@mataikhoan,@madekiemtra,@diem,@thoigiannop,@socaudung,@noptre)";
             SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
             command.Parameters.Add("@mabailam", SqlDbType.UniqueIdentifier).Value = Guid.Parse(blkt.Mabailam);
             command.Parameters.Add("@mataikhoan", SqlDbType.UniqueIdentifier).Value = Guid.Parse(blkt.Mataikhoan);
+            command.Parameters.Add("@madekiemtra", SqlDbType.UniqueIdentifier).Value = Guid.Parse(blkt.Madekiemtra);
             command.Parameters.Add("@diem", SqlDbType.Float).Value = blkt.Diem;
-            command.Parameters.Add("@thoigianbatdaulam", SqlDbType.DateTime).Value = blkt.Thoigianvaokiemtra;
             command.Parameters.Add("@thoigiannop", SqlDbType.DateTime).Value = blkt.Thoigiannop;
             command.Parameters.Add("@socaudung", SqlDbType.Int).Value = blkt.Socaudung;
             command.Parameters.Add("@noptre", SqlDbType.Int).Value = blkt.Noptre;
