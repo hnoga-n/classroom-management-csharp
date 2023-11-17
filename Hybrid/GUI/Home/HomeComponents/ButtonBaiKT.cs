@@ -22,15 +22,11 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.dekiemtra = dkt;
             this.lblTieuDeBKT.Text = dkt.Tieude;
             this.timerCapNhatTrangThai.Start();
-<<<<<<< HEAD
             if(panelChuong.Khfrm.Lophoc.Daxoa == 1)
             {
                 this.btnSua.Visible = false;
                 this.btnXoa.Visible = false;
             }
-=======
-      
->>>>>>> main
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

@@ -26,13 +26,8 @@ namespace Hybrid.GUI.Home
         {
             InitializeComponent();
             this.chuong = chuong;
-<<<<<<< HEAD
             this.khfrm = khfrm;
             if(!this.khfrm.Lophoc.Magiangvien.Equals(this.khfrm.Taikhoan.Mataikhoan) || khfrm.Lophoc.Daxoa == 1)
-=======
-            this.Khfrm = khfrm;
-            if(!this.Khfrm.Lophoc.Magiangvien.Equals(this.Khfrm.Taikhoan.Mataikhoan))
->>>>>>> main
             {
                 this.btnThem.Visible = false;
                 this.btnSua.Visible = false;

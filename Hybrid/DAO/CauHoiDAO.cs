@@ -110,12 +110,8 @@ namespace Hybrid.DAO
             ArrayList listTmp = new ArrayList();
             try
             {
-<<<<<<< HEAD
-                string sql_get_all = "SELECT * FROM cauhoi WHERE mataikhoan = @mataikhoan AND trangthai = 1";
-=======
 
                 string sql_get_all = "SELECT * FROM cauhoi WHERE mataikhoan = @mataikhoan AND daxoa = 0";
->>>>>>> main
                 SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
                 cmd.Parameters.AddWithValue("@mataikhoan",Guid.Parse(matk));
                 SqlDataReader dr = cmd.ExecuteReader();

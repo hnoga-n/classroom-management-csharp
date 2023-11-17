@@ -236,10 +236,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnBaiKiemTra.TabIndex = 15;
             this.btnBaiKiemTra.Values.Text = "";
-<<<<<<< HEAD
-=======
             this.btnBaiKiemTra.Click += new System.EventHandler(this.btnBaiKiemTra_Click);
->>>>>>> main
             // 
             // timerCapNhatTrangThai
             // 

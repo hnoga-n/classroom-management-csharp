@@ -51,9 +51,9 @@ namespace Hybrid.DAO
         public DataTable DanhSachHocSinhTheoMaLop(string malop) {
             try
             {
-                string sql_thamgia = "select t.matk,t.hoten\r\n" +
+                string sql_thamgia = "select t.mataikhoan,t.hoten\r\n" +
                     "from lophoc l join thamgialophoc tg on l.malophoc = tg.malophoc\r\n" +
-                    "join taikhoan t on t.matk = tg.mataikhoan\r\n" +
+                    "join taikhoan t on t.mataikhoan = tg.mataikhoan\r\n" +
                     "where l.malophoc = @malophoc";
                 //string sql_thamgia = "select * from lophoc";
                 SqlCommand cmd = new SqlCommand(sql_thamgia, Ketnoisqlserver.GetConnection());

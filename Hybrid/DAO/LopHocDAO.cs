@@ -31,11 +31,8 @@ namespace Hybrid.DAO
                 {
                     LopHoc tmp = new LopHoc();
                     tmp.Malop = dr["malophoc"].ToString();
-<<<<<<< HEAD
                     tmp.Mota = dr["mota"].ToString();
                     tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
-=======
->>>>>>> main
                     tmp.Magiangvien = dr["magiangvien"].ToString();
                     tmp.Mota = dr["mota"].ToString();
                     tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
@@ -58,11 +55,7 @@ namespace Hybrid.DAO
         {
             try
             {
-<<<<<<< HEAD
                 string sql_themlophoc = "INSERT INTO lophoc(malophoc,ten,mota,daxoa,magiangvien) VALUES (@malophoc,N'" + lophoc.Tenlop + "',@mota,@daxoa,@magiangvien)";
-=======
-                string sql_themlophoc = "INSERT INTO lophoc(malophoc,ten,mota,daxoa,magiangvien) VALUES (@malophoc,N'"+ lophoc.Tenlop + "',@mota,@daxoa,@magiangvien)";
->>>>>>> main
                 SqlCommand cmd_themlophoc = new SqlCommand(sql_themlophoc, Ketnoisqlserver.GetConnection());
                 cmd_themlophoc.Parameters.AddWithValue("@malophoc", Guid.Parse(lophoc.Malop));
                 cmd_themlophoc.Parameters.AddWithValue("@mota", lophoc.Mota);

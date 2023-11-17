@@ -9,20 +9,6 @@ namespace Hybrid.DTO
         private string magiangvien;
         private string mota;
         private string avatar;
-<<<<<<< HEAD
-        private string magiangvien;
-        private int daxoa;
-
-        public LopHoc() { }
-        public LopHoc(string malop,string tenlop, string mota, string avatar, int daxoa, string magiangvien)
-        {
-            this.malop = malop;
-            this.tenlop = tenlop;
-            this.mota = mota;
-            this.avatar = avatar;
-            this.magiangvien = magiangvien;
-            this.daxoa = daxoa;
-=======
         private int daxoa;
 
         public LopHoc() { }
@@ -34,20 +20,15 @@ namespace Hybrid.DTO
             this.Avatar = avatar;
             this.Magiangvien = magiangvien;
             this.Daxoa = daxoa;
->>>>>>> main
         }
 
         public string Magiangvien { get => magiangvien; set => magiangvien = value; }
         public string Mota { get => mota; set => mota = value; }
         public string Avatar { get => avatar; set => avatar = value; }
-<<<<<<< HEAD
-        public string Magiangvien { get => magiangvien; set => magiangvien = value; }
-        public int Daxoa { get => daxoa; set => daxoa = value; }
-=======
+
         public int Daxoa { get => daxoa; set => daxoa = value; }
         public string Malop { get => malop; set => malop = value; }
         public string Tenlop { get => tenlop; set => tenlop = value; }
->>>>>>> main
 
         public int CompareTo(Object obj)
         {
