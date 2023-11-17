@@ -14,26 +14,27 @@ namespace Hybrid.DTO
         private string tenlop;
         private string mota;
         private string avatar;
-        private int trangthai;
         private string magiangvien;
+        private int daxoa;
 
         public LopHoc() { }
-        public LopHoc(string malop,string tenlop, string mota, string avatar, int trangthai, string magiangvien)
+        public LopHoc(string malop,string tenlop, string mota, string avatar, int daxoa, string magiangvien)
         {
             this.malop = malop;
             this.tenlop = tenlop;
             this.mota = mota;
             this.avatar = avatar;
-            this.trangthai = trangthai;
             this.magiangvien = magiangvien;
+            this.daxoa = daxoa;
         }
 
         public string Malop { get => malop; set => malop = value; }
         public string Tenlop { get => tenlop; set => tenlop = value; }
         public string Mota { get => mota; set => mota = value; }
         public string Avatar { get => avatar; set => avatar = value; }
-        public int Trangthai { get => trangthai; set => trangthai = value; }
         public string Magiangvien { get => magiangvien; set => magiangvien = value; }
+        public int Daxoa { get => daxoa; set => daxoa = value; }
+
         public int CompareTo(Object obj)
         {
             LopHoc chuong = (LopHoc)obj;

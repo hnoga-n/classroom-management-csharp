@@ -25,6 +25,11 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.dekiemtra = dkt;
             this.lblTieuDeBKT.Text = dkt.Tieude;
             this.timerCapNhatTrangThai.Start();
+            if(panelChuong.Khfrm.Lophoc.Daxoa == 1)
+            {
+                this.btnSua.Visible = false;
+                this.btnXoa.Visible = false;
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -73,10 +78,19 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private void timerCapNhatTrangThai_Tick(object sender, EventArgs e)
         {
-            string trangthai = XacDinhTrangThaiDeKiemTra(this.dekiemtra.Thoigianbatdau,this.dekiemtra.Thoigianketthuc);
+            string trangthai = XacDinhTrangThaiDeKiemTra(this.dekiemtra.Thoigianbatdau, this.dekiemtra.Thoigianketthuc);
             this.lblChiTietBKT.Text = "Bài kiểm tra (" + dekiemtra.Thoigianbatdau.ToString("dd/MM HH:mm:ss") + " - " + dekiemtra.Thoigianketthuc.ToString("dd/MM HH:mm:ss") + ") | " + trangthai;
-            if (this.dekiemtra.Thoigianbatdau.AddMinutes(-15) <= DateTime.Now)
+            if (this.panelChuong.Khfrm.Taikhoan.Mataikhoan.Equals(this.panelChuong.Khfrm.Lophoc.Magiangvien) && panelChuong.Khfrm.Lophoc.Daxoa == 0)
+            {
+                if (this.dekiemtra.Thoigianbatdau.AddMinutes(-15) <= DateTime.Now)
+                    this.btnSua.Visible = false;
+            } else
+            {
                 this.btnSua.Visible = false;
+                this.btnXoa.Visible = false;
+            }
+            if (trangthai == "Đã kết thúc")
+                this.timerCapNhatTrangThai.Stop();
         }
 
         private void btnSua_Click(object sender, EventArgs e)

@@ -300,6 +300,12 @@
     <Compile Include="GUI\Home\ChatFrm.Designer.cs">
       <DependentUpon>ChatFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Home\HienThiMaLopHocFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HienThiMaLopHocFrm.Designer.cs">
+      <DependentUpon>HienThiMaLopHocFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home\HomeComponents\ButtonBaiKT.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -414,6 +420,12 @@
     <Compile Include="GUI\Home\ThemLopFrm.Designer.cs">
       <DependentUpon>ThemLopFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Home\ThongTinLopHocFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\ThongTinLopHocFrm.Designer.cs">
+      <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Lichhoc\Calendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -498,6 +510,9 @@
     <EmbeddedResource Include="GUI\Home\ChatFrm.resx">
       <DependentUpon>ChatFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HienThiMaLopHocFrm.resx">
+      <DependentUpon>HienThiMaLopHocFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonBaiKT.resx">
       <DependentUpon>ButtonBaiKT.cs</DependentUpon>
     </EmbeddedResource>
@@ -554,6 +569,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThemLopFrm.resx">
       <DependentUpon>ThemLopFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\ThongTinLopHocFrm.resx">
+      <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Lichhoc\Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>

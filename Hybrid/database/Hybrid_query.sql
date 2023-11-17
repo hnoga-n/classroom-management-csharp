@@ -260,3 +260,9 @@ UPDATE dekiemtra SET daxoa=0
 
 ALTER TABLE chuong ADD daxoa TINYINT
 UPDATE chuong SET daxoa=0
+
+ALTER TABLE lophoc ADD daxoa TINYINT
+UPDATE lophoc SET daxoa=0
+
+use hybrid
+ALTER TABLE lophoc DROP COLUMN trangthai

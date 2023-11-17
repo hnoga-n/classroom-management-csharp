@@ -55,8 +55,8 @@ namespace Hybrid
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            //Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("machhaotuan@gmail.com");
-            Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("tranvihao@gmail.com");
+            Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("machhaotuan@gmail.com");
+            //Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("huchuynh@gmail.com");
             addFormtoPanelContainer(new HomeFrm(tk));
         }
 

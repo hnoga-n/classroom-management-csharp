@@ -37,6 +37,16 @@ namespace Hybrid.BUS
                 Console.WriteLine(t.Email+"\t"+t.Email.Length+"\t"+t.Matkhau+"\t"+t.Matkhau.Length);
         }
 
+        public Taikhoan GetTaiKhoanByMaTaiKhoan(string matk)
+        {
+            foreach(Taikhoan tk in this.list)
+            {
+                if(tk.Mataikhoan.Equals(matk))
+                    return tk;
+            }
+            return null;
+        }
+
         public Taikhoan GetTaiKhoanByEmail(string email)
         {
             Taikhoan taikhoan = null;

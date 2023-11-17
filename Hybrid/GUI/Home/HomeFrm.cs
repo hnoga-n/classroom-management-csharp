@@ -31,6 +31,7 @@ namespace Hybrid.GUI.Home
 
         public void HienThiDanhSachLopHoc()
         {
+            pnlLopHocContainer.Controls.Clear();
             foreach(LopHoc lophoc in lophocBUS.GetDanhSachTatCaLopHocByMaTaiKhoan(tk.Mataikhoan))
             {
                 ButtonClass btnClass = new ButtonClass(lophoc,this);

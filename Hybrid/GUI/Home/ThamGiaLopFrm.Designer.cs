@@ -35,6 +35,7 @@
             // 
             // btnThamGiaLop
             // 
+            this.btnThamGiaLop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThamGiaLop.Location = new System.Drawing.Point(205, 104);
             this.btnThamGiaLop.Margin = new System.Windows.Forms.Padding(0);
             this.btnThamGiaLop.Name = "btnThamGiaLop";

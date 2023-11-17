@@ -112,7 +112,6 @@ namespace Hybrid.DAO
             ArrayList listTmp = new ArrayList();
             try
             {
-
                 string sql_get_all = "SELECT * FROM cauhoi WHERE mataikhoan = @mataikhoan AND trangthai = 1";
                 SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
                 cmd.Parameters.AddWithValue("@mataikhoan",Guid.Parse(matk));

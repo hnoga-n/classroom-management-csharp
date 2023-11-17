@@ -36,7 +36,7 @@ namespace Hybrid.DAO
                     LopHoc tmp = new LopHoc();
                     tmp.Malop = dr["malophoc"].ToString();
                     tmp.Mota = dr["mota"].ToString();
-                    tmp.Trangthai = int.Parse(dr["trangthai"].ToString());
+                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
                     tmp.Magiangvien = dr["magiangvien"].ToString();
                     tmp.Tenlop = dr["ten"].ToString();
                     listTmp.Add(tmp);
@@ -57,13 +57,51 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_themlophoc = "INSERT INTO lophoc(malophoc,ten,mota,trangthai,magiangvien) VALUES (@malophoc,N'"+ lophoc.Tenlop + "',@mota,@trangthai,@magiangvien)";
+                string sql_themlophoc = "INSERT INTO lophoc(malophoc,ten,mota,daxoa,magiangvien) VALUES (@malophoc,N'" + lophoc.Tenlop + "',@mota,@daxoa,@magiangvien)";
                 SqlCommand cmd_themlophoc = new SqlCommand(sql_themlophoc, Ketnoisqlserver.GetConnection());
-                cmd_themlophoc.Parameters.AddWithValue("@malophoc", lophoc.Malop);
+                cmd_themlophoc.Parameters.AddWithValue("@malophoc", Guid.Parse(lophoc.Malop));
                 cmd_themlophoc.Parameters.AddWithValue("@mota", lophoc.Mota);
-                cmd_themlophoc.Parameters.AddWithValue("@trangthai", lophoc.Trangthai);
+                cmd_themlophoc.Parameters.AddWithValue("@daxoa", lophoc.Daxoa);
                 cmd_themlophoc.Parameters.AddWithValue("@magiangvien",Guid.Parse(lophoc.Magiangvien));
                 cmd_themlophoc.ExecNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file LophocDAO:" + ex.Message);
+                return false;
+            } finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+        }
+        public bool SuaLopHoc(LopHoc lophoc)
+        {
+            try
+            {
+                string sql_sualophoc = "UPDATE lophoc SET ten = N'" + lophoc.Tenlop + "', mota = N'" + lophoc.Mota + "' WHERE malophoc = @malophoc";
+                SqlCommand cmd_sualophoc = new SqlCommand(sql_sualophoc, Ketnoisqlserver.GetConnection());
+                cmd_sualophoc.Parameters.AddWithValue("@malophoc", Guid.Parse(lophoc.Malop));
+                cmd_sualophoc.ExecNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file LophocDAO:" + ex.Message);
+                return false;
+            } finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+        }
+        public bool XoaLopHoc(string malop)
+        {
+            try
+            {
+                string sql_sualophoc = "UPDATE lophoc SET daxoa = 1 WHERE malophoc = @malophoc";
+                SqlCommand cmd_sualophoc = new SqlCommand(sql_sualophoc, Ketnoisqlserver.GetConnection());
+                cmd_sualophoc.Parameters.AddWithValue("@malophoc", Guid.Parse(malop));
+                cmd_sualophoc.ExecNonQuery();
                 return true;
             }
             catch (Exception ex)
@@ -96,7 +134,7 @@ namespace Hybrid.DAO
                     LopHoc tmp = new LopHoc();
                     tmp.Malop = dr["malophoc"].ToString();
                     tmp.Mota = dr["mota"].ToString();
-                    tmp.Trangthai = int.Parse(dr["trangthai"].ToString());
+                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
                     tmp.Magiangvien = dr["magiangvien"].ToString();
                     tmp.Tenlop = dr["ten"].ToString();
                     listTmp.Add(tmp);

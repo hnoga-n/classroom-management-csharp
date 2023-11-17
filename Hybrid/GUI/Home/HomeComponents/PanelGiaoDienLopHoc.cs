@@ -15,14 +15,22 @@ namespace Hybrid.GUI.Home.HomeComponents
     public partial class PanelGiaoDienLopHoc : UserControl
     {
         LopHoc lophoc;
+        HomeFrm homefrm;
         Taikhoan taikhoan;
-        public PanelGiaoDienLopHoc(LopHoc lophoc,Taikhoan tk)
+
+        public HomeFrm Homefrm { get => homefrm; set => homefrm = value; }
+        public LopHoc Lophoc { get => lophoc; set => lophoc = value; }
+
+        public PanelGiaoDienLopHoc(LopHoc lophoc,HomeFrm homefrm)
         {
             InitializeComponent();
             this.lophoc = lophoc;
-            this.taikhoan = tk;
+            this.homefrm = homefrm;
+            this.taikhoan = homefrm.Tk;
             this.lblTenLop.Text = lophoc.Tenlop;
-            this.txtMaLop.Text = lophoc.Malop;
+            this.homefrm = homefrm;
+            if (lophoc.Daxoa == 1)
+                this.btnChinhSuaLopHoc.Visible = false;
         }
 
         private void addFormtoPanelHomeContainer(object Form)
@@ -56,5 +64,12 @@ namespace Hybrid.GUI.Home.HomeComponents
         {
             addFormtoPanelHomeContainer(new TepFrm());
         }
+
+        private void btnChinhSuaLopHoc_Click(object sender, EventArgs e)
+        {
+            new ThongTinLopHocFrm(taikhoan,this).ShowDialog();
+        }
+
+
     }
 }

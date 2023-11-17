@@ -68,7 +68,7 @@ namespace Hybrid.GUI.Home
                 txtTenLop.Focus();
                 return;
             }
-            LopHoc lophoc = new LopHoc(Guid.NewGuid().ToString(),txtTenLop.Text,"","",1,homeFrm.Tk.Mataikhoan);
+            LopHoc lophoc = new LopHoc(Guid.NewGuid().ToString(),txtTenLop.Text,"","",0,homeFrm.Tk.Mataikhoan);
             if(lophocBus.ThemLopHoc(lophoc))
             {
                 ButtonClass buttonClass = new ButtonClass(lophoc,this.homeFrm);

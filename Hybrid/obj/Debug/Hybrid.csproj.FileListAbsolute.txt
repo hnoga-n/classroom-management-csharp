@@ -113,3 +113,5 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskHomework.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskKiemtra.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskList.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskNotDoneButton.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThongTinLopHocFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HienThiMaLopHocFrm.resources
