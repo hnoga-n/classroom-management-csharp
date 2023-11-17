@@ -1,10 +1,12 @@
 ﻿using Hybrid.DAO;
+using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Hybrid.BUS
 {
@@ -25,8 +27,33 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = blktDAO.loadList();
-            list.Sort();
+            //list.Sort();
+        }
+        public void addChiTietBaiLam(ArrayList chitietbailam)
+        {
+            try
+            {
+                blktDAO.addChiTietBaiLamKiemTra(chitietbailam);
+                list.Add(chitietbailam);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file chitietbailamkiemtraBUS:" + ex.Message);
+                return;
+            }
+        }
+
+        public ArrayList getChiTietBaiLamKiemTraWithMaBaiLam(string mabailamkiemtra)
+        {
+            ArrayList listctblkt = new ArrayList();
+            foreach (ChiTietBaiLamKiemTra item in list)
+            {
+                if (item.Mabailamkiemtra.Equals(mabailamkiemtra))
+                    listctblkt.Add(item);
+            }
+            return listctblkt;
         }
     }
+
 
 }

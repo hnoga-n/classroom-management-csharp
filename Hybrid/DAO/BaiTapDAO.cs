@@ -13,11 +13,9 @@ namespace Hybrid.DAO
 {
     public class BaiTapDAO
     {
-        private ArrayList list;
 
         public BaiTapDAO()
         {
-            list = loadList();
 
         }
 
@@ -36,10 +34,12 @@ namespace Hybrid.DAO
                     tmp.Mabaitap = dr["mabaitap"].ToString();
                     tmp.Machuong = dr["machuong"].ToString();
                     tmp.Tieude = dr["tieude"].ToString();
-                    tmp.Noidung = dr["noidung"].ToString();
-                    tmp.Dahoanthanh = int.Parse(dr["dahoanthanh"].ToString());
+                    tmp.Noidungbaitap = dr["noidungbaitap"].ToString();
+                    tmp.Noidungdapan = dr["noidungdapan"].ToString();
                     tmp.Thoigiantao = DateTime.Parse(dr["thoigiantao"].ToString());
                     tmp.Thoihan = DateTime.Parse(dr["thoihan"].ToString());
+                    tmp.Congkhaidapan = int.Parse(dr["congkhaidapan"].ToString());
+                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
                     listTmp.Add(tmp);
                 }
                 dr.Close();

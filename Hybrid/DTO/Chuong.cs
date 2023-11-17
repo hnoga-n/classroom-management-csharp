@@ -12,9 +12,9 @@ namespace Hybrid.DTO
     public class Chuong:IComparable
     {
         private string machuong;
+        private string malop;
         private string tenchuong;
         private DateTime thoigiantao;
-        private string malop;
         private int daxoa;
 
         public Chuong() { }

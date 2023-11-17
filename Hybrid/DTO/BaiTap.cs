@@ -9,33 +9,40 @@ namespace Hybrid.DTO
     public class BaiTap
     {
         private string mabaitap;
-        private string tieude;
-        private string noidung;
-        private DateTime thoihan;
-        private DateTime thoigiantao;
         private string machuong;
-        private int dahoanthanh;
+        private string tieude;
+        private string noidungbaitap;
+        private string noidungdapan;
+        private DateTime thoigiantao;
+        private DateTime thoihan;
+        private int daxoa;
+        private int congkhaidapan;
 
         public BaiTap()
         {
         }
-        public BaiTap(string mabaitap, string tieude, string noidung, DateTime thoihan, DateTime thoigiantao, string machuong, int dahoanthanh)
+
+        public BaiTap(string mabaitap, string machuong, string tieude, string noidungbaitap, string noidungdapan, DateTime thoigiantao, DateTime thoihan, int daxoa, int congkhaidapan)
         {
             this.mabaitap = mabaitap;
-            this.tieude = tieude;
-            this.noidung = noidung;
-            this.thoihan = thoihan;
-            this.thoigiantao = thoigiantao;
             this.machuong = machuong;
-            this.dahoanthanh = dahoanthanh;
+            this.tieude = tieude;
+            this.noidungbaitap = noidungbaitap;
+            this.noidungdapan = noidungdapan;
+            this.thoigiantao = thoigiantao;
+            this.thoihan = thoihan;
+            this.daxoa = daxoa;
+            this.congkhaidapan = congkhaidapan;
         }
 
         public string Mabaitap { get => mabaitap; set => mabaitap = value; }
-        public string Tieude { get => tieude; set => tieude = value; }
-        public string Noidung { get => noidung; set => noidung = value; }
-        public DateTime Thoihan { get => thoihan; set => thoihan = value; }
-        public DateTime Thoigiantao { get => thoigiantao; set => thoigiantao = value; }
         public string Machuong { get => machuong; set => machuong = value; }
-        public int Dahoanthanh { get => dahoanthanh; set => dahoanthanh = value; }
+        public string Tieude { get => tieude; set => tieude = value; }
+        public string Noidungbaitap { get => noidungbaitap; set => noidungbaitap = value; }
+        public string Noidungdapan { get => noidungdapan; set => noidungdapan = value; }
+        public DateTime Thoigiantao { get => thoigiantao; set => thoigiantao = value; }
+        public DateTime Thoihan { get => thoihan; set => thoihan = value; }
+        public int Daxoa { get => daxoa; set => daxoa = value; }
+        public int Congkhaidapan { get => congkhaidapan; set => congkhaidapan = value; }
     }
 }

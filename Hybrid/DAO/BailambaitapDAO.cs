@@ -12,11 +12,9 @@ namespace Hybrid.DAO
 {
     public class BailambaitapDAO
     {
-        private ArrayList list;
 
         public BailambaitapDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()
@@ -36,7 +34,7 @@ namespace Hybrid.DAO
                     tmp.Mataikhoan = dr["mataikhoan"].ToString();
                     tmp.Mabaitap = dr["mabaitap"].ToString();
                     tmp.Nhanxet = dr["nhanxet"].ToString();
-                    tmp.Diem = int.Parse(dr["diem"].ToString());
+                    tmp.Diem = float.Parse(dr["diem"].ToString());
                     tmp.Noidung = dr["noidung"].ToString();
                     tmp.Thoigiannopbai = DateTime.Parse(dr["thoigiannopbai"].ToString());
                     listTmp.Add(tmp);
@@ -45,7 +43,7 @@ namespace Hybrid.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi xảy ra ở file BailambaitapDAO:" + ex.Message);
+                MessageBox.Show("Lỗi xảy ra ở file BailambaitapDAO: " + ex.Message);
             }
             finally
             {

@@ -14,11 +14,9 @@ namespace Hybrid.DAO
 {
     public class CauTraLoiDAO
     {
-        private ArrayList list;
 
         public CauTraLoiDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()
@@ -36,8 +34,8 @@ namespace Hybrid.DAO
                     CauTraLoi tmp = new CauTraLoi();
                     tmp.Macautraloi= dr["macautraloi"].ToString();
                     tmp.Macauhoi = dr["macauhoi"].ToString();
-                    tmp.Ladapan = int.Parse(dr["lacautraloidung"].ToString());
                     tmp.Noidung= dr["noidung"].ToString();
+                    tmp.Ladapan = int.Parse(dr["lacautraloidung"].ToString());
                     listTmp.Add(tmp);
                 }
                 dr.Close();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hybrid.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,27 @@ namespace Hybrid.GUI.Todo
 {
     public partial class TaskHomework : UserControl
     {
+        private BaiTap bt;
         public TaskHomework( )
         {
             InitializeComponent();
+        }
+
+        public TaskHomework(BaiTap bt)
+        {
+            InitializeComponent();
+            this.bt = bt;
+            loadBaitap();
+        }
+
+        public Label getLabelClass()
+        {
+            return this.lblClass;
+        }
+        private void loadBaitap()
+        {
+            this.lblTitle.Text = bt.Tieude;
+            this.lblDeadline.Text = bt.Thoigiantao.ToString();
         }
     }
 }

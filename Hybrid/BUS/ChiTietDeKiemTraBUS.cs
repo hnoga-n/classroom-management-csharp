@@ -34,18 +34,15 @@ namespace Hybrid.BUS
             list.Add(ctdkt);
             ctdktDAO.ThemChiTietDeKiemTra(ctdkt);
         }
-
-        public ArrayList GetMaCauHoiByMaDeKiemTra(string madekiemtra)
+        public ArrayList getMaCauhoiWithMaDeKiemTra(string madekiemtra)
         {
-            ArrayList rslist = new ArrayList();
-            foreach(ChiTietDeKiemTra ctdkt in this.list)
+            ArrayList listcauhoi = new ArrayList();
+            foreach (ChiTietDeKiemTra item in list)
             {
-                if(ctdkt.Madekiemtra.Equals(madekiemtra))
-                {
-                    rslist.Add(ctdkt);
-                }
+                if (item.Madekiemtra.Equals(madekiemtra))
+                    listcauhoi.Add(item.Macauhoi);
             }
-            return rslist;
+            return listcauhoi;
         }
     }
 }

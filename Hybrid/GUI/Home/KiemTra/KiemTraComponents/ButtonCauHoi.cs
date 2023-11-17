@@ -68,7 +68,7 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
                 this.ktfrm.PnlCauHoiContainer.Controls.Remove(this);
                 this.Dispose();
             }
-            this.ktfrm.HienThiDanhSachCauHoi(cauhoiBUS.GetDanhSachCauHoiByMaTaiKhoan(this.cauhoi.Matk));
+            this.ktfrm.HienThiDanhSachCauHoi(cauhoiBUS.GetDanhSachCauHoiByMaTaiKhoan(this.cauhoi.Mataikhoan));
         }
 
         private void btnCauHoi_Click(object sender, EventArgs e)

@@ -4,13 +4,6 @@ using Hybrid.DTO;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.GUI.Home.KiemTra;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Home
@@ -33,8 +26,13 @@ namespace Hybrid.GUI.Home
         {
             InitializeComponent();
             this.chuong = chuong;
+<<<<<<< HEAD
             this.khfrm = khfrm;
             if(!this.khfrm.Lophoc.Magiangvien.Equals(this.khfrm.Taikhoan.Mataikhoan) || khfrm.Lophoc.Daxoa == 1)
+=======
+            this.Khfrm = khfrm;
+            if(!this.Khfrm.Lophoc.Magiangvien.Equals(this.Khfrm.Taikhoan.Mataikhoan))
+>>>>>>> main
             {
                 this.btnThem.Visible = false;
                 this.btnSua.Visible = false;
@@ -72,6 +70,7 @@ namespace Hybrid.GUI.Home
             {
                 if(dkt.Daxoa == 0)
                 {
+
                     ButtonBaiKT btn = new ButtonBaiKT(this,dkt);
                     this.pnlChuongComponent.Controls.Add(btn);
                     this.lblDemTaiLieuChuong.Text = "(" + ++demTaiLieuChuong + ")";
@@ -154,7 +153,7 @@ namespace Hybrid.GUI.Home
             {
                 if (chuongBUS.XoaChuong(chuong))
                 {
-                    this.khfrm.PnlChuongContainer.Controls.Remove(this);
+                    this.Khfrm.PnlChuongContainer.Controls.Remove(this);
                     MessageBox.Show("Xóa chương thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -167,7 +166,7 @@ namespace Hybrid.GUI.Home
         private void btnSua_Click(object sender, EventArgs e)
         {
             new ThemChuongFrm(chuong).ShowDialog();
-            this.khfrm.HienThiDanhSachChuong();
+            this.Khfrm.HienThiDanhSachChuong();
         }
     }
 }

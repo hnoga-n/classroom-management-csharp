@@ -1,4 +1,5 @@
-﻿using Hybrid.DAO;
+﻿using Hybrid.Comparer;
+using Hybrid.DAO;
 using Hybrid.DTO;
 using System;
 using System.Collections;
@@ -26,9 +27,27 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = cautlDAO.loadList();
-            //list.Sort();
+            list.Sort();
         }
-
+        public ArrayList getCauTraLoiWithMaCauHoi(string macauhoi)
+        {
+            ArrayList listcautraloi = new ArrayList();
+            foreach (CauTraLoi item in list)
+            {
+                if (item.Macauhoi.Equals(macauhoi))
+                    listcautraloi.Add(item);
+            }
+            return listcautraloi;
+        }
+        public CauTraLoi getCauTraLoiWithMaCauTraLoi(string macautraloi)
+        {
+            CautraloiComparer comparer = new CautraloiComparer();
+            comparer.TypeToCompare = CautraloiComparer.ComparisonType.macautraloi;
+            CauTraLoi cauTraLoi = new CauTraLoi();
+            cauTraLoi.Macautraloi = macautraloi;
+            int index = list.BinarySearch(cauTraLoi, comparer);
+            return (CauTraLoi)list[index];
+        }
         public void ThemCauTraLoi(CauTraLoi cautraloi)
         {
             this.list.Add(cautraloi);

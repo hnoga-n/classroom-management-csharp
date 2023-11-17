@@ -13,11 +13,9 @@ namespace Hybrid.DAO
 {
     public class ThamGiaDAO
     {
-        private ArrayList list;
 
         public ThamGiaDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()

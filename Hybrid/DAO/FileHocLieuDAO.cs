@@ -12,11 +12,9 @@ namespace Hybrid.DAO
 {
     public class FileHocLieuDAO
     {
-        private ArrayList list;
 
         public FileHocLieuDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()
@@ -33,7 +31,8 @@ namespace Hybrid.DAO
                 {
                     FileHocLieu tmp = new FileHocLieu();
                     tmp.Mahoclieu = dr["mahoclieu"].ToString();
-                    tmp.Linkdinhkem = dr["link"].ToString();
+                    tmp.Tenfile = dr["tenfile"].ToString();
+                    tmp.Id_file = dr["id_file"].ToString();
                     listTmp.Add(tmp);
                 }
                 dr.Close();

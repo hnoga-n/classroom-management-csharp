@@ -33,12 +33,11 @@ namespace Hybrid.DAO
                 {
                     TinNhanBanBe tmp = new TinNhanBanBe();
                     tmp.Matinnhan = dr["matinnhan"].ToString();
-                    tmp.Mabanbe = dr["mabanbe"].ToString();
                     tmp.Manguoigui = dr["manguoigui"].ToString();
                     tmp.Manguoinhan = dr["manguoinhan"].ToString();
                     tmp.Noidung = dr["noidung"].ToString();
                     tmp.Thoigiangui= DateTime.Parse(dr["thoigiangui"].ToString());
-                    tmp.Trangthai = int.Parse(dr["trangthai"].ToString());
+                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
                     listTmp.Add(tmp);
                 }
                 dr.Close();

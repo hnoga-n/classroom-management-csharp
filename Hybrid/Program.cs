@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 ﻿using Hybrid.GUI.Home;
+=======
+﻿using Hybrid.BUS;
+using Hybrid.DTO;
+using Hybrid.GUI.Home.KiemTra;
+using Hybrid.GUI.Kiemtra;
+>>>>>>> main
 using System;
 using System.Collections.Generic;
 using System.Linq;

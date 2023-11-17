@@ -21,10 +21,17 @@ namespace Hybrid
 {
     public partial class Form1 : KryptonForm
     {
-        TaikhoanBUS taikhoanBus = new TaikhoanBUS(); 
+        private Taikhoan tk;
+        TaikhoanBUS taikhoanBus = new TaikhoanBUS();
         public Form1()
         {
             InitializeComponent();
+            this.tk = taikhoanBus.GetTaiKhoanByEmail("nguyenhuyhoang@gmail.com");
+        }
+        public Form1(Taikhoan tk)
+        {
+            InitializeComponent();
+            this.tk = tk;
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)
@@ -39,7 +46,7 @@ namespace Hybrid
 
         private void addFormtoPanelContainer(object Form)
         {
-            if(this.pnlContainer.Controls.Count > 0)
+            if (this.pnlContainer.Controls.Count > 0)
                 this.pnlContainer.Controls.RemoveAt(0);
             Form f = Form as Form;
             f.TopLevel = false;
@@ -55,8 +62,12 @@ namespace Hybrid
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("machhaotuan@gmail.com");
             //Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("huchuynh@gmail.com");
+=======
+            //Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("machhaotuan@gmail.com
+>>>>>>> main
             addFormtoPanelContainer(new HomeFrm(tk));
         }
 
@@ -79,6 +90,6 @@ namespace Hybrid
         {
             btnHome_Click(this, EventArgs.Empty);
         }
-        
+
     }
 }

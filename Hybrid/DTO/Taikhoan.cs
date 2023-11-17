@@ -10,12 +10,13 @@ namespace Hybrid.DTO
     public class Taikhoan
     {
         private string mataikhoan;
+        private int manhomquyen;
         private string hoten;
         private string email;
         private string matkhau;
         private string sodienthoai;
         private string anhdaidien;
-        private int manhomquyen;
+        private int daxoa;
 
         public string Mataikhoan { get => mataikhoan; set => mataikhoan = value; }
         public string Hoten { get => hoten; set => hoten = value; }
@@ -24,10 +25,11 @@ namespace Hybrid.DTO
         public string Sodienthoai { get => sodienthoai; set => sodienthoai = value; }
         public string Anhdaidien { get => anhdaidien; set => anhdaidien = value; }
         public int Manhomquyen { get => manhomquyen; set => manhomquyen = value; }
+        public int Daxoa { get => daxoa; set => daxoa = value; }
 
         public Taikhoan() { }
 
-        public Taikhoan(string mataikhoan, string hoten, string email, string matkhau, string sodienthoai, string anhdaidien, int manhomquyen)
+        public Taikhoan(string mataikhoan, string hoten, string email, string matkhau, string sodienthoai, string anhdaidien, int manhomquyen, int daxoa)
         {
             this.mataikhoan = mataikhoan;
             this.hoten = hoten;
@@ -36,11 +38,19 @@ namespace Hybrid.DTO
             this.sodienthoai = sodienthoai;
             this.anhdaidien = anhdaidien;
             this.manhomquyen = manhomquyen;
+            this.daxoa = daxoa;
         }
 
         public override string ToString()
         {
-            return $"Ma tai khoan: {Mataikhoan}, Ho ten: {Hoten},Email: {Email},Mat khau:{Matkhau},So dien thoai:{Sodienthoai},Ma nhom quyen:{Manhomquyen}\n";
+            return $"Mã tài khoản: {mataikhoan}\n" +
+               $"Mã nhóm quyền: {manhomquyen}\n" +
+               $"Họ tên: {hoten}\n" +
+               $"Email: {email}\n" +
+               $"Mật khẩu: {matkhau}\n" +
+               $"Số điện thoại: {sodienthoai}\n" +
+               $"Ảnh đại diện: {anhdaidien}\n" +
+               $"Đã xóa: {daxoa}";
         }
     }
 }

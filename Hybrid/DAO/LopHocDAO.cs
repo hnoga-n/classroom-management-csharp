@@ -13,12 +13,8 @@ namespace Hybrid.DAO
 {
     public class LopHocDAO
     {
-        private ArrayList list;
-
         public LopHocDAO()
         {
-            list = loadList();
-
         }
 
         public ArrayList loadList()
@@ -35,9 +31,14 @@ namespace Hybrid.DAO
                 {
                     LopHoc tmp = new LopHoc();
                     tmp.Malop = dr["malophoc"].ToString();
+<<<<<<< HEAD
                     tmp.Mota = dr["mota"].ToString();
                     tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
+=======
+>>>>>>> main
                     tmp.Magiangvien = dr["magiangvien"].ToString();
+                    tmp.Mota = dr["mota"].ToString();
+                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
                     tmp.Tenlop = dr["ten"].ToString();
                     listTmp.Add(tmp);
                 }
@@ -57,7 +58,11 @@ namespace Hybrid.DAO
         {
             try
             {
+<<<<<<< HEAD
                 string sql_themlophoc = "INSERT INTO lophoc(malophoc,ten,mota,daxoa,magiangvien) VALUES (@malophoc,N'" + lophoc.Tenlop + "',@mota,@daxoa,@magiangvien)";
+=======
+                string sql_themlophoc = "INSERT INTO lophoc(malophoc,ten,mota,daxoa,magiangvien) VALUES (@malophoc,N'"+ lophoc.Tenlop + "',@mota,@daxoa,@magiangvien)";
+>>>>>>> main
                 SqlCommand cmd_themlophoc = new SqlCommand(sql_themlophoc, Ketnoisqlserver.GetConnection());
                 cmd_themlophoc.Parameters.AddWithValue("@malophoc", Guid.Parse(lophoc.Malop));
                 cmd_themlophoc.Parameters.AddWithValue("@mota", lophoc.Mota);
@@ -120,12 +125,12 @@ namespace Hybrid.DAO
             {
                 string sql_get_all = "select l.* \r\n" +
                     "from lophoc l join thamgialophoc tg on l.malophoc = tg.malophoc \r\n" +
-                    "join taikhoan tk on tk.matk = tg.mataikhoan\r\n" +
-                    "where tk.matk = @mataikhoan\r\n" +
+                    "join taikhoan tk on tk.mataikhoan = tg.mataikhoan\r\n" +
+                    "where tk.mataikhoan = @mataikhoan\r\n" +
                     "UNION\r\n" +
                     "select lophoc.* \r\n" +
-                    "from lophoc join taikhoan on lophoc.magiangvien = taikhoan.matk\r\n" +
-                    "where taikhoan.matk= @mataikhoan";
+                    "from lophoc join taikhoan on lophoc.magiangvien = taikhoan.mataikhoan\r\n" +
+                    "where taikhoan.mataikhoan= @mataikhoan";
                 SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
                 cmd.Parameters.AddWithValue("@mataikhoan",mataikhoan);
                 SqlDataReader dr = cmd.ExecuteReader();

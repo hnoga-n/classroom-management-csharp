@@ -1,22 +1,16 @@
 ﻿using Hybrid.DTO;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hybrid.DAO
 {
     public class BanbeDAO
     {
-        private ArrayList list;
 
         public BanbeDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()
@@ -31,12 +25,11 @@ namespace Hybrid.DAO
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    BanbeDTO tmp = new BanbeDTO();
-                    tmp.Mabanbe = dr["mabanbe"].ToString();
+                    BanBe tmp = new BanBe();
                     tmp.Manguoiketban = dr["manguoiketban"].ToString();
                     tmp.Manguoiduocketban = dr["manguoiduocketban"].ToString();
                     tmp.Thoigianketban = DateTime.Parse(dr["thoigianketban"].ToString());
-                    tmp.Trangthaiketban= int.Parse(dr["thangthai"].ToString());
+                    tmp.Trangthaiketban= int.Parse(dr["trangthaiketban"].ToString());
                     listTmp.Add(tmp);
                 }
                 dr.Close();

@@ -14,11 +14,9 @@ namespace Hybrid.DAO
 {
     public class ChuongDAO
     {
-        private ArrayList list;
 
         public ChuongDAO()
         {
-            list = loadList();
         }
 
         public ArrayList loadList()

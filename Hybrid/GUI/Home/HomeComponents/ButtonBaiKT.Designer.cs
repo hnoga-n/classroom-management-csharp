@@ -173,7 +173,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblChiTietBKT.BackColor = System.Drawing.Color.White;
             this.lblChiTietBKT.Location = new System.Drawing.Point(117, 56);
             this.lblChiTietBKT.Name = "lblChiTietBKT";
-            this.lblChiTietBKT.Size = new System.Drawing.Size(162, 25);
+            this.lblChiTietBKT.Size = new System.Drawing.Size(166, 25);
             this.lblChiTietBKT.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             this.lblChiTietBKT.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChiTietBKT.TabIndex = 18;
@@ -184,7 +184,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblTieuDeBKT.BackColor = System.Drawing.Color.White;
             this.lblTieuDeBKT.Location = new System.Drawing.Point(117, 21);
             this.lblTieuDeBKT.Name = "lblTieuDeBKT";
-            this.lblTieuDeBKT.Size = new System.Drawing.Size(175, 33);
+            this.lblTieuDeBKT.Size = new System.Drawing.Size(177, 33);
             this.lblTieuDeBKT.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             this.lblTieuDeBKT.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             this.lblTieuDeBKT.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -236,6 +236,10 @@ namespace Hybrid.GUI.Home.HomeComponents
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnBaiKiemTra.TabIndex = 15;
             this.btnBaiKiemTra.Values.Text = "";
+<<<<<<< HEAD
+=======
+            this.btnBaiKiemTra.Click += new System.EventHandler(this.btnBaiKiemTra_Click);
+>>>>>>> main
             // 
             // timerCapNhatTrangThai
             // 
