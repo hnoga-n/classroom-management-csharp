@@ -34,19 +34,6 @@ namespace Hybrid.BUS
             list.Add(ctdkt);
             ctdktDAO.ThemChiTietDeKiemTra(ctdkt);
         }
-
-        public ArrayList GetMaCauHoiByMaDeKiemTra(string madekiemtra)
-        {
-            ArrayList rslist = new ArrayList();
-            foreach(ChiTietDeKiemTra ctdkt in this.list)
-            {
-                if(ctdkt.Madekiemtra.Equals(madekiemtra))
-                {
-                    rslist.Add(ctdkt);
-                }
-            }
-            return rslist;
-        }
         public ArrayList getMaCauhoiWithMaDeKiemTra(string madekiemtra)
         {
             ArrayList listcauhoi = new ArrayList();

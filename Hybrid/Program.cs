@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Hybrid.BUS;
+using Hybrid.DTO;
+using Hybrid.GUI.Home.KiemTra;
+using Hybrid.GUI.Kiemtra;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

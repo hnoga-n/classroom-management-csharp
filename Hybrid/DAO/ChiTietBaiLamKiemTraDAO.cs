@@ -60,7 +60,7 @@ namespace Hybrid.DAO
                     command.Parameters.Add("@mabailamkt", SqlDbType.UniqueIdentifier).Value = Guid.Parse(ct.Mabailamkiemtra);
                     command.Parameters.Add("@macauhoi", SqlDbType.UniqueIdentifier).Value =
                         Guid.Parse(ct.Macauhoi);
-                    command.Parameters.Add("@dapanchon", SqlDbType.UniqueIdentifier).Value = Guid.Parse(ct.Dapanchon);
+                    command.Parameters.Add("@dapanchon", SqlDbType.UniqueIdentifier).Value = string.IsNullOrEmpty(ct.Dapanchon) ? DBNull.Value : (object)Guid.Parse(ct.Dapanchon);
                     command.ExecuteNonQuery();
                 }
             }

@@ -1,5 +1,6 @@
 ﻿using Hybrid.DTO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hybrid.Comparer
 {
-    public class BailamkiemtraComparer
+    public class BailamkiemtraComparer:IComparer
     {
         private ComparisonType typeToCompare;
 

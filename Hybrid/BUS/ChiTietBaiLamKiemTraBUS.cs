@@ -1,4 +1,5 @@
 ﻿using Hybrid.DAO;
+using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = blktDAO.loadList();
-            list.Sort();
+            //list.Sort();
         }
         public void addChiTietBaiLam(ArrayList chitietbailam)
         {
@@ -40,6 +41,17 @@ namespace Hybrid.BUS
                 MessageBox.Show("Lỗi xảy ra ở file chitietbailamkiemtraBUS:" + ex.Message);
                 return;
             }
+        }
+
+        public ArrayList getChiTietBaiLamKiemTraWithMaBaiLam(string mabailamkiemtra)
+        {
+            ArrayList listctblkt = new ArrayList();
+            foreach (ChiTietBaiLamKiemTra item in list)
+            {
+                if (item.Mabailamkiemtra.Equals(mabailamkiemtra))
+                    listctblkt.Add(item);
+            }
+            return listctblkt;
         }
     }
 

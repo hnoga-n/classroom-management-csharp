@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -42,7 +43,9 @@ namespace Hybrid.GUI.Utilities
 
         static public void CloseForm()
         {
-            splashForm?.Invoke(new CloseDelegate(loading.CloseFormInternal));
+            System.Threading.Thread.Sleep(1500);
+                splashForm?.Invoke(new CloseDelegate(loading.CloseFormInternal));
+
         }
 
         static private void CloseFormInternal()

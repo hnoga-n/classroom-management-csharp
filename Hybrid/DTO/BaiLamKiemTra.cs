@@ -13,7 +13,6 @@ namespace Hybrid.DTO
         private string madekiemtra;
         private string mataikhoan;
         private float diem;
-        private DateTime thoigianvaokiemtra;
         private DateTime thoigiannop;
         private int socaudung;
         private int noptre;
@@ -23,7 +22,6 @@ namespace Hybrid.DTO
         {
             this.Mabailam = mabailam;
             this.Diem = diem;
-            this.Thoigianvaokiemtra = thoigianvaokiemtra;
             this.Thoigiannop = thoigiannop;
             this.Socaudung = socaudung;
             this.Mataikhoan = mataikhoan;
@@ -33,7 +31,6 @@ namespace Hybrid.DTO
 
         public string Mabailam { get => mabailam; set => mabailam = value; }
         public float Diem { get => diem; set => diem = value; }
-        public DateTime Thoigianvaokiemtra { get => thoigianvaokiemtra; set => thoigianvaokiemtra = value; }
         public DateTime Thoigiannop { get => thoigiannop; set => thoigiannop = value; }
         public int Socaudung { get => socaudung; set => socaudung = value; }
         public string Mataikhoan { get => mataikhoan; set => mataikhoan = value; }
@@ -45,7 +42,6 @@ namespace Hybrid.DTO
             return $"Mã bài làm: {mabailam}\n" +
                    $"Mã đề kiểm tra: {madekiemtra}\n" +
                    $"Điểm: {diem}\n" +
-                   $"Thời gian vào kiểm tra: {thoigianvaokiemtra}\n" +
                    $"Thời gian nộp: {thoigiannop}\n" +
                    $"Số câu đúng: {socaudung}\n" +
                    $"Nộp trễ: {noptre}\n" +
@@ -53,7 +49,8 @@ namespace Hybrid.DTO
         }
         public int CompareTo(object obj)
         {
-            return mabailam.CompareTo(obj);
+            BaiLamKiemTra blkt = (BaiLamKiemTra) obj;
+            return this.mabailam.CompareTo(blkt.Mabailam);
         }
         public int CompareTo(BaiLamKiemTra c1, BailamkiemtraComparer.ComparisonType type)
         {
