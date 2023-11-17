@@ -97,15 +97,15 @@ namespace Hybrid.BUS
                 return false;
         }
 
-        public ArrayList GetDanhSachDeKiemTraTheoMaChuong(string machuong)
+        public ArrayList GetDanhSachDeKiemTraTheoMaChuong(string machuong,string tukhoa = "")
         {
             ArrayList rslist = new ArrayList();
             foreach(DeKiemTra dkt in this.list)
             {
-                if(dkt.Machuong.Equals(machuong))
+                if(dkt.Machuong.Equals(machuong) && dkt.Tieude.Contains(tukhoa) && dkt.Daxoa == 0)
                     rslist.Add( dkt );  
             }
             return rslist;
-        } 
+        }
     }
 }

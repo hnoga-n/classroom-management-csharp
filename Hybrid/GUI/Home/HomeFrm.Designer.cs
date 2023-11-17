@@ -257,12 +257,12 @@ namespace Hybrid.GUI.Home
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtTimKiem;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnThamGia;
         private System.Windows.Forms.Panel panel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnTaoLop;
         private System.Windows.Forms.FlowLayoutPanel pnlLopHocContainer;
         private Panel pnlGiaoDienLopHocContainer;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtTimKiem;
 
         public FlowLayoutPanel PnlLopHocContainer { get => pnlLopHocContainer; set => pnlLopHocContainer = value; }
         public Panel PnlGiaoDienLopHocContainer { get => pnlGiaoDienLopHocContainer; set => pnlGiaoDienLopHocContainer = value; }

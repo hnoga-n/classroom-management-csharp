@@ -1,6 +1,7 @@
+
+using Hybrid.GUI.Home;
 ﻿using Hybrid.BUS;
 using Hybrid.DTO;
-using Hybrid.GUI.Home.KiemTra;
 using Hybrid.GUI.Kiemtra;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Hybrid
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            //Application.Run(new KiemTraFrm());
+            //Application.Run(new ThongTinLopHocFrm());
         }
     }
 }

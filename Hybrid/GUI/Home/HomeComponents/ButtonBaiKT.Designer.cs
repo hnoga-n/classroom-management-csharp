@@ -272,5 +272,6 @@ namespace Hybrid.GUI.Home.HomeComponents
         private System.Windows.Forms.Timer timerCapNhatTrangThai;
 
         public KryptonButton BtnXoa { get => btnXoa; set => btnXoa = value; }
+        public KryptonLabel LblTieuDeBKT { get => lblTieuDeBKT; set => lblTieuDeBKT = value; }
     }
 }

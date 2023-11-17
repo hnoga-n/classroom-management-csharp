@@ -73,10 +73,10 @@ namespace Hybrid.GUI.Home
             // lblDemTaiLieuChuong
             // 
             this.lblDemTaiLieuChuong.AutoSize = true;
-            this.lblDemTaiLieuChuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblDemTaiLieuChuong.Location = new System.Drawing.Point(672, 26);
+            this.lblDemTaiLieuChuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblDemTaiLieuChuong.Location = new System.Drawing.Point(32, 1);
             this.lblDemTaiLieuChuong.Name = "lblDemTaiLieuChuong";
-            this.lblDemTaiLieuChuong.Size = new System.Drawing.Size(37, 25);
+            this.lblDemTaiLieuChuong.Size = new System.Drawing.Size(30, 20);
             this.lblDemTaiLieuChuong.TabIndex = 14;
             this.lblDemTaiLieuChuong.Text = "(0)";
             // 
@@ -147,7 +147,7 @@ namespace Hybrid.GUI.Home
             // 
             this.btnSua.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Alternate;
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.Location = new System.Drawing.Point(778, 19);
+            this.btnSua.Location = new System.Drawing.Point(799, 19);
             this.btnSua.Name = "btnSua";
             this.btnSua.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnSua.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -210,7 +210,7 @@ namespace Hybrid.GUI.Home
             // 
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.KryptonContextMenu = this.menuThem;
-            this.btnThem.Location = new System.Drawing.Point(712, 19);
+            this.btnThem.Location = new System.Drawing.Point(752, 19);
             this.btnThem.Name = "btnThem";
             this.btnThem.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnThem.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -462,5 +462,6 @@ namespace Hybrid.GUI.Home
         public KryptonButton BtnThem { get => btnThem; set => btnThem = value; }
         public FlowLayoutPanel PnlChuongComponent { get => pnlChuongComponent; set => pnlChuongComponent = value; }
         public Label LblDemTaiLieuChuong { get => lblDemTaiLieuChuong; set => lblDemTaiLieuChuong = value; }
+        public KryptonButton BtnSua { get => btnSua; set => btnSua = value; }
     }
 }

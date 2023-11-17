@@ -70,20 +70,32 @@ namespace Hybrid.GUI.Home
                 return;
             }
             ThamGia thamgia = new ThamGia(txtMaLop.Text,this.homefrm.Tk.Mataikhoan);
-            if(thamgiaBUS.ThemThamGia(thamgia))
+            if (thamgiaBUS.KiemTraDaThamGia(thamgia))
             {
                 if (this.homefrm.PnlGiaoDienLopHocContainer.Controls.Count > 0)
                     this.homefrm.PnlGiaoDienLopHocContainer.Controls.RemoveAt(0);
-                PanelGiaoDienLopHoc panelGDLH = new PanelGiaoDienLopHoc(lophocthamgia,homefrm.Tk);
+                PanelGiaoDienLopHoc panelGDLH = new PanelGiaoDienLopHoc(lophocthamgia, homefrm);
+                this.homefrm.PnlGiaoDienLopHocContainer.Controls.Add(panelGDLH);
+                panelGDLH.Dock = DockStyle.Fill;
+                this.Close();
+                return;
+            }
+            if (thamgiaBUS.ThemThamGia(thamgia))
+            {
+                if (this.homefrm.PnlGiaoDienLopHocContainer.Controls.Count > 0)
+                    this.homefrm.PnlGiaoDienLopHocContainer.Controls.RemoveAt(0);
+                PanelGiaoDienLopHoc panelGDLH = new PanelGiaoDienLopHoc(lophocthamgia, homefrm);
                 this.homefrm.PnlGiaoDienLopHocContainer.Controls.Add(panelGDLH);
                 panelGDLH.Dock = DockStyle.Fill;
 
-                ButtonClass btn = new ButtonClass(lophocthamgia,this.homefrm);
+                ButtonClass btn = new ButtonClass(lophocthamgia, this.homefrm);
                 this.homefrm.PnlLopHocContainer.Controls.Add(btn);
+                MessageBox.Show("Tham gia lớp học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-            } else
+            }
+            else
             {
-                MessageBox.Show("Tham gia lớp học thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);            
+                MessageBox.Show("Tham gia lớp học thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

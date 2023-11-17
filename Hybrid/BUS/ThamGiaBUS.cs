@@ -3,6 +3,7 @@ using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,11 @@ namespace Hybrid.BUS
             //list.Sort();
         }
 
+        public DataTable DanhSachHocSinhTheoMaLop(string malop)
+        {
+            return thamgiaDAO.DanhSachHocSinhTheoMaLop(malop);
+        }
+
         public bool ThemThamGia(ThamGia thamgia)
         {
             if(thamgiaDAO.ThemThamGia(thamgia))
@@ -37,6 +43,32 @@ namespace Hybrid.BUS
                 return true;
             } else 
                 return false;
+        }
+
+        public bool XoaThamGia(ThamGia thamgia)
+        {
+            if(thamgiaDAO.XoaThamGia(thamgia))
+            {
+                foreach(ThamGia tg in this.list)
+                {
+                    if(tg.Mataikhoan.Equals(thamgia.Mataikhoan) && tg.Malop.Equals(thamgia.Malop))
+                    {
+                        this.list.Remove(tg);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool KiemTraDaThamGia(ThamGia thamgia)
+        {
+            foreach(ThamGia tg in this.list)
+            {
+                if (tg.Malop.Equals(thamgia.Malop) && tg.Mataikhoan.Equals(thamgia.Mataikhoan))
+                    return true;
+            }
+            return false;
         }
     }
 }

@@ -25,6 +25,7 @@ namespace Hybrid.DTO
         public string Magiangvien { get => magiangvien; set => magiangvien = value; }
         public string Mota { get => mota; set => mota = value; }
         public string Avatar { get => avatar; set => avatar = value; }
+
         public int Daxoa { get => daxoa; set => daxoa = value; }
         public string Malop { get => malop; set => malop = value; }
         public string Tenlop { get => tenlop; set => tenlop = value; }

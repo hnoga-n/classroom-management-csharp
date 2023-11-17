@@ -55,7 +55,39 @@ namespace Hybrid.BUS
             }
             return false;
         }
+        public bool SuaLopHoc(LopHoc lophoc)
+        {
+            if(lopDAO.SuaLopHoc(lophoc))
+            {
+                foreach(LopHoc l in this.list)
+                {
+                    if(l.Malop.Equals(lophoc.Malop))
+                    {
+                        l.Tenlop = lophoc.Tenlop;
+                        l.Mota = lophoc.Mota;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
         
+        public bool XoaLopHoc(string malop)
+        {
+            if(lopDAO.XoaLopHoc(malop))
+            {
+                foreach (LopHoc l in this.list)
+                {
+                    if (l.Malop.Equals(malop))
+                    {
+                        l.Daxoa = 1;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public LopHoc GetLopHocByMaLop(string malophoc)
         {
             foreach (LopHoc lop in list)
