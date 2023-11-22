@@ -179,6 +179,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -551,6 +552,12 @@
     <Compile Include="GUI\Home\ThemLopFrm.Designer.cs">
       <DependentUpon>ThemLopFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Home\ThongTinLopHocFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\ThongTinLopHocFrm.Designer.cs">
+      <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Lichhoc\Calendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -670,6 +677,9 @@
     <EmbeddedResource Include="GUI\Home\Hienthitailieufrm.resx">
       <DependentUpon>Hienthitailieufrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HienThiMaLopHocFrm.resx">
+      <DependentUpon>HienThiMaLopHocFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonBaiKT.resx">
       <DependentUpon>ButtonBaiKT.cs</DependentUpon>
     </EmbeddedResource>
@@ -753,6 +763,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThemLopFrm.resx">
       <DependentUpon>ThemLopFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\ThongTinLopHocFrm.resx">
+      <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Lichhoc\Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>

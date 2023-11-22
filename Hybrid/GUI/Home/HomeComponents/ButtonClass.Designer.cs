@@ -1,4 +1,5 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
+using System.Windows.Forms;
 
 namespace Hybrid.GUI.Home
 {
@@ -34,7 +35,7 @@ namespace Hybrid.GUI.Home
             this.btnLopHoc = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTenLop = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblChiTiet = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,32 +88,32 @@ namespace Hybrid.GUI.Home
             // 
             // lblTenLop
             // 
-            this.lblTenLop.AutoSize = true;
+            this.lblTenLop.AutoEllipsis = true;
             this.lblTenLop.BackColor = System.Drawing.Color.White;
-            this.lblTenLop.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTenLop.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenLop.Location = new System.Drawing.Point(78, 15);
             this.lblTenLop.Name = "lblTenLop";
-            this.lblTenLop.Size = new System.Drawing.Size(100, 20);
+            this.lblTenLop.Size = new System.Drawing.Size(279, 28);
             this.lblTenLop.TabIndex = 2;
             this.lblTenLop.Text = "Lập trình C#";
             // 
-            // label1
+            // lblChiTiet
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(79, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Lập trình C#";
+            this.lblChiTiet.AutoSize = true;
+            this.lblChiTiet.BackColor = System.Drawing.Color.White;
+            this.lblChiTiet.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblChiTiet.Location = new System.Drawing.Point(79, 43);
+            this.lblChiTiet.Name = "lblChiTiet";
+            this.lblChiTiet.Size = new System.Drawing.Size(100, 20);
+            this.lblChiTiet.TabIndex = 3;
+            this.lblChiTiet.Text = "Lập trình C#";
             // 
             // ButtonClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblChiTiet);
             this.Controls.Add(this.lblTenLop);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLopHoc);
@@ -130,8 +131,10 @@ namespace Hybrid.GUI.Home
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnLopHoc;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTenLop;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblChiTiet;
 
         public KryptonButton BtnLopHoc { get => btnLopHoc; set => btnLopHoc = value; }
+        public Label LblTenLop { get => lblTenLop; set => lblTenLop = value; }
+        public Label LblChiTiet { get => lblChiTiet; set => lblChiTiet = value; }
     }
 }

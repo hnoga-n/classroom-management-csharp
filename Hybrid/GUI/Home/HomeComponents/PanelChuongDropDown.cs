@@ -22,13 +22,12 @@ namespace Hybrid.GUI.Home
         public Chuong Chuong { get => chuong; set => chuong = value; }
         public KhoaHocFrm Khfrm { get => khfrm; set => khfrm = value; }
 
-
-        public PanelChuongDropDown(KhoaHocFrm khfrm,Chuong chuong)
+        public PanelChuongDropDown(KhoaHocFrm khfrm,Chuong chuong, int loaihoatdong = 0, string tukhoa = "")
         {
             InitializeComponent();
             this.chuong = chuong;
-            this.Khfrm = khfrm;
-            if(!this.Khfrm.Lophoc.Magiangvien.Equals(this.Khfrm.Taikhoan.Mataikhoan))
+            this.khfrm = khfrm;
+            if(!this.khfrm.Lophoc.Magiangvien.Equals(this.khfrm.Taikhoan.Mataikhoan) || khfrm.Lophoc.Daxoa == 1)
             {
                 this.btnThem.Visible = false;
                 this.btnSua.Visible = false;
@@ -41,12 +40,28 @@ namespace Hybrid.GUI.Home
             this.kryptonContextMenuItem1.Click += ThemTaiLieuChuong;
             this.kryptonContextMenuItem2.Click += ThemTaiLieuChuong;
             this.kryptonContextMenuItem3.Click += ThemTaiLieuChuong;
-            HienThiDanhSachBaiKiemTra(chuong.Machuong);
+            if(loaihoatdong == 0)
+            {
+                HienThiDanhSachBaiKiemTra(chuong.Machuong);
+            } else if(loaihoatdong == 1)
+            {
+
+            } else if(loaihoatdong == 2)
+            {
+                if(!HienThiDanhSachBaiKiemTra(chuong.Machuong,tukhoa))
+                    this.Visible = false;
+            }
+            else if(loaihoatdong == 3)
+            {
+
+            }
+
         }
 
-        public void HienThiDanhSachBaiKiemTra(string machuong)
+        public bool HienThiDanhSachBaiKiemTra(string machuong, string tukhoa = "")
         {
-            foreach(DeKiemTra dkt in dekiemtraBUS.GetDanhSachDeKiemTraTheoMaChuong(machuong))
+            if (dekiemtraBUS.GetDanhSachDeKiemTraTheoMaChuong(machuong, tukhoa).Count == 0) return false;
+            foreach(DeKiemTra dkt in dekiemtraBUS.GetDanhSachDeKiemTraTheoMaChuong(machuong,tukhoa))
             {
                 if(dkt.Daxoa == 0)
                 {
@@ -56,6 +71,7 @@ namespace Hybrid.GUI.Home
                     this.lblDemTaiLieuChuong.Text = "(" + ++demTaiLieuChuong + ")";
                 }
             }
+            return true;
         }
 
         public void btnMoRong_Click(object sender, EventArgs e)
