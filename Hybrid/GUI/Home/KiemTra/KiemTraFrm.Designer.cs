@@ -543,7 +543,7 @@ namespace Hybrid.GUI.Home.KiemTra
             this.label3.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(6, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 28);
+            this.label3.Size = new System.Drawing.Size(198, 28);
             this.label3.TabIndex = 9;
             this.label3.Text = "Thời gian kết thúc";
             // 
@@ -590,7 +590,7 @@ namespace Hybrid.GUI.Home.KiemTra
             this.label2.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(6, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 28);
+            this.label2.Size = new System.Drawing.Size(193, 28);
             this.label2.TabIndex = 7;
             this.label2.Text = "Thời gian bắt đầu";
             // 
@@ -635,7 +635,7 @@ namespace Hybrid.GUI.Home.KiemTra
             this.lblDemKyTuTieuDeBaiKT.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblDemKyTuTieuDeBaiKT.Location = new System.Drawing.Point(616, 21);
             this.lblDemKyTuTieuDeBaiKT.Name = "lblDemKyTuTieuDeBaiKT";
-            this.lblDemKyTuTieuDeBaiKT.Size = new System.Drawing.Size(46, 20);
+            this.lblDemKyTuTieuDeBaiKT.Size = new System.Drawing.Size(45, 20);
             this.lblDemKyTuTieuDeBaiKT.TabIndex = 6;
             this.lblDemKyTuTieuDeBaiKT.Text = "0/50";
             // 
@@ -648,7 +648,7 @@ namespace Hybrid.GUI.Home.KiemTra
             this.label1.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 28);
+            this.label1.Size = new System.Drawing.Size(90, 28);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tiêu đề";
             // 

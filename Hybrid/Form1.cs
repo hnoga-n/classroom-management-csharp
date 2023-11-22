@@ -26,7 +26,7 @@ namespace Hybrid
         public Form1()
         {
             InitializeComponent();
-            this.tk = taikhoanBus.GetTaiKhoanByEmail("nguyenhuyhoang@gmail.com");
+            this.tk = taikhoanBus.GetTaiKhoanByEmail("tranvihao@gmail.com");
         }
         public Form1(Taikhoan tk)
         {

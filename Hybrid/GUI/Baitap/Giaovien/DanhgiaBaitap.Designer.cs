@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.hocsinhNopbai1 = new Hybrid.GUI.Baitap.HocsinhNopbai();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -37,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label4 = new System.Windows.Forms.Label();
-            this.hocsinhNopbai1 = new Hybrid.GUI.Baitap.HocsinhNopbai();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
@@ -50,6 +50,13 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(400, 692);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // hocsinhNopbai1
+            // 
+            this.hocsinhNopbai1.Location = new System.Drawing.Point(3, 3);
+            this.hocsinhNopbai1.Name = "hocsinhNopbai1";
+            this.hocsinhNopbai1.Size = new System.Drawing.Size(397, 60);
+            this.hocsinhNopbai1.TabIndex = 0;
             // 
             // kryptonButton1
             // 
@@ -142,13 +149,6 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "/100";
             // 
-            // hocsinhNopbai1
-            // 
-            this.hocsinhNopbai1.Location = new System.Drawing.Point(3, 3);
-            this.hocsinhNopbai1.Name = "hocsinhNopbai1";
-            this.hocsinhNopbai1.Size = new System.Drawing.Size(397, 60);
-            this.hocsinhNopbai1.TabIndex = 0;
-            // 
             // kryptonButton2
             // 
             this.kryptonButton2.Location = new System.Drawing.Point(1136, 707);
@@ -189,7 +189,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 764);
-            this.ControlBox = false;
             this.Controls.Add(this.label4);
             this.Controls.Add(this.kryptonButton2);
             this.Controls.Add(this.textBox1);
@@ -201,7 +200,7 @@
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DanhgiaBaitap";
             this.Text = "DanhgiaBaitap";
             this.flowLayoutPanel1.ResumeLayout(false);

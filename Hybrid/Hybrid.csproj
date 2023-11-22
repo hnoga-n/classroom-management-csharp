@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
@@ -50,6 +53,24 @@
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Workspace">
       <HintPath>..\..\..\..\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.64.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.64.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.64.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Core.1.64.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.64.0.3155, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Drive.v3.1.64.0.3155\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.64.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
@@ -88,7 +109,7 @@
       <HintPath>packages\Kimtoo.NavigationMenu.1.0.2\lib\net40\NavigationMenu.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql, Version=4.1.9.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>packages\Npgsql.4.1.9\lib\net461\Npgsql.dll</HintPath>
@@ -123,6 +144,9 @@
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.CodeDom.7.0.0\lib\net462\System.CodeDom.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -200,6 +224,7 @@
     <Compile Include="Comparer\ChuongComparer.cs" />
     <Compile Include="Comparer\DekiemtraComparer.cs" />
     <Compile Include="Comparer\LophocComparer.cs" />
+    <Compile Include="Comparer\TaikhoanComparer.cs" />
     <Compile Include="DAO\BailambaitapDAO.cs" />
     <Compile Include="DAO\BailamKiemtraDAO.cs" />
     <Compile Include="DAO\BaiTapDAO.cs" />
@@ -267,6 +292,12 @@
     <Compile Include="GUI\Baitap\Giaovien\DanhsachHocsinh.Designer.cs">
       <DependentUpon>DanhsachHocsinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\TaoBaiTap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\TaoBaiTap.Designer.cs">
+      <DependentUpon>TaoBaiTap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Baitap\HocsinhNopbai.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -310,11 +341,11 @@
     <Compile Include="GUI\Danhba\DanhbaFrm.Designer.cs">
       <DependentUpon>DanhbaFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Danhba\Lophoc.cs">
+    <Compile Include="GUI\Danhba\LophocPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Danhba\Lophoc.designer.cs">
-      <DependentUpon>Lophoc.cs</DependentUpon>
+    <Compile Include="GUI\Danhba\LophocPanel.designer.cs">
+      <DependentUpon>LophocPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Danhba\LophocCard.cs">
       <SubType>UserControl</SubType>
@@ -333,6 +364,24 @@
     </Compile>
     <Compile Include="GUI\Home\ChatFrm.Designer.cs">
       <DependentUpon>ChatFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\fileshow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\fileshow.designer.cs">
+      <DependentUpon>fileshow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\filetemp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HomeComponents\filetemp.designer.cs">
+      <DependentUpon>filetemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\Hienthitailieufrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\Hienthitailieufrm.designer.cs">
+      <DependentUpon>Hienthitailieufrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\HomeComponents\ButtonBaiKT.cs">
       <SubType>UserControl</SubType>
@@ -358,6 +407,18 @@
     <Compile Include="GUI\Home\HomeComponents\ButtonHocLieu.Designer.cs">
       <DependentUpon>ButtonHocLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\emptyPnl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\emptyPnl.Designer.cs">
+      <DependentUpon>emptyPnl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.Designer.cs">
+      <DependentUpon>HocSinhCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home\HomeComponents\PanelChuongDropDown.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -382,11 +443,11 @@
     <Compile Include="GUI\Home\KhoaHocFrm.Designer.cs">
       <DependentUpon>KhoaHocFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\BaiLamHocSinh.cs">
+    <Compile Include="GUI\Home\KiemTra\XemBaiLamHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\BaiLamHocSinh.Designer.cs">
-      <DependentUpon>BaiLamHocSinh.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\XemBaiLamHocSinh.Designer.cs">
+      <DependentUpon>XemBaiLamHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.cs">
       <SubType>Form</SubType>
@@ -394,11 +455,11 @@
     <Compile Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.Designer.cs">
       <DependentUpon>ChiTietCauHoiFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\DanhSachBaiDaNop.cs">
+    <Compile Include="GUI\Home\KiemTra\XemTienDoBaiKiemTra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\DanhSachBaiDaNop.Designer.cs">
-      <DependentUpon>DanhSachBaiDaNop.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\XemTienDoBaiKiemTra.Designer.cs">
+      <DependentUpon>XemTienDoBaiKiemTra.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.cs">
       <SubType>UserControl</SubType>
@@ -430,16 +491,16 @@
     <Compile Include="GUI\Home\KiemTra\ThemCauHoiFrm.Designer.cs">
       <DependentUpon>ThemCauHoiFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\HomeComponents\CauhoiNavigate.cs">
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiNavigate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Home\HomeComponents\CauhoiNavigate.designer.cs">
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiNavigate.designer.cs">
       <DependentUpon>CauhoiNavigate.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\HomeComponents\CauhoiPanel.cs">
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Home\HomeComponents\CauhoiPanel.designer.cs">
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.designer.cs">
       <DependentUpon>CauhoiPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\LamKiemTra.cs">
@@ -447,6 +508,18 @@
     </Compile>
     <Compile Include="GUI\Home\KiemTra\LamKiemTra.designer.cs">
       <DependentUpon>LamKiemTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\XemBaiKiemTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\XemBaiKiemTra.Designer.cs">
+      <DependentUpon>XemBaiKiemTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\Taotailieufrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\Taotailieufrm.designer.cs">
+      <DependentUpon>Taotailieufrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\TepFrm.cs">
       <SubType>Form</SubType>
@@ -552,6 +625,9 @@
     <EmbeddedResource Include="GUI\Baitap\Giaovien\DanhsachHocsinh.resx">
       <DependentUpon>DanhsachHocsinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\TaoBaiTap.resx">
+      <DependentUpon>TaoBaiTap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\HocsinhNopbai.resx">
       <DependentUpon>HocsinhNopbai.cs</DependentUpon>
     </EmbeddedResource>
@@ -573,8 +649,8 @@
     <EmbeddedResource Include="GUI\Danhba\DanhbaFrm.resx">
       <DependentUpon>DanhbaFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Danhba\Lophoc.resx">
-      <DependentUpon>Lophoc.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Danhba\LophocPanel.resx">
+      <DependentUpon>LophocPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\LophocCard.resx">
       <DependentUpon>LophocCard.cs</DependentUpon>
@@ -584,6 +660,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ChatFrm.resx">
       <DependentUpon>ChatFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\fileshow.resx">
+      <DependentUpon>fileshow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\filetemp.resx">
+      <DependentUpon>filetemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\Hienthitailieufrm.resx">
+      <DependentUpon>Hienthitailieufrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonBaiKT.resx">
       <DependentUpon>ButtonBaiKT.cs</DependentUpon>
@@ -597,6 +682,12 @@
     <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonHocLieu.resx">
       <DependentUpon>ButtonHocLieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\emptyPnl.resx">
+      <DependentUpon>emptyPnl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.resx">
+      <DependentUpon>HocSinhCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\HomeComponents\PanelChuongDropDown.resx">
       <DependentUpon>PanelChuongDropDown.cs</DependentUpon>
     </EmbeddedResource>
@@ -609,14 +700,17 @@
     <EmbeddedResource Include="GUI\Home\KhoaHocFrm.resx">
       <DependentUpon>KhoaHocFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\BaiLamHocSinh.resx">
-      <DependentUpon>BaiLamHocSinh.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\XemBaiKiemTra.resx">
+      <DependentUpon>XemBaiKiemTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\XemBaiLamHocSinh.resx">
+      <DependentUpon>XemBaiLamHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.resx">
       <DependentUpon>ChiTietCauHoiFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\DanhSachBaiDaNop.resx">
-      <DependentUpon>DanhSachBaiDaNop.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\XemTienDoBaiKiemTra.resx">
+      <DependentUpon>XemTienDoBaiKiemTra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.resx">
       <DependentUpon>ButtonCauHoi.cs</DependentUpon>
@@ -633,14 +727,17 @@
     <EmbeddedResource Include="GUI\Home\KiemTra\ThemCauHoiFrm.resx">
       <DependentUpon>ThemCauHoiFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\HomeComponents\CauhoiNavigate.resx">
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiNavigate.resx">
       <DependentUpon>CauhoiNavigate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\HomeComponents\CauhoiPanel.resx">
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.resx">
       <DependentUpon>CauhoiPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\LamKiemTra.resx">
       <DependentUpon>LamKiemTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\Taotailieufrm.resx">
+      <DependentUpon>Taotailieufrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\TepFrm.resx">
       <DependentUpon>TepFrm.cs</DependentUpon>
@@ -712,6 +809,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-upload-30.png" />
+    <None Include="Resources\z4900666085842_a21379c6aa15f4ba878996c3423f7d92.jpg" />
+    <None Include="Resources\z4900656607616_dfb6c49dcc3cedd7bda46c9a8de7b9f6.jpg" />
+    <None Include="Resources\z4900656569403_59d327b2e639d66bd18cc92a9758b2cc.jpg" />
+    <None Include="Resources\z4900656538773_7ebca44383b2c6e14d111cd3d5a8cb23.jpg" />
+    <None Include="Resources\z4900656511699_645ea23b9c637aa7c063f37ba74c6d94.jpg" />
+    <None Include="Resources\z4900656493582_23e38f9a796b230feeeac436121c26cb.jpg" />
+    <None Include="image\trend-avatar-12.jpg" />
     <None Include="Resources\icons8-close-30.png" />
     <None Include="Resources\icons8-close-50.png" />
     <None Include="Resources\Animation - 1699327889806.gif" />
@@ -729,8 +834,6 @@
     <Content Include="icon\Animation - 1699327889806.gif" />
     <Content Include="icon\yo yo ma meme.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="image\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

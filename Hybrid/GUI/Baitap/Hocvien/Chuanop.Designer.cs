@@ -183,13 +183,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 688);
-            this.ControlBox = false;
             this.Controls.Add(this.kryptonButton2);
             this.Controls.Add(this.kryptonRichTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Chuanop";
             this.Text = "Chuanop";
             this.panel1.ResumeLayout(false);

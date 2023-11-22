@@ -55,14 +55,9 @@
             this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.hocsinhNoptre4 = new Hybrid.GUI.Baitap.HocsinhNoptre();
-            this.hocsinhNoptre1 = new Hybrid.GUI.Baitap.HocsinhNoptre();
-            this.hocsinhNoptre3 = new Hybrid.GUI.Baitap.HocsinhNoptre();
-            this.hocsinhNoptre2 = new Hybrid.GUI.Baitap.HocsinhNoptre();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -193,13 +188,13 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Location = new System.Drawing.Point(483, 63);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(835, 177);
+            this.panel2.Size = new System.Drawing.Size(835, 124);
             this.panel2.TabIndex = 3;
             // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(666, 122);
+            this.label12.Location = new System.Drawing.Point(655, 76);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(166, 47);
             this.label12.TabIndex = 5;
@@ -219,7 +214,7 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(330, 122);
+            this.label10.Location = new System.Drawing.Point(330, 76);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(166, 47);
             this.label10.TabIndex = 3;
@@ -239,7 +234,7 @@
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 116);
+            this.label9.Location = new System.Drawing.Point(3, 76);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(166, 47);
             this.label9.TabIndex = 1;
@@ -261,7 +256,7 @@
             this.flowLayoutPanel2.Controls.Add(this.kryptonButton3);
             this.flowLayoutPanel2.Controls.Add(this.kryptonButton1);
             this.flowLayoutPanel2.Controls.Add(this.kryptonButton2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(483, 246);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(483, 193);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(835, 55);
             this.flowLayoutPanel2.TabIndex = 4;
@@ -395,18 +390,14 @@
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.AutoScroll = true;
-            this.flowLayoutPanel3.Controls.Add(this.hocsinhNoptre4);
-            this.flowLayoutPanel3.Controls.Add(this.hocsinhNoptre1);
-            this.flowLayoutPanel3.Controls.Add(this.hocsinhNoptre3);
-            this.flowLayoutPanel3.Controls.Add(this.hocsinhNoptre2);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(483, 354);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(483, 295);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(835, 369);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(835, 428);
             this.flowLayoutPanel3.TabIndex = 5;
             // 
             // kryptonTextBox1
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(528, 310);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(528, 254);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.Size = new System.Drawing.Size(760, 35);
             this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Roboto Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -417,7 +408,7 @@
             // 
             this.pictureBox2.BackgroundImage = global::Hybrid.Properties.Resources.icons8_search_50;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(483, 310);
+            this.pictureBox2.Location = new System.Drawing.Point(483, 254);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 35);
             this.pictureBox2.TabIndex = 7;
@@ -433,40 +424,11 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // hocsinhNoptre4
-            // 
-            this.hocsinhNoptre4.Location = new System.Drawing.Point(3, 3);
-            this.hocsinhNoptre4.Name = "hocsinhNoptre4";
-            this.hocsinhNoptre4.Size = new System.Drawing.Size(802, 60);
-            this.hocsinhNoptre4.TabIndex = 6;
-            // 
-            // hocsinhNoptre1
-            // 
-            this.hocsinhNoptre1.Location = new System.Drawing.Point(3, 69);
-            this.hocsinhNoptre1.Name = "hocsinhNoptre1";
-            this.hocsinhNoptre1.Size = new System.Drawing.Size(802, 60);
-            this.hocsinhNoptre1.TabIndex = 3;
-            // 
-            // hocsinhNoptre3
-            // 
-            this.hocsinhNoptre3.Location = new System.Drawing.Point(3, 201);
-            this.hocsinhNoptre3.Name = "hocsinhNoptre3";
-            this.hocsinhNoptre3.Size = new System.Drawing.Size(802, 60);
-            this.hocsinhNoptre3.TabIndex = 5;
-            // 
-            // hocsinhNoptre2
-            // 
-            this.hocsinhNoptre2.Location = new System.Drawing.Point(3, 399);
-            this.hocsinhNoptre2.Name = "hocsinhNoptre2";
-            this.hocsinhNoptre2.Size = new System.Drawing.Size(802, 60);
-            this.hocsinhNoptre2.TabIndex = 4;
-            // 
             // Baitap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1330, 735);
-            this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.kryptonTextBox1);
             this.Controls.Add(this.flowLayoutPanel3);
@@ -475,14 +437,13 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Baitap";
             this.Text = "Baitap";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -518,9 +479,5 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
-        private HocsinhNoptre hocsinhNoptre1;
-        private HocsinhNoptre hocsinhNoptre3;
-        private HocsinhNoptre hocsinhNoptre2;
-        private HocsinhNoptre hocsinhNoptre4;
     }
 }
