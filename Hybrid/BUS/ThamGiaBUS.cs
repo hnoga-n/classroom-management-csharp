@@ -70,5 +70,15 @@ namespace Hybrid.BUS
             }
             return false;
         }
+
+        public ArrayList getDanhSachLopWithMaLopHoc(string malophoc)
+        {
+            ArrayList listHocSinh = new ArrayList();
+            foreach(ThamGia hocsinh in list) {
+                if (hocsinh.Malop.Equals(malophoc))
+                    listHocSinh.Add(hocsinh.Mataikhoan);
+            }
+            return listHocSinh;
+        }
     }
 }

@@ -43,8 +43,8 @@ namespace Hybrid.GUI.Utilities
 
         static public void CloseForm()
         {
-            System.Threading.Thread.Sleep(1500);
-                splashForm?.Invoke(new CloseDelegate(loading.CloseFormInternal));
+            System.Threading.Thread.Sleep(1000);
+            splashForm?.Invoke(new CloseDelegate(loading.CloseFormInternal));
 
         }
 

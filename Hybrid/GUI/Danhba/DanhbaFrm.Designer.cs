@@ -44,9 +44,9 @@
             this.banbe2 = new Hybrid.GUI.Danhba.Banbe();
             this.banbe1 = new Hybrid.GUI.Danhba.Banbe();
             this.banbe3 = new Hybrid.GUI.Danhba.Banbe();
-            this.lophoc1 = new Hybrid.GUI.Danhba.Lophoc();
-            this.lophoc2 = new Hybrid.GUI.Danhba.Lophoc();
-            this.lophoc3 = new Hybrid.GUI.Danhba.Lophoc();
+            this.lophoc1 = new Hybrid.GUI.Danhba.LophocPanel();
+            this.lophoc2 = new Hybrid.GUI.Danhba.LophocPanel();
+            this.lophoc3 = new Hybrid.GUI.Danhba.LophocPanel();
             this.banbeCard1 = new Hybrid.GUI.Danhba.BanbeCard();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelDropDown3.SuspendLayout();
@@ -293,9 +293,9 @@
         private Banbe banbe2;
         private Banbe banbe1;
         private Banbe banbe3;
-        private Lophoc lophoc1;
-        private Lophoc lophoc2;
-        private Lophoc lophoc3;
+        private LophocPanel lophoc1;
+        private LophocPanel lophoc2;
+        private LophocPanel lophoc3;
         private System.Windows.Forms.FlowLayoutPanel panelDropDown3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
         private System.Windows.Forms.Timer timer3;
