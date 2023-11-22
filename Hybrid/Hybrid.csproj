@@ -366,6 +366,12 @@
     <Compile Include="GUI\Home\ChatFrm.Designer.cs">
       <DependentUpon>ChatFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Home\HienThiMaLopHocFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\HienThiMaLopHocFrm.Designer.cs">
+      <DependentUpon>HienThiMaLopHocFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home\HomeComponents\fileshow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -676,9 +682,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\Hienthitailieufrm.resx">
       <DependentUpon>Hienthitailieufrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\HienThiMaLopHocFrm.resx">
-      <DependentUpon>HienThiMaLopHocFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonBaiKT.resx">
       <DependentUpon>ButtonBaiKT.cs</DependentUpon>
