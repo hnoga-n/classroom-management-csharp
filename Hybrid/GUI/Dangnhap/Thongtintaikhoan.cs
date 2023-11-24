@@ -9,18 +9,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using Hybrid.DTO;
+
 namespace Hybrid.GUI
 {
     public partial class Thongtintaikhoan : KryptonForm
     {
-        public Thongtintaikhoan()
+        Taikhoan tk;
+        public Thongtintaikhoan(Taikhoan tk)
         {
+            this.tk = tk;
             InitializeComponent();
         }
 
         private void Thongtintaikhoan_Load(object sender, EventArgs e)
         {
+            lab_hoten.Visible=false;
+            txt_hoten.Visible = false;
+            lab_matkhau.Visible=false;
+            txt_matkhau.Visible = false;
             MakePictureBoxCircular(hinhanh);
+            lab_ten.Text = this.tk.Hoten;
+            txt_email.Text=this.tk.Email;
         }
         private void MakePictureBoxCircular(PictureBox pictureBox)
         {
@@ -35,5 +45,15 @@ namespace Hybrid.GUI
             }
         }
 
+
+
+        private void but_chinhsua_Click(object sender, EventArgs e)
+        {
+            lab_hoten.Visible = true;
+            txt_hoten.Visible = true;
+            lab_matkhau.Visible = true;
+            txt_matkhau.Visible = true;
+            lab_ten.Visible = false;
+        }
     }
 }

@@ -124,7 +124,7 @@
   <data name="anmatkhau.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        qgAAAKoBBgpwTwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHrSURBVEhLtda/
+        qAAAAKgBefSzxgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHrSURBVEhLtda/
         S1xBEMDxyaFYpUgsEgRtBFshkC6JpblCIykUtLCI5qqAgfxAQ8qgSOoUIgTBfyCVlRwISRPRIkUiFnbW
         Igai+XH5zrvZ5+y+d6S4y8Ln3NmdnUH33UNpNBr/1eVEZNBvdErzQ2QOPzGTJrSr+SHyFDr5lTZh9KOK
         59jAJl5jEsO44vNTlxORZ4iaMK5hDxq08gVTqIRaXhyIvIBOfJPr+FcT9RWjvl52PgpEnliySpvcx030
@@ -346,5 +346,8 @@
   </data>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>180, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>78</value>
   </metadata>
 </root>

@@ -45,6 +45,7 @@
             this.hienmatkhau1 = new System.Windows.Forms.PictureBox();
             this.anmatkhau2 = new System.Windows.Forms.PictureBox();
             this.anmatkhau1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hienmatkhau2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hienmatkhau1)).BeginInit();
@@ -145,7 +146,7 @@
             // 
             // but_quaylai
             // 
-            this.but_quaylai.Location = new System.Drawing.Point(113, 496);
+            this.but_quaylai.Location = new System.Drawing.Point(113, 528);
             this.but_quaylai.Name = "but_quaylai";
             this.but_quaylai.Size = new System.Drawing.Size(164, 45);
             this.but_quaylai.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
@@ -165,7 +166,7 @@
             // 
             // but_dangky
             // 
-            this.but_dangky.Location = new System.Drawing.Point(87, 443);
+            this.but_dangky.Location = new System.Drawing.Point(87, 475);
             this.but_dangky.Name = "but_dangky";
             this.but_dangky.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.but_dangky.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
@@ -288,12 +289,26 @@
             this.anmatkhau1.Visible = false;
             this.anmatkhau1.Click += new System.EventHandler(this.anmatkhau1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(29, 425);
+            this.label3.MaximumSize = new System.Drawing.Size(350, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(335, 30);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Mật khẩu có ít nhất 8 kí tự,bao gồm 1 chữ cái in hoa,1 chữ thường 1 con số,1 kí t" +
+    "ự đặc biệt";
+            // 
             // SignupUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(382, 553);
+            this.ClientSize = new System.Drawing.Size(382, 584);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.but_dangky);
             this.Controls.Add(this.but_quaylai);
             this.Controls.Add(this.label2);
@@ -342,5 +357,6 @@
         private System.Windows.Forms.PictureBox anmatkhau2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton but_quaylai;
         private ComponentFactory.Krypton.Toolkit.KryptonButton but_dangky;
+        private System.Windows.Forms.Label label3;
     }
 }

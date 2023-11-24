@@ -37,7 +37,7 @@
             this.lab_matkhau = new System.Windows.Forms.Label();
             this.txt_matkhau = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.dangky = new System.Windows.Forms.Label();
-            this.cbx_nhomatkhau = new System.Windows.Forms.CheckBox();
+            this.chx_nhomatkhau = new System.Windows.Forms.CheckBox();
             this.quenmatkhau = new System.Windows.Forms.Label();
             this.anmatkhau = new System.Windows.Forms.PictureBox();
             this.hienmatkhau = new System.Windows.Forms.PictureBox();
@@ -137,17 +137,17 @@
             this.dangky.Text = "Đăng ký tài khoản";
             this.dangky.Click += new System.EventHandler(this.dangky_Click);
             // 
-            // cbx_nhomatkhau
+            // chx_nhomatkhau
             // 
-            this.cbx_nhomatkhau.AutoSize = true;
-            this.cbx_nhomatkhau.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_nhomatkhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(41)))), ((int)(((byte)(222)))));
-            this.cbx_nhomatkhau.Location = new System.Drawing.Point(12, 496);
-            this.cbx_nhomatkhau.Name = "cbx_nhomatkhau";
-            this.cbx_nhomatkhau.Size = new System.Drawing.Size(152, 27);
-            this.cbx_nhomatkhau.TabIndex = 10;
-            this.cbx_nhomatkhau.Text = "Nhớ mật khẩu";
-            this.cbx_nhomatkhau.UseVisualStyleBackColor = true;
+            this.chx_nhomatkhau.AutoSize = true;
+            this.chx_nhomatkhau.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chx_nhomatkhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(41)))), ((int)(((byte)(222)))));
+            this.chx_nhomatkhau.Location = new System.Drawing.Point(12, 496);
+            this.chx_nhomatkhau.Name = "chx_nhomatkhau";
+            this.chx_nhomatkhau.Size = new System.Drawing.Size(152, 27);
+            this.chx_nhomatkhau.TabIndex = 10;
+            this.chx_nhomatkhau.Text = "Nhớ mật khẩu";
+            this.chx_nhomatkhau.UseVisualStyleBackColor = true;
             // 
             // quenmatkhau
             // 
@@ -159,6 +159,7 @@
             this.quenmatkhau.Size = new System.Drawing.Size(148, 23);
             this.quenmatkhau.TabIndex = 11;
             this.quenmatkhau.Text = "Quên mật khẩu?";
+            this.quenmatkhau.Click += new System.EventHandler(this.quenmatkhau_Click);
             // 
             // anmatkhau
             // 
@@ -202,7 +203,7 @@
             // 
             // but_dangnhap
             // 
-            this.but_dangnhap.Location = new System.Drawing.Point(81, 363);
+            this.but_dangnhap.Location = new System.Drawing.Point(76, 363);
             this.but_dangnhap.Name = "but_dangnhap";
             this.but_dangnhap.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.but_dangnhap.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
@@ -273,7 +274,7 @@
             this.ClientSize = new System.Drawing.Size(382, 553);
             this.Controls.Add(this.but_dangnhap);
             this.Controls.Add(this.quenmatkhau);
-            this.Controls.Add(this.cbx_nhomatkhau);
+            this.Controls.Add(this.chx_nhomatkhau);
             this.Controls.Add(this.dangky);
             this.Controls.Add(this.hienmatkhau);
             this.Controls.Add(this.pic_logo);
@@ -290,6 +291,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.LoginUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.anmatkhau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hienmatkhau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
@@ -310,7 +312,7 @@
         private System.Windows.Forms.PictureBox hienmatkhau;
         private System.Windows.Forms.PictureBox anmatkhau;
         private System.Windows.Forms.Label dangky;
-        private System.Windows.Forms.CheckBox cbx_nhomatkhau;
+        private System.Windows.Forms.CheckBox chx_nhomatkhau;
         private System.Windows.Forms.Label quenmatkhau;
         private ComponentFactory.Krypton.Toolkit.KryptonButton but_dangnhap;
         private System.Windows.Forms.ImageList imageList1;

@@ -15,6 +15,7 @@ namespace Hybrid.GUI
     public partial class SignupUI : KryptonForm
     {
         TaikhoanBUS tkbus=new TaikhoanBUS();
+        Chucnang cn=new Chucnang();
         public SignupUI()
         {
             InitializeComponent();
@@ -64,12 +65,29 @@ namespace Hybrid.GUI
                 MessageBox.Show("Bạn nhập thiếu thông tin!");
             else
                 if (tkbus.kt_email(txt_email.Text))
-                    if (txt_matkhau.Text == txt_matkhau2.Text )
-                        MessageBox.Show("Đăng ký thành công");
+                    if(tkbus.kt_dinhdang_matkhau(txt_matkhau.Text))
+                    {
+                        if (txt_matkhau.Text == txt_matkhau2.Text)
+                        {
+                            if (tkbus.kt_taikhoan_tontai(txt_email.Text))
+                                MessageBox.Show("Email này đã được đăng ký.\nVui lòng nhập email khác.");
+                            else
+                            {
+                                string maso = cn.TaoSo();
+                                Form form = new xacnhanma_fgp(txt_email.Text, txt_matkhau.Text, maso, 2);
+                                cn.Guimail_admin(txt_email.Text, "Mã xác nhận", "Gần đây, bạn đã đăng ký tài khoản Hybrid. Để hoàn thành quy trình đăng ký , vui lòng nhập mã này vào phần xác nhận tài khoản của bạn: " + maso);
+                                this.Hide();
+                                form.ShowDialog();
+                                
+                            }
+                        }
+                        else
+                            MessageBox.Show("Mật khẩu xác nhận không đúng");
+                    }
                     else
-                        MessageBox.Show("Mật khẩu không đúng");
+                        MessageBox.Show("Mật khẩu không đúng định dạng quy định\nVd:Abcxyz@123","Cảnh báo",MessageBoxButtons.OK);
                 else
-                    MessageBox.Show("Email không hợp lệ");
+                    MessageBox.Show("Email không đúng định dạng\nVD:abc@gmail.com");
         }
     }
 }
