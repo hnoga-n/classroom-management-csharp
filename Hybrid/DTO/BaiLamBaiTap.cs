@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hybrid.DTO
 {
-    public class BaiLamBaiTap : IComparable
+    public class BaiLamBaiTap /*: IComparable*/
     {
         private string mabailam;
         private string mataikhoan;
@@ -38,7 +38,7 @@ namespace Hybrid.DTO
         public string Mataikhoan { get => mataikhoan; set => mataikhoan = value; }
         public string Mabaitap { get => mabaitap; set => mabaitap = value; }
 
-        public int CompareTo(object obj)
+        /*public int CompareTo(object obj)
         {
             return mabailam.CompareTo(obj);
         }
@@ -54,7 +54,7 @@ namespace Hybrid.DTO
                     return this.mataikhoan.CompareTo(c1.mataikhoan);
             }
             return 0;
-        }
+        }*/
     }
 
 }

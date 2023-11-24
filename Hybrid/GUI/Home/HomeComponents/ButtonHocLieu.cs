@@ -23,5 +23,6 @@ namespace Hybrid.GUI.Home.HomeComponents
         {
             panelChuong.XoaChuongComponent(this);
         }
+
     }
 }

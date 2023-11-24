@@ -1,15 +1,20 @@
 ﻿using Hybrid.BUS;
 using Hybrid.DTO;
 using Hybrid.GUI.Home.KiemTra.KiemTraComponents;
+using Microsoft.Office.Interop.Word;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using Ubiety.Dns.Core;
 
 namespace Hybrid.GUI.Home.KiemTra
 {
@@ -112,7 +117,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 MessageBox.Show("Vui lòng chọn một câu trả lời là đáp án đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            CauHoi cauhoinew = new CauHoi(Guid.NewGuid().ToString(), rtbNoiDung.Text, lophocBUS.GetLopHocByMaLop(kiemTraFrm.Chuong.Malop).Magiangvien,1);
+            CauHoi cauhoinew = new CauHoi(Guid.NewGuid().ToString(), rtbNoiDung.Text, lophocBUS.GetLopHocByMaLop(kiemTraFrm.Chuong.Malop).Magiangvien,0);
             if(cauhoiBUS.ThemCauHoi(cauhoinew))
             {
                 int ladapan;
@@ -189,6 +194,108 @@ namespace Hybrid.GUI.Home.KiemTra
                 MessageBox.Show("Cập nhật câu hỏi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             this.Close();
+        }
+        private void SaveWordFile()
+        {
+            try
+            {
+                string sourceFolderPath = Path.Combine(System.Windows.Forms.Application.StartupPath, "Filemau");
+                // Tên tệp tin Word muốn lưu
+                string fileName = "maucauhoi.docx";
+
+                // Đường dẫn đầy đủ đến tệp tin nguồn
+                string sourceFilePath = Path.Combine(sourceFolderPath, fileName);
+
+                // Đưa ra lựa chọn để chọn vị trí lưu mới
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.FileName = fileName;
+                saveFileDialog.Filter = "Word Documents|*.docx";
+                saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Đường dẫn đầy đủ đến vị trí lưu mới
+                    string destinationFilePath = saveFileDialog.FileName;
+
+                    // Sao chép tệp từ nguồn đến đích
+                    File.Copy(sourceFilePath, destinationFilePath, true);
+
+                    MessageBox.Show("Lưu file thành công!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi lưu file: " + ex.Message);
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SaveWordFile();
+        }
+
+        private void btnChonFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "txt files (*.txt)|*.txt";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                ReadWordDocument(filePath);
+            }
+        }
+
+        private void ReadWordDocument(string filePath)
+        {
+            try
+            {
+                ArrayList listcauhoi = new ArrayList();
+                ArrayList listcautraloi = new ArrayList();
+                CauHoi ch = null;
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        if (line.StartsWith("Question:"))
+                        {
+                            ch = new CauHoi(Guid.NewGuid().ToString(), line.Substring(10).Trim(), lophocBUS.GetLopHocByMaLop(kiemTraFrm.Chuong.Malop).Magiangvien, 0);
+                            listcauhoi.Add(ch);
+                        }
+                        else if (line.StartsWith("*"))
+                        {
+                            CauTraLoi ctl = new CauTraLoi(Guid.NewGuid().ToString(), line.Substring(1).Trim(), 1, ch.Macauhoi);
+                            listcautraloi.Add(ctl);
+                        }
+                        else if (string.IsNullOrWhiteSpace(line))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            CauTraLoi ctl = new CauTraLoi(Guid.NewGuid().ToString(), line.Trim(), 0, ch.Macauhoi);
+                            listcautraloi.Add(ctl);
+                        }
+                    }
+                }
+                foreach (CauHoi cauhoi in listcauhoi)
+                    if (!cauhoiBUS.ThemCauHoi(cauhoi))
+                    {
+                        MessageBox.Show("Có lỗi khi thêm câu hỏi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                foreach (CauTraLoi cautraloi in listcautraloi)
+                    if (!cautraloiBUS.ThemCauTraLoi(cautraloi))
+                    {
+                        MessageBox.Show("Có lỗi khi thêm câu trả lời!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                MessageBox.Show("Thêm câu hỏi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error reading file text: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

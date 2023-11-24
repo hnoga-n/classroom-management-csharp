@@ -113,9 +113,8 @@ namespace Hybrid.GUI.Home.HomeComponents
                     DialogResult isConfirmSubmited =  MessageBox.Show("Bạn đã hoàn thành bài kiểm tra !\nXem lại bài đã nộp ?", "Thông báo!", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
                     if (isConfirmSubmited == DialogResult.No) return;
 
-                    BaiLamHocSinh frmBailam = new BaiLamHocSinh(this.panelChuong.Khfrm.Taikhoan, dekiemtra);
+                    XemBaiLamHocSinh frmBailam = new XemBaiLamHocSinh(this.panelChuong.Khfrm.Taikhoan, dekiemtra);
                     frmBailam.ShowDialog();
-                    blktBUS.loadList();
                     return;
                 }
                 // do exam
@@ -126,10 +125,10 @@ namespace Hybrid.GUI.Home.HomeComponents
             }
             else
             {
-                //TODO: mở form xem bài đã nộp của giảng viên
-                MessageBox.Show("Xem chi tiết đề kiểm tra");
-                return;
+                XemTienDoBaiKiemTra checkingFrm = new XemTienDoBaiKiemTra(this.panelChuong.Khfrm.Taikhoan,this.dekiemtra,this.panelChuong.Khfrm.Lophoc,this.panelChuong.Chuong);
+                checkingFrm.ShowDialog();
             }
+            blktBUS.loadList();
         }
     }
 }

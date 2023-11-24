@@ -4,6 +4,7 @@ using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +28,9 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = bailambtDAO.loadList();
-            list.Sort();
+            //list.Sort();
         }
-        public int getBaiLamBaiTapWithMaBaiTap(string mabaitap)
+        /*public int getBaiLamBaiTapWithMaBaiTap(string mabaitap)
         {
             BailambaitapComparer comparer = new BailambaitapComparer();
             comparer.TypeToCompare = BailambaitapComparer.ComparisonType.mabaitap;
@@ -37,6 +38,53 @@ namespace Hybrid.BUS
             blbtSearch.Mabaitap = mabaitap.ToLower();
             int index = list.BinarySearch(blbtSearch, comparer);
             return index;
+        }*/
+
+        public Dictionary<float, int> ThongKePhoDiemTheoMaBaiTap(string mabt)
+        {
+            Dictionary<float, int> rslist = new Dictionary<float, int>();
+            List<float> diemList = new List<float>();
+            foreach (BaiLamBaiTap b in this.list)
+            {
+                if (b.Mabaitap.Equals(mabt))
+                {
+                    diemList.Add(b.Diem);
+                }
+            }
+            foreach (float diem in diemList)
+            {
+                if (rslist.ContainsKey(diem))
+                {
+                    rslist[diem]++;
+                }
+                else
+                {
+                    rslist[diem] = 1;
+                }
+            }
+            return rslist;
+        }
+
+        public Dictionary<string, float> ThongKePhoDiemTheoMaTaiKhoan(string matk)
+        {
+            Dictionary<string, float> rslist = new Dictionary<string, float>();
+            foreach (BaiLamBaiTap blbt in this.list)
+            {
+                if (blbt.Mataikhoan.Equals(matk))
+                {
+                    rslist.Add(blbt.Mabaitap, blbt.Diem);
+                }
+            }
+            return rslist;
+        }
+
+        public DataTable ThongKeDiemThongKeDiemHocSinhTheoMaBaiTap(string mabaitap)
+        {
+            return bailambtDAO.ThongKeDiemHocSinhTheoMaBaiTap(mabaitap);
+        }
+        public DataTable ThongKeDiemHocSinhTheoMaTaiKhoanVaMaChuong(string mataikhoan, string machuong)
+        {
+            return bailambtDAO.ThongKeDiemHocSinhTheoMaTaiKhoanVaMaChuong(mataikhoan,machuong);
         }
     }
 }

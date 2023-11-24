@@ -48,7 +48,7 @@ namespace Hybrid.DAO
             }
             return listTmp;
         }
-        public void ThemChiTietDeKiemTra(ChiTietDeKiemTra ctdtk)
+        public bool ThemChiTietDeKiemTra(ChiTietDeKiemTra ctdtk)
         {
             try
             {
@@ -58,10 +58,12 @@ namespace Hybrid.DAO
                 cmd_themchitietdekiemtra.Parameters.AddWithValue("@macauhoi", Guid.Parse(ctdtk.Macauhoi));
                 cmd_themchitietdekiemtra.Parameters.AddWithValue("@thutu", ctdtk.Thutu);
                 cmd_themchitietdekiemtra.ExecNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi xảy ra ở file ChitietdekiemtraDAO:" + ex.Message);
+                return false;
             }
             finally
             {

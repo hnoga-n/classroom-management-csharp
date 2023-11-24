@@ -2,12 +2,15 @@
 using Hybrid.GUI.Home;
 ﻿using Hybrid.BUS;
 using Hybrid.DTO;
+using Hybrid.GUI.Baitap.Giaovien;
+using Hybrid.GUI.Home.KiemTra;
 using Hybrid.GUI.Kiemtra;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Hybrid.GUI;
 
 namespace Hybrid
 {
@@ -21,8 +24,11 @@ namespace Hybrid
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new LoginUI());
             Application.Run(new Form1());
-            //Application.Run(new ThongTinLopHocFrm());
+            //Application.Run(new DanhSachBaiDaNop());
+            //Application.Run(new KiemTraFrm());
+            //Application.Run(new TaoBaiTap());
         }
     }
 }

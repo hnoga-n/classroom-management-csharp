@@ -1,18 +1,10 @@
 ﻿using Hybrid.BUS;
 using Hybrid.DTO;
 using Hybrid.GUI.Home.HomeComponents;
-using MySqlX.XDevAPI.Relational;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace Hybrid.GUI.Home
 {
@@ -39,7 +31,7 @@ namespace Hybrid.GUI.Home
             this.rtbNoiDung.Text = lophoc.Mota;
             this.btnRoiLop.Visible = false;
             this.btnXoaLop.Visible = true;
-            this.lblTenGiaoVien.Text = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(lophoc.Magiangvien).Hoten;
+            this.lblTenGiaoVien.Text = taikhoanBUS.list[taikhoanBUS.GetTaiKhoanByMaTaiKhoan(lophoc.Magiangvien)].ToString();
             dt = tgBUS.DanhSachHocSinhTheoMaLop(lophoc.Malop);
             this.dgvDanhSachHocSinh.DataSource = dt;
             this.dgvDanhSachHocSinh.Columns[0].Visible = false;

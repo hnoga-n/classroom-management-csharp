@@ -48,5 +48,15 @@ namespace Hybrid.GUI.Home
             this.homeFrm.PnlGiaoDienLopHocContainer.Controls.Add(panelGDLH);
             panelGDLH.Dock = DockStyle.Fill;
         }
+
+        private void lblTenLop_Click(object sender, EventArgs e)
+        {
+            btnLopHocClick();
+        }
+
+        private void lblChiTiet_Click(object sender, EventArgs e)
+        {
+            btnLopHocClick();
+        }
     }
 }

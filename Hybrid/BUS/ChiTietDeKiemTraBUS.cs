@@ -29,18 +29,32 @@ namespace Hybrid.BUS
             //list.Sort();
         }
 
-        public void ThemChiTietDeKiemTra(ChiTietDeKiemTra ctdkt)
+        public bool ThemChiTietDeKiemTra(ChiTietDeKiemTra ctdkt)
         {
-            list.Add(ctdkt);
-            ctdktDAO.ThemChiTietDeKiemTra(ctdkt);
+            if(ctdktDAO.ThemChiTietDeKiemTra(ctdkt))
+            {
+                list.Add(ctdkt);
+                return true;
+            }
+            return false;
         }
-        public ArrayList getMaCauhoiWithMaDeKiemTra(string madekiemtra)
+        public ArrayList getChiTietDeKiemTraWithMaDeKiemTra(string madekiemtra)
         {
             ArrayList listcauhoi = new ArrayList();
             foreach (ChiTietDeKiemTra item in list)
             {
                 if (item.Madekiemtra.Equals(madekiemtra))
-                    listcauhoi.Add(item.Macauhoi);
+                    listcauhoi.Add(item);
+            }
+            return listcauhoi;
+        }
+        public ArrayList GetDanhSachChiTietDeKiemTraWithMaDeKiemTra(string madekiemtra)
+        {
+            ArrayList listcauhoi = new ArrayList();
+            foreach (ChiTietDeKiemTra item in list)
+            {
+                if (item.Madekiemtra.Equals(madekiemtra))
+                    listcauhoi.Add(item);
             }
             return listcauhoi;
         }

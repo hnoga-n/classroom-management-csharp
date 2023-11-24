@@ -31,6 +31,7 @@ namespace Hybrid.GUI.Home.KiemTra
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KiemTraFrm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlCauHoiContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -44,11 +45,14 @@ namespace Hybrid.GUI.Home.KiemTra
             this.btnThemCauHoi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtTimKiem = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numHinhPhat = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCapNhat = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnDang = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.chkDaoCauHoi = new System.Windows.Forms.CheckBox();
-            this.chkCongKhaiDiem = new System.Windows.Forms.CheckBox();
             this.chkCongKhaiDapAn = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpThoiGianKetThuc = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
@@ -367,11 +371,14 @@ namespace Hybrid.GUI.Home.KiemTra
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.numHinhPhat);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnCapNhat);
             this.panel2.Controls.Add(this.btnDang);
             this.panel2.Controls.Add(this.chkDaoCauHoi);
-            this.panel2.Controls.Add(this.chkCongKhaiDiem);
             this.panel2.Controls.Add(this.chkCongKhaiDapAn);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.dtpThoiGianKetThuc);
@@ -383,14 +390,61 @@ namespace Hybrid.GUI.Home.KiemTra
             this.panel2.Size = new System.Drawing.Size(280, 753);
             this.panel2.TabIndex = 1;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.Location = new System.Drawing.Point(128, 227);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(140, 28);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "% tổng điểm";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(6, 227);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 28);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Trừ";
+            // 
+            // numHinhPhat
+            // 
+            this.numHinhPhat.AlwaysActive = false;
+            this.numHinhPhat.Location = new System.Drawing.Point(56, 226);
+            this.numHinhPhat.Name = "numHinhPhat";
+            this.numHinhPhat.Size = new System.Drawing.Size(70, 33);
+            this.numHinhPhat.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.numHinhPhat.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.numHinhPhat.StateCommon.Border.Rounding = 2;
+            this.numHinhPhat.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.numHinhPhat.TabIndex = 19;
+            this.numHinhPhat.ThousandsSeparator = true;
+            this.numHinhPhat.UpDownButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Gallery;
+            this.numHinhPhat.ValueChanged += new System.EventHandler(this.numHinhPhat_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(6, 184);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(197, 28);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Hình phạt nộp trễ:";
+            // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(11, 415);
+            this.label5.Location = new System.Drawing.Point(7, 396);
             this.label5.MaximumSize = new System.Drawing.Size(250, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(250, 80);
@@ -497,9 +551,9 @@ namespace Hybrid.GUI.Home.KiemTra
             // 
             // chkDaoCauHoi
             // 
-            this.chkDaoCauHoi.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.chkDaoCauHoi.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.chkDaoCauHoi.ForeColor = System.Drawing.Color.Black;
-            this.chkDaoCauHoi.Location = new System.Drawing.Point(11, 350);
+            this.chkDaoCauHoi.Location = new System.Drawing.Point(11, 335);
             this.chkDaoCauHoi.MaximumSize = new System.Drawing.Size(250, 100);
             this.chkDaoCauHoi.Name = "chkDaoCauHoi";
             this.chkDaoCauHoi.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -508,26 +562,13 @@ namespace Hybrid.GUI.Home.KiemTra
             this.chkDaoCauHoi.Text = "Đảo câu hỏi";
             this.chkDaoCauHoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkDaoCauHoi.UseVisualStyleBackColor = true;
-            // 
-            // chkCongKhaiDiem
-            // 
-            this.chkCongKhaiDiem.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.chkCongKhaiDiem.ForeColor = System.Drawing.Color.Black;
-            this.chkCongKhaiDiem.Location = new System.Drawing.Point(11, 274);
-            this.chkCongKhaiDiem.MaximumSize = new System.Drawing.Size(250, 100);
-            this.chkCongKhaiDiem.Name = "chkCongKhaiDiem";
-            this.chkCongKhaiDiem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chkCongKhaiDiem.Size = new System.Drawing.Size(250, 70);
-            this.chkCongKhaiDiem.TabIndex = 14;
-            this.chkCongKhaiDiem.Text = "Công khai điểm sau khi nộp bài";
-            this.chkCongKhaiDiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkCongKhaiDiem.UseVisualStyleBackColor = true;
+            this.chkDaoCauHoi.CheckedChanged += new System.EventHandler(this.chkDaoCauHoi_CheckedChanged);
             // 
             // chkCongKhaiDapAn
             // 
-            this.chkCongKhaiDapAn.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.chkCongKhaiDapAn.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.chkCongKhaiDapAn.ForeColor = System.Drawing.Color.Black;
-            this.chkCongKhaiDapAn.Location = new System.Drawing.Point(11, 198);
+            this.chkCongKhaiDapAn.Location = new System.Drawing.Point(11, 269);
             this.chkCongKhaiDapAn.MaximumSize = new System.Drawing.Size(250, 100);
             this.chkCongKhaiDapAn.Name = "chkCongKhaiDapAn";
             this.chkCongKhaiDapAn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -536,22 +577,23 @@ namespace Hybrid.GUI.Home.KiemTra
             this.chkCongKhaiDapAn.Text = "Công khai đáp án";
             this.chkCongKhaiDapAn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkCongKhaiDapAn.UseVisualStyleBackColor = true;
+            this.chkCongKhaiDapAn.CheckedChanged += new System.EventHandler(this.chkCongKhaiDapAn_CheckedChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(6, 102);
+            this.label3.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(6, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 28);
+            this.label3.Size = new System.Drawing.Size(204, 28);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Thời gian kết thúc";
+            this.label3.Text = "Thời gian kết thúc:";
             // 
             // dtpThoiGianKetThuc
             // 
             this.dtpThoiGianKetThuc.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpThoiGianKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThoiGianKetThuc.Location = new System.Drawing.Point(11, 144);
+            this.dtpThoiGianKetThuc.Location = new System.Drawing.Point(11, 136);
             this.dtpThoiGianKetThuc.MinDate = this.dtpThoiGianBatDau.Value;
             this.dtpThoiGianKetThuc.Name = "dtpThoiGianKetThuc";
             this.dtpThoiGianKetThuc.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
@@ -564,13 +606,14 @@ namespace Hybrid.GUI.Home.KiemTra
             this.dtpThoiGianKetThuc.StateCommon.Border.Rounding = 5;
             this.dtpThoiGianKetThuc.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpThoiGianKetThuc.TabIndex = 8;
+            this.dtpThoiGianKetThuc.ValueChanged += new System.EventHandler(this.dtpThoiGianKetThuc_ValueChanged);
             this.dtpThoiGianKetThuc.Leave += new System.EventHandler(this.dtpThoiGianKetThuc_Leave);
             // 
             // dtpThoiGianBatDau
             // 
             this.dtpThoiGianBatDau.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpThoiGianBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThoiGianBatDau.Location = new System.Drawing.Point(11, 51);
+            this.dtpThoiGianBatDau.Location = new System.Drawing.Point(10, 44);
             this.dtpThoiGianBatDau.Name = "dtpThoiGianBatDau";
             this.dtpThoiGianBatDau.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
             this.dtpThoiGianBatDau.Size = new System.Drawing.Size(250, 34);
@@ -582,17 +625,18 @@ namespace Hybrid.GUI.Home.KiemTra
             this.dtpThoiGianBatDau.StateCommon.Border.Rounding = 5;
             this.dtpThoiGianBatDau.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpThoiGianBatDau.TabIndex = 0;
+            this.dtpThoiGianBatDau.ValueChanged += new System.EventHandler(this.dtpThoiGianBatDau_ValueChanged);
             this.dtpThoiGianBatDau.Leave += new System.EventHandler(this.dtpThoiGianBatDau_Leave);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(6, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 28);
+            this.label2.Size = new System.Drawing.Size(199, 28);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Thời gian bắt đầu";
+            this.label2.Text = "Thời gian bắt đầu:";
             // 
             // panel3
             // 
@@ -635,7 +679,7 @@ namespace Hybrid.GUI.Home.KiemTra
             this.lblDemKyTuTieuDeBaiKT.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblDemKyTuTieuDeBaiKT.Location = new System.Drawing.Point(616, 21);
             this.lblDemKyTuTieuDeBaiKT.Name = "lblDemKyTuTieuDeBaiKT";
-            this.lblDemKyTuTieuDeBaiKT.Size = new System.Drawing.Size(46, 20);
+            this.lblDemKyTuTieuDeBaiKT.Size = new System.Drawing.Size(45, 20);
             this.lblDemKyTuTieuDeBaiKT.TabIndex = 6;
             this.lblDemKyTuTieuDeBaiKT.Text = "0/50";
             // 
@@ -645,10 +689,10 @@ namespace Hybrid.GUI.Home.KiemTra
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 28);
+            this.label1.Size = new System.Drawing.Size(90, 28);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tiêu đề";
             // 
@@ -723,7 +767,6 @@ namespace Hybrid.GUI.Home.KiemTra
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpThoiGianKetThuc;
         private Label label2;
         private CheckBox chkDaoCauHoi;
-        private CheckBox chkCongKhaiDiem;
         private CheckBox chkCongKhaiDapAn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnXoaCauHoi;
         private Panel panel6;
@@ -735,9 +778,12 @@ namespace Hybrid.GUI.Home.KiemTra
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnTaiLai;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCapNhat;
         private Label label5;
+        private Label label7;
+        private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown numHinhPhat;
+        private Label label6;
+        private Label label8;
 
         public CheckBox ChkDaoCauHoi { get => chkDaoCauHoi; set => chkDaoCauHoi = value; }
-        public CheckBox ChkCongKhaiDiem { get => chkCongKhaiDiem; set => chkCongKhaiDiem = value; }
         public CheckBox ChkCongKhaiDapAn { get => chkCongKhaiDapAn; set => chkCongKhaiDapAn = value; }
         public FlowLayoutPanel PnlChiTietCauHoiContainer { get => pnlChiTietCauHoiContainer; set => pnlChiTietCauHoiContainer = value; }
         public FlowLayoutPanel PnlCauHoiContainer { get => pnlCauHoiContainer; set => pnlCauHoiContainer = value; }

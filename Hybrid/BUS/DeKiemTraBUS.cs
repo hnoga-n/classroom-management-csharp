@@ -4,9 +4,11 @@ using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Hybrid.BUS
 {
@@ -49,6 +51,16 @@ namespace Hybrid.BUS
         //    }
         //    return listchuong;
         //}
+
+        public DeKiemTra GetDeKiemTraByMaDe(string made)
+        {
+            foreach (DeKiemTra dkt in this.list)
+            {
+                if (dkt.Madekiemtra.Equals(made))
+                    return dkt;
+            }
+            return null;
+        }
 
         public bool ThemDeKiemTra(DeKiemTra dekiemtra)
         {

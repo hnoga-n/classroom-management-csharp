@@ -1,7 +1,9 @@
 ﻿using Hybrid.DTO;
+using Hybrid.GUI.Baitap;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -50,6 +52,55 @@ namespace Hybrid.DAO
                 Ketnoisqlserver.CloseConnection();
             }
             return listTmp;
+        }
+
+        public DataTable ThongKeDiemHocSinhTheoMaBaiTap(string mabaitap)
+        {
+            try
+            {
+                string sql_thamgia = "select t.hoten,b.diem,b.thoigiannopbai\r\nfrom taikhoan t join bailambaitap b on t.mataikhoan = b.mataikhoan\r\nwhere b.mabaitap = @mabaitap";
+                SqlCommand cmd = new SqlCommand(sql_thamgia, Ketnoisqlserver.GetConnection());
+                cmd.Parameters.AddWithValue("@mabaitap", Guid.Parse(mabaitap));
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                DataSet dataSet = new DataSet();
+                dataAdapter.Fill(dataSet);
+                return dataSet.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file BaiLamBaiTapDAO:" + ex.Message);
+                return null;
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+        }
+
+        public DataTable ThongKeDiemHocSinhTheoMaTaiKhoanVaMaChuong(string mataikhoan,string machuong)
+        {
+            try
+            {
+                string sql_thamgia = "select bt.tieude,bl.diem,bl.thoigiannopbai\r\n" +
+                    "from bailambaitap bl join baitap bt on bl.mabaitap = bt.mabaitap\r\n" +
+                    "where bt.machuong = @machuong AND bl.mataikhoan = @mataikhoan";
+                SqlCommand cmd = new SqlCommand(sql_thamgia, Ketnoisqlserver.GetConnection());
+                cmd.Parameters.AddWithValue("@machuong", Guid.Parse(machuong));
+                cmd.Parameters.AddWithValue("@mataikhoan", Guid.Parse(mataikhoan));
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                DataSet dataSet = new DataSet();
+                dataAdapter.Fill(dataSet);
+                return dataSet.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file BaiLamBaiTapDAO:" + ex.Message);
+                return null;
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
         }
     }
 }

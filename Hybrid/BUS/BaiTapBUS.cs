@@ -36,5 +36,26 @@ namespace Hybrid.BUS
             }
             return listBt;
         }
+
+        public ArrayList GetDanhSachBaiTapTheoMaChuong(string machuong, string tukhoa = "")
+        {
+            ArrayList rslist = new ArrayList();
+            foreach (BaiTap bt in this.list)
+            {
+                if (bt.Machuong.Equals(machuong) && bt.Tieude.Contains(tukhoa) && bt.Daxoa == 0)
+                    rslist.Add(bt);
+            }
+            return rslist;
+        }
+
+        public BaiTap GetBaiTapByMaBaiTap(string mabaitap)
+        {
+            foreach(BaiTap bt in this.list)
+            {
+                if (bt.Mabaitap.Equals(mabaitap))
+                    return bt;
+            }
+            return null;
+        }
     }
 }

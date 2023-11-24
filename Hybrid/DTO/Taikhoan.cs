@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hybrid.Comparer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Hybrid.DTO
 {
-    public class Taikhoan
+    public class Taikhoan : IComparable
     {
         private string mataikhoan;
         private int manhomquyen;
@@ -51,6 +52,23 @@ namespace Hybrid.DTO
                $"Số điện thoại: {sodienthoai}\n" +
                $"Ảnh đại diện: {anhdaidien}\n" +
                $"Đã xóa: {daxoa}";
+        }
+
+        public int CompareTo(Object obj)
+        {
+            Taikhoan taikhoan = (Taikhoan)obj;
+            return this.mataikhoan.CompareTo(taikhoan.mataikhoan);
+        }
+        public int CompareTo(Taikhoan c1, TaikhoanComparer.ComparisonType type)
+        {
+            switch (type)
+            {
+                case TaikhoanComparer.ComparisonType.mataikhoan:
+                    return this.mataikhoan.CompareTo(c1.mataikhoan);
+                case TaikhoanComparer.ComparisonType.manhomquyen:
+                    return this.manhomquyen.CompareTo(c1.manhomquyen);
+            }
+            return 0;
         }
     }
 }
