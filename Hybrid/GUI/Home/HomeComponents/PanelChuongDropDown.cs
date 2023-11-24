@@ -16,6 +16,7 @@ namespace Hybrid.GUI.Home
         KhoaHocFrm khfrm;
         ChuongBUS chuongBUS = new ChuongBUS();
         DeKiemTraBUS dekiemtraBUS = new DeKiemTraBUS();
+        HocLieuBUS hoclieuBUS = new HocLieuBUS();
 
         public bool IsExpanded { get => isExpanded; set => isExpanded = value; }
         public int DemTaiLieuChuong { get => demTaiLieuChuong; set => demTaiLieuChuong = value; }
@@ -43,6 +44,7 @@ namespace Hybrid.GUI.Home
             if(loaihoatdong == 0)
             {
                 HienThiDanhSachBaiKiemTra(chuong.Machuong);
+                HienThiDanhSachHocLieu(chuong.Machuong);
             } else if(loaihoatdong == 1)
             {
 
@@ -65,8 +67,22 @@ namespace Hybrid.GUI.Home
             {
                 if(dkt.Daxoa == 0)
                 {
-
                     ButtonBaiKT btn = new ButtonBaiKT(this,dkt);
+                    this.pnlChuongComponent.Controls.Add(btn);
+                    this.lblDemTaiLieuChuong.Text = "(" + ++demTaiLieuChuong + ")";
+                }
+            }
+            return true;
+        }
+
+        public bool HienThiDanhSachHocLieu(string machuong,string tukhoa = "")
+        {
+            if (hoclieuBUS.GetDanhSachHocLieuTheoMaChuong(machuong, tukhoa).Count == 0) return false;
+            foreach(HocLieu hl in hoclieuBUS.GetDanhSachHocLieuTheoMaChuong(machuong, tukhoa))
+            {
+                if (hl.Daxoa == 0)
+                {
+                    ButtonHocLieu btn = new ButtonHocLieu(this, hl);
                     this.pnlChuongComponent.Controls.Add(btn);
                     this.lblDemTaiLieuChuong.Text = "(" + ++demTaiLieuChuong + ")";
                 }
@@ -110,8 +126,10 @@ namespace Hybrid.GUI.Home
                     ktfrm.ShowDialog();
                     break;
                 case "Học liệu":
-                    ButtonHocLieu btnHL = new ButtonHocLieu(this);
-                    this.pnlChuongComponent.Controls.Add(btnHL);
+                    Taotailieufrm tlfrm = new Taotailieufrm(this);
+                    tlfrm.ShowDialog();
+                    /*ButtonHocLieu btnHL = new ButtonHocLieu(this);
+                    this.pnlChuongComponent.Controls.Add(btnHL);*/
                     break;
             }
             /*isExpanded = false;

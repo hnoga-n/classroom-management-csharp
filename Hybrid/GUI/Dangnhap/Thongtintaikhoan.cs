@@ -16,10 +16,15 @@ namespace Hybrid.GUI
     public partial class Thongtintaikhoan : KryptonForm
     {
         Taikhoan tk;
-        public Thongtintaikhoan(Taikhoan tk)
+        Form1 frm;
+        public Thongtintaikhoan(Taikhoan tk,PictureBox pic,Form1 frm)
         {
-            this.tk = tk;
             InitializeComponent();
+            this.tk = tk;
+            this.frm = frm;
+            this.hinhanh.Image = pic.Image;
+            this.Location = new Point(frm.Location.X+50,frm
+                .Location.Y + 50);
         }
 
         private void Thongtintaikhoan_Load(object sender, EventArgs e)
@@ -54,6 +59,11 @@ namespace Hybrid.GUI
             lab_matkhau.Visible = true;
             txt_matkhau.Visible = true;
             lab_ten.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

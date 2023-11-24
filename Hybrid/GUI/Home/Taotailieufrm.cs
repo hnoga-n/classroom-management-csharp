@@ -13,21 +13,24 @@ using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using Hybrid.DTO;
 using Hybrid.BUS;
+using Hybrid.GUI.Home.HomeComponents;
 
 namespace Hybrid.GUI.Home
 {
     public partial class Taotailieufrm : KryptonForm
     {
-        string magiaovien, malop, machuong;
+        private string magiaovien, malop, machuong;
+        PanelChuongDropDown panelchuong;
         TaikhoanDAO taikhoanDAO=new TaikhoanDAO();
         private DriveService service;
         HocLieuBUS tailieuBUS = new HocLieuBUS();   
         //private List<Google.Apis.Drive.v3.Data.File> files;
-        public Taotailieufrm(string magiaovien,string malophoc,string machuong)
+        public Taotailieufrm(PanelChuongDropDown panelchuong)
         {
-            this.magiaovien = magiaovien;
-            this.malop=malophoc;
-            this.machuong=machuong;
+            this.panelchuong = panelchuong;
+            this.magiaovien = panelchuong.Khfrm.Lophoc.Magiangvien;
+            this.malop=panelchuong.Khfrm.Lophoc.Malop;
+            this.machuong=panelchuong.Chuong.Machuong;
             InitializeComponent();
         }
 
@@ -95,9 +98,16 @@ namespace Hybrid.GUI.Home
                 MessageBox.Show("Vui long nhập đầy đủ nội dung","Cảnh báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                tailieuBUS.insert_hoclieu_and_filehoclieu(panel_luufile,machuong,text_tentailieu.Text,text_noidungtailieu.Text, service);
+                HocLieu hl = tailieuBUS.insert_hoclieu_and_filehoclieu(panel_luufile,machuong,text_tentailieu.Text,text_noidungtailieu.Text, service);
                 MessageBox.Show("Tạo tài liệu thành công","Thông báo");   
                 this.Close();
+                ButtonHocLieu btn = new ButtonHocLieu(this.panelchuong, hl);
+                this.panelchuong.PnlChuongComponent.Controls.Add(btn);
+                this.Close();
+                this.panelchuong.IsExpanded = false;
+                this.panelchuong.btnMoRong_Click(this, EventArgs.Empty);
+                this.panelchuong.DemTaiLieuChuong++;
+                this.panelchuong.LblDemTaiLieuChuong.Text = "(" + this.panelchuong.DemTaiLieuChuong + ")";
             }
         }
 

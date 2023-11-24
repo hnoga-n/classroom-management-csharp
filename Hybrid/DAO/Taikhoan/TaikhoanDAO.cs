@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using BCrypt.Net;
 namespace Hybrid.DAO
 {
-    class TaikhoanDAO
+    public class TaikhoanDAO
     {
         public List<Taikhoan> get_danhsach()
         {

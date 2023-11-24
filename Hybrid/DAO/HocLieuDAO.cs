@@ -29,7 +29,8 @@ namespace Hybrid.DAO
                     tmp.Machuong = dr["machuong"].ToString();
                     tmp.Tieude = dr["tieude"].ToString();
                     tmp.Noidung= dr["noidung"].ToString();
-                    tmp.Daxoa=  Convert.ToInt32(dr["noidung"].ToString());
+                    tmp.Daxoa=  Convert.ToInt32(dr["daxoa"].ToString());
+                    tmp.Thoigiantao = Convert.ToDateTime(dr["thoigiantao"].ToString());
                     listTmp.Add(tmp);
                 }
                 dr.Close();
@@ -44,22 +45,25 @@ namespace Hybrid.DAO
             }
             return listTmp;
         }
-        public void taohoclieu(string machuong, string tieude, string noidung, List<FileHocLieu> list_filehl)
+        public HocLieu taohoclieu(string machuong, string tieude, string noidung, List<FileHocLieu> list_filehl)
         {
             Guid temp;
+            DateTime thoigiantao = DateTime.Now;
             using (SqlConnection conn = Ketnoisqlserver.GetConnection())
             {
-                string sqlstring = "INSERT INTO hoclieu (machuong, tieude, noidung, daxoa) OUTPUT INSERTED.mahoclieu VALUES (@machuong, @tieude,@noidung, 0)";
+                string sqlstring = "INSERT INTO hoclieu (machuong, tieude, noidung, daxoa,thoigiantao) OUTPUT INSERTED.mahoclieu VALUES (@machuong, @tieude,@noidung, 0,@thoigiantao)";
                 using (SqlCommand command = new SqlCommand(sqlstring, conn))
                 {
                     command.Parameters.AddWithValue("@machuong", machuong);
                     command.Parameters.AddWithValue("@tieude", tieude);
                     command.Parameters.AddWithValue("@noidung", noidung);
+                    command.Parameters.AddWithValue("@thoigiantao", thoigiantao);
                     temp = (Guid)command.ExecuteScalar();
                 }
             }
             if (list_filehl != null)
                 taofilehoclieu_tudong(temp, list_filehl);
+            return new HocLieu(temp.ToString(),tieude,noidung,machuong,0,thoigiantao);
         }
         public void taofilehoclieu_tudong(Guid mahoclieu, List<FileHocLieu> list_filehl)
         {

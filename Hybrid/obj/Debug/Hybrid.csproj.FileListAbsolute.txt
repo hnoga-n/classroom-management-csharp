@@ -19,7 +19,6 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Forgetpass.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.LoginUI.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.SignupUI.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Thongtintaikhoan.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.xacnhanma.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.Banbe.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.BanbeCard.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.DanhbaFrm.resources
@@ -318,3 +317,4 @@ D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid
 D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.exe
 D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.pdb
 D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.xacnhanma_fgp.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.xacnhanma_fgp.resources

@@ -39,6 +39,7 @@
             this.txt_sodienthoai = new System.Windows.Forms.TextBox();
             this.txt_hoten = new System.Windows.Forms.TextBox();
             this.lab_hoten = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanh)).BeginInit();
             this.SuspendLayout();
@@ -66,11 +67,11 @@
             // 
             // hinhanh
             // 
-            //this.hinhanh.BackgroundImage = global::Hybrid.Properties.Resources.z4801471866481_6372150088e2fb8df8e3c7233f84d7d2;
             this.hinhanh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.hinhanh.Location = new System.Drawing.Point(12, 12);
             this.hinhanh.Name = "hinhanh";
             this.hinhanh.Size = new System.Drawing.Size(113, 108);
+            this.hinhanh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.hinhanh.TabIndex = 0;
             this.hinhanh.TabStop = false;
             // 
@@ -154,11 +155,22 @@
             this.lab_hoten.TabIndex = 10;
             this.lab_hoten.Text = "Họ tên:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(177, 390);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Thongtintaikhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 385);
+            this.ClientSize = new System.Drawing.Size(400, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_hoten);
             this.Controls.Add(this.lab_hoten);
             this.Controls.Add(this.txt_sodienthoai);
@@ -170,7 +182,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Thongtintaikhoan";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Thongtintaikhoan";
             this.Load += new System.EventHandler(this.Thongtintaikhoan_Load);
             this.panel1.ResumeLayout(false);
@@ -193,5 +205,6 @@
         private System.Windows.Forms.TextBox txt_sodienthoai;
         private System.Windows.Forms.TextBox txt_hoten;
         private System.Windows.Forms.Label lab_hoten;
+        private System.Windows.Forms.Button button1;
     }
 }
