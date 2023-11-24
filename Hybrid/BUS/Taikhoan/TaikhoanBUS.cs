@@ -20,6 +20,19 @@ namespace Hybrid.BUS
         {
             list = dao.get_danhsach();
         }
+        public bool kt_email(string email)
+        {
+            // Sử dụng biểu thức chính quy để kiểm tra định dạng email Gmail
+            string pattern = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
+            return Regex.IsMatch(email, pattern);
+        }
+        public Taikhoan kt_taikhoan(string email, string matkhau)
+        {
+            foreach (Taikhoan t in list)
+                if (email == t.Email && matkhau == t.Matkhau)
+                    return t;
+            return null;
+        }
         public Taikhoan GetTaiKhoanByEmail(string email)
         {
             Taikhoan taikhoan = null;
