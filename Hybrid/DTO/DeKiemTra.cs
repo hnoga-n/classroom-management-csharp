@@ -14,7 +14,7 @@ namespace Hybrid.DTO
         private DateTime thoigianbatdau;
         private DateTime thoigianketthuc;
         private DateTime thoigiantao;
-        private int xemdiem;
+        private int hinhphat;
         private int xemdapan;
         private int troncauhoi;
         private string machuong;
@@ -22,14 +22,14 @@ namespace Hybrid.DTO
 
         public DeKiemTra() { }
 
-        public DeKiemTra(string madekiemtra, string tieude, DateTime thoigiantao, DateTime thoigianbatdau, DateTime thoigianketthuc, int xemdiem, int xemdapan, int troncauhoi, string machuong, int daxoa)
+        public DeKiemTra(string madekiemtra, string tieude, DateTime thoigiantao, DateTime thoigianbatdau, DateTime thoigianketthuc, int hinhphat, int xemdapan, int troncauhoi, string machuong, int daxoa)
         {
             this.madekiemtra = madekiemtra;
             this.tieude = tieude;
             this.thoigiantao = thoigiantao;
             this.thoigianbatdau = thoigianbatdau;
             this.thoigianketthuc = thoigianketthuc;
-            this.xemdiem = xemdiem;
+            this.hinhphat = hinhphat;
             this.xemdapan = xemdapan;
             this.troncauhoi = troncauhoi;
             this.machuong = machuong;
@@ -41,7 +41,7 @@ namespace Hybrid.DTO
         public DateTime Thoigiantao { get => thoigiantao; set => thoigiantao = value; }
         public DateTime Thoigianbatdau { get => thoigianbatdau; set => thoigianbatdau = value; }
         public DateTime Thoigianketthuc { get => thoigianketthuc; set => thoigianketthuc = value; }
-        public int Xemdiem { get => xemdiem; set => xemdiem = value; }
+        public int Hinhphat { get => hinhphat; set => hinhphat = value; }
         public int Xemdapan { get => xemdapan; set => xemdapan = value; }
         public string Machuong { get => machuong; set => machuong = value; }
         public int Troncauhoi { get => troncauhoi; set => troncauhoi = value; }
@@ -70,7 +70,7 @@ namespace Hybrid.DTO
                    $"Thoigianbatdau: {thoigianbatdau}, " +
                    $"Thoigianketthuc: {thoigianketthuc}, " +
                    $"Thoigiantao: {thoigiantao}, " +
-                   $"Xemdiem: {xemdiem}, " +
+                   $"Hinhphat: {hinhphat}, " +
                    $"Xemdapan: {xemdapan}, " +
                    $"Troncauhoi: {troncauhoi}, " +
                    $"Machuong: {machuong}, " +

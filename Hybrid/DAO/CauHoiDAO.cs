@@ -51,18 +51,21 @@ namespace Hybrid.DAO
             return listTmp;
         }
 
-        public void ThemCauHoi(CauHoi cauhoi)
+        public bool ThemCauHoi(CauHoi cauhoi)
         {
             try
             {
-                string sql_themcauhoi = "INSERT INTO cauhoi(macauhoi,noidung,mataikhoan,daxoa) VALUES (@macauhoi,N'"+cauhoi.Noidung+"',@mataikhoan,1)";
+                string sql_themcauhoi = "INSERT INTO cauhoi(macauhoi,noidung,mataikhoan,daxoa) VALUES (@macauhoi,N'"+cauhoi.Noidung+"',@mataikhoan,@daxoa)";
                 SqlCommand cmd_themcauhoi = new SqlCommand(sql_themcauhoi, Ketnoisqlserver.GetConnection());
                 cmd_themcauhoi.Parameters.AddWithValue("@macauhoi", Guid.Parse(cauhoi.Macauhoi));
                 cmd_themcauhoi.Parameters.AddWithValue("@mataikhoan", Guid.Parse(cauhoi.Mataikhoan));
+                cmd_themcauhoi.Parameters.AddWithValue("@daxoa", Convert.ToInt32(cauhoi.Daxoa));
                 cmd_themcauhoi.ExecNonQuery();
+                return true;
             } catch(Exception ex)
             {
                 MessageBox.Show("Lỗi xảy ra ở file CauhoiDAO:" + ex.Message);
+                return false;
             } finally { 
                 Ketnoisqlserver.CloseConnection();
             }
@@ -111,7 +114,7 @@ namespace Hybrid.DAO
             try
             {
 
-                string sql_get_all = "SELECT * FROM cauhoi WHERE mataikhoan = @mataikhoan AND daxoa = 0";
+                string sql_get_all = "SELECT * FROM cauhoi WHERE mataikhoan = @mataikhoan";
                 SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
                 cmd.Parameters.AddWithValue("@mataikhoan",Guid.Parse(matk));
                 SqlDataReader dr = cmd.ExecuteReader();

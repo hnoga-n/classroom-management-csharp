@@ -34,6 +34,10 @@ namespace Hybrid.GUI.Todo
         {
             this.lblTitle.Text = bt.Tieude;
             this.lblDeadline.Text = bt.Thoigiantao.ToString();
+            if (bt.Dahoanthanh == 1)
+                this.btnDoHomework.Visible = false;
+            else
+                this.btnDoHomework.Visible = true;
         }
     }
 }

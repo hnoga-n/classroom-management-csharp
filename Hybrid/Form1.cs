@@ -11,7 +11,7 @@ using ComponentFactory.Krypton.Toolkit;
 using Hybrid.GUI;
 using Hybrid.GUI.Danhba;
 using Hybrid.GUI.Home;
-using Hybrid.GUI.Todo;
+//using Hybrid.GUI.Todo;
 using Hybrid.GUI.LichHoc;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.DTO;
@@ -21,18 +21,23 @@ namespace Hybrid
 {
     public partial class Form1 : KryptonForm
     {
-        private Taikhoan tk;
-        TaikhoanBUS taikhoanBus = new TaikhoanBUS();
-        public Form1()
-        {
-            InitializeComponent();
-            this.tk = taikhoanBus.GetTaiKhoanByEmail("nguyenhuyhoang@gmail.com");
-        }
+        private Taikhoan taikhoanhienhanh;
+        private BaiTapBUS btBUS = new BaiTapBUS();
+        private DeKiemTraBUS dktBUS = new DeKiemTraBUS();
+        private ChuongBUS chuongBUS = new ChuongBUS();
+        private LopHocBUS lopBUS = new LopHocBUS();
+        TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
+
         public Form1(Taikhoan tk)
         {
             InitializeComponent();
-            this.tk = tk;
+            taikhoanhienhanh= tk;
         }
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
@@ -62,14 +67,14 @@ namespace Hybrid
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            //Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("machhaotuan@gmail.com");
-            Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("tranvihao@gmail.com");
+            Taikhoan tk = taikhoanBUS.GetTaiKhoanByEmail("machhaotuan@gmail.com");
+            //Taikhoan tk = taikhoanBUS.GetTaiKhoanByEmail("nguyenhuyhoang@gmail.com");
             addFormtoPanelContainer(new HomeFrm(tk));
         }
 
         private void btnTodo_Click(object sender, EventArgs e)
         {
-            addFormtoPanelContainer(new TodoFrm());
+            //addFormtoPanelContainer(new TodoFrm());
         }
 
         private void btnContacts_Click(object sender, EventArgs e)
