@@ -16,22 +16,25 @@ using Hybrid.GUI.LichHoc;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.DTO;
 using Hybrid.BUS;
+using System.Drawing.Drawing2D;
 
 namespace Hybrid
 {
     public partial class Form1 : KryptonForm
     {
-        private Taikhoan taikhoanhienhanh;
         private BaiTapBUS btBUS = new BaiTapBUS();
         private DeKiemTraBUS dktBUS = new DeKiemTraBUS();
         private ChuongBUS chuongBUS = new ChuongBUS();
         private LopHocBUS lopBUS = new LopHocBUS();
         TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
 
+        Taikhoan tk ;
+
+
         public Form1(string email)
         {
             InitializeComponent();
-            //taikhoanhienhanh= tk;
+            this.tk = taikhoanBUS.GetTaiKhoanByEmail(email);
         }
         public Form1()
         {
@@ -41,7 +44,7 @@ namespace Hybrid
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnMinimizeForm_Click(object sender, EventArgs e)
@@ -67,7 +70,6 @@ namespace Hybrid
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Taikhoan tk = taikhoanBUS.GetTaiKhoanByEmail("machhaotuan@gmail.com");
             //Taikhoan tk = taikhoanBUS.GetTaiKhoanByEmail("nguyenhuyhoang@gmail.com");
             addFormtoPanelContainer(new HomeFrm(tk));
         }
@@ -90,7 +92,26 @@ namespace Hybrid
         private void Form1_Load(object sender, EventArgs e)
         {
             btnHome_Click(this, EventArgs.Empty);
+            MakePictureBoxCircular(this.picUserAva);
         }
 
+        private void MakePictureBoxCircular(PictureBox pictureBox)
+        {
+            if (pictureBox != null)
+            {
+                // Tạo đường dẫn hình tròn
+                GraphicsPath path = new GraphicsPath();
+                path.AddEllipse(0, 0, pictureBox.Width, pictureBox.Height);
+
+                // Gán đường dẫn cho PictureBox
+                pictureBox.Region = new Region(path);
+            }
+        }
+
+        private void picUserAva_Click(object sender, EventArgs e)
+        {
+            Thongtintaikhoan tt = new Thongtintaikhoan(this.tk,this.picUserAva,this);
+            tt.ShowDialog();
+        }
     }
 }

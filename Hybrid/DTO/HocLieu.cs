@@ -13,14 +13,16 @@ namespace Hybrid.DTO
         private string tieude;
         private string noidung;
         private int daxoa;
+        private DateTime thoigiantao;
 
-        public HocLieu(string mahoclieu = "", string tieude = "", string noidung = "", string machuong = "", int daxoa = 0)
+        public HocLieu(string mahoclieu = "", string tieude = "", string noidung = "", string machuong = "", int daxoa = 0, DateTime thoigiantao = default)
         {
             this.mahoclieu = mahoclieu;
             this.tieude = tieude;
             this.noidung = noidung;
             this.machuong = machuong;
             this.daxoa = daxoa;
+            this.thoigiantao = thoigiantao;
         }
 
         public string Mahoclieu { get => mahoclieu; set => mahoclieu = value; }
@@ -28,5 +30,6 @@ namespace Hybrid.DTO
         public string Noidung { get => noidung; set => noidung = value; }
         public string Machuong { get => machuong; set => machuong = value; }
         public int Daxoa { get => daxoa; set => daxoa = value; }
+        public DateTime Thoigiantao { get => thoigiantao; set => thoigiantao = value; }
     }
 }

@@ -31,14 +31,84 @@ namespace Hybrid.GUI.Home.HomeComponents
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ButtonHocLieu));
-            this.btnXoa = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnSua = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lblChiTietHocLieu = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblTieuDeHocLieu = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnHocLieu = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnXoa = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnSua = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblChiTietHocLieu
+            // 
+            this.lblChiTietHocLieu.BackColor = System.Drawing.Color.White;
+            this.lblChiTietHocLieu.Location = new System.Drawing.Point(112, 61);
+            this.lblChiTietHocLieu.Name = "lblChiTietHocLieu";
+            this.lblChiTietHocLieu.Size = new System.Drawing.Size(122, 25);
+            this.lblChiTietHocLieu.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
+            this.lblChiTietHocLieu.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblChiTietHocLieu.TabIndex = 18;
+            this.lblChiTietHocLieu.Values.Text = "Chi tiết tài liệu";
+            // 
+            // lblTieuDeHocLieu
+            // 
+            this.lblTieuDeHocLieu.BackColor = System.Drawing.Color.White;
+            this.lblTieuDeHocLieu.Location = new System.Drawing.Point(112, 16);
+            this.lblTieuDeHocLieu.Name = "lblTieuDeHocLieu";
+            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(126, 33);
+            this.lblTieuDeHocLieu.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
+            this.lblTieuDeHocLieu.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
+            this.lblTieuDeHocLieu.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTieuDeHocLieu.TabIndex = 17;
+            this.lblTieuDeHocLieu.Values.Text = "Tài liệu C#";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(41, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnHocLieu
+            // 
+            this.btnHocLieu.AllowDrop = true;
+            this.btnHocLieu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHocLieu.Location = new System.Drawing.Point(5, 5);
+            this.btnHocLieu.Name = "btnHocLieu";
+            this.btnHocLieu.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnHocLieu.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnHocLieu.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnHocLieu.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnHocLieu.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnHocLieu.Size = new System.Drawing.Size(860, 90);
+            this.btnHocLieu.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnHocLieu.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnHocLieu.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.btnHocLieu.StateCommon.Border.Color2 = System.Drawing.Color.Black;
+            this.btnHocLieu.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnHocLieu.StateCommon.Border.Rounding = 5;
+            this.btnHocLieu.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnHocLieu.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnHocLieu.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnHocLieu.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnHocLieu.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnHocLieu.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnHocLieu.TabIndex = 15;
+            this.btnHocLieu.Values.Text = "";
+            this.btnHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
             // 
             // btnXoa
             // 
@@ -165,75 +235,6 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnSua.TabIndex = 19;
             this.btnSua.Values.Text = "";
             // 
-            // lblChiTietHocLieu
-            // 
-            this.lblChiTietHocLieu.BackColor = System.Drawing.Color.White;
-            this.lblChiTietHocLieu.Location = new System.Drawing.Point(112, 61);
-            this.lblChiTietHocLieu.Name = "lblChiTietHocLieu";
-            this.lblChiTietHocLieu.Size = new System.Drawing.Size(122, 25);
-            this.lblChiTietHocLieu.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
-            this.lblChiTietHocLieu.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblChiTietHocLieu.TabIndex = 18;
-            this.lblChiTietHocLieu.Values.Text = "Chi tiết tài liệu";
-            // 
-            // lblTieuDeHocLieu
-            // 
-            this.lblTieuDeHocLieu.BackColor = System.Drawing.Color.White;
-            this.lblTieuDeHocLieu.Location = new System.Drawing.Point(112, 16);
-            this.lblTieuDeHocLieu.Name = "lblTieuDeHocLieu";
-            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(126, 33);
-            this.lblTieuDeHocLieu.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
-            this.lblTieuDeHocLieu.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
-            this.lblTieuDeHocLieu.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTieuDeHocLieu.TabIndex = 17;
-            this.lblTieuDeHocLieu.Values.Text = "Tài liệu C#";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(41, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
-            // kryptonButton1
-            // 
-            this.kryptonButton1.AllowDrop = true;
-            this.kryptonButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonButton1.Location = new System.Drawing.Point(5, 5);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonButton1.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.kryptonButton1.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.kryptonButton1.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.Size = new System.Drawing.Size(860, 90);
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.Black;
-            this.kryptonButton1.StateCommon.Border.Color2 = System.Drawing.Color.Black;
-            this.kryptonButton1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.Rounding = 5;
-            this.kryptonButton1.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.kryptonButton1.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.kryptonButton1.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.kryptonButton1.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.kryptonButton1.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.TabIndex = 15;
-            this.kryptonButton1.Values.Text = "";
-            // 
             // ButtonHocLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -243,7 +244,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.Controls.Add(this.lblChiTietHocLieu);
             this.Controls.Add(this.lblTieuDeHocLieu);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.kryptonButton1);
+            this.Controls.Add(this.btnHocLieu);
             this.Name = "ButtonHocLieu";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(870, 100);
@@ -254,13 +255,12 @@ namespace Hybrid.GUI.Home.HomeComponents
         }
 
         #endregion
-
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnXoa;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSua;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblChiTietHocLieu;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTieuDeHocLieu;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnHocLieu;
+        private KryptonButton btnXoa;
+        private KryptonButton btnSua;
 
         public KryptonButton BtnXoa { get => btnXoa; set => btnXoa = value; }
     }

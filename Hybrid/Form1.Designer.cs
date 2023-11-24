@@ -33,7 +33,7 @@ namespace Hybrid
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picUserAva = new System.Windows.Forms.PictureBox();
             this.btnCalendar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnContacts = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnTodo = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -43,13 +43,13 @@ namespace Hybrid
             this.pnlContainer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserAva)).BeginInit();
             this.pnlContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Controls.Add(this.pictureBox1);
+            this.kryptonPanel1.Controls.Add(this.picUserAva);
             this.kryptonPanel1.Controls.Add(this.btnCalendar);
             this.kryptonPanel1.Controls.Add(this.btnContacts);
             this.kryptonPanel1.Controls.Add(this.btnTodo);
@@ -63,16 +63,17 @@ namespace Hybrid
             this.kryptonPanel1.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
             this.kryptonPanel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // picUserAva
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picUserAva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picUserAva.Image = ((System.Drawing.Image)(resources.GetObject("picUserAva.Image")));
+            this.picUserAva.Location = new System.Drawing.Point(12, 12);
+            this.picUserAva.Name = "picUserAva";
+            this.picUserAva.Size = new System.Drawing.Size(70, 70);
+            this.picUserAva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUserAva.TabIndex = 0;
+            this.picUserAva.TabStop = false;
+            this.picUserAva.Click += new System.EventHandler(this.picUserAva_Click);
             // 
             // btnCalendar
             // 
@@ -396,7 +397,7 @@ namespace Hybrid
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserAva)).EndInit();
             this.pnlContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -411,7 +412,7 @@ namespace Hybrid
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCalendar;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnContacts;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnTodo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picUserAva;
         private Panel pnlContainer;
     }
 }
