@@ -8,13 +8,14 @@ using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Kiemtra
 {
     public partial class LamKiemTra : Form
     {
-        private const int TOTAL_POINT = 10;
+        private const double TOTAL_POINT = 10.0;
         private DeKiemTra dkt;
         private DeKiemTraBUS dktBUS;
         private ChiTietDeKiemTraBUS ctdktBUS;
@@ -43,7 +44,7 @@ namespace Hybrid.GUI.Kiemtra
 
         private void loadDataIntoForm()
         {
-            ArrayList listmacauhoi = this.ctdktBUS.getMaCauhoiWithMaDeKiemTra(this.dkt.Madekiemtra.ToLower());
+            ArrayList listmacauhoi = this.ctdktBUS.getChiTietDeKiemTraWithMaDeKiemTra(this.dkt.Madekiemtra.ToLower());
             ArrayList listcautraloi;
             if (listmacauhoi.Count <= 0)
             {
@@ -53,12 +54,12 @@ namespace Hybrid.GUI.Kiemtra
             listcauhoipanel.SuspendLayout();
             listcauhoipanel.Controls.Clear();
             int index = 0;
-            foreach (string macauhoi in listmacauhoi)
+            foreach (ChiTietDeKiemTra ctdkt in listmacauhoi)
             {
                 //cauhoi
-                CauHoi tmp = this.chBUS.getCauhoiWithMaCauHoi(macauhoi);
+                CauHoi tmp = this.chBUS.getCauhoiWithMaCauHoi(ctdkt.Macauhoi);
                 listcautraloi = this.ctlBUS.getCauTraLoiWithMaCauHoi(tmp.Macauhoi);
-                CauhoiPanel chComponent = new CauhoiPanel(tmp, listcautraloi, userChose(tmp.Macauhoi), false);
+                CauhoiPanel chComponent = new CauhoiPanel(tmp, listcautraloi, userChose(tmp.Macauhoi), false,false);
                 chComponent.getOrder().Text = "Câu hỏi " + (++index);
                 //chComponent.getAnswer1Radbtn().Click += cauTraLoi_choose(index);
                 listcauhoipanel.Controls.Add(chComponent);
@@ -105,19 +106,18 @@ namespace Hybrid.GUI.Kiemtra
             Ketnoisqlserver.CloseConnection();
             return cautraloidachon;
         }
-
-        private void btnPause_Click(object sender, EventArgs e)
+        private void cleanUpLuuVet()
         {
-            loading.ShowSplashScreen();
-            //clean up
             string sql_str1 = "DELETE FROM luuvetbailamkiemtra WHERE email=@email AND madekiemtra=@made";
             SqlCommand command = new SqlCommand(sql_str1, Ketnoisqlserver.GetConnection());
             command.Parameters.Add(new SqlParameter("@email", SqlDbType.NVarChar, 50)).Value = this.taikhoanhienhanh.Email;
             command.Parameters.Add(new SqlParameter("@made", SqlDbType.UniqueIdentifier)).Value = Guid.Parse(this.dkt.Madekiemtra);
             command.ExecuteNonQuery();
             Ketnoisqlserver.CloseConnection();
+        }
 
-            // insert
+        private void insertLuuVet()
+        {
             string sql_str2 = "INSERT INTO luuvetbailamkiemtra(email,madekiemtra,macauhoi,madapanchon) VALUES (@email,@made,@macauhoi, @chon)";
             SqlCommand command2 = new SqlCommand(sql_str2, Ketnoisqlserver.GetConnection());
 
@@ -132,22 +132,19 @@ namespace Hybrid.GUI.Kiemtra
                 command2.ExecuteNonQuery();
             }
             Ketnoisqlserver.CloseConnection();
-            loading.CloseForm();
-            MessageBox.Show("Đã lưu bản nháp!", "Thông báo !", MessageBoxButtons.OK);
         }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            this.btnSubmit.Enabled = false;
             DialogResult isConfirm = MessageBox.Show("Xác nhận nộp bài kiểm tra ?", "Thông báo !", MessageBoxButtons.OKCancel);
             if (isConfirm == DialogResult.Cancel) return;
+            this.btnSubmit.Enabled = false;
 
             loading.ShowSplashScreen();
             // create bailamkt
             DateTime thoigiannop = DateTime.Now;
             string mabailam = Guid.NewGuid().ToString();
-            float pointsPerQuestion = TOTAL_POINT / this.listcauhoipanel.Controls.Count;
-            float point = 0;
+            double pointsPerQuestion =  TOTAL_POINT / this.listcauhoipanel.Controls.Count;
+            double point = 0;
             int socaudung = 0;
             ArrayList Bailam = new ArrayList(); // use for chitietbailam
             foreach (CauhoiPanel cauhoipanel in this.listcauhoipanel.Controls)
@@ -159,7 +156,7 @@ namespace Hybrid.GUI.Kiemtra
                     Dapanchon = cauhoipanel.Madapanchon
                 };
                 Bailam.Add(ctbl);
-                if (cauhoipanel.Madapanchon != null && ctlBUS.getCauTraLoiWithMaCauTraLoi(cauhoipanel.Madapanchon).Ladapan == 1)
+                if (cauhoipanel.Madapanchon != string.Empty && ctlBUS.getCauTraLoiWithMaCauTraLoi(cauhoipanel.Madapanchon).Ladapan == 1)
                 {
                     point += pointsPerQuestion;
                     socaudung++;
@@ -189,6 +186,8 @@ namespace Hybrid.GUI.Kiemtra
             ctblkt.addChiTietBaiLam(Bailam);
             loading.CloseForm();
             MessageBox.Show("Bài làm đã lưu !", "Thông báo !", MessageBoxButtons.OK);
+            // clean up
+            cleanUpLuuVet();
             this.btnSubmit.Enabled = true;
             this.Close();
         }
@@ -214,7 +213,13 @@ namespace Hybrid.GUI.Kiemtra
         {
             DialogResult confirm = MessageBox.Show("Xác nhận tạm dừng làm kiểm tra ?\nBài làm sẽ được lưu thành bản nháp.", "Thông báo !", MessageBoxButtons.YesNo);
             if (confirm == DialogResult.No) return;
-            btnPause.PerformClick();
+            loading.ShowSplashScreen();
+            //clean up
+            cleanUpLuuVet();
+            // insert
+            insertLuuVet();
+            loading.CloseForm();
+            MessageBox.Show("Đã lưu bản nháp!", "Thông báo !", MessageBoxButtons.OK);
             this.Close();
         }
     }

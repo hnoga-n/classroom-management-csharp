@@ -18,7 +18,7 @@ namespace Hybrid.GUI.Home.KiemTra
 {
     public partial class KiemTraFrm : Form
     {
-        private bool isCloseFormNoAction;
+        private bool isCloseFormNoAction = true;
         // them de kiem tra
         Chuong chuong;
         CauHoiBUS cauhoiBUS = new CauHoiBUS();

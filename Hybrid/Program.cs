@@ -2,6 +2,8 @@
 using Hybrid.GUI.Home;
 ﻿using Hybrid.BUS;
 using Hybrid.DTO;
+using Hybrid.GUI.Baitap.Giaovien;
+using Hybrid.GUI.Home.KiemTra;
 using Hybrid.GUI.Kiemtra;
 using System;
 using System.Collections.Generic;
@@ -24,7 +26,9 @@ namespace Hybrid
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginUI());
             Application.Run(new Form1());
-            //Application.Run(new ThongTinLopHocFrm());
+            //Application.Run(new DanhSachBaiDaNop());
+            //Application.Run(new KiemTraFrm());
+            //Application.Run(new TaoBaiTap());
         }
     }
 }

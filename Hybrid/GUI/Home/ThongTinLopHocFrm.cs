@@ -31,7 +31,7 @@ namespace Hybrid.GUI.Home
             this.rtbNoiDung.Text = lophoc.Mota;
             this.btnRoiLop.Visible = false;
             this.btnXoaLop.Visible = true;
-            this.lblTenGiaoVien.Text = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(lophoc.Magiangvien).Hoten;
+            this.lblTenGiaoVien.Text = taikhoanBUS.list[taikhoanBUS.GetTaiKhoanByMaTaiKhoan(lophoc.Magiangvien)].ToString();
             dt = tgBUS.DanhSachHocSinhTheoMaLop(lophoc.Malop);
             this.dgvDanhSachHocSinh.DataSource = dt;
             this.dgvDanhSachHocSinh.Columns[0].Visible = false;

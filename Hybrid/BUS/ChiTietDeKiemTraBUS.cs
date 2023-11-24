@@ -38,13 +38,13 @@ namespace Hybrid.BUS
             }
             return false;
         }
-        public ArrayList getMaCauhoiWithMaDeKiemTra(string madekiemtra)
+        public ArrayList getChiTietDeKiemTraWithMaDeKiemTra(string madekiemtra)
         {
             ArrayList listcauhoi = new ArrayList();
             foreach (ChiTietDeKiemTra item in list)
             {
                 if (item.Madekiemtra.Equals(madekiemtra))
-                    listcauhoi.Add(item.Macauhoi);
+                    listcauhoi.Add(item);
             }
             return listcauhoi;
         }

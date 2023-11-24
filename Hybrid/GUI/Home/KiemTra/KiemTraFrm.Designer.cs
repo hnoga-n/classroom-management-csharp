@@ -679,7 +679,7 @@ namespace Hybrid.GUI.Home.KiemTra
             this.lblDemKyTuTieuDeBaiKT.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblDemKyTuTieuDeBaiKT.Location = new System.Drawing.Point(616, 21);
             this.lblDemKyTuTieuDeBaiKT.Name = "lblDemKyTuTieuDeBaiKT";
-            this.lblDemKyTuTieuDeBaiKT.Size = new System.Drawing.Size(46, 20);
+            this.lblDemKyTuTieuDeBaiKT.Size = new System.Drawing.Size(45, 20);
             this.lblDemKyTuTieuDeBaiKT.TabIndex = 6;
             this.lblDemKyTuTieuDeBaiKT.Text = "0/50";
             // 
