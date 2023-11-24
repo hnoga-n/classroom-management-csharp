@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Hybrid",
+    "\\Hybrid\\GUI",
+    "\\Hybrid\\GUI\\Home",
+    "\\Hybrid\\GUI\\Home\\KiemTra"
   ],
-  "SelectedNode": "\\Hybrid.sln",
+  "SelectedNode": "\\Hybrid\\GUI\\Home\\KiemTra\\KiemTraFrm.cs",
   "PreviewInSolutionExplorer": false
 }
