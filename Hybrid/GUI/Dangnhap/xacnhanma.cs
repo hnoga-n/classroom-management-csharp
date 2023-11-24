@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-namespace Hybrid.GUI.Home
+using ComponentFactory.Krypton.Toolkit;
+namespace Hybrid.GUI
 {
-    public partial class ThanhTichFrm : Form
+    public partial class xacnhanma : KryptonForm
     {
-        public ThanhTichFrm()
+        public xacnhanma()
         {
             InitializeComponent();
         }

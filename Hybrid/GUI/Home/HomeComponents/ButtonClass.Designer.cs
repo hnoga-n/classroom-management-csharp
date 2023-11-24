@@ -96,6 +96,7 @@ namespace Hybrid.GUI.Home
             this.lblTenLop.Size = new System.Drawing.Size(279, 28);
             this.lblTenLop.TabIndex = 2;
             this.lblTenLop.Text = "Lập trình C#";
+            this.lblTenLop.Click += new System.EventHandler(this.lblTenLop_Click);
             // 
             // lblChiTiet
             // 
@@ -107,6 +108,7 @@ namespace Hybrid.GUI.Home
             this.lblChiTiet.Size = new System.Drawing.Size(100, 20);
             this.lblChiTiet.TabIndex = 3;
             this.lblChiTiet.Text = "Lập trình C#";
+            this.lblChiTiet.Click += new System.EventHandler(this.lblChiTiet_Click);
             // 
             // ButtonClass
             // 

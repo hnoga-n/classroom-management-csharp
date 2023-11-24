@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hybrid.GUI.Home
+namespace Hybrid.GUI.ChatBox
 {
-    public partial class ChatFrm : Form
+    public partial class ChatBoxMessFrm : UserControl
     {
-        public ChatFrm()
+        public ChatBoxMessFrm()
         {
             InitializeComponent();
         }

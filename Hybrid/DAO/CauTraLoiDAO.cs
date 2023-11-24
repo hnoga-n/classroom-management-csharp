@@ -51,7 +51,7 @@ namespace Hybrid.DAO
             return listTmp;
         }
 
-        public void ThemCauTraLoi(CauTraLoi cautraloi)
+        public bool ThemCauTraLoi(CauTraLoi cautraloi)
         {
             try
             {
@@ -61,10 +61,12 @@ namespace Hybrid.DAO
                 cmd_themcautraloi.Parameters.AddWithValue("@macauhoi", Guid.Parse(cautraloi.Macauhoi));
                 cmd_themcautraloi.Parameters.AddWithValue("@lacautraloidung", cautraloi.Ladapan);
                 cmd_themcautraloi.ExecNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi xảy ra ở file CautraloiDAO:" + ex.Message);
+                return false;
             }
             finally
             {

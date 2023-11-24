@@ -29,6 +29,7 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
 
         public CauTraLoi Cautraloi { get => cautraloi; set => cautraloi = value; }
 
+
         /*private void chkLaDapAn_CheckedChanged(object sender, EventArgs e)
         {
             if (!chkLaDapAn.Checked)
