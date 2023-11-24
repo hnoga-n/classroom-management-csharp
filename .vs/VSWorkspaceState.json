@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Hybrid"
   ],
-  "SelectedNode": "\\Hybrid.sln",
+  "SelectedNode": "\\Hybrid\\packages.config",
   "PreviewInSolutionExplorer": false
 }

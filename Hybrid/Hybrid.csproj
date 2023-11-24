@@ -223,6 +223,7 @@
     <Compile Include="BUS\CauTraLoiBUS.cs" />
     <Compile Include="BUS\ChiTietBaiLamKiemTraBUS.cs" />
     <Compile Include="BUS\ChiTietDeKiemTraBUS.cs" />
+    <Compile Include="BUS\Chucnang.cs" />
     <Compile Include="BUS\ChuongBUS.cs" />
     <Compile Include="BUS\DeKiemTraBUS.cs" />
     <Compile Include="BUS\FileBaiLamBaiTapBUS.cs" />

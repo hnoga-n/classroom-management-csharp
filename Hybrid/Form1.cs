@@ -28,10 +28,10 @@ namespace Hybrid
         private LopHocBUS lopBUS = new LopHocBUS();
         TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
 
-        public Form1(Taikhoan tk)
+        public Form1(string email)
         {
             InitializeComponent();
-            taikhoanhienhanh= tk;
+            //taikhoanhienhanh= tk;
         }
         public Form1()
         {
