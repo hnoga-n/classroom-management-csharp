@@ -167,7 +167,7 @@ namespace Hybrid.GUI.Home
             {
                 foreach (DataGridViewRow row in dgvDanhSachHocSinh.Rows)
                 {
-                    if (row.Cells[0].Value.ToString().Contains(searchValue))
+                    if (row.Cells[0].Value.ToString().ToLower().Contains(searchValue.ToLower()))
                     {
                         row.Selected = true;
                         dgvDanhSachHocSinh.FirstDisplayedScrollingRowIndex = row.Index;

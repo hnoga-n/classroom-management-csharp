@@ -12,7 +12,6 @@ using Hybrid.GUI;
 using Hybrid.GUI.Danhba;
 using Hybrid.GUI.Home;
 //using Hybrid.GUI.Todo;
-using Hybrid.GUI.LichHoc;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.DTO;
 using Hybrid.BUS;
@@ -30,6 +29,7 @@ namespace Hybrid
 
         Taikhoan tk ;
 
+        public Taikhoan Tk { get => tk; set => tk = value; }
 
         public Form1(string email)
         {
@@ -52,7 +52,7 @@ namespace Hybrid
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void addFormtoPanelContainer(object Form)
+        public void addFormtoPanelContainer(object Form)
         {
             if (this.pnlContainer.Controls.Count > 0)
                 this.pnlContainer.Controls.RemoveAt(0);
@@ -71,7 +71,7 @@ namespace Hybrid
         private void btnHome_Click(object sender, EventArgs e)
         {
             //Taikhoan tk = taikhoanBUS.GetTaiKhoanByEmail("nguyenhuyhoang@gmail.com");
-            addFormtoPanelContainer(new HomeFrm(tk));
+            addFormtoPanelContainer(new HomeFrm(this));
         }
 
         private void btnTodo_Click(object sender, EventArgs e)
@@ -82,11 +82,6 @@ namespace Hybrid
         private void btnContacts_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new DanhbaFrm());
-        }
-
-        private void btnCalendar_Click(object sender, EventArgs e)
-        {
-            addFormtoPanelContainer(new Calendar());
         }
 
         private void Form1_Load(object sender, EventArgs e)

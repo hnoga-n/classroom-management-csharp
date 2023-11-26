@@ -16,6 +16,10 @@ namespace Hybrid.GUI.Home.HomeComponents
     {
         PanelChuongDropDown panelChuong;
         HocLieu hoclieu;
+
+        public PanelChuongDropDown PanelChuong { get => panelChuong; set => panelChuong = value; }
+        public HocLieu Hoclieu { get => hoclieu; set => hoclieu = value; }
+
         public ButtonHocLieu(PanelChuongDropDown panelChuong,HocLieu hoclieu)
         {
             InitializeComponent();
@@ -32,7 +36,7 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private void btnHocLieu_Click(object sender, EventArgs e)
         {
-            Hienthitailieufrm htfrm = new Hienthitailieufrm(panelChuong.Khfrm.Lophoc.Magiangvien,panelChuong.Khfrm.Lophoc.Malop,panelChuong.Chuong.Machuong,hoclieu.Mahoclieu);
+            Hienthitailieufrm htfrm = new Hienthitailieufrm(this);
             htfrm.ShowDialog();
         }
     }

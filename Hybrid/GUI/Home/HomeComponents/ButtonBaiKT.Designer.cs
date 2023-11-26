@@ -35,10 +35,10 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnXoa = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSua = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lblChiTietBKT = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lblTieuDeBKT = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBaiKiemTra = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.timerCapNhatTrangThai = new System.Windows.Forms.Timer(this.components);
+            this.lblTieuDeBKT = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,23 +173,12 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblChiTietBKT.BackColor = System.Drawing.Color.White;
             this.lblChiTietBKT.Location = new System.Drawing.Point(117, 56);
             this.lblChiTietBKT.Name = "lblChiTietBKT";
-            this.lblChiTietBKT.Size = new System.Drawing.Size(166, 25);
+            this.lblChiTietBKT.Size = new System.Drawing.Size(162, 25);
             this.lblChiTietBKT.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             this.lblChiTietBKT.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChiTietBKT.TabIndex = 18;
             this.lblChiTietBKT.Values.Text = "Chi tiết bài kiểm tra";
-            // 
-            // lblTieuDeBKT
-            // 
-            this.lblTieuDeBKT.BackColor = System.Drawing.Color.White;
-            this.lblTieuDeBKT.Location = new System.Drawing.Point(117, 21);
-            this.lblTieuDeBKT.Name = "lblTieuDeBKT";
-            this.lblTieuDeBKT.Size = new System.Drawing.Size(177, 33);
-            this.lblTieuDeBKT.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
-            this.lblTieuDeBKT.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
-            this.lblTieuDeBKT.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTieuDeBKT.TabIndex = 17;
-            this.lblTieuDeBKT.Values.Text = "Bài kiểm tra C#";
+            this.lblChiTietBKT.Click += new System.EventHandler(this.btnBaiKiemTra_Click);
             // 
             // pictureBox1
             // 
@@ -201,6 +190,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.btnBaiKiemTra_Click);
             // 
             // btnBaiKiemTra
             // 
@@ -242,14 +232,26 @@ namespace Hybrid.GUI.Home.HomeComponents
             // 
             this.timerCapNhatTrangThai.Tick += new System.EventHandler(this.timerCapNhatTrangThai_Tick);
             // 
+            // lblTieuDeBKT
+            // 
+            this.lblTieuDeBKT.AutoEllipsis = true;
+            this.lblTieuDeBKT.BackColor = System.Drawing.Color.White;
+            this.lblTieuDeBKT.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTieuDeBKT.Location = new System.Drawing.Point(112, 25);
+            this.lblTieuDeBKT.Name = "lblTieuDeBKT";
+            this.lblTieuDeBKT.Size = new System.Drawing.Size(614, 28);
+            this.lblTieuDeBKT.TabIndex = 21;
+            this.lblTieuDeBKT.Text = "Lập trình C#";
+            this.lblTieuDeBKT.Click += new System.EventHandler(this.btnBaiKiemTra_Click);
+            // 
             // ButtonBaiKT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblTieuDeBKT);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.lblChiTietBKT);
-            this.Controls.Add(this.lblTieuDeBKT);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBaiKiemTra);
             this.Name = "ButtonBaiKT";
@@ -266,12 +268,12 @@ namespace Hybrid.GUI.Home.HomeComponents
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnXoa;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSua;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblChiTietBKT;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTieuDeBKT;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnBaiKiemTra;
         private System.Windows.Forms.Timer timerCapNhatTrangThai;
+        private System.Windows.Forms.Label lblTieuDeBKT;
 
         public KryptonButton BtnXoa { get => btnXoa; set => btnXoa = value; }
-        public KryptonLabel LblTieuDeBKT { get => lblTieuDeBKT; set => lblTieuDeBKT = value; }
+        public System.Windows.Forms.Label LblTieuDeBKT { get => lblTieuDeBKT; set => lblTieuDeBKT = value; }
     }
 }

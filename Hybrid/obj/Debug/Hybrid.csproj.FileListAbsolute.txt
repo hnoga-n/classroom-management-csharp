@@ -51,14 +51,12 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiNavigate.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiPanel.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.LamKiemTra.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.Taotailieufrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.TepFrm.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThamGiaLopFrm.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_HS.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_GV.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemChuongFrm.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemLopFrm.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThongTinLopHocFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.LichHoc.Calendar.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Utilities.loading.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.Properties.Resources.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.GenerateResource.cache

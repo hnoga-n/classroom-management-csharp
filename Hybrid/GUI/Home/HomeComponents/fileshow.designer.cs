@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fileshow));
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pic_file = new System.Windows.Forms.PictureBox();
@@ -48,7 +49,7 @@
             this.kryptonButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonButton1.Location = new System.Drawing.Point(0, 0);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(455, 87);
+            this.kryptonButton1.Size = new System.Drawing.Size(455, 70);
             this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton1.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -56,7 +57,7 @@
             this.kryptonButton1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.Rounding = 20;
+            this.kryptonButton1.StateCommon.Border.Rounding = 5;
             this.kryptonButton1.TabIndex = 1;
             this.kryptonButton1.Values.Text = "";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
@@ -65,9 +66,10 @@
             // 
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(117, 22);
+            this.label1.Location = new System.Drawing.Point(99, 16);
+            this.label1.MaximumSize = new System.Drawing.Size(250, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 46);
+            this.label1.Size = new System.Drawing.Size(250, 40);
             this.label1.TabIndex = 6;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -76,10 +78,10 @@
             // pic_file
             // 
             this.pic_file.BackColor = System.Drawing.Color.White;
-            this.pic_file.Image = global::Hybrid.Properties.Resources.file_64;
-            this.pic_file.Location = new System.Drawing.Point(35, 3);
+            this.pic_file.Image = ((System.Drawing.Image)(resources.GetObject("pic_file.Image")));
+            this.pic_file.Location = new System.Drawing.Point(40, 10);
             this.pic_file.Name = "pic_file";
-            this.pic_file.Size = new System.Drawing.Size(76, 81);
+            this.pic_file.Size = new System.Drawing.Size(50, 50);
             this.pic_file.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pic_file.TabIndex = 10;
             this.pic_file.TabStop = false;
@@ -88,10 +90,10 @@
             // pic_pdf
             // 
             this.pic_pdf.BackColor = System.Drawing.Color.White;
-            this.pic_pdf.Image = global::Hybrid.Properties.Resources.pdf_64;
-            this.pic_pdf.Location = new System.Drawing.Point(35, 3);
+            this.pic_pdf.Image = ((System.Drawing.Image)(resources.GetObject("pic_pdf.Image")));
+            this.pic_pdf.Location = new System.Drawing.Point(40, 10);
             this.pic_pdf.Name = "pic_pdf";
-            this.pic_pdf.Size = new System.Drawing.Size(76, 81);
+            this.pic_pdf.Size = new System.Drawing.Size(50, 50);
             this.pic_pdf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pic_pdf.TabIndex = 9;
             this.pic_pdf.TabStop = false;
@@ -100,10 +102,10 @@
             // pic_txt
             // 
             this.pic_txt.BackColor = System.Drawing.Color.White;
-            this.pic_txt.Image = global::Hybrid.Properties.Resources.file_64;
-            this.pic_txt.Location = new System.Drawing.Point(35, 3);
+            this.pic_txt.Image = ((System.Drawing.Image)(resources.GetObject("pic_txt.Image")));
+            this.pic_txt.Location = new System.Drawing.Point(40, 10);
             this.pic_txt.Name = "pic_txt";
-            this.pic_txt.Size = new System.Drawing.Size(76, 81);
+            this.pic_txt.Size = new System.Drawing.Size(50, 50);
             this.pic_txt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pic_txt.TabIndex = 8;
             this.pic_txt.TabStop = false;
@@ -112,10 +114,10 @@
             // pic_xlsx
             // 
             this.pic_xlsx.BackColor = System.Drawing.Color.White;
-            this.pic_xlsx.Image = global::Hybrid.Properties.Resources.xlsx_64;
-            this.pic_xlsx.Location = new System.Drawing.Point(35, 3);
+            this.pic_xlsx.Image = ((System.Drawing.Image)(resources.GetObject("pic_xlsx.Image")));
+            this.pic_xlsx.Location = new System.Drawing.Point(40, 10);
             this.pic_xlsx.Name = "pic_xlsx";
-            this.pic_xlsx.Size = new System.Drawing.Size(76, 81);
+            this.pic_xlsx.Size = new System.Drawing.Size(50, 50);
             this.pic_xlsx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pic_xlsx.TabIndex = 7;
             this.pic_xlsx.TabStop = false;
@@ -124,10 +126,10 @@
             // pic_docx
             // 
             this.pic_docx.BackColor = System.Drawing.Color.White;
-            this.pic_docx.Image = global::Hybrid.Properties.Resources.docx_64;
-            this.pic_docx.Location = new System.Drawing.Point(35, 3);
+            this.pic_docx.Image = ((System.Drawing.Image)(resources.GetObject("pic_docx.Image")));
+            this.pic_docx.Location = new System.Drawing.Point(40, 10);
             this.pic_docx.Name = "pic_docx";
-            this.pic_docx.Size = new System.Drawing.Size(76, 81);
+            this.pic_docx.Size = new System.Drawing.Size(50, 50);
             this.pic_docx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pic_docx.TabIndex = 5;
             this.pic_docx.TabStop = false;
@@ -137,10 +139,10 @@
             // lab_xoa
             // 
             this.lab_xoa.BackColor = System.Drawing.Color.White;
-            this.lab_xoa.Image = global::Hybrid.Properties.Resources.trash_32;
-            this.lab_xoa.Location = new System.Drawing.Point(401, 22);
+            this.lab_xoa.Image = ((System.Drawing.Image)(resources.GetObject("lab_xoa.Image")));
+            this.lab_xoa.Location = new System.Drawing.Point(394, 16);
             this.lab_xoa.Name = "lab_xoa";
-            this.lab_xoa.Size = new System.Drawing.Size(51, 46);
+            this.lab_xoa.Size = new System.Drawing.Size(40, 40);
             this.lab_xoa.TabIndex = 11;
             this.lab_xoa.Click += new System.EventHandler(this.lab_xoa_Click);
             // 
@@ -148,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.Controls.Add(this.lab_xoa);
             this.Controls.Add(this.pic_file);
             this.Controls.Add(this.pic_pdf);
@@ -158,7 +160,7 @@
             this.Controls.Add(this.pic_docx);
             this.Controls.Add(this.kryptonButton1);
             this.Name = "fileshow";
-            this.Size = new System.Drawing.Size(455, 87);
+            this.Size = new System.Drawing.Size(455, 70);
             this.Load += new System.EventHandler(this.fileshow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_file)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_pdf)).EndInit();
