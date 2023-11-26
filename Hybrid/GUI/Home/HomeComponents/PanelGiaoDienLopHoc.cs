@@ -65,11 +65,6 @@ namespace Hybrid.GUI.Home.HomeComponents
                 addFormtoPanelHomeContainer(new ThanhTichFrm_HS(this.lophoc, this.taikhoan));
         }
 
-        private void btnTep_Click(object sender, EventArgs e)
-        {
-            addFormtoPanelHomeContainer(new TepFrm());
-        }
-
         private void btnChinhSuaLopHoc_Click(object sender, EventArgs e)
         {
             new ThongTinLopHocFrm(taikhoan,this).ShowDialog();

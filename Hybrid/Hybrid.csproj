@@ -604,14 +604,8 @@
     <Compile Include="GUI\Home\Taotailieufrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Home\Taotailieufrm.designer.cs">
+    <Compile Include="GUI\Home\Taotailieufrm.Designer.cs">
       <DependentUpon>Taotailieufrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Home\TepFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\TepFrm.Designer.cs">
-      <DependentUpon>TepFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\ThamGiaLopFrm.cs">
       <SubType>Form</SubType>
@@ -648,12 +642,6 @@
     </Compile>
     <Compile Include="GUI\Home\ThongTinLopHocFrm.Designer.cs">
       <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Lichhoc\Calendar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Lichhoc\Calendar.Designer.cs">
-      <DependentUpon>Calendar.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Test.cs">
       <SubType>Form</SubType>
@@ -825,9 +813,6 @@
     <EmbeddedResource Include="GUI\Home\Taotailieufrm.resx">
       <DependentUpon>Taotailieufrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\TepFrm.resx">
-      <DependentUpon>TepFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThamGiaLopFrm.resx">
       <DependentUpon>ThamGiaLopFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -845,9 +830,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThongTinLopHocFrm.resx">
       <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Lichhoc\Calendar.resx">
-      <DependentUpon>Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Utilities\loading.resx">
       <DependentUpon>loading.cs</DependentUpon>

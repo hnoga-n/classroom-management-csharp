@@ -1,10 +1,13 @@
 ﻿using Hybrid.BUS;
 using Hybrid.DTO;
 using Hybrid.GUI.Home.HomeComponents;
+using OfficeOpenXml.Style;
+using OfficeOpenXml;
 using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Hybrid.GUI.Home
 {
@@ -15,6 +18,7 @@ namespace Hybrid.GUI.Home
         Taikhoan taikhoan;
         PanelGiaoDienLopHoc panelgdlh;
         string tenlop;
+        string mota;
 
         ThamGiaBUS tgBUS = new ThamGiaBUS();
         TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
@@ -27,28 +31,35 @@ namespace Hybrid.GUI.Home
             this.taikhoan = taikhoan;
             this.txtTenLop.Text = lophoc.Tenlop;
             this.tenlop = lophoc.Tenlop;
+            this.mota = lophoc.Mota;
             this.txtMaLop.Text = lophoc.Malop;
             this.rtbNoiDung.Text = lophoc.Mota;
             this.btnRoiLop.Visible = false;
             this.btnXoaLop.Visible = true;
-            //this.lblTenGiaoVien.Text = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(lophoc.Magiangvien);
+            this.lblTenGiaoVien.Text = taikhoanBUS.List[taikhoanBUS.GetTaiKhoanByMaTaiKhoan(lophoc.Magiangvien)].Hoten;
             dt = tgBUS.DanhSachHocSinhTheoMaLop(lophoc.Malop);
             this.dgvDanhSachHocSinh.DataSource = dt;
             this.dgvDanhSachHocSinh.Columns[0].Visible = false;
-            this.dgvDanhSachHocSinh.Columns[1].Width = 370;
+            this.dgvDanhSachHocSinh.Columns[1].Width = 200;
+            this.dgvDanhSachHocSinh.Columns[2].Width = 250;
+            this.dgvDanhSachHocSinh.Columns[3].Width = 150;
             this.dgvDanhSachHocSinh.Columns[1].HeaderText = "Học sinh";
-            this.dgvDanhSachHocSinh.Columns.Insert(2, btnXoaHocSinh);
-            this.dgvDanhSachHocSinh.Columns[2].Width = 80;
+            this.dgvDanhSachHocSinh.Columns[2].HeaderText = "Email";
+            this.dgvDanhSachHocSinh.Columns[3].HeaderText = "Số điện thoại";
+            this.dgvDanhSachHocSinh.Columns.Insert(4, btnXoaHocSinh);
+            this.dgvDanhSachHocSinh.Columns[4].Width = 80;
             if (!this.lophoc.Magiangvien.Equals(this.taikhoan.Mataikhoan))
             {
                 this.txtTenLop.Enabled = false;
                 this.rtbNoiDung.Enabled = false;
                 this.pnlMaLop.Visible = false;
-                this.dgvDanhSachHocSinh.Columns[1].Width = 450;
-                this.dgvDanhSachHocSinh.Columns[2].Visible = false;
-                this.btnXacNhan.Visible = false;
+                this.dgvDanhSachHocSinh.Columns[1].Width = 250;
+                this.dgvDanhSachHocSinh.Columns[2].Width = 280;
+                this.dgvDanhSachHocSinh.Columns[3].Width = 150;
+                this.dgvDanhSachHocSinh.Columns[4].Visible = false;
                 this.btnRoiLop.Visible = true;
                 this.btnXoaLop.Visible = false;
+                this.btnXuatExcel.Visible = false;
             }
         }
 
@@ -62,30 +73,36 @@ namespace Hybrid.GUI.Home
             new HienThiMaLopHocFrm(lophoc.Malop).ShowDialog();
         }
 
-        private void txtTenLop_KeyUp(object sender, KeyEventArgs e)
+        private void txtTenLop_Leave(object sender, EventArgs e)
         {
             if (this.tenlop.Equals(txtTenLop.Text.Trim())) return;
-            if(e.KeyCode == Keys.Enter)
+            this.lophoc.Tenlop = txtTenLop.Text;
+            this.tenlop = txtTenLop.Text;
+            panelgdlh.LblTenLop.Text = txtTenLop.Text;
+            foreach (ButtonClass btn in panelgdlh.Homefrm.PnlLopHocContainer.Controls)
             {
-                this.lophoc.Tenlop = txtTenLop.Text;
-                this.tenlop = txtTenLop.Text;
-                panelgdlh.LblTenLop.Text = txtTenLop.Text;
-                foreach(ButtonClass btn in panelgdlh.Homefrm.PnlLopHocContainer.Controls)
+                if (btn.Lophoc.Malop.Equals(this.lophoc.Malop))
                 {
-                    if(btn.Lophoc.Malop.Equals(this.lophoc.Malop))
-                    {
-                        btn.LblTenLop.Text = txtTenLop.Text;
-                        break;
-                    }
+                    btn.LblTenLop.Text = txtTenLop.Text;
+                    break;
                 }
-                lophocBUS.SuaLopHoc(this.lophoc);
             }
+            lophocBUS.SuaLopHoc(this.lophoc);
         }
 
-        private void btnXacNhan_Click(object sender, EventArgs e)
+        private void rtbNoiDung_Leave(object sender, EventArgs e)
         {
+            if (this.mota.Equals(rtbNoiDung.Text.Trim())) return;
             this.lophoc.Mota = rtbNoiDung.Text;
+            this.mota = rtbNoiDung.Text;
             lophocBUS.SuaLopHoc(this.lophoc);
+        }
+
+
+        private void ThongTinLopHocFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            txtTenLop_Leave(this, EventArgs.Empty);
+            rtbNoiDung_Leave(this, EventArgs.Empty);
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -98,7 +115,9 @@ namespace Hybrid.GUI.Home
                 foreach (DataGridViewRow row in dgvDanhSachHocSinh.Rows)
                 {
                     //MessageBox.Show(row.Cells[2].Value.ToString());
-                    if (row.Cells[2].Value.ToString().Contains(searchValue))
+                    if (row.Cells[2].Value.ToString().ToLower().Contains(searchValue.ToLower()) ||
+                        row.Cells[3].Value.ToString().ToLower().Contains(searchValue.ToLower()) ||
+                        row.Cells[4].Value.ToString().ToLower().Contains(searchValue.ToLower()))
                     {
                         row.Selected = true;
                         dgvDanhSachHocSinh.FirstDisplayedScrollingRowIndex = row.Index;
@@ -116,14 +135,14 @@ namespace Hybrid.GUI.Home
         {
             if (string.IsNullOrEmpty(txtTimKiem.Text))
             {
-                txtTimKiem.Text = "Tìm kiếm";
+                txtTimKiem.Text = "Tìm kiếm theo họ tên hoặc email hoặc sđt";
                 txtTimKiem.ForeColor = SystemColors.Control; // Đặt màu chữ thành màu xám
             }
         }
 
         private void txtTimKiem_Enter(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "Tìm kiếm")
+            if (txtTimKiem.Text == "Tìm kiếm theo họ tên hoặc email hoặc sđt")
             {
                 txtTimKiem.Text = "";
                 txtTimKiem.ForeColor = SystemColors.WindowText; // Đặt màu chữ về màu mặc định của hệ thống
@@ -171,21 +190,7 @@ namespace Hybrid.GUI.Home
                             break;
                         }
                     }
-                    /*foreach (Form frm in this.panelgdlh.PnlHomeContainer.Controls)
-                    {
-                        if(frm is KhoaHocFrm)
-                        {
-                            MessageBox.Show("Hello");
-                            (frm as KhoaHocFrm).BtnTaoChuong.Visible = false;
-                            foreach(PanelChuongDropDown pnl in (frm as KhoaHocFrm).PnlChuongContainer.Controls)
-                            {
-                                pnl.BtnThem.Visible = false;
-                                pnl.BtnXoa.Visible = false;
-                                pnl.BtnSua.Visible = false;
-                            }
-                            break;
-                        }
-                    }*/
+                    this.panelgdlh.Homefrm.Form.addFormtoPanelContainer(new HomeFrm(this.panelgdlh.Homefrm.Form));
                     this.Close();
                 }
             }
@@ -210,6 +215,88 @@ namespace Hybrid.GUI.Home
                         }
                     }
                 }
+            }
+        }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            if (dgvDanhSachHocSinh.Rows.Count == 0)
+            {
+                MessageBox.Show("Dữ liệu rỗng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            using (var saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Excel Files|*.xlsx|All Files|*.*";
+                saveFileDialog.Title = "Chọn nơi lưu file Excel";
+                saveFileDialog.FileName = "DanhSachHocSinh.xlsx";
+
+                DialogResult result = saveFileDialog.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    string excelFilePath = saveFileDialog.FileName;
+                    // Gọi phương thức xuất Excel và truyền đường dẫn file Excel
+                    ExportToExcel(dgvDanhSachHocSinh, excelFilePath);
+                }
+            }
+        }
+
+        private void ExportToExcel(DataGridView dataGridView, string excelFilePath)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.Commercial;
+
+            // If you use EPPlus in a noncommercial context
+            // according to the Polyform Noncommercial license:
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            using (var package = new ExcelPackage())
+            {
+                // Tạo một Sheet trong Excel
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("DanhSachHocSinh");
+
+                // Đổ dữ liệu từ DataGridView vào Excel
+                worksheet.Cells[2,1].Value = "STT";
+                worksheet.Cells[2,1].Style.Font.Bold = true;
+                worksheet.Cells[2,1].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                worksheet.Cells[2,1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;      
+                worksheet.Cells[2,1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                for (int col = 2; col <= dataGridView.Columns.Count-1; col++)
+                {
+                    worksheet.Cells[2, col].Value = dataGridView.Columns[col].HeaderText;
+                    worksheet.Cells[2, col].Style.Font.Bold = true;
+                    worksheet.Cells[2, col].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                }
+                int stt = 1;
+                for (int row = 0; row < dataGridView.Rows.Count; row++)
+                {
+                    worksheet.Cells[row + 3,1].Value = stt++;
+                    worksheet.Cells[row + 3,1].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                    for (int col = 1; col < dataGridView.Columns.Count-1; col++)
+                    {
+                        worksheet.Cells[row + 3, col + 1].Value = dataGridView.Rows[row].Cells[col+1].Value;
+                        worksheet.Cells[row + 3, col + 1].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                    }
+                }
+
+                // Merge ô từ A1 đến C5
+                using (var range = worksheet.Cells[1, 1, 1, 4])
+                {
+                    range.Merge = true;
+                    range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    range.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                    range.Style.Font.Bold = true;
+                    range.Style.Font.Size = 14;
+                    range.Value = "DANH SÁCH HỌC SINH LỚP " + this.lophoc.Tenlop.ToUpper();
+                    range.Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                }
+
+                // Sau khi ghi dữ liệu, thực hiện AutoFit cho các cột
+                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+
+                // Lưu file Excel vào đường dẫn đã chọn
+                File.WriteAllBytes(excelFilePath, package.GetAsByteArray());
+
+                MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

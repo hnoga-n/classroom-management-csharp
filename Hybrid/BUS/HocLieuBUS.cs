@@ -145,7 +145,7 @@ namespace Hybrid.BUS
             ArrayList rslist = new ArrayList();
             foreach (HocLieu hl in this.listhoclieu)
             {
-                if (hl.Machuong.Equals(machuong) && hl.Tieude.Contains(tukhoa) && hl.Daxoa == 0)
+                if (hl.Machuong.Equals(machuong) && hl.Tieude.ToLower().Contains(tukhoa.ToLower()) && hl.Daxoa == 0)
                     rslist.Add(hl);
             }
             return rslist;

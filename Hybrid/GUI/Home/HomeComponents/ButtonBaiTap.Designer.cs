@@ -33,10 +33,10 @@ namespace Hybrid.GUI.Home.HomeComponents
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ButtonBaiTap));
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblTieuDeBT = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lblChiTietBT = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnSua = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnXoa = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lblTieuDeBT = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,22 +86,10 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // lblTieuDeBT
-            // 
-            this.lblTieuDeBT.BackColor = System.Drawing.Color.White;
-            this.lblTieuDeBT.Location = new System.Drawing.Point(112, 16);
-            this.lblTieuDeBT.Name = "lblTieuDeBT";
-            this.lblTieuDeBT.Size = new System.Drawing.Size(123, 33);
-            this.lblTieuDeBT.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
-            this.lblTieuDeBT.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
-            this.lblTieuDeBT.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTieuDeBT.TabIndex = 3;
-            this.lblTieuDeBT.Values.Text = "Bài tập C#";
-            // 
             // lblChiTietBT
             // 
             this.lblChiTietBT.BackColor = System.Drawing.Color.White;
-            this.lblChiTietBT.Location = new System.Drawing.Point(112, 61);
+            this.lblChiTietBT.Location = new System.Drawing.Point(112, 56);
             this.lblChiTietBT.Name = "lblChiTietBT";
             this.lblChiTietBT.Size = new System.Drawing.Size(124, 25);
             this.lblChiTietBT.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
@@ -234,14 +222,25 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnXoa.Values.Text = "";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+            // lblTieuDeBT
+            // 
+            this.lblTieuDeBT.AutoEllipsis = true;
+            this.lblTieuDeBT.BackColor = System.Drawing.Color.White;
+            this.lblTieuDeBT.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTieuDeBT.Location = new System.Drawing.Point(107, 25);
+            this.lblTieuDeBT.Name = "lblTieuDeBT";
+            this.lblTieuDeBT.Size = new System.Drawing.Size(614, 28);
+            this.lblTieuDeBT.TabIndex = 15;
+            this.lblTieuDeBT.Text = "Lập trình C#";
+            // 
             // ButtonBaiTap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblTieuDeBT);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.lblChiTietBT);
-            this.Controls.Add(this.lblTieuDeBT);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.kryptonButton1);
             this.Name = "ButtonBaiTap";
@@ -257,10 +256,10 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTieuDeBT;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblChiTietBT;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSua;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnXoa;
+        private System.Windows.Forms.Label lblTieuDeBT;
 
         public KryptonButton BtnXoa { get => btnXoa; set => btnXoa = value; }
     }

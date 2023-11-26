@@ -34,6 +34,8 @@ namespace Hybrid.GUI.Home
             InitializeComponent();
             this.lophoc = lophoc;
             FillComboBoxChuong();
+            if(lophoc.Daxoa == 1) 
+                this.btnXuatExcel.Visible = false;
         }
 
         public void FillDataGridViewDanhSachHocSinh_DeKiemTra(string madekiemtra)
@@ -201,7 +203,7 @@ namespace Hybrid.GUI.Home
                 foreach (DataGridViewRow row in dgvDanhSachHocSinh.Rows)
                 {
                     //MessageBox.Show(row.Cells[2].Value.ToString());
-                    if (row.Cells[0].Value.ToString().Contains(searchValue))
+                    if (row.Cells[0].Value.ToString().ToLower().Contains(searchValue.ToLower()))
                     {
                         row.Selected = true;
                         dgvDanhSachHocSinh.FirstDisplayedScrollingRowIndex = row.Index;

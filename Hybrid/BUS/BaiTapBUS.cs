@@ -42,7 +42,7 @@ namespace Hybrid.BUS
             ArrayList rslist = new ArrayList();
             foreach (BaiTap bt in this.list)
             {
-                if (bt.Machuong.Equals(machuong) && bt.Tieude.Contains(tukhoa) && bt.Daxoa == 0)
+                if (bt.Machuong.Equals(machuong) && bt.Tieude.ToLower().Contains(tukhoa.ToLower()) && bt.Daxoa == 0)
                     rslist.Add(bt);
             }
             return rslist;
