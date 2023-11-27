@@ -6,6 +6,7 @@ using Google.Apis.Util.Store;
 using Hybrid.BUS;
 using Hybrid.DAO;
 using Hybrid.DTO;
+using Hybrid.GUI.Home.HomeComponents;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,11 +23,30 @@ namespace Hybrid.GUI.Home.Tailieu
 {
     public partial class Hienthitailieufrm : KryptonForm
     {
-        TaikhoanDAO tkdao=new TaikhoanDAO();
-        HocLieuDAO tldao=new HocLieuDAO();
-        HocLieuBUS tlbus=new HocLieuBUS();
+        TaikhoanDAO tkdao = new TaikhoanDAO();
+        HocLieuDAO tldao = new HocLieuDAO();
+        HocLieuBUS tlbus = new HocLieuBUS();
+        LopHocBUS lhbus = new LopHocBUS();
         private DriveService service;
         string magiaovien, malop, machuong,mahoclieu;
+        ButtonHocLieu buttonhoclieu;
+
+        public Hienthitailieufrm(ButtonHocLieu btnhoclieu)
+        {
+            this.magiaovien = btnhoclieu.PanelChuong.Khfrm.Lophoc.Magiangvien;
+            this.malop = btnhoclieu.PanelChuong.Khfrm.Lophoc.Malop;
+            this.machuong = btnhoclieu.PanelChuong.Chuong.Machuong;
+            this.mahoclieu = btnhoclieu.Hoclieu.Mahoclieu;
+            this.buttonhoclieu = btnhoclieu;
+            InitializeComponent();
+            if (lhbus.GetLopHocByMaLop(malop).Daxoa == 1 || !btnhoclieu.PanelChuong.Khfrm.Taikhoan.Mataikhoan.Equals(magiaovien))
+            {
+                this.but_chinhsua.Visible = false;
+                this.but_xoa.Visible = false;
+                this.but_xacnhan.Visible = false;
+                this.but_layfile.Visible = false;
+            }
+        }
 
         private void Hienthitailieufrm_Shown(object sender, EventArgs e)
         {
@@ -66,9 +86,37 @@ namespace Hybrid.GUI.Home.Tailieu
                 text_tentailieu.Text = tldao.get_tieude_mahoclieu(this.mahoclieu);
                 text_noidungtailieu.Text = tldao.get_noidung_mahoclieu(this.mahoclieu);
                 panel_luufile = (FlowLayoutPanel)tlbus.insert_file(panel_luufile, this.mahoclieu, 1);
+                this.buttonhoclieu.LblTieuDeHocLieu.Text = text_tentailieu.Text;
             }
             
 
+        }
+
+        private void but_xoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void text_noidungtailieu_TextChanged(object sender, EventArgs e)
+        {
+            if (text_noidungtailieu.Text.Length > 300)
+            {
+                text_noidungtailieu.Text = text_noidungtailieu.Text.Substring(0, 300);
+                text_noidungtailieu.SelectionStart = text_noidungtailieu.Text.Length;
+            }
+            else
+                lab_demkitu_noidungtailieu.Text = text_noidungtailieu.Text.Length.ToString() + "/300 kí tự";
+        }
+
+        private void text_tentailieu_TextChanged(object sender, EventArgs e)
+        {
+            if (text_tentailieu.Text.Length > 50)
+            {
+                text_tentailieu.Text = text_tentailieu.Text.Substring(0, 50);
+                text_tentailieu.SelectionStart = text_tentailieu.Text.Length;
+            }
+            else
+                lab_demkitu_tentailieu.Text = text_tentailieu.Text.Length.ToString() + "/50 kí tự";
         }
 
         private void but_chinhsua_Click(object sender, EventArgs e)
@@ -81,15 +129,6 @@ namespace Hybrid.GUI.Home.Tailieu
             text_noidungtailieu.ReadOnly = false;
             text_tentailieu.SelectionStart=text_tentailieu.Text.Length;
             panel_luufile = (FlowLayoutPanel)tlbus.insert_file(panel_luufile, this.mahoclieu, 2);
-        }
-
-        public Hienthitailieufrm(string magiaovien, string malophoc, string machuong,string mahoclieu)
-        {
-            this.magiaovien = magiaovien;
-            this.malop = malophoc;
-            this.machuong = machuong;
-            this.mahoclieu=mahoclieu;
-            InitializeComponent();
         }
 
         private void Hienthitailieufrm_Load(object sender, EventArgs e)

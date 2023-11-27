@@ -37,10 +37,10 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
             // 
             // rtbCauTraLoi
             // 
-            this.rtbCauTraLoi.Location = new System.Drawing.Point(36, 3);
+            this.rtbCauTraLoi.Location = new System.Drawing.Point(3, 3);
             this.rtbCauTraLoi.MaxLength = 500;
             this.rtbCauTraLoi.Name = "rtbCauTraLoi";
-            this.rtbCauTraLoi.Size = new System.Drawing.Size(643, 50);
+            this.rtbCauTraLoi.Size = new System.Drawing.Size(450, 35);
             this.rtbCauTraLoi.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.rtbCauTraLoi.StateCommon.Border.Color2 = System.Drawing.Color.Black;
             this.rtbCauTraLoi.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -54,12 +54,11 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
             // chkLaDapAn
             // 
             this.chkLaDapAn.AutoSize = true;
-            this.chkLaDapAn.Location = new System.Drawing.Point(723, 21);
+            this.chkLaDapAn.Location = new System.Drawing.Point(481, 12);
             this.chkLaDapAn.Name = "chkLaDapAn";
             this.chkLaDapAn.Size = new System.Drawing.Size(18, 17);
             this.chkLaDapAn.TabIndex = 27;
             this.chkLaDapAn.UseVisualStyleBackColor = true;
-            //this.chkLaDapAn.CheckedChanged += new System.EventHandler(this.chkLaDapAn_CheckedChanged);
             // 
             // PanelChiTietCauTraLoi
             // 
@@ -68,7 +67,7 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
             this.Controls.Add(this.chkLaDapAn);
             this.Controls.Add(this.rtbCauTraLoi);
             this.Name = "PanelChiTietCauTraLoi";
-            this.Size = new System.Drawing.Size(780, 60);
+            this.Size = new System.Drawing.Size(502, 43);
             this.ResumeLayout(false);
             this.PerformLayout();
 

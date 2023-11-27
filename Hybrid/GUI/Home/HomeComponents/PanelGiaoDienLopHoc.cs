@@ -1,5 +1,6 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using Hybrid.DTO;
+using Hybrid.GUI.ChatBox;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +32,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.homefrm = homefrm;
             if (lophoc.Daxoa == 1)
                 this.btnChinhSuaLopHoc.Visible = false;
+            btnChat_Click(this, EventArgs.Empty);
         }
 
         private void addFormtoPanelHomeContainer(object Form)
@@ -47,7 +49,7 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private void btnChat_Click(object sender, EventArgs e)
         {
-            addFormtoPanelHomeContainer(new ChatFrm());
+            addFormtoPanelHomeContainer(new ChatBoxFrm());
         }
 
         private void btnKhoaHoc_Click(object sender, EventArgs e)
@@ -57,12 +59,10 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private void btnThanhTich_Click(object sender, EventArgs e)
         {
-            addFormtoPanelHomeContainer(new ThanhTichFrm());
-        }
-
-        private void btnTep_Click(object sender, EventArgs e)
-        {
-            addFormtoPanelHomeContainer(new TepFrm());
+            if(lophoc.Magiangvien.Equals(taikhoan.Mataikhoan))
+                addFormtoPanelHomeContainer(new ThanhTichFrm_GV(this.lophoc));
+            else
+                addFormtoPanelHomeContainer(new ThanhTichFrm_HS(this.lophoc, this.taikhoan));
         }
 
         private void btnChinhSuaLopHoc_Click(object sender, EventArgs e)

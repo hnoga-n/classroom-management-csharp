@@ -64,12 +64,12 @@ namespace Hybrid.GUI.Home.KiemTra
                 {
                     int index1 = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(mataikhoan);
                     if (index1 < 0) throw new Exception("Mã tài khoản tham gia lớp học không đúng");
-                    danhsachlop.Add(taikhoanBUS.list[index1]);// use for load submit/notsubmit btn
+                    danhsachlop.Add(taikhoanBUS.List[index1]);// use for load submit/notsubmit btn
                     int index2 = this.blktBUS.getBaiLamKiemTraWithMaTaiKhoanAndMaDeKiemTra(mataikhoan, this.dekiemtra.Madekiemtra);
                     if (index2 >= 0)
-                        this.listSubmited.Add(taikhoanBUS.list[index1]);
+                        this.listSubmited.Add(taikhoanBUS.List[index1]);
                     else
-                        this.listNotSubmited.Add(taikhoanBUS.list[index1]);
+                        this.listNotSubmited.Add(taikhoanBUS.List[index1]);
                 }
             }
             catch (Exception ex)

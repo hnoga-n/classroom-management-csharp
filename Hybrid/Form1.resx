@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="picUserAva.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAAAAAAAD/4gIcSUNDX1BST0ZJTEUAAQEAAAIMbGNtcwIQAABtbnRyUkdCIFhZ
         WiAH3AABABkAAwApADlhY3NwQVBQTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWxj
@@ -273,15 +273,6 @@
         OD9ql6jz/HG9ACQqgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAADVOoOu+s+N5UdtK1kpZ4rEEejprLspJDfZd60c3bHGrhbTLxbqdqxSXUaM/6Wv03
         n+WN5AEVbX//2Q==
-</value>
-  </data>
-  <data name="btnCalendar.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAALBJREFUSEvdk9sOgyAQRPnrvvax/9THXuxf0R16SMTA1iZQoyfZyO5MHEUJNWKM
-        dytxY+Rivp/8Cbnn12+s8pv2kmEO89U0/JPmCQYFrXkL7z4J+iEQ8b+Qy6giIoWcRhURB/smNfK+6jSr
-        ci88rYCIegiStLOKNnlZVrUlSBuG9III/wlsuf/tygfqSuVeeFoBEc0Q7zf1tAIi/Ne05f6/SReIOFjI
-        8zPqzoOI0YTwBmm6BfGlwdh7AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnContacts.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

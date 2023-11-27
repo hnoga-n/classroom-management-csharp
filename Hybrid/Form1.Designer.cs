@@ -33,8 +33,7 @@ namespace Hybrid
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCalendar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.picUserAva = new System.Windows.Forms.PictureBox();
             this.btnContacts = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnTodo = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnHome = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -43,14 +42,13 @@ namespace Hybrid
             this.pnlContainer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserAva)).BeginInit();
             this.pnlContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Controls.Add(this.pictureBox1);
-            this.kryptonPanel1.Controls.Add(this.btnCalendar);
+            this.kryptonPanel1.Controls.Add(this.picUserAva);
             this.kryptonPanel1.Controls.Add(this.btnContacts);
             this.kryptonPanel1.Controls.Add(this.btnTodo);
             this.kryptonPanel1.Controls.Add(this.btnHome);
@@ -63,64 +61,22 @@ namespace Hybrid
             this.kryptonPanel1.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
             this.kryptonPanel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // picUserAva
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnCalendar
-            // 
-            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCalendar.Location = new System.Drawing.Point(0, 463);
-            this.btnCalendar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCalendar.Name = "btnCalendar";
-            this.btnCalendar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnCalendar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.Size = new System.Drawing.Size(100, 60);
-            this.btnCalendar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.StateCommon.Back.Image")));
-            this.btnCalendar.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.TopMiddle;
-            this.btnCalendar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnCalendar.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 25, 5, 0);
-            this.btnCalendar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnCalendar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnCalendar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCalendar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCalendar.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btnCalendar.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.btnCalendar.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnCalendar.TabIndex = 5;
-            this.btnCalendar.Values.Text = "Lịch học";
-            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
+            this.picUserAva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picUserAva.Image = ((System.Drawing.Image)(resources.GetObject("picUserAva.Image")));
+            this.picUserAva.Location = new System.Drawing.Point(12, 12);
+            this.picUserAva.Name = "picUserAva";
+            this.picUserAva.Size = new System.Drawing.Size(70, 70);
+            this.picUserAva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUserAva.TabIndex = 0;
+            this.picUserAva.TabStop = false;
+            this.picUserAva.Click += new System.EventHandler(this.picUserAva_Click);
             // 
             // btnContacts
             // 
             this.btnContacts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnContacts.Location = new System.Drawing.Point(0, 403);
+            this.btnContacts.Location = new System.Drawing.Point(0, 419);
             this.btnContacts.Margin = new System.Windows.Forms.Padding(0);
             this.btnContacts.Name = "btnContacts";
             this.btnContacts.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -163,7 +119,7 @@ namespace Hybrid
             // btnTodo
             // 
             this.btnTodo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTodo.Location = new System.Drawing.Point(0, 343);
+            this.btnTodo.Location = new System.Drawing.Point(0, 359);
             this.btnTodo.Margin = new System.Windows.Forms.Padding(0);
             this.btnTodo.Name = "btnTodo";
             this.btnTodo.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -206,7 +162,7 @@ namespace Hybrid
             // btnHome
             // 
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHome.Location = new System.Drawing.Point(0, 283);
+            this.btnHome.Location = new System.Drawing.Point(0, 299);
             this.btnHome.Margin = new System.Windows.Forms.Padding(0);
             this.btnHome.Name = "btnHome";
             this.btnHome.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -396,7 +352,7 @@ namespace Hybrid
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserAva)).EndInit();
             this.pnlContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -408,10 +364,9 @@ namespace Hybrid
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCloseForm;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnMinimizeForm;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnHome;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnCalendar;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnContacts;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnTodo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picUserAva;
         private Panel pnlContainer;
     }
 }

@@ -14,8 +14,6 @@ namespace Hybrid.GUI.Todo
         private bool flagBtnClicked ;
         private Taikhoan taikhoanhienhanh;
         private BaiTapBUS btBUS;
-        private BailambaitapBUS blbtBUS;
-        private BailamKiemtraBUS blktBUS;
         private DeKiemTraBUS ktBUS;
         private ChuongBUS chuongBUS;
         private LopHocBUS lopHocBUS;
@@ -26,17 +24,15 @@ namespace Hybrid.GUI.Todo
         {
             InitializeComponent();
         }
-        public TodoFrm(Taikhoan taikhoanhienhanh, BaiTapBUS btBUS,BailambaitapBUS blbtBUS, DeKiemTraBUS dktBUS,BailamKiemtraBUS blktBUS)
+        public TodoFrm(Taikhoan taikhoanhienhanh, BaiTapBUS btBUS, ChuongBUS chuongBUS, LopHocBUS lopHocBUS, DeKiemTraBUS dktBUS)
         {
             InitializeComponent();
             this.flagBtnClicked = false;
             this.taikhoanhienhanh = taikhoanhienhanh;
-            this.lopHocBUS = new LopHocBUS();
-            this.chuongBUS = new ChuongBUS() ;
-            this.blbtBUS = blbtBUS;
-            this.blktBUS = blktBUS;
             this.btBUS = btBUS;
             this.ktBUS = dktBUS;
+            this.chuongBUS = chuongBUS;
+            this.lopHocBUS = lopHocBUS;
             loadButton();
         }
 
@@ -60,7 +56,7 @@ namespace Hybrid.GUI.Todo
             {
                 foreach (BaiTap bt in btBUS.getList())
                 {
-                    //if (blbtBUS.getBaiLamBaiTapWithMaBaiTap(bt.Mabaitap) <0)
+                    if (bt.Dahoanthanh == 0)
                     {
                         TaskHomework hw = new TaskHomework(bt);
                         Chuong chuongcuabaitap = chuongBUS.getChuongWithMaChuong(bt.Machuong);
@@ -77,7 +73,7 @@ namespace Hybrid.GUI.Todo
             { 
                 foreach (DeKiemTra dekt in ktBUS.getList())
                 {
-                    //if (dekt.Dahoanthanh == 0)
+                    if (dekt.Dahoanthanh == 0)
                     {
                         TaskExam ex = new TaskExam(dekt);
                         Chuong chuongcuadkt = chuongBUS.getChuongWithMaChuong(dekt.Machuong);
@@ -115,7 +111,7 @@ namespace Hybrid.GUI.Todo
             {
                 foreach (BaiTap bt in btBUS.getList())
                 {
-                    //if (bt.Dahoanthanh == 1)
+                    if (bt.Dahoanthanh == 1)
                     {
                         TaskHomework hw = new TaskHomework(bt);
                         Chuong chuongcuabaitap = chuongBUS.getChuongWithMaChuong(bt.Machuong);
@@ -132,7 +128,7 @@ namespace Hybrid.GUI.Todo
             {
                 foreach (DeKiemTra dekt in ktBUS.getList())
                 {
-                    //if (dekt.Dahoanthanh == 1)
+                    if (dekt.Dahoanthanh == 1)
                     {
                         TaskExam ex = new TaskExam(dekt);
                         Chuong chuongcuadkt = chuongBUS.getChuongWithMaChuong(dekt.Machuong);

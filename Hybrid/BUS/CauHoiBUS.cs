@@ -47,10 +47,12 @@ namespace Hybrid.BUS
 
         public bool ThemCauHoi(CauHoi cauhoi)
         {
-            if(cauhoi == null) return false;
-            this.list.Add(cauhoi);
-            cauhoiDAO.ThemCauHoi(cauhoi);
-            return true;
+            if(cauhoiDAO.ThemCauHoi(cauhoi))
+            {
+                this.list.Add(cauhoi);
+                return true;
+            }
+            return false;
         }
 
         public void XoaCauHoi(CauHoi cauhoi)
@@ -88,7 +90,7 @@ namespace Hybrid.BUS
             ArrayList resultlist = new ArrayList();
             foreach (CauHoi cauhoi in GetDanhSachCauHoiByMaTaiKhoan(mataikhoan))
             {
-                if (cauhoi.Noidung.Contains(tukhoa) && cauhoi.Mataikhoan.Equals(mataikhoan) && cauhoi.Daxoa == 0)
+                if (cauhoi.Noidung.ToLower().Contains(tukhoa.ToLower()) && cauhoi.Mataikhoan.Equals(mataikhoan) && cauhoi.Daxoa == 0)
                 {
                     resultlist.Add(cauhoi);
                 }

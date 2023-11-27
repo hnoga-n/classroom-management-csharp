@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
-      <HintPath>packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
     </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -53,6 +53,15 @@
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Workspace">
       <HintPath>..\..\..\..\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=7.0.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.7.0.1\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis, Version=1.64.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>packages\Google.Apis.1.64.0\lib\net45\Google.Apis.dll</HintPath>
@@ -102,6 +111,9 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.26\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
@@ -117,6 +129,7 @@
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>packages\Oracle.ManagedDataAccess.19.13.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="ServiceStack.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <HintPath>packages\ServiceStack.Common.6.0.2\lib\net472\ServiceStack.Common.dll</HintPath>
     </Reference>
@@ -149,6 +162,9 @@
       <HintPath>packages\System.CodeDom.7.0.0\lib\net462\System.CodeDom.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -166,12 +182,14 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -206,6 +224,7 @@
     <Compile Include="BUS\CauTraLoiBUS.cs" />
     <Compile Include="BUS\ChiTietBaiLamKiemTraBUS.cs" />
     <Compile Include="BUS\ChiTietDeKiemTraBUS.cs" />
+    <Compile Include="BUS\Chucnang.cs" />
     <Compile Include="BUS\ChuongBUS.cs" />
     <Compile Include="BUS\DeKiemTraBUS.cs" />
     <Compile Include="BUS\FileBaiLamBaiTapBUS.cs" />
@@ -337,7 +356,73 @@
     <Compile Include="GUI\Baitap\LocalFile.Designer.cs">
       <DependentUpon>LocalFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ChatBox\ChatBoxFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChatBox\ChatBoxFrm.Designer.cs">
+      <DependentUpon>ChatBoxFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChatBox\ChatBoxMessFrm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChatBox\ChatBoxMessFrm.Designer.cs">
+      <DependentUpon>ChatBoxMessFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChatBox\IncomingMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChatBox\IncomingMessage.Designer.cs">
+      <DependentUpon>IncomingMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChatBox\lbl_notifiication_chatbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChatBox\lbl_notifiication_chatbox.Designer.cs">
+      <DependentUpon>lbl_notifiication_chatbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChatBox\lbl_time_create_chatbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChatBox\lbl_time_create_chatbox.Designer.cs">
+      <DependentUpon>lbl_time_create_chatbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChatBox\OutgoingMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChatBox\OutgoingMessage.Designer.cs">
+      <DependentUpon>OutgoingMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Class1.cs" />
+    <Compile Include="GUI\Dangnhap\Forgetpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\Forgetpass.designer.cs">
+      <DependentUpon>Forgetpass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\LoginUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\LoginUI.designer.cs">
+      <DependentUpon>LoginUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\SignupUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\SignupUI.designer.cs">
+      <DependentUpon>SignupUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\Thongtintaikhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\Thongtintaikhoan.designer.cs">
+      <DependentUpon>Thongtintaikhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\xacnhanma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\xacnhanma.designer.cs">
+      <DependentUpon>xacnhanma.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Danhba\Banbe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -373,12 +458,6 @@
     </Compile>
     <Compile Include="GUI\Danhba\ThanhvienCard.designer.cs">
       <DependentUpon>ThanhvienCard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Home\ChatFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\ChatFrm.Designer.cs">
-      <DependentUpon>ChatFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\HienThiMaLopHocFrm.cs">
       <SubType>Form</SubType>
@@ -539,14 +618,8 @@
     <Compile Include="GUI\Home\Taotailieufrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Home\Taotailieufrm.designer.cs">
+    <Compile Include="GUI\Home\Taotailieufrm.Designer.cs">
       <DependentUpon>Taotailieufrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Home\TepFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\TepFrm.Designer.cs">
-      <DependentUpon>TepFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\ThamGiaLopFrm.cs">
       <SubType>Form</SubType>
@@ -554,11 +627,17 @@
     <Compile Include="GUI\Home\ThamGiaLopFrm.Designer.cs">
       <DependentUpon>ThamGiaLopFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\ThanhTichFrm.cs">
+    <Compile Include="GUI\Home\ThanhTichFrm_HS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Home\ThanhTichFrm.Designer.cs">
-      <DependentUpon>ThanhTichFrm.cs</DependentUpon>
+    <Compile Include="GUI\Home\ThanhTichFrm_HS.Designer.cs">
+      <DependentUpon>ThanhTichFrm_HS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\ThanhTichFrm_GV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\ThanhTichFrm_GV.Designer.cs">
+      <DependentUpon>ThanhTichFrm_GV.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\ThemChuongFrm.cs">
       <SubType>Form</SubType>
@@ -578,59 +657,11 @@
     <Compile Include="GUI\Home\ThongTinLopHocFrm.Designer.cs">
       <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Lichhoc\Calendar.cs">
+    <Compile Include="GUI\Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Lichhoc\Calendar.Designer.cs">
-      <DependentUpon>Calendar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskDiscuss.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskDiscuss.designer.cs">
-      <DependentUpon>TaskDiscuss.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskDoneButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskDoneButton.designer.cs">
-      <DependentUpon>TaskDoneButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskEmpty.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskEmpty.designer.cs">
-      <DependentUpon>TaskEmpty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskExam.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskExam.designer.cs">
-      <DependentUpon>TaskExam.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskHomework.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskHomework.designer.cs">
-      <DependentUpon>TaskHomework.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskList.designer.cs">
-      <DependentUpon>TaskList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskNotDoneButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskNotDoneButton.designer.cs">
-      <DependentUpon>TaskNotDoneButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Todo\TodoFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Todo\TodoFrm.designer.cs">
-      <DependentUpon>TodoFrm.cs</DependentUpon>
+    <Compile Include="GUI\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Utilities\loading.cs">
       <SubType>Form</SubType>
@@ -673,6 +704,39 @@
     <EmbeddedResource Include="GUI\Baitap\LocalFile.resx">
       <DependentUpon>LocalFile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChatBox\ChatBoxFrm.resx">
+      <DependentUpon>ChatBoxFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChatBox\ChatBoxMessFrm.resx">
+      <DependentUpon>ChatBoxMessFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChatBox\IncomingMessage.resx">
+      <DependentUpon>IncomingMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChatBox\lbl_notifiication_chatbox.resx">
+      <DependentUpon>lbl_notifiication_chatbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChatBox\lbl_time_create_chatbox.resx">
+      <DependentUpon>lbl_time_create_chatbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChatBox\OutgoingMessage.resx">
+      <DependentUpon>OutgoingMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dangnhap\Forgetpass.resx">
+      <DependentUpon>Forgetpass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dangnhap\LoginUI.resx">
+      <DependentUpon>LoginUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dangnhap\SignupUI.resx">
+      <DependentUpon>SignupUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dangnhap\Thongtintaikhoan.resx">
+      <DependentUpon>Thongtintaikhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dangnhap\xacnhanma.resx">
+      <DependentUpon>xacnhanma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\Banbe.resx">
       <DependentUpon>Banbe.cs</DependentUpon>
     </EmbeddedResource>
@@ -690,9 +754,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\ThanhvienCard.resx">
       <DependentUpon>ThanhvienCard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\ChatFrm.resx">
-      <DependentUpon>ChatFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\HomeComponents\fileshow.resx">
       <DependentUpon>fileshow.cs</DependentUpon>
@@ -772,14 +833,14 @@
     <EmbeddedResource Include="GUI\Home\Taotailieufrm.resx">
       <DependentUpon>Taotailieufrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\TepFrm.resx">
-      <DependentUpon>TepFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThamGiaLopFrm.resx">
       <DependentUpon>ThamGiaLopFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\ThanhTichFrm.resx">
-      <DependentUpon>ThanhTichFrm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\ThanhTichFrm_HS.resx">
+      <DependentUpon>ThanhTichFrm_HS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\ThanhTichFrm_GV.resx">
+      <DependentUpon>ThanhTichFrm_GV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThemChuongFrm.resx">
       <DependentUpon>ThemChuongFrm.cs</DependentUpon>
@@ -790,33 +851,6 @@
     <EmbeddedResource Include="GUI\Home\ThongTinLopHocFrm.resx">
       <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Lichhoc\Calendar.resx">
-      <DependentUpon>Calendar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskDiscuss.resx">
-      <DependentUpon>TaskDiscuss.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskDoneButton.resx">
-      <DependentUpon>TaskDoneButton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskEmpty.resx">
-      <DependentUpon>TaskEmpty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskExam.resx">
-      <DependentUpon>TaskExam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskHomework.resx">
-      <DependentUpon>TaskHomework.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskList.resx">
-      <DependentUpon>TaskList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskNotDoneButton.resx">
-      <DependentUpon>TaskNotDoneButton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TodoFrm.resx">
-      <DependentUpon>TodoFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Utilities\loading.resx">
       <DependentUpon>loading.cs</DependentUpon>
     </EmbeddedResource>
@@ -825,6 +859,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Filemau\maucauhoi.docx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -877,5 +912,34 @@
     <Content Include="icon\yo yo ma meme.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

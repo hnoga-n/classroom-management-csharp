@@ -194,7 +194,7 @@
             this.lblTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
             this.lblTimKiem.Location = new System.Drawing.Point(506, 147);
             this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(172, 24);
+            this.lblTimKiem.Size = new System.Drawing.Size(173, 24);
             this.lblTimKiem.TabIndex = 17;
             this.lblTimKiem.Text = "Tìm kiếm học sinh";
             this.lblTimKiem.Click += new System.EventHandler(this.lblTimKiem_Click);
@@ -249,6 +249,7 @@
             // 
             // flowpanelHocSinh
             // 
+            this.flowpanelHocSinh.AutoScroll = true;
             this.flowpanelHocSinh.BackColor = System.Drawing.Color.White;
             this.flowpanelHocSinh.Location = new System.Drawing.Point(488, 183);
             this.flowpanelHocSinh.Name = "flowpanelHocSinh";

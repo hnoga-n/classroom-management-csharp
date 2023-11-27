@@ -38,8 +38,10 @@ namespace Hybrid.GUI.Home.KiemTra
             this.chuong = panelchuong.Chuong;
             HienThiDanhSachCauHoi(cauhoiBUS.GetDanhSachCauHoiByMaTaiKhoan(lophocBUS.GetLopHocByMaLop(this.chuong.Malop).Magiangvien));
             this.dtpThoiGianBatDau.MinDate = DateTime.Now;
+            this.dtpThoiGianKetThuc.MinDate = this.dtpThoiGianBatDau.Value.AddMinutes(15);
             this.btnDang.Visible = true;
             this.btnCapNhat.Visible = false;
+            this.isCloseFormNoAction = true;
         }
 
         public KiemTraFrm(DeKiemTra dkt) { 
@@ -55,20 +57,22 @@ namespace Hybrid.GUI.Home.KiemTra
             this.chkXoaToanBoCauHoi.Enabled = false;
             this.chkCongKhaiDapAn.Enabled = false;
             this.chkDaoCauHoi.Enabled= false;
-            this.chkCongKhaiDiem.Enabled= false;
+            this.numHinhPhat.Enabled= false;
             this.btnDang.Visible = false;
             this.btnCapNhat.Visible = true;
             this.txtTieuDeBaiKT.Text = dkt.Tieude;
             this.dtpThoiGianBatDau.Value = dekiemtra.Thoigianbatdau;
             this.dtpThoiGianKetThuc.Value = dekiemtra.Thoigianketthuc;
+            this.numHinhPhat.Value = Convert.ToDecimal(dekiemtra.Hinhphat);
             this.chkCongKhaiDapAn.Checked = dekiemtra.Xemdapan == 1;
             this.chkDaoCauHoi.Checked = dekiemtra.Troncauhoi == 1;
-            this.chkCongKhaiDiem.Checked = dekiemtra.Xemdiem == 1;
+            this.isCloseFormNoAction = true;
+            this.FormClosing -= this.KiemTraFrm_FormClosing;
             HienThiDanhSachChiTietCauHoi();
         }
         public void HienThiDanhSachChiTietCauHoi()
         {
-            foreach(ChiTietDeKiemTra ctdkt in ctdktBUS.getChiTietDeKiemTraWithMaDeKiemTra(this.dekiemtra.Madekiemtra))
+            foreach(ChiTietDeKiemTra ctdkt in ctdktBUS.GetDanhSachChiTietDeKiemTraWithMaDeKiemTra(this.dekiemtra.Madekiemtra))
             {
                 PanelChiTietCauHoi panel = new PanelChiTietCauHoi(cauhoiBUS.GetCauHoiByMaCauHoi(ctdkt.Macauhoi));
                 panel.LblNoiDung.Text = ctdkt.Thutu + ". " + panel.LblNoiDung.Text;
@@ -81,13 +85,16 @@ namespace Hybrid.GUI.Home.KiemTra
             pnlCauHoiContainer.Controls.Clear();
             foreach (CauHoi cauhoi in listcauhoi)
             {
-                ButtonCauHoi btnCauHoi = new ButtonCauHoi(cauhoi, this);
-                if (KiemTraCauHoiTonTaiTrongDe(cauhoi.Macauhoi))
+                if (cauhoi.Daxoa == 0)
                 {
-                    btnCauHoi.BtnChon.Checked = true;
-                    btnCauHoi.BtnChon.Enabled = false;
+                    ButtonCauHoi btnCauHoi = new ButtonCauHoi(cauhoi, this);
+                    if (KiemTraCauHoiTonTaiTrongDe(cauhoi.Macauhoi))
+                    {
+                        btnCauHoi.BtnChon.Checked = true;
+                        btnCauHoi.BtnChon.Enabled = false;
+                    }
+                    this.pnlCauHoiContainer.Controls.Add(btnCauHoi);
                 }
-                this.pnlCauHoiContainer.Controls.Add(btnCauHoi);
             }
         }
 
@@ -233,6 +240,7 @@ namespace Hybrid.GUI.Home.KiemTra
 
         private void txtTieuDeBaiKT_TextChanged(object sender, EventArgs e)
         {
+            isCloseFormNoAction = false;
             if (txtTieuDeBaiKT.Text.Length <= 50)
                 lblDemKyTuTieuDeBaiKT.Text = txtTieuDeBaiKT.Text.Length.ToString() + "/50";
             else
@@ -265,6 +273,12 @@ namespace Hybrid.GUI.Home.KiemTra
                 MessageBox.Show("Đề kiểm tra chưa có câu hỏi. Vui lòng thêm câu hỏi vào đề!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if(dtpThoiGianBatDau.Value <= DateTime.Now)
+            {
+                MessageBox.Show("Thời gian bắt đầu phải lớn hơn thời gian hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtpThoiGianBatDau.Focus();
+                return;
+            }
             if (dtpThoiGianBatDau.Value >= dtpThoiGianKetThuc.Value)
             {
                 MessageBox.Show("Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -277,23 +291,29 @@ namespace Hybrid.GUI.Home.KiemTra
                 dtpThoiGianKetThuc.Focus();
                 return;
             }
-            DialogResult dr = MessageBox.Show("Vui lòng kiểm tra kĩ các thông tin trước khi đăng! Sau khi đăng, bài kiểm tra sẽ thông thể chỉnh sửa ngoại trừ thời gian bắt đầu và thời gian kết thúc.\n\nXác nhận tạo bài kiểm tra ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dr = MessageBox.Show("Vui lòng kiểm tra kĩ các thông tin trước khi đăng! Sau khi đăng, bài kiểm tra sẽ thông thể chỉnh sửa ngoại trừ thời gian có thể chỉnh sửa trước 15 phút bắt đầu thời gian làm bài.\n\nXác nhận tạo bài kiểm tra ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dr == DialogResult.Yes)
             {
-                DeKiemTra dekiemtra = new DeKiemTra(Guid.NewGuid().ToString(),txtTieuDeBaiKT.Text,DateTime.Now,dtpThoiGianBatDau.Value,dtpThoiGianKetThuc.Value,chkCongKhaiDiem.Checked ? 1 : 0,chkCongKhaiDapAn.Checked ? 1 : 0,chkDaoCauHoi.Checked ? 1 : 0,chuong.Machuong,0);
+                DeKiemTra dekiemtra = new DeKiemTra(Guid.NewGuid().ToString(),txtTieuDeBaiKT.Text,DateTime.Now,dtpThoiGianBatDau.Value,dtpThoiGianKetThuc.Value,Convert.ToInt32(numHinhPhat.Value),chkCongKhaiDapAn.Checked ? 1 : 0,chkDaoCauHoi.Checked ? 1 : 0,chuong.Machuong,0);
                 if(dekiemtraBUS.ThemDeKiemTra(dekiemtra))
                 {
                     int thutu = 1;
                     foreach(PanelChiTietCauHoi panel in this.pnlChiTietCauHoiContainer.Controls)
                     {
                         ChiTietDeKiemTra ctdkt = new ChiTietDeKiemTra(dekiemtra.Madekiemtra,panel.Cauhoi.Macauhoi,thutu);
-                        ctdktBUS.ThemChiTietDeKiemTra(ctdkt);
-                        thutu++;
+                        if (ctdktBUS.ThemChiTietDeKiemTra(ctdkt))
+                        {
+                            thutu++;
+                        } else
+                        {
+                            MessageBox.Show("Có lỗi xảy ra khi thêm chi tiết đề kiểm tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                     }
                     ButtonBaiKT btn = new ButtonBaiKT(this.panelchuong,dekiemtra);
                     this.panelchuong.PnlChuongComponent.Controls.Add(btn);
                     MessageBox.Show("Tạo đề kiểm tra thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    isCloseFormNoAction = false;
+                    this.FormClosing -= this.KiemTraFrm_FormClosing;
                     this.Close();
                     this.panelchuong.IsExpanded = false;
                     this.panelchuong.btnMoRong_Click(this, EventArgs.Empty);
@@ -310,7 +330,7 @@ namespace Hybrid.GUI.Home.KiemTra
 
         private void KiemTraFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (this.pnlChiTietCauHoiContainer.Controls.Count > 0 && isCloseFormNoAction)
+            if (this.pnlChiTietCauHoiContainer.Controls.Count > 0 || !isCloseFormNoAction)
             {
                 DialogResult dr = MessageBox.Show("Sau khi thoát, nội dung chỉnh sửa này sẽ bị mất, bạn có chắc muốn đóng không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (dr == DialogResult.No)
@@ -348,11 +368,35 @@ namespace Hybrid.GUI.Home.KiemTra
                 if(dekiemtraBUS.SuaDeKiemTra(dekiemtra))
                 {
                     MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    isCloseFormNoAction = false;
                     this.Close();
                 } else
                     MessageBox.Show("Cập nhật thất bại!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             }
+        }
+
+        private void dtpThoiGianBatDau_ValueChanged(object sender, EventArgs e)
+        {
+            isCloseFormNoAction = false;
+        }
+
+        private void dtpThoiGianKetThuc_ValueChanged(object sender, EventArgs e)
+        {
+            isCloseFormNoAction = false;
+        }
+
+        private void numHinhPhat_ValueChanged(object sender, EventArgs e)
+        {
+            isCloseFormNoAction=false;
+        }
+
+        private void chkCongKhaiDapAn_CheckedChanged(object sender, EventArgs e)
+        {
+            isCloseFormNoAction = false;
+        }
+
+        private void chkDaoCauHoi_CheckedChanged(object sender, EventArgs e)
+        {
+            isCloseFormNoAction = false;
         }
     }
 }

@@ -11,32 +11,40 @@ using ComponentFactory.Krypton.Toolkit;
 using Hybrid.GUI;
 using Hybrid.GUI.Danhba;
 using Hybrid.GUI.Home;
-using Hybrid.GUI.Todo;
-using Hybrid.GUI.LichHoc;
+//using Hybrid.GUI.Todo;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.DTO;
 using Hybrid.BUS;
+using System.Drawing.Drawing2D;
 
 namespace Hybrid
 {
     public partial class Form1 : KryptonForm
     {
-        private Taikhoan tk;
-        TaikhoanBUS taikhoanBus = new TaikhoanBUS();
+        private BaiTapBUS btBUS = new BaiTapBUS();
+        private DeKiemTraBUS dktBUS = new DeKiemTraBUS();
+        private ChuongBUS chuongBUS = new ChuongBUS();
+        private LopHocBUS lopBUS = new LopHocBUS();
+        TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
+
+        Taikhoan tk ;
+
+        public Taikhoan Tk { get => tk; set => tk = value; }
+
+        public Form1(string email)
+        {
+            InitializeComponent();
+            this.tk = taikhoanBUS.GetTaiKhoanByEmail(email);
+        }
         public Form1()
         {
             InitializeComponent();
-            this.tk = taikhoanBus.GetTaiKhoanByEmail("tranvihao@gmail.com");
         }
-        public Form1(Taikhoan tk)
-        {
-            InitializeComponent();
-            this.tk = tk;
-        }
+
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnMinimizeForm_Click(object sender, EventArgs e)
@@ -44,7 +52,7 @@ namespace Hybrid
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void addFormtoPanelContainer(object Form)
+        public void addFormtoPanelContainer(object Form)
         {
             if (this.pnlContainer.Controls.Count > 0)
                 this.pnlContainer.Controls.RemoveAt(0);
@@ -62,14 +70,13 @@ namespace Hybrid
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            //Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("machhaotuan@gmail.com");
-            Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("tranvihao@gmail.com");
-            addFormtoPanelContainer(new HomeFrm(tk));
+            //Taikhoan tk = taikhoanBUS.GetTaiKhoanByEmail("nguyenhuyhoang@gmail.com");
+            addFormtoPanelContainer(new HomeFrm(this));
         }
 
         private void btnTodo_Click(object sender, EventArgs e)
         {
-            addFormtoPanelContainer(new TodoFrm());
+            //addFormtoPanelContainer(new TodoFrm());
         }
 
         private void btnContacts_Click(object sender, EventArgs e)
@@ -77,15 +84,29 @@ namespace Hybrid
             addFormtoPanelContainer(new DanhbaFrm());
         }
 
-        private void btnCalendar_Click(object sender, EventArgs e)
-        {
-            addFormtoPanelContainer(new Calendar());
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             btnHome_Click(this, EventArgs.Empty);
+            MakePictureBoxCircular(this.picUserAva);
         }
 
+        private void MakePictureBoxCircular(PictureBox pictureBox)
+        {
+            if (pictureBox != null)
+            {
+                // Tạo đường dẫn hình tròn
+                GraphicsPath path = new GraphicsPath();
+                path.AddEllipse(0, 0, pictureBox.Width, pictureBox.Height);
+
+                // Gán đường dẫn cho PictureBox
+                pictureBox.Region = new Region(path);
+            }
+        }
+
+        private void picUserAva_Click(object sender, EventArgs e)
+        {
+            Thongtintaikhoan tt = new Thongtintaikhoan(this.tk,this.picUserAva,this);
+            tt.ShowDialog();
+        }
     }
 }

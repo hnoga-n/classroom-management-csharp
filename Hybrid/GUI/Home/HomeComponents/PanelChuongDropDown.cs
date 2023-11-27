@@ -45,39 +45,36 @@ namespace Hybrid.GUI.Home
             if (loaihoatdong == 0)
             {
                 bool flagbaitap = HienThiDanhSachBaiTap(chuong.Machuong, tukhoa),
-                     flagbaikiemtra = HienThiDanhSachBaiKiemTra(chuong.Machuong, tukhoa);
-                     //flaghoclieu = HienThiDanhSachHocLieu(chuong.Machuong, tukhoa);
-                if (!flagbaitap && !flagbaikiemtra )//&& !flaghoclieu)
+                     flagbaikiemtra = HienThiDanhSachBaiKiemTra(chuong.Machuong, tukhoa),
+                     flaghoclieu = HienThiDanhSachHocLieu(chuong.Machuong, tukhoa);
+                if (!flagbaitap && !flagbaikiemtra && !flaghoclieu)
                     this.Visible = false;
-            }
-            else if (loaihoatdong == 1)
+            } else if(loaihoatdong == 1)
             {
                 if (!HienThiDanhSachBaiTap(chuong.Machuong, tukhoa))
+                    this.Visible = false;
+            } else if(loaihoatdong == 2)
+            {
+                if(!HienThiDanhSachBaiKiemTra(chuong.Machuong,tukhoa))
                     this.Visible = false;
             }
             else if (loaihoatdong == 2)
             {
-                if (!HienThiDanhSachBaiKiemTra(chuong.Machuong, tukhoa))
+                if (!HienThiDanhSachHocLieu(chuong.Machuong, tukhoa))
                     this.Visible = false;
             }
-            //else if (loaihoatdong == 3)
-            //{
-            //    if (!HienThiDanhSachHocLieu(chuong.Machuong, tukhoa))
-            //        this.Visible = false;
-            //}
         }
 
         public bool HienThiDanhSachBaiKiemTra(string machuong, string tukhoa = "")
         {
-            if (dekiemtraBUS.GetDanhSachDeKiemTraTheoMaChuong(machuong, tukhoa).Count == 0)
-            {
+            if (dekiemtraBUS.GetDanhSachDeKiemTraTheoMaChuong(machuong, tukhoa).Count == 0) {
                 return false;
-            }
-            foreach (DeKiemTra dkt in dekiemtraBUS.GetDanhSachDeKiemTraTheoMaChuong(machuong, tukhoa))
+            } 
+            foreach(DeKiemTra dkt in dekiemtraBUS.GetDanhSachDeKiemTraTheoMaChuong(machuong,tukhoa))
             {
                 if (dkt.Daxoa == 0)
                 {
-                    ButtonBaiKT btn = new ButtonBaiKT(this, dkt);
+                    ButtonBaiKT btn = new ButtonBaiKT(this,dkt);
                     this.pnlChuongComponent.Controls.Add(btn);
                     this.lblDemTaiLieuChuong.Text = "(" + ++demTaiLieuChuong + ")";
                 }
@@ -85,13 +82,28 @@ namespace Hybrid.GUI.Home
             return true;
         }
 
-        public bool HienThiDanhSachBaiTap(string machuong, string tukhoa = "")
+        public bool HienThiDanhSachHocLieu(string machuong,string tukhoa = "")
         {
-            if (baitapBUS.GetDanhSachBaiTapTheoMaChuong(machuong, tukhoa).Count == 0)
+            if (hoclieuBUS.GetDanhSachHocLieuTheoMaChuong(machuong, tukhoa).Count == 0) {
+                return false; 
+            }
+            foreach(HocLieu hl in hoclieuBUS.GetDanhSachHocLieuTheoMaChuong(machuong, tukhoa))
             {
+                if (hl.Daxoa == 0)
+                {
+                    ButtonHocLieu btn = new ButtonHocLieu(this, hl);
+                    this.pnlChuongComponent.Controls.Add(btn);
+                    this.lblDemTaiLieuChuong.Text = "(" + ++demTaiLieuChuong + ")";
+                }
+            }
+            return true;
+        }
+        public bool HienThiDanhSachBaiTap(string machuong,string tukhoa = "")
+        {
+            if (baitapBUS.GetDanhSachBaiTapTheoMaChuong(machuong, tukhoa).Count == 0) {
                 return false;
             }
-            foreach (BaiTap bt in baitapBUS.GetDanhSachBaiTapTheoMaChuong(machuong, tukhoa))
+            foreach(BaiTap bt in baitapBUS.GetDanhSachBaiTapTheoMaChuong(machuong, tukhoa))
             {
                 if (bt.Daxoa == 0)
                 {
@@ -140,8 +152,8 @@ namespace Hybrid.GUI.Home
                     ktfrm.ShowDialog();
                     break;
                 case "Học liệu":
-                    //Taotailieufrm tlfrm = new Taotailieufrm(this);
-                    //tlfrm.ShowDialog();
+                    Taotailieufrm tlfrm = new Taotailieufrm(this);
+                    tlfrm.ShowDialog();
                     break;
             }
             /*isExpanded = false;

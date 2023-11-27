@@ -32,8 +32,8 @@ namespace Hybrid.GUI.Home
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinLopHocFrm));
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvDanhSachHocSinh = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
@@ -43,7 +43,6 @@ namespace Hybrid.GUI.Home
             this.lblTenGiaoVien = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnXacNhan = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.rtbNoiDung = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlMaLop = new System.Windows.Forms.Panel();
@@ -57,6 +56,7 @@ namespace Hybrid.GUI.Home
             this.txtTenLop = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnXuatExcel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHocSinh)).BeginInit();
             this.panel4.SuspendLayout();
@@ -71,10 +71,11 @@ namespace Hybrid.GUI.Home
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.dgvDanhSachHocSinh);
-            this.panel5.Location = new System.Drawing.Point(0, 460);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 419);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(629, 332);
+            this.panel5.Size = new System.Drawing.Size(930, 332);
             this.panel5.TabIndex = 18;
             // 
             // dgvDanhSachHocSinh
@@ -91,13 +92,13 @@ namespace Hybrid.GUI.Home
             this.dgvDanhSachHocSinh.ReadOnly = true;
             this.dgvDanhSachHocSinh.RowHeadersVisible = false;
             this.dgvDanhSachHocSinh.RowHeadersWidth = 51;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dgvDanhSachHocSinh.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dgvDanhSachHocSinh.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachHocSinh.RowTemplate.Height = 50;
             this.dgvDanhSachHocSinh.RowTemplate.ReadOnly = true;
             this.dgvDanhSachHocSinh.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDanhSachHocSinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSachHocSinh.Size = new System.Drawing.Size(629, 332);
+            this.dgvDanhSachHocSinh.Size = new System.Drawing.Size(930, 332);
             this.dgvDanhSachHocSinh.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDanhSachHocSinh.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDanhSachHocSinh.StateCommon.DataCell.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -116,9 +117,9 @@ namespace Hybrid.GUI.Home
             // 
             // btnXoaHocSinh
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.btnXoaHocSinh.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.btnXoaHocSinh.DefaultCellStyle = dataGridViewCellStyle2;
             this.btnXoaHocSinh.HeaderText = "Xóa";
             this.btnXoaHocSinh.MinimumWidth = 6;
             this.btnXoaHocSinh.Name = "btnXoaHocSinh";
@@ -129,20 +130,21 @@ namespace Hybrid.GUI.Home
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.btnXuatExcel);
             this.panel4.Controls.Add(this.txtTimKiem);
             this.panel4.Controls.Add(this.lblTenGiaoVien);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(0, 354);
+            this.panel4.Location = new System.Drawing.Point(0, 313);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(629, 106);
+            this.panel4.Size = new System.Drawing.Size(932, 106);
             this.panel4.TabIndex = 17;
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(11, 63);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(608, 36);
+            this.txtTimKiem.Size = new System.Drawing.Size(676, 36);
             this.txtTimKiem.StateActive.Border.Color1 = System.Drawing.Color.Black;
             this.txtTimKiem.StateActive.Border.Color2 = System.Drawing.Color.Black;
             this.txtTimKiem.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -156,7 +158,7 @@ namespace Hybrid.GUI.Home
             this.txtTimKiem.StateCommon.Border.Rounding = 5;
             this.txtTimKiem.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTimKiem.TabIndex = 4;
-            this.txtTimKiem.Text = "Tìm kiếm";
+            this.txtTimKiem.Text = "Tìm kiếm theo họ tên hoặc email hoặc sđt";
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             this.txtTimKiem.Enter += new System.EventHandler(this.txtTimKiem_Enter);
             this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);
@@ -185,69 +187,20 @@ namespace Hybrid.GUI.Home
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.btnXacNhan);
             this.panel3.Controls.Add(this.rtbNoiDung);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(0, 144);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(629, 210);
+            this.panel3.Size = new System.Drawing.Size(932, 169);
             this.panel3.TabIndex = 17;
-            // 
-            // btnXacNhan
-            // 
-            this.btnXacNhan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXacNhan.Location = new System.Drawing.Point(467, 162);
-            this.btnXacNhan.Margin = new System.Windows.Forms.Padding(0);
-            this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnXacNhan.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnXacNhan.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnXacNhan.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnXacNhan.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXacNhan.OverrideDefault.Border.Rounding = 5;
-            this.btnXacNhan.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnXacNhan.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnXacNhan.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXacNhan.Size = new System.Drawing.Size(150, 40);
-            this.btnXacNhan.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
-            this.btnXacNhan.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
-            this.btnXacNhan.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnXacNhan.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnXacNhan.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXacNhan.StateCommon.Border.Rounding = 5;
-            this.btnXacNhan.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, 2, -1, -1);
-            this.btnXacNhan.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnXacNhan.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnXacNhan.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXacNhan.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnXacNhan.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnXacNhan.StateTracking.Back.Color1 = System.Drawing.Color.White;
-            this.btnXacNhan.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.btnXacNhan.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnXacNhan.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnXacNhan.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.btnXacNhan.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXacNhan.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
-            this.btnXacNhan.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
-            this.btnXacNhan.TabIndex = 9;
-            this.btnXacNhan.Values.Text = "Xác nhận";
-            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // rtbNoiDung
             // 
             this.rtbNoiDung.Location = new System.Drawing.Point(12, 43);
             this.rtbNoiDung.MaxLength = 500;
             this.rtbNoiDung.Name = "rtbNoiDung";
-            this.rtbNoiDung.Size = new System.Drawing.Size(605, 114);
+            this.rtbNoiDung.Size = new System.Drawing.Size(908, 114);
             this.rtbNoiDung.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.rtbNoiDung.StateCommon.Border.Color2 = System.Drawing.Color.Black;
             this.rtbNoiDung.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -257,6 +210,7 @@ namespace Hybrid.GUI.Home
             this.rtbNoiDung.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.rtbNoiDung.TabIndex = 8;
             this.rtbNoiDung.Text = "";
+            this.rtbNoiDung.Leave += new System.EventHandler(this.rtbNoiDung_Leave);
             // 
             // label2
             // 
@@ -279,13 +233,13 @@ namespace Hybrid.GUI.Home
             this.pnlMaLop.Location = new System.Drawing.Point(0, 80);
             this.pnlMaLop.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMaLop.Name = "pnlMaLop";
-            this.pnlMaLop.Size = new System.Drawing.Size(629, 64);
+            this.pnlMaLop.Size = new System.Drawing.Size(932, 64);
             this.pnlMaLop.TabIndex = 16;
             // 
             // btnMoRong
             // 
             this.btnMoRong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMoRong.Location = new System.Drawing.Point(521, 13);
+            this.btnMoRong.Location = new System.Drawing.Point(824, 11);
             this.btnMoRong.Name = "btnMoRong";
             this.btnMoRong.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnMoRong.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -341,7 +295,7 @@ namespace Hybrid.GUI.Home
             // btnCopy
             // 
             this.btnCopy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCopy.Location = new System.Drawing.Point(572, 13);
+            this.btnCopy.Location = new System.Drawing.Point(875, 11);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnCopy.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -403,7 +357,7 @@ namespace Hybrid.GUI.Home
             this.txtMaLop.Location = new System.Drawing.Point(16, 30);
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.ReadOnly = true;
-            this.txtMaLop.Size = new System.Drawing.Size(532, 28);
+            this.txtMaLop.Size = new System.Drawing.Size(802, 28);
             this.txtMaLop.TabIndex = 2;
             this.txtMaLop.TabStop = false;
             this.txtMaLop.Text = "Ma Lop Hoc";
@@ -429,13 +383,13 @@ namespace Hybrid.GUI.Home
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(629, 80);
+            this.panel1.Size = new System.Drawing.Size(932, 80);
             this.panel1.TabIndex = 0;
             // 
             // btnRoiLop
             // 
             this.btnRoiLop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRoiLop.Location = new System.Drawing.Point(572, 17);
+            this.btnRoiLop.Location = new System.Drawing.Point(875, 17);
             this.btnRoiLop.Name = "btnRoiLop";
             this.btnRoiLop.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnRoiLop.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -449,7 +403,7 @@ namespace Hybrid.GUI.Home
             this.btnRoiLop.Size = new System.Drawing.Size(45, 40);
             this.btnRoiLop.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnRoiLop.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnRoiLop.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Back.Image")));
+            this.btnRoiLop.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnRoiLop.StateCommon.Back.Image")));
             this.btnRoiLop.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btnRoiLop.StateCommon.Border.Color1 = System.Drawing.Color.LightGray;
             this.btnRoiLop.StateCommon.Border.Color2 = System.Drawing.Color.LightGray;
@@ -459,7 +413,7 @@ namespace Hybrid.GUI.Home
             this.btnRoiLop.StateCommon.Border.Rounding = 5;
             this.btnRoiLop.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
             this.btnRoiLop.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.btnRoiLop.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Content.ShortText.Image")));
+            this.btnRoiLop.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnRoiLop.StateCommon.Content.ShortText.Image")));
             this.btnRoiLop.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.btnRoiLop.StateNormal.Back.Color2 = System.Drawing.Color.White;
             this.btnRoiLop.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -491,7 +445,7 @@ namespace Hybrid.GUI.Home
             // btnXoaLop
             // 
             this.btnXoaLop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoaLop.Location = new System.Drawing.Point(572, 17);
+            this.btnXoaLop.Location = new System.Drawing.Point(875, 17);
             this.btnXoaLop.Name = "btnXoaLop";
             this.btnXoaLop.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnXoaLop.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -505,7 +459,7 @@ namespace Hybrid.GUI.Home
             this.btnXoaLop.Size = new System.Drawing.Size(45, 40);
             this.btnXoaLop.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnXoaLop.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnXoaLop.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.StateCommon.Back.Image")));
+            this.btnXoaLop.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaLop.StateCommon.Back.Image")));
             this.btnXoaLop.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btnXoaLop.StateCommon.Border.Color1 = System.Drawing.Color.LightGray;
             this.btnXoaLop.StateCommon.Border.Color2 = System.Drawing.Color.LightGray;
@@ -515,7 +469,7 @@ namespace Hybrid.GUI.Home
             this.btnXoaLop.StateCommon.Border.Rounding = 5;
             this.btnXoaLop.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
             this.btnXoaLop.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.btnXoaLop.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.StateCommon.Content.ShortText.Image")));
+            this.btnXoaLop.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaLop.StateCommon.Content.ShortText.Image")));
             this.btnXoaLop.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.btnXoaLop.StateNormal.Back.Color2 = System.Drawing.Color.White;
             this.btnXoaLop.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -547,10 +501,10 @@ namespace Hybrid.GUI.Home
             // txtTenLop
             // 
             this.txtTenLop.AlwaysActive = false;
-            this.txtTenLop.Location = new System.Drawing.Point(78, 21);
+            this.txtTenLop.Location = new System.Drawing.Point(93, 20);
             this.txtTenLop.MaxLength = 50;
             this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Size = new System.Drawing.Size(470, 36);
+            this.txtTenLop.Size = new System.Drawing.Size(764, 36);
             this.txtTenLop.StateActive.Back.Color1 = System.Drawing.Color.White;
             this.txtTenLop.StateActive.Border.Color1 = System.Drawing.Color.Black;
             this.txtTenLop.StateActive.Border.Color2 = System.Drawing.Color.Black;
@@ -567,13 +521,13 @@ namespace Hybrid.GUI.Home
             this.txtTenLop.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenLop.TabIndex = 14;
             this.txtTenLop.TabStop = false;
-            this.txtTenLop.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTenLop_KeyUp);
+            this.txtTenLop.Leave += new System.EventHandler(this.txtTenLop_Leave);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -590,20 +544,71 @@ namespace Hybrid.GUI.Home
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(632, 753);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(932, 753);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // btnXuatExcel
+            // 
+            this.btnXuatExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXuatExcel.Location = new System.Drawing.Point(700, 59);
+            this.btnXuatExcel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnXuatExcel.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnXuatExcel.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnXuatExcel.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnXuatExcel.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnXuatExcel.OverrideDefault.Border.Rounding = 5;
+            this.btnXuatExcel.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnXuatExcel.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnXuatExcel.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnXuatExcel.Size = new System.Drawing.Size(220, 40);
+            this.btnXuatExcel.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(101)))));
+            this.btnXuatExcel.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(101)))));
+            this.btnXuatExcel.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatExcel.StateCommon.Back.Image")));
+            this.btnXuatExcel.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterLeft;
+            this.btnXuatExcel.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnXuatExcel.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnXuatExcel.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnXuatExcel.StateCommon.Border.Rounding = 5;
+            this.btnXuatExcel.StateCommon.Content.Padding = new System.Windows.Forms.Padding(20, 2, -1, -1);
+            this.btnXuatExcel.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnXuatExcel.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnXuatExcel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXuatExcel.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnXuatExcel.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnXuatExcel.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.btnXuatExcel.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.btnXuatExcel.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnXuatExcel.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnXuatExcel.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnXuatExcel.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnXuatExcel.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnXuatExcel.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnXuatExcel.TabIndex = 11;
+            this.btnXuatExcel.Values.Text = "Xuất danh sách lớp";
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // ThongTinLopHocFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(632, 753);
+            this.ClientSize = new System.Drawing.Size(932, 753);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ThongTinLopHocFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin lớp học";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ThongTinLopHocFrm_FormClosing);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHocSinh)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -641,8 +646,8 @@ namespace Hybrid.GUI.Home
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtTimKiem;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnXacNhan;
         private DataGridViewButtonColumn btnXoaHocSinh;
         private KryptonButton btnRoiLop;
+        private KryptonButton btnXuatExcel;
     }
 }

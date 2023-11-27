@@ -48,10 +48,14 @@ namespace Hybrid.BUS
             int index = list.BinarySearch(cauTraLoi, comparer);
             return (CauTraLoi)list[index];
         }
-        public void ThemCauTraLoi(CauTraLoi cautraloi)
+        public bool ThemCauTraLoi(CauTraLoi cautraloi)
         {
-            this.list.Add(cautraloi);
-            cautlDAO.ThemCauTraLoi(cautraloi);
+            if(cautlDAO.ThemCauTraLoi(cautraloi))
+            {
+                this.list.Add(cautraloi);
+                return true;
+            }
+            return false;
         }
 
         public bool SuaCauTraLoi(CauTraLoi cautraloi)

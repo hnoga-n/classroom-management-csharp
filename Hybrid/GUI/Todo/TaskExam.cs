@@ -35,6 +35,10 @@ namespace Hybrid.GUI.Todo
             this.lblExamTitle.Text = this.dkt.Tieude;
             this.lblStart.Text = "Bắt đầu:"  + dkt.Thoigianbatdau.ToString();
             this.lblEnd.Text = "Kết thúc:"+dkt.Thoigianketthuc.ToString();
+            if(dkt.Daxoa==1)
+                this.btnDoExam.Visible= false;
+            else
+                this.btnDoExam.Visible = true;
         }
     }
 }
