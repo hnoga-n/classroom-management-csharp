@@ -79,14 +79,8 @@ D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Threadin
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.ValueTuple.xml
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.AssemblyReference.cache
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.Form1.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Baitap.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.DanhgiaBaitap.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.DanhsachHocsinh.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.TaoBaiTap.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.HocsinhNopbai.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.HocsinhNoptre.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.HocsinhPanel.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocsinh.Chuanop.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.Banbe.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.BanbeCard.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.DanhbaFrm.resources
@@ -142,3 +136,11 @@ D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.C
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.exe
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.pdb
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.ThemDapAn.resources
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.localFile.resources
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.XemTienDoBaitap.resources
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.ChamDiem.resources
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocsinh.LamBaiTap.resources
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.cloudFile.resources
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocvien.XemBaiLamBaiTap.resources
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.XemChiTietBaiTap.resources

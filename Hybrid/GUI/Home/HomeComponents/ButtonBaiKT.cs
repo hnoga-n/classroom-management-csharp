@@ -13,11 +13,13 @@ namespace Hybrid.GUI.Home.HomeComponents
     {
         PanelChuongDropDown panelChuong;
         DeKiemTra dekiemtra;
-        DeKiemTraBUS dktBUS = new DeKiemTraBUS();
-        BailamKiemtraBUS blktBUS = new BailamKiemtraBUS();
+        DeKiemTraBUS dktBUS ;
+        BailamKiemtraBUS blktBUS;
         public ButtonBaiKT(PanelChuongDropDown panelChuong, DeKiemTra dkt)
         {
             InitializeComponent();
+            dktBUS = new DeKiemTraBUS();
+            blktBUS = new BailamKiemtraBUS();
             this.panelChuong = panelChuong;
             this.dekiemtra = dkt;
             this.lblTieuDeBKT.Text = dkt.Tieude;
@@ -110,23 +112,23 @@ namespace Hybrid.GUI.Home.HomeComponents
                 if (blktBUS.isSubmited(this.panelChuong.Khfrm.Taikhoan.Mataikhoan, this.dekiemtra.Madekiemtra) == 1)
                 {
                     // TODO: mở form xem bài đã làm
-                    DialogResult isConfirmSubmited =  MessageBox.Show("Bạn đã hoàn thành bài kiểm tra !\nXem lại bài đã nộp ?", "Thông báo!", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                    DialogResult isConfirmSubmited =  MessageBox.Show("Bạn đã hoàn thành bài kiểm tra !\nXem lại bài đã nộp ?", "Thông báo!", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                     if (isConfirmSubmited == DialogResult.No) return;
 
                     XemBaiLamHocSinh frmBailam = new XemBaiLamHocSinh(this.panelChuong.Khfrm.Taikhoan, dekiemtra);
-                    frmBailam.ShowDialog();
+                    frmBailam.Show();
                     return;
                 }
                 // do exam
                 DialogResult isConfirmDoExam = MessageBox.Show("Xác nhận tiến hành làm bài kiểm tra ?", "Thông báo!", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (isConfirmDoExam == DialogResult.No) return;
                 LamKiemTra bailamkiemtra = new LamKiemTra(this.dekiemtra, panelChuong.Khfrm.Taikhoan);
-                bailamkiemtra.ShowDialog();
+                bailamkiemtra.Show();
             }
             else
             {
                 XemTienDoBaiKiemTra checkingFrm = new XemTienDoBaiKiemTra(this.panelChuong.Khfrm.Taikhoan,this.dekiemtra,this.panelChuong.Khfrm.Lophoc,this.panelChuong.Chuong);
-                checkingFrm.ShowDialog();
+                checkingFrm.Show();
             }
             blktBUS.loadList();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hybrid.GUI.Baitap.Giaovien;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,5 +25,9 @@ namespace Hybrid.GUI.Home.HomeComponents
             panelChuong.XoaChuongComponent(this);
         }
 
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -47,13 +47,13 @@
             this.createAt = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.startAt = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.endAt = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.numberOfQuestion = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.Chuong = new System.Windows.Forms.Label();
             this.examDetail = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.endAt = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconExam)).BeginInit();
@@ -383,6 +383,27 @@
             this.startAt.TabIndex = 17;
             this.startAt.Text = "23:23 thứ 3 10/10";
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 203);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(440, 23);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Kết thúc vào:";
+            // 
+            // endAt
+            // 
+            this.endAt.AutoEllipsis = true;
+            this.endAt.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endAt.Location = new System.Drawing.Point(13, 231);
+            this.endAt.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.endAt.Name = "endAt";
+            this.endAt.Size = new System.Drawing.Size(440, 23);
+            this.endAt.TabIndex = 26;
+            this.endAt.Text = "23:23 thứ 3 10/10";
+            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -435,28 +456,7 @@
             this.examDetail.Values.Text = "Xem chi tiết đề";
             this.examDetail.Click += new System.EventHandler(this.examDetail_Click);
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 203);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(440, 23);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Kết thúc vào:";
-            // 
-            // endAt
-            // 
-            this.endAt.AutoEllipsis = true;
-            this.endAt.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endAt.Location = new System.Drawing.Point(13, 231);
-            this.endAt.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.endAt.Name = "endAt";
-            this.endAt.Size = new System.Drawing.Size(440, 23);
-            this.endAt.TabIndex = 26;
-            this.endAt.Text = "23:23 thứ 3 10/10";
-            // 
-            // DanhSachBaiDaNop
+            // XemTienDoBaiKiemTra
             // 
             this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -469,8 +469,10 @@
             this.Controls.Add(this.lblTimKiem);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "DanhSachBaiDaNop";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.Name = "XemTienDoBaiKiemTra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh sách học sinh";
             this.Load += new System.EventHandler(this.DanhSachBaiDaNop_Load);
             this.flowLayoutPanel1.ResumeLayout(false);

@@ -170,7 +170,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblChiTietHocLieu.BackColor = System.Drawing.Color.White;
             this.lblChiTietHocLieu.Location = new System.Drawing.Point(112, 61);
             this.lblChiTietHocLieu.Name = "lblChiTietHocLieu";
-            this.lblChiTietHocLieu.Size = new System.Drawing.Size(122, 25);
+            this.lblChiTietHocLieu.Size = new System.Drawing.Size(126, 25);
             this.lblChiTietHocLieu.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             this.lblChiTietHocLieu.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChiTietHocLieu.TabIndex = 18;
@@ -181,7 +181,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblTieuDeHocLieu.BackColor = System.Drawing.Color.White;
             this.lblTieuDeHocLieu.Location = new System.Drawing.Point(112, 16);
             this.lblTieuDeHocLieu.Name = "lblTieuDeHocLieu";
-            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(126, 33);
+            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(128, 33);
             this.lblTieuDeHocLieu.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             this.lblTieuDeHocLieu.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
             this.lblTieuDeHocLieu.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -233,6 +233,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton1.TabIndex = 15;
             this.kryptonButton1.Values.Text = "";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // ButtonHocLieu
             // 

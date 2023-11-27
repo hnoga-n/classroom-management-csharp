@@ -116,8 +116,10 @@ namespace Hybrid.GUI.Home.KiemTra
 
         private void examDetail_Click(object sender, EventArgs e)
         {
+            loading.ShowSplashScreen();
             XemBaiKiemTra frmXemDKT = new XemBaiKiemTra(this.dekiemtra,this.chBUS,this.ctlBUS);
-            frmXemDKT.Show();
+            loading.CloseForm();
+            frmXemDKT.ShowDialog();
         }
 
         private void notSubmit_Click(object sender, EventArgs e)

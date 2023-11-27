@@ -26,7 +26,7 @@ namespace Hybrid
         public Form1()
         {
             InitializeComponent();
-            this.tk = taikhoanBus.GetTaiKhoanByEmail("nguyenhuyhoang@gmail.com");
+            this.tk = taikhoanBus.GetTaiKhoanByEmail("tranvihao@gmail.com");
         }
         public Form1(Taikhoan tk)
         {
@@ -63,7 +63,7 @@ namespace Hybrid
         private void btnHome_Click(object sender, EventArgs e)
         {
             //Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("machhaotuan@gmail.com");
-            Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("nguyenhuyhoang@gmail.com");
+            Taikhoan tk = taikhoanBus.GetTaiKhoanByEmail("tranvihao@gmail.com");
             addFormtoPanelContainer(new HomeFrm(tk));
         }
 

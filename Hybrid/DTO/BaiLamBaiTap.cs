@@ -16,10 +16,11 @@ namespace Hybrid.DTO
         private DateTime thoigiannopbai;
         private float diem;
         private string nhanxet;
+        private int noptre;
 
         public BaiLamBaiTap() { }
 
-        public BaiLamBaiTap(string mabailam, string noidung, DateTime thoigiannopbai, float diem, string nhanxet, string mataikhoan, string mabaitap)
+        public BaiLamBaiTap(string mabailam, string noidung, DateTime thoigiannopbai, float diem, string nhanxet, string mataikhoan, string mabaitap,int noptre)
         {
             this.Mabailam = mabailam;
             this.Noidung = noidung;
@@ -28,6 +29,7 @@ namespace Hybrid.DTO
             this.Nhanxet = nhanxet;
             this.Mataikhoan = mataikhoan;
             this.Mabaitap = mabaitap;
+            this.Noptre = noptre;
         }
 
         public string Mabailam { get => mabailam; set => mabailam = value; }
@@ -37,6 +39,7 @@ namespace Hybrid.DTO
         public string Nhanxet { get => nhanxet; set => nhanxet = value; }
         public string Mataikhoan { get => mataikhoan; set => mataikhoan = value; }
         public string Mabaitap { get => mabaitap; set => mabaitap = value; }
+        public int Noptre { get => noptre; set => noptre = value; }
 
         public int CompareTo(object obj)
         {
