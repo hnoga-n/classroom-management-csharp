@@ -58,5 +58,15 @@ namespace Hybrid.BUS
             }
             return listcauhoi;
         }
+
+        public bool KiemTraCauHoiDaDuocSuDung(string macauhoi)
+        {
+            foreach(ChiTietDeKiemTra ctdkt in this.list)
+            {
+                if(ctdkt.Macauhoi.Equals(macauhoi))
+                    return true;
+            }
+            return false;
+        }
     }
 }

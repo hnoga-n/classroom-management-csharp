@@ -93,7 +93,7 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
                 MessageBox.Show("Câu hỏi đang được chọn trong đề kiểm tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            new ThemCauHoiFrm(cauhoi).ShowDialog();
+            new ThemCauHoiFrm(this.ktfrm,cauhoi).ShowDialog();
             ktfrm.TaiLaiDanhSachCauHoi();
         }
     }
