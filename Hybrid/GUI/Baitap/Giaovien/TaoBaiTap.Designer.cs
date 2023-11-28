@@ -151,7 +151,6 @@
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(263, 24);
             this.lblClass.TabIndex = 1;
-            this.lblClass.Text = "Vật lý lý thuyết";
             // 
             // label6
             // 
@@ -172,7 +171,6 @@
             this.lblChuong.Name = "lblChuong";
             this.lblChuong.Size = new System.Drawing.Size(263, 24);
             this.lblChuong.TabIndex = 3;
-            this.lblChuong.Text = "Chương 1";
             // 
             // label8
             // 
@@ -193,7 +191,6 @@
             this.lblTeacher.Name = "lblTeacher";
             this.lblTeacher.Size = new System.Drawing.Size(263, 24);
             this.lblTeacher.TabIndex = 5;
-            this.lblTeacher.Text = "Nguyễn Huy Hoàng";
             // 
             // label12
             // 

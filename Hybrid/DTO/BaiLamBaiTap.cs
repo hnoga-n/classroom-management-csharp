@@ -41,7 +41,7 @@ namespace Hybrid.DTO
         public string Mabaitap { get => mabaitap; set => mabaitap = value; }
         public int Noptre { get => noptre; set => noptre = value; }
 
-        /*public int CompareTo(object obj)
+        public int CompareTo(object obj)
         {
             return mabailam.CompareTo(obj);
         }
@@ -57,7 +57,7 @@ namespace Hybrid.DTO
                     return this.mataikhoan.CompareTo(c1.mataikhoan);
             }
             return 0;
-        }*/
+        }
     }
 
 }

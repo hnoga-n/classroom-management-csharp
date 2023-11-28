@@ -1,6 +1,7 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using Hybrid.BUS;
 using Hybrid.DTO;
+using Hybrid.GUI.Baitap.Giaovien;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.GUI.Home.KiemTra;
 using System;
@@ -47,8 +48,8 @@ namespace Hybrid.GUI.Home
                 bool flagbaitap = HienThiDanhSachBaiTap(chuong.Machuong, tukhoa),
                      flagbaikiemtra = HienThiDanhSachBaiKiemTra(chuong.Machuong, tukhoa),
                      flaghoclieu = HienThiDanhSachHocLieu(chuong.Machuong, tukhoa);
-                if (!flagbaitap && !flagbaikiemtra && !flaghoclieu)
-                    this.Visible = false;
+                //if (!flagbaitap && !flagbaikiemtra && !flaghoclieu)
+                //    this.Visible = false;
             } else if(loaihoatdong == 1)
             {
                 if (!HienThiDanhSachBaiTap(chuong.Machuong, tukhoa))
@@ -144,8 +145,8 @@ namespace Hybrid.GUI.Home
             switch ((sender as KryptonContextMenuItem).Text)
             {
                 case "Bài tập":
-                    /*ButtonBaiTap btnBT = new ButtonBaiTap(this);
-                    this.pnlChuongComponent.Controls.Add(btnBT);*/
+                    TaoBaiTap taobtFrm = new TaoBaiTap(this, this.khfrm.Taikhoan, this.khfrm.Lophoc, this.chuong);
+                    taobtFrm.ShowDialog();
                     break;
                 case "Bài kiểm tra":
                     KiemTraFrm ktfrm = new KiemTraFrm(this);

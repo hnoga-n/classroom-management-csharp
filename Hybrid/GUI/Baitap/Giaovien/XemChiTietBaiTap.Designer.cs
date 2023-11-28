@@ -95,11 +95,11 @@
             // 
             // txtAnswerContent
             // 
-            this.txtAnswerContent.Location = new System.Drawing.Point(611, 111);
+            this.txtAnswerContent.Location = new System.Drawing.Point(606, 104);
             this.txtAnswerContent.MaxLength = 4000;
             this.txtAnswerContent.Name = "txtAnswerContent";
             this.txtAnswerContent.ReadOnly = true;
-            this.txtAnswerContent.Size = new System.Drawing.Size(588, 381);
+            this.txtAnswerContent.Size = new System.Drawing.Size(593, 388);
             this.txtAnswerContent.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.txtAnswerContent.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 

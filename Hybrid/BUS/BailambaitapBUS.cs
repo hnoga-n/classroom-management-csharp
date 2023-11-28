@@ -36,7 +36,7 @@ namespace Hybrid.BUS
             blbtSearch.Mabailam = mabailam.ToLower();
             int index = list.BinarySearch(blbtSearch, comparer);
             return index;
-        }*/
+        }
 
         public Dictionary<float, int> ThongKePhoDiemTheoMaBaiTap(string mabt)
         {

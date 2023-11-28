@@ -53,15 +53,15 @@ namespace Hybrid.GUI.Home.HomeComponents
             // 
             // lblTieuDeHocLieu
             // 
+            this.lblTieuDeHocLieu.AutoEllipsis = true;
             this.lblTieuDeHocLieu.BackColor = System.Drawing.Color.White;
-            this.lblTieuDeHocLieu.Location = new System.Drawing.Point(112, 16);
+            this.lblTieuDeHocLieu.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTieuDeHocLieu.Location = new System.Drawing.Point(107, 25);
             this.lblTieuDeHocLieu.Name = "lblTieuDeHocLieu";
-            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(128, 33);
-            this.lblTieuDeHocLieu.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
-            this.lblTieuDeHocLieu.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
-            this.lblTieuDeHocLieu.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTieuDeHocLieu.TabIndex = 17;
-            this.lblTieuDeHocLieu.Values.Text = "Tài liệu C#";
+            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(742, 28);
+            this.lblTieuDeHocLieu.TabIndex = 22;
+            this.lblTieuDeHocLieu.Text = "Lập trình C#";
+            this.lblTieuDeHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
             // 
             // pictureBox1
             // 
@@ -110,21 +110,6 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnHocLieu.TabIndex = 15;
             this.btnHocLieu.Values.Text = "";
             this.btnHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
-            // 
-            // lblTieuDeHocLieu
-            // 
-            this.lblTieuDeHocLieu.AutoEllipsis = true;
-            this.lblTieuDeHocLieu.BackColor = System.Drawing.Color.White;
-            this.lblTieuDeHocLieu.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTieuDeHocLieu.Location = new System.Drawing.Point(107, 25);
-            this.lblTieuDeHocLieu.Name = "lblTieuDeHocLieu";
-            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(742, 28);
-            this.lblTieuDeHocLieu.TabIndex = 22;
-            this.lblTieuDeHocLieu.Text = "Lập trình C#";
-            this.lblTieuDeHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
-            this.kryptonButton1.TabIndex = 15;
-            this.kryptonButton1.Values.Text = "";
-            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // ButtonHocLieu
             // 

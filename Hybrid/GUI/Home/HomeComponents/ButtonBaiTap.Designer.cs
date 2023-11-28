@@ -31,7 +31,7 @@ namespace Hybrid.GUI.Home.HomeComponents
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ButtonBaiTap));
-            this.btnBaiTap = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnBaitap = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblChiTietBT = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnSua = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -40,41 +40,41 @@ namespace Hybrid.GUI.Home.HomeComponents
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnBaiTap
+            // btnBaitap
             // 
-            this.btnBaiTap.AllowDrop = true;
-            this.btnBaiTap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBaiTap.Location = new System.Drawing.Point(5, 5);
-            this.btnBaiTap.Name = "btnBaiTap";
-            this.btnBaiTap.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
-            this.btnBaiTap.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
-            this.btnBaiTap.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnBaiTap.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnBaiTap.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btnBaitap.AllowDrop = true;
+            this.btnBaitap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBaitap.Location = new System.Drawing.Point(5, 5);
+            this.btnBaitap.Name = "btnBaitap";
+            this.btnBaitap.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnBaitap.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnBaitap.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnBaitap.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnBaitap.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnBaiTap.Size = new System.Drawing.Size(860, 90);
-            this.btnBaiTap.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnBaiTap.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnBaiTap.StateCommon.Border.Color1 = System.Drawing.Color.Black;
-            this.btnBaiTap.StateCommon.Border.Color2 = System.Drawing.Color.Black;
-            this.btnBaiTap.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btnBaitap.Size = new System.Drawing.Size(860, 90);
+            this.btnBaitap.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnBaitap.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnBaitap.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.btnBaitap.StateCommon.Border.Color2 = System.Drawing.Color.Black;
+            this.btnBaitap.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnBaiTap.StateCommon.Border.Rounding = 5;
-            this.btnBaiTap.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnBaiTap.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnBaiTap.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btnBaitap.StateCommon.Border.Rounding = 5;
+            this.btnBaitap.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnBaitap.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnBaitap.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnBaiTap.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnBaiTap.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnBaiTap.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btnBaitap.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnBaitap.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnBaitap.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnBaiTap.TabIndex = 1;
-            this.btnBaiTap.Values.Text = "";
-            this.btnBaiTap.Click += new System.EventHandler(this.btnBaiTap_Click);
+            this.btnBaitap.TabIndex = 1;
+            this.btnBaitap.Values.Text = "";
+            this.btnBaitap.Click += new System.EventHandler(this.btnBaiTap_Click);
             // 
             // pictureBox1
             // 
@@ -86,18 +86,6 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblTieuDeBT
-            // 
-            this.lblTieuDeBT.BackColor = System.Drawing.Color.White;
-            this.lblTieuDeBT.Location = new System.Drawing.Point(112, 16);
-            this.lblTieuDeBT.Name = "lblTieuDeBT";
-            this.lblTieuDeBT.Size = new System.Drawing.Size(124, 33);
-            this.lblTieuDeBT.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
-            this.lblTieuDeBT.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
-            this.lblTieuDeBT.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTieuDeBT.TabIndex = 3;
-            this.lblTieuDeBT.Values.Text = "Bài tập C#";
             // 
             // lblChiTietBT
             // 
@@ -255,7 +243,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.lblChiTietBT);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnBaiTap);
+            this.Controls.Add(this.btnBaitap);
             this.Name = "ButtonBaiTap";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(870, 100);
@@ -267,7 +255,7 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnBaiTap;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnBaitap;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblChiTietBT;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSua;

@@ -83,7 +83,7 @@ namespace Hybrid.GUI.Baitap
                 {
                     int index_taikhoan = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(mataikhoan);
                     if (index_taikhoan < 0) throw new Exception("Mã tài khoản tham gia lớp học không đúng");
-                    danhsachlop.Add(taikhoanBUS.list[index_taikhoan]);// use for load submit/notsubmit btn
+                    danhsachlop.Add(taikhoanBUS.List[index_taikhoan]);// use for load submit/notsubmit btn
                     int index_blbt = this.blbtBUS.GetBaiLamBaiTapWithMaTaiKhoanAndMaBaiTap(mataikhoan, this.baitap.Mabaitap);
                     if (index_blbt >= 0)
                     {
@@ -101,7 +101,7 @@ namespace Hybrid.GUI.Baitap
                     }
                     else
                     {
-                        this.listNotSubmited.Add(taikhoanBUS.list[index_taikhoan]);
+                        this.listNotSubmited.Add(taikhoanBUS.List[index_taikhoan]);
                     }
                 }
 
@@ -114,7 +114,7 @@ namespace Hybrid.GUI.Baitap
                 }
 
                 this.lblAvaregeScore.Text =(numberOfStudentSubmit==0)?"--":Math.Round((totalScore / numberOfStudentSubmit),2).ToString();
-                this.lblSubmitRadio.Text = Math.Round(((float)this.listSubmited.Count / (this.listSubmited.Count + this.listNotSubmited.Count))*100, 2).ToString() + "%";
+                this.lblSubmitRadio.Text = (danhsachlop.Count==0)?"0%":Math.Round(((float)this.listSubmited.Count / (danhsachlop.Count))*100, 2).ToString() + "%";
             }
             catch (Exception ex)
             {
@@ -181,7 +181,7 @@ namespace Hybrid.GUI.Baitap
                     int hsIndex = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(bailam.Mataikhoan);
                     if (bailam.Diem == -1)
                     {
-                        HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.list[hsIndex], false,this.baitap, bailam);
+                        HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.List[hsIndex], false,this.baitap, bailam);
                         this.flowHocSinhPnl.Controls.Add(hsPnl);
                     }
                 }
@@ -213,7 +213,7 @@ namespace Hybrid.GUI.Baitap
                     int hsIndex = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(bailam.Mataikhoan);
                     if (bailam.Diem != -1)
                     {
-                        HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.list[hsIndex], true, this.baitap, bailam);
+                        HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.List[hsIndex], true, this.baitap, bailam);
                         this.flowHocSinhPnl.Controls.Add(hsPnl);
                     }
                 }
@@ -284,9 +284,9 @@ namespace Hybrid.GUI.Baitap
                         int hsIndex = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(bailam.Mataikhoan);
                         if (bailam.Diem == -1)
                         {
-                            if (RemoveDiacritics(taikhoanBUS.list[hsIndex].Hoten.ToLower()).Contains(searchString))
+                            if (RemoveDiacritics(taikhoanBUS.List[hsIndex].Hoten.ToLower()).Contains(searchString))
                             {
-                                HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.list[hsIndex],false, this.baitap, bailam);
+                                HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.List[hsIndex],false, this.baitap, bailam);
                                 this.flowHocSinhPnl.Controls.Add(hsPnl);
                             }
                         }
@@ -300,9 +300,9 @@ namespace Hybrid.GUI.Baitap
                         int hsIndex = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(bailam.Mataikhoan);
                         if (bailam.Diem != -1)
                         {
-                            if (RemoveDiacritics(taikhoanBUS.list[hsIndex].Hoten.ToLower()).Contains(searchString))
+                            if (RemoveDiacritics(taikhoanBUS.List[hsIndex].Hoten.ToLower()).Contains(searchString))
                             {
-                                HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.list[hsIndex], true, this.baitap, bailam);
+                                HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.List[hsIndex], true, this.baitap, bailam);
                                 this.flowHocSinhPnl.Controls.Add(hsPnl);
                             }
                         }

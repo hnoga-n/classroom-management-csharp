@@ -106,7 +106,6 @@
             this.lblAvaregeScore.Name = "lblAvaregeScore";
             this.lblAvaregeScore.Size = new System.Drawing.Size(166, 83);
             this.lblAvaregeScore.TabIndex = 4;
-            this.lblAvaregeScore.Text = "69,99";
             this.lblAvaregeScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
@@ -126,7 +125,6 @@
             this.highestScore.Name = "highestScore";
             this.highestScore.Size = new System.Drawing.Size(166, 83);
             this.highestScore.TabIndex = 2;
-            this.highestScore.Text = "69";
             this.highestScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
@@ -146,7 +144,6 @@
             this.lblSubmitRadio.Name = "lblSubmitRadio";
             this.lblSubmitRadio.Size = new System.Drawing.Size(166, 83);
             this.lblSubmitRadio.TabIndex = 0;
-            this.lblSubmitRadio.Text = "68,8%";
             this.lblSubmitRadio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowHocSinhPnl
@@ -178,7 +175,6 @@
             this.lblChuong.Name = "lblChuong";
             this.lblChuong.Size = new System.Drawing.Size(450, 23);
             this.lblChuong.TabIndex = 0;
-            this.lblChuong.Text = "Chương 1: Thuyết tương đối tổng quát";
             // 
             // label3
             // 
@@ -228,7 +224,6 @@
             this.lblLop.Name = "lblLop";
             this.lblLop.Size = new System.Drawing.Size(453, 23);
             this.lblLop.TabIndex = 34;
-            this.lblLop.Text = "Chương 1: Thuyết tương đối tổng quát";
             // 
             // label2
             // 
@@ -248,7 +243,6 @@
             this.createAt.Name = "createAt";
             this.createAt.Size = new System.Drawing.Size(451, 23);
             this.createAt.TabIndex = 30;
-            this.createAt.Text = "23:23 thứ 3 10/10";
             // 
             // label4
             // 
@@ -269,7 +263,6 @@
             this.startAt.Name = "startAt";
             this.startAt.Size = new System.Drawing.Size(451, 23);
             this.startAt.TabIndex = 28;
-            this.startAt.Text = "23:23 thứ 3 10/10";
             // 
             // label5
             // 
@@ -290,7 +283,6 @@
             this.endAt.Name = "endAt";
             this.endAt.Size = new System.Drawing.Size(451, 23);
             this.endAt.TabIndex = 32;
-            this.endAt.Text = "23:23 thứ 3 10/10";
             // 
             // btnHomeworkDetail
             // 

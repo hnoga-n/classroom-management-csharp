@@ -880,6 +880,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-book-50.png" />
     <None Include="Resources\icons8-file-40.png" />
     <None Include="Resources\icons8-txt-40.png" />
     <None Include="Resources\icons8-power-point-40.png" />
@@ -907,6 +908,8 @@
     <None Include="icon\icons8-close-30.png" />
     <None Include="icon\icons8-macos-minimize-30b.png" />
     <None Include="icon\icons8-home-25.png" />
+    <Content Include="bin\Debug\nhomatkhau.txt" />
+    <Content Include="bin\Debug\nhomatkhau.xml" />
     <Content Include="database\Hybrid_query.sql" />
     <Content Include="icon\Animation - 1699327889806.gif" />
     <Content Include="icon\yo yo ma meme.png" />

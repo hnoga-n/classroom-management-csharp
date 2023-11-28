@@ -20,7 +20,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.baitap = bt;
             this.blbtBUS = new BailambaitapBUS();
             this.lblTieuDeBT.Text = bt.Tieude;
-            this.lblChiTietBT.Text = bt.Thoihan.ToString();
+            //this.lblChiTietBT.Text = bt.Thoihan.ToString();
             if (panelChuong.Khfrm.Lophoc.Daxoa == 1)
             {
                 this.btnSua.Visible = false;

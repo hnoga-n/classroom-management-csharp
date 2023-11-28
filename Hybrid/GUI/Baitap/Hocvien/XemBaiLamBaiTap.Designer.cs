@@ -155,7 +155,6 @@
             this.lblSubmitTime.Name = "lblSubmitTime";
             this.lblSubmitTime.Size = new System.Drawing.Size(598, 23);
             this.lblSubmitTime.TabIndex = 30;
-            this.lblSubmitTime.Text = "23:23 thứ 3 10/10";
             // 
             // label6
             // 
@@ -174,7 +173,6 @@
             this.lblStudent.Name = "lblStudent";
             this.lblStudent.Size = new System.Drawing.Size(598, 23);
             this.lblStudent.TabIndex = 0;
-            this.lblStudent.Text = "hoanghuynguyen711@gmail.com";
             // 
             // score
             // 
