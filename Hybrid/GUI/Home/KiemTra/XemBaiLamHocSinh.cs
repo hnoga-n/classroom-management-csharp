@@ -27,10 +27,12 @@ namespace Hybrid.GUI.Home.KiemTra
         public XemBaiLamHocSinh(Taikhoan taikhoanhienhanh, DeKiemTra dkt)
         {
             InitializeComponent();
-
-            loading.ShowSplashScreen();
             this.taikhoanhienhanh = taikhoanhienhanh;
             this.dekiemtra = dkt;
+        }
+
+        private void XemBaiLamHocSinh_Load(object sender, EventArgs e)
+        {
             this.blktBUS = new BailamKiemtraBUS();
             int index = blktBUS.getBaiLamKiemTraWithMaTaiKhoanAndMaDeKiemTra(taikhoanhienhanh.Mataikhoan, dekiemtra.Madekiemtra);
             this.blkt = (BaiLamKiemTra)blktBUS.List[index];
@@ -38,9 +40,8 @@ namespace Hybrid.GUI.Home.KiemTra
             this.chBUS = new CauHoiBUS();
             this.ctlBUS = new CauTraLoiBUS();
             loadDataIntoForm();
-            loading.CloseForm();
+            
         }
-
         private void loadDataIntoForm()
         {
             ArrayList listctblkt = this.ctblktBUS.getChiTietBaiLamKiemTraWithMaBaiLam(this.blkt.Mabailam);
@@ -117,5 +118,6 @@ namespace Hybrid.GUI.Home.KiemTra
                 listcauhoipanel.AutoScrollPosition = new Point(scrollX, scrollY);
             }
         }
+
     }
 }
