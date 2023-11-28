@@ -470,8 +470,10 @@
             this.Controls.Add(this.lblTimKiem);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "XemTienDoBaiKiemTra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh sách học sinh";
             this.Load += new System.EventHandler(this.DanhSachBaiDaNop_Load);
             this.flowLayoutPanel1.ResumeLayout(false);

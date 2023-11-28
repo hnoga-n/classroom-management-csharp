@@ -37,20 +37,20 @@
             // 
             this.title.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.Gray;
-            this.title.Location = new System.Drawing.Point(17, 263);
+            this.title.Location = new System.Drawing.Point(15, 263);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(862, 60);
+            this.title.Size = new System.Drawing.Size(849, 60);
             this.title.TabIndex = 0;
             this.title.Text = "Không có bài kiểm tra chưa đánh giá";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Hybrid.Properties.Resources.icons8_exam_91;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(345, 105);
+            this.pictureBox1.BackgroundImage = global::Hybrid.Properties.Resources.icons8_book_50;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(382, 175);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 130);
+            this.pictureBox1.Size = new System.Drawing.Size(86, 73);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 

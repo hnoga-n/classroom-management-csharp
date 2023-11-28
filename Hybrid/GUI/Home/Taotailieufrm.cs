@@ -137,7 +137,5 @@ namespace Hybrid.GUI.Home
                 }
             }
         }
-
-
     }
 }

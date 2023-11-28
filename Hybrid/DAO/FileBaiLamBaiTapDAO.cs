@@ -1,10 +1,17 @@
-﻿using Hybrid.DTO;
+﻿using Google.Apis.Auth.OAuth2;
+using Google.Apis.Drive.v3;
+using Google.Apis.Services;
+using Google.Apis.Util.Store;
+using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,13 +19,26 @@ namespace Hybrid.DAO
 {
     public class FileBaiLamBaiTapDAO
     {
-        private ArrayList list;
+        private DriveService service;
+        public FileBaiLamBaiTapDAO() {
+            UserCredential credential;
+            using (var stream = new FileStream(@"..\..\bin\Debug\ggdrivelink.json", FileMode.Open, FileAccess.Read))
+            {
+                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    new[] { DriveService.Scope.Drive },
+                    "user",
+                    CancellationToken.None,
+                    new FileDataStore("token.json", true)).Result;
+            }
 
-        public FileBaiLamBaiTapDAO()
-        {
-            list = loadList();
+            // Tạo dịch vụ Google Drive
+            service = new DriveService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "hybrid"
+            });
         }
-
         public ArrayList loadList()
         {
             ArrayList listTmp = new ArrayList();
@@ -33,7 +53,7 @@ namespace Hybrid.DAO
                 {
                     FileBaiLamBaiTap tmp = new FileBaiLamBaiTap();
                     tmp.Mabailam = dr["mabailam"].ToString();
-                    tmp.Tenfile = dr["tenfile"].ToString();
+                    tmp.Path = dr["tenfile"].ToString();
                     tmp.Id_file = dr["id_file"].ToString();
                     listTmp.Add(tmp);
                 }
@@ -49,6 +69,81 @@ namespace Hybrid.DAO
             }
             return listTmp;
         }
+        public bool createFile(ArrayList listFileblbt)
+        {
+            try
+            {
+                string sql_getall = "INSERT INTO filebailambaitap(mabailam,tenfile,id_file) VALUES (@mabailam,@tenfile,@id_file)";
+                SqlCommand command = new SqlCommand(sql_getall, Ketnoisqlserver.GetConnection());
+                int index;
+                foreach (FileBaiLamBaiTap fileblbt in listFileblbt)
+                {
+                    //  upload to drive
+                    string tenfile = Path.GetFileName(fileblbt.Path);
+                    //// Tạo yêu cầu tải lên tệp lên Google Drive và chỉ định thư mục đích bằng ID.
+                    var fileMetadata = new Google.Apis.Drive.v3.Data.File()
+                    {
+                        Name = tenfile,
+                        Parents = new List<string> { "14ZVRdaPjYKQ9wJZn_EWrEsu0IpgIW00I" }
+                    };
+
+                    FilesResource.CreateMediaUpload request;
+                    using (var stream = new FileStream(fileblbt.Path, FileMode.Open))
+                    {
+                        request = this.service.Files.Create(fileMetadata, stream, "application/octet-stream");
+                        request.Upload();
+                    }
+
+                    var file = request.ResponseBody;
+                    if (file != null) // upload thành công
+                    {
+                        // insert into database
+                        command.Parameters.Clear();
+                        command.Parameters.AddWithValue("@mabailam", Guid.Parse(fileblbt.Mabailam));
+                        command.Parameters.AddWithValue("@tenfile", tenfile);
+                        command.Parameters.AddWithValue("@id_file", file.Id);
+                        index = command.ExecuteNonQuery();
+                        if (index <= 0) return false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể tải lên tệp lên Google Drive.");
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file FileblbtDAO:" + ex.Message);
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+            return true;
+        }
+
+        public bool DeleteFileBaiLamBaiTapByMaBaiLam(string mabailam)
+        {
+            try
+            {
+                string sql_delete = "DELETE FROM filebailambaitap WHERE mabailam=@mabailam";
+                SqlCommand command = new SqlCommand(sql_delete, Ketnoisqlserver.GetConnection());
+                command.Parameters.Add("@mabaitap", SqlDbType.UniqueIdentifier).Value = Guid.Parse(mabailam);
+                int index = command.ExecuteNonQuery();
+                if (index > 0) return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file FileblbtDAO:" + ex.Message);
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+            return false;
+        }
+
     }
 
 }

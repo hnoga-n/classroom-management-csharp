@@ -9,19 +9,19 @@ namespace Hybrid.DTO
     public class FileBaiLamBaiTap
     {
         private string mabailam;
-        private string tenfile;
+        private string path;
         private string id_file;
 
         public FileBaiLamBaiTap() { }
         public FileBaiLamBaiTap(string mabailam, string tenfile, string id_file)
         {
             this.mabailam = mabailam;
-            this.tenfile = tenfile;
+            this.path = tenfile;
             this.id_file = id_file;
         }
 
         public string Mabailam { get => mabailam; set => mabailam = value; }
-        public string Tenfile { get => tenfile; set => tenfile = value; }
+        public string Path { get => path; set => path = value; }
         public string Id_file { get => id_file; set => id_file = value; }
     }
 }
