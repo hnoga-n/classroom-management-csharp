@@ -44,8 +44,8 @@ namespace Hybrid.GUI.Home.Tailieu
                 this.but_chinhsua.Visible = false;
                 this.but_xoa.Visible = false;
                 this.but_xacnhan.Visible = false;
-                this.but_layfile.Visible = false;
             }
+            this.but_layfile.Visible = false;
         }
 
         private void Hienthitailieufrm_Shown(object sender, EventArgs e)
@@ -79,6 +79,7 @@ namespace Hybrid.GUI.Home.Tailieu
                 but_chinhsua.Visible = true;
                 but_xoa.Visible = true;
                 but_xacnhan.Visible = false;
+                but_layfile.Visible = false;
                 but_layfile.Visible = false;
                 text_tentailieu.ReadOnly = true;
                 text_noidungtailieu.ReadOnly = true;

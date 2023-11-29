@@ -43,8 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txt_tenlop = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_tenchuong = new System.Windows.Forms.Label();
             this.txt_tengiangvien = new System.Windows.Forms.Label();
+            this.txt_tenchuong = new System.Windows.Forms.Label();
             this.text_noidungtailieu = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
@@ -330,16 +330,6 @@
             this.panel1.Size = new System.Drawing.Size(228, 234);
             this.panel1.TabIndex = 25;
             // 
-            // txt_tenchuong
-            // 
-            this.txt_tenchuong.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_tenchuong.Location = new System.Drawing.Point(13, 95);
-            this.txt_tenchuong.MaximumSize = new System.Drawing.Size(219, 75);
-            this.txt_tenchuong.Name = "txt_tenchuong";
-            this.txt_tenchuong.Size = new System.Drawing.Size(210, 75);
-            this.txt_tenchuong.TabIndex = 8;
-            this.txt_tenchuong.Text = "tenchuong";
-            // 
             // txt_tengiangvien
             // 
             this.txt_tengiangvien.AutoSize = true;
@@ -349,6 +339,16 @@
             this.txt_tengiangvien.Size = new System.Drawing.Size(125, 24);
             this.txt_tengiangvien.TabIndex = 9;
             this.txt_tengiangvien.Text = "tengiangvien";
+            // 
+            // txt_tenchuong
+            // 
+            this.txt_tenchuong.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_tenchuong.Location = new System.Drawing.Point(13, 95);
+            this.txt_tenchuong.MaximumSize = new System.Drawing.Size(219, 75);
+            this.txt_tenchuong.Name = "txt_tenchuong";
+            this.txt_tenchuong.Size = new System.Drawing.Size(210, 75);
+            this.txt_tenchuong.TabIndex = 8;
+            this.txt_tenchuong.Text = "tenchuong";
             // 
             // text_noidungtailieu
             // 
@@ -473,6 +473,7 @@
             this.Name = "Hienthitailieufrm";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tài liệu";
             this.Load += new System.EventHandler(this.Hienthitailieufrm_Load);
             this.Shown += new System.EventHandler(this.Hienthitailieufrm_Shown);

@@ -295,6 +295,11 @@ namespace Hybrid.GUI.Home
         
         private void ExportToExcel_BaiTap(DataGridView dataGridView, string excelFilePath)
         {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
+
+            // If you use EPPlus in a noncommercial context
+            // according to the Polyform Noncommercial license:
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             using (var package = new ExcelPackage())
             {
                 // Tạo một Sheet trong Excel
@@ -330,6 +335,8 @@ namespace Hybrid.GUI.Home
                 }
 
 
+                // Sau khi ghi dữ liệu, thực hiện AutoFit cho các cột
+                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
                 // Lưu file Excel vào đường dẫn đã chọn
                 File.WriteAllBytes(excelFilePath, package.GetAsByteArray());
 

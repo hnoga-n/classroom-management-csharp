@@ -82,9 +82,14 @@ namespace Hybrid.GUI.Home
         }
 
         private void text_noidungtailieu_TextChanged(object sender, EventArgs e)
-
         {
-
+            if (text_noidungtailieu.Text.Length > 300)
+            {
+                text_noidungtailieu.Text = text_noidungtailieu.Text.Substring(0, 300);
+                text_noidungtailieu.SelectionStart = text_noidungtailieu.Text.Length;
+            }
+            else
+                lab_demkitu_noidungtailieu.Text = text_noidungtailieu.Text.Length.ToString() + "/300 kí tự";
         }
 
         private void but_taotailieu_Click(object sender, EventArgs e)

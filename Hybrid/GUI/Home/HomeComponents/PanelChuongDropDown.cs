@@ -4,6 +4,7 @@ using Hybrid.DTO;
 using Hybrid.GUI.Baitap.Giaovien;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.GUI.Home.KiemTra;
+using ServiceStack;
 using System;
 using System.Windows.Forms;
 
@@ -35,7 +36,6 @@ namespace Hybrid.GUI.Home
                 this.btnThem.Visible = false;
                 this.btnSua.Visible = false;
                 this.btnXoa.Visible = false;
-                //this.lblDemTaiLieuChuong.Location = this.PointToClient(new System.Drawing.Point(844, 19));
             }
             this.lblTenChuong.Text = chuong.Tenchuong;
             demTaiLieuChuong = 0;
@@ -48,8 +48,10 @@ namespace Hybrid.GUI.Home
                 bool flagbaitap = HienThiDanhSachBaiTap(chuong.Machuong, tukhoa),
                      flagbaikiemtra = HienThiDanhSachBaiKiemTra(chuong.Machuong, tukhoa),
                      flaghoclieu = HienThiDanhSachHocLieu(chuong.Machuong, tukhoa);
-                //if (!flagbaitap && !flagbaikiemtra && !flaghoclieu)
-                //    this.Visible = false;
+                if (tukhoa != "" && !flagbaitap && !flagbaikiemtra && !flaghoclieu)
+                    this.Visible = false;
+                else 
+                    this.Visible = true;
             } else if(loaihoatdong == 1)
             {
                 if (!HienThiDanhSachBaiTap(chuong.Machuong, tukhoa))
