@@ -131,7 +131,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 this.flowpanelHocSinh.Controls.Clear();
                 if (this.listNotSubmited.Count == 0)
                 {
-                    emptyPnl emptPnl = new emptyPnl("Không có học sinh chưa nộp bài");
+                    EmptyPanel emptPnl = new EmptyPanel("Không có học sinh chưa nộp bài");
                     flowpanelHocSinh.Controls.Add(emptPnl);
                     return;
                 }
@@ -159,7 +159,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 this.flowpanelHocSinh.Controls.Clear();
                 if (this.listNotSubmited.Count == 0)
                 {
-                    emptyPnl emptPnl = new emptyPnl("Không có học sinh nộp bài");
+                    EmptyPanel emptPnl = new EmptyPanel("Không có học sinh nộp bài");
                     flowpanelHocSinh.Controls.Add(emptPnl);
                     return;
                 }
@@ -229,7 +229,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 }
                 if (this.flowpanelHocSinh.Controls.Count == 0)
                 {
-                    emptyPnl emptPnl = new emptyPnl("Không tìm thấy học sinh!");
+                    EmptyPanel emptPnl = new EmptyPanel("Không tìm thấy học sinh!");
                     flowpanelHocSinh.Controls.Add(emptPnl);
                     return;
                 }

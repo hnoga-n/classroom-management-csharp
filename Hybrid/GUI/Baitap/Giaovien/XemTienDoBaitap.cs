@@ -47,6 +47,7 @@ namespace Hybrid.GUI.Baitap
             taikhoanBUS = new TaikhoanBUS();
             thamgiaBUS = new ThamGiaBUS();
             blbtBUS = new BailambaitapBUS();
+            this.lblTitle.Text = this.baitap.Tieude;
             this.lblLop.Text = this.lophoc.Tenlop;
             this.createAt.Text = this.baitap.Thoigiantao.ToString();
             this.startAt.Text = this.baitap.Thoigianbatdau.ToString();
@@ -139,11 +140,10 @@ namespace Hybrid.GUI.Baitap
             try
             {
                 whichIsClick = 1;
-                this.flowHocSinhPnl.SuspendLayout();
                 this.flowHocSinhPnl.Controls.Clear();
                 if (this.listNotSubmited.Count == 0)
                 {
-                    emptyPnl emptPnl = new emptyPnl("Không có học sinh chưa nộp bài");
+                    EmptyPanel emptPnl = new EmptyPanel("Không có học sinh chưa nộp bài");
                     flowHocSinhPnl.Controls.Add(emptPnl);
                     return;
                 }
@@ -153,7 +153,6 @@ namespace Hybrid.GUI.Baitap
                     HocsinhNoptre hsPnl = new HocsinhNoptre(hocsinh);
                     this.flowHocSinhPnl.Controls.Add(hsPnl);
                 }
-                this.flowHocSinhPnl.ResumeLayout();
             }
             catch (Exception ex)
             {
@@ -167,11 +166,10 @@ namespace Hybrid.GUI.Baitap
             try
             {
                 whichIsClick = 2;
-                this.flowHocSinhPnl.SuspendLayout();
                 this.flowHocSinhPnl.Controls.Clear();
-                if (this.listNotSubmited.Count == 0)
+                if (this.listSubmited.Count == 0)
                 {
-                    emptyPnl emptPnl = new emptyPnl("Không có bài làm cần chấm điểm.");
+                    EmptyPanel emptPnl = new EmptyPanel("Không có bài làm cần chấm điểm.");
                     flowHocSinhPnl.Controls.Add(emptPnl);
                     return;
                 }
@@ -185,7 +183,6 @@ namespace Hybrid.GUI.Baitap
                         this.flowHocSinhPnl.Controls.Add(hsPnl);
                     }
                 }
-                this.flowHocSinhPnl.ResumeLayout();
             }
             catch (Exception ex)
             {
@@ -199,11 +196,10 @@ namespace Hybrid.GUI.Baitap
             try
             {
                 whichIsClick = 3;
-                this.flowHocSinhPnl.SuspendLayout();
                 this.flowHocSinhPnl.Controls.Clear();
-                if (this.listNotSubmited.Count == 0)
+                if (this.listSubmited.Count == 0)
                 {
-                    emptyPnl emptPnl = new emptyPnl("Không có bài làm nào đã chấm.");
+                    EmptyPanel emptPnl = new EmptyPanel("Không có bài làm nào đã chấm.");
                     flowHocSinhPnl.Controls.Add(emptPnl);
                     return;
                 }
@@ -217,7 +213,6 @@ namespace Hybrid.GUI.Baitap
                         this.flowHocSinhPnl.Controls.Add(hsPnl);
                     }
                 }
-                this.flowHocSinhPnl.ResumeLayout();
             }
             catch (Exception ex)
             {
@@ -310,7 +305,7 @@ namespace Hybrid.GUI.Baitap
                 }
                 if (this.flowHocSinhPnl.Controls.Count == 0)
                 {
-                    emptyPnl emptPnl = new emptyPnl("Không tìm thấy học sinh!");
+                    EmptyPanel emptPnl = new EmptyPanel("Không tìm thấy học sinh!");
                     flowHocSinhPnl.Controls.Add(emptPnl);
                     return;
                 }

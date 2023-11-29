@@ -355,7 +355,7 @@ namespace Hybrid.GUI.Home.KiemTra
         {
             if (this.pnlChiTietCauHoiContainer.Controls.Count > 0 || !isCloseFormNoAction)
             {
-                DialogResult dr = MessageBox.Show("Sau khi thoát, nội dung chỉnh sửa này sẽ bị mất, bạn có chắc muốn đóng không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("Sau khi thoát, nội dung chỉnh sửa này sẽ bị mất, bạn có chắc muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (dr == DialogResult.No)
                 {
                     e.Cancel = true;

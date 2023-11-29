@@ -76,6 +76,11 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
             PanelChiTietCauHoi panel = new PanelChiTietCauHoi(cauhoi);
             ChiTietCauHoiFrm frm = new ChiTietCauHoiFrm();
             panel.BtnXoaCauHoi.Visible = false;
+            panel.BtnDong.Visible = true;
+            panel.BtnDong.Click += (s, ev) =>
+            {
+                frm.Close();
+            };
             panel.Dock = DockStyle.Fill;
             frm.Controls.Add(panel);
             frm.ShowDialog();
