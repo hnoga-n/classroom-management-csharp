@@ -34,6 +34,7 @@ namespace Hybrid.DAO
                     tmp.Mabailamkiemtra = dr["mabailamkiemtra"].ToString();
                     tmp.Macauhoi = dr["macauhoi"].ToString();
                     tmp.Dapanchon = dr["dapanchon"].ToString();
+                    tmp.Thutu = Convert.ToInt16(dr["thutu"].ToString());
                     listTmp.Add(tmp);
                 }
                 dr.Close();
@@ -52,7 +53,7 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql = "INSERT INTO chitietbailamkiemtra(mabailamkiemtra,macauhoi,dapanchon) VALUES (@mabailamkt,@macauhoi,@dapanchon)";
+                string sql = "INSERT INTO chitietbailamkiemtra(mabailamkiemtra,macauhoi,dapanchon,thutu) VALUES (@mabailamkt,@macauhoi,@dapanchon,@thutu)";
                 SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
                 foreach (ChiTietBaiLamKiemTra ct in chitietbailam)
                 {
@@ -61,6 +62,7 @@ namespace Hybrid.DAO
                     command.Parameters.Add("@macauhoi", SqlDbType.UniqueIdentifier).Value =
                         Guid.Parse(ct.Macauhoi);
                     command.Parameters.Add("@dapanchon", SqlDbType.UniqueIdentifier).Value = string.IsNullOrEmpty(ct.Dapanchon) ? DBNull.Value : (object)Guid.Parse(ct.Dapanchon);
+                    command.Parameters.AddWithValue("@thutu",ct.Thutu);
                     command.ExecuteNonQuery();
                 }
             }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hybrid.DTO
 {
-    public class ChiTietDeKiemTra
+    public class ChiTietDeKiemTra : IComparable
     {
         private string madekiemtra;
         private string macauhoi;
@@ -22,5 +22,10 @@ namespace Hybrid.DTO
         public string Madekiemtra { get => madekiemtra; set => madekiemtra = value; }
         public string Macauhoi { get => macauhoi; set => macauhoi = value; }
         public int Thutu { get => thutu; set => thutu = value; }
+        public int CompareTo(Object obj)
+        {
+            ChiTietDeKiemTra chuong = (ChiTietDeKiemTra)obj;
+            return this.thutu.CompareTo(chuong.thutu);
+        }
     }
 }
