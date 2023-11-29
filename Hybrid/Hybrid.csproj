@@ -243,6 +243,8 @@
     <Compile Include="Comparer\BaiTapComparer.cs" />
     <Compile Include="Comparer\CauhoiComparer.cs" />
     <Compile Include="Comparer\CautraloiComparer.cs" />
+    <Compile Include="Comparer\ChiTietBaiLamKiemTraComparer.cs" />
+    <Compile Include="Comparer\ChiTietDeKiemTraComparer.cs" />
     <Compile Include="Comparer\ChuongComparer.cs" />
     <Compile Include="Comparer\DekiemtraComparer.cs" />
     <Compile Include="Comparer\LophocComparer.cs" />
@@ -507,11 +509,11 @@
     <Compile Include="GUI\Home\HomeComponents\ButtonHocLieu.Designer.cs">
       <DependentUpon>ButtonHocLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\emptyPnl.cs">
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\emptyPnl.Designer.cs">
-      <DependentUpon>emptyPnl.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.Designer.cs">
+      <DependentUpon>EmptyPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.cs">
       <SubType>UserControl</SubType>
@@ -739,9 +741,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\Banbe.resx">
       <DependentUpon>Banbe.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\BanbeCard.resx">
       <DependentUpon>BanbeCard.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\DanhbaFrm.resx">
       <DependentUpon>DanhbaFrm.cs</DependentUpon>
@@ -776,8 +780,8 @@
     <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonHocLieu.resx">
       <DependentUpon>ButtonHocLieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\emptyPnl.resx">
-      <DependentUpon>emptyPnl.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.resx">
+      <DependentUpon>EmptyPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.resx">
       <DependentUpon>HocSinhCard.cs</DependentUpon>

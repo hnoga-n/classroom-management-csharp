@@ -1,4 +1,5 @@
-﻿using Hybrid.DAO;
+﻿using Hybrid.Comparer;
+using Hybrid.DAO;
 using Hybrid.DTO;
 using System;
 using System.Collections;
@@ -38,16 +39,6 @@ namespace Hybrid.BUS
             }
             return false;
         }
-        public ArrayList getChiTietDeKiemTraWithMaDeKiemTra(string madekiemtra)
-        {
-            ArrayList listcauhoi = new ArrayList();
-            foreach (ChiTietDeKiemTra item in list)
-            {
-                if (item.Madekiemtra.Equals(madekiemtra))
-                    listcauhoi.Add(item);
-            }
-            return listcauhoi;
-        }
         public ArrayList GetDanhSachChiTietDeKiemTraWithMaDeKiemTra(string madekiemtra)
         {
             ArrayList listcauhoi = new ArrayList();
@@ -56,6 +47,9 @@ namespace Hybrid.BUS
                 if (item.Madekiemtra.Equals(madekiemtra))
                     listcauhoi.Add(item);
             }
+            ChiTietDeKiemTraComparer comparer = new ChiTietDeKiemTraComparer();
+            comparer.TypeToCompare = ChiTietDeKiemTraComparer.ComparisonType.sothutu;
+            listcauhoi.Sort(comparer);
             return listcauhoi;
         }
     }

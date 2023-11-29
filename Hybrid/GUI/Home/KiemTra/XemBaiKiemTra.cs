@@ -30,7 +30,7 @@ namespace Hybrid.GUI.Home.KiemTra
         }
         private void loadDataIntoForm()
         {
-            ArrayList listmacauhoi = this.ctbktBUS.getChiTietDeKiemTraWithMaDeKiemTra(this.dkt.Madekiemtra.ToLower());
+            ArrayList listmacauhoi = this.ctbktBUS.GetDanhSachChiTietDeKiemTraWithMaDeKiemTra(this.dkt.Madekiemtra.ToLower());
             ArrayList listcautraloi;
             if (listmacauhoi.Count <= 0)
             {
