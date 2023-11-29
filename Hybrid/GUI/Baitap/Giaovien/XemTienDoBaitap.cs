@@ -137,6 +137,7 @@ namespace Hybrid.GUI.Baitap
 
         private void notSubmit_Click(object sender, EventArgs e)
         {
+
             try
             {
                 whichIsClick = 1;
@@ -159,10 +160,12 @@ namespace Hybrid.GUI.Baitap
                 MessageBox.Show("Có lỗi phát sinh, vui lòng thử lại sau !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.Error.WriteLine(ex.ToString());
             }
+
         }
 
         private void notMark_Click(object sender, EventArgs e)
         {
+
             try
             {
                 whichIsClick = 2;

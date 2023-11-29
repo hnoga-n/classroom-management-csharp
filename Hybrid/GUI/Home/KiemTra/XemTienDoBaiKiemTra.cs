@@ -19,7 +19,6 @@ namespace Hybrid.GUI.Home.KiemTra
         private TaikhoanBUS taikhoanBUS;
         private ThamGiaBUS thamgiaBUS;
         private BailamKiemtraBUS blktBUS;
-        private ChiTietBaiLamKiemTraBUS ctblktBUS;
         private CauHoiBUS chBUS;
         private CauTraLoiBUS ctlBUS;
 
@@ -43,7 +42,6 @@ namespace Hybrid.GUI.Home.KiemTra
             this.taikhoanBUS = new TaikhoanBUS();
             this.thamgiaBUS = new ThamGiaBUS();
             this.blktBUS = new BailamKiemtraBUS();
-            this.ctblktBUS = new ChiTietBaiLamKiemTraBUS();
             this.chBUS = new CauHoiBUS();
             this.ctlBUS = new CauTraLoiBUS();
             loadListSubmitedAndNotSubmited(lophoc);
@@ -55,6 +53,7 @@ namespace Hybrid.GUI.Home.KiemTra
         {
             try
             {
+
                 this.listNotSubmited.Clear();
                 this.listSubmited.Clear();
                 blktBUS.loadList();

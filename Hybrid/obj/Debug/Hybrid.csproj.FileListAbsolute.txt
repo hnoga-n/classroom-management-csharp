@@ -35,7 +35,6 @@ D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiTap.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ButtonClass.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonHocLieu.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.emptyPnl.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.HocSinhCard.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.PanelChuongDropDown.resources
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.PanelGiaoDienLopHoc.resources
@@ -153,6 +152,7 @@ D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.ValueTup
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.exe
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.pdb
+<<<<<<< HEAD
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.exe.config
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.exe
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.pdb
@@ -318,3 +318,6 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.exe
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.pdb
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.EmptyPanel.resources
+=======
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.EmptyPanel.resources
+>>>>>>> main

@@ -243,6 +243,8 @@
     <Compile Include="Comparer\BaiTapComparer.cs" />
     <Compile Include="Comparer\CauhoiComparer.cs" />
     <Compile Include="Comparer\CautraloiComparer.cs" />
+    <Compile Include="Comparer\ChiTietBaiLamKiemTraComparer.cs" />
+    <Compile Include="Comparer\ChiTietDeKiemTraComparer.cs" />
     <Compile Include="Comparer\ChuongComparer.cs" />
     <Compile Include="Comparer\DekiemtraComparer.cs" />
     <Compile Include="Comparer\LophocComparer.cs" />
@@ -739,9 +741,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\Banbe.resx">
       <DependentUpon>Banbe.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\BanbeCard.resx">
       <DependentUpon>BanbeCard.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\DanhbaFrm.resx">
       <DependentUpon>DanhbaFrm.cs</DependentUpon>
