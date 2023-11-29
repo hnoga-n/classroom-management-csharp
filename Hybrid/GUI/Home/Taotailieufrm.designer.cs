@@ -364,6 +364,7 @@
             this.Name = "Taotailieufrm";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo tài liệu";
             this.Load += new System.EventHandler(this.Taotailieufrm_Load);
             this.Shown += new System.EventHandler(this.Taotailieufrm_Shown);
