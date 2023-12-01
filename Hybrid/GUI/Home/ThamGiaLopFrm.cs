@@ -18,6 +18,7 @@ namespace Hybrid.GUI.Home
         HomeFrm homefrm;
         LopHocBUS lophocBUS = new LopHocBUS();
         ThamGiaBUS thamgiaBUS = new ThamGiaBUS();
+        Chucnang cn=new Chucnang();
         public ThamGiaLopFrm(HomeFrm homefrm)
         {
             InitializeComponent();
@@ -87,7 +88,7 @@ namespace Hybrid.GUI.Home
                 PanelGiaoDienLopHoc panelGDLH = new PanelGiaoDienLopHoc(lophocthamgia, homefrm);
                 this.homefrm.PnlGiaoDienLopHocContainer.Controls.Add(panelGDLH);
                 panelGDLH.Dock = DockStyle.Fill;
-
+                
                 ButtonClass btn = new ButtonClass(lophocthamgia, this.homefrm);
                 this.homefrm.PnlLopHocContainer.Controls.Add(btn);
                 MessageBox.Show("Tham gia lớp học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

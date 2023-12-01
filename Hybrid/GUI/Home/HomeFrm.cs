@@ -13,7 +13,7 @@ namespace Hybrid.GUI.Home
         private Form1 form;
         private Taikhoan tk;
         private LopHocBUS lophocBUS = new LopHocBUS();
-
+        Chucnang cn=new Chucnang();
         public Taikhoan Tk { get => tk; set => tk = value; }
         public LopHocBUS LophocBUS { get => lophocBUS; set => lophocBUS = value; }
         public Form1 Form { get => form; set => form = value; }
