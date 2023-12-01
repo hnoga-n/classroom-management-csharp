@@ -99,6 +99,7 @@
             // 
             this.txtTenLop.AlwaysActive = false;
             this.txtTenLop.Location = new System.Drawing.Point(12, 51);
+            this.txtTenLop.MaxLength = 50;
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.Size = new System.Drawing.Size(509, 36);
             this.txtTenLop.StateActive.Back.Color1 = System.Drawing.Color.White;

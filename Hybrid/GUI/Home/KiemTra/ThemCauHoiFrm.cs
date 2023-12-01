@@ -25,6 +25,7 @@ namespace Hybrid.GUI.Home.KiemTra
         LopHocBUS lophocBUS = new LopHocBUS();
         CauHoiBUS cauhoiBUS = new CauHoiBUS();
         CauTraLoiBUS cautraloiBUS = new CauTraLoiBUS();
+        ChiTietDeKiemTraBUS ctdktBUS = new ChiTietDeKiemTraBUS();
 
         // sua cau hoi
         CauHoi cauhoi;
@@ -40,9 +41,10 @@ namespace Hybrid.GUI.Home.KiemTra
         }
 
         // sua cau hoi
-        public ThemCauHoiFrm(CauHoi cauhoi)
+        public ThemCauHoiFrm(KiemTraFrm kiemTraFrm,CauHoi cauhoi)
         {
             InitializeComponent();
+            this.kiemTraFrm = kiemTraFrm;
             this.cauhoi = cauhoi;
             this.rtbNoiDung.Text = cauhoi.Noidung;
             InitPanelCauTraLoiContainer_SuaCauHoi();
@@ -173,25 +175,58 @@ namespace Hybrid.GUI.Home.KiemTra
                 MessageBox.Show("Vui lòng chọn một câu trả lời là đáp án đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            cauhoi.Noidung = rtbNoiDung.Text;
-            if (cauhoiBUS.SuaCauHoi(cauhoi))
+            if(ctdktBUS.KiemTraCauHoiDaDuocSuDung(this.cauhoi.Macauhoi))
             {
-                foreach (PanelChiTietCauTraLoi pnl in this.pnlCauTraLoiContainer.Controls)
+                cauhoi.Daxoa = 1;
+                if(!cauhoiBUS.SuaCauHoi(cauhoi))
                 {
-                    pnl.Cautraloi.Noidung = pnl.RtbCauTraLoi.Text;
-                    if (pnl.ChkLaDapAn.Checked) pnl.Cautraloi.Ladapan = 1;
-                    else pnl.Cautraloi.Ladapan = 0;
-                    if (!cautraloiBUS.SuaCauTraLoi(pnl.Cautraloi))
-                    {
-                        MessageBox.Show("Sửa câu trả lời thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    MessageBox.Show("Có lỗi đã xảy ra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                MessageBox.Show("Cập nhật câu hỏi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CauHoi cauhoinew = new CauHoi(Guid.NewGuid().ToString(), rtbNoiDung.Text, lophocBUS.GetLopHocByMaLop(kiemTraFrm.Chuong.Malop).Magiangvien, 0);
+                if (cauhoiBUS.ThemCauHoi(cauhoinew))
+                {
+                    int ladapan;
+                    foreach (PanelChiTietCauTraLoi pnl in this.pnlCauTraLoiContainer.Controls)
+                    {
+                        if (!pnl.ChkLaDapAn.Checked)
+                            ladapan = 0;
+                        else
+                            ladapan = 1;
+                        CauTraLoi cautraloi = new CauTraLoi(Guid.NewGuid().ToString(), pnl.RtbCauTraLoi.Text, ladapan, cauhoinew.Macauhoi);
+                        cautraloiBUS.ThemCauTraLoi(cautraloi);
+                    }
+                    ButtonCauHoi btnCauHoi = new ButtonCauHoi(cauhoinew, this.kiemTraFrm);
+                    kiemTraFrm.PnlCauHoiContainer.Controls.Add(btnCauHoi);
+                    MessageBox.Show("Cập nhật câu hỏi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật câu hỏi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                MessageBox.Show("Cập nhật câu hỏi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cauhoi.Noidung = rtbNoiDung.Text;
+                if (cauhoiBUS.SuaCauHoi(cauhoi))
+                {
+                    foreach (PanelChiTietCauTraLoi pnl in this.pnlCauTraLoiContainer.Controls)
+                    {
+                        pnl.Cautraloi.Noidung = pnl.RtbCauTraLoi.Text;
+                        if (pnl.ChkLaDapAn.Checked) pnl.Cautraloi.Ladapan = 1;
+                        else pnl.Cautraloi.Ladapan = 0;
+                        if (!cautraloiBUS.SuaCauTraLoi(pnl.Cautraloi))
+                        {
+                            MessageBox.Show("Sửa câu trả lời thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                    MessageBox.Show("Cập nhật câu hỏi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật câu hỏi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             this.Close();
         }
