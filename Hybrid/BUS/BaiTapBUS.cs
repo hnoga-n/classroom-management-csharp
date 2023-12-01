@@ -59,6 +59,22 @@ namespace Hybrid.BUS
             }
             return false;
         }
+        public bool EditBaitap(BaiTap bt)
+        {
+            if (btDAO.EditBaiTap(bt))
+            {
+                BaiTapComparer comparer = new BaiTapComparer();
+                comparer.TypeToCompare = BaiTapComparer.ComparisonType.mabaitap;
+                BaiTap tmp = new BaiTap();
+                tmp.Mabaitap = bt.Mabaitap;
+                int index = this.list.BinarySearch(tmp, comparer);
+                if (index < 0) return false;
+                this.list.RemoveAt(index);
+                this.list.Add(bt);
+                return true;
+            }
+            return false;
+        }
 
         public bool deleteBaitap(string mabaitap)
         {
@@ -75,7 +91,23 @@ namespace Hybrid.BUS
             }
             return false;
         }
-
+        public bool DeleteBaitapByChangeState(string mabaitap)
+        {
+            if (btDAO.DeleteBaiTapByChangeState(mabaitap))
+            {
+                BaiTapComparer comparer = new BaiTapComparer();
+                comparer.TypeToCompare = BaiTapComparer.ComparisonType.mabaitap;
+                BaiTap bt = new BaiTap
+                {
+                    Mabaitap = mabaitap
+                };
+                int index = this.list.BinarySearch(bt, comparer);
+                if (index < 0) return true;
+                (this.list[index] as BaiTap).Daxoa = 1;
+                return true;
+            }
+            return false;
+        }
 
         public BaiTap GetBaiTapByMaBaiTap(string mabaitap)
         {

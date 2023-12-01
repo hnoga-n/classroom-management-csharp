@@ -325,6 +325,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\Chinhsuabaitap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\Chinhsuabaitap.Designer.cs">
+      <DependentUpon>Chinhsuabaitap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Baitap\CloudFile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -745,6 +751,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\Chinhsuabaitap.resx">
+      <DependentUpon>Chinhsuabaitap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\CloudFile.resx">
       <DependentUpon>CloudFile.cs</DependentUpon>

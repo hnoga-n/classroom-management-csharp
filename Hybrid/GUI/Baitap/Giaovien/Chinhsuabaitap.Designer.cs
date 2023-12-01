@@ -1,6 +1,6 @@
-﻿namespace Hybrid.GUI.Baitap.Giaovien
+﻿namespace Hybrid.GUI.Baitap
 {
-    partial class TaoBaiTap
+    partial class Chinhsuabaitap
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.lblPlaceholderTitle = new System.Windows.Forms.Label();
-            this.flowFilePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnUpload = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lblPlaceholderContent = new System.Windows.Forms.Label();
+            this.editHomework = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.addAnswer = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lblCharCountContent = new System.Windows.Forms.Label();
+            this.lblCharCountTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,11 +46,9 @@
             this.dtpThoiGianBatDau = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.dtpThoiGianKetThuc = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
-            this.lblCharCountContent = new System.Windows.Forms.Label();
-            this.lblCharCountTitle = new System.Windows.Forms.Label();
-            this.addAnswer = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.createHomework = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.lblPlaceholderContent = new System.Windows.Forms.Label();
+            this.btnUpload = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flowFilePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.txtTitle = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.txtContent = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.flowLayoutPanel2.SuspendLayout();
@@ -61,45 +61,101 @@
             this.lblPlaceholderTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblPlaceholderTitle.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlaceholderTitle.ForeColor = System.Drawing.Color.Gray;
-            this.lblPlaceholderTitle.Location = new System.Drawing.Point(54, 61);
+            this.lblPlaceholderTitle.Location = new System.Drawing.Point(54, 60);
             this.lblPlaceholderTitle.Name = "lblPlaceholderTitle";
             this.lblPlaceholderTitle.Size = new System.Drawing.Size(137, 24);
-            this.lblPlaceholderTitle.TabIndex = 1;
+            this.lblPlaceholderTitle.TabIndex = 15;
             this.lblPlaceholderTitle.Tag = "ádasd";
             this.lblPlaceholderTitle.Text = "Tiêu đề bài tập";
             this.lblPlaceholderTitle.Click += new System.EventHandler(this.lblPlaceholderTitle_Click);
             // 
-            // flowFilePanel
+            // lblPlaceholderContent
             // 
-            this.flowFilePanel.AutoScroll = true;
-            this.flowFilePanel.BackColor = System.Drawing.Color.White;
-            this.flowFilePanel.Location = new System.Drawing.Point(12, 576);
-            this.flowFilePanel.Name = "flowFilePanel";
-            this.flowFilePanel.Size = new System.Drawing.Size(1012, 144);
-            this.flowFilePanel.TabIndex = 4;
+            this.lblPlaceholderContent.AutoSize = true;
+            this.lblPlaceholderContent.BackColor = System.Drawing.Color.White;
+            this.lblPlaceholderContent.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblPlaceholderContent.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaceholderContent.ForeColor = System.Drawing.Color.Gray;
+            this.lblPlaceholderContent.Location = new System.Drawing.Point(54, 156);
+            this.lblPlaceholderContent.Name = "lblPlaceholderContent";
+            this.lblPlaceholderContent.Size = new System.Drawing.Size(248, 24);
+            this.lblPlaceholderContent.TabIndex = 24;
+            this.lblPlaceholderContent.Text = "Viết nội dung cho bài tập.....";
+            this.lblPlaceholderContent.Click += new System.EventHandler(this.lblPlaceholderContent_Click);
             // 
-            // label3
+            // editHomework
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 550);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Tải file bài tập:";
+            this.editHomework.Location = new System.Drawing.Point(1034, 681);
+            this.editHomework.Name = "editHomework";
+            this.editHomework.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.editHomework.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.editHomework.OverrideDefault.Border.Color1 = System.Drawing.Color.White;
+            this.editHomework.OverrideDefault.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.editHomework.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.editHomework.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.editHomework.OverrideDefault.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.editHomework.Size = new System.Drawing.Size(266, 38);
+            this.editHomework.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.editHomework.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.editHomework.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.editHomework.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.editHomework.StateCommon.Border.Rounding = 5;
+            this.editHomework.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.editHomework.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.editHomework.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editHomework.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.editHomework.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.editHomework.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.editHomework.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.editHomework.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.editHomework.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.editHomework.TabIndex = 23;
+            this.editHomework.Values.Text = "Lưu chỉnh sửa";
+            this.editHomework.Click += new System.EventHandler(this.createHomework_Click);
             // 
-            // btnUpload
+            // addAnswer
             // 
-            this.btnUpload.Location = new System.Drawing.Point(141, 527);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(50, 45);
-            this.btnUpload.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnUpload.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.btnUpload.StateCommon.Back.Image = global::Hybrid.Properties.Resources.icons8_upload_30;
-            this.btnUpload.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.btnUpload.TabIndex = 6;
-            this.btnUpload.Values.Text = "";
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            this.addAnswer.Location = new System.Drawing.Point(870, 526);
+            this.addAnswer.Name = "addAnswer";
+            this.addAnswer.Size = new System.Drawing.Size(154, 43);
+            this.addAnswer.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.addAnswer.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.addAnswer.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.addAnswer.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.addAnswer.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addAnswer.TabIndex = 22;
+            this.addAnswer.Values.Text = "Thêm đáp án";
+            this.addAnswer.Click += new System.EventHandler(this.addAnswer_Click);
+            // 
+            // lblCharCountContent
+            // 
+            this.lblCharCountContent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCharCountContent.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblCharCountContent.ForeColor = System.Drawing.Color.Gray;
+            this.lblCharCountContent.Location = new System.Drawing.Point(920, 116);
+            this.lblCharCountContent.Name = "lblCharCountContent";
+            this.lblCharCountContent.Size = new System.Drawing.Size(104, 20);
+            this.lblCharCountContent.TabIndex = 21;
+            this.lblCharCountContent.Text = "0/4000";
+            this.lblCharCountContent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblCharCountTitle
+            // 
+            this.lblCharCountTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCharCountTitle.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblCharCountTitle.ForeColor = System.Drawing.Color.Gray;
+            this.lblCharCountTitle.Location = new System.Drawing.Point(924, 13);
+            this.lblCharCountTitle.Name = "lblCharCountTitle";
+            this.lblCharCountTitle.Size = new System.Drawing.Size(100, 30);
+            this.lblCharCountTitle.TabIndex = 20;
+            this.lblCharCountTitle.Text = "0/200";
+            this.lblCharCountTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // flowLayoutPanel2
             // 
@@ -115,10 +171,10 @@
             this.flowLayoutPanel2.Controls.Add(this.dtpThoiGianBatDau);
             this.flowLayoutPanel2.Controls.Add(this.label14);
             this.flowLayoutPanel2.Controls.Add(this.dtpThoiGianKetThuc);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1034, 47);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1034, 46);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(266, 629);
-            this.flowLayoutPanel2.TabIndex = 7;
+            this.flowLayoutPanel2.TabIndex = 19;
             // 
             // label1
             // 
@@ -217,11 +273,9 @@
             this.dtpThoiGianBatDau.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dtpThoiGianBatDau.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.dtpThoiGianBatDau.StateCommon.Border.Rounding = 5;
             this.dtpThoiGianBatDau.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpThoiGianBatDau.TabIndex = 12;
-            this.dtpThoiGianBatDau.ValueChanged += new System.EventHandler(this.dtpThoiGianBatDau_ValueChanged);
             // 
             // label14
             // 
@@ -247,119 +301,47 @@
             this.dtpThoiGianKetThuc.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dtpThoiGianKetThuc.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.dtpThoiGianKetThuc.StateCommon.Border.Rounding = 5;
             this.dtpThoiGianKetThuc.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpThoiGianKetThuc.TabIndex = 13;
             this.dtpThoiGianKetThuc.ValueNullable = new System.DateTime(2024, 11, 23, 10, 35, 0, 0);
             this.dtpThoiGianKetThuc.ValueChanged += new System.EventHandler(this.dtpThoiGianKetThuc_ValueChanged);
             // 
-            // lblCharCountContent
+            // btnUpload
             // 
-            this.lblCharCountContent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCharCountContent.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblCharCountContent.ForeColor = System.Drawing.Color.Gray;
-            this.lblCharCountContent.Location = new System.Drawing.Point(920, 117);
-            this.lblCharCountContent.Name = "lblCharCountContent";
-            this.lblCharCountContent.Size = new System.Drawing.Size(104, 20);
-            this.lblCharCountContent.TabIndex = 9;
-            this.lblCharCountContent.Text = "0/4000";
-            this.lblCharCountContent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpload.Location = new System.Drawing.Point(141, 526);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(50, 45);
+            this.btnUpload.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnUpload.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnUpload.StateCommon.Back.Image = global::Hybrid.Properties.Resources.icons8_upload_30;
+            this.btnUpload.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btnUpload.TabIndex = 18;
+            this.btnUpload.Values.Text = "";
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
-            // lblCharCountTitle
+            // label3
             // 
-            this.lblCharCountTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCharCountTitle.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblCharCountTitle.ForeColor = System.Drawing.Color.Gray;
-            this.lblCharCountTitle.Location = new System.Drawing.Point(924, 14);
-            this.lblCharCountTitle.Name = "lblCharCountTitle";
-            this.lblCharCountTitle.Size = new System.Drawing.Size(100, 30);
-            this.lblCharCountTitle.TabIndex = 8;
-            this.lblCharCountTitle.Text = "0/200";
-            this.lblCharCountTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 549);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 20);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Tải file bài tập:";
             // 
-            // addAnswer
+            // flowFilePanel
             // 
-            this.addAnswer.Location = new System.Drawing.Point(870, 527);
-            this.addAnswer.Name = "addAnswer";
-            this.addAnswer.Size = new System.Drawing.Size(154, 43);
-            this.addAnswer.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.addAnswer.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.addAnswer.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.addAnswer.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.addAnswer.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.addAnswer.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addAnswer.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.addAnswer.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
-            this.addAnswer.TabIndex = 10;
-            this.addAnswer.Values.Text = "Thêm đáp án";
-            this.addAnswer.Click += new System.EventHandler(this.addAnswer_Click);
-            // 
-            // createHomework
-            // 
-            this.createHomework.Location = new System.Drawing.Point(1034, 682);
-            this.createHomework.Name = "createHomework";
-            this.createHomework.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
-            this.createHomework.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.createHomework.OverrideDefault.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.createHomework.OverrideDefault.Border.Color1 = System.Drawing.Color.White;
-            this.createHomework.OverrideDefault.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.createHomework.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.createHomework.OverrideDefault.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.createHomework.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.createHomework.OverrideDefault.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.createHomework.OverrideDefault.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.createHomework.OverrideDefault.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
-            this.createHomework.Size = new System.Drawing.Size(266, 38);
-            this.createHomework.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
-            this.createHomework.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.createHomework.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.createHomework.StateCommon.Border.Color1 = System.Drawing.Color.White;
-            this.createHomework.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.createHomework.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.createHomework.StateCommon.Border.Rounding = 5;
-            this.createHomework.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.createHomework.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.createHomework.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createHomework.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.createHomework.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
-            this.createHomework.StateTracking.Back.Color1 = System.Drawing.Color.White;
-            this.createHomework.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.createHomework.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.createHomework.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
-            this.createHomework.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.createHomework.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.createHomework.StateTracking.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.createHomework.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.createHomework.StateTracking.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.createHomework.StateTracking.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
-            this.createHomework.TabIndex = 11;
-            this.createHomework.Values.Text = "Tạo bài tập";
-            this.createHomework.Click += new System.EventHandler(this.createHomework_Click);
-            // 
-            // lblPlaceholderContent
-            // 
-            this.lblPlaceholderContent.AutoSize = true;
-            this.lblPlaceholderContent.BackColor = System.Drawing.Color.White;
-            this.lblPlaceholderContent.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblPlaceholderContent.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlaceholderContent.ForeColor = System.Drawing.Color.Gray;
-            this.lblPlaceholderContent.Location = new System.Drawing.Point(54, 157);
-            this.lblPlaceholderContent.Name = "lblPlaceholderContent";
-            this.lblPlaceholderContent.Size = new System.Drawing.Size(248, 24);
-            this.lblPlaceholderContent.TabIndex = 12;
-            this.lblPlaceholderContent.Text = "Viết nội dung cho bài tập.....";
-            this.lblPlaceholderContent.Click += new System.EventHandler(this.lblPlaceholderContent_Click);
+            this.flowFilePanel.AutoScroll = true;
+            this.flowFilePanel.BackColor = System.Drawing.Color.White;
+            this.flowFilePanel.Location = new System.Drawing.Point(12, 575);
+            this.flowFilePanel.Name = "flowFilePanel";
+            this.flowFilePanel.Size = new System.Drawing.Size(1012, 144);
+            this.flowFilePanel.TabIndex = 16;
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(16, 47);
+            this.txtTitle.Location = new System.Drawing.Point(16, 46);
             this.txtTitle.MaxLength = 200;
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(1008, 51);
@@ -367,17 +349,16 @@
             this.txtTitle.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtTitle.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtTitle.StateCommon.Border.Rounding = 10;
             this.txtTitle.StateCommon.Content.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitle.StateCommon.Content.Padding = new System.Windows.Forms.Padding(20, 8, -1, -1);
-            this.txtTitle.TabIndex = 0;
+            this.txtTitle.TabIndex = 14;
             this.txtTitle.Text = "";
             this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged_1);
             // 
             // txtContent
             // 
-            this.txtContent.Location = new System.Drawing.Point(16, 140);
+            this.txtContent.Location = new System.Drawing.Point(16, 139);
             this.txtContent.MaxLength = 4000;
             this.txtContent.Name = "txtContent";
             this.txtContent.Size = new System.Drawing.Size(1008, 381);
@@ -385,22 +366,21 @@
             this.txtContent.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtContent.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtContent.StateCommon.Border.Rounding = 10;
             this.txtContent.StateCommon.Content.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContent.StateCommon.Content.Padding = new System.Windows.Forms.Padding(20, 8, -1, -1);
-            this.txtContent.TabIndex = 13;
+            this.txtContent.TabIndex = 25;
             this.txtContent.Text = "";
             this.txtContent.TextChanged += new System.EventHandler(this.txtContent_TextChanged_1);
             // 
-            // TaoBaiTap
+            // Chinhsuabaitap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 732);
             this.Controls.Add(this.lblPlaceholderTitle);
             this.Controls.Add(this.lblPlaceholderContent);
-            this.Controls.Add(this.createHomework);
+            this.Controls.Add(this.editHomework);
             this.Controls.Add(this.addAnswer);
             this.Controls.Add(this.lblCharCountContent);
             this.Controls.Add(this.lblCharCountTitle);
@@ -412,10 +392,10 @@
             this.Controls.Add(this.txtContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "TaoBaiTap";
+            this.Name = "Chinhsuabaitap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TaoBaiTap";
-            this.Load += new System.EventHandler(this.TaoBaiTap_Load);
+            this.Text = "Chinhsuabaitap";
+            this.Load += new System.EventHandler(this.Chinhsuabaitap_Load);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -423,11 +403,15 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Label lblPlaceholderTitle;
-        private System.Windows.Forms.FlowLayoutPanel flowFilePanel;
-        private System.Windows.Forms.Label label3;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnUpload;
+        private System.Windows.Forms.Label lblPlaceholderContent;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton editHomework;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton addAnswer;
+        private System.Windows.Forms.Label lblCharCountContent;
+        private System.Windows.Forms.Label lblCharCountTitle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblClass;
         private System.Windows.Forms.Label label6;
@@ -435,15 +419,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTeacher;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label14;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpThoiGianBatDau;
+        private System.Windows.Forms.Label label14;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpThoiGianKetThuc;
-        private System.Windows.Forms.Label lblCharCountContent;
-        private System.Windows.Forms.Label lblCharCountTitle;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton addAnswer;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton createHomework;
-        private System.Windows.Forms.Label lblPlaceholderContent;
-        private System.Windows.Forms.Label label1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnUpload;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel flowFilePanel;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtTitle;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtContent;
     }

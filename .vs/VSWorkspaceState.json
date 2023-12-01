@@ -1,5 +1,6 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     "",
     "\\Hybrid",
     "\\Hybrid\\BUS",
@@ -10,5 +11,10 @@
     "\\Hybrid\\GUI\\Dangnhap"
   ],
   "SelectedNode": "\\Hybrid\\Hybrid.sln",
+=======
+    ""
+  ],
+  "SelectedNode": "\\Hybrid.sln",
+>>>>>>> main
   "PreviewInSolutionExplorer": false
 }
