@@ -141,10 +141,5 @@ namespace Hybrid.GUI
             hinhanh.Image = Properties.Resources.canhan1;
             hinhanh.Image = image;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

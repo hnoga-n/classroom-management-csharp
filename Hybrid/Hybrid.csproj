@@ -332,6 +332,8 @@
       <DependentUpon>CloudFile.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\Admin\Classfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,9 +351,6 @@
     </Compile>
     <Compile Include="GUI\Admin\Userfrm.Designer.cs">
       <DependentUpon>Userfrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\Baitap.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.Designer.cs">
       <DependentUpon>XemChiTietBaiTap.cs</DependentUpon>
@@ -752,6 +751,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.resx">
       <DependentUpon>XemChiTietBaiTap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\Classfrm.resx">
       <DependentUpon>Classfrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -760,9 +760,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\Userfrm.resx">
       <DependentUpon>Userfrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Giaovien\Baitap.resx">
-      <DependentUpon>Baitap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\Giaovien\XemTienDoBaitap.resx">
       <DependentUpon>XemTienDoBaitap.cs</DependentUpon>
@@ -999,6 +996,8 @@
     <None Include="Resources\imglop4.jpg" />
     <None Include="Resources\imglop5.jpg" />
     <None Include="Resources\imglop6.jpg" />
+    <None Include="Resources\icon8s_word_40.jpg" />
+    <None Include="Resources\icons8-word-40.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1021,7 +1020,7 @@
     <None Include="Resources\icons8-power-point-40.png" />
     <None Include="Resources\icons8-pdf-40.png" />
     <None Include="Resources\icons8-excel-40.png" />
-    <None Include="Resources\icons8-word-40.png" />
+    <None Include="Resources\icon8s-word-40.png" />
     <None Include="Resources\icons8-upload-30.png" />
     <None Include="Resources\z4900666085842_a21379c6aa15f4ba878996c3423f7d92.jpg" />
     <None Include="Resources\z4900656607616_dfb6c49dcc3cedd7bda46c9a8de7b9f6.jpg" />

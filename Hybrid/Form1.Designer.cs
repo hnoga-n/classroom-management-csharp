@@ -33,7 +33,7 @@ namespace Hybrid
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.picUserAva = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnContacts = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnTodo = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnHome = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -43,7 +43,7 @@ namespace Hybrid
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picUserAva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +51,6 @@ namespace Hybrid
             // 
             this.kryptonPanel1.Controls.Add(this.kryptonButton1);
             this.kryptonPanel1.Controls.Add(this.pictureBox1);
-            this.kryptonPanel1.Controls.Add(this.btnCalendar);
             this.kryptonPanel1.Controls.Add(this.btnContacts);
             this.kryptonPanel1.Controls.Add(this.btnTodo);
             this.kryptonPanel1.Controls.Add(this.btnHome);
@@ -64,7 +63,7 @@ namespace Hybrid
             this.kryptonPanel1.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear;
             this.kryptonPanel1.TabIndex = 0;
             // 
-            // picUserAva
+            // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -401,7 +400,7 @@ namespace Hybrid
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picUserAva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -415,7 +414,7 @@ namespace Hybrid
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnHome;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnContacts;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnTodo;
-        private System.Windows.Forms.PictureBox picUserAva;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private Panel pnlContainer;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
     }

@@ -32,12 +32,11 @@ namespace Hybrid
 
         public Taikhoan Tk { get => tk; set => tk = value; }
 
-        public Form1(string email)
         public static PictureBox picha=new PictureBox();
         public Form1(Taikhoan tk)
         {
             InitializeComponent();
-            this.tk = taikhoanBUS.GetTaiKhoanByEmail(email);
+            this.tk = tk;
         }
 
 
@@ -86,13 +85,7 @@ namespace Hybrid
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnHome_Click(this, EventArgs.Empty);
-            MakePictureBoxCircular(this.picUserAva);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            PictureBox pic = taikhoanBUS.load_hinhdaidien(taikhoanhienhanh.Anhdaidien);
+            PictureBox pic = taikhoanBUS.load_hinhdaidien(tk.Anhdaidien);
             pictureBox1.Image = pic.Image;
             cn.loadggdrive();
             //cn.load_hinhanhcanhan(this.taikhoanhienhanh.Anhdaidien, pictureBox1);
@@ -115,7 +108,7 @@ namespace Hybrid
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Thongtintaikhoan frmtt=new Thongtintaikhoan(this.taikhoanhienhanh,this,pictureBox1);
+            Thongtintaikhoan frmtt=new Thongtintaikhoan(this.tk,this,pictureBox1);
             frmtt.ShowDialog();
             pictureBox1.Image = picha.Image;
             MakePictureBoxCircular(pictureBox1);
