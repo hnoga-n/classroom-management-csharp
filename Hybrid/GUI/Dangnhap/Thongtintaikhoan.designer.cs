@@ -29,50 +29,81 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lab_ten = new System.Windows.Forms.Label();
+            this.lab_chinhsua = new System.Windows.Forms.Label();
+            this.txt_ten = new System.Windows.Forms.TextBox();
             this.hinhanh = new System.Windows.Forms.PictureBox();
+            this.lab_xacnhan = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lab_matkhau = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
-            this.txt_matkhau = new System.Windows.Forms.TextBox();
             this.txt_sodienthoai = new System.Windows.Forms.TextBox();
-            this.txt_hoten = new System.Windows.Forms.TextBox();
-            this.lab_hoten = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lab_doimatkhau = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanh)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(107)))), ((int)(((byte)(69)))));
-            this.panel1.Controls.Add(this.lab_ten);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.panel1.Controls.Add(this.lab_chinhsua);
+            this.panel1.Controls.Add(this.txt_ten);
             this.panel1.Controls.Add(this.hinhanh);
+            this.panel1.Controls.Add(this.lab_xacnhan);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 153);
             this.panel1.TabIndex = 0;
             // 
-            // lab_ten
+            // lab_chinhsua
             // 
-            this.lab_ten.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_ten.ForeColor = System.Drawing.Color.White;
-            this.lab_ten.Location = new System.Drawing.Point(131, 43);
-            this.lab_ten.Name = "lab_ten";
-            this.lab_ten.Size = new System.Drawing.Size(257, 77);
-            this.lab_ten.TabIndex = 1;
-            this.lab_ten.Text = "Lâm Tuấn Kiệt";
+            this.lab_chinhsua.ForeColor = System.Drawing.Color.Linen;
+            this.lab_chinhsua.Location = new System.Drawing.Point(290, 12);
+            this.lab_chinhsua.Name = "lab_chinhsua";
+            this.lab_chinhsua.Size = new System.Drawing.Size(98, 20);
+            this.lab_chinhsua.TabIndex = 15;
+            this.lab_chinhsua.Text = "Chỉnh sửa";
+            this.lab_chinhsua.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lab_chinhsua.Click += new System.EventHandler(this.lab_chinhsua_Click);
+            // 
+            // txt_ten
+            // 
+            this.txt_ten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.txt_ten.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_ten.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ten.ForeColor = System.Drawing.Color.White;
+            this.txt_ten.Location = new System.Drawing.Point(137, 58);
+            this.txt_ten.MaxLength = 50;
+            this.txt_ten.Name = "txt_ten";
+            this.txt_ten.ReadOnly = true;
+            this.txt_ten.Size = new System.Drawing.Size(260, 25);
+            this.txt_ten.TabIndex = 1;
             // 
             // hinhanh
             // 
-            //this.hinhanh.BackgroundImage = global::Hybrid.Properties.Resources.z4801471866481_6372150088e2fb8df8e3c7233f84d7d2;
             this.hinhanh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.hinhanh.Location = new System.Drawing.Point(12, 12);
             this.hinhanh.Name = "hinhanh";
             this.hinhanh.Size = new System.Drawing.Size(113, 108);
+            this.hinhanh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.hinhanh.TabIndex = 0;
             this.hinhanh.TabStop = false;
+            this.hinhanh.Click += new System.EventHandler(this.hinhanh_Click);
+            // 
+            // lab_xacnhan
+            // 
+            this.lab_xacnhan.ForeColor = System.Drawing.Color.Linen;
+            this.lab_xacnhan.Location = new System.Drawing.Point(290, 9);
+            this.lab_xacnhan.Name = "lab_xacnhan";
+            this.lab_xacnhan.Size = new System.Drawing.Size(98, 20);
+            this.lab_xacnhan.TabIndex = 16;
+            this.lab_xacnhan.Text = "Xác nhận";
+            this.lab_xacnhan.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lab_xacnhan.Visible = false;
+            this.lab_xacnhan.Click += new System.EventHandler(this.lab_xacnhan_Click);
             // 
             // label1
             // 
@@ -109,60 +140,61 @@
             // 
             // txt_email
             // 
-            this.txt_email.Enabled = false;
             this.txt_email.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.Location = new System.Drawing.Point(137, 190);
             this.txt_email.Name = "txt_email";
+            this.txt_email.ReadOnly = true;
             this.txt_email.Size = new System.Drawing.Size(251, 28);
             this.txt_email.TabIndex = 7;
             // 
-            // txt_matkhau
-            // 
-            this.txt_matkhau.Enabled = false;
-            this.txt_matkhau.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_matkhau.Location = new System.Drawing.Point(137, 277);
-            this.txt_matkhau.Name = "txt_matkhau";
-            this.txt_matkhau.Size = new System.Drawing.Size(251, 28);
-            this.txt_matkhau.TabIndex = 8;
-            // 
             // txt_sodienthoai
             // 
-            this.txt_sodienthoai.Enabled = false;
             this.txt_sodienthoai.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_sodienthoai.Location = new System.Drawing.Point(137, 231);
             this.txt_sodienthoai.Name = "txt_sodienthoai";
+            this.txt_sodienthoai.ReadOnly = true;
             this.txt_sodienthoai.Size = new System.Drawing.Size(251, 28);
             this.txt_sodienthoai.TabIndex = 9;
+            this.txt_sodienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sodienthoai_KeyPress);
             // 
-            // txt_hoten
+            // button1
             // 
-            this.txt_hoten.Enabled = false;
-            this.txt_hoten.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_hoten.Location = new System.Drawing.Point(137, 326);
-            this.txt_hoten.Name = "txt_hoten";
-            this.txt_hoten.Size = new System.Drawing.Size(251, 28);
-            this.txt_hoten.TabIndex = 11;
+            this.button1.Location = new System.Drawing.Point(106, 335);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 38);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lab_hoten
+            // label2
             // 
-            this.lab_hoten.AutoSize = true;
-            this.lab_hoten.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_hoten.ForeColor = System.Drawing.Color.Black;
-            this.lab_hoten.Location = new System.Drawing.Point(8, 329);
-            this.lab_hoten.Name = "lab_hoten";
-            this.lab_hoten.Size = new System.Drawing.Size(65, 20);
-            this.lab_hoten.TabIndex = 10;
-            this.lab_hoten.Text = "Họ tên:";
+            this.label2.Location = new System.Drawing.Point(141, 282);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "**************";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lab_doimatkhau
+            // 
+            this.lab_doimatkhau.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lab_doimatkhau.Location = new System.Drawing.Point(221, 282);
+            this.lab_doimatkhau.Name = "lab_doimatkhau";
+            this.lab_doimatkhau.Size = new System.Drawing.Size(98, 20);
+            this.lab_doimatkhau.TabIndex = 14;
+            this.lab_doimatkhau.Text = "Đổi mật khẩu";
+            this.lab_doimatkhau.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Thongtintaikhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 385);
-            this.Controls.Add(this.txt_hoten);
-            this.Controls.Add(this.lab_hoten);
+            this.ClientSize = new System.Drawing.Size(400, 392);
+            this.Controls.Add(this.lab_doimatkhau);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_sodienthoai);
-            this.Controls.Add(this.txt_matkhau);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lab_matkhau);
@@ -170,10 +202,12 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Thongtintaikhoan";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Thongtintaikhoan";
             this.Load += new System.EventHandler(this.Thongtintaikhoan_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Thongtintaikhoan_MouseDown);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,14 +218,16 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox hinhanh;
-        private System.Windows.Forms.Label lab_ten;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lab_matkhau;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_email;
-        private System.Windows.Forms.TextBox txt_matkhau;
         private System.Windows.Forms.TextBox txt_sodienthoai;
-        private System.Windows.Forms.TextBox txt_hoten;
-        private System.Windows.Forms.Label lab_hoten;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_ten;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lab_doimatkhau;
+        private System.Windows.Forms.Label lab_chinhsua;
+        private System.Windows.Forms.Label lab_xacnhan;
     }
 }

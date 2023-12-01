@@ -32,8 +32,8 @@ namespace Hybrid.GUI.Home
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinLopHocFrm));
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvDanhSachHocSinh = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
@@ -91,8 +91,8 @@ namespace Hybrid.GUI.Home
             this.dgvDanhSachHocSinh.ReadOnly = true;
             this.dgvDanhSachHocSinh.RowHeadersVisible = false;
             this.dgvDanhSachHocSinh.RowHeadersWidth = 51;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dgvDanhSachHocSinh.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dgvDanhSachHocSinh.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachHocSinh.RowTemplate.Height = 50;
             this.dgvDanhSachHocSinh.RowTemplate.ReadOnly = true;
             this.dgvDanhSachHocSinh.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -116,9 +116,9 @@ namespace Hybrid.GUI.Home
             // 
             // btnXoaHocSinh
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.btnXoaHocSinh.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.btnXoaHocSinh.DefaultCellStyle = dataGridViewCellStyle2;
             this.btnXoaHocSinh.HeaderText = "Xóa";
             this.btnXoaHocSinh.MinimumWidth = 6;
             this.btnXoaHocSinh.Name = "btnXoaHocSinh";
@@ -449,7 +449,7 @@ namespace Hybrid.GUI.Home
             this.btnRoiLop.Size = new System.Drawing.Size(45, 40);
             this.btnRoiLop.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnRoiLop.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnRoiLop.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Back.Image")));
+            this.btnRoiLop.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnRoiLop.StateCommon.Back.Image")));
             this.btnRoiLop.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btnRoiLop.StateCommon.Border.Color1 = System.Drawing.Color.LightGray;
             this.btnRoiLop.StateCommon.Border.Color2 = System.Drawing.Color.LightGray;
@@ -459,7 +459,7 @@ namespace Hybrid.GUI.Home
             this.btnRoiLop.StateCommon.Border.Rounding = 5;
             this.btnRoiLop.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
             this.btnRoiLop.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.btnRoiLop.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Content.ShortText.Image")));
+            this.btnRoiLop.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnRoiLop.StateCommon.Content.ShortText.Image")));
             this.btnRoiLop.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.btnRoiLop.StateNormal.Back.Color2 = System.Drawing.Color.White;
             this.btnRoiLop.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -505,7 +505,7 @@ namespace Hybrid.GUI.Home
             this.btnXoaLop.Size = new System.Drawing.Size(45, 40);
             this.btnXoaLop.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnXoaLop.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnXoaLop.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.StateCommon.Back.Image")));
+            this.btnXoaLop.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaLop.StateCommon.Back.Image")));
             this.btnXoaLop.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btnXoaLop.StateCommon.Border.Color1 = System.Drawing.Color.LightGray;
             this.btnXoaLop.StateCommon.Border.Color2 = System.Drawing.Color.LightGray;
@@ -515,7 +515,7 @@ namespace Hybrid.GUI.Home
             this.btnXoaLop.StateCommon.Border.Rounding = 5;
             this.btnXoaLop.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
             this.btnXoaLop.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.btnXoaLop.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.StateCommon.Content.ShortText.Image")));
+            this.btnXoaLop.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaLop.StateCommon.Content.ShortText.Image")));
             this.btnXoaLop.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.btnXoaLop.StateNormal.Back.Color2 = System.Drawing.Color.White;
             this.btnXoaLop.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -579,6 +579,7 @@ namespace Hybrid.GUI.Home
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -604,6 +605,7 @@ namespace Hybrid.GUI.Home
             this.Name = "ThongTinLopHocFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin lớp học";
+            this.Load += new System.EventHandler(this.ThongTinLopHocFrm_Load);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHocSinh)).EndInit();
             this.panel4.ResumeLayout(false);

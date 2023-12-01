@@ -11,7 +11,7 @@ namespace Hybrid.GUI.Home
     {
         private Taikhoan tk;
         private LopHocBUS lophocBUS = new LopHocBUS();
-
+        Chucnang cn=new Chucnang();
         public Taikhoan Tk { get => tk; set => tk = value; }
         public LopHocBUS LophocBUS { get => lophocBUS; set => lophocBUS = value; }
 
@@ -25,11 +25,16 @@ namespace Hybrid.GUI.Home
         public void HienThiDanhSachLopHoc()
         {
             pnlLopHocContainer.Controls.Clear();
-            foreach(LopHoc lophoc in lophocBUS.GetDanhSachTatCaLopHocByMaTaiKhoan(tk.Mataikhoan))
+            if(lophocBUS.GetDanhSachTatCaLopHocByMaTaiKhoan(tk.Mataikhoan)!=null)
             {
-                ButtonClass btnClass = new ButtonClass(lophoc,this);
-                pnlLopHocContainer.Controls.Add(btnClass);
+                foreach (LopHoc lophoc in lophocBUS.GetDanhSachTatCaLopHocByMaTaiKhoan(tk.Mataikhoan))
+                {
+
+                    ButtonClass btnClass = new ButtonClass(lophoc, this);
+                    pnlLopHocContainer.Controls.Add(btnClass);
+                }
             }
+            
 
         }
         private void txtTimKiem_Leave(object sender, EventArgs e)

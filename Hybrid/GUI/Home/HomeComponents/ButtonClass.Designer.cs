@@ -138,5 +138,6 @@ namespace Hybrid.GUI.Home
         public KryptonButton BtnLopHoc { get => btnLopHoc; set => btnLopHoc = value; }
         public Label LblTenLop { get => lblTenLop; set => lblTenLop = value; }
         public Label LblChiTiet { get => lblChiTiet; set => lblChiTiet = value; }
+        public PictureBox PictureBox1 { get => pictureBox1; set => pictureBox1 = value; }
     }
 }
