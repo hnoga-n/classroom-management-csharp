@@ -79,6 +79,7 @@
             this.question.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.question.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.question.StateCommon.Border.Rounding = 5;
             this.question.StateCommon.Content.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.question.TabIndex = 10;
@@ -149,6 +150,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImage = global::Hybrid.Properties.Resources.icons8_homework_100;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
@@ -163,11 +165,12 @@
             this.txtNoiDungBaiLam.MaxLength = 4000;
             this.txtNoiDungBaiLam.Name = "txtNoiDungBaiLam";
             this.txtNoiDungBaiLam.Size = new System.Drawing.Size(920, 514);
-            this.txtNoiDungBaiLam.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.txtNoiDungBaiLam.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.txtNoiDungBaiLam.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.txtNoiDungBaiLam.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtNoiDungBaiLam.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtNoiDungBaiLam.StateCommon.Border.Rounding = 5;
             this.txtNoiDungBaiLam.StateCommon.Content.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoiDungBaiLam.StateCommon.Content.Padding = new System.Windows.Forms.Padding(15, 20, -1, -1);
@@ -181,23 +184,33 @@
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnSubmit.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnSubmit.OverrideDefault.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnSubmit.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnSubmit.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Roboto Light", 10.2F);
+            this.btnSubmit.OverrideDefault.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnSubmit.OverrideDefault.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnSubmit.Size = new System.Drawing.Size(164, 45);
             this.btnSubmit.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
             this.btnSubmit.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnSubmit.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnSubmit.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnSubmit.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnSubmit.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSubmit.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnSubmit.StateCommon.Border.Rounding = 5;
             this.btnSubmit.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnSubmit.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnSubmit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnSubmit.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnSubmit.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnSubmit.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnSubmit.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnSubmit.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Roboto Light", 10.2F);
+            this.btnSubmit.StateTracking.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnSubmit.StateTracking.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Values.Text = "Nộp bài";
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -276,9 +289,9 @@
             this.lblCharCount.BackColor = System.Drawing.Color.White;
             this.lblCharCount.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblCharCount.ForeColor = System.Drawing.Color.Gray;
-            this.lblCharCount.Location = new System.Drawing.Point(1176, 68);
+            this.lblCharCount.Location = new System.Drawing.Point(1151, 68);
             this.lblCharCount.Name = "lblCharCount";
-            this.lblCharCount.Size = new System.Drawing.Size(124, 30);
+            this.lblCharCount.Size = new System.Drawing.Size(139, 30);
             this.lblCharCount.TabIndex = 27;
             this.lblCharCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 

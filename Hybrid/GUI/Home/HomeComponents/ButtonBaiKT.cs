@@ -119,6 +119,11 @@ namespace Hybrid.GUI.Home.HomeComponents
                     frmBailam.Show();
                     return;
                 }
+                if(this.dekiemtra.Thoigianketthuc < DateTime.Now)
+                {
+                    MessageBox.Show("Bài kiểm tra đã kết thúc !", "Thông báo!",  MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    return;
+                }
                 // do exam
                 DialogResult isConfirmDoExam = MessageBox.Show("Xác nhận tiến hành làm bài kiểm tra ?", "Thông báo!", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (isConfirmDoExam == DialogResult.No) return;
