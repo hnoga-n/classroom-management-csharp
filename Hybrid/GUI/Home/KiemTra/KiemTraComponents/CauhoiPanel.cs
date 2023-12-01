@@ -124,7 +124,6 @@ namespace Hybrid.GUI.Kiemtra
                 if (ctl.Ladapan == 1)
                 {
                     this.vitridapandung = index;
-                    return;
                 }
                 index++;
             }

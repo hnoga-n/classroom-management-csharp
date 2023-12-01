@@ -93,6 +93,7 @@
             this.ckbPublicAnswer.TabIndex = 15;
             this.ckbPublicAnswer.Text = "Công khai đáp án sau khi kết thúc";
             this.ckbPublicAnswer.UseVisualStyleBackColor = true;
+            this.ckbPublicAnswer.CheckedChanged += new System.EventHandler(this.ckbPublicAnswer_CheckedChanged);
             // 
             // saveAnswer
             // 
@@ -145,6 +146,7 @@
             // txtContent
             // 
             this.txtContent.Location = new System.Drawing.Point(12, 61);
+            this.txtContent.MaxLength = 4000;
             this.txtContent.Name = "txtContent";
             this.txtContent.Size = new System.Drawing.Size(1039, 524);
             this.txtContent.StateCommon.Border.Color1 = System.Drawing.Color.White;
@@ -171,7 +173,8 @@
             this.Controls.Add(this.ckbPublicAnswer);
             this.Controls.Add(this.flowFilePanel);
             this.Controls.Add(this.label3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "ThemDapAn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ThemDapAn";

@@ -153,3 +153,4 @@ D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.C
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.exe
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.pdb
 D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.EmptyPanel.resources
+D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Chinhsuabaitap.resources
