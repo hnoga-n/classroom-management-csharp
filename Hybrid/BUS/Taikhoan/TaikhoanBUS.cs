@@ -20,10 +20,13 @@ using System.Drawing;
 
 namespace Hybrid.BUS
 {
-    class TaikhoanBUS
+     public class TaikhoanBUS
     {
-        public List<Taikhoan> list = new List<Taikhoan>();
+        private List<Taikhoan> list = new List<Taikhoan>();
         public TaikhoanDAO dao = new TaikhoanDAO();
+
+        public List<Taikhoan> List { get => list; set => list = value; }
+
         Chucnang cn = new Chucnang();
         DataTable dataTable = null;
         public TaikhoanBUS()

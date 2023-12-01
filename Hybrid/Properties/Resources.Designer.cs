@@ -203,6 +203,16 @@ namespace Hybrid.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_book_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_book_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_close_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8_close_30", resourceCulture);
@@ -263,9 +273,49 @@ namespace Hybrid.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_excel_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_excel_40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_file_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_file_40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_homework_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8_homework_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pdf_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_pdf_40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_power_point_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_power_point_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,6 +386,16 @@ namespace Hybrid.Properties {
         internal static System.Drawing.Bitmap icons8_tick_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8_tick_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_txt_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_txt_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

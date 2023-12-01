@@ -12,7 +12,6 @@ using Hybrid.GUI;
 using Hybrid.GUI.Danhba;
 using Hybrid.GUI.Home;
 //using Hybrid.GUI.Todo;
-using Hybrid.GUI.LichHoc;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.DTO;
 using Hybrid.BUS;
@@ -22,18 +21,23 @@ namespace Hybrid
 {
     public partial class Form1 : KryptonForm
     {
-        private Taikhoan taikhoanhienhanh;
         private BaiTapBUS btBUS = new BaiTapBUS();
         private DeKiemTraBUS dktBUS = new DeKiemTraBUS();
         private ChuongBUS chuongBUS = new ChuongBUS();
         private LopHocBUS lopBUS = new LopHocBUS();
         Chucnang cn=new Chucnang();
         TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
+
+        Taikhoan tk ;
+
+        public Taikhoan Tk { get => tk; set => tk = value; }
+
+        public Form1(string email)
         public static PictureBox picha=new PictureBox();
         public Form1(Taikhoan tk)
         {
             InitializeComponent();
-            this.taikhoanhienhanh = tk;
+            this.tk = taikhoanBUS.GetTaiKhoanByEmail(email);
         }
 
 
@@ -48,7 +52,7 @@ namespace Hybrid
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void addFormtoPanelContainer(object Form)
+        public void addFormtoPanelContainer(object Form)
         {
             if (this.pnlContainer.Controls.Count > 0)
                 this.pnlContainer.Controls.RemoveAt(0);
@@ -66,8 +70,8 @@ namespace Hybrid
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-
-            addFormtoPanelContainer(new HomeFrm(this.taikhoanhienhanh));
+            //Taikhoan tk = taikhoanBUS.GetTaiKhoanByEmail("nguyenhuyhoang@gmail.com");
+            addFormtoPanelContainer(new HomeFrm(this));
         }
 
         private void btnTodo_Click(object sender, EventArgs e)
@@ -80,9 +84,10 @@ namespace Hybrid
             addFormtoPanelContainer(new DanhbaFrm());
         }
 
-        private void btnCalendar_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            addFormtoPanelContainer(new Calendar());
+            btnHome_Click(this, EventArgs.Empty);
+            MakePictureBoxCircular(this.picUserAva);
         }
 
         private void Form1_Load(object sender, EventArgs e)

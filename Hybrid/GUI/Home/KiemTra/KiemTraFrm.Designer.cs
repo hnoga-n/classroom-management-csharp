@@ -31,7 +31,6 @@ namespace Hybrid.GUI.Home.KiemTra
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KiemTraFrm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlCauHoiContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -444,7 +443,7 @@ namespace Hybrid.GUI.Home.KiemTra
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(7, 396);
+            this.label5.Location = new System.Drawing.Point(16, 388);
             this.label5.MaximumSize = new System.Drawing.Size(250, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(250, 80);
@@ -651,6 +650,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // pnlChiTietCauHoiContainer
             // 
             this.pnlChiTietCauHoiContainer.AutoScroll = true;
+            this.pnlChiTietCauHoiContainer.BackColor = System.Drawing.Color.LightGray;
             this.pnlChiTietCauHoiContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChiTietCauHoiContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.pnlChiTietCauHoiContainer.Location = new System.Drawing.Point(0, 60);
@@ -679,7 +679,7 @@ namespace Hybrid.GUI.Home.KiemTra
             this.lblDemKyTuTieuDeBaiKT.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblDemKyTuTieuDeBaiKT.Location = new System.Drawing.Point(616, 21);
             this.lblDemKyTuTieuDeBaiKT.Name = "lblDemKyTuTieuDeBaiKT";
-            this.lblDemKyTuTieuDeBaiKT.Size = new System.Drawing.Size(45, 20);
+            this.lblDemKyTuTieuDeBaiKT.Size = new System.Drawing.Size(46, 20);
             this.lblDemKyTuTieuDeBaiKT.TabIndex = 6;
             this.lblDemKyTuTieuDeBaiKT.Text = "0/50";
             // 

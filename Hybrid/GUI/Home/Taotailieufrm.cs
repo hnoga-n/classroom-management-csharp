@@ -13,21 +13,25 @@ using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using Hybrid.DTO;
 using Hybrid.BUS;
+using Hybrid.GUI.Home.HomeComponents;
+using Hybrid.GUI.Utilities;
 
 namespace Hybrid.GUI.Home
 {
     public partial class Taotailieufrm : KryptonForm
     {
-        string magiaovien, malop, machuong;
-        TaikhoanDAO taikhoanDAO=new TaikhoanDAO();
+        private string magiaovien, malop, machuong;
+        PanelChuongDropDown panelchuong;
+        TaikhoanDAO taikhoanDAO = new TaikhoanDAO();
         private DriveService service;
-        HocLieuBUS tailieuBUS = new HocLieuBUS();   
+        HocLieuBUS tailieuBUS = new HocLieuBUS();
         //private List<Google.Apis.Drive.v3.Data.File> files;
-        public Taotailieufrm(string magiaovien,string malophoc,string machuong)
+        public Taotailieufrm(PanelChuongDropDown panelchuong)
         {
-            this.magiaovien = magiaovien;
-            this.malop=malophoc;
-            this.machuong=machuong;
+            this.panelchuong = panelchuong;
+            this.magiaovien = panelchuong.Khfrm.Lophoc.Magiangvien;
+            this.malop = panelchuong.Khfrm.Lophoc.Malop;
+            this.machuong = panelchuong.Chuong.Machuong;
             InitializeComponent();
         }
 
@@ -78,28 +82,37 @@ namespace Hybrid.GUI.Home
         }
 
         private void text_noidungtailieu_TextChanged(object sender, EventArgs e)
-
         {
-            if (text_noidungtailieu.Text.Length > 5000)
+            if (text_noidungtailieu.Text.Length > 300)
             {
-                text_noidungtailieu.Text = text_noidungtailieu.Text.Substring(0, 5000);
+                text_noidungtailieu.Text = text_noidungtailieu.Text.Substring(0, 300);
                 text_noidungtailieu.SelectionStart = text_noidungtailieu.Text.Length;
             }
             else
-                lab_demkitu_noidungtailieu.Text = text_noidungtailieu.Text.Length.ToString() + "/5000 kí tự";
+                lab_demkitu_noidungtailieu.Text = text_noidungtailieu.Text.Length.ToString() + "/300 kí tự";
         }
 
         private void but_taotailieu_Click(object sender, EventArgs e)
         {
-            if(text_tentailieu.Text.Length == 0||text_noidungtailieu.Text.Length==0)
-                MessageBox.Show("Vui long nhập đầy đủ nội dung","Cảnh báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (text_tentailieu.Text.Length == 0 || text_noidungtailieu.Text.Length == 0)
+                MessageBox.Show("Vui long nhập đầy đủ nội dung", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                tailieuBUS.insert_hoclieu_and_filehoclieu(panel_luufile,machuong,text_tentailieu.Text,text_noidungtailieu.Text, service);
-                MessageBox.Show("Tạo tài liệu thành công","Thông báo");   
+                loading.ShowSplashScreen();
+                HocLieu hl = tailieuBUS.insert_hoclieu_and_filehoclieu(panel_luufile, machuong, text_tentailieu.Text, text_noidungtailieu.Text, service);
+                loading.CloseForm();
+                MessageBox.Show("Tạo tài liệu thành công", "Thông báo");
                 this.Close();
+                ButtonHocLieu btn = new ButtonHocLieu(this.panelchuong, hl);
+                this.panelchuong.PnlChuongComponent.Controls.Add(btn);
+                this.Close();
+                this.panelchuong.IsExpanded = false;
+                this.panelchuong.btnMoRong_Click(this, EventArgs.Empty);
+                this.panelchuong.DemTaiLieuChuong++;
+                this.panelchuong.LblDemTaiLieuChuong.Text = "(" + this.panelchuong.DemTaiLieuChuong + ")";
             }
         }
+
 
         private void text_noidungtailieu_KeyDown(object sender, KeyEventArgs e)
         {
@@ -129,7 +142,5 @@ namespace Hybrid.GUI.Home
                 }
             }
         }
-
-
     }
 }

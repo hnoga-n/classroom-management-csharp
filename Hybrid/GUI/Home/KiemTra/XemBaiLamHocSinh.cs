@@ -27,10 +27,12 @@ namespace Hybrid.GUI.Home.KiemTra
         public XemBaiLamHocSinh(Taikhoan taikhoanhienhanh, DeKiemTra dkt)
         {
             InitializeComponent();
-
-            loading.ShowSplashScreen();
             this.taikhoanhienhanh = taikhoanhienhanh;
             this.dekiemtra = dkt;
+        }
+
+        private void XemBaiLamHocSinh_Load(object sender, EventArgs e)
+        {
             this.blktBUS = new BailamKiemtraBUS();
             int index = blktBUS.getBaiLamKiemTraWithMaTaiKhoanAndMaDeKiemTra(taikhoanhienhanh.Mataikhoan, dekiemtra.Madekiemtra);
             this.blkt = (BaiLamKiemTra)blktBUS.List[index];
@@ -38,19 +40,17 @@ namespace Hybrid.GUI.Home.KiemTra
             this.chBUS = new CauHoiBUS();
             this.ctlBUS = new CauTraLoiBUS();
             loadDataIntoForm();
-            loading.CloseForm();
+            
         }
-
         private void loadDataIntoForm()
         {
-            ArrayList listctblkt = this.ctblktBUS.getChiTietBaiLamKiemTraWithMaBaiLam(this.blkt.Mabailam);
+            ArrayList listctblkt = this.ctblktBUS.GetChiTietBaiLamKiemTraWithMaBaiLam(this.blkt.Mabailam);
             ArrayList listcautraloi;
             if (listctblkt.Count <= 0)
             {
                 MessageBox.Show("Có lỗi xảy ra khi tải đề kiểm tra!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
-            listcauhoipanel.SuspendLayout();
             listcauhoipanel.Controls.Clear();
             int index = 0;
             foreach (ChiTietBaiLamKiemTra ctblkt in listctblkt)
@@ -68,7 +68,6 @@ namespace Hybrid.GUI.Home.KiemTra
                 btnNav.getButtonNav().Click += new System.EventHandler(this.btnNavigate_Cliked);
                 navigatePanel.Controls.Add(btnNav);
             }
-            listcauhoipanel.ResumeLayout();
             listcauhoipanel.Refresh();
             this.lblNumberQuestion.Text = "/" + listctblkt.Count.ToString();
             this.lblTitleExam.Text = this.dekiemtra.Tieude;
@@ -117,5 +116,6 @@ namespace Hybrid.GUI.Home.KiemTra
                 listcauhoipanel.AutoScrollPosition = new Point(scrollX, scrollY);
             }
         }
+
     }
 }

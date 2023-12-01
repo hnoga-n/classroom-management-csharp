@@ -36,7 +36,6 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblTenLop = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel3 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btnChinhSuaLopHoc = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnTep = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnThanhTich = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnKhoaHoc = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnChat = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -70,7 +69,6 @@ namespace Hybrid.GUI.Home.HomeComponents
             // kryptonPanel3
             // 
             this.kryptonPanel3.Controls.Add(this.btnChinhSuaLopHoc);
-            this.kryptonPanel3.Controls.Add(this.btnTep);
             this.kryptonPanel3.Controls.Add(this.btnThanhTich);
             this.kryptonPanel3.Controls.Add(this.btnKhoaHoc);
             this.kryptonPanel3.Controls.Add(this.btnChat);
@@ -134,57 +132,6 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnChinhSuaLopHoc.TabIndex = 7;
             this.btnChinhSuaLopHoc.Values.Text = "";
             this.btnChinhSuaLopHoc.Click += new System.EventHandler(this.btnChinhSuaLopHoc_Click);
-            // 
-            // btnTep
-            // 
-            this.btnTep.Location = new System.Drawing.Point(388, 0);
-            this.btnTep.Name = "btnTep";
-            this.btnTep.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
-            this.btnTep.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
-            this.btnTep.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
-            this.btnTep.OverrideDefault.Border.Color1 = System.Drawing.Color.White;
-            this.btnTep.OverrideDefault.Border.Color2 = System.Drawing.Color.White;
-            this.btnTep.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnTep.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnTep.Size = new System.Drawing.Size(100, 40);
-            this.btnTep.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnTep.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnTep.StateCommon.Border.Color1 = System.Drawing.Color.White;
-            this.btnTep.StateCommon.Border.Color2 = System.Drawing.Color.White;
-            this.btnTep.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnTep.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.btnTep.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.btnTep.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTep.StateNormal.Back.Color1 = System.Drawing.Color.White;
-            this.btnTep.StateNormal.Back.Color2 = System.Drawing.Color.White;
-            this.btnTep.StateNormal.Border.Color1 = System.Drawing.Color.White;
-            this.btnTep.StateNormal.Border.Color2 = System.Drawing.Color.White;
-            this.btnTep.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnTep.StatePressed.Back.Color1 = System.Drawing.Color.White;
-            this.btnTep.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
-            this.btnTep.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
-            this.btnTep.StatePressed.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.btnTep.StatePressed.Border.Color1 = System.Drawing.Color.White;
-            this.btnTep.StatePressed.Border.Color2 = System.Drawing.Color.White;
-            this.btnTep.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnTep.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnTep.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.Black;
-            this.btnTep.StateTracking.Back.Color1 = System.Drawing.Color.White;
-            this.btnTep.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
-            this.btnTep.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
-            this.btnTep.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnTep.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.Black;
-            this.btnTep.TabIndex = 6;
-            this.btnTep.Values.Text = "Tệp";
-            this.btnTep.Click += new System.EventHandler(this.btnTep_Click);
             // 
             // btnThanhTich
             // 
@@ -372,7 +319,6 @@ namespace Hybrid.GUI.Home.HomeComponents
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTenLop;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel3;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnChinhSuaLopHoc;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnTep;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnThanhTich;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnKhoaHoc;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnChat;

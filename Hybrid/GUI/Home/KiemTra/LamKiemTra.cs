@@ -44,7 +44,7 @@ namespace Hybrid.GUI.Kiemtra
 
         private void loadDataIntoForm()
         {
-            ArrayList listmacauhoi = this.ctdktBUS.getChiTietDeKiemTraWithMaDeKiemTra(this.dkt.Madekiemtra.ToLower());
+            ArrayList listmacauhoi = this.ctdktBUS.GetDanhSachChiTietDeKiemTraWithMaDeKiemTra(this.dkt.Madekiemtra.ToLower());
             ArrayList listcautraloi;
             if (listmacauhoi.Count <= 0)
             {
@@ -66,17 +66,6 @@ namespace Hybrid.GUI.Kiemtra
 
                 // button navigate
                 CauhoiNavigate btnNav = new CauhoiNavigate();
-                if (chComponent.Madapanchon != null)
-                {
-                    btnNav.getButtonNav().StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-                    | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
-                    | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-                    btnNav.getButtonNav().StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
-                    btnNav.getButtonNav().StateCommon.Border.Color2 = SystemColors.Control;
-                    btnNav.getButtonNav().StateCommon.Border.Rounding = 25;
-                    btnNav.getButtonNav().StateCommon.Border.Width = 2;
-                }
-
                 btnNav.getButtonNav().Text = index.ToString();
                 btnNav.getButtonNav().Click += new System.EventHandler(this.btnNavigate_Cliked);
                 navigatePanel.Controls.Add(btnNav);
@@ -146,6 +135,7 @@ namespace Hybrid.GUI.Kiemtra
             double pointsPerQuestion =  TOTAL_POINT / this.listcauhoipanel.Controls.Count;
             double point = 0;
             int socaudung = 0;
+            int order = 1;
             ArrayList Bailam = new ArrayList(); // use for chitietbailam
             foreach (CauhoiPanel cauhoipanel in this.listcauhoipanel.Controls)
             {
@@ -153,7 +143,8 @@ namespace Hybrid.GUI.Kiemtra
                 {
                     Mabailamkiemtra = mabailam,
                     Macauhoi = cauhoipanel.Macauhoi,
-                    Dapanchon = cauhoipanel.Madapanchon
+                    Dapanchon = cauhoipanel.Madapanchon,
+                    Thutu = order++
                 };
                 Bailam.Add(ctbl);
                 if (cauhoipanel.Madapanchon != string.Empty && ctlBUS.getCauTraLoiWithMaCauTraLoi(cauhoipanel.Madapanchon).Ladapan == 1)
@@ -173,6 +164,9 @@ namespace Hybrid.GUI.Kiemtra
                 Socaudung = socaudung,
                 Noptre = (thoigiannop > dkt.Thoigianketthuc) ? 1 : 0
             };
+            // hinh phat nop tre
+            if (blkt.Noptre == 1)
+                blkt.Diem = float.Parse(Math.Round((blkt.Diem * this.dkt.Hinhphat) / 100, 2).ToString());
             BailamKiemtraBUS blktbus = new BailamKiemtraBUS();
             if (!blktbus.addBaiLam(blkt))
             {
@@ -183,7 +177,7 @@ namespace Hybrid.GUI.Kiemtra
             }
 
             ChiTietBaiLamKiemTraBUS ctblkt = new ChiTietBaiLamKiemTraBUS();
-            ctblkt.addChiTietBaiLam(Bailam);
+            ctblkt.AddChiTietBaiLam(Bailam);
             loading.CloseForm();
             MessageBox.Show("Bài làm đã lưu !", "Thông báo !", MessageBoxButtons.OK);
             // clean up

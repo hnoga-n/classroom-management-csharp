@@ -21,7 +21,6 @@ namespace Hybrid.GUI.Home
         LopHoc lophoc;
         Taikhoan taikhoan;
         ChuongBUS chuongBUS = new ChuongBUS();
-
         public LopHoc Lophoc { get => lophoc; set => lophoc = value; }
         public ChuongBUS ChuongBUS { get => chuongBUS; set => chuongBUS = value; }
         public Taikhoan Taikhoan { get => taikhoan; set => taikhoan = value; }
@@ -31,8 +30,6 @@ namespace Hybrid.GUI.Home
             this.lophoc = lophoc;
             this.taikhoan = taikhoan;
             HienThiDanhSachChuong();
-            this.txtTimKiem.Visible = false;
-            this.btnTimKiem.Visible = false;
             if (!lophoc.Magiangvien.Equals(taikhoan.Mataikhoan))
                 btnTaoChuong.Visible = false;
             if(lophoc.Daxoa == 1) 
@@ -50,11 +47,6 @@ namespace Hybrid.GUI.Home
                     this.PnlChuongContainer.Controls.Add(pnlChuong);
                 }
             }
-        }
-
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void txtTimKiem_Leave(object sender, EventArgs e)
@@ -84,29 +76,13 @@ namespace Hybrid.GUI.Home
         private void cbLoaiHoatDong_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (txtTimKiem.Text == "Tìm kiếm") txtTimKiem.Text = "";
-            if(this.cbLoaiHoatDong.SelectedIndex == 0)
-            {
-                this.txtTimKiem.Visible = false;
-                this.btnTimKiem.Visible = false;
-            } else
-            {
-                this.txtTimKiem.Clear();
-                this.txtTimKiem.Visible = true;
-                this.btnTimKiem.Visible = true;
-            }
+            this.txtTimKiem.Clear();
             HienThiTimKiem(txtTimKiem.Text,this.cbLoaiHoatDong.SelectedIndex);
         }
 
         public void HienThiTimKiem(string tukhoa, int loaihoatdong)
         {
-            if (loaihoatdong == 0)
-            {
-                HienThiDanhSachChuong();
-                return;
-            } else if(loaihoatdong == 2)
-            {
-                ArrayList arrPnlChuong = new ArrayList();
-                /*HienThiDanhSachChuong();
+            /*HienThiDanhSachChuong();
                 ArrayList btnArr = new ArrayList();
                 ArrayList pnlArr = new ArrayList();
                 foreach(PanelChuongDropDown panel in this.pnlChuongContainer.Controls)
@@ -125,17 +101,17 @@ namespace Hybrid.GUI.Home
                 }
                 foreach (PanelChuongDropDown panel in pnlArr)
                     this.pnlChuongContainer.Controls.Remove(panel);*/
-                foreach (PanelChuongDropDown pnl in this.pnlChuongContainer.Controls)
-                {
-                    PanelChuongDropDown pnlchuong = new PanelChuongDropDown(this,pnl.Chuong,2,tukhoa);
-                    arrPnlChuong.Add(pnlchuong);
-                }
-                this.pnlChuongContainer.Controls.Clear();
-                foreach(PanelChuongDropDown pnl in arrPnlChuong)
-                {
-                    pnl.btnMoRong_Click(this,EventArgs.Empty);
-                    this.pnlChuongContainer.Controls.Add(pnl);
-                }
+            ArrayList arrPnlChuong = new ArrayList();
+            foreach (PanelChuongDropDown pnl in this.pnlChuongContainer.Controls)
+            {
+                PanelChuongDropDown pnlchuong = new PanelChuongDropDown(this, pnl.Chuong, loaihoatdong, tukhoa);
+                arrPnlChuong.Add(pnlchuong);
+            }
+            this.pnlChuongContainer.Controls.Clear();
+            foreach (PanelChuongDropDown pnl in arrPnlChuong)
+            {
+                pnl.btnMoRong_Click(this, EventArgs.Empty);
+                this.pnlChuongContainer.Controls.Add(pnl);
             }
         }
 

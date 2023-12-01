@@ -237,6 +237,7 @@
     <Reference Include="Unidecode.NET, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Unidecode.NET.2.1.0\lib\netstandard2.0\Unidecode.NET.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.26\lib\net452\Zstandard.Net.dll</HintPath>
     </Reference>
@@ -266,8 +267,11 @@
     <Compile Include="BUS\TinNhanNhomChatBUS.cs" />
     <Compile Include="Comparer\BailambaitapComparer.cs" />
     <Compile Include="Comparer\BailamkiemtraComparer.cs" />
+    <Compile Include="Comparer\BaiTapComparer.cs" />
     <Compile Include="Comparer\CauhoiComparer.cs" />
     <Compile Include="Comparer\CautraloiComparer.cs" />
+    <Compile Include="Comparer\ChiTietBaiLamKiemTraComparer.cs" />
+    <Compile Include="Comparer\ChiTietDeKiemTraComparer.cs" />
     <Compile Include="Comparer\ChuongComparer.cs" />
     <Compile Include="Comparer\DekiemtraComparer.cs" />
     <Compile Include="Comparer\LophocComparer.cs" />
@@ -321,6 +325,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Baitap\CloudFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\CloudFile.Designer.cs">
+      <DependentUpon>CloudFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.cs">
     <Compile Include="GUI\Admin\Classfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,20 +353,20 @@
     <Compile Include="GUI\Baitap\Giaovien\Baitap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\Baitap.Designer.cs">
-      <DependentUpon>Baitap.cs</DependentUpon>
+    <Compile Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.Designer.cs">
+      <DependentUpon>XemChiTietBaiTap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\DanhgiaBaitap.cs">
+    <Compile Include="GUI\Baitap\Giaovien\XemTienDoBaitap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\DanhgiaBaitap.Designer.cs">
-      <DependentUpon>DanhgiaBaitap.cs</DependentUpon>
+    <Compile Include="GUI\Baitap\Giaovien\XemTienDoBaitap.Designer.cs">
+      <DependentUpon>XemTienDoBaitap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\DanhsachHocsinh.cs">
+    <Compile Include="GUI\Baitap\Giaovien\ChamDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\DanhsachHocsinh.Designer.cs">
-      <DependentUpon>DanhsachHocsinh.cs</DependentUpon>
+    <Compile Include="GUI\Baitap\Giaovien\ChamDiem.Designer.cs">
+      <DependentUpon>ChamDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Baitap\Giaovien\TaoBaiTap.cs">
       <SubType>Form</SubType>
@@ -363,11 +374,11 @@
     <Compile Include="GUI\Baitap\Giaovien\TaoBaiTap.Designer.cs">
       <DependentUpon>TaoBaiTap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Baitap\HocsinhNopbai.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="GUI\Baitap\Giaovien\ThemDapAn.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Baitap\HocsinhNopbai.Designer.cs">
-      <DependentUpon>HocsinhNopbai.cs</DependentUpon>
+    <Compile Include="GUI\Baitap\Giaovien\ThemDapAn.Designer.cs">
+      <DependentUpon>ThemDapAn.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Baitap\HocsinhNoptre.cs">
       <SubType>UserControl</SubType>
@@ -375,17 +386,23 @@
     <Compile Include="GUI\Baitap\HocsinhNoptre.Designer.cs">
       <DependentUpon>HocsinhNoptre.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Baitap\HocsinhPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\HocsinhPanel.Designer.cs">
-      <DependentUpon>HocsinhPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\Hocvien\Chuanop.cs">
+    <Compile Include="GUI\Baitap\Hocvien\LamBaiTap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Baitap\Hocvien\Chuanop.Designer.cs">
-      <DependentUpon>Chuanop.cs</DependentUpon>
+    <Compile Include="GUI\Baitap\Hocvien\LamBaiTap.Designer.cs">
+      <DependentUpon>LamBaiTap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\Hocvien\XemBaiLamBaiTap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\Hocvien\XemBaiLamBaiTap.Designer.cs">
+      <DependentUpon>XemBaiLamBaiTap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\LocalFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\LocalFile.Designer.cs">
+      <DependentUpon>LocalFile.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ChatBox\ChatBoxFrm.cs">
       <SubType>Form</SubType>
@@ -562,11 +579,11 @@
     <Compile Include="GUI\Home\HomeComponents\ButtonHocLieu.Designer.cs">
       <DependentUpon>ButtonHocLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\emptyPnl.cs">
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\emptyPnl.Designer.cs">
-      <DependentUpon>emptyPnl.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.Designer.cs">
+      <DependentUpon>EmptyPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.cs">
       <SubType>UserControl</SubType>
@@ -673,14 +690,8 @@
     <Compile Include="GUI\Home\Taotailieufrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Home\Taotailieufrm.designer.cs">
+    <Compile Include="GUI\Home\Taotailieufrm.Designer.cs">
       <DependentUpon>Taotailieufrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Home\TepFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\TepFrm.Designer.cs">
-      <DependentUpon>TepFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\ThamGiaLopFrm.cs">
       <SubType>Form</SubType>
@@ -718,11 +729,11 @@
     <Compile Include="GUI\Home\ThongTinLopHocFrm.Designer.cs">
       <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Lichhoc\Calendar.cs">
+    <Compile Include="GUI\Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Lichhoc\Calendar.Designer.cs">
-      <DependentUpon>Calendar.cs</DependentUpon>
+    <Compile Include="GUI\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Utilities\loading.cs">
       <SubType>Form</SubType>
@@ -736,6 +747,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\CloudFile.resx">
+      <DependentUpon>CloudFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.resx">
+      <DependentUpon>XemChiTietBaiTap.cs</DependentUpon>
     <EmbeddedResource Include="GUI\Admin\Classfrm.resx">
       <DependentUpon>Classfrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -748,26 +764,29 @@
     <EmbeddedResource Include="GUI\Baitap\Giaovien\Baitap.resx">
       <DependentUpon>Baitap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Giaovien\DanhgiaBaitap.resx">
-      <DependentUpon>DanhgiaBaitap.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\XemTienDoBaitap.resx">
+      <DependentUpon>XemTienDoBaitap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Giaovien\DanhsachHocsinh.resx">
-      <DependentUpon>DanhsachHocsinh.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\ChamDiem.resx">
+      <DependentUpon>ChamDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\Giaovien\TaoBaiTap.resx">
       <DependentUpon>TaoBaiTap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\HocsinhNopbai.resx">
-      <DependentUpon>HocsinhNopbai.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\ThemDapAn.resx">
+      <DependentUpon>ThemDapAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\HocsinhNoptre.resx">
       <DependentUpon>HocsinhNoptre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\HocsinhPanel.resx">
-      <DependentUpon>HocsinhPanel.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Baitap\Hocvien\LamBaiTap.resx">
+      <DependentUpon>LamBaiTap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Hocvien\Chuanop.resx">
-      <DependentUpon>Chuanop.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Baitap\Hocvien\XemBaiLamBaiTap.resx">
+      <DependentUpon>XemBaiLamBaiTap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\LocalFile.resx">
+      <DependentUpon>LocalFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChatBox\ChatBoxFrm.resx">
       <DependentUpon>ChatBoxFrm.cs</DependentUpon>
@@ -813,9 +832,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\Banbe.resx">
       <DependentUpon>Banbe.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\BanbeCard.resx">
       <DependentUpon>BanbeCard.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\DanhbaFrm.resx">
       <DependentUpon>DanhbaFrm.cs</DependentUpon>
@@ -853,8 +874,8 @@
     <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonHocLieu.resx">
       <DependentUpon>ButtonHocLieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\emptyPnl.resx">
-      <DependentUpon>emptyPnl.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.resx">
+      <DependentUpon>EmptyPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.resx">
       <DependentUpon>HocSinhCard.cs</DependentUpon>
@@ -910,9 +931,6 @@
     <EmbeddedResource Include="GUI\Home\Taotailieufrm.resx">
       <DependentUpon>Taotailieufrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\TepFrm.resx">
-      <DependentUpon>TepFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThamGiaLopFrm.resx">
       <DependentUpon>ThamGiaLopFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -930,9 +948,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThongTinLopHocFrm.resx">
       <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Lichhoc\Calendar.resx">
-      <DependentUpon>Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Utilities\loading.resx">
       <DependentUpon>loading.cs</DependentUpon>
@@ -1000,6 +1015,13 @@
     <None Include="Resources\anh_lophoc1.jpg" />
     <None Include="Resources\anh_lophoc.jpg" />
     <None Include="Resources\anh_lophoc.webp" />
+    <None Include="Resources\icons8-book-50.png" />
+    <None Include="Resources\icons8-file-40.png" />
+    <None Include="Resources\icons8-txt-40.png" />
+    <None Include="Resources\icons8-power-point-40.png" />
+    <None Include="Resources\icons8-pdf-40.png" />
+    <None Include="Resources\icons8-excel-40.png" />
+    <None Include="Resources\icons8-word-40.png" />
     <None Include="Resources\icons8-upload-30.png" />
     <None Include="Resources\z4900666085842_a21379c6aa15f4ba878996c3423f7d92.jpg" />
     <None Include="Resources\z4900656607616_dfb6c49dcc3cedd7bda46c9a8de7b9f6.jpg" />
@@ -1021,6 +1043,8 @@
     <None Include="icon\icons8-close-30.png" />
     <None Include="icon\icons8-macos-minimize-30b.png" />
     <None Include="icon\icons8-home-25.png" />
+    <Content Include="bin\Debug\nhomatkhau.txt" />
+    <Content Include="bin\Debug\nhomatkhau.xml" />
     <Content Include="database\Hybrid_query.sql" />
     <Content Include="icon\Animation - 1699327889806.gif" />
     <Content Include="icon\yo yo ma meme.png" />

@@ -3,14 +3,10 @@ using Hybrid.DAO;
 using Hybrid.DTO;
 using Hybrid.GUI.Home.Tailieu;
 using Hybrid.GUI.Home;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Hybrid.BUS
 {
@@ -19,6 +15,17 @@ namespace Hybrid.BUS
         List<string> file_local = new List<string>();
         List<FileHocLieu> list_filehl = new List<FileHocLieu>();
         HocLieuDAO HocLieuDAO = new HocLieuDAO();
+        private ArrayList listhoclieu;
+
+        public HocLieuBUS()
+        {
+            LoadList();
+        }
+
+        public void LoadList()
+        {
+            listhoclieu = HocLieuDAO.loadList();
+        }
 
         public void get_local_file_in_panel(Panel panel)
         {
@@ -33,7 +40,7 @@ namespace Hybrid.BUS
                 }
             }
         }
-        public void insert_hoclieu_and_filehoclieu(Panel panel, string machuong, string ten, string noidung, DriveService service)
+        public HocLieu insert_hoclieu_and_filehoclieu(Panel panel, string machuong, string ten, string noidung, DriveService service)
         {
             get_local_file_in_panel(panel);
             list_filehl.Clear();
@@ -43,7 +50,7 @@ namespace Hybrid.BUS
                 var fileMetadata = new Google.Apis.Drive.v3.Data.File()
                 {
                     Name = Path.GetFileName(temp),
-                    Parents = new List<string> { "1wuHPlPBbdi_vVY7q5KkthgMbe1m0K0Ku" } // Thay "ID_cua_thu_muc_dich" bằng ID thư mục cụ thể.
+                    Parents = new List<string> { "1LJFkcwfGXMzGit1z4YA8OLETbVDvhugb" } // Thay "ID_cua_thu_muc_dich" bằng ID thư mục cụ thể.
                 };
 
                 FilesResource.CreateMediaUpload request;
@@ -66,7 +73,7 @@ namespace Hybrid.BUS
                     MessageBox.Show("Không thể tải lên tệp lên Google Drive.");
                 }
             }
-            HocLieuDAO.taohoclieu(machuong, ten, noidung, list_filehl);
+            return HocLieuDAO.taohoclieu(machuong, ten, noidung, list_filehl);
         }
         public Panel insert_file(Panel panel, string mahoclieu, int tinhtrang)
         {
@@ -127,6 +134,17 @@ namespace Hybrid.BUS
                     }
                 }
             }
+        }
+
+        public ArrayList GetDanhSachHocLieuTheoMaChuong(string machuong, string tukhoa = "")
+        {
+            ArrayList rslist = new ArrayList();
+            foreach (HocLieu hl in this.listhoclieu)
+            {
+                if (hl.Machuong.Equals(machuong) && hl.Tieude.ToLower().Contains(tukhoa.ToLower()) && hl.Daxoa == 0)
+                    rslist.Add(hl);
+            }
+            return rslist;
         }
     }
 }

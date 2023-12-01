@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemCauHoiFrm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnCapNhatCauHoi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -262,10 +261,10 @@
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel1.Location = new System.Drawing.Point(9, 181);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(189, 24);
+            this.linkLabel1.Size = new System.Drawing.Size(180, 24);
             this.linkLabel1.TabIndex = 15;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Tải về file word mẫu";
+            this.linkLabel1.Text = "Tải về file text mẫu";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label5
@@ -285,9 +284,9 @@
             this.label4.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(8, 49);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 28);
+            this.label4.Size = new System.Drawing.Size(154, 28);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Chọn file word:";
+            this.label4.Text = "Chọn file text:";
             // 
             // btnChonFile
             // 
@@ -311,15 +310,13 @@
             this.btnChonFile.Size = new System.Drawing.Size(150, 40);
             this.btnChonFile.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnChonFile.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
-            this.btnChonFile.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnChonFile.StateCommon.Back.Image")));
-            this.btnChonFile.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterLeft;
             this.btnChonFile.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnChonFile.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnChonFile.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnChonFile.StateCommon.Border.Rounding = 5;
-            this.btnChonFile.StateCommon.Content.Padding = new System.Windows.Forms.Padding(20, 2, -1, -1);
+            this.btnChonFile.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.btnChonFile.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnChonFile.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnChonFile.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));

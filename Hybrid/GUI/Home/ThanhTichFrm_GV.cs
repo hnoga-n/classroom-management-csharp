@@ -34,6 +34,8 @@ namespace Hybrid.GUI.Home
             InitializeComponent();
             this.lophoc = lophoc;
             FillComboBoxChuong();
+            if(lophoc.Daxoa == 1) 
+                this.btnXuatExcel.Visible = false;
         }
 
         public void FillDataGridViewDanhSachHocSinh_DeKiemTra(string madekiemtra)
@@ -201,7 +203,7 @@ namespace Hybrid.GUI.Home
                 foreach (DataGridViewRow row in dgvDanhSachHocSinh.Rows)
                 {
                     //MessageBox.Show(row.Cells[2].Value.ToString());
-                    if (row.Cells[0].Value.ToString().Contains(searchValue))
+                    if (row.Cells[0].Value.ToString().ToLower().Contains(searchValue.ToLower()))
                     {
                         row.Selected = true;
                         dgvDanhSachHocSinh.FirstDisplayedScrollingRowIndex = row.Index;
@@ -293,6 +295,11 @@ namespace Hybrid.GUI.Home
         
         private void ExportToExcel_BaiTap(DataGridView dataGridView, string excelFilePath)
         {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
+
+            // If you use EPPlus in a noncommercial context
+            // according to the Polyform Noncommercial license:
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             using (var package = new ExcelPackage())
             {
                 // Tạo một Sheet trong Excel
@@ -328,6 +335,8 @@ namespace Hybrid.GUI.Home
                 }
 
 
+                // Sau khi ghi dữ liệu, thực hiện AutoFit cho các cột
+                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
                 // Lưu file Excel vào đường dẫn đã chọn
                 File.WriteAllBytes(excelFilePath, package.GetAsByteArray());
 

@@ -11,7 +11,7 @@ using BCrypt.Net;
 using System.Windows.Forms;
 namespace Hybrid.DAO
 {
-    class TaikhoanDAO
+    public class TaikhoanDAO
     {
         public List<Taikhoan> get_danhsach()
         {

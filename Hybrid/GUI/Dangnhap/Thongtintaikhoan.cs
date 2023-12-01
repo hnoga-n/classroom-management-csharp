@@ -28,6 +28,7 @@ namespace Hybrid.GUI
 
         public Thongtintaikhoan(Taikhoan tk,Form1 frm,PictureBox pic)
         {
+            InitializeComponent();
             this.tk = tk;
             InitializeComponent();
             this.Location=new Point(frm.Location.X+50, frm.Location.Y+20);
@@ -139,6 +140,11 @@ namespace Hybrid.GUI
             //ptbThumbnail.Image = null;
             hinhanh.Image = Properties.Resources.canhan1;
             hinhanh.Image = image;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

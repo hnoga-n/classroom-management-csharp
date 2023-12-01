@@ -25,6 +25,7 @@ namespace Hybrid.GUI.Home.KiemTra
         LopHocBUS lophocBUS = new LopHocBUS();
         CauHoiBUS cauhoiBUS = new CauHoiBUS();
         CauTraLoiBUS cautraloiBUS = new CauTraLoiBUS();
+        ChiTietDeKiemTraBUS ctdktBUS = new ChiTietDeKiemTraBUS();
 
         // sua cau hoi
         CauHoi cauhoi;
@@ -40,9 +41,10 @@ namespace Hybrid.GUI.Home.KiemTra
         }
 
         // sua cau hoi
-        public ThemCauHoiFrm(CauHoi cauhoi)
+        public ThemCauHoiFrm(KiemTraFrm kiemTraFrm,CauHoi cauhoi)
         {
             InitializeComponent();
+            this.kiemTraFrm = kiemTraFrm;
             this.cauhoi = cauhoi;
             this.rtbNoiDung.Text = cauhoi.Noidung;
             InitPanelCauTraLoiContainer_SuaCauHoi();
@@ -173,25 +175,58 @@ namespace Hybrid.GUI.Home.KiemTra
                 MessageBox.Show("Vui lòng chọn một câu trả lời là đáp án đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            cauhoi.Noidung = rtbNoiDung.Text;
-            if (cauhoiBUS.SuaCauHoi(cauhoi))
+            if(ctdktBUS.KiemTraCauHoiDaDuocSuDung(this.cauhoi.Macauhoi))
             {
-                foreach (PanelChiTietCauTraLoi pnl in this.pnlCauTraLoiContainer.Controls)
+                cauhoi.Daxoa = 1;
+                if(!cauhoiBUS.SuaCauHoi(cauhoi))
                 {
-                    pnl.Cautraloi.Noidung = pnl.RtbCauTraLoi.Text;
-                    if (pnl.ChkLaDapAn.Checked) pnl.Cautraloi.Ladapan = 1;
-                    else pnl.Cautraloi.Ladapan = 0;
-                    if (!cautraloiBUS.SuaCauTraLoi(pnl.Cautraloi))
-                    {
-                        MessageBox.Show("Sửa câu trả lời thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    MessageBox.Show("Có lỗi đã xảy ra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                MessageBox.Show("Cập nhật câu hỏi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CauHoi cauhoinew = new CauHoi(Guid.NewGuid().ToString(), rtbNoiDung.Text, lophocBUS.GetLopHocByMaLop(kiemTraFrm.Chuong.Malop).Magiangvien, 0);
+                if (cauhoiBUS.ThemCauHoi(cauhoinew))
+                {
+                    int ladapan;
+                    foreach (PanelChiTietCauTraLoi pnl in this.pnlCauTraLoiContainer.Controls)
+                    {
+                        if (!pnl.ChkLaDapAn.Checked)
+                            ladapan = 0;
+                        else
+                            ladapan = 1;
+                        CauTraLoi cautraloi = new CauTraLoi(Guid.NewGuid().ToString(), pnl.RtbCauTraLoi.Text, ladapan, cauhoinew.Macauhoi);
+                        cautraloiBUS.ThemCauTraLoi(cautraloi);
+                    }
+                    ButtonCauHoi btnCauHoi = new ButtonCauHoi(cauhoinew, this.kiemTraFrm);
+                    kiemTraFrm.PnlCauHoiContainer.Controls.Add(btnCauHoi);
+                    MessageBox.Show("Cập nhật câu hỏi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật câu hỏi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                MessageBox.Show("Cập nhật câu hỏi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cauhoi.Noidung = rtbNoiDung.Text;
+                if (cauhoiBUS.SuaCauHoi(cauhoi))
+                {
+                    foreach (PanelChiTietCauTraLoi pnl in this.pnlCauTraLoiContainer.Controls)
+                    {
+                        pnl.Cautraloi.Noidung = pnl.RtbCauTraLoi.Text;
+                        if (pnl.ChkLaDapAn.Checked) pnl.Cautraloi.Ladapan = 1;
+                        else pnl.Cautraloi.Ladapan = 0;
+                        if (!cautraloiBUS.SuaCauTraLoi(pnl.Cautraloi))
+                        {
+                            MessageBox.Show("Sửa câu trả lời thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                    MessageBox.Show("Cập nhật câu hỏi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật câu hỏi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             this.Close();
         }
@@ -201,7 +236,7 @@ namespace Hybrid.GUI.Home.KiemTra
             {
                 string sourceFolderPath = Path.Combine(System.Windows.Forms.Application.StartupPath, "Filemau");
                 // Tên tệp tin Word muốn lưu
-                string fileName = "maucauhoi.docx";
+                string fileName = "maucauhoi.txt";
 
                 // Đường dẫn đầy đủ đến tệp tin nguồn
                 string sourceFilePath = Path.Combine(sourceFolderPath, fileName);
@@ -209,7 +244,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 // Đưa ra lựa chọn để chọn vị trí lưu mới
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.FileName = fileName;
-                saveFileDialog.Filter = "Word Documents|*.docx";
+                saveFileDialog.Filter = "txt files (*.txt)|*.txt";
                 saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -252,6 +287,16 @@ namespace Hybrid.GUI.Home.KiemTra
                 ArrayList listcauhoi = new ArrayList();
                 ArrayList listcautraloi = new ArrayList();
                 CauHoi ch = null;
+                int countctl = 0;
+                int countdapan = 0;
+                bool flagdapan = false;
+
+                // Kiểm tra tệp có rỗng không
+                if (new FileInfo(filePath).Length == 0)
+                {
+                    MessageBox.Show("Lỗi: Tệp văn bản rỗng.", "Lỗi Tệp", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 using (StreamReader reader = new StreamReader(filePath))
                 {
                     string line;
@@ -262,28 +307,74 @@ namespace Hybrid.GUI.Home.KiemTra
                             ch = new CauHoi(Guid.NewGuid().ToString(), line.Substring(10).Trim(), lophocBUS.GetLopHocByMaLop(kiemTraFrm.Chuong.Malop).Magiangvien, 0);
                             listcauhoi.Add(ch);
                         }
-                        else if (line.StartsWith("*"))
+                        else if (line.StartsWith("[*]"))
                         {
-                            CauTraLoi ctl = new CauTraLoi(Guid.NewGuid().ToString(), line.Substring(1).Trim(), 1, ch.Macauhoi);
+                            CauTraLoi ctl = new CauTraLoi(Guid.NewGuid().ToString(), line.Substring(3).Trim(), 1, ch.Macauhoi);
                             listcautraloi.Add(ctl);
+                            countdapan++;
+                            flagdapan = true;
+                            countctl++;
                         }
                         else if (string.IsNullOrWhiteSpace(line))
                         {
+                            if(countctl != 4)
+                            {
+                                MessageBox.Show("Tồn tại câu hỏi không đủ hoặc nhiều hơn 4 câu trả lời!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                            if(flagdapan == false)
+                            {
+                                MessageBox.Show("Tồn tại câu hỏi không có đáp án hoặc sai định dạng đáp án!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                            if(countdapan > 1)
+                            {
+                                MessageBox.Show("Tồn tại câu hỏi nhiều hơn 2 đáp án!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                            flagdapan = false;
+                            countctl = 0;
+                            countdapan = 0;
                             continue;
                         }
                         else
                         {
                             CauTraLoi ctl = new CauTraLoi(Guid.NewGuid().ToString(), line.Trim(), 0, ch.Macauhoi);
                             listcautraloi.Add(ctl);
+                            countctl++;
                         }
                     }
+                    //kiem tra cuoi file
+                    if (countctl != 4)
+                    {
+                        MessageBox.Show("Tồn tại câu hỏi không đủ hoặc nhiều hơn 4 câu trả lời hoặc sai cấu trúc file!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (flagdapan == false)
+                    {
+                        MessageBox.Show("Tồn tại câu hỏi không có đáp án hoặc sai định dạng đáp án!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (countdapan > 1)
+                    {
+                        MessageBox.Show("Tồn tại câu hỏi nhiều hơn 2 đáp án!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    /*MessageBox.Show(line + "\n" + 
+                        "counctl: " + countctl + "\n" + 
+                        "countdapan: " + countdapan + "\n" + 
+                        "flagdapan: " + flagdapan);*/
                 }
                 foreach (CauHoi cauhoi in listcauhoi)
+                {
                     if (!cauhoiBUS.ThemCauHoi(cauhoi))
                     {
                         MessageBox.Show("Có lỗi khi thêm câu hỏi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    ButtonCauHoi btnCauHoi = new ButtonCauHoi(cauhoi, this.kiemTraFrm);
+                    kiemTraFrm.PnlCauHoiContainer.Controls.Add(btnCauHoi);
+                }
                 foreach (CauTraLoi cautraloi in listcautraloi)
                     if (!cautraloiBUS.ThemCauTraLoi(cautraloi))
                     {

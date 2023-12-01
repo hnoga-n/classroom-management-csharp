@@ -94,12 +94,13 @@
             // 
             this.txt_email.Location = new System.Drawing.Point(27, 227);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(330, 33);
+            this.txt_email.Size = new System.Drawing.Size(330, 38);
             this.txt_email.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.txt_email.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txt_email.StateCommon.Border.Rounding = 10;
+            this.txt_email.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txt_email.TabIndex = 3;
             // 
             // lab_matkhau
@@ -117,12 +118,13 @@
             this.txt_matkhau.Location = new System.Drawing.Point(27, 306);
             this.txt_matkhau.Name = "txt_matkhau";
             this.txt_matkhau.PasswordChar = '*';
-            this.txt_matkhau.Size = new System.Drawing.Size(330, 33);
+            this.txt_matkhau.Size = new System.Drawing.Size(330, 38);
             this.txt_matkhau.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.txt_matkhau.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txt_matkhau.StateCommon.Border.Rounding = 10;
+            this.txt_matkhau.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txt_matkhau.TabIndex = 5;
             // 
             // dangky
