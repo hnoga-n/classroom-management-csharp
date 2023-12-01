@@ -89,6 +89,33 @@ namespace Hybrid.DAO
             }
             return false;
         }
+        public bool EditBaiTap(BaiTap bt)
+        {
+            try
+            {
+                string sql_getall = "UPDATE baitap SET tieude=@tieude,noidungbaitap=@noidungbaitap,noidungdapan=@noidungdapan,thoigianbatdau=@thoigianbatdau,thoigianketthuc=@thoigianketthuc WHERE mabaitap=@mabaitap";
+                SqlCommand command = new SqlCommand(sql_getall, Ketnoisqlserver.GetConnection());
+                command.Parameters.AddWithValue("@tieude", bt.Tieude);
+                command.Parameters.AddWithValue("@noidungbaitap", bt.Noidungbaitap);
+                command.Parameters.AddWithValue("@noidungdapan", bt.Noidungdapan);
+                command.Parameters.AddWithValue("@thoigianbatdau", bt.Thoigianbatdau);
+                command.Parameters.AddWithValue("@thoigianketthuc", bt.Thoigianketthuc);
+                command.Parameters.AddWithValue("@mabaitap", Guid.Parse(bt.Mabaitap));
+                int index = command.ExecuteNonQuery();
+
+                if (index > 0) return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+            return false;
+        }
 
         public bool DeleteBaiTapByMaBaiTap(string mabaitap)
         {
@@ -97,8 +124,7 @@ namespace Hybrid.DAO
                 string sql_delete = "DELETE FROM baitap WHERE mabaitap=@mabaitap";
                 SqlCommand command = new SqlCommand(sql_delete, Ketnoisqlserver.GetConnection());
                 command.Parameters.Add("@mabaitap", SqlDbType.UniqueIdentifier).Value = Guid.Parse(mabaitap);
-                int index = command.ExecuteNonQuery();
-                if (index > 0) return true;
+                command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -109,7 +135,27 @@ namespace Hybrid.DAO
             {
                 Ketnoisqlserver.CloseConnection();
             }
-            return false;
+            return true;
+        }
+        public bool DeleteBaiTapByChangeState(string mabaitap)
+        {
+            try
+            {
+                string sql_delete = "UPDATE baitap SET daxoa=1 WHERE mabaitap=@mabaitap";
+                SqlCommand command = new SqlCommand(sql_delete, Ketnoisqlserver.GetConnection());
+                command.Parameters.Add("@mabaitap", SqlDbType.UniqueIdentifier).Value = Guid.Parse(mabaitap);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file BaitapDAO:" + ex.Message);
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+            return true;
         }
     }
 }

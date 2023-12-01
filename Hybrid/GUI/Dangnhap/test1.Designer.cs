@@ -1,6 +1,6 @@
 ﻿namespace Hybrid.GUI.Dangnhap
 {
-    partial class testfrm
+    partial class test1
     {
         /// <summary>
         /// Required designer variable.
@@ -34,30 +34,30 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(37, 137);
+            this.button1.Location = new System.Drawing.Point(231, 188);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(347, 60);
+            this.button1.Size = new System.Drawing.Size(193, 86);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 57);
+            this.textBox1.Location = new System.Drawing.Point(174, 129);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(339, 22);
+            this.textBox1.Size = new System.Drawing.Size(304, 22);
             this.textBox1.TabIndex = 1;
             // 
-            // testfrm
+            // test1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 228);
+            this.ClientSize = new System.Drawing.Size(572, 303);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Name = "testfrm";
-            this.Text = "testfrm";
+            this.Name = "test1";
+            this.Text = "test1";
             this.ResumeLayout(false);
             this.PerformLayout();
 

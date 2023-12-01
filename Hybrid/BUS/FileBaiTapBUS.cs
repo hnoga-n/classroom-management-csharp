@@ -28,7 +28,16 @@ namespace Hybrid.BUS
 
         public bool createFile(ArrayList listFilebt)
         {
-            if(filebtDAO.createFile(listFilebt))
+            if (filebtDAO.createFile(listFilebt))
+            {
+                loadList(); // reset filebaitapBUS
+                return true;
+            }
+            return false;
+        }
+        public bool EditFile(ArrayList listFilebt)
+        {
+            if (filebtDAO.EditFile(listFilebt))
             {
                 loadList(); // reset filebaitapBUS
                 return true;
@@ -38,12 +47,14 @@ namespace Hybrid.BUS
 
         public bool deleteFile(string mabaitap)
         {
+            ArrayList copyArrayList = new ArrayList(this.list);
             if (filebtDAO.DeleteFileBaiTapByMaBaiTap(mabaitap))
             {
-                foreach(FileBaiTap file in this.List)
+                foreach (FileBaiTap file in copyArrayList)
                 {
-                    if (file.Mabaitap.Equals(mabaitap)){
-                        this.List.Remove(file);
+                    if (file.Mabaitap.Equals(mabaitap))
+                    {
+                        this.list.Remove(file);
                     }
                 }
                 return true;

@@ -3,12 +3,12 @@ using Hybrid.BUS;
 using Hybrid.DAO;
 using Hybrid.DTO;
 using Hybrid.GUI.Utilities;
+using ServiceStack;
 using System;
 using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Kiemtra
@@ -42,16 +42,30 @@ namespace Hybrid.GUI.Kiemtra
             loadDataIntoForm();
         }
 
+        private void ShuffleArrayList(ArrayList list)
+        {
+            Random rng = new Random();
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                ChiTietDeKiemTra value =(ChiTietDeKiemTra) list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
         private void loadDataIntoForm()
         {
             ArrayList listmacauhoi = this.ctdktBUS.GetDanhSachChiTietDeKiemTraWithMaDeKiemTra(this.dkt.Madekiemtra.ToLower());
+            if (this.dkt.Troncauhoi == 1)
+                ShuffleArrayList(listmacauhoi);
             ArrayList listcautraloi;
             if (listmacauhoi.Count <= 0)
             {
                 MessageBox.Show("Có lỗi xảy ra khi tải đề kiểm tra!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
-            listcauhoipanel.SuspendLayout();
             listcauhoipanel.Controls.Clear();
             int index = 0;
             foreach (ChiTietDeKiemTra ctdkt in listmacauhoi)
@@ -61,7 +75,6 @@ namespace Hybrid.GUI.Kiemtra
                 listcautraloi = this.ctlBUS.getCauTraLoiWithMaCauHoi(tmp.Macauhoi);
                 CauhoiPanel chComponent = new CauhoiPanel(tmp, listcautraloi, userChose(tmp.Macauhoi), false,false);
                 chComponent.getOrder().Text = "Câu hỏi " + (++index);
-                //chComponent.getAnswer1Radbtn().Click += cauTraLoi_choose(index);
                 listcauhoipanel.Controls.Add(chComponent);
 
                 // button navigate
@@ -70,8 +83,6 @@ namespace Hybrid.GUI.Kiemtra
                 btnNav.getButtonNav().Click += new System.EventHandler(this.btnNavigate_Cliked);
                 navigatePanel.Controls.Add(btnNav);
             }
-            listcauhoipanel.ResumeLayout();
-            listcauhoipanel.Refresh();
             this.lblNumberQuestion.Text = listmacauhoi.Count.ToString();
             this.lblTitleExam.Text = dkt.Tieude;
             this.timeStart.Text = dkt.Thoigianbatdau.ToString();
@@ -112,7 +123,7 @@ namespace Hybrid.GUI.Kiemtra
 
             foreach (CauhoiPanel cauhoipanel in this.listcauhoipanel.Controls)
             {
-                if (cauhoipanel.Madapanchon == null) continue;
+                if (cauhoipanel.Madapanchon == null || cauhoipanel.Madapanchon== string.Empty) continue;
                 command2.Parameters.Clear();
                 command2.Parameters.Add(new SqlParameter("@email", SqlDbType.NVarChar, 50)).Value = this.taikhoanhienhanh.Email;
                 command2.Parameters.Add(new SqlParameter("@made", SqlDbType.UniqueIdentifier)).Value = Guid.Parse(this.dkt.Madekiemtra);

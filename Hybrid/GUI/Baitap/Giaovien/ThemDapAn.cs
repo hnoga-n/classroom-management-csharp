@@ -1,4 +1,5 @@
-﻿using ServiceStack;
+﻿using ComponentFactory.Krypton.Toolkit;
+using ServiceStack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
         public string HomeworkContent { get => homeworkContent; set => homeworkContent = value; }
         public bool Congkhaidapan { get => congkhaidapan; set => congkhaidapan = value; }
         public FlowLayoutPanel FilePanel { get => this.flowFilePanel; set => flowFilePanel = value; }
+        public KryptonRichTextBox Noidungdapan { get => this.txtContent; set => txtContent = value; }
 
         public ThemDapAn()
         {
@@ -63,6 +65,14 @@ namespace Hybrid.GUI.Baitap.Giaovien
                 this.lblPlaceholderContent.Show();
             lblCharCountContent.Text = txtContent.Text.Length.ToString() + "/4000";
             this.homeworkContent = this.txtContent.Text;
+        }
+
+        private void ckbPublicAnswer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.ckbPublicAnswer.Checked)
+                this.congkhaidapan = true;
+            else
+                this.congkhaidapan = false;
         }
     }
 }

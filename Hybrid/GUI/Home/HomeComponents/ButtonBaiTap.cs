@@ -3,6 +3,7 @@ using Hybrid.DTO;
 using Hybrid.GUI.Baitap;
 using Hybrid.GUI.Baitap.Hocsinh;
 using Hybrid.GUI.Baitap.Hocvien;
+using Hybrid.GUI.Utilities;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -14,6 +15,8 @@ namespace Hybrid.GUI.Home.HomeComponents
         PanelChuongDropDown panelChuong;
         private BaiTap baitap;
         private BailambaitapBUS blbtBUS;
+        private BaiTapBUS baitapBUS;
+        private FileBaiTapBUS fileBaiTapBUS;
         public ButtonBaiTap(PanelChuongDropDown panelChuong, BaiTap bt)
         {
             InitializeComponent();
@@ -27,10 +30,16 @@ namespace Hybrid.GUI.Home.HomeComponents
                 this.btnSua.Visible = false;
                 this.btnXoa.Visible = false;
             }
+            baitapBUS = new BaiTapBUS();
+            fileBaiTapBUS = new FileBaiTapBUS();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            DialogResult confirm = MessageBox.Show("Xác nhận xóa bài tập ?","Thông báo !",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (confirm == DialogResult.No) return;
+
+            this.baitapBUS.DeleteBaitapByChangeState(this.baitap.Mabaitap);
             panelChuong.XoaChuongComponent(this);
         }
 

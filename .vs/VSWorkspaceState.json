@@ -1,8 +1,20 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     "",
-    "\\Hybrid"
+    "\\Hybrid",
+    "\\Hybrid\\BUS",
+    "\\Hybrid\\BUS\\Taikhoan",
+    "\\Hybrid\\DAO",
+    "\\Hybrid\\DAO\\Taikhoan",
+    "\\Hybrid\\GUI",
+    "\\Hybrid\\GUI\\Dangnhap"
   ],
-  "SelectedNode": "\\Hybrid\\packages.config",
+  "SelectedNode": "\\Hybrid\\Hybrid.sln",
+=======
+    ""
+  ],
+  "SelectedNode": "\\Hybrid.sln",
+>>>>>>> main
   "PreviewInSolutionExplorer": false
 }

@@ -1,13 +1,8 @@
-﻿using Hybrid.DTO;
+﻿using Hybrid.BUS;
+using Hybrid.DTO;
 using Hybrid.GUI.Home.HomeComponents;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Home
@@ -16,12 +11,15 @@ namespace Hybrid.GUI.Home
     {
         LopHoc lophoc;
         HomeFrm homeFrm;
+        Chucnang cn=new Chucnang();
         public ButtonClass(LopHoc lophoc,HomeFrm homeFrm)
         {
             InitializeComponent();
             this.lophoc = lophoc;
             this.homeFrm = homeFrm;
             this.lblTenLop.Text = lophoc.Tenlop;
+            System.Resources.ResourceManager rm = global::Hybrid.Properties.Resources.ResourceManager;
+            pictureBox1.Image = (Image)rm.GetObject(this.lophoc.Avatar);
             if (lophoc.Daxoa == 1)
             {
                 this.btnLopHoc.StateCommon.Back.Color1 = Color.LightGray;

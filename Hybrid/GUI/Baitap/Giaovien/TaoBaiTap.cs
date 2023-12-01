@@ -6,6 +6,7 @@ using Hybrid.GUI.Utilities;
 using System;
 using System.Collections;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Baitap.Giaovien
@@ -23,6 +24,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
         {
             InitializeComponent();
         }
+
         public TaoBaiTap(PanelChuongDropDown pnl, Taikhoan taikhoangiangvien, LopHoc lophoc, Chuong chuong)
         {
             InitializeComponent();
@@ -32,6 +34,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
             this.chuong = chuong;
             answerPanel = new ThemDapAn();
         }
+
 
         private void TaoBaiTap_Load(object sender, EventArgs e)
         {
@@ -44,7 +47,6 @@ namespace Hybrid.GUI.Baitap.Giaovien
             btBUS = new BaiTapBUS();
             fileBaiTapBUS = new FileBaiTapBUS();
         }
-
         private void txtTitle_TextChanged(object sender, EventArgs e)
         {
             if (this.txtTitle.Text.Length > 0)

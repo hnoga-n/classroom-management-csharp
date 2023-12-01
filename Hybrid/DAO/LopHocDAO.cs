@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data;
 namespace Hybrid.DAO
 {
     public class LopHocDAO
@@ -55,10 +55,11 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_themlophoc = "INSERT INTO lophoc(malophoc,ten,mota,daxoa,magiangvien) VALUES (@malophoc,N'" + lophoc.Tenlop + "',@mota,@daxoa,@magiangvien)";
+                string sql_themlophoc = "INSERT INTO lophoc(malophoc,ten,mota,anhdaidien,daxoa,magiangvien) VALUES (@malophoc,N'" + lophoc.Tenlop + "',@mota,@anhdaidien,@daxoa,@magiangvien)";
                 SqlCommand cmd_themlophoc = new SqlCommand(sql_themlophoc, Ketnoisqlserver.GetConnection());
                 cmd_themlophoc.Parameters.AddWithValue("@malophoc", Guid.Parse(lophoc.Malop));
                 cmd_themlophoc.Parameters.AddWithValue("@mota", lophoc.Mota);
+                cmd_themlophoc.Parameters.AddWithValue("@anhdaidien", lophoc.Avatar);
                 cmd_themlophoc.Parameters.AddWithValue("@daxoa", lophoc.Daxoa);
                 cmd_themlophoc.Parameters.AddWithValue("@magiangvien",Guid.Parse(lophoc.Magiangvien));
                 cmd_themlophoc.ExecNonQuery();
@@ -133,6 +134,7 @@ namespace Hybrid.DAO
                     tmp.Malop = dr["malophoc"].ToString();
                     tmp.Mota = dr["mota"].ToString();
                     tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
+                    tmp.Avatar = dr["anhdaidien"].ToString();
                     tmp.Magiangvien = dr["magiangvien"].ToString();
                     tmp.Tenlop = dr["ten"].ToString();
                     listTmp.Add(tmp);
@@ -148,6 +150,64 @@ namespace Hybrid.DAO
                 Ketnoisqlserver.CloseConnection();
             }
             return listTmp;
+        }
+        public DataTable LayDanhSachLopHoc()
+        {
+            DataTable dataTable = new DataTable();
+
+            // Kết nối đến cơ sở dữ liệu
+            using (SqlConnection connection = Ketnoisqlserver.GetConnection())
+            {
+
+                // Truy vấn dữ liệu từ SQL Server
+                string query = "select lophoc.malophoc,taikhoan.hoten,lophoc.ten,lophoc.mota,lophoc.daxoa from taikhoan,lophoc where magiangvien=mataikhoan and taikhoan.manhomquyen=2";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
+        public void ban_lop(string malop)
+        {
+            using (SqlConnection conn = Ketnoisqlserver.GetConnection())
+            {
+                string sqlstring = "Update lophoc set daxoa=1 where malophoc=@malop";
+                using (SqlCommand command = new SqlCommand(sqlstring, conn))
+                {
+                    command.Parameters.AddWithValue("@malop",malop);
+                    int temp = command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void unban_lop(string malop)
+        {
+            using (SqlConnection conn = Ketnoisqlserver.GetConnection())
+            {
+                string sqlstring = "Update lophoc set daxoa=0 where malophoc=@malop";
+                using (SqlCommand command = new SqlCommand(sqlstring, conn))
+                {
+                    command.Parameters.AddWithValue("@malop", malop);
+                    int temp = command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void update_anhlop(string tenhinh, string malophoc)
+        {
+            using (SqlConnection conn = Ketnoisqlserver.GetConnection())
+            {
+                string sqlstring = "Update lophoc set anhdaidien=@anhdaidien where malophoc=@malophoc";
+                using (SqlCommand command = new SqlCommand(sqlstring, conn))
+                {
+                    command.Parameters.AddWithValue("@anhdaidien", tenhinh);
+                    command.Parameters.AddWithValue("@malophoc", malophoc);
+                    int temp = command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

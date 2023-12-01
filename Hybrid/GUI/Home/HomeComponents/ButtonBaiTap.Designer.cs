@@ -161,6 +161,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnSua.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnSua.TabIndex = 13;
             this.btnSua.Values.Text = "";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
