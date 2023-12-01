@@ -61,7 +61,7 @@ namespace Hybrid.GUI.Home
                 if(!HienThiDanhSachBaiKiemTra(chuong.Machuong,tukhoa))
                     this.Visible = false;
             }
-            else if (loaihoatdong == 2)
+            else if (loaihoatdong == 3)
             {
                 if (!HienThiDanhSachHocLieu(chuong.Machuong, tukhoa))
                     this.Visible = false;

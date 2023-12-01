@@ -659,12 +659,6 @@
     <Compile Include="GUI\Home\ThongTinLopHocFrm.Designer.cs">
       <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Utilities\loading.cs">
       <SubType>Form</SubType>
     </Compile>

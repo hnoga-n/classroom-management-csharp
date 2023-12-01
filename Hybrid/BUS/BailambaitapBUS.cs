@@ -44,7 +44,7 @@ namespace Hybrid.BUS
             List<float> diemList = new List<float>();
             foreach (BaiLamBaiTap b in this.list)
             {
-                if (b.Mabaitap.Equals(mabt))
+                if (b.Mabaitap.Equals(mabt) && b.Diem != -1)
                 {
                     diemList.Add(b.Diem);
                 }
@@ -68,7 +68,7 @@ namespace Hybrid.BUS
             Dictionary<string, float> rslist = new Dictionary<string, float>();
             foreach (BaiLamBaiTap blbt in this.list)
             {
-                if (blbt.Mataikhoan.Equals(matk))
+                if (blbt.Mataikhoan.Equals(matk) && blbt.Diem!=-1)
                 {
                     rslist.Add(blbt.Mabaitap, blbt.Diem);
                 }

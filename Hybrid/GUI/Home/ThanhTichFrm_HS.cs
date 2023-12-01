@@ -85,10 +85,12 @@ namespace Hybrid.GUI.Home
             this.dgvDanhSachHocSinh.DataSource = dt;
             this.dgvDanhSachHocSinh.Columns[0].Width = 400;
             this.dgvDanhSachHocSinh.Columns[1].Width = 50;
-            this.dgvDanhSachHocSinh.Columns[2].Width = 250;
+            this.dgvDanhSachHocSinh.Columns[2].Width = 100;
+            this.dgvDanhSachHocSinh.Columns[3].Width = 250;
             this.dgvDanhSachHocSinh.Columns[0].HeaderText = "Bài tập";
             this.dgvDanhSachHocSinh.Columns[1].HeaderText = "Điểm";
-            this.dgvDanhSachHocSinh.Columns[2].HeaderText = "Thời gian nộp";
+            this.dgvDanhSachHocSinh.Columns[2].HeaderText = "Nộp trễ";
+            this.dgvDanhSachHocSinh.Columns[3].HeaderText = "Thời gian nộp";
         }
 
         private void cbLoaiHoatDong_SelectedIndexChanged(object sender, EventArgs e)

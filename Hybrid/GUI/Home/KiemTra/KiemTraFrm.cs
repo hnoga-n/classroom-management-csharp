@@ -299,12 +299,10 @@ namespace Hybrid.GUI.Home.KiemTra
                 DeKiemTra dekiemtra = new DeKiemTra(Guid.NewGuid().ToString(),txtTieuDeBaiKT.Text,DateTime.Now,dtpThoiGianBatDau.Value,dtpThoiGianKetThuc.Value,Convert.ToInt32(numHinhPhat.Value),chkCongKhaiDapAn.Checked ? 1 : 0,chkDaoCauHoi.Checked ? 1 : 0,chuong.Machuong,0);
                 if(dekiemtraBUS.ThemDeKiemTra(dekiemtra))
                 {
-                    if(!chkDaoCauHoi.Checked)
+                    int thutu = 1;
+                    foreach(PanelChiTietCauHoi panel in this.pnlChiTietCauHoiContainer.Controls)
                     {
-                        int thutu = 1;
-                        foreach(PanelChiTietCauHoi panel in this.pnlChiTietCauHoiContainer.Controls)
-                        {
-                            ChiTietDeKiemTra ctdkt = new ChiTietDeKiemTra(dekiemtra.Madekiemtra,panel.Cauhoi.Macauhoi,thutu);
+                       ChiTietDeKiemTra ctdkt = new ChiTietDeKiemTra (dekiemtra.Madekiemtra,panel.Cauhoi.Macauhoi,thutu);
                             if (ctdktBUS.ThemChiTietDeKiemTra(ctdkt))
                             {
                                 thutu++;
@@ -313,25 +311,6 @@ namespace Hybrid.GUI.Home.KiemTra
                                 MessageBox.Show("Có lỗi xảy ra khi thêm chi tiết đề kiểm tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
-                        }
-                    } else
-                    {
-                        List<int> listNumbers = new List<int>();
-                        int number;
-                        foreach (PanelChiTietCauHoi panel in this.pnlChiTietCauHoiContainer.Controls)
-                        {
-                            do
-                            {
-                                number = new Random().Next(1, this.pnlChiTietCauHoiContainer.Controls.Count+1);
-                            } while (listNumbers.Contains(number));
-                            listNumbers.Add(number);
-                            ChiTietDeKiemTra ctdkt = new ChiTietDeKiemTra(dekiemtra.Madekiemtra, panel.Cauhoi.Macauhoi, number);
-                            if (!ctdktBUS.ThemChiTietDeKiemTra(ctdkt))
-                            {
-                                MessageBox.Show("Có lỗi xảy ra khi thêm chi tiết đề kiểm tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                        }
                     }
                     ButtonBaiKT btn = new ButtonBaiKT(this.panelchuong, dekiemtra);
                     this.panelchuong.PnlChuongComponent.Controls.Add(btn);

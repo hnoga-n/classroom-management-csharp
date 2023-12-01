@@ -71,7 +71,7 @@ namespace Hybrid.GUI.Home.Tailieu
         private void but_xacnhan_Click(object sender, EventArgs e)
         {
             if (text_tentailieu.Text.Length == 0 || text_noidungtailieu.Text.Length == 0)
-                MessageBox.Show("Vui long nhập đầy đủ nội dung", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập đầy đủ nội dung", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 tlbus.change_hoclieu_filehoclieu(panel_luufile,mahoclieu, machuong, text_tentailieu.Text, text_noidungtailieu.Text, service);
@@ -95,7 +95,11 @@ namespace Hybrid.GUI.Home.Tailieu
 
         private void but_xoa_Click(object sender, EventArgs e)
         {
-
+            DialogResult dr = MessageBox.Show("Xác nhận xóa học liệu ?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if(dr == DialogResult.Yes)
+            {
+                tlbus.SuaHocLieu(this.buttonhoclieu.Hoclieu);
+            }
         }
 
         private void text_noidungtailieu_TextChanged(object sender, EventArgs e)

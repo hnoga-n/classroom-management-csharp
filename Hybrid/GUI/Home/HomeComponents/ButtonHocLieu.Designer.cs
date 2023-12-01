@@ -44,24 +44,12 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblChiTietHocLieu.BackColor = System.Drawing.Color.White;
             this.lblChiTietHocLieu.Location = new System.Drawing.Point(112, 56);
             this.lblChiTietHocLieu.Name = "lblChiTietHocLieu";
-            this.lblChiTietHocLieu.Size = new System.Drawing.Size(126, 25);
+            this.lblChiTietHocLieu.Size = new System.Drawing.Size(122, 25);
             this.lblChiTietHocLieu.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             this.lblChiTietHocLieu.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChiTietHocLieu.TabIndex = 18;
             this.lblChiTietHocLieu.Values.Text = "Chi tiết tài liệu";
             this.lblChiTietHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
-            // 
-            // lblTieuDeHocLieu
-            // 
-            this.lblTieuDeHocLieu.AutoEllipsis = true;
-            this.lblTieuDeHocLieu.BackColor = System.Drawing.Color.White;
-            this.lblTieuDeHocLieu.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTieuDeHocLieu.Location = new System.Drawing.Point(107, 25);
-            this.lblTieuDeHocLieu.Name = "lblTieuDeHocLieu";
-            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(742, 28);
-            this.lblTieuDeHocLieu.TabIndex = 22;
-            this.lblTieuDeHocLieu.Text = "Lập trình C#";
-            this.lblTieuDeHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
             // 
             // pictureBox1
             // 
@@ -83,8 +71,8 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnHocLieu.Name = "btnHocLieu";
             this.btnHocLieu.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnHocLieu.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
-            this.btnHocLieu.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnHocLieu.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnHocLieu.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnHocLieu.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnHocLieu.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -97,19 +85,31 @@ namespace Hybrid.GUI.Home.HomeComponents
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnHocLieu.StateCommon.Border.Rounding = 5;
-            this.btnHocLieu.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnHocLieu.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnHocLieu.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnHocLieu.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnHocLieu.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnHocLieu.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnHocLieu.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnHocLieu.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnHocLieu.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnHocLieu.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnHocLieu.TabIndex = 15;
             this.btnHocLieu.Values.Text = "";
             this.btnHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
+            // 
+            // lblTieuDeHocLieu
+            // 
+            this.lblTieuDeHocLieu.AutoEllipsis = true;
+            this.lblTieuDeHocLieu.BackColor = System.Drawing.Color.White;
+            this.lblTieuDeHocLieu.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTieuDeHocLieu.Location = new System.Drawing.Point(107, 25);
+            this.lblTieuDeHocLieu.Name = "lblTieuDeHocLieu";
+            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(742, 28);
+            this.lblTieuDeHocLieu.TabIndex = 22;
+            this.lblTieuDeHocLieu.Text = "Lập trình C#";
+            this.lblTieuDeHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
             // 
             // ButtonHocLieu
             // 

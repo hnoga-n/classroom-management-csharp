@@ -130,11 +130,12 @@
             // dangky
             // 
             this.dangky.AutoSize = true;
-            this.dangky.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dangky.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dangky.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dangky.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(41)))), ((int)(((byte)(222)))));
             this.dangky.Location = new System.Drawing.Point(113, 427);
             this.dangky.Name = "dangky";
-            this.dangky.Size = new System.Drawing.Size(140, 19);
+            this.dangky.Size = new System.Drawing.Size(147, 20);
             this.dangky.TabIndex = 9;
             this.dangky.Text = "Đăng ký tài khoản";
             this.dangky.Click += new System.EventHandler(this.dangky_Click);
@@ -142,11 +143,11 @@
             // chx_nhomatkhau
             // 
             this.chx_nhomatkhau.AutoSize = true;
-            this.chx_nhomatkhau.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chx_nhomatkhau.Font = new System.Drawing.Font("Roboto", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.chx_nhomatkhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(41)))), ((int)(((byte)(222)))));
             this.chx_nhomatkhau.Location = new System.Drawing.Point(12, 496);
             this.chx_nhomatkhau.Name = "chx_nhomatkhau";
-            this.chx_nhomatkhau.Size = new System.Drawing.Size(152, 27);
+            this.chx_nhomatkhau.Size = new System.Drawing.Size(156, 28);
             this.chx_nhomatkhau.TabIndex = 10;
             this.chx_nhomatkhau.Text = "Nhớ mật khẩu";
             this.chx_nhomatkhau.UseVisualStyleBackColor = true;
@@ -154,11 +155,12 @@
             // quenmatkhau
             // 
             this.quenmatkhau.AutoSize = true;
-            this.quenmatkhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quenmatkhau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.quenmatkhau.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.quenmatkhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(41)))), ((int)(((byte)(222)))));
             this.quenmatkhau.Location = new System.Drawing.Point(217, 496);
             this.quenmatkhau.Name = "quenmatkhau";
-            this.quenmatkhau.Size = new System.Drawing.Size(148, 23);
+            this.quenmatkhau.Size = new System.Drawing.Size(156, 24);
             this.quenmatkhau.TabIndex = 11;
             this.quenmatkhau.Text = "Quên mật khẩu?";
             this.quenmatkhau.Click += new System.EventHandler(this.quenmatkhau_Click);
@@ -205,6 +207,7 @@
             // 
             // but_dangnhap
             // 
+            this.but_dangnhap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.but_dangnhap.Location = new System.Drawing.Point(76, 363);
             this.but_dangnhap.Name = "but_dangnhap";
             this.but_dangnhap.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
@@ -215,7 +218,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.but_dangnhap.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.but_dangnhap.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.but_dangnhap.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_dangnhap.Size = new System.Drawing.Size(212, 47);
             this.but_dangnhap.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.but_dangnhap.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
@@ -229,7 +232,7 @@
             this.but_dangnhap.StateCommon.Border.Width = 1;
             this.but_dangnhap.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.but_dangnhap.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.but_dangnhap.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.but_dangnhap.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_dangnhap.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(17)))), ((int)(((byte)(125)))));
             this.but_dangnhap.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(17)))), ((int)(((byte)(125)))));
             this.but_dangnhap.StatePressed.Back.ColorAngle = 135F;
@@ -242,7 +245,7 @@
             this.but_dangnhap.StatePressed.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.but_dangnhap.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.but_dangnhap.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.but_dangnhap.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.but_dangnhap.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_dangnhap.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.but_dangnhap.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.but_dangnhap.StateTracking.Back.ColorAngle = 45F;
@@ -256,7 +259,7 @@
             this.but_dangnhap.StateTracking.Border.Width = 1;
             this.but_dangnhap.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.but_dangnhap.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.but_dangnhap.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.but_dangnhap.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_dangnhap.TabIndex = 12;
             this.but_dangnhap.Values.Text = "Đăng nhập";
             this.but_dangnhap.Click += new System.EventHandler(this.but_dangnhap_Click_2);
@@ -269,6 +272,7 @@
             // 
             // LoginUI
             // 
+            this.AcceptButton = this.but_dangnhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;

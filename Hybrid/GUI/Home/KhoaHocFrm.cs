@@ -75,9 +75,9 @@ namespace Hybrid.GUI.Home
 
         private void cbLoaiHoatDong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "Tìm kiếm") txtTimKiem.Text = "";
-            this.txtTimKiem.Clear();
-            HienThiTimKiem(txtTimKiem.Text,this.cbLoaiHoatDong.SelectedIndex);
+            //if (txtTimKiem.Text == "Tìm kiếm") txtTimKiem.Text = "";
+            //this.txtTimKiem.Clear();
+            //HienThiTimKiem(txtTimKiem.Text,this.cbLoaiHoatDong.SelectedIndex);
         }
 
         public void HienThiTimKiem(string tukhoa, int loaihoatdong)
@@ -119,6 +119,13 @@ namespace Hybrid.GUI.Home
         {
             if (txtTimKiem.Text == "Tìm kiếm") txtTimKiem.Text = "";
             HienThiTimKiem(txtTimKiem.Text, this.cbLoaiHoatDong.SelectedIndex);
+        }
+
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            txtTimKiem.Text = "Tìm kiếm";
+            cbLoaiHoatDong.SelectedIndex = 0;
+            HienThiDanhSachChuong();
         }
     }
 }

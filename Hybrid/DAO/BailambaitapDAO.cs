@@ -130,7 +130,9 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_thamgia = "select t.hoten,b.diem,b.thoigiannopbai\r\nfrom taikhoan t join bailambaitap b on t.mataikhoan = b.mataikhoan\r\nwhere b.mabaitap = @mabaitap";
+                string sql_thamgia = "select t.hoten,b.diem,b.noptre,b.thoigiannopbai\r\n" +
+                    "from taikhoan t join bailambaitap b on t.mataikhoan = b.mataikhoan\r\n" +
+                    "where b.mabaitap = @mabaitap AND b.diem <> -1";
                 SqlCommand cmd = new SqlCommand(sql_thamgia, Ketnoisqlserver.GetConnection());
                 cmd.Parameters.AddWithValue("@mabaitap", Guid.Parse(mabaitap));
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
@@ -153,9 +155,9 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_thamgia = "select bt.tieude,bl.diem,bl.thoigiannopbai\r\n" +
+                string sql_thamgia = "select bt.tieude,bl.diem,bl.noptre,bl.thoigiannopbai\r\n" +
                     "from bailambaitap bl join baitap bt on bl.mabaitap = bt.mabaitap\r\n" +
-                    "where bt.machuong = @machuong AND bl.mataikhoan = @mataikhoan";
+                    "where bt.machuong = @machuong AND bl.mataikhoan = @mataikhoan AND bl.diem <> -1";
                 SqlCommand cmd = new SqlCommand(sql_thamgia, Ketnoisqlserver.GetConnection());
                 cmd.Parameters.AddWithValue("@machuong", Guid.Parse(machuong));
                 cmd.Parameters.AddWithValue("@mataikhoan", Guid.Parse(mataikhoan));
