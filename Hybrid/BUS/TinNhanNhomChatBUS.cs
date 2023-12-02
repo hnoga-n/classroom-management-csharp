@@ -15,17 +15,17 @@ namespace Hybrid.BUS
         public TinNhanNhomChatBUS()
         {
             tnncDAO = new TinNhanNhomChatDAO();
-            loadList();
+            //loadList();
         }
 
         public ArrayList getList()
         {
             return list;
         }
-        public void loadList()
+        public void loadList(int perMess, int mess_index_value, string maLopHoc)
         {
-            list = tnncDAO.loadList();
-            list.Sort();
+            list = tnncDAO.loadList(perMess, mess_index_value, maLopHoc);
+            //list.Sort();
         }
 
     }

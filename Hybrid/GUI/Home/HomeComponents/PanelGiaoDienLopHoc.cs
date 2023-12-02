@@ -22,7 +22,7 @@ namespace Hybrid.GUI.Home.HomeComponents
         public HomeFrm Homefrm { get => homefrm; set => homefrm = value; }
         public LopHoc Lophoc { get => lophoc; set => lophoc = value; }
 
-        public PanelGiaoDienLopHoc(LopHoc lophoc,HomeFrm homefrm)
+        public PanelGiaoDienLopHoc(LopHoc lophoc, HomeFrm homefrm)
         {
             InitializeComponent();
             this.lophoc = lophoc;
@@ -33,6 +33,15 @@ namespace Hybrid.GUI.Home.HomeComponents
             if (lophoc.Daxoa == 1)
                 this.btnChinhSuaLopHoc.Visible = false;
             btnChat_Click(this, EventArgs.Empty);
+            btnChat.PerformClick();
+            btnChat.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            btnChat.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            btnChat.StateNormal.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
+            btnChat.StateNormal.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            btnChat.StateNormal.Border.Color1 = System.Drawing.Color.White;
+            btnChat.StateNormal.Border.Color2 = System.Drawing.Color.White;
+            btnChat.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            btnChat.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.Black;
         }
 
         private void addFormtoPanelHomeContainer(object Form)
@@ -49,17 +58,17 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private void btnChat_Click(object sender, EventArgs e)
         {
-            addFormtoPanelHomeContainer(new ChatBoxFrm());
+            addFormtoPanelHomeContainer(new ChatBoxFrm(this.lophoc, this.taikhoan));
         }
 
         private void btnKhoaHoc_Click(object sender, EventArgs e)
         {
-            addFormtoPanelHomeContainer(new KhoaHocFrm(this.lophoc,taikhoan));
+            addFormtoPanelHomeContainer(new KhoaHocFrm(this.lophoc, taikhoan));
         }
 
         private void btnThanhTich_Click(object sender, EventArgs e)
         {
-            if(lophoc.Magiangvien.Equals(taikhoan.Mataikhoan))
+            if (lophoc.Magiangvien.Equals(taikhoan.Mataikhoan))
                 addFormtoPanelHomeContainer(new ThanhTichFrm_GV(this.lophoc));
             else
                 addFormtoPanelHomeContainer(new ThanhTichFrm_HS(this.lophoc, this.taikhoan));
@@ -67,7 +76,7 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private void btnChinhSuaLopHoc_Click(object sender, EventArgs e)
         {
-            new ThongTinLopHocFrm(taikhoan,this).ShowDialog();
+            new ThongTinLopHocFrm(taikhoan, this).ShowDialog();
         }
 
 

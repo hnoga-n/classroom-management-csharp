@@ -54,8 +54,8 @@
     <Reference Include="ComponentFactory.Krypton.Workspace">
       <HintPath>..\..\..\..\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus, Version=7.0.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>packages\EPPlus.7.0.1\lib\net462\EPPlus.dll</HintPath>
+    <Reference Include="EPPlus, Version=7.0.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.7.0.2\lib\net462\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
       <HintPath>packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
@@ -348,12 +348,6 @@
     <Compile Include="GUI\ChatBox\ChatBoxFrm.Designer.cs">
       <DependentUpon>ChatBoxFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ChatBox\ChatBoxMessFrm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\ChatBox\ChatBoxMessFrm.Designer.cs">
-      <DependentUpon>ChatBoxMessFrm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\ChatBox\IncomingMessage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -365,6 +359,12 @@
     </Compile>
     <Compile Include="GUI\ChatBox\lbl_notifiication_chatbox.Designer.cs">
       <DependentUpon>lbl_notifiication_chatbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChatBox\lbl_save_clipboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChatBox\lbl_save_clipboard.designer.cs">
+      <DependentUpon>lbl_save_clipboard.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ChatBox\lbl_time_create_chatbox.cs">
       <SubType>UserControl</SubType>
@@ -687,14 +687,14 @@
     <EmbeddedResource Include="GUI\ChatBox\ChatBoxFrm.resx">
       <DependentUpon>ChatBoxFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ChatBox\ChatBoxMessFrm.resx">
-      <DependentUpon>ChatBoxMessFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChatBox\IncomingMessage.resx">
       <DependentUpon>IncomingMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChatBox\lbl_notifiication_chatbox.resx">
       <DependentUpon>lbl_notifiication_chatbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChatBox\lbl_save_clipboard.resx">
+      <DependentUpon>lbl_save_clipboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChatBox\lbl_time_create_chatbox.resx">
       <DependentUpon>lbl_time_create_chatbox.cs</DependentUpon>
@@ -860,6 +860,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-up-50.png" />
+    <None Include="Resources\icons8-copy-24.png" />
     <None Include="Resources\icons8-upload-30.png" />
     <None Include="Resources\z4900666085842_a21379c6aa15f4ba878996c3423f7d92.jpg" />
     <None Include="Resources\z4900656607616_dfb6c49dcc3cedd7bda46c9a8de7b9f6.jpg" />
@@ -887,15 +889,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <COMReference Include="Microsoft.Office.Core">
-      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>5</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="Microsoft.Office.Interop.Word">
       <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>8</VersionMajor>
