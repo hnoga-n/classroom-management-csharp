@@ -23,6 +23,7 @@ namespace Hybrid.GUI.Home
         ThamGiaBUS tgBUS = new ThamGiaBUS();
         TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
         LopHocBUS lophocBUS = new LopHocBUS();
+        public static string tenhinh = null;
         public ThongTinLopHocFrm(Taikhoan taikhoan,PanelGiaoDienLopHoc panel)
         {
             InitializeComponent();
@@ -59,6 +60,7 @@ namespace Hybrid.GUI.Home
                 this.dgvDanhSachHocSinh.Columns[4].Visible = false;
                 this.btnRoiLop.Visible = true;
                 this.btnXoaLop.Visible = false;
+                this.pictureBox1.Enabled = false;
                 this.btnXuatExcel.Visible = false;
             }
         }
@@ -298,6 +300,27 @@ namespace Hybrid.GUI.Home
 
                 MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Chonhinhanhlop form = new Chonhinhanhlop(2,panelgdlh);
+            form.sendImage = new Chonhinhanhlop.SendImage(LoadHinh);
+            form.ShowDialog();
+            lophocBUS.capnhat_anhlop(this.lophoc.Malop, tenhinh);
+            
+        }
+        private void LoadHinh(Image image)
+        {
+            //ptbThumbnail.Image = null;
+            pictureBox1.Image = Properties.Resources.canhan1;
+            pictureBox1.Image = image;
+        }
+
+        private void ThongTinLopHocFrm_Load(object sender, EventArgs e)
+        {
+            System.Resources.ResourceManager rm = global::Hybrid.Properties.Resources.ResourceManager;
+            pictureBox1.Image = (Image)rm.GetObject(this.lophoc.Avatar);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hybrid.Comparer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hybrid.DTO
 {
-    public class BaiTap
+    public class BaiTap : IComparable
     {
         private string mabaitap;
         private string machuong;
@@ -14,7 +15,8 @@ namespace Hybrid.DTO
         private string noidungbaitap;
         private string noidungdapan;
         private DateTime thoigiantao;
-        private DateTime thoihan;
+        private DateTime thoigianbatdau;
+        private DateTime thoigianketthuc;
         private int daxoa;
         private int congkhaidapan;
 
@@ -22,7 +24,7 @@ namespace Hybrid.DTO
         {
         }
 
-        public BaiTap(string mabaitap, string machuong, string tieude, string noidungbaitap, string noidungdapan, DateTime thoigiantao, DateTime thoihan, int daxoa, int congkhaidapan)
+        public BaiTap(string mabaitap, string machuong, string tieude, string noidungbaitap, string noidungdapan, DateTime thoigiantao, DateTime thoigianbatdau, DateTime thoigianketthuc, int daxoa, int congkhaidapan)
         {
             this.mabaitap = mabaitap;
             this.machuong = machuong;
@@ -30,7 +32,8 @@ namespace Hybrid.DTO
             this.noidungbaitap = noidungbaitap;
             this.noidungdapan = noidungdapan;
             this.thoigiantao = thoigiantao;
-            this.thoihan = thoihan;
+            this.thoigianbatdau = thoigianbatdau;
+            this.thoigianketthuc = thoigianketthuc;
             this.daxoa = daxoa;
             this.congkhaidapan = congkhaidapan;
         }
@@ -41,8 +44,24 @@ namespace Hybrid.DTO
         public string Noidungbaitap { get => noidungbaitap; set => noidungbaitap = value; }
         public string Noidungdapan { get => noidungdapan; set => noidungdapan = value; }
         public DateTime Thoigiantao { get => thoigiantao; set => thoigiantao = value; }
-        public DateTime Thoihan { get => thoihan; set => thoihan = value; }
+        public DateTime Thoigianbatdau { get => thoigianbatdau; set => thoigianbatdau = value; }
+        public DateTime Thoigianketthuc { get => thoigianketthuc; set => thoigianketthuc = value; }
         public int Daxoa { get => daxoa; set => daxoa = value; }
         public int Congkhaidapan { get => congkhaidapan; set => congkhaidapan = value; }
+
+        public int CompareTo(Object obj)
+        {
+            BaiTap BaiTap = (BaiTap)obj;
+            return this.mabaitap.CompareTo(BaiTap.mabaitap);
+        }
+        public int CompareTo(BaiTap c1, BaiTapComparer.ComparisonType type)
+        {
+            switch (type)
+            {
+                case BaiTapComparer.ComparisonType.mabaitap:
+                    return this.mabaitap.CompareTo(c1.mabaitap);
+            }
+            return 0;
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Hybrid.BUS;
 using Hybrid.DTO;
 using Hybrid.GUI.Home.KiemTra;
+using Hybrid.GUI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,22 +35,30 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private void loadDataIntoForm()
         {
-            this.SuspendLayout();
             this.Name.Text = this.hocsinh.Hoten;
-            this.ResumeLayout();   
         }
         private void btnShow_Click(object sender, EventArgs e)
         {
-            if (daNop)
+            try
             {
-            XemBaiLamHocSinh bailamhocsinhFrm = new XemBaiLamHocSinh(this.hocsinh,this.dekiemtra);
-            bailamhocsinhFrm.ShowDialog();
-            }
-            else
+                if (daNop)
+                {
+                    loading.ShowSplashScreen();
+                    XemBaiLamHocSinh bailamhocsinhFrm = new XemBaiLamHocSinh(this.hocsinh, this.dekiemtra);
+                    loading.CloseForm();
+                    bailamhocsinhFrm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Học sinh chưa nộp bài!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("Học sinh chưa nộp bài!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                return;
+                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại sau!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.ToString()); ;
             }
+            
         }
         private void label1_Click(object sender, EventArgs e)
         {

@@ -52,7 +52,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Hybrid.Properties.Resources.IMG_20220702_221801;
+            this.pictureBox1.BackgroundImage = global::Hybrid.Properties.Resources.DefaultImage;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(197, 140);
             this.pictureBox1.Name = "pictureBox1";

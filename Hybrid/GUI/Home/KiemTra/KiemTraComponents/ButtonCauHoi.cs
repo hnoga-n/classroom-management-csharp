@@ -76,6 +76,11 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
             PanelChiTietCauHoi panel = new PanelChiTietCauHoi(cauhoi);
             ChiTietCauHoiFrm frm = new ChiTietCauHoiFrm();
             panel.BtnXoaCauHoi.Visible = false;
+            panel.BtnDong.Visible = true;
+            panel.BtnDong.Click += (s, ev) =>
+            {
+                frm.Close();
+            };
             panel.Dock = DockStyle.Fill;
             frm.Controls.Add(panel);
             frm.ShowDialog();
@@ -93,7 +98,7 @@ namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
                 MessageBox.Show("Câu hỏi đang được chọn trong đề kiểm tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            new ThemCauHoiFrm(cauhoi).ShowDialog();
+            new ThemCauHoiFrm(this.ktfrm,cauhoi).ShowDialog();
             ktfrm.TaiLaiDanhSachCauHoi();
         }
     }

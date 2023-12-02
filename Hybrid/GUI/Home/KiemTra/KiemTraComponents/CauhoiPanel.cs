@@ -21,6 +21,18 @@ namespace Hybrid.GUI.Kiemtra
         {
             InitializeComponent();
         }
+        public CauhoiPanel(CauHoi cauhoi, ArrayList listdapan)
+        {
+            InitializeComponent();
+            this.Macauhoi = cauhoi.Macauhoi;
+            this.listdapan = listdapan;
+            this.question.Text = cauhoi.Noidung;
+            // cautraloi
+            this.answer1.Text = (listdapan[0] as CauTraLoi).Noidung;
+            this.answer2.Text = (listdapan[1] as CauTraLoi).Noidung;
+            this.answer3.Text = (listdapan[2] as CauTraLoi).Noidung;
+            this.answer4.Text = (listdapan[3] as CauTraLoi).Noidung;
+        }
         public CauhoiPanel(CauHoi cauhoi, ArrayList listdapan, string dapandachon, bool daKetThuc, bool congkhaidapan)
         {
             InitializeComponent();
@@ -112,7 +124,6 @@ namespace Hybrid.GUI.Kiemtra
                 if (ctl.Ladapan == 1)
                 {
                     this.vitridapandung = index;
-                    return;
                 }
                 index++;
             }

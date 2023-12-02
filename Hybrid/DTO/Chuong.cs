@@ -43,7 +43,7 @@ namespace Hybrid.DTO
             switch (type)
             {
                 case ChuongComparer.ComparisonType.machuong:
-                    return this.machuong.CompareTo(c1.machuong);
+                    return this.Machuong.CompareTo(c1.Machuong);
                 case ChuongComparer.ComparisonType.tenchuong:
                     return this.tenchuong.CompareTo(c1.tenchuong);
             }

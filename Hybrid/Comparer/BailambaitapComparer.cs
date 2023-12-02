@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Hybrid.Comparer
 {
-    public class BailambaitapComparer/*: IComparer*/
+    public class BailambaitapComparer : IComparer
     {
-        /*private ComparisonType typeToCompare;
+        private ComparisonType typeToCompare;
 
         public ComparisonType TypeToCompare { get => typeToCompare; set => typeToCompare = value; }
 
@@ -25,6 +25,6 @@ namespace Hybrid.Comparer
             BaiLamBaiTap right = (BaiLamBaiTap)j;
             return left.CompareTo(right, typeToCompare);
 
-        }*/
+        }
     }
 }

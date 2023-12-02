@@ -1,8 +1,10 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using Hybrid.BUS;
 using Hybrid.DTO;
+using Hybrid.GUI.Baitap.Giaovien;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.GUI.Home.KiemTra;
+using ServiceStack;
 using System;
 using System.Windows.Forms;
 
@@ -24,17 +26,16 @@ namespace Hybrid.GUI.Home
         public Chuong Chuong { get => chuong; set => chuong = value; }
         public KhoaHocFrm Khfrm { get => khfrm; set => khfrm = value; }
 
-        public PanelChuongDropDown(KhoaHocFrm khfrm,Chuong chuong, int loaihoatdong=0, string tukhoa = "")
+        public PanelChuongDropDown(KhoaHocFrm khfrm, Chuong chuong, int loaihoatdong = 0, string tukhoa = "")
         {
             InitializeComponent();
             this.chuong = chuong;
             this.khfrm = khfrm;
-            if(!this.khfrm.Lophoc.Magiangvien.Equals(this.khfrm.Taikhoan.Mataikhoan) || khfrm.Lophoc.Daxoa == 1)
+            if (!this.khfrm.Lophoc.Magiangvien.Equals(this.khfrm.Taikhoan.Mataikhoan) || khfrm.Lophoc.Daxoa == 1)
             {
                 this.btnThem.Visible = false;
                 this.btnSua.Visible = false;
                 this.btnXoa.Visible = false;
-                //this.lblDemTaiLieuChuong.Location = this.PointToClient(new System.Drawing.Point(844, 19));
             }
             this.lblTenChuong.Text = chuong.Tenchuong;
             demTaiLieuChuong = 0;
@@ -42,13 +43,15 @@ namespace Hybrid.GUI.Home
             this.kryptonContextMenuItem1.Click += ThemTaiLieuChuong;
             this.kryptonContextMenuItem2.Click += ThemTaiLieuChuong;
             this.kryptonContextMenuItem3.Click += ThemTaiLieuChuong;
-            if(loaihoatdong == 0)
+            if (loaihoatdong == 0)
             {
                 bool flagbaitap = HienThiDanhSachBaiTap(chuong.Machuong, tukhoa),
                      flagbaikiemtra = HienThiDanhSachBaiKiemTra(chuong.Machuong, tukhoa),
                      flaghoclieu = HienThiDanhSachHocLieu(chuong.Machuong, tukhoa);
-                if (!flagbaitap && !flagbaikiemtra && !flaghoclieu)
+                if (tukhoa != "" && !flagbaitap && !flagbaikiemtra && !flaghoclieu)
                     this.Visible = false;
+                else 
+                    this.Visible = true;
             } else if(loaihoatdong == 1)
             {
                 if (!HienThiDanhSachBaiTap(chuong.Machuong, tukhoa))
@@ -58,7 +61,7 @@ namespace Hybrid.GUI.Home
                 if(!HienThiDanhSachBaiKiemTra(chuong.Machuong,tukhoa))
                     this.Visible = false;
             }
-            else if(loaihoatdong == 3)
+            else if (loaihoatdong == 2)
             {
                 if (!HienThiDanhSachHocLieu(chuong.Machuong, tukhoa))
                     this.Visible = false;
@@ -72,7 +75,7 @@ namespace Hybrid.GUI.Home
             } 
             foreach(DeKiemTra dkt in dekiemtraBUS.GetDanhSachDeKiemTraTheoMaChuong(machuong,tukhoa))
             {
-                if(dkt.Daxoa == 0)
+                if (dkt.Daxoa == 0)
                 {
                     ButtonBaiKT btn = new ButtonBaiKT(this,dkt);
                     this.pnlChuongComponent.Controls.Add(btn);
@@ -129,14 +132,14 @@ namespace Hybrid.GUI.Home
 
         public void XoaChuongComponent(UserControl button)
         {
-           if(this.pnlChuongComponent.Controls.Count <= 1)
-           {
+            if (this.pnlChuongComponent.Controls.Count <= 1)
+            {
                 isExpanded = true;
                 btnMoRong_Click(this, EventArgs.Empty);
-           }
-           this.pnlChuongComponent.Controls.Remove(button);
-           demTaiLieuChuong--;
-           this.lblDemTaiLieuChuong.Text = "(" + demTaiLieuChuong + ")";
+            }
+            this.pnlChuongComponent.Controls.Remove(button);
+            demTaiLieuChuong--;
+            this.lblDemTaiLieuChuong.Text = "(" + demTaiLieuChuong + ")";
         }
 
         private void ThemTaiLieuChuong(object sender, System.EventArgs e)
@@ -144,8 +147,8 @@ namespace Hybrid.GUI.Home
             switch ((sender as KryptonContextMenuItem).Text)
             {
                 case "Bài tập":
-                    /*ButtonBaiTap btnBT = new ButtonBaiTap(this);
-                    this.pnlChuongComponent.Controls.Add(btnBT);*/
+                    TaoBaiTap taobtFrm = new TaoBaiTap(this, this.khfrm.Taikhoan, this.khfrm.Lophoc, this.chuong);
+                    taobtFrm.ShowDialog();
                     break;
                 case "Bài kiểm tra":
                     KiemTraFrm ktfrm = new KiemTraFrm(this);
@@ -180,7 +183,7 @@ namespace Hybrid.GUI.Home
                 isExpanded = true;
                 btnMoRong.Text = "▲";
                 timerHieuUngDropDown.Stop();
-            }        
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

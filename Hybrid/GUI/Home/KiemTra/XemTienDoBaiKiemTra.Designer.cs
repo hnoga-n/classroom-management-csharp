@@ -49,8 +49,6 @@
             this.startAt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.endAt = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numberOfQuestion = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.Chuong = new System.Windows.Forms.Label();
             this.examDetail = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -194,7 +192,7 @@
             this.lblTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
             this.lblTimKiem.Location = new System.Drawing.Point(506, 147);
             this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(173, 24);
+            this.lblTimKiem.Size = new System.Drawing.Size(172, 24);
             this.lblTimKiem.TabIndex = 17;
             this.lblTimKiem.Text = "Tìm kiếm học sinh";
             this.lblTimKiem.Click += new System.EventHandler(this.lblTimKiem_Click);
@@ -311,8 +309,6 @@
             this.flowLayoutPanel3.Controls.Add(this.startAt);
             this.flowLayoutPanel3.Controls.Add(this.label1);
             this.flowLayoutPanel3.Controls.Add(this.endAt);
-            this.flowLayoutPanel3.Controls.Add(this.label7);
-            this.flowLayoutPanel3.Controls.Add(this.numberOfQuestion);
             this.flowLayoutPanel3.Controls.Add(this.label11);
             this.flowLayoutPanel3.Controls.Add(this.Chuong);
             this.flowLayoutPanel3.Controls.Add(this.examDetail);
@@ -341,7 +337,6 @@
             this.teacher.Name = "teacher";
             this.teacher.Size = new System.Drawing.Size(440, 23);
             this.teacher.TabIndex = 15;
-            this.teacher.Text = "hoanghuynguyen@gmail.com";
             // 
             // label9
             // 
@@ -361,7 +356,6 @@
             this.createAt.Name = "createAt";
             this.createAt.Size = new System.Drawing.Size(440, 23);
             this.createAt.TabIndex = 22;
-            this.createAt.Text = "23:23 thứ 3 10/10";
             // 
             // label4
             // 
@@ -382,7 +376,6 @@
             this.startAt.Name = "startAt";
             this.startAt.Size = new System.Drawing.Size(440, 23);
             this.startAt.TabIndex = 17;
-            this.startAt.Text = "23:23 thứ 3 10/10";
             // 
             // label1
             // 
@@ -403,32 +396,11 @@
             this.endAt.Name = "endAt";
             this.endAt.Size = new System.Drawing.Size(440, 23);
             this.endAt.TabIndex = 26;
-            this.endAt.Text = "23:23 thứ 3 10/10";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 264);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(440, 23);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Số lượng câu hỏi:";
-            // 
-            // numberOfQuestion
-            // 
-            this.numberOfQuestion.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberOfQuestion.Location = new System.Drawing.Point(13, 292);
-            this.numberOfQuestion.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.numberOfQuestion.Name = "numberOfQuestion";
-            this.numberOfQuestion.Size = new System.Drawing.Size(442, 23);
-            this.numberOfQuestion.TabIndex = 20;
-            this.numberOfQuestion.Text = "69";
             // 
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 325);
+            this.label11.Location = new System.Drawing.Point(13, 264);
             this.label11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(440, 23);
@@ -438,22 +410,55 @@
             // Chuong
             // 
             this.Chuong.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Chuong.Location = new System.Drawing.Point(13, 353);
+            this.Chuong.Location = new System.Drawing.Point(13, 292);
             this.Chuong.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.Chuong.Name = "Chuong";
             this.Chuong.Size = new System.Drawing.Size(442, 64);
             this.Chuong.TabIndex = 24;
-            this.Chuong.Text = "Vật lý phóng xạ";
             // 
             // examDetail
             // 
-            this.examDetail.Location = new System.Drawing.Point(13, 430);
+            this.examDetail.Location = new System.Drawing.Point(13, 369);
             this.examDetail.Name = "examDetail";
-            this.examDetail.Size = new System.Drawing.Size(440, 73);
-            this.examDetail.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.examDetail.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.examDetail.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.examDetail.TabIndex = 19;
+            this.examDetail.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.examDetail.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.examDetail.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.examDetail.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.examDetail.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.examDetail.OverrideDefault.Border.Rounding = 5;
+            this.examDetail.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.examDetail.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.examDetail.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.examDetail.Size = new System.Drawing.Size(443, 40);
+            this.examDetail.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.examDetail.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.examDetail.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.examDetail.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.examDetail.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.examDetail.StateCommon.Border.Rounding = 5;
+            this.examDetail.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, 2, -1, -1);
+            this.examDetail.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.examDetail.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.examDetail.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.examDetail.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.examDetail.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.examDetail.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.examDetail.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.examDetail.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.examDetail.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.examDetail.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.examDetail.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.examDetail.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.examDetail.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.examDetail.TabIndex = 28;
             this.examDetail.Values.Text = "Xem chi tiết đề";
             this.examDetail.Click += new System.EventHandler(this.examDetail_Click);
             // 
@@ -470,8 +475,10 @@
             this.Controls.Add(this.lblTimKiem);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "XemTienDoBaiKiemTra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh sách học sinh";
             this.Load += new System.EventHandler(this.DanhSachBaiDaNop_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -499,17 +506,15 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label Chuong;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton examDetail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label teacher;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label createAt;
         private System.Windows.Forms.Label startAt;
-        private System.Windows.Forms.Label numberOfQuestion;
-        private System.Windows.Forms.Label label7;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label endAt;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton examDetail;
     }
 }
