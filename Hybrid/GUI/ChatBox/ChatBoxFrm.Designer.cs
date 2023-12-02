@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.areaChatRTB = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.sendMessBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.count_letter_lbl = new System.Windows.Forms.Label();
             this.panel_sent_contaner = new System.Windows.Forms.Panel();
             this.panel_sent_right = new System.Windows.Forms.Panel();
             this.MessageBoxContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbl_time_create_chatbox2 = new Hybrid.GUI.ChatBox.lbl_time_create_chatbox();
-            this.lbl_notifiication_chatbox1 = new Hybrid.GUI.ChatBox.lbl_notifiication_chatbox();
             this.btn_load_mess = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.timerLoadMess = new System.Windows.Forms.Timer(this.components);
+            this.lbl_notifiication_chatbox1 = new Hybrid.GUI.ChatBox.lbl_notifiication_chatbox();
             this.panel_sent_contaner.SuspendLayout();
             this.panel_sent_right.SuspendLayout();
             this.MessageBoxContainer.SuspendLayout();
@@ -49,8 +50,8 @@
             this.areaChatRTB.Location = new System.Drawing.Point(0, 0);
             this.areaChatRTB.Name = "areaChatRTB";
             this.areaChatRTB.Size = new System.Drawing.Size(837, 100);
-            this.areaChatRTB.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.areaChatRTB.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.areaChatRTB.StateCommon.Border.Rounding = 5;
             this.areaChatRTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -69,17 +70,17 @@
             this.sendMessBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.sendMessBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.sendMessBtn.OverrideDefault.Border.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.False;
-            this.sendMessBtn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.sendMessBtn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.sendMessBtn.Size = new System.Drawing.Size(72, 52);
             this.sendMessBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.sendMessBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.sendMessBtn.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            //this.sendMessBtn.StateCommon.Back.Image = global::Hybrid.Properties.Resources.icons8_sent_32;
+            this.sendMessBtn.StateCommon.Back.Image = global::Hybrid.Properties.Resources.icons8_sent_32;
             this.sendMessBtn.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.sendMessBtn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.sendMessBtn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.sendMessBtn.StateCommon.Border.Rounding = 5;
             this.sendMessBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
@@ -128,7 +129,6 @@
             // 
             this.MessageBoxContainer.AutoScroll = true;
             this.MessageBoxContainer.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.MessageBoxContainer.Controls.Add(this.lbl_time_create_chatbox2);
             this.MessageBoxContainer.Controls.Add(this.lbl_notifiication_chatbox1);
             this.MessageBoxContainer.Controls.Add(this.btn_load_mess);
             this.MessageBoxContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -141,23 +141,9 @@
             this.MessageBoxContainer.WrapContents = false;
             this.MessageBoxContainer.Scroll += new System.Windows.Forms.ScrollEventHandler(this.MessageBoxContainer_Scroll);
             // 
-            // lbl_time_create_chatbox2
-            // 
-            this.lbl_time_create_chatbox2.Location = new System.Drawing.Point(23, 3);
-            this.lbl_time_create_chatbox2.Name = "lbl_time_create_chatbox2";
-            this.lbl_time_create_chatbox2.Size = new System.Drawing.Size(875, 45);
-            this.lbl_time_create_chatbox2.TabIndex = 16;
-            // 
-            // lbl_notifiication_chatbox1
-            // 
-            this.lbl_notifiication_chatbox1.Location = new System.Drawing.Point(23, 54);
-            this.lbl_notifiication_chatbox1.Name = "lbl_notifiication_chatbox1";
-            this.lbl_notifiication_chatbox1.Size = new System.Drawing.Size(875, 40);
-            this.lbl_notifiication_chatbox1.TabIndex = 15;
-            // 
             // btn_load_mess
             // 
-            this.btn_load_mess.Location = new System.Drawing.Point(440, 109);
+            this.btn_load_mess.Location = new System.Drawing.Point(440, 58);
             this.btn_load_mess.Margin = new System.Windows.Forms.Padding(420, 12, 3, 3);
             this.btn_load_mess.Name = "btn_load_mess";
             this.btn_load_mess.OverrideDefault.Back.Color1 = System.Drawing.Color.LightGray;
@@ -166,15 +152,15 @@
             this.btn_load_mess.OverrideDefault.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
             this.btn_load_mess.OverrideDefault.Border.Color1 = System.Drawing.Color.LightGray;
             this.btn_load_mess.OverrideDefault.Border.Color2 = System.Drawing.Color.LightGray;
-            this.btn_load_mess.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_load_mess.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_load_mess.OverrideDefault.Border.Rounding = 20;
             this.btn_load_mess.OverrideDefault.Border.Width = 3;
             this.btn_load_mess.OverrideFocus.Border.Color1 = System.Drawing.Color.LightGray;
             this.btn_load_mess.OverrideFocus.Border.Color2 = System.Drawing.Color.LightGray;
-            this.btn_load_mess.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_load_mess.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_load_mess.Size = new System.Drawing.Size(40, 35);
             this.btn_load_mess.StateCommon.Back.Color1 = System.Drawing.Color.LightGray;
@@ -182,8 +168,8 @@
             this.btn_load_mess.StateCommon.Back.Image = global::Hybrid.Properties.Resources.icons8_up_50;
             this.btn_load_mess.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
             this.btn_load_mess.StateCommon.Border.Color1 = System.Drawing.Color.LightGray;
-            this.btn_load_mess.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_load_mess.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_load_mess.StateCommon.Border.Rounding = 20;
             this.btn_load_mess.StateCommon.Border.Width = 3;
@@ -192,21 +178,33 @@
             this.btn_load_mess.StatePressed.Back.Color2 = System.Drawing.Color.LightGray;
             this.btn_load_mess.StatePressed.Border.Color1 = System.Drawing.Color.LightGray;
             this.btn_load_mess.StatePressed.Border.Color2 = System.Drawing.Color.LightGray;
-            this.btn_load_mess.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_load_mess.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_load_mess.StateTracking.Back.Color1 = System.Drawing.Color.Gainsboro;
             this.btn_load_mess.StateTracking.Back.Color2 = System.Drawing.Color.Gainsboro;
             this.btn_load_mess.StateTracking.Border.Color1 = System.Drawing.Color.Gainsboro;
             this.btn_load_mess.StateTracking.Border.Color2 = System.Drawing.Color.Gainsboro;
-            this.btn_load_mess.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_load_mess.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_load_mess.StateTracking.Border.Rounding = 20;
             this.btn_load_mess.StateTracking.Border.Width = 3;
             this.btn_load_mess.TabIndex = 17;
             this.btn_load_mess.Values.Text = "";
             this.btn_load_mess.Click += new System.EventHandler(this.btn_click_load_more);
+            // 
+            // timerLoadMess
+            // 
+            this.timerLoadMess.Interval = 1500;
+            this.timerLoadMess.Tick += new System.EventHandler(this.timerLoadMess_Tick);
+            // 
+            // lbl_notifiication_chatbox1
+            // 
+            this.lbl_notifiication_chatbox1.Location = new System.Drawing.Point(23, 3);
+            this.lbl_notifiication_chatbox1.Name = "lbl_notifiication_chatbox1";
+            this.lbl_notifiication_chatbox1.Size = new System.Drawing.Size(875, 40);
+            this.lbl_notifiication_chatbox1.TabIndex = 15;
             // 
             // ChatBoxFrm
             // 
@@ -221,6 +219,7 @@
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChatBoxFrm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChatBoxFrm_FormClosing);
             this.panel_sent_contaner.ResumeLayout(false);
             this.panel_sent_right.ResumeLayout(false);
             this.MessageBoxContainer.ResumeLayout(false);
@@ -237,7 +236,7 @@
         private System.Windows.Forms.Panel panel_sent_right;
         private lbl_notifiication_chatbox lbl_notifiication_chatbox1;
         private System.Windows.Forms.FlowLayoutPanel MessageBoxContainer;
-        private lbl_time_create_chatbox lbl_time_create_chatbox2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_load_mess;
+        private System.Windows.Forms.Timer timerLoadMess;
     }
 }

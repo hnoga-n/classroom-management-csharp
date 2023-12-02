@@ -100,8 +100,6 @@
             // user_avatar
             // 
             this.user_avatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            //this.user_avatar.Image = ((System.Drawing.Image)(resources.GetObject("user_avatar.Image")));
-            //this.user_avatar.InitialImage = ((System.Drawing.Image)(resources.GetObject("user_avatar.InitialImage")));
             this.user_avatar.Location = new System.Drawing.Point(0, 0);
             this.user_avatar.Name = "user_avatar";
             this.user_avatar.Size = new System.Drawing.Size(50, 50);

@@ -13,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace Hybrid.GUI.Home.KiemTra
 {
@@ -297,20 +299,41 @@ namespace Hybrid.GUI.Home.KiemTra
                 DeKiemTra dekiemtra = new DeKiemTra(Guid.NewGuid().ToString(),txtTieuDeBaiKT.Text,DateTime.Now,dtpThoiGianBatDau.Value,dtpThoiGianKetThuc.Value,Convert.ToInt32(numHinhPhat.Value),chkCongKhaiDapAn.Checked ? 1 : 0,chkDaoCauHoi.Checked ? 1 : 0,chuong.Machuong,0);
                 if(dekiemtraBUS.ThemDeKiemTra(dekiemtra))
                 {
-                    int thutu = 1;
-                    foreach(PanelChiTietCauHoi panel in this.pnlChiTietCauHoiContainer.Controls)
+                    if(!chkDaoCauHoi.Checked)
                     {
-                        ChiTietDeKiemTra ctdkt = new ChiTietDeKiemTra(dekiemtra.Madekiemtra,panel.Cauhoi.Macauhoi,thutu);
-                        if (ctdktBUS.ThemChiTietDeKiemTra(ctdkt))
+                        int thutu = 1;
+                        foreach(PanelChiTietCauHoi panel in this.pnlChiTietCauHoiContainer.Controls)
                         {
-                            thutu++;
-                        } else
+                            ChiTietDeKiemTra ctdkt = new ChiTietDeKiemTra(dekiemtra.Madekiemtra,panel.Cauhoi.Macauhoi,thutu);
+                            if (ctdktBUS.ThemChiTietDeKiemTra(ctdkt))
+                            {
+                                thutu++;
+                            } else
+                            {
+                                MessageBox.Show("Có lỗi xảy ra khi thêm chi tiết đề kiểm tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
+                    } else
+                    {
+                        List<int> listNumbers = new List<int>();
+                        int number;
+                        foreach (PanelChiTietCauHoi panel in this.pnlChiTietCauHoiContainer.Controls)
                         {
-                            MessageBox.Show("Có lỗi xảy ra khi thêm chi tiết đề kiểm tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
+                            do
+                            {
+                                number = new Random().Next(1, this.pnlChiTietCauHoiContainer.Controls.Count+1);
+                            } while (listNumbers.Contains(number));
+                            listNumbers.Add(number);
+                            ChiTietDeKiemTra ctdkt = new ChiTietDeKiemTra(dekiemtra.Madekiemtra, panel.Cauhoi.Macauhoi, number);
+                            if (!ctdktBUS.ThemChiTietDeKiemTra(ctdkt))
+                            {
+                                MessageBox.Show("Có lỗi xảy ra khi thêm chi tiết đề kiểm tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
                         }
                     }
-                    ButtonBaiKT btn = new ButtonBaiKT(this.panelchuong,dekiemtra);
+                    ButtonBaiKT btn = new ButtonBaiKT(this.panelchuong, dekiemtra);
                     this.panelchuong.PnlChuongComponent.Controls.Add(btn);
                     MessageBox.Show("Tạo đề kiểm tra thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.FormClosing -= this.KiemTraFrm_FormClosing;
@@ -332,7 +355,7 @@ namespace Hybrid.GUI.Home.KiemTra
         {
             if (this.pnlChiTietCauHoiContainer.Controls.Count > 0 || !isCloseFormNoAction)
             {
-                DialogResult dr = MessageBox.Show("Sau khi thoát, nội dung chỉnh sửa này sẽ bị mất, bạn có chắc muốn đóng không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("Sau khi thoát, nội dung chỉnh sửa này sẽ bị mất, bạn có chắc muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (dr == DialogResult.No)
                 {
                     e.Cancel = true;

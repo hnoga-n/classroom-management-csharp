@@ -4,38 +4,45 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using Hybrid.BUS;
 using Hybrid.DTO;
+using Hybrid.GUI.Dangnhap;
+using Hybrid.GUI.Home;
+using ServiceStack.Script;
 
 namespace Hybrid.GUI
 {
     public partial class Thongtintaikhoan : KryptonForm
     {
         Taikhoan tk;
-        Form1 frm;
-        public Thongtintaikhoan(Taikhoan tk,PictureBox pic,Form1 frm)
+        TaikhoanBUS taikhoanBUS=new TaikhoanBUS();
+        Chucnang cn=new Chucnang();
+        PictureBox hinhanhcanhan = new PictureBox();
+
+        public Thongtintaikhoan(Taikhoan tk,Form1 frm,PictureBox pic)
         {
             InitializeComponent();
             this.tk = tk;
-            this.frm = frm;
-            this.hinhanh.Image = pic.Image;
-            this.Location = new Point(frm.Location.X+50,frm
-                .Location.Y + 50);
+            InitializeComponent();
+            this.Location=new Point(frm.Location.X+50, frm.Location.Y+20);
+            hinhanh.Image = pic.Image;
+
         }
 
         private void Thongtintaikhoan_Load(object sender, EventArgs e)
         {
-            lab_hoten.Visible=false;
-            txt_hoten.Visible = false;
-            lab_matkhau.Visible=false;
-            txt_matkhau.Visible = false;
+            txt_ten.Text = this.tk.Hoten;
+            txt_email.Text = this.tk.Email;
+            txt_sodienthoai.Text = this.tk.Sodienthoai;
             MakePictureBoxCircular(hinhanh);
-            lab_ten.Text = this.tk.Hoten;
-            txt_email.Text=this.tk.Email;
+            //txt_email.Text=this.tk.Email;
         }
         private void MakePictureBoxCircular(PictureBox pictureBox)
         {
@@ -51,19 +58,88 @@ namespace Hybrid.GUI
         }
 
 
-
-        private void but_chinhsua_Click(object sender, EventArgs e)
-        {
-            lab_hoten.Visible = true;
-            txt_hoten.Visible = true;
-            lab_matkhau.Visible = true;
-            txt_matkhau.Visible = true;
-            lab_ten.Visible = false;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lab_chinhsua_Click(object sender, EventArgs e)
+        {
+            lab_chinhsua.Visible = false;
+            lab_xacnhan.Visible = true;
+            txt_ten.ReadOnly = false;
+            txt_sodienthoai.ReadOnly = false;
+        }
+
+        private void Thongtintaikhoan_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                // Đóng form
+                this.Close();
+            }
+        }
+
+        private void lab_xacnhan_Click(object sender, EventArgs e)
+        {
+            if(!cn.IsPhoneNumber(txt_sodienthoai.Text))
+            {
+                MessageBox.Show("Số điện thoại không đúng định dạng!","Cảnh bảo",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (txt_ten.Text != this.tk.Hoten || txt_sodienthoai.Text != this.tk.Sodienthoai)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc là muốn thay đổi thông tin chưa?", "Câu hỏi", MessageBoxButtons.YesNoCancel);
+
+                    // Xử lý kết quả từ MessageBox
+                    switch (result)
+                    {
+                        case DialogResult.Yes:
+                            //xu li su kien chinh thong tin tk
+                            taikhoanBUS.update_ten_sodienthoai_bymataikhoan(txt_ten.Text, txt_sodienthoai.Text, this.tk.Mataikhoan);
+                            lab_xacnhan.Visible = false;
+                            lab_chinhsua.Visible = true;
+                            break;
+                        case DialogResult.No:
+                            txt_ten.Text = this.tk.Hoten;
+                            txt_sodienthoai.Text = this.tk.Sodienthoai;
+                            lab_xacnhan.Visible = false;
+                            lab_chinhsua.Visible = true;
+                            break;
+                        case DialogResult.Cancel:
+                            break;
+                    }
+                }
+                else
+                {
+                    lab_xacnhan.Visible = false;
+                    lab_chinhsua.Visible = true;
+                }    
+            }    
+            
+        }
+
+        private void txt_sodienthoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn ký tự không phải số được nhập vào TextBox
+            }
+        }
+
+        private void hinhanh_Click(object sender, EventArgs e)
+        {
+            ChonHinhFrm form = new ChonHinhFrm(tk.Email);
+            form.sendImage = new ChonHinhFrm.SendImage(LoadHinh);
+            form.ShowDialog();
+
+        }
+        private void LoadHinh(Image image)
+        {
+            //ptbThumbnail.Image = null;
+            hinhanh.Image = Properties.Resources.canhan1;
+            hinhanh.Image = image;
         }
     }
 }

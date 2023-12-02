@@ -1,4 +1,5 @@
-﻿using Hybrid.DAO;
+﻿using Hybrid.Comparer;
+using Hybrid.DAO;
 using Hybrid.DTO;
 using System;
 using System.Collections;
@@ -29,7 +30,7 @@ namespace Hybrid.BUS
             list = blktDAO.loadList();
             //list.Sort();
         }
-        public void addChiTietBaiLam(ArrayList chitietbailam)
+        public void AddChiTietBaiLam(ArrayList chitietbailam)
         {
             try
             {
@@ -43,7 +44,7 @@ namespace Hybrid.BUS
             }
         }
 
-        public ArrayList getChiTietBaiLamKiemTraWithMaBaiLam(string mabailamkiemtra)
+        public ArrayList GetChiTietBaiLamKiemTraWithMaBaiLam(string mabailamkiemtra)
         {
             ArrayList listctblkt = new ArrayList();
             foreach (ChiTietBaiLamKiemTra item in list)
@@ -51,6 +52,9 @@ namespace Hybrid.BUS
                 if (item.Mabailamkiemtra.Equals(mabailamkiemtra))
                     listctblkt.Add(item);
             }
+            ChiTietBaiLamKiemTraComparer comparer = new ChiTietBaiLamKiemTraComparer();
+            comparer.TypeToCompare = ChiTietBaiLamKiemTraComparer.ComparisonType.sothutu;
+            listctblkt.Sort(comparer);
             return listctblkt;
         }
     }

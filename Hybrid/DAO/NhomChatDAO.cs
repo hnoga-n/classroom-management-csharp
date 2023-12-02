@@ -47,6 +47,35 @@ namespace Hybrid.DAO
             }
             return listTmp;
         }
+
+        public NhomChat GetNhomChatByMaLop(string maLop)
+        {
+            NhomChat nhomChat = null;
+            try
+            {
+
+                string sql_get_all = "SELECT * FROM nhomchat WHERE malophoc = '" + maLop + "'";
+                SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    nhomChat = new NhomChat();
+                    nhomChat.Manhomchat = dr["manhomchat"].ToString();
+                    nhomChat.Malop = dr["malophoc"].ToString();
+                    nhomChat.Tennhomchat = dr["ten"].ToString();
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file NhomchatDAO:" + ex.Message);
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+            return nhomChat;
+        }
     }
 
 }

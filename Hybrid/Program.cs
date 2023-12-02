@@ -1,6 +1,6 @@
 
 using Hybrid.GUI.Home;
-﻿using Hybrid.BUS;
+using Hybrid.BUS;
 using Hybrid.DTO;
 using Hybrid.GUI.Baitap.Giaovien;
 using Hybrid.GUI.Home.KiemTra;
@@ -11,6 +11,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Hybrid.GUI;
+using Hybrid.GUI.Admin;
+using Hybrid.GUI.Dangnhap;
 
 namespace Hybrid
 {
@@ -29,6 +31,8 @@ namespace Hybrid
             //Application.Run(new DanhSachBaiDaNop());
             //Application.Run(new KiemTraFrm());
             //Application.Run(new TaoBaiTap());
+            //Application.Run(new Homeadminfrm());
+            //Application.Run(new test1());
         }
     }
 }

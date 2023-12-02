@@ -47,7 +47,11 @@ namespace Hybrid.GUI.Home.HomeComponents
         private void addFormtoPanelHomeContainer(object Form)
         {
             if (this.pnlHomeContainer.Controls.Count > 0)
+            {
+                //Form frm = this.pnlHomeContainer.Controls[0] as Form;
+                //frm.Close();
                 this.pnlHomeContainer.Controls.RemoveAt(0);
+            }
             Form f = Form as Form;
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;

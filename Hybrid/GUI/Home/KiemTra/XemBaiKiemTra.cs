@@ -2,16 +2,9 @@
 using Hybrid.BUS;
 using Hybrid.DTO;
 using Hybrid.GUI.Kiemtra;
-using Hybrid.GUI.Utilities;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Home.KiemTra
@@ -37,7 +30,7 @@ namespace Hybrid.GUI.Home.KiemTra
         }
         private void loadDataIntoForm()
         {
-            ArrayList listmacauhoi = this.ctbktBUS.getChiTietDeKiemTraWithMaDeKiemTra(this.dkt.Madekiemtra.ToLower());
+            ArrayList listmacauhoi = this.ctbktBUS.GetDanhSachChiTietDeKiemTraWithMaDeKiemTra(this.dkt.Madekiemtra.ToLower());
             ArrayList listcautraloi;
             if (listmacauhoi.Count <= 0)
             {
@@ -52,7 +45,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 //cauhoi
                 CauHoi tmp = this.chBUS.getCauhoiWithMaCauHoi(ctdkt.Macauhoi);
                 listcautraloi = this.ctlBUS.getCauTraLoiWithMaCauHoi(tmp.Macauhoi);
-                CauhoiPanel chComponent = new CauhoiPanel(tmp, listcautraloi,"",true,false);
+                CauhoiPanel chComponent = new CauhoiPanel(tmp, listcautraloi);
                 chComponent.getOrder().Text = "Câu hỏi " + (++index);
                 listcauhoipanel.Controls.Add(chComponent);
 

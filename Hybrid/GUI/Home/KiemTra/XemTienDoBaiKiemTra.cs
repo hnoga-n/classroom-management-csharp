@@ -19,7 +19,6 @@ namespace Hybrid.GUI.Home.KiemTra
         private TaikhoanBUS taikhoanBUS;
         private ThamGiaBUS thamgiaBUS;
         private BailamKiemtraBUS blktBUS;
-        private ChiTietBaiLamKiemTraBUS ctblktBUS;
         private CauHoiBUS chBUS;
         private CauTraLoiBUS ctlBUS;
 
@@ -43,7 +42,6 @@ namespace Hybrid.GUI.Home.KiemTra
             this.taikhoanBUS = new TaikhoanBUS();
             this.thamgiaBUS = new ThamGiaBUS();
             this.blktBUS = new BailamKiemtraBUS();
-            this.ctblktBUS = new ChiTietBaiLamKiemTraBUS();
             this.chBUS = new CauHoiBUS();
             this.ctlBUS = new CauTraLoiBUS();
             loadListSubmitedAndNotSubmited(lophoc);
@@ -55,6 +53,7 @@ namespace Hybrid.GUI.Home.KiemTra
         {
             try
             {
+
                 this.listNotSubmited.Clear();
                 this.listSubmited.Clear();
                 blktBUS.loadList();
@@ -116,8 +115,10 @@ namespace Hybrid.GUI.Home.KiemTra
 
         private void examDetail_Click(object sender, EventArgs e)
         {
+            loading.ShowSplashScreen();
             XemBaiKiemTra frmXemDKT = new XemBaiKiemTra(this.dekiemtra,this.chBUS,this.ctlBUS);
-            frmXemDKT.Show();
+            loading.CloseForm();
+            frmXemDKT.ShowDialog();
         }
 
         private void notSubmit_Click(object sender, EventArgs e)
@@ -129,7 +130,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 this.flowpanelHocSinh.Controls.Clear();
                 if (this.listNotSubmited.Count == 0)
                 {
-                    emptyPnl emptPnl = new emptyPnl("Không có học sinh chưa nộp bài");
+                    EmptyPanel emptPnl = new EmptyPanel("Không có học sinh chưa nộp bài");
                     flowpanelHocSinh.Controls.Add(emptPnl);
                     return;
                 }
@@ -157,7 +158,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 this.flowpanelHocSinh.Controls.Clear();
                 if (this.listNotSubmited.Count == 0)
                 {
-                    emptyPnl emptPnl = new emptyPnl("Không có học sinh nộp bài");
+                    EmptyPanel emptPnl = new EmptyPanel("Không có học sinh nộp bài");
                     flowpanelHocSinh.Controls.Add(emptPnl);
                     return;
                 }
@@ -227,7 +228,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 }
                 if (this.flowpanelHocSinh.Controls.Count == 0)
                 {
-                    emptyPnl emptPnl = new emptyPnl("Không tìm thấy học sinh!");
+                    EmptyPanel emptPnl = new EmptyPanel("Không tìm thấy học sinh!");
                     flowpanelHocSinh.Controls.Add(emptPnl);
                     return;
                 }

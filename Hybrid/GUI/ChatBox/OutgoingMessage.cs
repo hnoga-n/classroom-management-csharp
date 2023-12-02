@@ -16,7 +16,7 @@ namespace Hybrid.GUI.ChatBox
         ChatBoxFrm chatBoxFrm;
         private string saveText;
         lbl_save_clipboard lbl_sc;
-        TinNhanNhomChat mess;
+        TinNhanNhomChat tnnc;
         public OutgoingMessage(ChatBoxFrm cbFrm)
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace Hybrid.GUI.ChatBox
         public void AddContent(TinNhanNhomChat mess)
         {
             DateTime currentTime = mess.Thoigiangui;
-
+            tnnc = mess;
             lbl_sent_time.Text = currentTime.ToString("HH:mm");
             lbl_sent_content.Text = mess.Noidung;
             this.saveText = mess.Noidung;
@@ -55,7 +55,7 @@ namespace Hybrid.GUI.ChatBox
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa tin nhắn?", "Xóa tin nhắn", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
-                chatBoxFrm.del_om_mess(this);
+                chatBoxFrm.del_om_mess(this, this.tnnc);
             }
         }
 

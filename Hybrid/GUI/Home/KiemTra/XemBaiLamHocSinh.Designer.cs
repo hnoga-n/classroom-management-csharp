@@ -42,8 +42,12 @@
             this.listcauhoipanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.navigatePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
+            this.listcauhoipanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -147,7 +151,7 @@
             // 
             // avatar
             // 
-            this.avatar.BackgroundImage = global::Hybrid.Properties.Resources.IMG_20220702_221801;
+            this.avatar.BackgroundImage = global::Hybrid.Properties.Resources.DefaultImage;
             this.avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.avatar.Location = new System.Drawing.Point(3, 3);
             this.avatar.Name = "avatar";
@@ -169,6 +173,7 @@
             // listcauhoipanel
             // 
             this.listcauhoipanel.AutoScroll = true;
+            this.listcauhoipanel.Controls.Add(this.splitContainer1);
             this.listcauhoipanel.Location = new System.Drawing.Point(18, 123);
             this.listcauhoipanel.Margin = new System.Windows.Forms.Padding(0);
             this.listcauhoipanel.Name = "listcauhoipanel";
@@ -195,6 +200,15 @@
             this.navigatePanel.Size = new System.Drawing.Size(259, 706);
             this.navigatePanel.TabIndex = 3;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Size = new System.Drawing.Size(54, 0);
+            this.splitContainer1.SplitterDistance = 25;
+            this.splitContainer1.TabIndex = 0;
+            // 
             // XemBaiLamHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -208,9 +222,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "XemBaiLamHocSinh";
             this.Text = "BaiLamDaNop";
+            this.Load += new System.EventHandler(this.XemBaiLamHocSinh_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
+            this.listcauhoipanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +250,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel navigatePanel;
         private System.Windows.Forms.Label state;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }

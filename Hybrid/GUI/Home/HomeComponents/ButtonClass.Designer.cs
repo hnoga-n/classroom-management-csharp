@@ -90,22 +90,23 @@ namespace Hybrid.GUI.Home
             // 
             this.lblTenLop.AutoEllipsis = true;
             this.lblTenLop.BackColor = System.Drawing.Color.White;
-            this.lblTenLop.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTenLop.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenLop.Location = new System.Drawing.Point(78, 15);
             this.lblTenLop.Name = "lblTenLop";
-            this.lblTenLop.Size = new System.Drawing.Size(279, 28);
+            this.lblTenLop.Size = new System.Drawing.Size(267, 28);
             this.lblTenLop.TabIndex = 2;
             this.lblTenLop.Text = "Lập trình C#";
             this.lblTenLop.Click += new System.EventHandler(this.lblTenLop_Click);
             // 
             // lblChiTiet
             // 
+            this.lblChiTiet.AutoEllipsis = true;
             this.lblChiTiet.AutoSize = true;
             this.lblChiTiet.BackColor = System.Drawing.Color.White;
             this.lblChiTiet.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChiTiet.Location = new System.Drawing.Point(79, 43);
             this.lblChiTiet.Name = "lblChiTiet";
-            this.lblChiTiet.Size = new System.Drawing.Size(100, 20);
+            this.lblChiTiet.Size = new System.Drawing.Size(103, 20);
             this.lblChiTiet.TabIndex = 3;
             this.lblChiTiet.Text = "Lập trình C#";
             this.lblChiTiet.Click += new System.EventHandler(this.lblChiTiet_Click);
@@ -138,5 +139,6 @@ namespace Hybrid.GUI.Home
         public KryptonButton BtnLopHoc { get => btnLopHoc; set => btnLopHoc = value; }
         public Label LblTenLop { get => lblTenLop; set => lblTenLop = value; }
         public Label LblChiTiet { get => lblChiTiet; set => lblChiTiet = value; }
+        public PictureBox PictureBox1 { get => pictureBox1; set => pictureBox1 = value; }
     }
 }

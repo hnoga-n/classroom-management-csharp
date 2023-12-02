@@ -11,6 +11,8 @@ using ComponentFactory.Krypton.Toolkit;
 using Hybrid.BUS;
 using Hybrid.DAO;
 using Hybrid.DTO;
+using Hybrid.GUI.Admin;
+using Microsoft.Office.Interop.Word;
 
 namespace Hybrid.GUI
 {
@@ -56,24 +58,33 @@ namespace Hybrid.GUI
                     if(tkdao.get_daxoa_email(txt_email.Text)==0)
                         if (tkdao.check_taikhoan(txt_email.Text, txt_matkhau.Text))
                         {
-                            if (chx_nhomatkhau.Checked == true)
+                            if(tkdao.get_quyenhan_email(txt_email.Text)==1)
                             {
-                                cn.ghi_nhomk("1");
-                                cn.remove_file();
-                                Taikhoan tk = new Taikhoan("00", "00", txt_email.Text, txt_matkhau.Text, "00", "00", 0, 0);
-                                cn.ghi_tk_file(tk);
-                            }
+                                Form form = new Homeadminfrm();
+                                form.ShowDialog();
+                            }   
                             else
                             {
-                                cn.ghi_nhomk("0");
-                                cn.remove_file();
+                                if (chx_nhomatkhau.Checked == true)
+                                {
+                                    cn.ghi_nhomk("1");
+                                    cn.remove_file();
+                                    Taikhoan tk = new Taikhoan("00", "00", txt_email.Text, txt_matkhau.Text, "00", "00", 0, 0);
+                                    cn.ghi_tk_file(tk);
+                                }
+                                else
+                                {
+                                    cn.ghi_nhomk("0");
+                                    cn.remove_file();
+                                }
+                                // MessageBox.Show(tkbus.GetTaiKhoanByEmail(txt_email.Text).ToString());
+                                Taikhoan tk1 = tkbus.GetTaiKhoanByEmail(txt_email.Text);
+                                this.Hide();
+                                KryptonForm form = new Form1(tk1);
+                                form.Show();
+
                             }
-                            KryptonForm form = new Form1(txt_email.Text);
-                            this.Hide();
-                            form.ShowDialog();
-                            chx_nhomatkhau.Checked = false;
-                            this.Show();
-                            this.Load += new System.EventHandler(this.LoginUI_Load);
+                            
                         }
                         else
                             MessageBox.Show("Email chưa được đăng kí hoặc không tồn tại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -101,8 +112,10 @@ namespace Hybrid.GUI
                 Taikhoan tk = cn.doc_tk_file();
                 if (tk != null)
                 {
-                    KryptonForm form = new Form1(tk.Email);
                     this.Hide();
+                    Taikhoan tk1 = tkbus.GetTaiKhoanByEmail(tk.Email);
+                    KryptonForm form = new Form1(tk1);
+
                     form.ShowDialog();
                 }
             }
@@ -110,5 +123,9 @@ namespace Hybrid.GUI
                 chx_nhomatkhau.Checked=false;
         }
 
+        private void LoginUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

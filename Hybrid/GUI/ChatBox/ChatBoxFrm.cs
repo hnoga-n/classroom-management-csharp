@@ -22,7 +22,9 @@ namespace Hybrid.GUI.ChatBox
         private ArrayList list_messages, list_messages_tmp;
         OutgoingMessage outgoingMessagePanel;
         IncomingMessage incomingMessagePanel;
-        TinNhanNhomChatBUS group_messages_data;
+        TinNhanNhomChatBUS group_messages_data = new TinNhanNhomChatBUS();
+        NhomChatBUS ncBUS;
+        TinNhanNhomChat latestMess = new TinNhanNhomChat();
         bool firstLoad = false;
         int perMess = 10;
         int mess_index_value = 1;
@@ -31,6 +33,8 @@ namespace Hybrid.GUI.ChatBox
             InitializeComponent();
             this.tk_hienhanh = tk;
             this.lophoc = lh;
+            latestMess = group_messages_data.getLatest(lh.Malop.ToUpper());
+            timerLoadMess.Start();
             setUp_notify();
             load_message();
             checkAreaChatTextEmpty();
@@ -46,6 +50,7 @@ namespace Hybrid.GUI.ChatBox
             group_messages_data = new TinNhanNhomChatBUS();
             group_messages_data.loadList(perMess, mess_index_value, lophoc.Malop);
             list_messages = group_messages_data.getList();
+
         }
 
         public void predictSetup_mess_load()
@@ -61,7 +66,7 @@ namespace Hybrid.GUI.ChatBox
         }
         private void load_message()
         {
-
+            MessageBoxContainer.Controls.Clear();
             //int count = 1;
             predictSetup_mess_load();
             if (list_messages_tmp.Count == 0)
@@ -93,9 +98,13 @@ namespace Hybrid.GUI.ChatBox
             mess_index_value++;
             btn_load_mess.BringToFront();
             lbl_notifiication_chatbox1.BringToFront();
-            lbl_time_create_chatbox2.BringToFront();
+            //lbl_time_create_chatbox2.BringToFront();
             if (!firstLoad)
             {
+                if (MessageBoxContainer.Controls.Count == 0)
+                {
+                    return;
+                }
                 Control lastItem = MessageBoxContainer.Controls[MessageBoxContainer.Controls.Count - 1];
                 //UserControl lastUserControl = MessageBoxContainer.Controls[MessageBoxContainer.Controls.Count - 1];
                 MessageBoxContainer.ScrollControlIntoView(lastItem);
@@ -103,12 +112,16 @@ namespace Hybrid.GUI.ChatBox
             }
         }
 
-        public void del_im_mess(IncomingMessage im)
+        public void del_im_mess(IncomingMessage im, TinNhanNhomChat mess)
         {
+            ncBUS = new NhomChatBUS();
+            group_messages_data.delete(mess.Matinnhan);
             MessageBoxContainer.Controls.Remove(im);
         }
-        public void del_om_mess(OutgoingMessage om)
+        public void del_om_mess(OutgoingMessage om, TinNhanNhomChat mess)
         {
+            ncBUS = new NhomChatBUS();
+            group_messages_data.delete(mess.Matinnhan);
             MessageBoxContainer.Controls.Remove(om);
         }
 
@@ -149,7 +162,18 @@ namespace Hybrid.GUI.ChatBox
                 outgoingMessagePanel = new OutgoingMessage(this);
                 outgoingMessagePanel.AddNewContent(areaChatRTB.Text);
                 MessageBoxContainer.Controls.Add(outgoingMessagePanel);
+                MessageBoxContainer.ScrollControlIntoView(outgoingMessagePanel);
+
+                //Console.WriteLine(lophoc.Malop);
+                ncBUS = new NhomChatBUS();
+                NhomChat nc = ncBUS.GetNhomChatByMaLop(lophoc.Malop.ToUpper());
+
+                group_messages_data.insert(Guid.NewGuid().ToString(), nc.Manhomchat, tk_hienhanh.Mataikhoan, areaChatRTB.Text, DateTime.Now.ToString());
+
                 areaChatRTB.Text = "";
+
+                mess_index_value = 1;
+                //load_message();
                 MessageBoxContainer.VerticalScroll.Value = MessageBoxContainer.VerticalScroll.Maximum;
             }
         }
@@ -189,11 +213,44 @@ namespace Hybrid.GUI.ChatBox
 
         private void MessageBoxContainer_Scroll(object sender, ScrollEventArgs e)
         {
-            Console.WriteLine(MessageBoxContainer.VerticalScroll.Value);
+            /*Console.WriteLine(MessageBoxContainer.VerticalScroll.Value);
             if (MessageBoxContainer.VerticalScroll.Value == 0)
             {
                 load_message();
+            }*/
+        }
+
+        private void timerLoadMess_Tick(object sender, EventArgs e)
+        {
+            TinNhanNhomChat tmp = new TinNhanNhomChat();
+            tmp = group_messages_data.getLatest(lophoc.Malop.ToUpper());
+            //Console.WriteLine("tmp: " + tmp.Matinnhan.ToLower());
+            //Console.WriteLine("latest: " + latestMess.Matinnhan.ToLower());
+
+            if (!tmp.Matinnhan.ToLower().Equals(latestMess.Matinnhan.ToLower()))
+            {
+                Console.WriteLine("equal");
+                latestMess = tmp;
+                if (tk_hienhanh.Mataikhoan.ToLower().Equals(latestMess.Mataikhoan.ToLower()))
+                {/*
+                    outgoingMessagePanel = new OutgoingMessage(this);
+                    outgoingMessagePanel.AddContent(latestMess);
+                    MessageBoxContainer.Controls.Add(outgoingMessagePanel);*/
+                }
+                else
+                {
+                    incomingMessagePanel = new IncomingMessage(this);
+                    incomingMessagePanel.AddContent(latestMess);
+                    MessageBoxContainer.Controls.Add(incomingMessagePanel);
+                    MessageBoxContainer.ScrollControlIntoView(incomingMessagePanel);
+
+                }
             }
+        }
+
+        private void ChatBoxFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timerLoadMess.Stop();
         }
 
         private void areaChatRTB_TextChanged(object sender, EventArgs e)
