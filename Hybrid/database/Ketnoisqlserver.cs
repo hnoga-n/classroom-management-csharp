@@ -23,10 +23,10 @@ namespace Hybrid.DAO
             }
             else
                 if (_connection.State != System.Data.ConnectionState.Open)
-                {
+            {
                 _connection = new SqlConnection(_connectionString);
                 _connection.Open();
-                }
+            }
             return _connection;
         }
 

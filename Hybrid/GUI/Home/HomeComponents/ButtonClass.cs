@@ -11,8 +11,9 @@ namespace Hybrid.GUI.Home
     {
         LopHoc lophoc;
         HomeFrm homeFrm;
-        Chucnang cn=new Chucnang();
-        public ButtonClass(LopHoc lophoc,HomeFrm homeFrm)
+        Chucnang cn = new Chucnang();
+        TinNhanNhomChatBUS tnncBUS = new TinNhanNhomChatBUS();
+        public ButtonClass(LopHoc lophoc, HomeFrm homeFrm)
         {
             InitializeComponent();
             this.lophoc = lophoc;
@@ -29,6 +30,18 @@ namespace Hybrid.GUI.Home
                 this.lblTenLop.BackColor = Color.LightGray;
                 this.LblChiTiet.BackColor = Color.LightGray;
                 this.lblChiTiet.Text = "Lớp học đã giải tán";
+            }
+
+            if (tnncBUS.getLatest(lophoc.Malop.ToUpper()) != null)
+            {
+                TinNhanNhomChat tmp = tnncBUS.getLatest(lophoc.Malop.ToUpper());
+                lblChiTiet.Text = tmp.Noidung;
+                lbl_time_latest.Text = tmp.Thoigiangui.ToString("HH:mm");
+            }
+            else
+            {
+                lblChiTiet.Text = "";
+                lbl_time_latest.Text = "";
             }
         }
 
@@ -55,6 +68,17 @@ namespace Hybrid.GUI.Home
         private void lblChiTiet_Click(object sender, EventArgs e)
         {
             btnLopHocClick();
+        }
+
+        public void setLatestMess(string mess, string time)
+        {
+            lblChiTiet.Text = mess;
+            lbl_time_latest.Text = time;
+        }
+
+        public string getButtonClassMaLop()
+        {
+            return this.lophoc.Malop;
         }
     }
 }

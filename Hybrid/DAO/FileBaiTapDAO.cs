@@ -3,7 +3,6 @@ using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using Hybrid.DTO;
-using Microsoft.Office.Core;
 using ServiceStack;
 using System;
 using System.Collections;
@@ -174,14 +173,14 @@ namespace Hybrid.DAO
                     }
                     else
                     {
-                    // insert into database
-                    command.Parameters.Clear();
-                    command.Parameters.AddWithValue("@mabaitap", Guid.Parse(fileBt.Mabaitap));
-                    command.Parameters.AddWithValue("@lafiledapan", Convert.ToInt16(fileBt.Lafiledapan));
-                    command.Parameters.AddWithValue("@tenfile", Path.GetFileName(fileBt.Path));
-                    command.Parameters.AddWithValue("@id_file", fileBt.Id_file);
-                    index = command.ExecuteNonQuery();
-                    if (index <= 0) return false;
+                        // insert into database
+                        command.Parameters.Clear();
+                        command.Parameters.AddWithValue("@mabaitap", Guid.Parse(fileBt.Mabaitap));
+                        command.Parameters.AddWithValue("@lafiledapan", Convert.ToInt16(fileBt.Lafiledapan));
+                        command.Parameters.AddWithValue("@tenfile", Path.GetFileName(fileBt.Path));
+                        command.Parameters.AddWithValue("@id_file", fileBt.Id_file);
+                        index = command.ExecuteNonQuery();
+                        if (index <= 0) return false;
                     }
                 }
             }

@@ -47,9 +47,9 @@ namespace Hybrid.BUS
             LophocComparer comparer = new LophocComparer();
             comparer.TypeToCompare = LophocComparer.ComparisonType.malophoc;
             LopHoc lopSearch = new LopHoc();
-            lopSearch.Malop= malop.ToLower();
+            lopSearch.Malop = malop.ToLower();
             int index = list.BinarySearch(lopSearch, comparer);
-            return (LopHoc) list[index];
+            return (LopHoc)list[index];
         }
 
         public bool ThemLopHoc(LopHoc lophoc)
@@ -63,11 +63,11 @@ namespace Hybrid.BUS
         }
         public bool SuaLopHoc(LopHoc lophoc)
         {
-            if(lopDAO.SuaLopHoc(lophoc))
+            if (lopDAO.SuaLopHoc(lophoc))
             {
-                foreach(LopHoc l in this.list)
+                foreach (LopHoc l in this.list)
                 {
-                    if(l.Malop.Equals(lophoc.Malop))
+                    if (l.Malop.Equals(lophoc.Malop))
                     {
                         l.Tenlop = lophoc.Tenlop;
                         l.Mota = lophoc.Mota;
@@ -77,10 +77,10 @@ namespace Hybrid.BUS
             }
             return false;
         }
-        
+
         public bool XoaLopHoc(string malop)
         {
-            if(lopDAO.XoaLopHoc(malop))
+            if (lopDAO.XoaLopHoc(malop))
             {
                 foreach (LopHoc l in this.list)
                 {
@@ -104,15 +104,16 @@ namespace Hybrid.BUS
             return null;
         }
 
-       public ArrayList GetLopHocByMaGiangVien(string magiangvien) { 
+        public ArrayList GetLopHocByMaGiangVien(string magiangvien)
+        {
             ArrayList listResult = new ArrayList();
-            foreach(LopHoc lopHoc in list)
+            foreach (LopHoc lopHoc in list)
             {
-                if(lopHoc.Magiangvien == magiangvien)
+                if (lopHoc.Magiangvien == magiangvien)
                     listResult.Add(lopHoc);
             }
             return listResult;
-       }
+        }
         public string insert_hinhlop(string filePath)
         {
             DriveService service = Chucnang.service;
@@ -258,9 +259,9 @@ namespace Hybrid.BUS
             list = lopDAO.loadList();
             lopDAO.unban_lop(malop);
         }
-        public void capnhat_anhlop(string malop,string ten)
+        public void capnhat_anhlop(string malop, string ten)
         {
-            
+
             list = lopDAO.loadList();
             lopDAO.update_anhlop(ten, malop);
         }

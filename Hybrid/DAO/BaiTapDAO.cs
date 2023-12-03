@@ -67,8 +67,8 @@ namespace Hybrid.DAO
                 command.Parameters.AddWithValue("@mabaitap", Guid.Parse(bt.Mabaitap));
                 command.Parameters.AddWithValue("@machuong", Guid.Parse(bt.Machuong));
                 command.Parameters.AddWithValue("@tieude", bt.Tieude);
-                command.Parameters.AddWithValue("@noidungbaitap", bt.Noidungbaitap); 
-                command.Parameters.AddWithValue("@noidungdapan", bt.Noidungdapan); 
+                command.Parameters.AddWithValue("@noidungbaitap", bt.Noidungbaitap);
+                command.Parameters.AddWithValue("@noidungdapan", bt.Noidungdapan);
                 command.Parameters.AddWithValue("@thoigiantao", bt.Thoigiantao.ToString());
                 command.Parameters.AddWithValue("@thoigianbatdau", bt.Thoigianbatdau);
                 command.Parameters.AddWithValue("@thoigianketthuc", bt.Thoigianketthuc);

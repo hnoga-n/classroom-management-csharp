@@ -1,6 +1,6 @@
 
 using Hybrid.GUI.Home;
-﻿using Hybrid.BUS;
+using Hybrid.BUS;
 using Hybrid.DTO;
 using Hybrid.GUI.Baitap.Giaovien;
 using Hybrid.GUI.Home.KiemTra;

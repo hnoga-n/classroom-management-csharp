@@ -11,7 +11,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Reporting.WinForms;
 using ServiceStack;
 using System.Data.SqlClient;
 using System.Data;
@@ -20,7 +19,7 @@ using System.Drawing;
 
 namespace Hybrid.BUS
 {
-     public class TaikhoanBUS
+    public class TaikhoanBUS
     {
         private List<Taikhoan> list = new List<Taikhoan>();
         public TaikhoanDAO dao = new TaikhoanDAO();
@@ -131,27 +130,27 @@ namespace Hybrid.BUS
             list.Clear();
             list = dao.get_danhsach();
         }
-/*        public void update_hinhanhcanhan(string filePath, string mataikhoan)
-        {
-            DriveService service = Chucnang.service;
-            var fileMetadata = new Google.Apis.Drive.v3.Data.File()
-            {
-                Name = Path.GetFileName(filePath),
-                Parents = new List<string> { "18BLA4qmK53RckQHjlN50-pwGfKLi4Aih" } // Thay "ID_cua_thu_muc_dich" bằng ID thư mục cụ thể.
-            };
+        /*        public void update_hinhanhcanhan(string filePath, string mataikhoan)
+                {
+                    DriveService service = Chucnang.service;
+                    var fileMetadata = new Google.Apis.Drive.v3.Data.File()
+                    {
+                        Name = Path.GetFileName(filePath),
+                        Parents = new List<string> { "18BLA4qmK53RckQHjlN50-pwGfKLi4Aih" } // Thay "ID_cua_thu_muc_dich" bằng ID thư mục cụ thể.
+                    };
 
-            FilesResource.CreateMediaUpload request;
-            using (var stream = new FileStream(filePath, FileMode.Open))
-            {
-                request = service.Files.Create(fileMetadata, stream, "application/octet-stream");
-                request.Upload();
-            }
+                    FilesResource.CreateMediaUpload request;
+                    using (var stream = new FileStream(filePath, FileMode.Open))
+                    {
+                        request = service.Files.Create(fileMetadata, stream, "application/octet-stream");
+                        request.Upload();
+                    }
 
-            var file = request.ResponseBody;
-            dao.update_anhcanhan(file.Id, mataikhoan);
-            list.Clear();
-            list = dao.get_danhsach();
-        }*/
+                    var file = request.ResponseBody;
+                    dao.update_anhcanhan(file.Id, mataikhoan);
+                    list.Clear();
+                    list = dao.get_danhsach();
+                }*/
         public void dataview_taikhoan(DataGridView dataGridView)
         {
 
@@ -173,7 +172,7 @@ namespace Hybrid.BUS
             dataGridView.Columns[1].Width = 300;
             dataGridView.Columns[2].Width = 280;
             dataGridView.Columns[3].Visible = false;
-            
+
         }
         public int count_user_ban(DataGridView dataGridView)
         {
@@ -313,7 +312,7 @@ namespace Hybrid.BUS
 
             return pictureBox;
         }
-        public void capnhap_hinhanhdaidien(string email,string tenhinh)
+        public void capnhap_hinhanhdaidien(string email, string tenhinh)
         {
             string luachon = null;
             switch (tenhinh)
