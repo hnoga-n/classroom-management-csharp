@@ -1,4 +1,5 @@
 ﻿using Hybrid.DAO;
+using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Hybrid.BUS
         public NhomChatBUS()
         {
             nhomchatDAO = new NhomChatDAO();
-            loadList();
+            //loadList();
         }
 
         public ArrayList getList()
@@ -26,6 +27,11 @@ namespace Hybrid.BUS
         {
             list = nhomchatDAO.loadList();
             list.Sort();
+        }
+
+        public NhomChat GetNhomChatByMaLop(string maLop)
+        {
+            return nhomchatDAO.GetNhomChatByMaLop(maLop);
         }
     }
 }

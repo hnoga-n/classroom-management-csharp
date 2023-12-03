@@ -25,14 +25,14 @@ namespace Hybrid
         private DeKiemTraBUS dktBUS = new DeKiemTraBUS();
         private ChuongBUS chuongBUS = new ChuongBUS();
         private LopHocBUS lopBUS = new LopHocBUS();
-        Chucnang cn=new Chucnang();
+        Chucnang cn = new Chucnang();
         TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
 
-        Taikhoan tk ;
+        Taikhoan tk;
 
         public Taikhoan Tk { get => tk; set => tk = value; }
 
-        public static PictureBox picha=new PictureBox();
+        public static PictureBox picha = new PictureBox();
         public Form1(Taikhoan tk)
         {
             InitializeComponent();
@@ -90,7 +90,7 @@ namespace Hybrid
             cn.loadggdrive();
             //cn.load_hinhanhcanhan(this.taikhoanhienhanh.Anhdaidien, pictureBox1);
             MakePictureBoxCircular(pictureBox1);
-            
+
             btnHome_Click(this, EventArgs.Empty);
         }
         private void MakePictureBoxCircular(PictureBox pictureBox)
@@ -108,7 +108,7 @@ namespace Hybrid
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Thongtintaikhoan frmtt=new Thongtintaikhoan(this.tk,this,pictureBox1);
+            Thongtintaikhoan frmtt = new Thongtintaikhoan(this.tk, this, pictureBox1);
             frmtt.ShowDialog();
             pictureBox1.Image = picha.Image;
             MakePictureBoxCircular(pictureBox1);

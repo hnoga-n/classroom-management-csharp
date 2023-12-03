@@ -10,7 +10,8 @@ namespace Hybrid.DAO
     {
         private static SqlConnection _connection;
         //private static string _connectionString = @"Data Source=DESKTOP-319D2UA\SQLEXPRESS;Initial Catalog=hybrid;Persist Security Info=True;User ID=sa;Password=123";
-        private static string _connectionString = @"Data Source=DESKTOP-OSKDV3G\SQLEXPRESS;Initial Catalog=hybrid;Integrated Security=True";
+        //private static string _connectionString = @"Data Source=localhost;Initial Catalog=hybrid;Integrated Security=True";
+        private static string _connectionString = @"Data Source=LAPTOP-ULQT60JG;Initial Catalog=hybrid;Integrated Security=True";
 
         private Ketnoisqlserver() { }
 
@@ -23,10 +24,10 @@ namespace Hybrid.DAO
             }
             else
                 if (_connection.State != System.Data.ConnectionState.Open)
-                {
+            {
                 _connection = new SqlConnection(_connectionString);
                 _connection.Open();
-                }
+            }
             return _connection;
         }
 

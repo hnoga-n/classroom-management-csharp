@@ -1,4 +1,5 @@
 ﻿using Hybrid.DAO;
+using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,18 +16,33 @@ namespace Hybrid.BUS
         public TinNhanNhomChatBUS()
         {
             tnncDAO = new TinNhanNhomChatDAO();
-            loadList();
+            //loadList();
         }
 
         public ArrayList getList()
         {
             return list;
         }
-        public void loadList()
+
+        public TinNhanNhomChat getLatest(string maLop)
         {
-            list = tnncDAO.loadList();
-            list.Sort();
+            return tnncDAO.getLatest(maLop);
         }
 
+        public void loadList(int perMess, int mess_index_value, string maLopHoc)
+        {
+            list = tnncDAO.loadList(perMess, mess_index_value, maLopHoc);
+            //list.Sort();
+        }
+
+        public void insert(string maTN, string maNhomChat, string matk, string message, string thoiGianGui)
+        {
+            tnncDAO.insert(maTN, maNhomChat, matk, message, thoiGianGui);
+        }
+
+        public void delete(string maTN)
+        {
+            tnncDAO.delete(maTN);
+        }
     }
 }

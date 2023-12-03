@@ -46,7 +46,7 @@
             // 
             this.lbl_date_time.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_date_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_date_time.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl_date_time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.lbl_date_time.Location = new System.Drawing.Point(0, 0);
             this.lbl_date_time.Name = "lbl_date_time";
             this.lbl_date_time.Size = new System.Drawing.Size(875, 45);
