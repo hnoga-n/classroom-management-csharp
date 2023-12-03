@@ -37,10 +37,8 @@
             this.MessageBoxContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_load_mess = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.timerLoadMess = new System.Windows.Forms.Timer(this.components);
-            this.lbl_notifiication_chatbox1 = new Hybrid.GUI.ChatBox.lbl_notifiication_chatbox();
             this.panel_sent_contaner.SuspendLayout();
             this.panel_sent_right.SuspendLayout();
-            this.MessageBoxContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // areaChatRTB
@@ -59,6 +57,7 @@
             this.areaChatRTB.TabIndex = 0;
             this.areaChatRTB.Text = "";
             this.areaChatRTB.TextChanged += new System.EventHandler(this.areaChatRTB_TextChanged);
+            this.areaChatRTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.areaChatRTB_KeyDown);
             this.areaChatRTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.areaChatRTB_KeyPress);
             // 
             // sendMessBtn
@@ -127,23 +126,23 @@
             // 
             // MessageBoxContainer
             // 
+            this.MessageBoxContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageBoxContainer.AutoScroll = true;
             this.MessageBoxContainer.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.MessageBoxContainer.Controls.Add(this.lbl_notifiication_chatbox1);
-            this.MessageBoxContainer.Controls.Add(this.btn_load_mess);
-            this.MessageBoxContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MessageBoxContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.MessageBoxContainer.Location = new System.Drawing.Point(10, 10);
+            this.MessageBoxContainer.Location = new System.Drawing.Point(10, 49);
             this.MessageBoxContainer.Name = "MessageBoxContainer";
             this.MessageBoxContainer.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
-            this.MessageBoxContainer.Size = new System.Drawing.Size(915, 580);
+            this.MessageBoxContainer.Size = new System.Drawing.Size(915, 541);
             this.MessageBoxContainer.TabIndex = 5;
             this.MessageBoxContainer.WrapContents = false;
             this.MessageBoxContainer.Scroll += new System.Windows.Forms.ScrollEventHandler(this.MessageBoxContainer_Scroll);
             // 
             // btn_load_mess
             // 
-            this.btn_load_mess.Location = new System.Drawing.Point(440, 58);
+            this.btn_load_mess.Location = new System.Drawing.Point(444, 8);
             this.btn_load_mess.Margin = new System.Windows.Forms.Padding(420, 12, 3, 3);
             this.btn_load_mess.Name = "btn_load_mess";
             this.btn_load_mess.OverrideDefault.Back.Color1 = System.Drawing.Color.LightGray;
@@ -199,19 +198,13 @@
             this.timerLoadMess.Interval = 1500;
             this.timerLoadMess.Tick += new System.EventHandler(this.timerLoadMess_Tick);
             // 
-            // lbl_notifiication_chatbox1
-            // 
-            this.lbl_notifiication_chatbox1.Location = new System.Drawing.Point(23, 3);
-            this.lbl_notifiication_chatbox1.Name = "lbl_notifiication_chatbox1";
-            this.lbl_notifiication_chatbox1.Size = new System.Drawing.Size(875, 40);
-            this.lbl_notifiication_chatbox1.TabIndex = 15;
-            // 
             // ChatBoxFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(935, 700);
+            this.Controls.Add(this.btn_load_mess);
             this.Controls.Add(this.MessageBoxContainer);
             this.Controls.Add(this.panel_sent_contaner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -222,7 +215,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChatBoxFrm_FormClosing);
             this.panel_sent_contaner.ResumeLayout(false);
             this.panel_sent_right.ResumeLayout(false);
-            this.MessageBoxContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -234,7 +226,6 @@
         private System.Windows.Forms.Label count_letter_lbl;
         private System.Windows.Forms.Panel panel_sent_contaner;
         private System.Windows.Forms.Panel panel_sent_right;
-        private lbl_notifiication_chatbox lbl_notifiication_chatbox1;
         private System.Windows.Forms.FlowLayoutPanel MessageBoxContainer;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btn_load_mess;
         private System.Windows.Forms.Timer timerLoadMess;

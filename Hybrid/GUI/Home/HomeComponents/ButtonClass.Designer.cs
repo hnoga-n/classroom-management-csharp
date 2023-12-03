@@ -36,6 +36,7 @@ namespace Hybrid.GUI.Home
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTenLop = new System.Windows.Forms.Label();
             this.lblChiTiet = new System.Windows.Forms.Label();
+            this.lbl_time_latest = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,21 +102,32 @@ namespace Hybrid.GUI.Home
             // lblChiTiet
             // 
             this.lblChiTiet.AutoEllipsis = true;
-            this.lblChiTiet.AutoSize = true;
             this.lblChiTiet.BackColor = System.Drawing.Color.White;
-            this.lblChiTiet.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblChiTiet.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChiTiet.Location = new System.Drawing.Point(79, 43);
             this.lblChiTiet.Name = "lblChiTiet";
-            this.lblChiTiet.Size = new System.Drawing.Size(103, 20);
+            this.lblChiTiet.Size = new System.Drawing.Size(199, 20);
             this.lblChiTiet.TabIndex = 3;
             this.lblChiTiet.Text = "Lập trình C#";
             this.lblChiTiet.Click += new System.EventHandler(this.lblChiTiet_Click);
+            // 
+            // lbl_time_latest
+            // 
+            this.lbl_time_latest.AutoEllipsis = true;
+            this.lbl_time_latest.BackColor = System.Drawing.Color.White;
+            this.lbl_time_latest.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_time_latest.Location = new System.Drawing.Point(284, 43);
+            this.lbl_time_latest.Name = "lbl_time_latest";
+            this.lbl_time_latest.Size = new System.Drawing.Size(61, 20);
+            this.lbl_time_latest.TabIndex = 4;
+            this.lbl_time_latest.Text = "12:30";
             // 
             // ButtonClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.Controls.Add(this.lbl_time_latest);
             this.Controls.Add(this.lblChiTiet);
             this.Controls.Add(this.lblTenLop);
             this.Controls.Add(this.pictureBox1);
@@ -125,7 +137,6 @@ namespace Hybrid.GUI.Home
             this.Size = new System.Drawing.Size(360, 80);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -135,6 +146,7 @@ namespace Hybrid.GUI.Home
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTenLop;
         private System.Windows.Forms.Label lblChiTiet;
+        private Label lbl_time_latest;
 
         public KryptonButton BtnLopHoc { get => btnLopHoc; set => btnLopHoc = value; }
         public Label LblTenLop { get => lblTenLop; set => lblTenLop = value; }

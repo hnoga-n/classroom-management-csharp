@@ -33,7 +33,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             if (lophoc.Daxoa == 1)
                 this.btnChinhSuaLopHoc.Visible = false;
             btnChat_Click(this, EventArgs.Empty);
-            btnChat.PerformClick();
+            /*btnChat.PerformClick();
             btnChat.StateNormal.Back.Color1 = System.Drawing.Color.White;
             btnChat.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             btnChat.StateNormal.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
@@ -41,7 +41,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             btnChat.StateNormal.Border.Color1 = System.Drawing.Color.White;
             btnChat.StateNormal.Border.Color2 = System.Drawing.Color.White;
             btnChat.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            btnChat.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.Black;
+            btnChat.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.Black;*/
         }
 
         private void addFormtoPanelHomeContainer(object Form)
@@ -62,7 +62,7 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private void btnChat_Click(object sender, EventArgs e)
         {
-            addFormtoPanelHomeContainer(new ChatBoxFrm(this.lophoc, this.taikhoan));
+            addFormtoPanelHomeContainer(new ChatBoxFrm(this, this.lophoc, this.taikhoan));
         }
 
         private void btnKhoaHoc_Click(object sender, EventArgs e)

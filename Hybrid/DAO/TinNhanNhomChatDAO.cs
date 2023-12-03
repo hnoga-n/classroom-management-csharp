@@ -54,7 +54,7 @@ namespace Hybrid.DAO
             {
                 string sql_get_all = string.Format("select top 1 * from tinnhan join nhomchat on tinnhan.manhomchat = nhomchat.manhomchat where malophoc = '{0}'  ORDER BY thoigiangui desc;", maLop);
                 SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
-                Console.WriteLine(sql_get_all);
+                //Console.WriteLine(sql_get_all);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -87,7 +87,7 @@ namespace Hybrid.DAO
             {
 
                 string sql_get_all = string.Format("SELECT * FROM tinnhan join nhomchat on tinnhan.manhomchat = nhomchat.manhomchat WHERE malophoc = '{2}' AND antinnhan = 0 ORDER BY thoigiangui DESC  OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", start, perMess, maLopHoc);
-                //Console.WriteLine(sql_get_all);
+                Console.WriteLine(sql_get_all);
                 SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
 
                 SqlDataReader dr = cmd.ExecuteReader();
