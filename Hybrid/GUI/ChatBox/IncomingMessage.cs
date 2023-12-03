@@ -40,7 +40,8 @@ namespace Hybrid.GUI.ChatBox
 
             TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
             Taikhoan tk = taikhoanBUS.List[taikhoanBUS.GetTaiKhoanByMaTaiKhoan(mess.Mataikhoan)];
-
+            PictureBox pic = taikhoanBUS.load_hinhdaidien(tk.Anhdaidien);
+            user_avatar.Image = pic.Image;
             string headEmail = tk.Email.Split('@')[0];
             string tailEmail = tk.Email.Split('@')[1].Replace(".com", "");
             lbl_sent_userName.Text = headEmail.Substring(0, headEmail.Length) + "***" + tailEmail.Substring(tailEmail.Length - 3);
