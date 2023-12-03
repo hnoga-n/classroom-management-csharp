@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,33 +51,33 @@
             // 
             // chart1
             // 
-            chartArea2.AxisX.IsLabelAutoFit = false;
-            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            chartArea2.AxisX.Title = "Bài kiểm tra";
-            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            chartArea2.AxisY.Title = "Điểm";
-            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            chartArea1.AxisX.Title = "Bài kiểm tra";
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            chartArea1.AxisY.Title = "Điểm";
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(8, 63);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Font = new System.Drawing.Font("Roboto Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            series2.IsValueShownAsLabel = true;
-            series2.LabelBackColor = System.Drawing.Color.White;
-            series2.Legend = "Legend1";
-            series2.Name = "Điểm";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Font = new System.Drawing.Font("Roboto Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            series1.IsValueShownAsLabel = true;
+            series1.LabelBackColor = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.Name = "Điểm";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(917, 300);
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
-            title2.BackColor = System.Drawing.Color.White;
-            title2.Font = new System.Drawing.Font("Roboto Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            title2.Name = "Title1";
-            title2.Text = "PHỔ ĐIỂM";
-            this.chart1.Titles.Add(title2);
+            title1.BackColor = System.Drawing.Color.White;
+            title1.Font = new System.Drawing.Font("Roboto Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            title1.Name = "Title1";
+            title1.Text = "PHỔ ĐIỂM";
+            this.chart1.Titles.Add(title1);
             // 
             // flowLayoutPanel1
             // 
@@ -201,7 +201,7 @@
             this.txtTimKiem.StateCommon.Border.Rounding = 5;
             this.txtTimKiem.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTimKiem.TabIndex = 3;
-            this.txtTimKiem.Text = "Tìm kiếm";
+            this.txtTimKiem.Text = "Tìm kiếm theo tiêu đề";
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             this.txtTimKiem.Enter += new System.EventHandler(this.txtTimKiem_Enter);
             this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);

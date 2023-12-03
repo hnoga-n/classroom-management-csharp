@@ -433,7 +433,6 @@ namespace Hybrid.GUI.Home
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         
@@ -463,5 +462,6 @@ namespace Hybrid.GUI.Home
         public FlowLayoutPanel PnlChuongComponent { get => pnlChuongComponent; set => pnlChuongComponent = value; }
         public Label LblDemTaiLieuChuong { get => lblDemTaiLieuChuong; set => lblDemTaiLieuChuong = value; }
         public KryptonButton BtnSua { get => btnSua; set => btnSua = value; }
+        public Label LblTenChuong { get => lblTenChuong; set => lblTenChuong = value; }
     }
 }

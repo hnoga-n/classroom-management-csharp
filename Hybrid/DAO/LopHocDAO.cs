@@ -35,7 +35,7 @@ namespace Hybrid.DAO
                     tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
                     tmp.Magiangvien = dr["magiangvien"].ToString();
                     tmp.Mota = dr["mota"].ToString();
-                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
+                    tmp.Avatar = dr["anhdaidien"].ToString();
                     tmp.Tenlop = dr["ten"].ToString();
                     listTmp.Add(tmp);
                 }
@@ -160,7 +160,7 @@ namespace Hybrid.DAO
             {
 
                 // Truy vấn dữ liệu từ SQL Server
-                string query = "select lophoc.malophoc,taikhoan.hoten,lophoc.ten,lophoc.mota,lophoc.daxoa from taikhoan,lophoc where magiangvien=mataikhoan and taikhoan.manhomquyen=2";
+                string query = "select lophoc.malophoc,lophoc.ten,lophoc.mota,taikhoan.hoten,lophoc.daxoa from taikhoan,lophoc where magiangvien=mataikhoan and taikhoan.manhomquyen=2";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))

@@ -205,8 +205,8 @@ namespace Hybrid.GUI.Home
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            new ThemChuongFrm(chuong).ShowDialog();
-            this.Khfrm.HienThiDanhSachChuong();
+            new ThemChuongFrm(chuong,this.khfrm).ShowDialog();
+            //this.Khfrm.HienThiDanhSachChuong();
         }
     }
 }

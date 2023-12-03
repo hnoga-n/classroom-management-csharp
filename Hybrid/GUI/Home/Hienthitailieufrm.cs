@@ -98,7 +98,11 @@ namespace Hybrid.GUI.Home.Tailieu
             DialogResult dr = MessageBox.Show("Xác nhận xóa học liệu ?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if(dr == DialogResult.Yes)
             {
+                this.buttonhoclieu.Hoclieu.Daxoa = 1;
                 tlbus.SuaHocLieu(this.buttonhoclieu.Hoclieu);
+                this.buttonhoclieu.PanelChuong.XoaChuongComponent(this.buttonhoclieu);
+                MessageBox.Show("Xóa thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
         }
 

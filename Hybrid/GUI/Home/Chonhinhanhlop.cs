@@ -83,7 +83,6 @@ namespace Hybrid.GUI.Home
                             {
                                 System.Resources.ResourceManager rm = global::Hybrid.Properties.Resources.ResourceManager;
                                 btn.PictureBox1.Image = (Image)rm.GetObject(ThongTinLopHocFrm.tenhinh);
-                                MessageBox.Show(btn.Lophoc.Avatar);
                                 break;
                             }
                         }
@@ -94,12 +93,6 @@ namespace Hybrid.GUI.Home
             }
             //đã set xong thì đóng form
             this.Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
         }
     }
 }

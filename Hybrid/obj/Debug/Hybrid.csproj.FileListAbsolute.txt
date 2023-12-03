@@ -1,456 +1,79 @@
-<<<<<<< HEAD
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.AssemblyReference.cache
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.ResolveComReference.cache
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.Form1.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.CloudFile.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.XemChiTietBaiTap.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Admin.Classfrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Admin.Homeadminfrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Admin.Userfrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.XemTienDoBaitap.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.ChamDiem.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.TaoBaiTap.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.ThemDapAn.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.HocsinhNoptre.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocsinh.LamBaiTap.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocvien.XemBaiLamBaiTap.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.LocalFile.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.ChatBoxFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.ChatBoxMessFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.IncomingMessage.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.lbl_notifiication_chatbox.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.lbl_time_create_chatbox.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.OutgoingMessage.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ChonHinhFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Doimatkhaufrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Forgetpass.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.LoginUI.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.SignupUI.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.test1.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Thongtintaikhoan.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.xacnhanma_fgp.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.Banbe.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.BanbeCard.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.DanhbaFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocPanel.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocCard.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.ThanhvienCard.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Chonhinhanhlop.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Tailieu.fileshow.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.filetemp.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Tailieu.Hienthitailieufrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiKT.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiTap.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ButtonClass.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonHocLieu.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.EmptyPanel.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.HocSinhCard.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.PanelChuongDropDown.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.PanelGiaoDienLopHoc.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KhoaHocFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiKiemTra.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiLamHocSinh.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ChiTietCauHoiFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemTienDoBaiKiemTra.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.ButtonCauHoi.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauHoi.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauTraLoi.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ThemCauHoiFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiNavigate.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiPanel.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.LamKiemTra.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Taotailieufrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThamGiaLopFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_HS.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_GV.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemChuongFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemLopFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThongTinLopHocFrm.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Utilities.loading.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.Properties.Resources.resources
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.GenerateResource.cache
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.CoreCompileInputs.cache
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.exe.config
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.exe
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.pdb
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\BCrypt.Net.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\BouncyCastle.Crypto.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\EPPlus.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\EPPlus.Interfaces.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\EPPlus.System.Drawing.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Auth.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Auth.PlatformServices.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Core.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Drive.v3.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.PlatformServices.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Protobuf.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\GumroadLicensing.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\K4os.Compression.LZ4.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\K4os.Compression.LZ4.Streams.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\K4os.Hash.xxHash.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Kimtoo.BindingProvider.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Kimtoo.ButtonGroup.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Kimtoo.DbManager.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Kimtoo.ValidationProvider.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.ReportViewer.Common.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.ReportViewer.Design.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.ReportViewer.WebDesign.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.ReportViewer.WebForms.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.SqlServer.Types.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\MySql.Data.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\NavigationMenu.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Newtonsoft.Json.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Npgsql.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Oracle.ManagedDataAccess.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.Common.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.Interfaces.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.MySql.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.Oracle.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.PostgreSQL.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.Text.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Buffers.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.CodeDom.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.ComponentModel.Annotations.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Memory.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Numerics.Vectors.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Text.Encodings.Web.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Text.Json.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.ValueTuple.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Ubiety.Dns.Core.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Unidecode.NET.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Zstandard.Net.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\EnvDTE.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\stdole.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\BCrypt.Net.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\EPPlus.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.pdb
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Auth.pdb
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Auth.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Core.pdb
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Core.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Drive.v3.pdb
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Drive.v3.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Protobuf.pdb
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Google.Protobuf.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\K4os.Compression.LZ4.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\K4os.Compression.LZ4.Streams.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\K4os.Hash.xxHash.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\MySql.Data.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Newtonsoft.Json.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Npgsql.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.Common.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.MySql.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.Oracle.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.PostgreSQL.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.SqlServer.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.Text.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Buffers.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.CodeDom.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Memory.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Numerics.Vectors.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Text.Encodings.Web.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Text.Json.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\System.ValueTuple.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\Unidecode.NET.xml
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\de\Microsoft.ReportViewer.WebDesign.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\es\Microsoft.ReportViewer.WebDesign.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.WebDesign.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\it\Microsoft.ReportViewer.WebDesign.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.WebDesign.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.WebDesign.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.WebDesign.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.WebDesign.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\de\Microsoft.ReportViewer.WebForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\es\Microsoft.ReportViewer.WebForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.WebForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\it\Microsoft.ReportViewer.WebForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.WebForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.WebForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.WebForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.WebForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.exe
-D:\code\visual studio\chongu\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.pdb
-=======
-<<<<<<< HEAD
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.AssemblyReference.cache
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.ResolveComReference.cache
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.Form1.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.CloudFile.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.XemChiTietBaiTap.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.XemTienDoBaitap.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.ChamDiem.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.TaoBaiTap.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.ThemDapAn.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.HocsinhNoptre.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocsinh.LamBaiTap.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocvien.XemBaiLamBaiTap.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.LocalFile.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.ChatBoxFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.ChatBoxMessFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.IncomingMessage.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.lbl_notifiication_chatbox.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.lbl_time_create_chatbox.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.OutgoingMessage.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Forgetpass.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.LoginUI.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.SignupUI.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Thongtintaikhoan.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.xacnhanma_fgp.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.Banbe.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.BanbeCard.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.DanhbaFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocPanel.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocCard.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.ThanhvienCard.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Tailieu.fileshow.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.filetemp.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Tailieu.Hienthitailieufrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiKT.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiTap.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ButtonClass.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonHocLieu.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.HocSinhCard.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.PanelChuongDropDown.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.PanelGiaoDienLopHoc.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KhoaHocFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiKiemTra.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiLamHocSinh.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ChiTietCauHoiFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemTienDoBaiKiemTra.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.ButtonCauHoi.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauHoi.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauTraLoi.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ThemCauHoiFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiNavigate.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiPanel.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.LamKiemTra.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Taotailieufrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThamGiaLopFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_HS.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_GV.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemChuongFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemLopFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThongTinLopHocFrm.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Utilities.loading.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.Properties.Resources.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.GenerateResource.cache
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.CoreCompileInputs.cache
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.exe.config
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.exe
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.pdb
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\BCrypt.Net.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\BouncyCastle.Crypto.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\EPPlus.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\EPPlus.Interfaces.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\EPPlus.System.Drawing.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Auth.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Auth.PlatformServices.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Core.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Drive.v3.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.PlatformServices.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Protobuf.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\GumroadLicensing.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\K4os.Compression.LZ4.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\K4os.Compression.LZ4.Streams.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\K4os.Hash.xxHash.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Kimtoo.BindingProvider.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Kimtoo.ButtonGroup.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Kimtoo.DbManager.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Kimtoo.ValidationProvider.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\MySql.Data.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\NavigationMenu.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Newtonsoft.Json.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Npgsql.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Oracle.ManagedDataAccess.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.Common.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.Interfaces.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.MySql.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.Oracle.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.PostgreSQL.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.Text.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Buffers.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.CodeDom.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.ComponentModel.Annotations.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Memory.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Numerics.Vectors.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Text.Encodings.Web.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Text.Json.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.ValueTuple.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Ubiety.Dns.Core.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Zstandard.Net.dll
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\BCrypt.Net.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\EPPlus.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.pdb
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Auth.pdb
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Auth.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Core.pdb
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Core.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Drive.v3.pdb
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Drive.v3.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Protobuf.pdb
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Google.Protobuf.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\K4os.Compression.LZ4.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\K4os.Compression.LZ4.Streams.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\K4os.Hash.xxHash.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\MySql.Data.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Newtonsoft.Json.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\Npgsql.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.Common.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.MySql.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.Oracle.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.PostgreSQL.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.OrmLite.SqlServer.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\ServiceStack.Text.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Buffers.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.CodeDom.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Memory.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Numerics.Vectors.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Text.Encodings.Web.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Text.Json.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\bin\Debug\System.ValueTuple.xml
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.exe
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.pdb
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.EmptyPanel.resources
-D:\WEZ\Wez_R_Coding\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Chinhsuabaitap.resources
-=======
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.exe.config
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.exe
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.pdb
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\BCrypt.Net.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\BouncyCastle.Crypto.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ComponentFactory.Krypton.Docking.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ComponentFactory.Krypton.Navigator.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ComponentFactory.Krypton.Ribbon.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ComponentFactory.Krypton.Workspace.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\EPPlus.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\EPPlus.Interfaces.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\EPPlus.System.Drawing.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Google.Apis.Auth.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Google.Apis.Auth.PlatformServices.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Google.Apis.Core.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Google.Apis.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Google.Apis.Drive.v3.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Google.Apis.PlatformServices.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Google.Protobuf.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\GumroadLicensing.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\K4os.Compression.LZ4.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\K4os.Compression.LZ4.Streams.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\K4os.Hash.xxHash.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Kimtoo.BindingProvider.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Kimtoo.ButtonGroup.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Kimtoo.DbManager.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Kimtoo.ValidationProvider.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\MySql.Data.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\NavigationMenu.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Newtonsoft.Json.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Npgsql.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Oracle.ManagedDataAccess.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ServiceStack.Common.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ServiceStack.Interfaces.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ServiceStack.OrmLite.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ServiceStack.OrmLite.MySql.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ServiceStack.OrmLite.Oracle.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ServiceStack.OrmLite.PostgreSQL.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\ServiceStack.Text.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Buffers.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.CodeDom.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.ComponentModel.Annotations.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Memory.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Numerics.Vectors.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Text.Encodings.Web.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Text.Json.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.ValueTuple.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Ubiety.Dns.Core.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\Zstandard.Net.dll
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.AssemblyReference.cache
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.ResolveComReference.cache
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.Form1.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Chinhsuabaitap.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.CloudFile.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.XemChiTietBaiTap.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Admin.Classfrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Admin.Homeadminfrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Admin.Userfrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.XemTienDoBaitap.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.ChamDiem.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.TaoBaiTap.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.ThemDapAn.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.HocsinhNoptre.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocsinh.LamBaiTap.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocvien.XemBaiLamBaiTap.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.LocalFile.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.ChatBoxFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.ChatBoxMessFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.IncomingMessage.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.lbl_notifiication_chatbox.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.lbl_time_create_chatbox.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.OutgoingMessage.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ChonHinhFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Doimatkhaufrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Forgetpass.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.LoginUI.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.SignupUI.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.test1.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Thongtintaikhoan.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.xacnhanma_fgp.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.Banbe.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.BanbeCard.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.DanhbaFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocPanel.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocCard.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.ThanhvienCard.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.Chonhinhanhlop.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.Tailieu.fileshow.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.filetemp.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.Tailieu.Hienthitailieufrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiKT.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiTap.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ButtonClass.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonHocLieu.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.EmptyPanel.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.HocSinhCard.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.PanelChuongDropDown.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.PanelGiaoDienLopHoc.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KhoaHocFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiKiemTra.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiLamHocSinh.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ChiTietCauHoiFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemTienDoBaiKiemTra.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.ButtonCauHoi.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauHoi.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauTraLoi.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ThemCauHoiFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiNavigate.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiPanel.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.LamKiemTra.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.Taotailieufrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThamGiaLopFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_HS.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_GV.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemChuongFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemLopFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThongTinLopHocFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Utilities.loading.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.Properties.Resources.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.GenerateResource.cache
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.CoreCompileInputs.cache
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\EnvDTE.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\stdole.dll
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\BCrypt.Net.xml
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\ComponentFactory.Krypton.Docking.pdb
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\ComponentFactory.Krypton.Navigator.pdb
@@ -492,74 +115,70 @@ D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Text.Encodings.Web.xml
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Text.Json.xml
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.ValueTuple.xml
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.AssemblyReference.cache
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.ResolveComReference.cache
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.Form1.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.CloudFile.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.XemChiTietBaiTap.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.XemTienDoBaitap.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.ChamDiem.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.TaoBaiTap.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.ThemDapAn.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.HocsinhNoptre.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocsinh.LamBaiTap.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocvien.XemBaiLamBaiTap.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Baitap.LocalFile.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.ChatBoxFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.ChatBoxMessFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.IncomingMessage.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.lbl_notifiication_chatbox.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.lbl_time_create_chatbox.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.OutgoingMessage.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Forgetpass.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.LoginUI.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.SignupUI.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Thongtintaikhoan.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.xacnhanma_fgp.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.Banbe.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.BanbeCard.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.DanhbaFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocPanel.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocCard.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.ThanhvienCard.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.Tailieu.fileshow.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.filetemp.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.Tailieu.Hienthitailieufrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiKT.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiTap.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ButtonClass.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonHocLieu.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.EmptyPanel.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.HocSinhCard.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.PanelChuongDropDown.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.PanelGiaoDienLopHoc.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KhoaHocFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiKiemTra.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiLamHocSinh.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ChiTietCauHoiFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemTienDoBaiKiemTra.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.ButtonCauHoi.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauHoi.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauTraLoi.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ThemCauHoiFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiNavigate.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiPanel.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.LamKiemTra.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.Taotailieufrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThamGiaLopFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_HS.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_GV.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemChuongFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemLopFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThongTinLopHocFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Utilities.loading.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.Properties.Resources.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.GenerateResource.cache
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.CoreCompileInputs.cache
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\Unidecode.NET.xml
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.exe
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.pdb
->>>>>>> main
->>>>>>> main
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.exe.config
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.exe
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.pdb

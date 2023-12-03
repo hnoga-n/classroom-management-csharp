@@ -15,10 +15,10 @@ namespace Hybrid.GUI.Admin
 {
     public partial class Userfrm : Form
     {
-        TaikhoanDAO taikhoanDAO=new TaikhoanDAO();
-        TaikhoanBUS taikhoanBUS =new TaikhoanBUS();
+        TaikhoanDAO taikhoanDAO = new TaikhoanDAO();
+        TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
         string emailValue;
-        string tinhtrang ;
+        string tinhtrang;
         int vitri;
         public Userfrm()
         {
@@ -35,11 +35,11 @@ namespace Hybrid.GUI.Admin
 
         private void buttimkiem_Click(object sender, EventArgs e)
         {
-            if(txt_timkiem.Text.Length<=0)
+            if (txt_timkiem.Text.Length <= 0)
             {
-                MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm!","Cảnh báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }   
+            }
             else
             {
                 if (comboBox1.SelectedIndex == 0)
@@ -49,10 +49,10 @@ namespace Hybrid.GUI.Admin
                 if (comboBox1.SelectedIndex == 2)
                     taikhoanBUS.timkiem_taikhoan_sdt(txt_timkiem.Text, dataGridView1);
                 int rowCount = dataGridView1.Rows.Count;
-                lab_timkiem.Text = rowCount.ToString() + "\nngười dùng";
-                
+                lab_timkiem.Text = rowCount.ToString();
+
             }
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,9 +74,9 @@ namespace Hybrid.GUI.Admin
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_timkiem.Text = "";
-            if(comboBox1.SelectedIndex == 2)
+            if (comboBox1.SelectedIndex == 2)
                 txt_timkiem.MaxLength = 10;
-            
+
             reload_data();
 
         }
@@ -89,45 +89,45 @@ namespace Hybrid.GUI.Admin
             dataGridView1.DataSource = dataTable;
 
             int rowCount = dataGridView1.Rows.Count;
-            lab_timkiem.Text = rowCount.ToString() + "\nngười dùng";
-            lab_tong.Text = rowCount.ToString() + "\nngười dùng";
-            
-            lab_hoatdong.Text = taikhoanBUS.count_user_unban(dataGridView1).ToString() + "\nngười dùng";
-            lab_xoa.Text = taikhoanBUS.count_user_ban(dataGridView1).ToString() + "\nngười dùng";
+            lab_timkiem.Text = rowCount.ToString();
+            lab_tong.Text = rowCount.ToString();
+
+            lab_hoatdong.Text = taikhoanBUS.count_user_unban(dataGridView1).ToString();
+            lab_xoa.Text = taikhoanBUS.count_user_ban(dataGridView1).ToString();
         }
 
         private void but_ban_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(taikhoanBUS.count_user_ban(dataGridView1).ToString());
             //MessageBox.Show(emailValue);
-            if(vitri == -1 || vitri == 0)
+            if (vitri == -1 || vitri == 0)
             {
-                MessageBox.Show("Vui lòng chọn 1 ô giá trị bất kì trong table!","Cảnh báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn 1 ô giá trị bất kì trong table!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 if (tinhtrang == "1")
-                    MessageBox.Show("Tài khoản đã bị ban trước đó rồi.","Thông báo");
+                    MessageBox.Show("Tài khoản đã bị ban trước đó rồi.", "Thông báo");
                 else
                 {
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn ban "+emailValue+" ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn ban " + emailValue + " ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     // Xử lý kết quả từ hộp thoại
                     if (result == DialogResult.Yes)
                     {
                         taikhoanBUS.ban_user(emailValue);
-                        MessageBox.Show("Đã ban thành công email:"+emailValue, "Thông báo");
+                        MessageBox.Show("Đã ban thành công email:" + emailValue, "Thông báo");
                         reload_data();
                         vitri = 0;
                     }
-                }    
-            }    
+                }
+            }
         }
 
         private void but_unban_Click(object sender, EventArgs e)
         {
             // MessageBox.Show(taikhoanBUS.count_user_unban(dataGridView1).ToString());
-            if (vitri == -1||vitri==0)
+            if (vitri == -1 || vitri == 0)
             {
                 MessageBox.Show("Vui lòng chọn 1 ô giá trị bất kì trong table!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -153,13 +153,13 @@ namespace Hybrid.GUI.Admin
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 )
+            if (e.RowIndex == -1)
             {
-                vitri =e.RowIndex;
+                vitri = e.RowIndex;
             }
-            if ( e.ColumnIndex == -1)
+            if (e.ColumnIndex == -1)
             {
-                vitri=e.ColumnIndex;
+                vitri = e.ColumnIndex;
             }
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {

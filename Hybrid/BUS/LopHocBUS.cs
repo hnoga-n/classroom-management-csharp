@@ -98,7 +98,7 @@ namespace Hybrid.BUS
         {
             foreach (LopHoc lop in list)
             {
-                if(lop.Malop.Equals(malophoc))
+                if(lop.Malop.ToLower().Equals(malophoc.ToLower()))
                     return lop;
             }
             return null;
@@ -147,9 +147,12 @@ namespace Hybrid.BUS
             checkBoxColumn.Name = "daxoa";
             dataGridView.Columns.Add(checkBoxColumn);
             dataGridView.Columns[0].Visible = false;
+            dataGridView.Columns[1].HeaderText = "Tên lớp học";
+            dataGridView.Columns[2].HeaderText = "Mô tả";
+            dataGridView.Columns[3].HeaderText = "Tên giảng viên";
             dataGridView.Columns[1].Width = 300;
-            dataGridView.Columns[2].Width = 305;
-            dataGridView.Columns[3].Width = 200;
+            dataGridView.Columns[2].Width = 330;
+            dataGridView.Columns[3].Width = 250;
             dataGridView.Columns[4].Visible = false;
 
         }

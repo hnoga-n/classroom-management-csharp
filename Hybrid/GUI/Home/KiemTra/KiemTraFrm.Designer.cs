@@ -63,6 +63,8 @@ namespace Hybrid.GUI.Home.KiemTra
             this.lblDemKyTuTieuDeBaiKT = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTieuDeBaiKT = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblTenChuong = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -370,6 +372,8 @@ namespace Hybrid.GUI.Home.KiemTra
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lblTenChuong);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.numHinhPhat);
@@ -393,7 +397,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(128, 227);
+            this.label8.Location = new System.Drawing.Point(128, 333);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(140, 28);
             this.label8.TabIndex = 21;
@@ -403,7 +407,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(6, 227);
+            this.label7.Location = new System.Drawing.Point(6, 333);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 28);
             this.label7.TabIndex = 20;
@@ -412,7 +416,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // numHinhPhat
             // 
             this.numHinhPhat.AlwaysActive = false;
-            this.numHinhPhat.Location = new System.Drawing.Point(56, 226);
+            this.numHinhPhat.Location = new System.Drawing.Point(56, 332);
             this.numHinhPhat.Name = "numHinhPhat";
             this.numHinhPhat.Size = new System.Drawing.Size(70, 33);
             this.numHinhPhat.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -430,7 +434,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(6, 184);
+            this.label6.Location = new System.Drawing.Point(6, 290);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(197, 28);
             this.label6.TabIndex = 18;
@@ -443,7 +447,7 @@ namespace Hybrid.GUI.Home.KiemTra
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(16, 388);
+            this.label5.Location = new System.Drawing.Point(16, 494);
             this.label5.MaximumSize = new System.Drawing.Size(250, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(250, 80);
@@ -552,7 +556,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // 
             this.chkDaoCauHoi.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.chkDaoCauHoi.ForeColor = System.Drawing.Color.Black;
-            this.chkDaoCauHoi.Location = new System.Drawing.Point(11, 335);
+            this.chkDaoCauHoi.Location = new System.Drawing.Point(11, 441);
             this.chkDaoCauHoi.MaximumSize = new System.Drawing.Size(250, 100);
             this.chkDaoCauHoi.Name = "chkDaoCauHoi";
             this.chkDaoCauHoi.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -567,7 +571,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // 
             this.chkCongKhaiDapAn.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.chkCongKhaiDapAn.ForeColor = System.Drawing.Color.Black;
-            this.chkCongKhaiDapAn.Location = new System.Drawing.Point(11, 269);
+            this.chkCongKhaiDapAn.Location = new System.Drawing.Point(11, 375);
             this.chkCongKhaiDapAn.MaximumSize = new System.Drawing.Size(250, 100);
             this.chkCongKhaiDapAn.Name = "chkCongKhaiDapAn";
             this.chkCongKhaiDapAn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -582,7 +586,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(6, 94);
+            this.label3.Location = new System.Drawing.Point(6, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(204, 28);
             this.label3.TabIndex = 9;
@@ -592,7 +596,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // 
             this.dtpThoiGianKetThuc.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpThoiGianKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThoiGianKetThuc.Location = new System.Drawing.Point(11, 136);
+            this.dtpThoiGianKetThuc.Location = new System.Drawing.Point(11, 242);
             this.dtpThoiGianKetThuc.MinDate = this.dtpThoiGianBatDau.Value;
             this.dtpThoiGianKetThuc.Name = "dtpThoiGianKetThuc";
             this.dtpThoiGianKetThuc.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
@@ -612,7 +616,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // 
             this.dtpThoiGianBatDau.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpThoiGianBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThoiGianBatDau.Location = new System.Drawing.Point(10, 44);
+            this.dtpThoiGianBatDau.Location = new System.Drawing.Point(10, 150);
             this.dtpThoiGianBatDau.Name = "dtpThoiGianBatDau";
             this.dtpThoiGianBatDau.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
             this.dtpThoiGianBatDau.Size = new System.Drawing.Size(250, 34);
@@ -631,7 +635,7 @@ namespace Hybrid.GUI.Home.KiemTra
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(6, 9);
+            this.label2.Location = new System.Drawing.Point(6, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 28);
             this.label2.TabIndex = 7;
@@ -722,6 +726,26 @@ namespace Hybrid.GUI.Home.KiemTra
             this.txtTieuDeBaiKT.Enter += new System.EventHandler(this.txtTieuDeBaiKT_Enter);
             this.txtTieuDeBaiKT.Leave += new System.EventHandler(this.txtTieuDeBaiKT_Leave);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.Location = new System.Drawing.Point(6, 7);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 28);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Chương:";
+            // 
+            // lblTenChuong
+            // 
+            this.lblTenChuong.AutoEllipsis = true;
+            this.lblTenChuong.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTenChuong.Location = new System.Drawing.Point(6, 40);
+            this.lblTenChuong.Name = "lblTenChuong";
+            this.lblTenChuong.Size = new System.Drawing.Size(271, 61);
+            this.lblTenChuong.TabIndex = 23;
+            this.lblTenChuong.Text = "tên chương";
+            // 
             // KiemTraFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -782,6 +806,8 @@ namespace Hybrid.GUI.Home.KiemTra
         private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown numHinhPhat;
         private Label label6;
         private Label label8;
+        private Label lblTenChuong;
+        private Label label9;
 
         public CheckBox ChkDaoCauHoi { get => chkDaoCauHoi; set => chkDaoCauHoi = value; }
         public CheckBox ChkCongKhaiDapAn { get => chkCongKhaiDapAn; set => chkCongKhaiDapAn = value; }

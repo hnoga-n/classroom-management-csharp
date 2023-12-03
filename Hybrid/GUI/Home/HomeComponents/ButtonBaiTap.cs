@@ -81,6 +81,20 @@ namespace Hybrid.GUI.Home.HomeComponents
                 return;
         }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (DateTime.Now.AddMinutes(15) > this.baitap.Thoigianbatdau)
+            {
+                MessageBox.Show("Chỉ chỉnh sửa trước thời gian bắt đầu 15 phút !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            loading.ShowSplashScreen();
+            Chinhsuabaitap editBtFrm = new Chinhsuabaitap(this.panelChuong, this.panelChuong.Khfrm.Taikhoan, this.panelChuong.Khfrm.Lophoc, this.panelChuong.Chuong, this.baitap);
+            loading.CloseForm();
+            editBtFrm.Show();
+            return;
+        }
+
         public string XacDinhTrangThaiDeKiemTra(DateTime startTime, DateTime endTime)
         {
             DateTime currentTime = DateTime.Now;

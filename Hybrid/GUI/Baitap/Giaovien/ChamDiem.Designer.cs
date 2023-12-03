@@ -71,6 +71,7 @@
             this.btnMark.StateCommon.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnMark.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMark.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnMark.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnMark.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnMark.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Roboto Light", 10.2F);
             this.btnMark.TabIndex = 8;

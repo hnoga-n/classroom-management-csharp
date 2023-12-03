@@ -33,11 +33,13 @@ namespace Hybrid.GUI.Home.KiemTra
 
         // sua de kiem tra
         DeKiemTra dekiemtra;
+        ChuongBUS chuongBUS = new ChuongBUS();
         public KiemTraFrm(PanelChuongDropDown panelchuong)
         {
             InitializeComponent();
             this.panelchuong = panelchuong;
             this.chuong = panelchuong.Chuong;
+            this.lblTenChuong.Text = panelchuong.Chuong.Tenchuong;
             HienThiDanhSachCauHoi(cauhoiBUS.GetDanhSachCauHoiByMaTaiKhoan(lophocBUS.GetLopHocByMaLop(this.chuong.Malop).Magiangvien));
             this.dtpThoiGianBatDau.MinDate = DateTime.Now;
             this.dtpThoiGianKetThuc.MinDate = this.dtpThoiGianBatDau.Value.AddMinutes(15);
@@ -62,6 +64,7 @@ namespace Hybrid.GUI.Home.KiemTra
             this.numHinhPhat.Enabled= false;
             this.btnDang.Visible = false;
             this.btnCapNhat.Visible = true;
+            this.lblTenChuong.Text = chuongBUS.getChuongWithMaChuong(dkt.Machuong).Tenchuong;
             this.txtTieuDeBaiKT.Text = dkt.Tieude;
             this.dtpThoiGianBatDau.Value = dekiemtra.Thoigianbatdau;
             this.dtpThoiGianKetThuc.Value = dekiemtra.Thoigianketthuc;

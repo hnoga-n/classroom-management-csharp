@@ -55,10 +55,10 @@ namespace Hybrid.GUI
             else
             {
                 if (tkbus.kt_email(txt_email.Text))
-                    if(tkdao.get_daxoa_email(txt_email.Text)==0)
+                    if(tkbus.kt_daxoa_taikhoan(txt_email.Text)==0)
                         if (tkdao.check_taikhoan(txt_email.Text, txt_matkhau.Text))
                         {
-                            if(tkdao.get_quyenhan_email(txt_email.Text)==1)
+                            if(tkbus.kt_quyenhan_taikhoan(txt_email.Text)==1)
                             {
                                 Form form = new Homeadminfrm();
                                 form.ShowDialog();

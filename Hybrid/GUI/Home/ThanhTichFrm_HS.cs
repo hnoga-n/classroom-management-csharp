@@ -146,14 +146,14 @@ namespace Hybrid.GUI.Home
         {
             if (string.IsNullOrEmpty(txtTimKiem.Text))
             {
-                txtTimKiem.Text = "Tìm kiếm";
+                txtTimKiem.Text = "Tìm kiếm theo tiêu đề";
                 txtTimKiem.ForeColor = SystemColors.Control; // Đặt màu chữ thành màu xám
             }
         }
 
         private void txtTimKiem_Enter(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "Tìm kiếm")
+            if (txtTimKiem.Text == "Tìm kiếm theo tiêu đề")
             {
                 txtTimKiem.Text = "";
                 txtTimKiem.ForeColor = SystemColors.WindowText; // Đặt màu chữ về màu mặc định của hệ thống
