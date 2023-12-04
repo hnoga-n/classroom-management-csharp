@@ -25,7 +25,7 @@ namespace Hybrid.BUS
         public LopHocBUS()
         {
             lopDAO = new LopHocDAO();
-            list = lopDAO.loadList();
+            loadList();
         }
 
         public ArrayList getList()
@@ -35,6 +35,9 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = lopDAO.loadList();
+            LophocComparer comparer = new LophocComparer();
+            comparer.TypeToCompare = LophocComparer.ComparisonType.malophoc;
+            list.Sort(comparer);
         }
 
         public ArrayList GetDanhSachTatCaLopHocByMaTaiKhoan(string mataikhoan)
@@ -47,7 +50,7 @@ namespace Hybrid.BUS
             LophocComparer comparer = new LophocComparer();
             comparer.TypeToCompare = LophocComparer.ComparisonType.malophoc;
             LopHoc lopSearch = new LopHoc();
-            lopSearch.Malop = malop.ToLower();
+            lopSearch.Malop= malop;
             int index = list.BinarySearch(lopSearch, comparer);
             return (LopHoc)list[index];
         }

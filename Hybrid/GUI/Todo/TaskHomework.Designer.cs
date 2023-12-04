@@ -30,7 +30,6 @@
         {
             this.btnTask = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblClass = new System.Windows.Forms.Label();
             this.lblDeadline = new System.Windows.Forms.Label();
             this.lblTypeclass = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -45,7 +44,7 @@
             this.btnTask.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTask.Location = new System.Drawing.Point(0, 0);
             this.btnTask.Name = "btnTask";
-            this.btnTask.Size = new System.Drawing.Size(1000, 80);
+            this.btnTask.Size = new System.Drawing.Size(978, 80);
             this.btnTask.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnTask.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnTask.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -61,29 +60,19 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblClass);
             this.panel1.Controls.Add(this.lblDeadline);
             this.panel1.Controls.Add(this.lblTypeclass);
-            this.panel1.Location = new System.Drawing.Point(214, 37);
+            this.panel1.Location = new System.Drawing.Point(157, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(500, 31);
             this.panel1.TabIndex = 9;
             // 
-            // lblClass
-            // 
-            this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(268, 7);
-            this.lblClass.Name = "lblClass";
-            this.lblClass.Size = new System.Drawing.Size(138, 16);
-            this.lblClass.TabIndex = 7;
-            this.lblClass.Text = "Công nghệ phần mềm";
-            // 
             // lblDeadline
             // 
-            this.lblDeadline.AutoSize = true;
+            this.lblDeadline.AutoEllipsis = true;
             this.lblDeadline.Location = new System.Drawing.Point(95, 7);
             this.lblDeadline.Name = "lblDeadline";
-            this.lblDeadline.Size = new System.Drawing.Size(167, 16);
+            this.lblDeadline.Size = new System.Drawing.Size(402, 16);
             this.lblDeadline.TabIndex = 6;
             this.lblDeadline.Text = "23:23 03/03/2024 Hạn chót |";
             // 
@@ -99,11 +88,11 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
+            this.lblTitle.AutoEllipsis = true;
             this.lblTitle.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(210, 14);
+            this.lblTitle.Location = new System.Drawing.Point(153, 14);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(126, 20);
+            this.lblTitle.Size = new System.Drawing.Size(603, 20);
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Bài tập 10/20";
             // 
@@ -112,7 +101,7 @@
             this.pictureBoxHomework.BackgroundImage = global::Hybrid.Properties.Resources.icons8_homework_100;
             this.pictureBoxHomework.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxHomework.InitialImage = null;
-            this.pictureBoxHomework.Location = new System.Drawing.Point(86, 12);
+            this.pictureBoxHomework.Location = new System.Drawing.Point(43, 12);
             this.pictureBoxHomework.Name = "pictureBoxHomework";
             this.pictureBoxHomework.Size = new System.Drawing.Size(63, 56);
             this.pictureBoxHomework.TabIndex = 7;
@@ -120,10 +109,10 @@
             // 
             // btnDoHomework
             // 
-            this.btnDoHomework.Location = new System.Drawing.Point(835, 24);
+            this.btnDoHomework.Location = new System.Drawing.Point(762, 14);
             this.btnDoHomework.Name = "btnDoHomework";
             this.btnDoHomework.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
-            this.btnDoHomework.Size = new System.Drawing.Size(145, 35);
+            this.btnDoHomework.Size = new System.Drawing.Size(166, 45);
             this.btnDoHomework.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnDoHomework.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnDoHomework.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -133,7 +122,8 @@
             this.btnDoHomework.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnDoHomework.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoHomework.TabIndex = 11;
-            this.btnDoHomework.Values.Text = "Làm bài tập";
+            this.btnDoHomework.Values.Text = "Xem/Làm bài tập";
+            this.btnDoHomework.Click += new System.EventHandler(this.baitapnDoHomework_Click);
             // 
             // TaskHomework
             // 
@@ -146,12 +136,11 @@
             this.Controls.Add(this.pictureBoxHomework);
             this.Controls.Add(this.btnTask);
             this.Name = "TaskHomework";
-            this.Size = new System.Drawing.Size(1000, 80);
+            this.Size = new System.Drawing.Size(978, 80);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHomework)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -162,7 +151,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBoxHomework;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnDoHomework;
-        private System.Windows.Forms.Label lblClass;
         private System.Windows.Forms.Label lblDeadline;
     }
 }

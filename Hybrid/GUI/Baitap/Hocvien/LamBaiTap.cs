@@ -22,17 +22,18 @@ namespace Hybrid.GUI.Baitap.Hocsinh
             InitializeComponent();
         }
 
-        public LamBaiTap(Taikhoan taikhoanhienhanh, Chuong chuong, BaiTap bt)
+        public LamBaiTap(Taikhoan taikhoanhienhanh, Chuong chuong, BaiTap bt,BailambaitapBUS blbtBUS)
         {
             InitializeComponent();
             this.taikhoanhienhanh = taikhoanhienhanh;
             this.chuong = chuong;
             this.bt = bt;
+            this.blbtBUS = blbtBUS;
         }
 
         private void LamBaiTap_Load(object sender, EventArgs e)
         {
-            blbtBUS = new BailambaitapBUS();
+            loading.ShowSplashScreen();
             fileBtBUS = new FileBaiTapBUS();
             fileBlbtBUS = new FileBaiLamBaiTapBUS();
             this.lblTitle.Text = bt.Tieude;
@@ -84,6 +85,7 @@ namespace Hybrid.GUI.Baitap.Hocsinh
                     this.flowFileBaiTapPanel.Controls.Add(tmp);
                 }
             }
+            loading.CloseForm();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -135,7 +137,8 @@ namespace Hybrid.GUI.Baitap.Hocsinh
                         if (fileBlbtBUS.createFile(listFileBaiLam))
                         {
                             loading.CloseForm();
-                            MessageBox.Show("Tạo bài tập thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Lưu bài làm thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.blbtBUS.loadList();
                             this.Dispose();
                             return;
                         }
@@ -145,13 +148,15 @@ namespace Hybrid.GUI.Baitap.Hocsinh
                             blbtBUS.DeleteBaiLamBaiTap(mabailam.ToString());
                             loading.CloseForm();
                             MessageBox.Show("Upload file thất bại !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.blbtBUS.loadList();
                             return;
                         }
                     }
                     else
                     {
                         loading.CloseForm();
-                        MessageBox.Show("Tạo bài tập thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lưu bài làm thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.blbtBUS.loadList();
                         this.Dispose();
                         return;
                     }
@@ -161,6 +166,7 @@ namespace Hybrid.GUI.Baitap.Hocsinh
                 MessageBox.Show("Có lỗi xảy ra !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 fileBlbtBUS.deleteFile(mabailam.ToString());
                 blbtBUS.DeleteBaiLamBaiTap(mabailam.ToString());
+                this.blbtBUS.loadList();
                 Console.WriteLine(ex.Message);
             }
             

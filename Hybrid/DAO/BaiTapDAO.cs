@@ -16,11 +16,6 @@ namespace Hybrid.DAO
     public class BaiTapDAO
     {
 
-        public BaiTapDAO()
-        {
-
-        }
-
         public ArrayList loadList()
         {
             ArrayList listTmp = new ArrayList();
@@ -156,6 +151,88 @@ namespace Hybrid.DAO
                 Ketnoisqlserver.CloseConnection();
             }
             return true;
+        }
+
+        public ArrayList GetTatCaBaiTapDaNopByMaLopHoc(string malop)
+        {
+            ArrayList listBaitap = new ArrayList();
+            try
+            {
+                string sql = "SELECT bt.mabaitap,c.machuong,tieude,noidungbaitap,noidungdapan,bt.thoigiantao,thoigianbatdau,thoigianketthuc,congkhaidapan,bt.daxoa FROM baitap bt JOIN chuong c ON bt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc JOIN bailambaitap bl ON bl.mabaitap=bt.mabaitap WHERE l.malophoc=@malophoc ";
+                SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
+                command.Parameters.AddWithValue("@malophoc",Guid.Parse(malop));
+                SqlDataReader dr = command.ExecuteReader();
+                
+                while (dr.Read())
+                {
+                    BaiTap tmp = new BaiTap
+                    {
+                        Mabaitap = dr["mabaitap"].ToString(),
+                        Machuong = dr["machuong"].ToString(),
+                        Tieude = dr["tieude"].ToString(),
+                        Noidungbaitap = dr["noidungbaitap"].ToString(),
+                        Noidungdapan = dr["noidungdapan"].ToString(),
+                        Thoigiantao = DateTime.Parse(dr["thoigiantao"].ToString()),
+                        Thoigianbatdau = DateTime.Parse(dr["thoigianbatdau"].ToString()),
+                        Thoigianketthuc = DateTime.Parse(dr["thoigianketthuc"].ToString()),
+                        Congkhaidapan = int.Parse(dr["congkhaidapan"].ToString()),
+                        Daxoa = int.Parse(dr["daxoa"].ToString())
+                    };
+                    listBaitap.Add(tmp);
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+            return listBaitap;
+        }
+        public ArrayList GetTatCaBaiTapChuaNopByMaLopHoc(string malop)
+        {
+            ArrayList listBaitap = new ArrayList();
+            try
+            {
+                string sql = "SELECT bt.mabaitap,c.machuong,tieude,noidungbaitap,noidungdapan,bt.thoigiantao,thoigianbatdau,thoigianketthuc,congkhaidapan,bt.daxoa FROM baitap bt JOIN chuong c ON bt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc  WHERE l.malophoc=@malophoc AND bt.mabaitap NOT IN (SELECT bt2.mabaitap FROM baitap bt2 JOIN bailambaitap bl2 ON bl2.mabaitap=bt2.mabaitap)";
+                SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
+                command.Parameters.AddWithValue("@malophoc", Guid.Parse(malop));
+                SqlDataReader dr = command.ExecuteReader();
+                BaiTap tmp;
+                while (dr.Read())
+                {
+                    tmp = new BaiTap
+                    {
+                        Mabaitap = dr["mabaitap"].ToString(),
+                        Machuong = dr["machuong"].ToString(),
+                        Tieude = dr["tieude"].ToString(),
+                        Noidungbaitap = dr["noidungbaitap"].ToString(),
+                        Noidungdapan = dr["noidungdapan"].ToString(),
+                        Thoigiantao = DateTime.Parse(dr["thoigiantao"].ToString()),
+                        Thoigianbatdau = DateTime.Parse(dr["thoigianbatdau"].ToString()),
+                        Thoigianketthuc = DateTime.Parse(dr["thoigianketthuc"].ToString()),
+                        Congkhaidapan = int.Parse(dr["congkhaidapan"].ToString()),
+                        Daxoa = int.Parse(dr["daxoa"].ToString())
+                    };
+                    listBaitap.Add(tmp);
+
+                }
+                dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+
+            return listBaitap;
         }
     }
 }

@@ -3,12 +3,6 @@ using Hybrid.DAO;
 using Hybrid.DTO;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Hybrid.BUS
 {
@@ -118,6 +112,16 @@ namespace Hybrid.BUS
                     rslist.Add( dkt );  
             }
             return rslist;
+        }
+
+        public ArrayList GetTatCaBaiKiemTraDaNopByMaLopHoc(string malophoc)
+        {
+            return dektDAO.GetTatCaBaiKiemTraDaNopByMaLopHoc(malophoc);
+        }
+        public ArrayList GetTatCaBaiKiemTraChuaNopByMaLopHoc(string malophoc)
+        {
+            return dektDAO.GetTatCaBaiKiemTraChuaNopByMaLopHoc(malophoc);
+
         }
     }
 }
