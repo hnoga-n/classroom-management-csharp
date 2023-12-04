@@ -39,8 +39,7 @@ namespace Hybrid
         {
             InitializeComponent();
             loading.ShowSplashScreen();
-            this.tk = taikhoanBUS.GetTaiKhoanByEmail(email);
-            hlBUS = new HocLieuBUS();
+            this.tk = tk;
             chuongBUS = new ChuongBUS();
             lopBUS = new LopHocBUS();
             loading.CloseForm();

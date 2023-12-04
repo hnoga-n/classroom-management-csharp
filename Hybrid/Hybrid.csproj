@@ -432,7 +432,6 @@
     <Compile Include="GUI\ChatBox\OutgoingMessage.Designer.cs">
       <DependentUpon>OutgoingMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Class1.cs" />
     <Compile Include="GUI\Dangnhap\ChonHinhFrm.cs">
       <SubType>Form</SubType>
     </Compile>
