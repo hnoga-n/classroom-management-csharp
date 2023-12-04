@@ -2,11 +2,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
+using System.Windows.Forms;
 namespace Hybrid.DAO
 {
     public class TaikhoanDAO
@@ -40,6 +42,27 @@ namespace Hybrid.DAO
                 }
             }
             return danhSachTaiKhoan;
+        }
+        public DataTable LayDanhSachTaiKhoan()
+        {
+            DataTable dataTable = new DataTable();
+
+            // Kết nối đến cơ sở dữ liệu
+            using (SqlConnection connection = Ketnoisqlserver.GetConnection())
+            {
+
+                // Truy vấn dữ liệu từ SQL Server
+                string query = "SELECT hoten, email, sodienthoai, daxoa FROM TaiKhoan where manhomquyen=2";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
         }
         public Boolean insert_taikhoan(Taikhoan tk)
         {
@@ -140,6 +163,25 @@ namespace Hybrid.DAO
 
             return temp;
         }
+        public int get_quyenhan_email(string email)
+        {
+            int temp = -1;
+            using (SqlConnection conn = Ketnoisqlserver.GetConnection())
+            {
+                string sqlstring = "Select manhomquyen from taikhoan where email=@email";
+                using (SqlCommand command = new SqlCommand(sqlstring, conn))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        temp = Convert.ToInt32(reader["manhomquyen"].ToString());
+                    }
+                }
+            }
+
+            return temp;
+        }
         public string get_tenlop_malop(string malop)
         {
             string temp = null;
@@ -197,6 +239,58 @@ namespace Hybrid.DAO
 
             return temp;
         }
+        public void update_ten_sodienthoai_bymatoaikhoan(string ten, string sodienthoai, string mataikhoan)
+        {
+            using (SqlConnection conn = Ketnoisqlserver.GetConnection())
+            {
+                string sqlstring = "Update taikhoan set hoten=@hoten,sodienthoai=@sodienthoai where mataikhoan=@mataikhoan";
+                using (SqlCommand command = new SqlCommand(sqlstring, conn))
+                {
+                    command.Parameters.AddWithValue("@mataikhoan",mataikhoan);
+                    command.Parameters.AddWithValue("@hoten",ten);
+                    command.Parameters.AddWithValue("@sodienthoai", sodienthoai);
+                    int temp=command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void update_anhcanhan(string tenhinh,string email)
+        {
+            using (SqlConnection conn = Ketnoisqlserver.GetConnection())
+            {
+                string sqlstring = "Update taikhoan set anhdaidien=@anhdaidien where email=@email";
+                using (SqlCommand command = new SqlCommand(sqlstring, conn))
+                {
+                    command.Parameters.AddWithValue("@email",email);
+                    command.Parameters.AddWithValue("@anhdaidien", tenhinh);
+                    int temp = command.ExecuteNonQuery();
+                }
+            }
+        }
+       public void ban_taikhoan(string email)
+        {
+            using(SqlConnection conn=Ketnoisqlserver.GetConnection())
+            {
+                string sqlstring = "Update taikhoan set daxoa=1 where email=@email";
+                using (SqlCommand command = new SqlCommand(sqlstring, conn))
+                {
+                    command.Parameters.AddWithValue("@email",email );
+                    int temp = command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void unban_taikhoan(string email)
+        {
+            using (SqlConnection conn = Ketnoisqlserver.GetConnection())
+            {
+                string sqlstring = "Update taikhoan set daxoa=0 where email=@email";
+                using (SqlCommand command = new SqlCommand(sqlstring, conn))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    int temp = command.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }
 

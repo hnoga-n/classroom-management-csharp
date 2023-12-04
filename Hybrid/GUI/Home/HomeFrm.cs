@@ -13,7 +13,7 @@ namespace Hybrid.GUI.Home
         private Form1 form;
         private Taikhoan tk;
         private LopHocBUS lophocBUS = new LopHocBUS();
-
+        Chucnang cn = new Chucnang();
         public Taikhoan Tk { get => tk; set => tk = value; }
         public LopHocBUS LophocBUS { get => lophocBUS; set => lophocBUS = value; }
         public Form1 Form { get => form; set => form = value; }
@@ -29,12 +29,17 @@ namespace Hybrid.GUI.Home
         public void HienThiDanhSachLopHoc(ArrayList list)
         {
             pnlLopHocContainer.Controls.Clear();
-            foreach(LopHoc lophoc in list)
+            foreach (LopHoc lophoc in list)
             {
-                ButtonClass btnClass = new ButtonClass(lophoc,this);
+                ButtonClass btnClass = new ButtonClass(lophoc, this);
                 pnlLopHocContainer.Controls.Add(btnClass);
             }
 
+        }
+
+        public Panel getPnlContainer()
+        {
+            return this.pnlLopHocContainer;
         }
         private void txtTimKiem_Leave(object sender, EventArgs e)
         {
@@ -56,14 +61,14 @@ namespace Hybrid.GUI.Home
 
         private void btnTaoLop_Click(object sender, EventArgs e)
         {
-             ThemLopFrm newForm = new ThemLopFrm(this);
-             newForm.ShowDialog();
+            ThemLopFrm newForm = new ThemLopFrm(this);
+            newForm.ShowDialog();
         }
 
         private void btnThamGia_Click(object sender, EventArgs e)
         {
-              ThamGiaLopFrm newForm = new ThamGiaLopFrm(this);
-              newForm.ShowDialog();         
+            ThamGiaLopFrm newForm = new ThamGiaLopFrm(this);
+            newForm.ShowDialog();
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -72,7 +77,7 @@ namespace Hybrid.GUI.Home
             ArrayList rslist = new ArrayList();
             foreach (LopHoc l in lophocBUS.GetDanhSachTatCaLopHocByMaTaiKhoan(tk.Mataikhoan))
             {
-                if (l.Tenlop.ToLower().Contains(txtTimKiem.Text.ToLower())) 
+                if (l.Tenlop.ToLower().Contains(txtTimKiem.Text.ToLower()))
                     rslist.Add(l);
             }
             HienThiDanhSachLopHoc(rslist);

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{21E9C3B6-3DB3-4268-9A1B-C249173E1A3D}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Hybrid</RootNamespace>
     <AssemblyName>Hybrid</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
       <HintPath>packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
@@ -54,8 +57,8 @@
     <Reference Include="ComponentFactory.Krypton.Workspace">
       <HintPath>..\..\..\..\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus, Version=7.0.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>packages\EPPlus.7.0.1\lib\net462\EPPlus.dll</HintPath>
+    <Reference Include="EPPlus, Version=7.0.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.7.0.2\lib\net462\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
       <HintPath>packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
@@ -113,6 +116,9 @@
     </Reference>
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.26\lib\net452\MySql.Data.dll</HintPath>
@@ -214,6 +220,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.26\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unidecode.NET, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Unidecode.NET.2.1.0\lib\netstandard2.0\Unidecode.NET.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -318,6 +327,24 @@
     <Compile Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUI\Admin\Classfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Classfrm.Designer.cs">
+      <DependentUpon>Classfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Homeadminfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Homeadminfrm.Designer.cs">
+      <DependentUpon>Homeadminfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\Userfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\Userfrm.Designer.cs">
+      <DependentUpon>Userfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.Designer.cs">
       <DependentUpon>XemChiTietBaiTap.cs</DependentUpon>
     </Compile>
@@ -375,12 +402,6 @@
     <Compile Include="GUI\ChatBox\ChatBoxFrm.Designer.cs">
       <DependentUpon>ChatBoxFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ChatBox\ChatBoxMessFrm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\ChatBox\ChatBoxMessFrm.Designer.cs">
-      <DependentUpon>ChatBoxMessFrm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\ChatBox\IncomingMessage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -393,6 +414,12 @@
     <Compile Include="GUI\ChatBox\lbl_notifiication_chatbox.Designer.cs">
       <DependentUpon>lbl_notifiication_chatbox.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ChatBox\lbl_save_clipboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChatBox\lbl_save_clipboard.designer.cs">
+      <DependentUpon>lbl_save_clipboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ChatBox\lbl_time_create_chatbox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -404,6 +431,19 @@
     </Compile>
     <Compile Include="GUI\ChatBox\OutgoingMessage.Designer.cs">
       <DependentUpon>OutgoingMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Class1.cs" />
+    <Compile Include="GUI\Dangnhap\ChonHinhFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\ChonHinhFrm.designer.cs">
+      <DependentUpon>ChonHinhFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\Doimatkhaufrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\Doimatkhaufrm.Designer.cs">
+      <DependentUpon>Doimatkhaufrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Dangnhap\Forgetpass.cs">
       <SubType>Form</SubType>
@@ -422,6 +462,12 @@
     </Compile>
     <Compile Include="GUI\Dangnhap\SignupUI.designer.cs">
       <DependentUpon>SignupUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\test1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dangnhap\test1.Designer.cs">
+      <DependentUpon>test1.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Dangnhap\Thongtintaikhoan.cs">
       <SubType>Form</SubType>
@@ -470,6 +516,12 @@
     </Compile>
     <Compile Include="GUI\Danhba\ThanhvienCard.designer.cs">
       <DependentUpon>ThanhvienCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\Chonhinhanhlop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\Chonhinhanhlop.Designer.cs">
+      <DependentUpon>Chonhinhanhlop.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\HienThiMaLopHocFrm.cs">
       <SubType>Form</SubType>
@@ -731,6 +783,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -742,6 +795,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.resx">
       <DependentUpon>XemChiTietBaiTap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Classfrm.resx">
+      <DependentUpon>Classfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Homeadminfrm.resx">
+      <DependentUpon>Homeadminfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\Userfrm.resx">
+      <DependentUpon>Userfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\Giaovien\XemTienDoBaitap.resx">
       <DependentUpon>XemTienDoBaitap.cs</DependentUpon>
@@ -770,20 +832,26 @@
     <EmbeddedResource Include="GUI\ChatBox\ChatBoxFrm.resx">
       <DependentUpon>ChatBoxFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ChatBox\ChatBoxMessFrm.resx">
-      <DependentUpon>ChatBoxMessFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChatBox\IncomingMessage.resx">
       <DependentUpon>IncomingMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChatBox\lbl_notifiication_chatbox.resx">
       <DependentUpon>lbl_notifiication_chatbox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChatBox\lbl_save_clipboard.resx">
+      <DependentUpon>lbl_save_clipboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChatBox\lbl_time_create_chatbox.resx">
       <DependentUpon>lbl_time_create_chatbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChatBox\OutgoingMessage.resx">
       <DependentUpon>OutgoingMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dangnhap\ChonHinhFrm.resx">
+      <DependentUpon>ChonHinhFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dangnhap\Doimatkhaufrm.resx">
+      <DependentUpon>Doimatkhaufrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dangnhap\Forgetpass.resx">
       <DependentUpon>Forgetpass.cs</DependentUpon>
@@ -793,6 +861,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dangnhap\SignupUI.resx">
       <DependentUpon>SignupUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dangnhap\test1.resx">
+      <DependentUpon>test1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dangnhap\Thongtintaikhoan.resx">
       <DependentUpon>Thongtintaikhoan.cs</DependentUpon>
@@ -819,6 +890,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Danhba\ThanhvienCard.resx">
       <DependentUpon>ThanhvienCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\Chonhinhanhlop.resx">
+      <DependentUpon>Chonhinhanhlop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\HomeComponents\fileshow.resx">
       <DependentUpon>fileshow.cs</DependentUpon>
@@ -969,13 +1043,44 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\msvcr120.dll" />
+    <Content Include="bin\Debug\SqlServerSpatial140.dll" />
+    <Content Include="image\anh_lophoc.jpg" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\google-classroom.png" />
+    <Content Include="image\canhan1.jpg" />
+    <Content Include="image\canhan2.jpg" />
+    <Content Include="image\canhan3.jpg" />
+    <Content Include="image\canhan4.jpg" />
+    <Content Include="image\canhan5.jpg" />
+    <Content Include="image\canhan6.jpg" />
+    <None Include="Resources\canhan1.jpg" />
+    <None Include="Resources\canhan2.jpg" />
+    <None Include="Resources\canhan3.jpg" />
+    <None Include="Resources\canhan4.jpg" />
+    <None Include="Resources\canhan5.jpg" />
+    <None Include="Resources\canhan6.jpg" />
+    <None Include="Resources\imglop1.jpg" />
+    <None Include="Resources\imglop2.jpg" />
+    <None Include="Resources\imglop3.jpg" />
+    <None Include="Resources\imglop4.jpg" />
+    <None Include="Resources\imglop5.jpg" />
+    <None Include="Resources\imglop6.jpg" />
+    <None Include="Resources\icon8s_word_40.jpg" />
+    <None Include="Resources\icons8-word-40.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <None Include="Resources\anh_lophoc1.jpg" />
+    <None Include="Resources\anh_lophoc.jpg" />
+    <None Include="Resources\anh_lophoc.webp" />
     <None Include="Resources\icons8-book-50.png" />
     <None Include="Resources\icons8-file-40.png" />
     <None Include="Resources\icons8-txt-40.png" />
     <None Include="Resources\icons8-power-point-40.png" />
     <None Include="Resources\icons8-pdf-40.png" />
     <None Include="Resources\icons8-excel-40.png" />
-    <None Include="Resources\icons8-word-40.png" />
+    <None Include="Resources\icon8s-word-40.png" />
+    <None Include="Resources\icons8-up-50.png" />
+    <None Include="Resources\icons8-copy-24.png" />
     <None Include="Resources\icons8-upload-30.png" />
     <None Include="Resources\z4900666085842_a21379c6aa15f4ba878996c3423f7d92.jpg" />
     <None Include="Resources\z4900656607616_dfb6c49dcc3cedd7bda46c9a8de7b9f6.jpg" />
@@ -1005,15 +1110,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <COMReference Include="Microsoft.Office.Core">
-      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>5</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="Microsoft.Office.Interop.Word">
       <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>8</VersionMajor>
@@ -1034,4 +1130,8 @@
     </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

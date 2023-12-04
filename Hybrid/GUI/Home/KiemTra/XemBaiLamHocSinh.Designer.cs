@@ -151,7 +151,7 @@
             // 
             // avatar
             // 
-            this.avatar.BackgroundImage = global::Hybrid.Properties.Resources.IMG_20220702_221801;
+            this.avatar.BackgroundImage = global::Hybrid.Properties.Resources.DefaultImage;
             this.avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.avatar.Location = new System.Drawing.Point(3, 3);
             this.avatar.Name = "avatar";

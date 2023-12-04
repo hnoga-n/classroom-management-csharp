@@ -25,16 +25,17 @@ namespace Hybrid
     {
         private BaiTapBUS btBUS = new BaiTapBUS();
         private DeKiemTraBUS dktBUS = new DeKiemTraBUS();
-        private HocLieuBUS hlBUS ;
-        private ChuongBUS chuongBUS ;
-        private LopHocBUS lopBUS;
+        private ChuongBUS chuongBUS = new ChuongBUS();
+        private LopHocBUS lopBUS = new LopHocBUS();
+        Chucnang cn = new Chucnang();
         TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
 
         private Taikhoan tk ;
 
         public Taikhoan Tk { get => tk; set => tk = value; }
 
-        public Form1(string email)
+        public static PictureBox picha = new PictureBox();
+        public Form1(Taikhoan tk)
         {
             InitializeComponent();
             loading.ShowSplashScreen();
@@ -48,6 +49,7 @@ namespace Hybrid
         {
             InitializeComponent();
         }
+
 
 
         private void kryptonButton1_Click(object sender, EventArgs e)
@@ -94,10 +96,14 @@ namespace Hybrid
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnHome_Click(this, EventArgs.Empty);
-            MakePictureBoxCircular(this.picUserAva);
-        }
+            PictureBox pic = taikhoanBUS.load_hinhdaidien(tk.Anhdaidien);
+            pictureBox1.Image = pic.Image;
+            cn.loadggdrive();
+            //cn.load_hinhanhcanhan(this.taikhoanhienhanh.Anhdaidien, pictureBox1);
+            MakePictureBoxCircular(pictureBox1);
 
+            btnHome_Click(this, EventArgs.Empty);
+        }
         private void MakePictureBoxCircular(PictureBox pictureBox)
         {
             if (pictureBox != null)
@@ -111,10 +117,33 @@ namespace Hybrid
             }
         }
 
-        private void picUserAva_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Thongtintaikhoan tt = new Thongtintaikhoan(this.tk,this.picUserAva,this);
-            tt.ShowDialog();
+            Thongtintaikhoan frmtt = new Thongtintaikhoan(this.tk, this, pictureBox1);
+            frmtt.ShowDialog();
+            pictureBox1.Image = picha.Image;
+            MakePictureBoxCircular(pictureBox1);
+
+        }
+
+        private void pnlContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void kryptonButton1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            cn.ghi_nhomk("0");
+            cn.remove_file();
+            KryptonForm form = new LoginUI();
+            form.Show();
+        }
+        private void LoadHinh(Image image)
+        {
+            //ptbThumbnail.Image = null;
+            pictureBox1.Image = Properties.Resources.canhan1;
+            pictureBox1.Image = image;
         }
     }
 }
