@@ -26,7 +26,9 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = bailambtDAO.loadList();
-            //list.Sort();
+            BailambaitapComparer comparer = new BailambaitapComparer();
+            comparer.TypeToCompare = BailambaitapComparer.ComparisonType.mabailam;
+            list.Sort(comparer);
         }
         public int GetBaiLamBaiTapWithMaBaiLam(string mabailam)
         {

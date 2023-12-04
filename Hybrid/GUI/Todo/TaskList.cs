@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Todo
@@ -32,33 +25,5 @@ namespace Hybrid.GUI.Todo
             return this.taskListPanel;
         }
 
-        public ComboBox GetComboBoxClass()
-        {
-            return this.cbbClass;
-        }
-
-        private void cbbClass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.taskListPanel.Controls.Clear();
-            object selectedItem = cbbClass.SelectedItem;
-            string selectedValue = selectedItem.ToString();
-            foreach(Control task in this.Tasks)
-            {
-                if (task is TaskHomework && (task as TaskHomework).getLabelClass().Text.Contains(selectedValue))
-                {
-                    taskListPanel.Controls.Add(task);
-                    continue;
-                } 
-                if(task is TaskExam && (task as TaskExam).getLabelClass().Text.Contains(selectedValue))
-                {
-                    taskListPanel.Controls.Add(task);
-                    continue;
-                }
-                else if(selectedValue.Contains("Tất cả"))
-                {
-                    taskListPanel.Controls.Add(task);
-                }
-            }
-        }
     }
 }

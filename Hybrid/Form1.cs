@@ -16,6 +16,8 @@ using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.DTO;
 using Hybrid.BUS;
 using System.Drawing.Drawing2D;
+using Hybrid.GUI.Todo;
+using Hybrid.GUI.Utilities;
 
 namespace Hybrid
 {
@@ -23,18 +25,24 @@ namespace Hybrid
     {
         private BaiTapBUS btBUS = new BaiTapBUS();
         private DeKiemTraBUS dktBUS = new DeKiemTraBUS();
-        private ChuongBUS chuongBUS = new ChuongBUS();
-        private LopHocBUS lopBUS = new LopHocBUS();
+        private HocLieuBUS hlBUS ;
+        private ChuongBUS chuongBUS ;
+        private LopHocBUS lopBUS;
         TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
 
-        Taikhoan tk ;
+        private Taikhoan tk ;
 
         public Taikhoan Tk { get => tk; set => tk = value; }
 
         public Form1(string email)
         {
             InitializeComponent();
+            loading.ShowSplashScreen();
             this.tk = taikhoanBUS.GetTaiKhoanByEmail(email);
+            hlBUS = new HocLieuBUS();
+            chuongBUS = new ChuongBUS();
+            lopBUS = new LopHocBUS();
+            loading.CloseForm();
         }
         public Form1()
         {
@@ -76,7 +84,7 @@ namespace Hybrid
 
         private void btnTodo_Click(object sender, EventArgs e)
         {
-            //addFormtoPanelContainer(new TodoFrm());
+            addFormtoPanelContainer(new TodoFrm(this.tk,this.btBUS,this.lopBUS,this.dktBUS,this.chuongBUS));
         }
 
         private void btnContacts_Click(object sender, EventArgs e)

@@ -161,6 +161,11 @@
     <Reference Include="System.CodeDom, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.CodeDom.7.0.0\lib\net462\System.CodeDom.dll</HintPath>
     </Reference>
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
@@ -400,7 +405,6 @@
     <Compile Include="GUI\ChatBox\OutgoingMessage.Designer.cs">
       <DependentUpon>OutgoingMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Class1.cs" />
     <Compile Include="GUI\Dangnhap\Forgetpass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -671,6 +675,54 @@
     <Compile Include="GUI\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Todo\TaskDiscuss.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskDiscuss.Designer.cs">
+      <DependentUpon>TaskDiscuss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskDoneButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskDoneButton.Designer.cs">
+      <DependentUpon>TaskDoneButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskEmpty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskEmpty.designer.cs">
+      <DependentUpon>TaskEmpty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskExam.designer.cs">
+      <DependentUpon>TaskExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskHomework.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskHomework.Designer.cs">
+      <DependentUpon>TaskHomework.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskList.Designer.cs">
+      <DependentUpon>TaskList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskNotDoneButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TaskNotDoneButton.Designer.cs">
+      <DependentUpon>TaskNotDoneButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Todo\TodoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Todo\TodoFrm.Designer.cs">
+      <DependentUpon>TodoFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Utilities\loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -863,6 +915,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThongTinLopHocFrm.resx">
       <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskDiscuss.resx">
+      <DependentUpon>TaskDiscuss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskDoneButton.resx">
+      <DependentUpon>TaskDoneButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskEmpty.resx">
+      <DependentUpon>TaskEmpty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskExam.resx">
+      <DependentUpon>TaskExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskHomework.resx">
+      <DependentUpon>TaskHomework.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskList.resx">
+      <DependentUpon>TaskList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TaskNotDoneButton.resx">
+      <DependentUpon>TaskNotDoneButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Todo\TodoFrm.resx">
+      <DependentUpon>TodoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Utilities\loading.resx">
       <DependentUpon>loading.cs</DependentUpon>

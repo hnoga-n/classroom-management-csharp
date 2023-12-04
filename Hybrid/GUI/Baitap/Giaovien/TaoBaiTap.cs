@@ -124,7 +124,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
                 txtContent.Focus();
                 return;
             }
-            DialogResult isConfirm =  MessageBox.Show("Vui lòng kiểm tra kĩ các thông tin và file vì khi tạo sẽ không thể chỉnh sửa !", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult isConfirm =  MessageBox.Show("Vui lòng kiểm tra kĩ các thông tin và file bài tập !", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (isConfirm == DialogResult.No) return;
             if (!isValidTime()) return;
 

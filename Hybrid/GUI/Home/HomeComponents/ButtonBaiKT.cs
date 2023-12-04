@@ -127,7 +127,7 @@ namespace Hybrid.GUI.Home.HomeComponents
                 // do exam
                 DialogResult isConfirmDoExam = MessageBox.Show("Xác nhận tiến hành làm bài kiểm tra ?", "Thông báo!", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (isConfirmDoExam == DialogResult.No) return;
-                LamKiemTra bailamkiemtra = new LamKiemTra(this.dekiemtra, panelChuong.Khfrm.Taikhoan);
+                LamKiemTra bailamkiemtra = new LamKiemTra(this.dekiemtra, panelChuong.Khfrm.Taikhoan,this.blktBUS);
                 bailamkiemtra.Show();
             }
             else
@@ -135,7 +135,6 @@ namespace Hybrid.GUI.Home.HomeComponents
                 XemTienDoBaiKiemTra checkingFrm = new XemTienDoBaiKiemTra(this.panelChuong.Khfrm.Taikhoan,this.dekiemtra,this.panelChuong.Khfrm.Lophoc,this.panelChuong.Chuong);
                 checkingFrm.Show();
             }
-            blktBUS.loadList();
         }
     }
 }
