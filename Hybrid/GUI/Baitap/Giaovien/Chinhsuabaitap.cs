@@ -12,9 +12,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Baitap
@@ -33,7 +31,7 @@ namespace Hybrid.GUI.Baitap
         {
             InitializeComponent();
         }
-        public Chinhsuabaitap(PanelChuongDropDown pnl, Taikhoan taikhoangiangvien, LopHoc lophoc, Chuong chuong, BaiTap bt)
+        public Chinhsuabaitap(PanelChuongDropDown pnl, Taikhoan taikhoangiangvien, LopHoc lophoc, Chuong chuong, BaiTap bt,BaiTapBUS btbus)
         {
             InitializeComponent();
             this.panelChuong = pnl;
@@ -41,6 +39,7 @@ namespace Hybrid.GUI.Baitap
             this.lophoc = lophoc;
             this.chuong = chuong;
             this.bt = bt;
+            this.btBUS = btbus;
             answerPanel = new ThemDapAn();
         }
 
@@ -56,10 +55,10 @@ namespace Hybrid.GUI.Baitap
             this.dtpThoiGianBatDau.Enabled = false;
             this.dtpThoiGianKetThuc.Value = this.bt.Thoigianketthuc;
             if (this.bt.Congkhaidapan == 1)
-                this.answerPanel.Congkhaidapan = true;
+                this.answerPanel.CkbPublicAnswer.Checked = true;
             else
-                this.answerPanel.Congkhaidapan = false;
-            btBUS = new BaiTapBUS();
+                this.answerPanel.CkbPublicAnswer.Checked = false;
+
             fileBaiTapBUS = new FileBaiTapBUS();
             loadFile();
         }
@@ -81,6 +80,10 @@ namespace Hybrid.GUI.Baitap
                         case "pdf":
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_pdf_40;
                             tmp.FileExtension = "pdf";
+                            break;
+                        case "pptx":
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_pdf_40;
+                            tmp.FileExtension = "pptx";
                             break;
                         case "xlsx":
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_excel_40;
@@ -115,6 +118,10 @@ namespace Hybrid.GUI.Baitap
                         case "xlsx":
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_excel_40;
                             tmp.FileExtension = "xlsx";
+                            break;
+                        case "pptx":
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_excel_40;
+                            tmp.FileExtension = "pptx";
                             break;
                         case "docx":
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
@@ -160,17 +167,17 @@ namespace Hybrid.GUI.Baitap
                 txtContent.Focus();
                 return;
             }
-
-            DialogResult isConfirm = MessageBox.Show("Vui lòng kiểm tra kĩ các thông tin bài tập !", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (isConfirm == DialogResult.No) return;
-
-            if (!isValidTime()) return;
-
             if (this.answerPanel.HomeworkContent.Length == 0)
             {
                 DialogResult confirm = MessageBox.Show("Bài tập không có đáp án. Xác nhận ?", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm == DialogResult.No) return;
             }
+
+            DialogResult isConfirm = MessageBox.Show("Xác nhận lưu chỉnh sửa ?", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (isConfirm == DialogResult.No) return;
+
+            if (!isValidTime()) return;
+
             BaiTap bt = new BaiTap()
             {
                 Mabaitap = this.bt.Mabaitap,
@@ -230,6 +237,7 @@ namespace Hybrid.GUI.Baitap
                         {
                             loading.CloseForm();
                             MessageBox.Show("Chỉnh sửa bài tập thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.btBUS.loadList();
                             this.Dispose();
                             return;
                         }
@@ -237,13 +245,15 @@ namespace Hybrid.GUI.Baitap
                         {
                             loading.CloseForm();
                             MessageBox.Show("Upload file thất bại !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.btBUS.loadList();
                             return;
                         }
                     }
                     else
                     {
                         loading.CloseForm();
-                        MessageBox.Show("Chỉnh sửa bài tập thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Chỉnh sửa bài tập thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.btBUS.loadList();
                         this.Dispose();
                         return;
                     }
@@ -251,6 +261,7 @@ namespace Hybrid.GUI.Baitap
                 else
                 {
                     loading.CloseForm();
+                    this.btBUS.loadList();
                     MessageBox.Show("Chỉnh sửa bài tập thất bại !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -258,6 +269,7 @@ namespace Hybrid.GUI.Baitap
             catch (Exception ex)
             {
                 loading.CloseForm();
+                this.btBUS.loadList();
                 MessageBox.Show("Có lỗi đã xảy ra !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex);
             }
@@ -272,7 +284,7 @@ namespace Hybrid.GUI.Baitap
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.doc;*.docx)|*.doc;*.docx|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
+                openFileDialog.Filter = "Word documents (*.doc;*.docx)|*.doc;*.docx|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|PDF files (*.pdf)|*.pdf|PowerPoint presentations (*.ppt;*.pptx)|*.ppt;*.pptx|Text files (*.txt)|*.txt";
                 openFileDialog.FilterIndex = 5; // Thiết lập mặc định là All files
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -307,7 +319,6 @@ namespace Hybrid.GUI.Baitap
             {
                 lblPlaceholderTitle.Hide();
             }
-            //lblPlaceholderTitle.BringToFront();
             lblCharCountTitle.Text = txtTitle.Text.Length + "/200";
         }
         private void txtContent_TextChanged_1(object sender, EventArgs e)

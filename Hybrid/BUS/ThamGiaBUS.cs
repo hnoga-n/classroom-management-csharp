@@ -14,6 +14,8 @@ namespace Hybrid.BUS
     {
         private ArrayList list;
         private ThamGiaDAO thamgiaDAO;
+        ThamGiaDAO thamgialophocDAO = new ThamGiaDAO();
+        DataTable dt = new DataTable();
         public ThamGiaBUS()
         {
             thamgiaDAO = new ThamGiaDAO();
@@ -37,21 +39,22 @@ namespace Hybrid.BUS
 
         public bool ThemThamGia(ThamGia thamgia)
         {
-            if(thamgiaDAO.ThemThamGia(thamgia))
+            if (thamgiaDAO.ThemThamGia(thamgia))
             {
                 list.Add(thamgia);
                 return true;
-            } else 
+            }
+            else
                 return false;
         }
 
         public bool XoaThamGia(ThamGia thamgia)
         {
-            if(thamgiaDAO.XoaThamGia(thamgia))
+            if (thamgiaDAO.XoaThamGia(thamgia))
             {
-                foreach(ThamGia tg in this.list)
+                foreach (ThamGia tg in this.list)
                 {
-                    if(tg.Mataikhoan.Equals(thamgia.Mataikhoan) && tg.Malop.Equals(thamgia.Malop))
+                    if (tg.Mataikhoan.Equals(thamgia.Mataikhoan) && tg.Malop.Equals(thamgia.Malop))
                     {
                         this.list.Remove(tg);
                         return true;
@@ -63,7 +66,7 @@ namespace Hybrid.BUS
 
         public bool KiemTraDaThamGia(ThamGia thamgia)
         {
-            foreach(ThamGia tg in this.list)
+            foreach (ThamGia tg in this.list)
             {
                 if (tg.Malop.Equals(thamgia.Malop) && tg.Mataikhoan.Equals(thamgia.Mataikhoan))
                     return true;
@@ -74,11 +77,32 @@ namespace Hybrid.BUS
         public ArrayList getDanhSachLopWithMaLopHoc(string malophoc)
         {
             ArrayList listHocSinh = new ArrayList();
-            foreach(ThamGia hocsinh in list) {
+            foreach (ThamGia hocsinh in list)
+            {
                 if (hocsinh.Malop.Equals(malophoc))
                     listHocSinh.Add(hocsinh.Mataikhoan);
             }
             return listHocSinh;
         }
+        public DataTable LayAllThamGiaLopHocByMyID(String str)
+        {
+            dt = thamgialophocDAO.LayAllThamGiaLopHocByMyID(str);
+            return dt;
+        }
+        public DataTable LayAllThamGiaLopHocByIDLopHoc(String str)
+        {
+            dt = thamgialophocDAO.LayAllThamGiaLopHocByIDLopHoc(str);
+            return dt;
+        }
+        public Boolean RoiKhoiLopHoc(String str, String maLH)
+        {
+            if (thamgialophocDAO.RoiKhoiLopHoc(str, maLH))
+            {
+                return true;
+            }
+            else { return false; }
+        }
+
+
     }
 }

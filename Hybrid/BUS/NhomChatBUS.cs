@@ -16,7 +16,7 @@ namespace Hybrid.BUS
         public NhomChatBUS()
         {
             nhomchatDAO = new NhomChatDAO();
-            //loadList();
+            loadList();
         }
 
         public ArrayList getList()
@@ -26,12 +26,24 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = nhomchatDAO.loadList();
-            list.Sort();
+            //list.Sort();
+        }
+
+        public bool ThemNhomChat(NhomChat nhomchat)
+        {
+            if(nhomchatDAO.ThemNhomChat(nhomchat))
+            {
+                list.Add(nhomchat);
+                return true;
+            }
+            return false;
         }
 
         public NhomChat GetNhomChatByMaLop(string maLop)
         {
             return nhomchatDAO.GetNhomChatByMaLop(maLop);
         }
+
+    
     }
 }

@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using System.Data;
 using Microsoft.Office.Interop.Word;
 using Unidecode.NET;
-using System.Data;
 using System.Linq;
 
 namespace Hybrid.BUS
@@ -21,6 +20,7 @@ namespace Hybrid.BUS
         private ArrayList list;
         private LopHocDAO lopDAO;
         System.Data.DataTable dataTable = null;
+        System.Data.DataTable dt = new System.Data.DataTable();
 
         public LopHocBUS()
         {
@@ -151,9 +151,12 @@ namespace Hybrid.BUS
             checkBoxColumn.Name = "daxoa";
             dataGridView.Columns.Add(checkBoxColumn);
             dataGridView.Columns[0].Visible = false;
+            dataGridView.Columns[1].HeaderText = "Tên lớp học";
+            dataGridView.Columns[2].HeaderText = "Mô tả";
+            dataGridView.Columns[3].HeaderText = "Tên giảng viên";
             dataGridView.Columns[1].Width = 300;
-            dataGridView.Columns[2].Width = 305;
-            dataGridView.Columns[3].Width = 200;
+            dataGridView.Columns[2].Width = 330;
+            dataGridView.Columns[3].Width = 250;
             dataGridView.Columns[4].Visible = false;
 
         }
@@ -264,6 +267,12 @@ namespace Hybrid.BUS
 
             list = lopDAO.loadList();
             lopDAO.update_anhlop(ten, malop);
+        }
+
+        public System.Data.DataTable LayAllLopHoc()
+        {
+            dt = lopDAO.LayAllLopHoc();
+            return dt;
         }
     }
 }

@@ -79,7 +79,7 @@ namespace Hybrid.GUI.Home.HomeComponents
         private void timerCapNhatTrangThai_Tick(object sender, EventArgs e)
         {
             string trangthai = XacDinhTrangThaiDeKiemTra(this.dekiemtra.Thoigianbatdau, this.dekiemtra.Thoigianketthuc);
-            this.lblChiTietBKT.Text = "Bài kiểm tra (" + dekiemtra.Thoigianbatdau.ToString("dd/MM HH:mm:ss") + " - " + dekiemtra.Thoigianketthuc.ToString("dd/MM HH:mm:ss") + ") | " + trangthai;
+            this.lblChiTietBKT.Text = "Bài kiểm tra (" + dekiemtra.Thoigianbatdau.ToString("dd/MM/yy HH:mm:ss") + " - " + dekiemtra.Thoigianketthuc.ToString("dd/MM/yy HH:mm:ss") + ") | " + trangthai;
             if (this.panelChuong.Khfrm.Taikhoan.Mataikhoan.Equals(this.panelChuong.Khfrm.Lophoc.Magiangvien) && panelChuong.Khfrm.Lophoc.Daxoa == 0)
             {
                 if (this.dekiemtra.Thoigianbatdau.AddMinutes(-15) <= DateTime.Now)

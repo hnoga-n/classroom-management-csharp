@@ -1,4 +1,4 @@
-﻿using Hybrid.DTO; 
+﻿using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,6 +42,41 @@ namespace Hybrid.DAO
                 }
             }
             return danhSachTaiKhoan;
+        }
+
+        public DataTable LayThongTinTaiKhoanByID(String str)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "select * from taikhoan where  (mataikhoan=N'" + str + @"')";
+            command.Connection = Ketnoisqlserver.GetConnection();
+            adapter.SelectCommand = command;
+            dt.Clear();
+            adapter.Fill(dt);
+            Ketnoisqlserver.CloseConnection();
+            return dt;
+        }
+
+        public void update_matkhau_taikhoan(string email, string matkhau)
+        {
+            using (SqlConnection connection = Ketnoisqlserver.GetConnection())
+            {
+                string salt = BCrypt.Net.BCrypt.GenerateSalt();
+
+                // Hash the password with bcrypt
+                string hash = BCrypt.Net.BCrypt.HashPassword(matkhau, salt);
+                string sqlQuery = "Update taikhoan set matkhau='" + hash + "' where email=@email1";
+
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@email1", email);
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                }
+            }
         }
         public DataTable LayDanhSachTaiKhoan()
         {
@@ -102,7 +137,7 @@ namespace Hybrid.DAO
                 string salt = BCrypt.Net.BCrypt.GenerateSalt();
 
                 // Hash the password with bcrypt
-                string hash = BCrypt.Net.BCrypt.HashPassword("123456789", salt);
+                string hash = BCrypt.Net.BCrypt.HashPassword("Abcd@123", salt);
                 string sqlQuery = "Update taikhoan set matkhau='"+hash+"' where email=@email1";
 
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
@@ -121,12 +156,12 @@ namespace Hybrid.DAO
                 }
             }
         }
-        public Boolean check_taikhoan(string email,string password)
+        public Boolean check_taikhoan(string email, string password)
         {
-            using (SqlConnection conn=Ketnoisqlserver.GetConnection())
+            using (SqlConnection conn = Ketnoisqlserver.GetConnection())
             {
                 string sqlstring = "Select * from taikhoan where email=@email;";
-                using (SqlCommand command=new SqlCommand(sqlstring, conn))
+                using (SqlCommand command = new SqlCommand(sqlstring, conn))
                 {
                     command.Parameters.AddWithValue("@email", email);
                     using (var reader = command.ExecuteReader())
@@ -146,13 +181,13 @@ namespace Hybrid.DAO
         }
         public int get_daxoa_email(string email)
         {
-            int temp=-1;
+            int temp = -1;
             using (SqlConnection conn = Ketnoisqlserver.GetConnection())
             {
                 string sqlstring = "Select daxoa from taikhoan where email=@email";
                 using (SqlCommand command = new SqlCommand(sqlstring, conn))
                 {
-                    command.Parameters.AddWithValue("@email",email);
+                    command.Parameters.AddWithValue("@email", email);
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -185,10 +220,10 @@ namespace Hybrid.DAO
         public string get_tenlop_malop(string malop)
         {
             string temp = null;
-            using(SqlConnection conn=Ketnoisqlserver.GetConnection())
+            using (SqlConnection conn = Ketnoisqlserver.GetConnection())
             {
                 string sqlstring = "Select ten from lophoc where malophoc=@malophoc";
-                using(SqlCommand command=new SqlCommand(sqlstring,conn))
+                using (SqlCommand command = new SqlCommand(sqlstring, conn))
                 {
                     command.Parameters.AddWithValue("@malophoc", malop);
                     SqlDataReader reader = command.ExecuteReader();
@@ -246,34 +281,34 @@ namespace Hybrid.DAO
                 string sqlstring = "Update taikhoan set hoten=@hoten,sodienthoai=@sodienthoai where mataikhoan=@mataikhoan";
                 using (SqlCommand command = new SqlCommand(sqlstring, conn))
                 {
-                    command.Parameters.AddWithValue("@mataikhoan",mataikhoan);
-                    command.Parameters.AddWithValue("@hoten",ten);
+                    command.Parameters.AddWithValue("@mataikhoan", mataikhoan);
+                    command.Parameters.AddWithValue("@hoten", ten);
                     command.Parameters.AddWithValue("@sodienthoai", sodienthoai);
-                    int temp=command.ExecuteNonQuery();
+                    int temp = command.ExecuteNonQuery();
                 }
             }
         }
-        public void update_anhcanhan(string tenhinh,string email)
+        public void update_anhcanhan(string tenhinh, string email)
         {
             using (SqlConnection conn = Ketnoisqlserver.GetConnection())
             {
                 string sqlstring = "Update taikhoan set anhdaidien=@anhdaidien where email=@email";
                 using (SqlCommand command = new SqlCommand(sqlstring, conn))
                 {
-                    command.Parameters.AddWithValue("@email",email);
+                    command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@anhdaidien", tenhinh);
                     int temp = command.ExecuteNonQuery();
                 }
             }
         }
-       public void ban_taikhoan(string email)
+        public void ban_taikhoan(string email)
         {
-            using(SqlConnection conn=Ketnoisqlserver.GetConnection())
+            using (SqlConnection conn = Ketnoisqlserver.GetConnection())
             {
                 string sqlstring = "Update taikhoan set daxoa=1 where email=@email";
                 using (SqlCommand command = new SqlCommand(sqlstring, conn))
                 {
-                    command.Parameters.AddWithValue("@email",email );
+                    command.Parameters.AddWithValue("@email", email);
                     int temp = command.ExecuteNonQuery();
                 }
             }
@@ -291,6 +326,49 @@ namespace Hybrid.DAO
             }
         }
 
+        public DataTable LayAllTaiKhoan()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "select * from taikhoan ";
+            command.Connection = Ketnoisqlserver.GetConnection();
+            adapter.SelectCommand = command;
+            dt.Clear();
+            adapter.Fill(dt);
+            Ketnoisqlserver.CloseConnection();
+            return dt;
+
+        }
+
+        public Boolean UpdateTaiKhoan(Taikhoan tk)
+        {
+            try
+            {
+
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = @"UPDATE taikhoan set 
+                               mataikhoan=N'" + tk.Mataikhoan +
+                               @"',manhomquyen=N'" + tk.Manhomquyen +
+                               @"',hoten=N'" + tk.Hoten +
+                               @"',email=N'" + tk.Email +
+                               @"',matkhau=N'" + tk.Matkhau +
+                               @"',sodienthoai=N'" + tk.Sodienthoai +
+                               @"',anhdaidien=N'" + tk.Anhdaidien +
+                               @"'where  (mataikhoan=N'" + tk.Mataikhoan + @"')";
+                command.Connection = Ketnoisqlserver.GetConnection();
+                command.ExecuteNonQuery();
+                Ketnoisqlserver.CloseConnection();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
 

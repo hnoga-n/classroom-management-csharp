@@ -1,4 +1,5 @@
 ﻿using Hybrid.DAO;
+using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,21 +12,36 @@ namespace Hybrid.BUS
     public class TinNhanBanBeBUS
     {
         private ArrayList list;
-        private TinNhanBanBeDAO tnbbDAO;
+        private TinNhanBanBeDAO dao;
         public TinNhanBanBeBUS()
         {
-            tnbbDAO = new TinNhanBanBeDAO();
-            loadList();
+            dao = new TinNhanBanBeDAO();
+            //loadList();
         }
 
         public ArrayList getList()
         {
             return list;
         }
-        public void loadList()
+
+        public TinNhanBanBe getLatest(String currentID, String friendAccountID)
         {
-            list = tnbbDAO.loadList();
-            list.Sort();
+            return dao.getLatest(currentID, friendAccountID);
+        }
+        public void loadList(int perMess, int mess_index_value, String currentID, String friendAccountID)
+        {
+            list = dao.loadList(perMess, mess_index_value, currentID, friendAccountID);
+            //list.Sort();
+        }
+
+        public void insert(string maTN, String maNguoiGui, String maNguoiNhan, string message, string thoiGianGui)
+        {
+            dao.insert(maTN, maNguoiGui, maNguoiNhan, message, thoiGianGui);
+        }
+
+        public void delete(string maTN)
+        {
+            dao.delete(maTN);
         }
     }
 }

@@ -59,13 +59,16 @@ namespace Hybrid.GUI.Home
             this.dgvDanhSachHocSinh.DataSource = dt;
             this.dgvDanhSachHocSinh.Columns[0].Width = 250;
             this.dgvDanhSachHocSinh.Columns[1].Width = 100;
-            this.dgvDanhSachHocSinh.Columns[2].Width = 300;
+            this.dgvDanhSachHocSinh.Columns[2].Width = 80;
+            this.dgvDanhSachHocSinh.Columns[3].Width = 220;
             this.dgvDanhSachHocSinh.Columns[0].HeaderText = "Học sinh";
             this.dgvDanhSachHocSinh.Columns[1].HeaderText = "Điểm";
-            this.dgvDanhSachHocSinh.Columns[2].HeaderText = "Thời gian nộp";
+            this.dgvDanhSachHocSinh.Columns[2].HeaderText = "Nộp trễ";
+            this.dgvDanhSachHocSinh.Columns[3].HeaderText = "Thời gian nộp";
         }
 
         public void FillComboBoxChuong() {
+            if (chuongBUS.getChuongWithMaLop(lophoc.Malop).Count <= 0) return;
             foreach (Chuong c in chuongBUS.getChuongWithMaLop(lophoc.Malop))
                 chuongDict.Add(c.Machuong,c.Tenchuong);
             cbChuong.Items.Clear();
@@ -179,14 +182,14 @@ namespace Hybrid.GUI.Home
         {
             if (string.IsNullOrEmpty(txtTimKiem.Text))
             {
-                txtTimKiem.Text = "Tìm kiếm";
+                txtTimKiem.Text = "Tìm kiếm theo tên học sinh";
                 txtTimKiem.ForeColor = SystemColors.Control; // Đặt màu chữ thành màu xám
             }
         }
 
         private void txtTimKiem_Enter(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "Tìm kiếm")
+            if (txtTimKiem.Text == "Tìm kiếm theo tên học sinh")
             {
                 txtTimKiem.Text = "";
                 txtTimKiem.ForeColor = SystemColors.WindowText; // Đặt màu chữ về màu mặc định của hệ thống

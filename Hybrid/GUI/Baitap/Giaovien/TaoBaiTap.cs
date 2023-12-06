@@ -97,8 +97,10 @@ namespace Hybrid.GUI.Baitap.Giaovien
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.doc;*.docx)|*.doc;*.docx|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 5; // Thiết lập mặc định là All files
+                openFileDialog.Filter = "Word documents (*.doc;*.docx)|*.doc;*.docx|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|PDF files (*.pdf)|*.pdf|PowerPoint presentations (*.ppt;*.pptx)|*.ppt;*.pptx|Text files (*.txt)|*.txt";
+
+
+                openFileDialog.FilterIndex = 1; // Thiết lập mặc định là All files
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     Icon fileIcon = Icon.ExtractAssociatedIcon(openFileDialog.FileName);
@@ -275,5 +277,12 @@ namespace Hybrid.GUI.Baitap.Giaovien
             }
             lblCharCountContent.Text = txtContent.Text.Length + "/4000";
         }
+
+        //private void TaoBaiTap_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    DialogResult confirm = MessageBox.Show("Xác nhận đóng bài tập ? \nLƯU Ý:Mọi thay đổi (nếu có ) đều sẽ bị mất khi đóng form tạo bài tập !", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //    if (confirm == DialogResult.No)
+        //        e.Cancel = true;
+        //}
     }
 }

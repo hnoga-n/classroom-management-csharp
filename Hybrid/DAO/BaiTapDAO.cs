@@ -21,7 +21,7 @@ namespace Hybrid.DAO
             ArrayList listTmp = new ArrayList();
             try
             {
-                string sql_getall = "SELECT * FROM baitap";
+                string sql_getall = "SELECT * FROM baitap ";
                 SqlCommand cmd = new SqlCommand(sql_getall, Ketnoisqlserver.GetConnection());
 
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -88,13 +88,14 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_getall = "UPDATE baitap SET tieude=@tieude,noidungbaitap=@noidungbaitap,noidungdapan=@noidungdapan,thoigianbatdau=@thoigianbatdau,thoigianketthuc=@thoigianketthuc WHERE mabaitap=@mabaitap";
+                string sql_getall = "UPDATE baitap SET tieude=@tieude,noidungbaitap=@noidungbaitap,noidungdapan=@noidungdapan,thoigianbatdau=@thoigianbatdau,thoigianketthuc=@thoigianketthuc,congkhaidapan=@congkhaidapan WHERE mabaitap=@mabaitap";
                 SqlCommand command = new SqlCommand(sql_getall, Ketnoisqlserver.GetConnection());
                 command.Parameters.AddWithValue("@tieude", bt.Tieude);
                 command.Parameters.AddWithValue("@noidungbaitap", bt.Noidungbaitap);
                 command.Parameters.AddWithValue("@noidungdapan", bt.Noidungdapan);
                 command.Parameters.AddWithValue("@thoigianbatdau", bt.Thoigianbatdau);
                 command.Parameters.AddWithValue("@thoigianketthuc", bt.Thoigianketthuc);
+                command.Parameters.AddWithValue("@congkhaidapan", bt.Congkhaidapan);
                 command.Parameters.AddWithValue("@mabaitap", Guid.Parse(bt.Mabaitap));
                 int index = command.ExecuteNonQuery();
 
@@ -160,9 +161,9 @@ namespace Hybrid.DAO
             {
                 string sql = "SELECT bt.mabaitap,c.machuong,tieude,noidungbaitap,noidungdapan,bt.thoigiantao,thoigianbatdau,thoigianketthuc,congkhaidapan,bt.daxoa FROM baitap bt JOIN chuong c ON bt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc JOIN bailambaitap bl ON bl.mabaitap=bt.mabaitap WHERE l.malophoc=@malophoc ";
                 SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
-                command.Parameters.AddWithValue("@malophoc",Guid.Parse(malop));
+                command.Parameters.AddWithValue("@malophoc", Guid.Parse(malop));
                 SqlDataReader dr = command.ExecuteReader();
-                
+
                 while (dr.Read())
                 {
                     BaiTap tmp = new BaiTap

@@ -34,7 +34,9 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = btDAO.loadList();
-            list.Sort();
+            BaiTapComparer comparer = new BaiTapComparer();
+            comparer.TypeToCompare = BaiTapComparer.ComparisonType.mabaitap;
+            list.Sort(comparer);
         }
 
         public bool createBaitap(BaiTap bt)

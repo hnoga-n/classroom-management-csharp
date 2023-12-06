@@ -55,43 +55,45 @@ namespace Hybrid.GUI
             else
             {
                 if (tkbus.kt_email(txt_email.Text))
-                    if(tkdao.get_daxoa_email(txt_email.Text)==0)
-                        if (tkdao.check_taikhoan(txt_email.Text, txt_matkhau.Text))
-                        {
-                            if(tkdao.get_quyenhan_email(txt_email.Text)==1)
+                    if (tkbus.kt_taikhoan_tontai(txt_email.Text))
+                        if (tkbus.kt_daxoa_taikhoan(txt_email.Text) == 0)
+                            if (tkdao.check_taikhoan(txt_email.Text, txt_matkhau.Text))
                             {
-                                Form form = new Homeadminfrm();
-                                form.ShowDialog();
-                            }   
-                            else
-                            {
-                                if (chx_nhomatkhau.Checked == true)
+                                if (tkbus.kt_quyenhan_taikhoan(txt_email.Text) == 1)
                                 {
-                                    cn.ghi_nhomk("1");
-                                    cn.remove_file();
-                                    Taikhoan tk = new Taikhoan("00", "00", txt_email.Text, txt_matkhau.Text, "00", "00", 0, 0);
-                                    cn.ghi_tk_file(tk);
+                                    this.Hide();
+                                    Form form = new Homeadminfrm();
+                                    form.ShowDialog();
                                 }
                                 else
                                 {
-                                    cn.ghi_nhomk("0");
-                                    cn.remove_file();
+                                    if (chx_nhomatkhau.Checked == true)
+                                    {
+                                        cn.ghi_nhomk("1");
+                                        cn.remove_file();
+                                        Taikhoan tk = new Taikhoan("00", "00", txt_email.Text, txt_matkhau.Text, "00", "00", 0, 0);
+                                        cn.ghi_tk_file(tk);
+                                    }
+                                    else
+                                    {
+                                        cn.ghi_nhomk("0");
+                                        cn.remove_file();
+                                    }
+                                    // MessageBox.Show(tkbus.GetTaiKhoanByEmail(txt_email.Text).ToString());
+                                    Taikhoan tk1 = tkbus.GetTaiKhoanByEmail(txt_email.Text);
+                                    this.Hide();
+                                    KryptonForm form = new Form1(tk1);
+                                    form.Show();
                                 }
-                                // MessageBox.Show(tkbus.GetTaiKhoanByEmail(txt_email.Text).ToString());
-                                Taikhoan tk1 = tkbus.GetTaiKhoanByEmail(txt_email.Text);
-                                this.Hide();
-                                KryptonForm form = new Form1(tk1);
-                                form.Show();
-
                             }
-                            
-                        }
-                        else
-                            MessageBox.Show("Email chưa được đăng kí hoặc không tồn tại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            else
+                                MessageBox.Show("Sai mật khẩu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                         else
+                             MessageBox.Show("Email đã bị ban khỏi phần mềm Hybrid do bị quá nhiều report từ các người dùng khác.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
-                        MessageBox.Show("Email đã bị ban khỏi phần mềm Hybrid do bị quá nhiều report từ các người dùng khác.","Cảnh báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("Email này chưa được đăng ký trước đó", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
-                    MessageBox.Show("Email không hợp lệ hoặc không đúng định dạng cơ bản", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     MessageBox.Show("Email không hợp lệ hoặc không đúng định dạng cơ bản", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

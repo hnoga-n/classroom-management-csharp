@@ -50,5 +50,15 @@ namespace Hybrid.GUI.Admin
         {
             Application.Exit();
         }
+
+        private void btnMinimizeForm_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Homeadminfrm_Load(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new Userfrm());
+        }
     }
 }

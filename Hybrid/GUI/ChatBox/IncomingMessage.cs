@@ -18,6 +18,7 @@ namespace Hybrid.GUI.ChatBox
         private string saveText;
         private bool isVisible = false;
         TinNhanNhomChat tnnc;
+        TinNhanBanBe tnbb;
         public IncomingMessage(ChatBoxFrm chatBoxFrm)
         {
             InitializeComponent();
@@ -44,9 +45,25 @@ namespace Hybrid.GUI.ChatBox
             user_avatar.Image = pic.Image;
             string headEmail = tk.Email.Split('@')[0];
             string tailEmail = tk.Email.Split('@')[1].Replace(".com", "");
-            lbl_sent_userName.Text = headEmail.Substring(0, headEmail.Length) + "***" + tailEmail.Substring(tailEmail.Length - 3);
+            lbl_sent_userName.Text = headEmail.Substring(0, headEmail.Length - 2) + "***" + tailEmail.Substring(tailEmail.Length - 3);
         }
 
+        public void AddContent(TinNhanBanBe mess)
+        {
+            DateTime currentTime = mess.Thoigiangui;
+            tnbb = mess;
+            lbl_sent_time.Text = currentTime.ToString("HH:mm");
+            lbl_sent_content.Text = mess.Noidung;
+            this.saveText = mess.Noidung;
+
+            TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
+            Taikhoan tk = taikhoanBUS.List[taikhoanBUS.GetTaiKhoanByMaTaiKhoan(mess.Manguoinhan)];
+            PictureBox pic = taikhoanBUS.load_hinhdaidien(tk.Anhdaidien);
+            user_avatar.Image = pic.Image;
+            string headEmail = tk.Email.Split('@')[0];
+            string tailEmail = tk.Email.Split('@')[1].Replace(".com", "");
+            lbl_sent_userName.Text = headEmail.Substring(0, headEmail.Length - 2) + "***" + tailEmail.Substring(tailEmail.Length - 3);
+        }
 
         private void lbl_sent_content_MouseClick(object sender, EventArgs e)
         {

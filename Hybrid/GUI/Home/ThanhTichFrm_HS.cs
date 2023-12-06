@@ -1,6 +1,5 @@
 ﻿using Hybrid.BUS;
 using Hybrid.DTO;
-using Hybrid.GUI.Danhba;
 using ServiceStack;
 using System;
 using System.Collections.Generic;
@@ -25,7 +24,7 @@ namespace Hybrid.GUI.Home
         BailambaitapBUS blbtBUS = new BailambaitapBUS();
         BaiTapBUS btBUS = new BaiTapBUS();
         Dictionary<string, string> chuongDict = new Dictionary<string, string>();
-        public ThanhTichFrm_HS(LopHoc l,Taikhoan tk)
+        public ThanhTichFrm_HS(LopHoc l, Taikhoan tk)
         {
             InitializeComponent();
             this.taikhoan = tk;
@@ -43,7 +42,7 @@ namespace Hybrid.GUI.Home
             cbChuong.DataSource = new BindingSource(chuongDict, null);
         }
 
-        public void FillDataGridViewDanhSachDeKiemTra(string mataikhoan,string machuong)
+        public void FillDataGridViewDanhSachDeKiemTra(string mataikhoan, string machuong)
         {
 
             dt = blktBUS.ThongKeDiemHocSinhTheoMaTaiKhoanVaMaChuong(mataikhoan, machuong).Clone();
@@ -78,17 +77,19 @@ namespace Hybrid.GUI.Home
             this.dgvDanhSachHocSinh.Columns[3].HeaderText = "Nộp trễ";
             this.dgvDanhSachHocSinh.Columns[4].HeaderText = "Thời gian nộp";
         }
-        
-        public void FillDataGridViewDanhSachBaiTap(string mataikhoan,string machuong)
+
+        public void FillDataGridViewDanhSachBaiTap(string mataikhoan, string machuong)
         {
             dt = blbtBUS.ThongKeDiemHocSinhTheoMaTaiKhoanVaMaChuong(mataikhoan, machuong);
             this.dgvDanhSachHocSinh.DataSource = dt;
             this.dgvDanhSachHocSinh.Columns[0].Width = 400;
             this.dgvDanhSachHocSinh.Columns[1].Width = 50;
-            this.dgvDanhSachHocSinh.Columns[2].Width = 250;
+            this.dgvDanhSachHocSinh.Columns[2].Width = 100;
+            this.dgvDanhSachHocSinh.Columns[3].Width = 250;
             this.dgvDanhSachHocSinh.Columns[0].HeaderText = "Bài tập";
             this.dgvDanhSachHocSinh.Columns[1].HeaderText = "Điểm";
-            this.dgvDanhSachHocSinh.Columns[2].HeaderText = "Thời gian nộp";
+            this.dgvDanhSachHocSinh.Columns[2].HeaderText = "Nộp trễ";
+            this.dgvDanhSachHocSinh.Columns[3].HeaderText = "Thời gian nộp";
         }
 
         private void cbLoaiHoatDong_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,23 +106,23 @@ namespace Hybrid.GUI.Home
             }
         }
 
-        public void FillChart1_DeKiemTra(string mataikhoan,string machuong)
+        public void FillChart1_DeKiemTra(string mataikhoan, string machuong)
         {
             chart1.Series[0].Points.Clear();
             chart1.ChartAreas[0].Axes[0].Title = "Đề kiểm tra";
             foreach (var pair in blktBUS.ThongKePhoDiemTheoMaTaiKhoan(mataikhoan))
             {
-                if(dktBUS.GetDeKiemTraByMaDe(pair.Key).Machuong.Equals(machuong))
+                if (dktBUS.GetDeKiemTraByMaDe(pair.Key).Machuong.Equals(machuong))
                     chart1.Series[0].Points.AddXY(dktBUS.GetDeKiemTraByMaDe(pair.Key).Tieude, pair.Value);
             }
         }
-        public void FillChart1_BaiTap(string mataikhoan,string machuong)
+        public void FillChart1_BaiTap(string mataikhoan, string machuong)
         {
             chart1.Series[0].Points.Clear();
             chart1.ChartAreas[0].Axes[0].Title = "Bài Tập";
             foreach (var pair in blbtBUS.ThongKePhoDiemTheoMaTaiKhoan(mataikhoan))
             {
-                if(btBUS.GetBaiTapByMaBaiTap(pair.Key).Machuong.Equals(machuong))
+                if (btBUS.GetBaiTapByMaBaiTap(pair.Key).Machuong.Equals(machuong))
                     chart1.Series[0].Points.AddXY(btBUS.GetBaiTapByMaBaiTap(pair.Key).Tieude, pair.Value);
             }
         }
@@ -144,14 +145,14 @@ namespace Hybrid.GUI.Home
         {
             if (string.IsNullOrEmpty(txtTimKiem.Text))
             {
-                txtTimKiem.Text = "Tìm kiếm";
+                txtTimKiem.Text = "Tìm kiếm theo tiêu đề";
                 txtTimKiem.ForeColor = SystemColors.Control; // Đặt màu chữ thành màu xám
             }
         }
 
         private void txtTimKiem_Enter(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "Tìm kiếm")
+            if (txtTimKiem.Text == "Tìm kiếm theo tiêu đề")
             {
                 txtTimKiem.Text = "";
                 txtTimKiem.ForeColor = SystemColors.WindowText; // Đặt màu chữ về màu mặc định của hệ thống

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hybrid.DTO
 {
-    internal class TinNhanBanBe
+    public class TinNhanBanBe
     {
         private string matinnhan;
         private string manguoigui;

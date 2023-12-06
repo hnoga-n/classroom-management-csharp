@@ -13,6 +13,7 @@ namespace Hybrid.DAO
 {
     public class LopHocDAO
     {
+        DataTable dt = new DataTable();
         public LopHocDAO()
         {
         }
@@ -164,7 +165,7 @@ namespace Hybrid.DAO
             {
 
                 // Truy vấn dữ liệu từ SQL Server
-                string query = "select lophoc.malophoc,taikhoan.hoten,lophoc.ten,lophoc.mota,lophoc.daxoa from taikhoan,lophoc where magiangvien=mataikhoan and taikhoan.manhomquyen=2";
+                string query = "select lophoc.malophoc,lophoc.ten,lophoc.mota,taikhoan.hoten,lophoc.daxoa from taikhoan,lophoc where magiangvien=mataikhoan and taikhoan.manhomquyen=2";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
@@ -212,6 +213,20 @@ namespace Hybrid.DAO
                     int temp = command.ExecuteNonQuery();
                 }
             }
+        }
+        public DataTable LayAllLopHoc()
+        {
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "select * from lophoc ";
+            command.Connection = Ketnoisqlserver.GetConnection();
+            adapter.SelectCommand = command;
+            dt.Clear();
+            adapter.Fill(dt);
+            Ketnoisqlserver.CloseConnection();
+            return dt;
         }
     }
 }

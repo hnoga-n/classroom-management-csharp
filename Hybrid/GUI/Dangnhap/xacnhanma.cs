@@ -51,7 +51,7 @@ namespace Hybrid.GUI
                     lbThongBaoo.Text = "Xác thực thành công!";
                     if (tkbus.reset_matkhau1(email2) == true)
                     {
-                        cn.Guimail_admin(email2, "Reset Password", "Đây là mật khẩu mới của bạn:123456789\n, vui lòng nhanh chóng đăng nhập vào phần mềm của bạn và đổi mật khẩu khác: ");
+                        cn.Guimail_admin(email2, "Reset Password", "Đây là mật khẩu mới của bạn:abcd@123\n, vui lòng nhanh chóng đăng nhập vào phần mềm của bạn và đổi mật khẩu khác: ");
                         MessageBox.Show("Vui lòng check email của bạn để lấy mật khẩu mới");
                     }    
                     else
@@ -62,7 +62,7 @@ namespace Hybrid.GUI
                 {
                     lbThongBaoo.Text = "Xác thực thành công!";
                     if (tkbus.tao_taikhoan1(email2, password1) == true)
-                        MessageBox.Show("Bạn đã tạo tài khoản thành công.");
+                        MessageBox.Show("Bạn đã tạo tài khoản thành công.\nVui lòng đăng nhập vào phần mềm và cập nhật thông tin cá nhân.");
                     else
                         MessageBox.Show("Đã có lỗi trng quá trinh đăng ký tài khoản");
                     this.Close();

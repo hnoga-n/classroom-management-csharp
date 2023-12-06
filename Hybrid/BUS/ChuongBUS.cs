@@ -88,6 +88,7 @@ namespace Hybrid.BUS
         public ArrayList getChuongWithMaLop(string malop)
         {
             ArrayList listchuong = new ArrayList();
+            loadList();
             foreach (Chuong ch in list)
             {
                 if (ch.Malop.Equals(malop))

@@ -66,7 +66,7 @@ namespace Hybrid
             // kryptonButton1
             // 
             this.kryptonButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kryptonButton1.Location = new System.Drawing.Point(0, 775);
+            this.kryptonButton1.Location = new System.Drawing.Point(0, 766);
             this.kryptonButton1.Margin = new System.Windows.Forms.Padding(0);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));

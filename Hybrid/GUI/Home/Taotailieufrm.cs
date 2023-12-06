@@ -113,6 +113,16 @@ namespace Hybrid.GUI.Home
             }
         }
 
+        private void Taotailieufrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Nếu người dùng không muốn tắt form, hủy sự kiện đóng form
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
 
         private void text_noidungtailieu_KeyDown(object sender, KeyEventArgs e)
         {

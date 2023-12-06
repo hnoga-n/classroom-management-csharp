@@ -73,8 +73,12 @@ namespace Hybrid.GUI.Baitap.Hocsinh
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_excel_40;
                             tmp.FileExtension = "xlsx";
                             break;
-                        case "docx":
+                        case "pptx":
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_excel_40;
+                            tmp.FileExtension = "pptx";
+                            break;
+                        case "docx":
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
                             tmp.FileExtension = "docx";
                             break;
                         default:
@@ -177,7 +181,7 @@ namespace Hybrid.GUI.Baitap.Hocsinh
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.doc;*.docx)|*.doc;*.docx|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
+                openFileDialog.Filter = "Word documents (*.doc;*.docx)|*.doc;*.docx|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|PDF files (*.pdf)|*.pdf|PowerPoint presentations (*.ppt;*.pptx)|*.ppt;*.pptx|Text files (*.txt)|*.txt";
                 openFileDialog.FilterIndex = 5; // Thiết lập mặc định là All files
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {

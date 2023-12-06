@@ -120,13 +120,15 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="kryptonButton1.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAARhJREFUSEvtlDFqAkEYhTcQQqqUNhIIqRNS2FoKHiKNkBNYpUzKXMFLpMsNQkAQ
-        T2BtZStpxPV7u0/G1Z0Yw5jKDz5k3/zzhsHV7BDyPL/Enj4dpYXiaxyiGOOtl9JAYRdnat9Az12vt/HZ
-        totNv4UNZ964wDqW+Ia65ZcCePX2/TB8he/Ftv18YAN14IsrfobBB5zgIWhe+xquicPQI87xL3zjk6t2
-        YfEcdd0UDPDC1SUETVx/cakY4c36gBZOlR4B9bZ0yD3qPT8G6r0rbiPKLC2uDjhPiqsDzpPi6oDzGJ+o
-        13tb5VFcHXAeo/b/SHm5XI/HAs5jnA6p4jzG6ZAqzmMkO6SPdT842fFYBeVbc5v2PfYfZNkKq3MVNOFm
-        WMEAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAGDSURBVEhL5ZVNLgRBGIY7MQvCEWwYFxAb8ZMQzJCxtZgD
+        sBKDSMRShBuInRA2DoDdEC4gbuAOfmKjPG/31wnpmjE1phOJJ3kW81W99aW6a7qi/4VzrgfncQW3cRVL
+        2GdT2odFiniGL+jjDU9wyCJhENzCd/zAOtZwBkdwCtfxDoWaLVq0NQgcxVHnHnDUyl4Yn8BrLFvpZ5is
+        HYhL7LVy52BRvQM9Iu2g8w0EC5+j3kHTR+SDzALuYsFKWRjUMdUpqlspCHJ7KC7Q34iBcjzFuTUrBUGu
+        gGog/I0o6o8mZq2UgbFpXGpiFZ9QZBtR2ImHnBu20jeo9yfDQZQsnkAhj510WTSBgr5FomalIMi19E50
+        up7xxkpBkNtH4W+QwqA+hmLMSi1DpoIH2LiBYMIg6h//iL//jDeCxTdRXGGujQ7jNsmOxq3shfFJDPsK
+        pxDaQD06cYu6P+bw631yj0L3ScWiYRAcwFPUqfPxisdYtEj7sEg3ahfLmN7x+p3PdfBHiaJP4iWIxIlu
+        T1oAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

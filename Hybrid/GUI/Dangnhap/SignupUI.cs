@@ -89,5 +89,25 @@ namespace Hybrid.GUI
                 else
                     MessageBox.Show("Email không đúng định dạng\nVD:abc@gmail.com");
         }
+
+        private void lab_matkhau_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_matkhau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_matkhau2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

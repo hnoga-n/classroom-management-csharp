@@ -10,7 +10,7 @@ namespace Hybrid.GUI.Kiemtra
     {
         private string macauhoi;
         private int vitridapandung;
-        private int vitridapanchon=-1;
+        private int vitridapanchon = -1;
         private string madapanchon;
         private ArrayList listdapan;
 
@@ -106,7 +106,7 @@ namespace Hybrid.GUI.Kiemtra
                 this.answer2.CheckedChanged += holdAnswer;
                 this.answer3.CheckedChanged += holdAnswer;
                 this.answer4.CheckedChanged += holdAnswer;
-                if(this.madapanchon==string.Empty)
+                if (this.madapanchon == string.Empty)
                     this.empty.Visible = true;
             }
         }
