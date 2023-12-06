@@ -94,7 +94,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblChiTietBT.BackColor = System.Drawing.Color.White;
             this.lblChiTietBT.Location = new System.Drawing.Point(112, 56);
             this.lblChiTietBT.Name = "lblChiTietBT";
-            this.lblChiTietBT.Size = new System.Drawing.Size(124, 25);
+            this.lblChiTietBT.Size = new System.Drawing.Size(126, 25);
             this.lblChiTietBT.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             this.lblChiTietBT.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChiTietBT.TabIndex = 4;

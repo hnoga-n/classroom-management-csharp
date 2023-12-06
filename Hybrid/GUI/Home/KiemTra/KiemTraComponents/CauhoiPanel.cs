@@ -10,7 +10,7 @@ namespace Hybrid.GUI.Kiemtra
     {
         private string macauhoi;
         private int vitridapandung;
-        private int vitridapanchon;
+        private int vitridapanchon = -1;
         private string madapanchon;
         private ArrayList listdapan;
 
@@ -45,31 +45,27 @@ namespace Hybrid.GUI.Kiemtra
             this.answer2.Text = (listdapan[1] as CauTraLoi).Noidung;
             this.answer3.Text = (listdapan[2] as CauTraLoi).Noidung;
             this.answer4.Text = (listdapan[3] as CauTraLoi).Noidung;
-            if(this.madapanchon!=string.Empty)
+            setViTriDapAnDungVaDapAnChon();
+            switch (this.vitridapanchon)
             {
-                setViTriDapAnVaDapAnChon();
-                switch (this.vitridapanchon)
-                {
-                    case 0:
-                        this.answer1.Checked = true;
-                        break;
-                    case 1:
-                        this.answer2.Checked = true;
-                        break;
-                    case 2:
-                        this.answer3.Checked = true;
-                        break;
-                    case 3:
-                        this.answer4.Checked = true;
-                        break;
-                }
-            }
-            else
-            {
-                this.answer1.Checked = false;
-                this.answer2.Checked = false;
-                this.answer3.Checked = false;
-                this.answer4.Checked = false;
+                case 0:
+                    this.answer1.Checked = true;
+                    break;
+                case 1:
+                    this.answer2.Checked = true;
+                    break;
+                case 2:
+                    this.answer3.Checked = true;
+                    break;
+                case 3:
+                    this.answer4.Checked = true;
+                    break;
+                default:
+                    this.answer1.Checked = false;
+                    this.answer2.Checked = false;
+                    this.answer3.Checked = false;
+                    this.answer4.Checked = false;
+                    break;
             }
             if (daKetThuc)
             {
@@ -110,17 +106,19 @@ namespace Hybrid.GUI.Kiemtra
                 this.answer2.CheckedChanged += holdAnswer;
                 this.answer3.CheckedChanged += holdAnswer;
                 this.answer4.CheckedChanged += holdAnswer;
-                if(this.madapanchon==string.Empty)
+                if (this.madapanchon == string.Empty)
                     this.empty.Visible = true;
             }
         }
-        private void setViTriDapAnVaDapAnChon()
+        private void setViTriDapAnDungVaDapAnChon()
         {
             int index = 0;
             foreach (CauTraLoi ctl in listdapan)
             {
                 if (ctl.Macautraloi.Equals(this.madapanchon))
+                {
                     this.vitridapanchon = index;
+                }
                 if (ctl.Ladapan == 1)
                 {
                     this.vitridapandung = index;

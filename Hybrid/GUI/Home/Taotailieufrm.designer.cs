@@ -366,6 +366,7 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo tài liệu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Taotailieufrm_FormClosing);
             this.Load += new System.EventHandler(this.Taotailieufrm_Load);
             this.Shown += new System.EventHandler(this.Taotailieufrm_Shown);
             this.panel1.ResumeLayout(false);

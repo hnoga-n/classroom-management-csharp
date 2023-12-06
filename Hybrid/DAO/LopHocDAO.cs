@@ -13,6 +13,7 @@ namespace Hybrid.DAO
 {
     public class LopHocDAO
     {
+        DataTable dt = new DataTable();
         public LopHocDAO()
         {
         }
@@ -212,6 +213,20 @@ namespace Hybrid.DAO
                     int temp = command.ExecuteNonQuery();
                 }
             }
+        }
+        public DataTable LayAllLopHoc()
+        {
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "select * from lophoc ";
+            command.Connection = Ketnoisqlserver.GetConnection();
+            adapter.SelectCommand = command;
+            dt.Clear();
+            adapter.Fill(dt);
+            Ketnoisqlserver.CloseConnection();
+            return dt;
         }
     }
 }

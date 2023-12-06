@@ -71,6 +71,10 @@ namespace Hybrid.GUI.Baitap.Hocvien
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_excel_40;
                             tmp.FileExtension = "xlsx";
                             break;
+                        case "pptx":
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_pdf_40;
+                            tmp.FileExtension = "pptx";
+                            break;
                         case "docx":
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
                             tmp.FileExtension = "docx";

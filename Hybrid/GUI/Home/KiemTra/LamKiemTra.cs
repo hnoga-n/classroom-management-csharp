@@ -9,6 +9,7 @@ using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Hybrid.GUI.Kiemtra
@@ -17,27 +18,26 @@ namespace Hybrid.GUI.Kiemtra
     {
         private const double TOTAL_POINT = 10.0;
         private DeKiemTra dkt;
-        private DeKiemTraBUS dktBUS;
-        private ChiTietDeKiemTraBUS ctdktBUS;
         private CauHoiBUS chBUS;
         private CauTraLoiBUS ctlBUS;
         private Taikhoan taikhoanhienhanh;
+        private ChiTietDeKiemTraBUS ctdktBUS;
+        private BailamKiemtraBUS blktBUS;
         public LamKiemTra()
         {
             InitializeComponent();
         }
 
-        public LamKiemTra(DeKiemTra dkt, Taikhoan taikhoanhienhanh)
+        public LamKiemTra(DeKiemTra dkt, Taikhoan taikhoanhienhanh, BailamKiemtraBUS blktBUS)
         {
             InitializeComponent();
-            // TODO: check xem đã nộp bài chưa
             loading.ShowSplashScreen();
             this.dkt = dkt;
-            this.dktBUS = new DeKiemTraBUS();
+            this.blktBUS = blktBUS;
             this.chBUS = new CauHoiBUS();
             this.ctlBUS = new CauTraLoiBUS();
             this.ctdktBUS = new ChiTietDeKiemTraBUS();
-            this.taikhoanhienhanh = taikhoanhienhanh; ;
+            this.taikhoanhienhanh = taikhoanhienhanh;
             loading.CloseForm();
             loadDataIntoForm();
         }
@@ -50,7 +50,7 @@ namespace Hybrid.GUI.Kiemtra
             {
                 n--;
                 int k = rng.Next(n + 1);
-                ChiTietDeKiemTra value =(ChiTietDeKiemTra) list[k];
+                ChiTietDeKiemTra value = (ChiTietDeKiemTra)list[k];
                 list[k] = list[n];
                 list[n] = value;
             }
@@ -73,7 +73,7 @@ namespace Hybrid.GUI.Kiemtra
                 //cauhoi
                 CauHoi tmp = this.chBUS.getCauhoiWithMaCauHoi(ctdkt.Macauhoi);
                 listcautraloi = this.ctlBUS.getCauTraLoiWithMaCauHoi(tmp.Macauhoi);
-                CauhoiPanel chComponent = new CauhoiPanel(tmp, listcautraloi, userChose(tmp.Macauhoi), false,false);
+                CauhoiPanel chComponent = new CauhoiPanel(tmp, listcautraloi, userChose(tmp.Macauhoi), false, false);
                 chComponent.getOrder().Text = "Câu hỏi " + (++index);
                 listcauhoipanel.Controls.Add(chComponent);
 
@@ -123,7 +123,7 @@ namespace Hybrid.GUI.Kiemtra
 
             foreach (CauhoiPanel cauhoipanel in this.listcauhoipanel.Controls)
             {
-                if (cauhoipanel.Madapanchon == null || cauhoipanel.Madapanchon== string.Empty) continue;
+                if (cauhoipanel.Madapanchon == null || cauhoipanel.Madapanchon == string.Empty) continue;
                 command2.Parameters.Clear();
                 command2.Parameters.Add(new SqlParameter("@email", SqlDbType.NVarChar, 50)).Value = this.taikhoanhienhanh.Email;
                 command2.Parameters.Add(new SqlParameter("@made", SqlDbType.UniqueIdentifier)).Value = Guid.Parse(this.dkt.Madekiemtra);
@@ -135,22 +135,37 @@ namespace Hybrid.GUI.Kiemtra
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            DialogResult isConfirm = MessageBox.Show("Xác nhận nộp bài kiểm tra ?", "Thông báo !", MessageBoxButtons.OKCancel);
-            if (isConfirm == DialogResult.Cancel) return;
+            int index = 1;
+            StringBuilder str = new StringBuilder();
+            str.Append("Câu hỏi số ");
+            foreach (CauhoiPanel cauhoipanel in this.listcauhoipanel.Controls)
+            {
+                if (cauhoipanel.Madapanchon == string.Empty)
+                    str.Append(index.ToString() + ", ");
+                index++;
+            }
+            str.Append("chưa chọn câu trả lời. Bạn vẫn muốn nộp bài chứ ?");
+
+            DialogResult isEmptyConfirm = MessageBox.Show(str.ToString(), "Thông báo !", MessageBoxButtons.YesNo);
+            if (isEmptyConfirm == DialogResult.No) return;
+
+            DialogResult isConfirm = MessageBox.Show("Xác nhận nộp bài kiểm tra ?", "Thông báo !", MessageBoxButtons.YesNo);
+            if (isConfirm == DialogResult.No) return;
             this.btnSubmit.Enabled = false;
 
             loading.ShowSplashScreen();
             // create bailamkt
             DateTime thoigiannop = DateTime.Now;
             string mabailam = Guid.NewGuid().ToString();
-            double pointsPerQuestion =  TOTAL_POINT / this.listcauhoipanel.Controls.Count;
+            double pointsPerQuestion = TOTAL_POINT / this.listcauhoipanel.Controls.Count;
             double point = 0;
             int socaudung = 0;
             int order = 1;
             ArrayList Bailam = new ArrayList(); // use for chitietbailam
+            ChiTietBaiLamKiemTra ctbl;
             foreach (CauhoiPanel cauhoipanel in this.listcauhoipanel.Controls)
             {
-                ChiTietBaiLamKiemTra ctbl = new ChiTietBaiLamKiemTra()
+                ctbl = new ChiTietBaiLamKiemTra()
                 {
                     Mabailamkiemtra = mabailam,
                     Macauhoi = cauhoipanel.Macauhoi,
@@ -178,8 +193,7 @@ namespace Hybrid.GUI.Kiemtra
             // hinh phat nop tre
             if (blkt.Noptre == 1)
                 blkt.Diem = float.Parse(Math.Round((blkt.Diem * this.dkt.Hinhphat) / 100, 2).ToString());
-            BailamKiemtraBUS blktbus = new BailamKiemtraBUS();
-            if (!blktbus.addBaiLam(blkt))
+            if (!this.blktBUS.addBaiLam(blkt))
             {
                 loading.CloseForm();
                 MessageBox.Show("Xảy ra lỗi khi lưu bài làm, vui lòng thử lại !", "Thông báo!", MessageBoxButtons.OK);
@@ -190,7 +204,8 @@ namespace Hybrid.GUI.Kiemtra
             ChiTietBaiLamKiemTraBUS ctblkt = new ChiTietBaiLamKiemTraBUS();
             ctblkt.AddChiTietBaiLam(Bailam);
             loading.CloseForm();
-            MessageBox.Show("Bài làm đã lưu !", "Thông báo !", MessageBoxButtons.OK);
+            MessageBox.Show("Lưu bài làm thành công !", "Thông báo !", MessageBoxButtons.OK);
+            this.blktBUS.loadList();
             // clean up
             cleanUpLuuVet();
             this.btnSubmit.Enabled = true;

@@ -32,7 +32,7 @@ namespace Hybrid
             //Application.Run(new KiemTraFrm());
             //Application.Run(new TaoBaiTap());
             //Application.Run(new Homeadminfrm());
-            //Application.Run(new test1());
+            //Application.Run(new Test());
         }
     }
 }

@@ -15,8 +15,8 @@ namespace Hybrid.GUI.ChatBox
     {
         ChatBoxFrm chatBoxFrm;
         private string saveText;
-        lbl_save_clipboard lbl_sc;
         TinNhanNhomChat tnnc;
+        TinNhanBanBe tnbb;
         public OutgoingMessage(ChatBoxFrm cbFrm)
         {
             InitializeComponent();
@@ -27,6 +27,15 @@ namespace Hybrid.GUI.ChatBox
         {
             DateTime currentTime = mess.Thoigiangui;
             tnnc = mess;
+            lbl_sent_time.Text = currentTime.ToString("HH:mm");
+            lbl_sent_content.Text = mess.Noidung;
+            this.saveText = mess.Noidung;
+        }
+
+        public void AddContent(TinNhanBanBe mess)
+        {
+            DateTime currentTime = mess.Thoigiangui;
+            tnbb = mess;
             lbl_sent_time.Text = currentTime.ToString("HH:mm");
             lbl_sent_content.Text = mess.Noidung;
             this.saveText = mess.Noidung;
@@ -59,7 +68,14 @@ namespace Hybrid.GUI.ChatBox
             }
         }
 
-
+        /* private void delete_mess(object sender, System.EventArgs e)
+         {
+             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa tin nhắn?", "Xóa tin nhắn", MessageBoxButtons.OKCancel);
+             if (result == DialogResult.OK)
+             {
+                 chatBanBe.del_om_mess(this, this.tnbb);
+             }
+         }*/
         private void menu_TinNhan_Opening(object sender, CancelEventArgs e)
         {
             this.kryptonContextMenuItem1.Click += copy_text;

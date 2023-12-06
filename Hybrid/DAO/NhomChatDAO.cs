@@ -1,4 +1,5 @@
 ﻿using Hybrid.DTO;
+using ServiceStack.OrmLite;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -46,6 +47,28 @@ namespace Hybrid.DAO
                 Ketnoisqlserver.CloseConnection();
             }
             return listTmp;
+        }
+
+        public bool ThemNhomChat(NhomChat nhomchat)
+        {
+            try
+            {
+                string sql_themlophoc = "INSERT INTO nhomchat(manhomchat,malophoc,ten) VALUES (@manhomchat,@malophoc,N'" + nhomchat.Tennhomchat + "')";
+                SqlCommand cmd_themlophoc = new SqlCommand(sql_themlophoc, Ketnoisqlserver.GetConnection());
+                cmd_themlophoc.Parameters.AddWithValue("@manhomchat", Guid.Parse(nhomchat.Manhomchat));
+                cmd_themlophoc.Parameters.AddWithValue("@malophoc", Guid.Parse(nhomchat.Malop));
+                cmd_themlophoc.ExecNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xảy ra ở file NhomchatDAO:" + ex.Message);
+                return false;
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
         }
 
         public NhomChat GetNhomChatByMaLop(string maLop)

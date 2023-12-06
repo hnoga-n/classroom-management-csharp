@@ -264,7 +264,7 @@ namespace Hybrid.GUI.ChatBox
             tmp = group_messages_data.getLatest(lophoc.Malop.ToUpper());
             //Console.WriteLine("tmp: " + tmp.Matinnhan.ToLower());
             //Console.WriteLine("latest: " + latestMess.Matinnhan.ToLower());
-            if (tmp == null) return;
+            if (tmp == null || latestMess == null) return;
             if (!tmp.Matinnhan.ToLower().Equals(latestMess.Matinnhan.ToLower()))
             {
                 //Console.WriteLine("equal");

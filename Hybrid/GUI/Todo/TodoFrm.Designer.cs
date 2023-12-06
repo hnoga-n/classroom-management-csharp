@@ -52,6 +52,7 @@
             // 
             // rightFlowPanel
             // 
+            this.rightFlowPanel.BackColor = System.Drawing.Color.White;
             this.rightFlowPanel.Location = new System.Drawing.Point(318, 19);
             this.rightFlowPanel.Name = "rightFlowPanel";
             this.rightFlowPanel.Size = new System.Drawing.Size(1015, 804);
@@ -96,6 +97,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TodoFrm";
             this.Text = "Todo";
+            this.Load += new System.EventHandler(this.TodoFrm_Load);
             this.ResumeLayout(false);
 
         }

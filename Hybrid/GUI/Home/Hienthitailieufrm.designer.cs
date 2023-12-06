@@ -287,7 +287,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 72);
+            this.label4.Location = new System.Drawing.Point(12, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 24);
             this.label4.TabIndex = 1;
@@ -475,6 +475,7 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tài liệu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hienthitailieufrm_FormClosing);
             this.Load += new System.EventHandler(this.Hienthitailieufrm_Load);
             this.Shown += new System.EventHandler(this.Hienthitailieufrm_Shown);
             this.panel1.ResumeLayout(false);

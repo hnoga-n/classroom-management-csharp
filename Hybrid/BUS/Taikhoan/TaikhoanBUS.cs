@@ -23,6 +23,7 @@ namespace Hybrid.BUS
     {
         private List<Taikhoan> list = new List<Taikhoan>();
         public TaikhoanDAO dao = new TaikhoanDAO();
+        DataTable dt = new DataTable();
 
         public List<Taikhoan> List { get => list; set => list = value; }
 
@@ -32,9 +33,37 @@ namespace Hybrid.BUS
         {
             list = dao.get_danhsach();
         }
+
+        public void thaydoimatkhau(string email, string matkhau)
+        {
+            dao.update_matkhau_taikhoan(email, matkhau);
+            list = dao.get_danhsach();
+        }
         public List<Taikhoan> get_list()
         {
             return list;
+        }
+
+        public Boolean UpdateTaiKhoan(Taikhoan tk)
+        {
+            if (dao.UpdateTaiKhoan(tk))
+            {
+                return true;
+            }
+            else { return false; }
+
+        }
+
+        public DataTable LayThongTinTaiKhoanByID(String str)
+        {
+            dt = dao.LayThongTinTaiKhoanByID(str);
+            return dt;
+        }
+
+        public DataTable LayAllTaiKhoan()
+        {
+            dt = dao.LayAllTaiKhoan();
+            return dt;
         }
         public bool kt_email(string email)
         {

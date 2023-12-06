@@ -44,12 +44,24 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblChiTietHocLieu.BackColor = System.Drawing.Color.White;
             this.lblChiTietHocLieu.Location = new System.Drawing.Point(112, 56);
             this.lblChiTietHocLieu.Name = "lblChiTietHocLieu";
-            this.lblChiTietHocLieu.Size = new System.Drawing.Size(122, 25);
+            this.lblChiTietHocLieu.Size = new System.Drawing.Size(126, 25);
             this.lblChiTietHocLieu.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
             this.lblChiTietHocLieu.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChiTietHocLieu.TabIndex = 18;
             this.lblChiTietHocLieu.Values.Text = "Chi tiết tài liệu";
             this.lblChiTietHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
+            // 
+            // lblTieuDeHocLieu
+            // 
+            this.lblTieuDeHocLieu.AutoEllipsis = true;
+            this.lblTieuDeHocLieu.BackColor = System.Drawing.Color.White;
+            this.lblTieuDeHocLieu.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTieuDeHocLieu.Location = new System.Drawing.Point(107, 25);
+            this.lblTieuDeHocLieu.Name = "lblTieuDeHocLieu";
+            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(742, 28);
+            this.lblTieuDeHocLieu.TabIndex = 22;
+            this.lblTieuDeHocLieu.Text = "Lập trình C#";
+            this.lblTieuDeHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
             // 
             // pictureBox1
             // 
@@ -98,18 +110,6 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnHocLieu.TabIndex = 15;
             this.btnHocLieu.Values.Text = "";
             this.btnHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
-            // 
-            // lblTieuDeHocLieu
-            // 
-            this.lblTieuDeHocLieu.AutoEllipsis = true;
-            this.lblTieuDeHocLieu.BackColor = System.Drawing.Color.White;
-            this.lblTieuDeHocLieu.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTieuDeHocLieu.Location = new System.Drawing.Point(107, 25);
-            this.lblTieuDeHocLieu.Name = "lblTieuDeHocLieu";
-            this.lblTieuDeHocLieu.Size = new System.Drawing.Size(742, 28);
-            this.lblTieuDeHocLieu.TabIndex = 22;
-            this.lblTieuDeHocLieu.Text = "Lập trình C#";
-            this.lblTieuDeHocLieu.Click += new System.EventHandler(this.btnHocLieu_Click);
             // 
             // ButtonHocLieu
             // 

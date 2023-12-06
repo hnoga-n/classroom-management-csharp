@@ -14,11 +14,6 @@ namespace Hybrid.DAO
 {
     public class DeKiemTraDAO
     {
-
-        public DeKiemTraDAO()
-        {
-        }
-
         public ArrayList loadList()
         {
             ArrayList listTmp = new ArrayList();
@@ -35,7 +30,7 @@ namespace Hybrid.DAO
                     tmp.Madekiemtra = dr["madekiemtra"].ToString();
                     tmp.Machuong = dr["machuong"].ToString();
                     tmp.Tieude = dr["tieude"].ToString();
-                    tmp.Hinhphat= int.Parse(dr["hinhphat"].ToString());
+                    tmp.Hinhphat = int.Parse(dr["hinhphat"].ToString());
                     tmp.Xemdapan = int.Parse(dr["xemdapan"].ToString());
                     tmp.Troncauhoi = int.Parse(dr["troncauhoi"].ToString());
                     tmp.Thoigiantao = DateTime.Parse(dr["thoigiantao"].ToString());
@@ -72,7 +67,7 @@ namespace Hybrid.DAO
                 cmd_themdekiemtra.Parameters.AddWithValue("@xemdapan", dekiemtra.Xemdapan);
                 cmd_themdekiemtra.Parameters.AddWithValue("@thoigiantao", dekiemtra.Thoigiantao);
                 cmd_themdekiemtra.Parameters.AddWithValue("@troncauhoi", dekiemtra.Troncauhoi);
-                cmd_themdekiemtra.Parameters.AddWithValue("@daxoa",dekiemtra.Daxoa);
+                cmd_themdekiemtra.Parameters.AddWithValue("@daxoa", dekiemtra.Daxoa);
                 cmd_themdekiemtra.ExecNonQuery();
                 return true;
             }
@@ -129,6 +124,90 @@ namespace Hybrid.DAO
             {
                 Ketnoisqlserver.CloseConnection();
             }
+        }
+        public ArrayList GetTatCaBaiKiemTraChuaNopByMaLopHoc(string malop)
+        {
+            ArrayList listBaitap = new ArrayList();
+            try
+            {
+                string sql = "SELECT madekiemtra,c.machuong,tieude,thoigianbatdau,thoigianketthuc,hinhphat,xemdapan,dkt.thoigiantao,troncauhoi,dkt.daxoa FROM dekiemtra dkt JOIN chuong c ON dkt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc WHERE l.malophoc=@malophoc AND dkt.madekiemtra NOT IN (SELECT dkt.madekiemtra FROM dekiemtra dkt JOIN bailamkiemtra bl ON dkt.madekiemtra=bl.madekiemtra)";
+                SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
+                command.Parameters.AddWithValue("@malophoc", Guid.Parse(malop));
+                SqlDataReader dr = command.ExecuteReader();
+                DeKiemTra tmp;
+                while (dr.Read())
+                {
+                    tmp = new DeKiemTra
+                    {
+                        Madekiemtra = dr["madekiemtra"].ToString(),
+                        Machuong = dr["machuong"].ToString(),
+                        Tieude = dr["tieude"].ToString(),
+                        Hinhphat = int.Parse(dr["hinhphat"].ToString()),
+                        Xemdapan = int.Parse(dr["xemdapan"].ToString()),
+                        Troncauhoi = int.Parse(dr["troncauhoi"].ToString()),
+                        Thoigiantao = DateTime.Parse(dr["thoigiantao"].ToString()),
+                        Thoigianbatdau = DateTime.Parse(dr["thoigianbatdau"].ToString()),
+                        Thoigianketthuc = DateTime.Parse(dr["thoigianketthuc"].ToString()),
+                        Daxoa = int.Parse(dr["daxoa"].ToString()),
+                    };
+                    listBaitap.Add(tmp);
+
+                }
+                dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+
+            return listBaitap;
+        }
+        public ArrayList GetTatCaBaiKiemTraDaNopByMaLopHoc(string malop)
+        {
+            ArrayList listBaitap = new ArrayList();
+            try
+            {
+                string sql = "SELECT madekiemtra,c.machuong,tieude,thoigianbatdau,thoigianketthuc,hinhphat,xemdapan,dkt.thoigiantao,troncauhoi,dkt.daxoa FROM dekiemtra dkt JOIN chuong c ON dkt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc WHERE l.malophoc=@malophoc AND dkt.madekiemtra IN (SELECT dkt.madekiemtra FROM dekiemtra dkt JOIN bailamkiemtra bl ON dkt.madekiemtra=bl.madekiemtra)";
+                SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
+                command.Parameters.AddWithValue("@malophoc", Guid.Parse(malop));
+                SqlDataReader dr = command.ExecuteReader();
+                DeKiemTra tmp;
+                while (dr.Read())
+                {
+                    tmp = new DeKiemTra
+                    {
+                        Madekiemtra = dr["madekiemtra"].ToString(),
+                        Machuong = dr["machuong"].ToString(),
+                        Tieude = dr["tieude"].ToString(),
+                        Hinhphat = int.Parse(dr["hinhphat"].ToString()),
+                        Xemdapan = int.Parse(dr["xemdapan"].ToString()),
+                        Troncauhoi = int.Parse(dr["troncauhoi"].ToString()),
+                        Thoigiantao = DateTime.Parse(dr["thoigiantao"].ToString()),
+                        Thoigianbatdau = DateTime.Parse(dr["thoigianbatdau"].ToString()),
+                        Thoigianketthuc = DateTime.Parse(dr["thoigianketthuc"].ToString()),
+                        Daxoa = int.Parse(dr["daxoa"].ToString()),
+                    };
+                    listBaitap.Add(tmp);
+
+                }
+                dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                Ketnoisqlserver.CloseConnection();
+            }
+
+            return listBaitap;
         }
     }
 }

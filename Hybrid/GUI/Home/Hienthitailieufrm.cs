@@ -117,6 +117,20 @@ namespace Hybrid.GUI.Home.Tailieu
                 lab_demkitu_noidungtailieu.Text = text_noidungtailieu.Text.Length.ToString() + "/300 kí tự";
         }
 
+        private void Hienthitailieufrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (but_xoa.Visible == false)
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Nếu người dùng không muốn tắt form, hủy sự kiện đóng form
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
         private void text_tentailieu_TextChanged(object sender, EventArgs e)
         {
             if (text_tentailieu.Text.Length > 50)

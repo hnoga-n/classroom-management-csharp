@@ -68,7 +68,8 @@ namespace Hybrid.GUI.Home.HomeComponents
                 // do exam
                 DialogResult isConfirmDoExam = MessageBox.Show("Tiến hành làm bài tập ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (isConfirmDoExam == DialogResult.No) return;
-                LamBaiTap lambaitapFrm = new LamBaiTap(this.panelChuong.Khfrm.Taikhoan,this.panelChuong.Chuong,this.baitap);
+                LamBaiTap lambaitapFrm = new LamBaiTap(this.panelChuong.Khfrm.Taikhoan,this.panelChuong.Chuong,this.baitap,this.blbtBUS
+                    );
                 lambaitapFrm.Show();
                 return;
             }
@@ -89,7 +90,7 @@ namespace Hybrid.GUI.Home.HomeComponents
                 return;
             }
             loading.ShowSplashScreen();
-            Chinhsuabaitap editBtFrm = new Chinhsuabaitap(this.panelChuong, this.panelChuong.Khfrm.Taikhoan, this.panelChuong.Khfrm.Lophoc, this.panelChuong.Chuong, this.baitap);
+            Chinhsuabaitap editBtFrm = new Chinhsuabaitap(this.panelChuong, this.panelChuong.Khfrm.Taikhoan, this.panelChuong.Khfrm.Lophoc, this.panelChuong.Chuong, this.baitap,this.baitapBUS);
             loading.CloseForm();
             editBtFrm.Show();
             return;
@@ -125,7 +126,7 @@ namespace Hybrid.GUI.Home.HomeComponents
         private void timerCapNhatTrangThai_Tick(object sender, EventArgs e)
         {
             string trangthai = XacDinhTrangThaiDeKiemTra(this.baitap.Thoigianbatdau, this.baitap.Thoigianketthuc);
-            this.lblChiTietBT.Text = "Bài kiểm tra (" + baitap.Thoigianbatdau.ToString("dd/MM/yy HH:mm:ss") + " - " + baitap.Thoigianketthuc.ToString("dd/MM/yy HH:mm:ss") + ") | " + trangthai;
+            this.lblChiTietBT.Text = "Bài tập (" + baitap.Thoigianbatdau.ToString("dd/MM/yy HH:mm:ss") + " - " + baitap.Thoigianketthuc.ToString("dd/MM/yy HH:mm:ss") + ") | " + trangthai;
             if (this.panelChuong.Khfrm.Taikhoan.Mataikhoan.Equals(this.panelChuong.Khfrm.Lophoc.Magiangvien) && panelChuong.Khfrm.Lophoc.Daxoa == 0)
             {
                 if (this.baitap.Thoigianbatdau.AddMinutes(-15) <= DateTime.Now)

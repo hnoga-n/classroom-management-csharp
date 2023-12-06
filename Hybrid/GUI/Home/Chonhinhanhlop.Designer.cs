@@ -43,11 +43,21 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pic1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.pic6 = new System.Windows.Forms.PictureBox();
+            this.pic3 = new System.Windows.Forms.PictureBox();
+            this.pic5 = new System.Windows.Forms.PictureBox();
+            this.pic2 = new System.Windows.Forms.PictureBox();
+            this.pic4 = new System.Windows.Forms.PictureBox();
+            this.pic1 = new System.Windows.Forms.PictureBox();
             this.tpWellChosen.SuspendLayout();
             this.flpBu.SuspendLayout();
             this.pnlBu.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic3)).BeginInit();
             this.panel5.SuspendLayout();
@@ -63,6 +73,7 @@
             // 
             this.tpWellChosen.BackColor = System.Drawing.Color.White;
             this.tpWellChosen.Controls.Add(this.flpBu);
+            this.tpWellChosen.Controls.Add(this.btnCancel);
             this.tpWellChosen.Controls.Add(this.btnOK);
             this.tpWellChosen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpWellChosen.Location = new System.Drawing.Point(4, 29);
@@ -243,6 +254,53 @@
             this.panel1.Size = new System.Drawing.Size(100, 100);
             this.panel1.TabIndex = 21;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(299, 353);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnCancel.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnCancel.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCancel.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCancel.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCancel.OverrideDefault.Border.Rounding = 5;
+            this.btnCancel.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCancel.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCancel.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCancel.Size = new System.Drawing.Size(140, 39);
+            this.btnCancel.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnCancel.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnCancel.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnCancel.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnCancel.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCancel.StateCommon.Border.Rounding = 5;
+            this.btnCancel.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, 2, -1, -1);
+            this.btnCancel.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.DimGray;
+            this.btnCancel.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCancel.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCancel.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCancel.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.btnCancel.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.btnCancel.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCancel.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnCancel.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnCancel.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCancel.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnCancel.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnCancel.TabIndex = 11;
+            this.btnCancel.Values.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(482, 353);
@@ -302,6 +360,90 @@
             this.tabControl1.Size = new System.Drawing.Size(659, 439);
             this.tabControl1.TabIndex = 0;
             // 
+            // pic6
+            // 
+            this.pic6.BackColor = System.Drawing.Color.White;
+            this.pic6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic6.Image = global::Hybrid.Properties.Resources.imglop6;
+            this.pic6.Location = new System.Drawing.Point(459, 164);
+            this.pic6.Margin = new System.Windows.Forms.Padding(0);
+            this.pic6.Name = "pic6";
+            this.pic6.Size = new System.Drawing.Size(94, 94);
+            this.pic6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic6.TabIndex = 32;
+            this.pic6.TabStop = false;
+            this.pic6.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
+            // pic3
+            // 
+            this.pic3.BackColor = System.Drawing.Color.White;
+            this.pic3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic3.Image = global::Hybrid.Properties.Resources.imglop3;
+            this.pic3.Location = new System.Drawing.Point(456, 30);
+            this.pic3.Margin = new System.Windows.Forms.Padding(0);
+            this.pic3.Name = "pic3";
+            this.pic3.Size = new System.Drawing.Size(94, 94);
+            this.pic3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic3.TabIndex = 22;
+            this.pic3.TabStop = false;
+            this.pic3.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
+            // pic5
+            // 
+            this.pic5.BackColor = System.Drawing.Color.White;
+            this.pic5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic5.Image = global::Hybrid.Properties.Resources.imglop5;
+            this.pic5.Location = new System.Drawing.Point(3, 3);
+            this.pic5.Margin = new System.Windows.Forms.Padding(0);
+            this.pic5.Name = "pic5";
+            this.pic5.Size = new System.Drawing.Size(94, 94);
+            this.pic5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic5.TabIndex = 18;
+            this.pic5.TabStop = false;
+            this.pic5.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
+            // pic2
+            // 
+            this.pic2.BackColor = System.Drawing.Color.White;
+            this.pic2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic2.Image = global::Hybrid.Properties.Resources.imglop2;
+            this.pic2.Location = new System.Drawing.Point(3, 3);
+            this.pic2.Margin = new System.Windows.Forms.Padding(0);
+            this.pic2.Name = "pic2";
+            this.pic2.Size = new System.Drawing.Size(94, 94);
+            this.pic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic2.TabIndex = 18;
+            this.pic2.TabStop = false;
+            this.pic2.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
+            // pic4
+            // 
+            this.pic4.BackColor = System.Drawing.Color.White;
+            this.pic4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic4.Image = global::Hybrid.Properties.Resources.imglop4;
+            this.pic4.Location = new System.Drawing.Point(72, 164);
+            this.pic4.Margin = new System.Windows.Forms.Padding(0);
+            this.pic4.Name = "pic4";
+            this.pic4.Size = new System.Drawing.Size(94, 94);
+            this.pic4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic4.TabIndex = 30;
+            this.pic4.TabStop = false;
+            this.pic4.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
+            // pic1
+            // 
+            this.pic1.BackColor = System.Drawing.Color.White;
+            this.pic1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic1.Image = global::Hybrid.Properties.Resources.imglop1;
+            this.pic1.Location = new System.Drawing.Point(69, 30);
+            this.pic1.Margin = new System.Windows.Forms.Padding(0);
+            this.pic1.Name = "pic1";
+            this.pic1.Size = new System.Drawing.Size(94, 94);
+            this.pic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic1.TabIndex = 20;
+            this.pic1.TabStop = false;
+            this.pic1.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
             // Chonhinhanhlop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -321,6 +463,9 @@
             this.tpWellChosen.ResumeLayout(false);
             this.flpBu.ResumeLayout(false);
             this.pnlBu.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic3)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -351,6 +496,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pic1;
         private System.Windows.Forms.Panel panel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnOK;
         private System.Windows.Forms.TabControl tabControl1;
 

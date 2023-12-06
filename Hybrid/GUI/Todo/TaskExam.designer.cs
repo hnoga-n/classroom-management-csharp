@@ -47,7 +47,7 @@
             this.kryptonButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonButton2.Location = new System.Drawing.Point(0, 0);
             this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(1000, 80);
+            this.kryptonButton2.Size = new System.Drawing.Size(978, 80);
             this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton2.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.kryptonButton2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -59,7 +59,7 @@
             // 
             // kryptonButton1
             // 
-            this.kryptonButton1.Location = new System.Drawing.Point(58, 35);
+            this.kryptonButton1.Location = new System.Drawing.Point(26, 35);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
             this.kryptonButton1.TabIndex = 3;
@@ -70,7 +70,7 @@
             this.btnExam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnExam.Location = new System.Drawing.Point(0, 0);
             this.btnExam.Name = "btnExam";
-            this.btnExam.Size = new System.Drawing.Size(1000, 80);
+            this.btnExam.Size = new System.Drawing.Size(978, 80);
             this.btnExam.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnExam.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnExam.TabIndex = 4;
@@ -78,11 +78,11 @@
             // 
             // btnDoExam
             // 
-            this.btnDoExam.Location = new System.Drawing.Point(844, 25);
+            this.btnDoExam.Location = new System.Drawing.Point(809, 15);
             this.btnDoExam.Name = "btnDoExam";
             this.btnDoExam.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnDoExam.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.btnDoExam.Size = new System.Drawing.Size(144, 35);
+            this.btnDoExam.Size = new System.Drawing.Size(166, 45);
             this.btnDoExam.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnDoExam.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnDoExam.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -93,11 +93,13 @@
             this.btnDoExam.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoExam.TabIndex = 16;
             this.btnDoExam.Values.Text = "Làm kiểm tra";
+            this.btnDoExam.Click += new System.EventHandler(this.btnDoExam_Click);
             // 
             // lblStart
             // 
             this.lblStart.AutoEllipsis = true;
-            this.lblStart.Location = new System.Drawing.Point(461, 12);
+            this.lblStart.BackColor = System.Drawing.Color.White;
+            this.lblStart.Location = new System.Drawing.Point(429, 12);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(224, 18);
             this.lblStart.TabIndex = 6;
@@ -107,7 +109,7 @@
             // 
             this.lblExam.AutoSize = true;
             this.lblExam.Font = new System.Drawing.Font("Roboto Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExam.Location = new System.Drawing.Point(211, 53);
+            this.lblExam.Location = new System.Drawing.Point(179, 53);
             this.lblExam.Name = "lblExam";
             this.lblExam.Size = new System.Drawing.Size(63, 15);
             this.lblExam.TabIndex = 3;
@@ -118,7 +120,7 @@
             this.lblExamTitle.AutoEllipsis = true;
             this.lblExamTitle.BackColor = System.Drawing.Color.White;
             this.lblExamTitle.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExamTitle.Location = new System.Drawing.Point(210, 14);
+            this.lblExamTitle.Location = new System.Drawing.Point(178, 14);
             this.lblExamTitle.Name = "lblExamTitle";
             this.lblExamTitle.Size = new System.Drawing.Size(245, 26);
             this.lblExamTitle.TabIndex = 17;
@@ -129,7 +131,7 @@
             this.kryptonButton3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonButton3.Location = new System.Drawing.Point(0, 0);
             this.kryptonButton3.Name = "kryptonButton3";
-            this.kryptonButton3.Size = new System.Drawing.Size(1000, 80);
+            this.kryptonButton3.Size = new System.Drawing.Size(978, 80);
             this.kryptonButton3.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton3.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.kryptonButton3.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -145,7 +147,7 @@
             this.pictureBoxDiscuss.BackgroundImage = global::Hybrid.Properties.Resources.icons8_exam_91;
             this.pictureBoxDiscuss.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxDiscuss.InitialImage = null;
-            this.pictureBoxDiscuss.Location = new System.Drawing.Point(86, 12);
+            this.pictureBoxDiscuss.Location = new System.Drawing.Point(40, 12);
             this.pictureBoxDiscuss.Name = "pictureBoxDiscuss";
             this.pictureBoxDiscuss.Size = new System.Drawing.Size(63, 56);
             this.pictureBoxDiscuss.TabIndex = 15;
@@ -154,8 +156,8 @@
             // lblClass
             // 
             this.lblClass.AutoEllipsis = true;
-            this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(691, 35);
+            this.lblClass.BackColor = System.Drawing.Color.White;
+            this.lblClass.Location = new System.Drawing.Point(659, 35);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(138, 16);
             this.lblClass.TabIndex = 7;
@@ -164,7 +166,8 @@
             // lblEnd
             // 
             this.lblEnd.AutoEllipsis = true;
-            this.lblEnd.Location = new System.Drawing.Point(461, 50);
+            this.lblEnd.BackColor = System.Drawing.Color.White;
+            this.lblEnd.Location = new System.Drawing.Point(429, 50);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(224, 18);
             this.lblEnd.TabIndex = 18;
@@ -186,7 +189,7 @@
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.kryptonButton2);
             this.Name = "TaskExam";
-            this.Size = new System.Drawing.Size(1000, 80);
+            this.Size = new System.Drawing.Size(978, 80);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiscuss)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

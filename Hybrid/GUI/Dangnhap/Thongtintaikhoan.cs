@@ -30,7 +30,6 @@ namespace Hybrid.GUI
         {
             InitializeComponent();
             this.tk = tk;
-            InitializeComponent();
             this.Location=new Point(frm.Location.X+50, frm.Location.Y+20);
             hinhanh.Image = pic.Image;
 
@@ -60,7 +59,10 @@ namespace Hybrid.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (lab_xacnhan.Visible == true)
+                MessageBox.Show("Vui lòng bấm xác nhận thay đổi trước khi thoát! ", "Cảnh báo ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                this.Close();
         }
 
         private void lab_chinhsua_Click(object sender, EventArgs e)
@@ -118,6 +120,13 @@ namespace Hybrid.GUI
                 }    
             }    
             
+        }
+
+        private void lab_doimatkhau_Click(object sender, EventArgs e)
+        {
+            Doimatkhaufrm form = new Doimatkhaufrm(this.tk.Email);
+            form.ShowDialog();
+
         }
 
         private void txt_sodienthoai_KeyPress(object sender, KeyPressEventArgs e)

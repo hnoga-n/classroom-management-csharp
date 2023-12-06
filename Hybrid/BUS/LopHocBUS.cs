@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using System.Data;
 using Microsoft.Office.Interop.Word;
 using Unidecode.NET;
-using System.Data;
 using System.Linq;
 
 namespace Hybrid.BUS
@@ -21,11 +20,12 @@ namespace Hybrid.BUS
         private ArrayList list;
         private LopHocDAO lopDAO;
         System.Data.DataTable dataTable = null;
+        System.Data.DataTable dt = new System.Data.DataTable();
 
         public LopHocBUS()
         {
             lopDAO = new LopHocDAO();
-            list = lopDAO.loadList();
+            loadList();
         }
 
         public ArrayList getList()
@@ -35,6 +35,9 @@ namespace Hybrid.BUS
         public void loadList()
         {
             list = lopDAO.loadList();
+            LophocComparer comparer = new LophocComparer();
+            comparer.TypeToCompare = LophocComparer.ComparisonType.malophoc;
+            list.Sort(comparer);
         }
 
         public ArrayList GetDanhSachTatCaLopHocByMaTaiKhoan(string mataikhoan)
@@ -98,7 +101,7 @@ namespace Hybrid.BUS
         {
             foreach (LopHoc lop in list)
             {
-                if(lop.Malop.ToLower().Equals(malophoc.ToLower()))
+                if (lop.Malop.ToLower().Equals(malophoc.ToLower()))
                     return lop;
             }
             return null;
@@ -264,6 +267,12 @@ namespace Hybrid.BUS
 
             list = lopDAO.loadList();
             lopDAO.update_anhlop(ten, malop);
+        }
+
+        public System.Data.DataTable LayAllLopHoc()
+        {
+            dt = lopDAO.LayAllLopHoc();
+            return dt;
         }
     }
 }
