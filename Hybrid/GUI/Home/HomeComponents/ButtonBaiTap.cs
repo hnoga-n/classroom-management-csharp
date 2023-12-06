@@ -16,7 +16,6 @@ namespace Hybrid.GUI.Home.HomeComponents
         private BaiTap baitap;
         private BailambaitapBUS blbtBUS;
         private BaiTapBUS baitapBUS;
-        private FileBaiTapBUS fileBaiTapBUS;
         public ButtonBaiTap(PanelChuongDropDown panelChuong, BaiTap bt)
         {
             InitializeComponent();
@@ -31,7 +30,6 @@ namespace Hybrid.GUI.Home.HomeComponents
                 this.btnXoa.Visible = false;
             }
             baitapBUS = new BaiTapBUS();
-            fileBaiTapBUS = new FileBaiTapBUS();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -78,8 +76,7 @@ namespace Hybrid.GUI.Home.HomeComponents
                 XemTienDoBaitap xemtiendoFrm = new XemTienDoBaitap(this.baitap,this.panelChuong.Khfrm.Lophoc,this.panelChuong.Chuong);
                 xemtiendoFrm.Show();
             }
-            blbtBUS.loadList();
-                return;
+            return;
         }
 
         private void btnSua_Click(object sender, EventArgs e)

@@ -50,7 +50,7 @@ namespace Hybrid.BUS
             LophocComparer comparer = new LophocComparer();
             comparer.TypeToCompare = LophocComparer.ComparisonType.malophoc;
             LopHoc lopSearch = new LopHoc();
-            lopSearch.Malop = malop.ToLower();
+            lopSearch.Malop= malop;
             int index = list.BinarySearch(lopSearch, comparer);
             return (LopHoc)list[index];
         }

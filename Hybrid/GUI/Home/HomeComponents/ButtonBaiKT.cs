@@ -135,7 +135,6 @@ namespace Hybrid.GUI.Home.HomeComponents
                 XemTienDoBaiKiemTra checkingFrm = new XemTienDoBaiKiemTra(this.panelChuong.Khfrm.Taikhoan,this.dekiemtra,this.panelChuong.Khfrm.Lophoc,this.panelChuong.Chuong);
                 checkingFrm.Show();
             }
-            blktBUS.loadList();
         }
     }
 }
