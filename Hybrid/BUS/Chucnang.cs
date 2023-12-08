@@ -155,7 +155,7 @@ namespace Hybrid.BUS
                 ApplicationName = "hybrid"
             });
         }
-        public void load_hinhanhcanhan(string fileId,PictureBox pic)
+/*        public void load_hinhanhcanhan(string fileId,PictureBox pic)
         {
             try
             {
@@ -249,6 +249,6 @@ namespace Hybrid.BUS
             {
                 MessageBox.Show("Lỗicccccc: " + ex.Message);
             }
-        }
+        }*/
     }
 }

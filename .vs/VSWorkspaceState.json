@@ -1,26 +1,10 @@
 {
   "ExpandedNodes": [
-<<<<<<< HEAD
-    ""
-  ],
-  "SelectedNode": "\\Hybrid.sln",
-=======
-<<<<<<< HEAD
     "",
     "\\Hybrid",
-    "\\Hybrid\\BUS",
-    "\\Hybrid\\BUS\\Taikhoan",
-    "\\Hybrid\\DAO",
-    "\\Hybrid\\DAO\\Taikhoan",
     "\\Hybrid\\GUI",
     "\\Hybrid\\GUI\\Dangnhap"
   ],
-  "SelectedNode": "\\Hybrid\\Hybrid.sln",
-=======
-    ""
-  ],
-  "SelectedNode": "\\Hybrid.sln",
->>>>>>> main
->>>>>>> 44bdbfa1b9762f405f30f3d1c538bc8bdd7ad381
+  "SelectedNode": "\\Hybrid\\GUI\\Dangnhap\\Loginfrm.cs",
   "PreviewInSolutionExplorer": false
 }

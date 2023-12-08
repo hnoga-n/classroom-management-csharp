@@ -17,6 +17,7 @@ using Hybrid.BUS;
 using System.Drawing.Drawing2D;
 using Hybrid.GUI.Todo;
 using Hybrid.GUI.Utilities;
+using Hybrid.GUI.Dangnhap;
 
 namespace Hybrid
 {
@@ -131,11 +132,12 @@ namespace Hybrid
 
         private void kryptonButton1_Click_1(object sender, EventArgs e)
         {
-            this.Close();
             cn.ghi_nhomk("0");
             cn.remove_file();
-            KryptonForm form = new LoginUI();
+            this.Hide();
+            Form form = new Loginfrm();
             form.Show();
+            
         }
         private void LoadHinh(Image image)
         {
