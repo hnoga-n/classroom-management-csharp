@@ -31,7 +31,7 @@ namespace Hybrid.GUI.Baitap
         {
             InitializeComponent();
         }
-        public Chinhsuabaitap(PanelChuongDropDown pnl, Taikhoan taikhoangiangvien, LopHoc lophoc, Chuong chuong, BaiTap bt,BaiTapBUS btbus)
+        public Chinhsuabaitap(PanelChuongDropDown pnl, Taikhoan taikhoangiangvien, LopHoc lophoc, Chuong chuong, BaiTap bt, BaiTapBUS btbus)
         {
             InitializeComponent();
             this.panelChuong = pnl;
@@ -41,6 +41,7 @@ namespace Hybrid.GUI.Baitap
             this.bt = bt;
             this.btBUS = btbus;
             answerPanel = new ThemDapAn();
+            fileBaiTapBUS = new FileBaiTapBUS();
         }
 
         private void Chinhsuabaitap_Load(object sender, EventArgs e)
@@ -58,8 +59,6 @@ namespace Hybrid.GUI.Baitap
                 this.answerPanel.CkbPublicAnswer.Checked = true;
             else
                 this.answerPanel.CkbPublicAnswer.Checked = false;
-
-            fileBaiTapBUS = new FileBaiTapBUS();
             loadFile();
         }
         private void loadFile()
@@ -82,7 +81,7 @@ namespace Hybrid.GUI.Baitap
                             tmp.FileExtension = "pdf";
                             break;
                         case "pptx":
-                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_pdf_40;
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_power_point_40;
                             tmp.FileExtension = "pptx";
                             break;
                         case "xlsx":
@@ -90,6 +89,10 @@ namespace Hybrid.GUI.Baitap
                             tmp.FileExtension = "xlsx";
                             break;
                         case "docx":
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
+                            tmp.FileExtension = "docx";
+                            break;
+                        case "doc":
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
                             tmp.FileExtension = "docx";
                             break;
@@ -120,10 +123,14 @@ namespace Hybrid.GUI.Baitap
                             tmp.FileExtension = "xlsx";
                             break;
                         case "pptx":
-                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_excel_40;
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_power_point_40;
                             tmp.FileExtension = "pptx";
                             break;
                         case "docx":
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
+                            tmp.FileExtension = "docx";
+                            break;
+                        case "doc":
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
                             tmp.FileExtension = "docx";
                             break;
@@ -185,10 +192,11 @@ namespace Hybrid.GUI.Baitap
                 Tieude = this.txtTitle.Text,
                 Noidungbaitap = this.txtContent.Text,
                 Noidungdapan = this.answerPanel.HomeworkContent,
+                Thoigiantao = this.bt.Thoigiantao,
                 Thoigianbatdau = DateTime.Parse(this.dtpThoiGianBatDau.Value.ToString()),
                 Thoigianketthuc = DateTime.Parse(this.dtpThoiGianKetThuc.Value.ToString()),
                 Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0,
-                Daxoa = 0
+                Daxoa = 0,
             };
 
             ArrayList fileBTvaDA = new ArrayList();
@@ -238,6 +246,7 @@ namespace Hybrid.GUI.Baitap
                             loading.CloseForm();
                             MessageBox.Show("Chỉnh sửa bài tập thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.btBUS.loadList();
+                            this.bt.Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0;
                             this.Dispose();
                             return;
                         }
@@ -245,6 +254,7 @@ namespace Hybrid.GUI.Baitap
                         {
                             loading.CloseForm();
                             MessageBox.Show("Upload file thất bại !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.bt.Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0;
                             this.btBUS.loadList();
                             return;
                         }
@@ -253,7 +263,8 @@ namespace Hybrid.GUI.Baitap
                     {
                         loading.CloseForm();
                         MessageBox.Show("Chỉnh sửa bài tập thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.btBUS.loadList();
+                        this.bt.Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0;
+                        //this.btBUS.loadList();
                         this.Dispose();
                         return;
                     }
@@ -261,6 +272,7 @@ namespace Hybrid.GUI.Baitap
                 else
                 {
                     loading.CloseForm();
+                    this.bt.Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0;
                     this.btBUS.loadList();
                     MessageBox.Show("Chỉnh sửa bài tập thất bại !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -268,8 +280,11 @@ namespace Hybrid.GUI.Baitap
             }
             catch (Exception ex)
             {
+
                 loading.CloseForm();
-                this.btBUS.loadList();
+                this.bt.Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0;
+
+                //this.btBUS.loadList();
                 MessageBox.Show("Có lỗi đã xảy ra !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex);
             }

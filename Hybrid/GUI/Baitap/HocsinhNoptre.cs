@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace Hybrid.GUI.Baitap
 {
@@ -17,7 +18,6 @@ namespace Hybrid.GUI.Baitap
     {
         private Taikhoan taikhoan;
         private BaiTap baitap;
-        private bool dachamdiem;
         private BaiLamBaiTap blbt;
         public HocsinhNoptre()
         {
@@ -30,16 +30,19 @@ namespace Hybrid.GUI.Baitap
             this.lblHoten.Text = taikhoan.Hoten;
             this.btnChamDiem.Visible = false;
             this.lblState.Text = "Chưa nộp";
+            System.Resources.ResourceManager rm = global::Hybrid.Properties.Resources.ResourceManager;
+            this.avatar.BackgroundImage = (Image)rm.GetObject(this.taikhoan.Anhdaidien);
         }
         public HocsinhNoptre(Taikhoan hocsinh, bool dacham,BaiTap bt, BaiLamBaiTap blbt)
         {
             InitializeComponent();
             this.taikhoan = hocsinh;
-            this.dachamdiem = dacham;
             this.blbt = blbt;   
             this.baitap = bt;   
             this.lblHoten.Text = hocsinh.Hoten;
-            this.lblState.Text = "Nộp vào " + blbt.Thoigiannopbai;
+            System.Resources.ResourceManager rm = global::Hybrid.Properties.Resources.ResourceManager;
+            this.avatar.BackgroundImage = (Image)rm.GetObject(this.taikhoan.Anhdaidien);
+            this.lblState.Text = "Nộp vào " + blbt.Thoigiannopbai.ToString("dd/MM/yyyy HH:mm:ss");
             this.btnChamDiem.Visible = !dacham;
         }
 

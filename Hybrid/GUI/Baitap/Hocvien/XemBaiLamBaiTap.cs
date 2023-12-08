@@ -40,7 +40,7 @@ namespace Hybrid.GUI.Baitap.Hocvien
         {
             this.lblTitle.Text = this.baitap.Tieude;
             this.lblStudent.Text = this.taikhoanhienhanh.Hoten;
-            this.lblSubmitTime.Text = this.blbt.Thoigiannopbai.ToString();
+            this.lblSubmitTime.Text = this.blbt.Thoigiannopbai.ToString("dd/MM/yyyy HH:mm:ss");
             this.txtContent.Text = this.blbt.Noidung;
             if (this.blbt.Diem != -1 && baitap.Congkhaidapan == 0 )
             {
@@ -72,10 +72,14 @@ namespace Hybrid.GUI.Baitap.Hocvien
                             tmp.FileExtension = "xlsx";
                             break;
                         case "pptx":
-                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_pdf_40;
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_power_point_40;
                             tmp.FileExtension = "pptx";
                             break;
                         case "docx":
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
+                            tmp.FileExtension = "docx";
+                            break;
+                        case "doc":
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
                             tmp.FileExtension = "docx";
                             break;

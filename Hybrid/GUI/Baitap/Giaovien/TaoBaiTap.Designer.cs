@@ -395,7 +395,7 @@
             this.MaximizeBox = false;
             this.Name = "TaoBaiTap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TaoBaiTap";
+            this.Text = "Tạo bài tập";
             this.Load += new System.EventHandler(this.TaoBaiTap_Load);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);

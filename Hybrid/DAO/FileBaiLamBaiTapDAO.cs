@@ -2,6 +2,7 @@
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using Hybrid.BUS;
 using Hybrid.DTO;
 using System;
 using System.Collections;
@@ -19,26 +20,6 @@ namespace Hybrid.DAO
 {
     public class FileBaiLamBaiTapDAO
     {
-        private DriveService service;
-        public FileBaiLamBaiTapDAO() {
-            UserCredential credential;
-            using (var stream = new FileStream(@"..\..\bin\Debug\ggdrivelink.json", FileMode.Open, FileAccess.Read))
-            {
-                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                    GoogleClientSecrets.Load(stream).Secrets,
-                    new[] { DriveService.Scope.Drive },
-                    "user",
-                    CancellationToken.None,
-                    new FileDataStore("token.json", true)).Result;
-            }
-
-            // Tạo dịch vụ Google Drive
-            service = new DriveService(new BaseClientService.Initializer()
-            {
-                HttpClientInitializer = credential,
-                ApplicationName = "hybrid"
-            });
-        }
         public ArrayList loadList()
         {
             ArrayList listTmp = new ArrayList();
@@ -61,7 +42,7 @@ namespace Hybrid.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi xảy ra ở file filebtDAO:" + ex.Message);
+                MessageBox.Show("Lỗi xảy ra ở file fileblbtDAO:" + ex.Message);
             }
             finally
             {
@@ -90,7 +71,7 @@ namespace Hybrid.DAO
                     FilesResource.CreateMediaUpload request;
                     using (var stream = new FileStream(fileblbt.Path, FileMode.Open))
                     {
-                        request = this.service.Files.Create(fileMetadata, stream, "application/octet-stream");
+                        request = Chucnang.service.Files.Create(fileMetadata, stream, "application/octet-stream");
                         request.Upload();
                     }
 
@@ -114,7 +95,7 @@ namespace Hybrid.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi xảy ra ở file FileblbtDAO:" + ex.Message);
+                Console.WriteLine(ex);
             }
             finally
             {
@@ -129,7 +110,7 @@ namespace Hybrid.DAO
             {
                 string sql_delete = "DELETE FROM filebailambaitap WHERE mabailam=@mabailam";
                 SqlCommand command = new SqlCommand(sql_delete, Ketnoisqlserver.GetConnection());
-                command.Parameters.Add("@mabaitap", SqlDbType.UniqueIdentifier).Value = Guid.Parse(mabailam);
+                command.Parameters.Add("@mabailam", SqlDbType.UniqueIdentifier).Value = Guid.Parse(mabailam);
                 int index = command.ExecuteNonQuery();
                 if (index > 0) return true;
             }

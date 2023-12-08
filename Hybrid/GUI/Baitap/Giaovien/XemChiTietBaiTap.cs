@@ -41,7 +41,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
                             tmp.FileExtension = "pdf";
                             break;
                         case "pptx":
-                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_pdf_40;
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_power_point_40;
                             tmp.FileExtension = "pptx";
                             break;
                         case "xlsx":
@@ -75,7 +75,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
                             tmp.FileExtension = "pdf";
                             break;
                         case "pptx":
-                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_pdf_40;
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_power_point_40;
                             tmp.FileExtension = "pptx";
                             break;
                         case "xlsx":

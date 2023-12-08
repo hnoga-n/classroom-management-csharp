@@ -43,6 +43,7 @@
             // 
             this.flowFileBaiTapPanel.AutoScroll = true;
             this.flowFileBaiTapPanel.BackColor = System.Drawing.Color.White;
+            this.flowFileBaiTapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowFileBaiTapPanel.Location = new System.Drawing.Point(12, 531);
             this.flowFileBaiTapPanel.Name = "flowFileBaiTapPanel";
             this.flowFileBaiTapPanel.Size = new System.Drawing.Size(681, 120);
@@ -59,7 +60,6 @@
             this.txtHomeworkContent.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtHomeworkContent.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtHomeworkContent.StateCommon.Border.Rounding = 10;
             this.txtHomeworkContent.StateCommon.Content.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHomeworkContent.StateCommon.Content.Padding = new System.Windows.Forms.Padding(20, 8, -1, -1);
@@ -75,7 +75,7 @@
             this.lblBaiTapTitle.Name = "lblBaiTapTitle";
             this.lblBaiTapTitle.Size = new System.Drawing.Size(1361, 53);
             this.lblBaiTapTitle.TabIndex = 21;
-            this.lblBaiTapTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblBaiTapTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -89,9 +89,9 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 494);
+            this.label1.Location = new System.Drawing.Point(12, 495);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(458, 33);
+            this.label1.Size = new System.Drawing.Size(657, 33);
             this.label1.TabIndex = 23;
             this.label1.Text = "File bài tập";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,7 +107,6 @@
             this.txtAnswerContent.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtAnswerContent.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtAnswerContent.StateCommon.Border.Rounding = 10;
             this.txtAnswerContent.StateCommon.Content.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnswerContent.StateCommon.Content.Padding = new System.Windows.Forms.Padding(20, 8, -1, -1);
@@ -128,6 +127,7 @@
             // 
             this.flowFileDapAnPanel.AutoScroll = true;
             this.flowFileDapAnPanel.BackColor = System.Drawing.Color.White;
+            this.flowFileDapAnPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowFileDapAnPanel.Location = new System.Drawing.Point(699, 531);
             this.flowFileDapAnPanel.Name = "flowFileDapAnPanel";
             this.flowFileDapAnPanel.Size = new System.Drawing.Size(681, 120);
@@ -136,9 +136,9 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(924, 495);
+            this.label4.Location = new System.Drawing.Point(738, 495);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(454, 33);
+            this.label4.Size = new System.Drawing.Size(640, 33);
             this.label4.TabIndex = 27;
             this.label4.Text = "File đáp án:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -161,7 +161,7 @@
             this.MaximizeBox = false;
             this.Name = "XemChiTietBaiTap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "XemBaiTap";
+            this.Text = "Xem chi tiết bài tập";
             this.ResumeLayout(false);
 
         }
