@@ -24,7 +24,7 @@ namespace Hybrid.GUI.Dangnhap
 
         private void pic_showpass_Click(object sender, EventArgs e)
         {
-            if (txt_matkhau.Text != "Password")
+            if (txt_matkhau.Text != "Mật khẩu")
             {
                 txt_matkhau.PasswordChar = '\0';
                 pic_showpass.Visible = false;
@@ -34,14 +34,16 @@ namespace Hybrid.GUI.Dangnhap
 
         private void pic_hidepass_Click(object sender, EventArgs e)
         {
-            txt_matkhau.PasswordChar = '*';
-            pic_showpass.Visible = true;
-            pic_hidepass.Visible = false;
+            
+                txt_matkhau.PasswordChar = '*';
+                pic_showpass.Visible = true;
+                pic_hidepass.Visible = false;
+            
         }
 
         private void pic_showpass2_Click(object sender, EventArgs e)
         {
-            if (txt_xacnhanmatkhau.Text != "Password")
+            if (txt_xacnhanmatkhau.Text != "Xác nhận mật khẩu")
             {
                 txt_xacnhanmatkhau.PasswordChar = '\0';
                 pic_showpass2.Visible = false;
@@ -51,9 +53,11 @@ namespace Hybrid.GUI.Dangnhap
 
         private void pic_hidepass2_Click(object sender, EventArgs e)
         {
-            txt_xacnhanmatkhau.PasswordChar = '*';
-            pic_showpass2.Visible = true;
-            pic_hidepass2.Visible = false;
+            
+                txt_xacnhanmatkhau.PasswordChar = '*';
+                pic_showpass2.Visible = true;
+                pic_hidepass2.Visible = false;
+            
         }
 
         private void txt_email_Enter(object sender, EventArgs e)
@@ -75,7 +79,7 @@ namespace Hybrid.GUI.Dangnhap
         }
         private void txt_matkhau_Enter(object sender, EventArgs e)
         {
-            if (txt_matkhau.Text == "Password")
+            if (txt_matkhau.Text == "Mật khẩu")
             {
                 txt_matkhau.Text = string.Empty;
             }
@@ -86,12 +90,12 @@ namespace Hybrid.GUI.Dangnhap
         {
             if (string.IsNullOrWhiteSpace(txt_matkhau.Text))
             {
-                txt_matkhau.Text = "Password";
+                txt_matkhau.Text = "Mật khẩu";
                 txt_matkhau.ForeColor = System.Drawing.Color.Silver;
             }
             if (pic_hidepass.Visible == true)
             {
-                txt_matkhau.PasswordChar = '*';
+                //txt_matkhau.PasswordChar = '*';
                 pic_showpass.Visible = true;
                 pic_hidepass.Visible = false;
             }
@@ -99,7 +103,7 @@ namespace Hybrid.GUI.Dangnhap
 
         private void txt_xacnhanmatkhau_Enter(object sender, EventArgs e)
         {
-            if (txt_xacnhanmatkhau.Text == "Password")
+            if (txt_xacnhanmatkhau.Text == "Xác nhận mật khẩu")
             {
                 txt_xacnhanmatkhau.Text = string.Empty;
             }
@@ -110,12 +114,12 @@ namespace Hybrid.GUI.Dangnhap
         {
             if (string.IsNullOrWhiteSpace(txt_xacnhanmatkhau.Text))
             {
-                txt_xacnhanmatkhau.Text = "Password";
+                txt_xacnhanmatkhau.Text = "Xác nhận mật khẩu";
                 txt_xacnhanmatkhau.ForeColor = System.Drawing.Color.Silver;
             }
             if (pic_hidepass2.Visible == true)
             {
-                txt_xacnhanmatkhau.PasswordChar = '*';
+                //txt_matkhau.PasswordChar = '*';
                 pic_showpass2.Visible = true;
                 pic_hidepass2.Visible = false;
             }
@@ -168,6 +172,18 @@ namespace Hybrid.GUI.Dangnhap
                 lab_kiemtra.ForeColor = Color.Blue;
             else
                 lab_kiemtra.ForeColor = Color.Red;
+            if (txt_matkhau.Text != "Mật khẩu" && txt_matkhau.Text.Length > 0)
+                txt_matkhau.PasswordChar = '*';
+            else
+                txt_matkhau.PasswordChar = '\0';
+        }
+
+        private void txt_xacnhanmatkhau_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_xacnhanmatkhau.Text != "Xác nhận mật khẩu" && txt_xacnhanmatkhau.Text.Length > 0)
+                txt_xacnhanmatkhau.PasswordChar = '*';
+            else
+                txt_xacnhanmatkhau.PasswordChar = '\0';
         }
     }
 }

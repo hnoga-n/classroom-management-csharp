@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Excel = Microsoft.Office.Interop.Excel;
 namespace Hybrid.GUI.Admin
 {
     public partial class Classfrm : Form
@@ -151,6 +152,11 @@ namespace Hybrid.GUI.Admin
                     }
                 }
             }
+        }
+
+        private void but_xuat_excel_Click(object sender, EventArgs e)
+        {
+            lophocBUS.xuat_excel(dataGridView1);
         }
     }
 }

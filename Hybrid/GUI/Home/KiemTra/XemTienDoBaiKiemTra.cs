@@ -53,18 +53,19 @@ namespace Hybrid.GUI.Home.KiemTra
         {
             try
             {
-
                 this.listNotSubmited.Clear();
                 this.listSubmited.Clear();
                 blktBUS.loadList();
                 ArrayList danhsachlop = new ArrayList();
                 ArrayList listTmp = thamgiaBUS.getDanhSachLopWithMaLopHoc(lophoc.Malop);
+                int index1 = -1;
+                int index2 = -1;
                 foreach (string mataikhoan in listTmp)
                 {
-                    int index1 = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(mataikhoan);
+                    index1 = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(mataikhoan);
                     if (index1 < 0) throw new Exception("Mã tài khoản tham gia lớp học không đúng");
                     danhsachlop.Add(taikhoanBUS.List[index1]);// use for load submit/notsubmit btn
-                    int index2 = this.blktBUS.getBaiLamKiemTraWithMaTaiKhoanAndMaDeKiemTra(mataikhoan, this.dekiemtra.Madekiemtra);
+                    index2 = this.blktBUS.getBaiLamKiemTraWithMaTaiKhoanAndMaDeKiemTra(mataikhoan, this.dekiemtra.Madekiemtra);
                     if (index2 >= 0)
                         this.listSubmited.Add(taikhoanBUS.List[index1]);
                     else
@@ -79,7 +80,6 @@ namespace Hybrid.GUI.Home.KiemTra
         }
         private void loadDataIntoForm(Chuong chuong)
         {
-            this.SuspendLayout();
             this.examTitle.Text = this.dekiemtra.Tieude;
             if ((DateTime.Now > this.dekiemtra.Thoigianketthuc))
             {
@@ -94,11 +94,10 @@ namespace Hybrid.GUI.Home.KiemTra
                 this.state.ForeColor = System.Drawing.Color.Green;
             }
             this.teacher.Text = this.taikhoangiangvien.Hoten;
-            this.createAt.Text = this.dekiemtra.Thoigiantao.ToString();
-            this.startAt.Text = this.dekiemtra.Thoigianbatdau.ToString();
-            this.endAt.Text = this.dekiemtra.Thoigianketthuc.ToString();
+            this.createAt.Text = this.dekiemtra.Thoigiantao.ToString("dd/MM/yyyy HH:mm:ss");
+            this.startAt.Text = this.dekiemtra.Thoigianbatdau.ToString("dd/MM/yyyy HH:mm:ss");
+            this.endAt.Text = this.dekiemtra.Thoigianketthuc.ToString("dd/MM/yyyy HH:mm:ss");
             this.Chuong.Text = chuong.Tenchuong.ToString();
-            this.ResumeLayout();
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -126,7 +125,6 @@ namespace Hybrid.GUI.Home.KiemTra
             try
             {
                 whichIsClick = false;
-                this.flowpanelHocSinh.SuspendLayout();
                 this.flowpanelHocSinh.Controls.Clear();
                 if (this.listNotSubmited.Count == 0)
                 {
@@ -137,10 +135,9 @@ namespace Hybrid.GUI.Home.KiemTra
 
                 foreach (Taikhoan hocsinh in this.listNotSubmited)
                 {
-                    HocSinhCard hsPnl = new HocSinhCard(hocsinh, dekiemtra,false);
+                    HocSinhCard hsPnl = new HocSinhCard(hocsinh, dekiemtra,false,blktBUS);
                     this.flowpanelHocSinh.Controls.Add(hsPnl);
                 }
-                this.flowpanelHocSinh.ResumeLayout();
             }
             catch (Exception ex)
             {
@@ -154,7 +151,6 @@ namespace Hybrid.GUI.Home.KiemTra
             try
             {
                 whichIsClick = true;
-                this.flowpanelHocSinh.SuspendLayout();
                 this.flowpanelHocSinh.Controls.Clear();
                 if (this.listNotSubmited.Count == 0)
                 {
@@ -165,10 +161,9 @@ namespace Hybrid.GUI.Home.KiemTra
 
                 foreach (Taikhoan hocsinh in this.listSubmited)
                 {
-                    HocSinhCard hsPnl = new HocSinhCard(hocsinh, dekiemtra,true);
+                    HocSinhCard hsPnl = new HocSinhCard(hocsinh, dekiemtra,true,blktBUS);
                     this.flowpanelHocSinh.Controls.Add(hsPnl);
                 }
-                this.flowpanelHocSinh.ResumeLayout();
             }
             catch (Exception ex)
             {
@@ -210,7 +205,7 @@ namespace Hybrid.GUI.Home.KiemTra
                     {
                         if (RemoveDiacritics(hocsinh.Hoten.ToLower()).Contains(searchString))
                         {
-                            HocSinhCard hsPnl = new HocSinhCard(hocsinh, dekiemtra,true);
+                            HocSinhCard hsPnl = new HocSinhCard(hocsinh, dekiemtra,true,blktBUS);
                             this.flowpanelHocSinh.Controls.Add(hsPnl);
                         }
                     }
@@ -221,7 +216,7 @@ namespace Hybrid.GUI.Home.KiemTra
                     {
                         if (RemoveDiacritics(hocsinh.Hoten.ToLower()).Contains(searchString))
                         {
-                            HocSinhCard hsPnl = new HocSinhCard(hocsinh, dekiemtra,false);
+                            HocSinhCard hsPnl = new HocSinhCard(hocsinh, dekiemtra,false,blktBUS);
                             this.flowpanelHocSinh.Controls.Add(hsPnl);
                         }
                     }

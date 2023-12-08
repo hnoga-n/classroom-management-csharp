@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using Hybrid.GUI;
 using Hybrid.GUI.Home;
-//using Hybrid.GUI.Todo;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.DTO;
 using Hybrid.BUS;
@@ -18,6 +17,7 @@ using System.Drawing.Drawing2D;
 using Hybrid.GUI.Todo;
 using Hybrid.GUI.Utilities;
 using Hybrid.GUI.Dangnhap;
+using Hybrid.GUI.Danhba;
 
 namespace Hybrid
 {
@@ -90,7 +90,7 @@ namespace Hybrid
 
         private void btnContacts_Click(object sender, EventArgs e)
         {
-
+            addFormtoPanelContainer(new DanhbaFrm(this.tk));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -123,7 +123,6 @@ namespace Hybrid
             frmtt.ShowDialog();
             pictureBox1.Image = picha.Image;
             MakePictureBoxCircular(pictureBox1);
-
         }
 
         private void pnlContainer_Paint(object sender, PaintEventArgs e)
@@ -133,11 +132,12 @@ namespace Hybrid
 
         private void kryptonButton1_Click_1(object sender, EventArgs e)
         {
-            this.Close();
             cn.ghi_nhomk("0");
             cn.remove_file();
+            this.Hide();
             Form form = new Loginfrm();
             form.Show();
+            
         }
         private void LoadHinh(Image image)
         {

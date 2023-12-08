@@ -68,7 +68,7 @@ namespace Hybrid.GUI.Dangnhap
 
         private void txt_password_Enter(object sender, EventArgs e)
         {
-            if (txt_matkhau.Text == "Password")
+            if (txt_matkhau.Text == "Mật khẩu")
             {
                 txt_matkhau.Text = string.Empty;
             }
@@ -79,12 +79,12 @@ namespace Hybrid.GUI.Dangnhap
         {
             if (string.IsNullOrWhiteSpace(txt_matkhau.Text))
             {
-                txt_matkhau.Text = "Password";
+                txt_matkhau.Text = "Mật khẩu";
                 txt_matkhau.ForeColor = System.Drawing.Color.Silver;
             }
-            if(pic_hidepass.Visible==true)
+            if(pic_hidepass.Visible==true )
             {
-                txt_matkhau.PasswordChar = '*';
+                //txt_matkhau.PasswordChar = '*';
                 pic_showpass.Visible = true;
                 pic_hidepass.Visible = false;
             }
@@ -93,7 +93,7 @@ namespace Hybrid.GUI.Dangnhap
 
         private void pic_showpass_Click(object sender, EventArgs e)
         {
-            if (txt_matkhau.Text != "Password")
+            if (txt_matkhau.Text != "Mật khẩu")
             {
                 txt_matkhau.PasswordChar = '\0';
                 pic_showpass.Visible = false;
@@ -173,6 +173,14 @@ namespace Hybrid.GUI.Dangnhap
             Form form = new Signupfrm();
             form.ShowDialog();
             this.Show();
+        }
+
+        private void txt_matkhau_TextChanged(object sender, EventArgs e)
+        {
+            if(txt_matkhau.Text!="Mật khẩu" && txt_matkhau.Text.Length>0)
+                txt_matkhau.PasswordChar = '*';
+            else
+                txt_matkhau.PasswordChar = '\0';
         }
     }
 }

@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblDeadline = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblChuong = new System.Windows.Forms.Label();
+            this.lblHocSinh = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtNoiDungBaiLam = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.btnSubmit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -61,7 +61,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.lblDeadline);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lblChuong);
+            this.panel1.Controls.Add(this.lblHocSinh);
             this.panel1.Location = new System.Drawing.Point(12, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(362, 696);
@@ -136,16 +136,16 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(351, 23);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Chương:";
+            this.label3.Text = "Họ tên học sinh:";
             // 
-            // lblChuong
+            // lblHocSinh
             // 
-            this.lblChuong.AutoEllipsis = true;
-            this.lblChuong.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChuong.Location = new System.Drawing.Point(4, 30);
-            this.lblChuong.Name = "lblChuong";
-            this.lblChuong.Size = new System.Drawing.Size(350, 23);
-            this.lblChuong.TabIndex = 0;
+            this.lblHocSinh.AutoEllipsis = true;
+            this.lblHocSinh.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHocSinh.Location = new System.Drawing.Point(4, 30);
+            this.lblHocSinh.Name = "lblHocSinh";
+            this.lblHocSinh.Size = new System.Drawing.Size(350, 23);
+            this.lblHocSinh.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -254,7 +254,6 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1224, 48);
             this.lblTitle.TabIndex = 24;
-            this.lblTitle.Text = "Bài tập 21/10";
             // 
             // lblPlaceholder
             // 
@@ -303,7 +302,7 @@
             this.MaximizeBox = false;
             this.Name = "LamBaiTap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chuanop";
+            this.Text = "Làm bài tập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LamBaiTap_FormClosing);
             this.Load += new System.EventHandler(this.LamBaiTap_Load);
             this.panel1.ResumeLayout(false);
@@ -321,7 +320,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblDeadline;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblChuong;
+        private System.Windows.Forms.Label lblHocSinh;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtNoiDungBaiLam;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSubmit;

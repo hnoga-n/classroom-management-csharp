@@ -69,7 +69,7 @@ namespace Hybrid.GUI.Todo
                     DialogResult isConfirmSubmited = MessageBox.Show("Bạn đã hoàn thành bài kiểm tra !\nXem lại bài đã nộp ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (isConfirmSubmited == DialogResult.No) return;
 
-                    XemBaiLamHocSinh frmBailam = new XemBaiLamHocSinh(this.taikhoan, this.dkt);
+                    XemBaiLamHocSinh frmBailam = new XemBaiLamHocSinh(this.taikhoan, this.dkt, false);
                     frmBailam.Show();
                     return;
                 }

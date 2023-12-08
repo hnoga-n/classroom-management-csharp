@@ -126,15 +126,17 @@ namespace Hybrid.GUI.Baitap.Giaovien
                 txtContent.Focus();
                 return;
             }
-            DialogResult isConfirm =  MessageBox.Show("Vui lòng kiểm tra kĩ các thông tin và file bài tập !", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (isConfirm == DialogResult.No) return;
-            if (!isValidTime()) return;
 
             if (this.answerPanel.HomeworkContent.Length == 0)
             {
                 DialogResult confirm = MessageBox.Show("Bài tập không có đáp án. Xác nhận ?", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm == DialogResult.No) return;
             }
+            DialogResult isConfirm =  MessageBox.Show("Xác nhận tạo bài tập ? ", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (isConfirm == DialogResult.No) return;
+            if (!isValidTime()) return;
+
+            
             Guid mabaitap = Guid.NewGuid();
             BaiTap bt = new BaiTap()
             {
@@ -238,7 +240,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
                 btBUS.deleteBaitap(mabaitap.ToString());
                 loading.CloseForm();
                 MessageBox.Show("Có lỗi đã xảy ra !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                Console.WriteLine(ex);
             }
         }
 
@@ -282,7 +284,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
         //{
         //    DialogResult confirm = MessageBox.Show("Xác nhận đóng bài tập ? \nLƯU Ý:Mọi thay đổi (nếu có ) đều sẽ bị mất khi đóng form tạo bài tập !", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         //    if (confirm == DialogResult.No)
-        //        e.Cancel = true;
+        //        e.Cancel = true;   
         //}
     }
 }

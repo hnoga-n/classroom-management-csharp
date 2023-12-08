@@ -11,6 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
+
 namespace Hybrid.GUI.Admin
 {
     public partial class Userfrm : Form
@@ -107,16 +110,16 @@ namespace Hybrid.GUI.Admin
             else
             {
                 if (tinhtrang == "1")
-                    MessageBox.Show("Tài khoản đã bị ban trước đó rồi.", "Thông báo");
+                    MessageBox.Show("Tài khoản đã bị xóa trước đó rồi.", "Thông báo");
                 else
                 {
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn ban " + emailValue + " ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa " + emailValue + " ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     // Xử lý kết quả từ hộp thoại
                     if (result == DialogResult.Yes)
                     {
                         taikhoanBUS.ban_user(emailValue);
-                        MessageBox.Show("Đã ban thành công email:" + emailValue, "Thông báo");
+                        MessageBox.Show("Đã xóa thành công email:" + emailValue, "Thông báo");
                         reload_data();
                         vitri = 0;
                     }
@@ -134,16 +137,16 @@ namespace Hybrid.GUI.Admin
             else
             {
                 if (tinhtrang == "0")
-                    MessageBox.Show("Tài khoản chưa bị ban trước đó .", "Thông báo");
+                    MessageBox.Show("Tài khoản chưa bị xóa trước đó .", "Thông báo");
                 else
                 {
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn unban " + emailValue + " ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn hủy xóa " + emailValue + " ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     // Xử lý kết quả từ hộp thoại
                     if (result == DialogResult.Yes)
                     {
                         taikhoanBUS.unban_user(emailValue);
-                        MessageBox.Show("Đã unban thành công email:" + emailValue, "Thông báo");
+                        MessageBox.Show("Đã hủy xóa thành công email:" + emailValue, "Thông báo");
                         reload_data();
                         vitri = 0;
                     }
@@ -170,6 +173,11 @@ namespace Hybrid.GUI.Admin
                 tinhtrang = dataGridView1.Rows[e.RowIndex].Cells["daxoa"].Value.ToString();
 
             }
+        }
+
+        private void but_xuat_excel_Click(object sender, EventArgs e)
+        {
+            taikhoanBUS.xuat_excel(dataGridView1);
         }
     }
 }

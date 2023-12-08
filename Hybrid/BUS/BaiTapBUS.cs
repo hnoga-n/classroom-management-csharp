@@ -4,6 +4,7 @@ using Hybrid.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Windows.Forms;
 namespace Hybrid.BUS
 {
     public class BaiTapBUS
@@ -16,10 +17,14 @@ namespace Hybrid.BUS
             loadList();
         }
 
-        public ArrayList getList()
+        public void loadList()
         {
-            return list;
+            list = btDAO.loadList();
+            BaiTapComparer comparer = new BaiTapComparer();
+            comparer.TypeToCompare = BaiTapComparer.ComparisonType.mabaitap;
+            list.Sort(comparer);
         }
+
         public ArrayList GetDanhSachBaiTapTheoMaChuong(string machuong, string tukhoa = "")
         {
             ArrayList rslist = new ArrayList();
@@ -29,14 +34,6 @@ namespace Hybrid.BUS
                     rslist.Add(bt);
             }
             return rslist;
-        }
-
-        public void loadList()
-        {
-            list = btDAO.loadList();
-            BaiTapComparer comparer = new BaiTapComparer();
-            comparer.TypeToCompare = BaiTapComparer.ComparisonType.mabaitap;
-            list.Sort(comparer);
         }
 
         public bool createBaitap(BaiTap bt)
@@ -52,10 +49,14 @@ namespace Hybrid.BUS
         {
             if (btDAO.EditBaiTap(bt))
             {
-                BaiTapComparer comparer = new BaiTapComparer();
-                comparer.TypeToCompare = BaiTapComparer.ComparisonType.mabaitap;
-                BaiTap tmp = new BaiTap();
-                tmp.Mabaitap = bt.Mabaitap;
+                BaiTapComparer comparer = new BaiTapComparer
+                {
+                    TypeToCompare = BaiTapComparer.ComparisonType.mabaitap
+                };
+                BaiTap tmp = new BaiTap
+                {
+                    Mabaitap = bt.Mabaitap
+                };
                 int index = this.list.BinarySearch(tmp, comparer);
                 if (index < 0) return false;
                 this.list.RemoveAt(index);

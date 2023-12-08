@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.thanhngang = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pic_hidepass = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_showpass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -90,6 +92,16 @@
             this.label3.Size = new System.Drawing.Size(329, 52);
             this.label3.TabIndex = 10;
             this.label3.Text = "Chào mừng đến";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::Hybrid.Properties.Resources.videoconference;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Location = new System.Drawing.Point(76, 181);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(321, 255);
+            this.pictureBox5.TabIndex = 10;
+            this.pictureBox5.TabStop = false;
             // 
             // label1
             // 
@@ -143,7 +155,8 @@
             this.txt_matkhau.PasswordChar = '*';
             this.txt_matkhau.Size = new System.Drawing.Size(287, 28);
             this.txt_matkhau.TabIndex = 4;
-            this.txt_matkhau.Text = "Password";
+            this.txt_matkhau.Text = "Mật khẩu";
+            this.txt_matkhau.TextChanged += new System.EventHandler(this.txt_matkhau_TextChanged);
             this.txt_matkhau.Enter += new System.EventHandler(this.txt_password_Enter);
             this.txt_matkhau.Leave += new System.EventHandler(this.txt_password_Leave);
             // 
@@ -251,7 +264,7 @@
             // 
             // pic_hidepass
             // 
-            this.pic_hidepass.BackgroundImage = global::Hybrid.Properties.Resources.    hide_24;
+            this.pic_hidepass.BackgroundImage = global::Hybrid.Properties.Resources.hide_24;
             this.pic_hidepass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pic_hidepass.Location = new System.Drawing.Point(378, 317);
             this.pic_hidepass.Name = "pic_hidepass";
@@ -289,6 +302,7 @@
             this.Load += new System.EventHandler(this.Loginfrm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_showpass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

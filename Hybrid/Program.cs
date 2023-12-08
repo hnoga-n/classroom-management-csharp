@@ -33,6 +33,7 @@ namespace Hybrid
             //Application.Run(new TaoBaiTap());
             //Application.Run(new Homeadminfrm());
             //Application.Run(new Test());
+            Application.Run(new Loginfrm());
         }
     }
 }
