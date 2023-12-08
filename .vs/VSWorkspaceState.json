@@ -3,8 +3,10 @@
     "",
     "\\Hybrid",
     "\\Hybrid\\GUI",
-    "\\Hybrid\\GUI\\Dangnhap"
+    "\\Hybrid\\GUI\\Dangnhap",
+    "\\Hybrid\\GUI\\Home",
+    "\\Hybrid\\GUI\\Home\\KiemTra"
   ],
-  "SelectedNode": "\\Hybrid\\GUI\\Dangnhap\\Loginfrm.cs",
+  "SelectedNode": "\\Hybrid\\GUI\\Dangnhap\\Signupfrm.cs",
   "PreviewInSolutionExplorer": false
 }
