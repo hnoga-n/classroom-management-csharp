@@ -16,7 +16,7 @@ using System.Data.SqlClient;
 using System.Data;
 using Unidecode.NET;
 using System.Drawing;
-
+using Excel = Microsoft.Office.Interop.Excel;
 namespace Hybrid.BUS
 {
     public class TaikhoanBUS
@@ -369,6 +369,86 @@ namespace Hybrid.BUS
             dao.update_anhcanhan(luachon, email);
             list = dao.get_danhsach();
 
+        }
+        public void xuat_excel(DataGridView dataGridView1)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để xuất");
+                return;
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Workbook|*.xlsx";
+            saveFileDialog.Title = "Save Excel File";
+            saveFileDialog.FileName = "export.xlsx";
+            Excel.Application excelApp = null;
+            Excel.Workbook workbook = null;
+            Excel.Worksheet worksheet = null;
+            try
+            {
+                // Create a new Excel application
+                excelApp = new Excel.Application();
+                // Create a new workbook
+                workbook = excelApp.Workbooks.Add(Type.Missing);
+                worksheet = workbook.ActiveSheet;
+                // Export column headers
+                for (int i = 0; i < dataGridView1.Columns.Count - 1; i++)
+                {
+                    if (i == 3)
+                        worksheet.Cells[1, i + 1] = "Tình trạng hoạt động";
+                    else
+                        worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+
+                }
+                // Export data rows
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridView1.Columns.Count - 1; j++)
+                    {
+                        if (j == 3)
+                            if (dataGridView1.Rows[i].Cells[j].Value?.ToString() == "1")
+                                worksheet.Cells[i + 2, j + 1] = "Đã bị xóa";
+                            else
+                                worksheet.Cells[i + 2, j + 1] = "Vẫn đang hoạt động";
+                        else
+                            worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value?.ToString();
+                    }
+                }
+                // Autofit columns
+                worksheet.Columns.AutoFit();
+                // Save the workbook
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    workbook.SaveAs(saveFileDialog.FileName);
+                    MessageBox.Show("Xuất thành công!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi xuất Excel: " + ex.Message);
+            }
+            finally
+            {
+                // Cleanup COM objects to avoid memory leaks
+                if (worksheet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+                    worksheet = null;
+                }
+                if (workbook != null)
+                {
+                    workbook.Close();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                    workbook = null;
+                }
+                if (excelApp != null)
+                {
+                    excelApp.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+                    excelApp = null;
+                }
+                GC.Collect();
+            }
         }
     }
 }
