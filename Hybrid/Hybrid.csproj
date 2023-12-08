@@ -673,12 +673,6 @@
     <Compile Include="GUI\Home\KiemTra\ThemCauHoiFrm.Designer.cs">
       <DependentUpon>ThemCauHoiFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\XemBaiKiemTra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\KiemTra\XemBaiKiemTra.Designer.cs">
-      <DependentUpon>XemBaiKiemTra.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Home\KiemTra\XemBaiLamHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -690,6 +684,12 @@
     </Compile>
     <Compile Include="GUI\Home\KiemTra\XemChiTietBaiKiemTra.Designer.cs">
       <DependentUpon>XemChiTietBaiKiemTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\XemTienDoBaiKiemTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\XemTienDoBaiKiemTra.Designer.cs">
+      <DependentUpon>XemTienDoBaiKiemTra.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\Taotailieufrm.cs">
       <SubType>Form</SubType>
@@ -951,12 +951,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\ThemCauHoiFrm.resx">
       <DependentUpon>ThemCauHoiFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\XemBaiKiemTra.resx">
-      <DependentUpon>XemBaiKiemTra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\XemBaiLamHocSinh.resx">
-      <DependentUpon>XemBaiLamHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\XemTienDoBaiKiemTra.resx">
       <DependentUpon>XemTienDoBaiKiemTra.cs</DependentUpon>
