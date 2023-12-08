@@ -296,7 +296,6 @@
             this.examTitle.Name = "examTitle";
             this.examTitle.Size = new System.Drawing.Size(1259, 23);
             this.examTitle.TabIndex = 3;
-            this.examTitle.Text = "Bài kiểm tra cuối học kỳ 1";
             // 
             // flowLayoutPanel3
             // 

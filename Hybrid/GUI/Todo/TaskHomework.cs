@@ -68,7 +68,7 @@ namespace Hybrid.GUI.Todo
                 // do exam
                 DialogResult isConfirmDoExam = MessageBox.Show("Tiến hành làm bài tập ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (isConfirmDoExam == DialogResult.No) return;
-                LamBaiTap lambaitapFrm = new LamBaiTap(this.taikhoan, this.chuong, this.baitap, this.blbtBUS);
+                LamBaiTap lambaitapFrm = new LamBaiTap(this.taikhoan, this.baitap, this.blbtBUS);
                 lambaitapFrm.Show();
                 return;
             }

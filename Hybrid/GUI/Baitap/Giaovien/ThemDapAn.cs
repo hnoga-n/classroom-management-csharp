@@ -21,6 +21,9 @@ namespace Hybrid.GUI.Baitap.Giaovien
         public FlowLayoutPanel FilePanel { get => this.flowFilePanel; set => flowFilePanel = value; }
         public KryptonRichTextBox Noidungdapan { get => this.txtContent; set => txtContent = value; }
 
+        public CheckBox CkbPublicAnswer { get => this.ckbPublicAnswer; set => ckbPublicAnswer = value; }
+
+
         public ThemDapAn()
         {
             InitializeComponent();
@@ -32,7 +35,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.doc;*.docx)|*.doc;*.docx|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
+                openFileDialog.Filter = "Word documents (*.doc;*.docx)|*.doc;*.docx|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|PDF files (*.pdf)|*.pdf|PowerPoint presentations (*.ppt;*.pptx)|*.ppt;*.pptx|Text files (*.txt)|*.txt";
                 openFileDialog.FilterIndex = 5; // Thiết lập mặc định là All files
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -69,10 +72,8 @@ namespace Hybrid.GUI.Baitap.Giaovien
 
         private void ckbPublicAnswer_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.ckbPublicAnswer.Checked)
-                this.congkhaidapan = true;
-            else
-                this.congkhaidapan = false;
+            this.congkhaidapan = this.ckbPublicAnswer.Checked;
+
         }
     }
 }

@@ -19,23 +19,31 @@ namespace Hybrid.GUI.Home.HomeComponents
         private Taikhoan hocsinh;
         private DeKiemTra dekiemtra;
         private bool daNop;
-        private ChiTietBaiLamKiemTraBUS ctblktBUS;
         public HocSinhCard()
         {
             InitializeComponent();
         }
-        public HocSinhCard(Taikhoan hs,DeKiemTra dkt,bool daNop )
+        public HocSinhCard(Taikhoan hs,DeKiemTra dkt,bool daNop,BailamKiemtraBUS blktBUS)
         {
             InitializeComponent();
             this.hocsinh = hs;
             this.dekiemtra = dkt;
             this.daNop = daNop;
+            if (daNop)
+            {
+                int indexBaiLam = blktBUS.getBaiLamKiemTraWithMaTaiKhoanAndMaDeKiemTra(this.hocsinh.Mataikhoan, dekiemtra.Madekiemtra);
+                this.lblSubmitAt.Text = "Nộp vào " + (blktBUS.List[indexBaiLam] as BaiLamKiemTra).Thoigiannop.ToString("dd/MM/yyyy HH:mm:ss");
+            }
+            else
+                this.lblSubmitAt.Text = "Chưa nộp";
             loadDataIntoForm();
         }
 
         private void loadDataIntoForm()
         {
             this.Name.Text = this.hocsinh.Hoten;
+            System.Resources.ResourceManager rm = global::Hybrid.Properties.Resources.ResourceManager;
+            this.avatar.BackgroundImage = (Image)rm.GetObject(this.hocsinh.Anhdaidien);
         }
         private void btnShow_Click(object sender, EventArgs e)
         {
@@ -44,7 +52,7 @@ namespace Hybrid.GUI.Home.HomeComponents
                 if (daNop)
                 {
                     loading.ShowSplashScreen();
-                    XemBaiLamHocSinh bailamhocsinhFrm = new XemBaiLamHocSinh(this.hocsinh, this.dekiemtra);
+                    XemBaiLamHocSinh bailamhocsinhFrm = new XemBaiLamHocSinh(this.hocsinh, this.dekiemtra,true);
                     loading.CloseForm();
                     bailamhocsinhFrm.Show();
                 }

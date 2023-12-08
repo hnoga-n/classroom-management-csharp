@@ -2,6 +2,7 @@
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using Hybrid.BUS;
 using Hybrid.DTO;
 using ServiceStack;
 using System;
@@ -18,26 +19,26 @@ namespace Hybrid.DAO
 {
     public class FileBaiTapDAO
     {
-        private DriveService service;
+        //private DriveService service;
         public FileBaiTapDAO()
         {
-            UserCredential credential;
-            using (var stream = new FileStream(@"..\..\bin\Debug\ggdrivelink.json", FileMode.Open, FileAccess.Read))
-            {
-                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                    GoogleClientSecrets.Load(stream).Secrets,
-                    new[] { DriveService.Scope.Drive },
-                    "user",
-                    CancellationToken.None,
-                    new FileDataStore("token.json", true)).Result;
-            }
+            //UserCredential credential;
+            //using (var stream = new FileStream(@"..\..\bin\Debug\ggdrivelink.json", FileMode.Open, FileAccess.Read))
+            //{
+            //    credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+            //        GoogleClientSecrets.Load(stream).Secrets,
+            //        new[] { DriveService.Scope.Drive },
+            //        "user",
+            //        CancellationToken.None,
+            //        new FileDataStore("token.json", true)).Result;
+            //}
 
-            // Tạo dịch vụ Google Drive
-            service = new DriveService(new BaseClientService.Initializer()
-            {
-                HttpClientInitializer = credential,
-                ApplicationName = "hybrid"
-            });
+            //// Tạo dịch vụ Google Drive
+            //service = new DriveService(new BaseClientService.Initializer()
+            //{
+            //    HttpClientInitializer = credential,
+            //    ApplicationName = "hybrid"
+            //});
         }
 
         public ArrayList loadList()
@@ -93,7 +94,7 @@ namespace Hybrid.DAO
                     FilesResource.CreateMediaUpload request;
                     using (var stream = new FileStream(fileBt.Path, FileMode.Open))
                     {
-                        request = this.service.Files.Create(fileMetadata, stream, "application/octet-stream");
+                        request = Chucnang.service.Files.Create(fileMetadata, stream, "application/octet-stream");
                         request.Upload();
                     }
 
@@ -149,7 +150,7 @@ namespace Hybrid.DAO
                         FilesResource.CreateMediaUpload request;
                         using (var stream = new FileStream(fileBt.Path, FileMode.Open))
                         {
-                            request = this.service.Files.Create(fileMetadata, stream, "application/octet-stream");
+                            request = Chucnang.service.Files.Create(fileMetadata, stream, "application/octet-stream");
                             request.Upload();
                         }
 

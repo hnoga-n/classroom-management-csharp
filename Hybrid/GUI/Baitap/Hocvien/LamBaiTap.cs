@@ -13,7 +13,6 @@ namespace Hybrid.GUI.Baitap.Hocsinh
     {
         private Taikhoan taikhoanhienhanh;
         private BaiTap bt;
-        private Chuong chuong;
         private BailambaitapBUS blbtBUS;
         private FileBaiTapBUS fileBtBUS;
         private FileBaiLamBaiTapBUS fileBlbtBUS;
@@ -22,11 +21,10 @@ namespace Hybrid.GUI.Baitap.Hocsinh
             InitializeComponent();
         }
 
-        public LamBaiTap(Taikhoan taikhoanhienhanh, Chuong chuong, BaiTap bt,BailambaitapBUS blbtBUS)
+        public LamBaiTap(Taikhoan taikhoanhienhanh, BaiTap bt, BailambaitapBUS blbtBUS)
         {
             InitializeComponent();
             this.taikhoanhienhanh = taikhoanhienhanh;
-            this.chuong = chuong;
             this.bt = bt;
             this.blbtBUS = blbtBUS;
         }
@@ -37,8 +35,8 @@ namespace Hybrid.GUI.Baitap.Hocsinh
             fileBtBUS = new FileBaiTapBUS();
             fileBlbtBUS = new FileBaiLamBaiTapBUS();
             this.lblTitle.Text = bt.Tieude;
-            this.lblChuong.Text = chuong.Tenchuong;
-            this.lblDeadline.Text = bt.Thoigianketthuc.ToString();
+            this.lblHocSinh.Text = taikhoanhienhanh.Hoten;
+            this.lblDeadline.Text = bt.Thoigianketthuc.ToString("dd/MM/yyyy HH:mm:ss");
             this.question.Text = bt.Noidungbaitap;
             if ((DateTime.Now > this.bt.Thoigianketthuc))
             {
@@ -73,8 +71,16 @@ namespace Hybrid.GUI.Baitap.Hocsinh
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_excel_40;
                             tmp.FileExtension = "xlsx";
                             break;
+                        case "pptx":
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_power_point_40;
+                            tmp.FileExtension = "pptx";
+                            break;
                         case "docx":
-                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_excel_40;
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
+                            tmp.FileExtension = "docx";
+                            break;
+                        case "doc":
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
                             tmp.FileExtension = "docx";
                             break;
                         default:
@@ -161,7 +167,8 @@ namespace Hybrid.GUI.Baitap.Hocsinh
                         return;
                     }
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi xảy ra !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 fileBlbtBUS.deleteFile(mabailam.ToString());
@@ -169,7 +176,7 @@ namespace Hybrid.GUI.Baitap.Hocsinh
                 this.blbtBUS.loadList();
                 Console.WriteLine(ex.Message);
             }
-            
+
 
         }
 
@@ -177,7 +184,7 @@ namespace Hybrid.GUI.Baitap.Hocsinh
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Text files (*.txt)|*.txt|Word documents (*.doc;*.docx)|*.doc;*.docx|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
+                openFileDialog.Filter = "Word documents (*.doc;*.docx)|*.doc;*.docx|Excel files (*.xls;*.xlsx)|*.xls;*.xlsx|PDF files (*.pdf)|*.pdf|PowerPoint presentations (*.ppt;*.pptx)|*.ppt;*.pptx|Text files (*.txt)|*.txt";
                 openFileDialog.FilterIndex = 5; // Thiết lập mặc định là All files
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -190,7 +197,7 @@ namespace Hybrid.GUI.Baitap.Hocsinh
 
         private void txtNoiDungBaiLam_TextChanged(object sender, EventArgs e)
         {
-            if(txtNoiDungBaiLam.Text.Length != 0)
+            if (txtNoiDungBaiLam.Text.Length != 0)
                 lblPlaceholder.Hide();
             else
                 lblPlaceholder.Show();
@@ -204,8 +211,8 @@ namespace Hybrid.GUI.Baitap.Hocsinh
 
         private void LamBaiTap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult isConfirm = MessageBox.Show("LƯU Ý: Mọi thông tin bài làm sẽ bị mất khi đóng cửa sổ !\n Xác nhận đóng cửa sổ ?","Cảnh báo !",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if (isConfirm == DialogResult.No) e.Cancel=true;
+            DialogResult isConfirm = MessageBox.Show("LƯU Ý: Mọi thông tin bài làm sẽ bị mất khi đóng cửa sổ !\n Xác nhận đóng cửa sổ ?", "Cảnh báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (isConfirm == DialogResult.No) e.Cancel = true;
         }
     }
 }

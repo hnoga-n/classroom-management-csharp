@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.btnShow = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Name = new System.Windows.Forms.Label();
+            this.avatar = new System.Windows.Forms.PictureBox();
+            this.lblSubmitAt = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnShow
@@ -59,42 +61,46 @@
             this.btnShow.Values.Text = "";
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
-            // kryptonButton2
-            // 
-            this.kryptonButton2.Location = new System.Drawing.Point(56, 4);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(60, 60);
-            this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonButton2.StateCommon.Back.Image = global::Hybrid.Properties.Resources.trend_avatar_12;
-            this.kryptonButton2.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
-            this.kryptonButton2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton2.TabIndex = 1;
-            this.kryptonButton2.Values.Text = "";
-            this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
-            // 
             // Name
             // 
             this.Name.AutoEllipsis = true;
             this.Name.BackColor = System.Drawing.Color.White;
             this.Name.Font = new System.Drawing.Font("Roboto Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name.Location = new System.Drawing.Point(134, 22);
+            this.Name.Location = new System.Drawing.Point(158, 3);
             this.Name.Name = "Name";
             this.Name.Size = new System.Drawing.Size(330, 33);
             this.Name.TabIndex = 0;
             this.Name.Text = "HocSinhKiemTraPanel";
             this.Name.Click += new System.EventHandler(this.label1_Click);
             // 
-            // HocSinhKiemTraPanel
+            // avatar
+            // 
+            this.avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.avatar.Location = new System.Drawing.Point(46, 3);
+            this.avatar.Name = "avatar";
+            this.avatar.Size = new System.Drawing.Size(73, 67);
+            this.avatar.TabIndex = 1;
+            this.avatar.TabStop = false;
+            // 
+            // lblSubmitAt
+            // 
+            this.lblSubmitAt.BackColor = System.Drawing.Color.White;
+            this.lblSubmitAt.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubmitAt.Location = new System.Drawing.Point(159, 36);
+            this.lblSubmitAt.Name = "lblSubmitAt";
+            this.lblSubmitAt.Size = new System.Drawing.Size(430, 20);
+            this.lblSubmitAt.TabIndex = 10;
+            // 
+            // HocSinhCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblSubmitAt);
+            this.Controls.Add(this.avatar);
             this.Controls.Add(this.Name);
-            this.Controls.Add(this.kryptonButton2);
             this.Controls.Add(this.btnShow);
-            this.Name.Text = "HocSinhKiemTraPanel";
             this.Size = new System.Drawing.Size(860, 70);
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -102,7 +108,8 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnShow;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
         private System.Windows.Forms.Label Name;
+        private System.Windows.Forms.PictureBox avatar;
+        private System.Windows.Forms.Label lblSubmitAt;
     }
 }

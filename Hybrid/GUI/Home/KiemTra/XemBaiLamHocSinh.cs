@@ -20,15 +20,17 @@ namespace Hybrid.GUI.Home.KiemTra
         private ChiTietBaiLamKiemTraBUS ctblktBUS;
         private CauHoiBUS chBUS;
         private CauTraLoiBUS ctlBUS;
+        private bool isTeacher;
         public XemBaiLamHocSinh()
         {
             InitializeComponent();
         }
-        public XemBaiLamHocSinh(Taikhoan taikhoanhienhanh, DeKiemTra dkt)
+        public XemBaiLamHocSinh(Taikhoan taikhoanhienhanh, DeKiemTra dkt, bool isTeacher)
         {
             InitializeComponent();
             this.taikhoanhienhanh = taikhoanhienhanh;
             this.dekiemtra = dkt;
+            this.isTeacher = isTeacher;
         }
 
         private void XemBaiLamHocSinh_Load(object sender, EventArgs e)
@@ -71,19 +73,28 @@ namespace Hybrid.GUI.Home.KiemTra
             listcauhoipanel.Refresh();
             this.lblNumberQuestion.Text = "/" + listctblkt.Count.ToString();
             this.lblTitleExam.Text = this.dekiemtra.Tieude;
-            this.rightAnswer.Text = this.blkt.Socaudung.ToString();
-            this.timeSubmit.Text = this.blkt.Thoigiannop.ToString();
-            this.score.Text = this.blkt.Diem.ToString();
-            if (Convert.ToDouble(score.Text) > 5)
+            this.timeSubmit.Text = this.blkt.Thoigiannop.ToString("dd/MM/yyyy HH:mm:ss");
+            if (this.isTeacher || this.dekiemtra.Xemdapan == 1)
             {
-                this.score.ForeColor = System.Drawing.Color.Green;
-                this.rightAnswer.ForeColor = System.Drawing.Color.Green;
+                this.rightAnswer.Text = this.blkt.Socaudung.ToString();
+                this.score.Text = this.blkt.Diem.ToString();
+                if (Convert.ToDouble(score.Text) > 5)
+                {
+                    this.score.ForeColor = System.Drawing.Color.Green;
+                    this.rightAnswer.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    this.score.ForeColor = System.Drawing.Color.Red;
+                    this.rightAnswer.ForeColor = System.Drawing.Color.Red;
+                }
             }
             else
             {
-                this.score.ForeColor = System.Drawing.Color.Red;
-                this.rightAnswer.ForeColor = System.Drawing.Color.Red;
+                this.rightAnswer.Text ="--";
+                this.score.Text ="--";
             }
+            
             this.studentName.Text = this.taikhoanhienhanh.Hoten;
             this.timeSubmit.Text = "Nộp vào: " + this.blkt.Thoigiannop.ToString();
             if (this.blkt.Noptre == 1)

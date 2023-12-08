@@ -49,9 +49,9 @@ namespace Hybrid.GUI.Baitap
             blbtBUS = new BailambaitapBUS();
             this.lblTitle.Text = this.baitap.Tieude;
             this.lblLop.Text = this.lophoc.Tenlop;
-            this.createAt.Text = this.baitap.Thoigiantao.ToString();
-            this.startAt.Text = this.baitap.Thoigianbatdau.ToString();
-            this.endAt.Text = this.baitap.Thoigianketthuc.ToString();
+            this.createAt.Text = this.baitap.Thoigiantao.ToString("dd/MM/yyyy HH:mm:ss");
+            this.startAt.Text = this.baitap.Thoigianbatdau.ToString("dd/MM/yyyy HH:mm:ss");
+            this.endAt.Text = this.baitap.Thoigianketthuc.ToString("dd/MM/yyyy HH:mm:ss");
 
             if ((DateTime.Now > this.baitap.Thoigianketthuc))
             {
@@ -91,9 +91,7 @@ namespace Hybrid.GUI.Baitap
                         this.listSubmited.Add(blbtBUS.List[index_blbt]);
                         double diem_bai_lam = (blbtBUS.List[index_blbt] as BaiLamBaiTap).Diem;
                         if (diem_bai_lam != -1 && diem_bai_lam > highestScore)
-                        {
                             highestScore = diem_bai_lam;
-                        }
                         if (diem_bai_lam != -1)
                         {
                             totalScore += diem_bai_lam;
@@ -106,7 +104,8 @@ namespace Hybrid.GUI.Baitap
                     }
                 }
 
-                if(highestScore == -1) {
+                if (highestScore == -1)
+                {
                     this.highestScore.Text = "--";
                 }
                 else
@@ -114,8 +113,8 @@ namespace Hybrid.GUI.Baitap
                     this.highestScore.Text = highestScore.ToString();
                 }
 
-                this.lblAvaregeScore.Text =(numberOfStudentSubmit==0)?"--":Math.Round((totalScore / numberOfStudentSubmit),2).ToString();
-                this.lblSubmitRadio.Text = (danhsachlop.Count==0)?"0%":Math.Round(((float)this.listSubmited.Count / (danhsachlop.Count))*100, 2).ToString() + "%";
+                this.lblAvaregeScore.Text = (numberOfStudentSubmit == 0) ? "--" : Math.Round((totalScore / numberOfStudentSubmit), 2).ToString();
+                this.lblSubmitRadio.Text = (danhsachlop.Count == 0) ? "0%" : Math.Round(((float)this.listSubmited.Count / (danhsachlop.Count)) * 100, 2).ToString() + "%";
             }
             catch (Exception ex)
             {
@@ -137,7 +136,6 @@ namespace Hybrid.GUI.Baitap
 
         private void notSubmit_Click(object sender, EventArgs e)
         {
-
             try
             {
                 whichIsClick = 1;
@@ -182,7 +180,7 @@ namespace Hybrid.GUI.Baitap
                     int hsIndex = taikhoanBUS.GetTaiKhoanByMaTaiKhoan(bailam.Mataikhoan);
                     if (bailam.Diem == -1)
                     {
-                        HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.List[hsIndex], false,this.baitap, bailam);
+                        HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.List[hsIndex], false, this.baitap, bailam);
                         this.flowHocSinhPnl.Controls.Add(hsPnl);
                     }
                 }
@@ -284,7 +282,7 @@ namespace Hybrid.GUI.Baitap
                         {
                             if (RemoveDiacritics(taikhoanBUS.List[hsIndex].Hoten.ToLower()).Contains(searchString))
                             {
-                                HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.List[hsIndex],false, this.baitap, bailam);
+                                HocsinhNoptre hsPnl = new HocsinhNoptre(taikhoanBUS.List[hsIndex], false, this.baitap, bailam);
                                 this.flowHocSinhPnl.Controls.Add(hsPnl);
                             }
                         }

@@ -672,11 +672,11 @@
     <Compile Include="GUI\Home\KiemTra\LamKiemTra.designer.cs">
       <DependentUpon>LamKiemTra.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\XemBaiKiemTra.cs">
+    <Compile Include="GUI\Home\KiemTra\XemChiTietBaiKiemTra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\XemBaiKiemTra.Designer.cs">
-      <DependentUpon>XemBaiKiemTra.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\XemChiTietBaiKiemTra.Designer.cs">
+      <DependentUpon>XemChiTietBaiKiemTra.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\Taotailieufrm.cs">
       <SubType>Form</SubType>
@@ -932,8 +932,8 @@
     <EmbeddedResource Include="GUI\Home\KhoaHocFrm.resx">
       <DependentUpon>KhoaHocFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\XemBaiKiemTra.resx">
-      <DependentUpon>XemBaiKiemTra.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\XemChiTietBaiKiemTra.resx">
+      <DependentUpon>XemChiTietBaiKiemTra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\XemBaiLamHocSinh.resx">
       <DependentUpon>XemBaiLamHocSinh.cs</DependentUpon>
@@ -1067,6 +1067,7 @@
     <None Include="Resources\imglop6.jpg" />
     <None Include="Resources\icon8s_word_40.jpg" />
     <None Include="Resources\icons8-word-40.png" />
+    <None Include="Resources\icons8-clock-40.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\anh_lophoc1.jpg" />
     <None Include="Resources\anh_lophoc.jpg" />

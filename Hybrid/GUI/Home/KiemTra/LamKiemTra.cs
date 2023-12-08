@@ -9,6 +9,7 @@ using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Messaging;
 using System.Text;
 using System.Windows.Forms;
 
@@ -85,8 +86,9 @@ namespace Hybrid.GUI.Kiemtra
             }
             this.lblNumberQuestion.Text = listmacauhoi.Count.ToString();
             this.lblTitleExam.Text = dkt.Tieude;
-            this.timeStart.Text = dkt.Thoigianbatdau.ToString();
-            this.timeEnd.Text = dkt.Thoigianketthuc.ToString();
+            this.timeStart.Text = dkt.Thoigianbatdau.ToString("dd/MM/yyyy HH:mm:ss");
+            this.timeEnd.Text = dkt.Thoigianketthuc.ToString("dd/MM/yyyy HH:mm:ss");
+            this.lblName.Text = taikhoanhienhanh.Hoten;
         }
 
         private string userChose(string macauhoi)
@@ -146,7 +148,7 @@ namespace Hybrid.GUI.Kiemtra
             }
             str.Append("chưa chọn câu trả lời. Bạn vẫn muốn nộp bài chứ ?");
 
-            DialogResult isEmptyConfirm = MessageBox.Show(str.ToString(), "Thông báo !", MessageBoxButtons.YesNo);
+            DialogResult isEmptyConfirm = MessageBox.Show(str.ToString(), "Thông báo !", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (isEmptyConfirm == DialogResult.No) return;
 
             DialogResult isConfirm = MessageBox.Show("Xác nhận nộp bài kiểm tra ?", "Thông báo !", MessageBoxButtons.YesNo);
@@ -241,6 +243,11 @@ namespace Hybrid.GUI.Kiemtra
             loading.CloseForm();
             MessageBox.Show("Đã lưu bản nháp!", "Thông báo !", MessageBoxButtons.OK);
             this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

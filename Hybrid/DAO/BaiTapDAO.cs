@@ -21,7 +21,7 @@ namespace Hybrid.DAO
             ArrayList listTmp = new ArrayList();
             try
             {
-                string sql_getall = "SELECT * FROM baitap";
+                string sql_getall = "SELECT * FROM baitap ";
                 SqlCommand cmd = new SqlCommand(sql_getall, Ketnoisqlserver.GetConnection());
 
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -88,13 +88,14 @@ namespace Hybrid.DAO
         {
             try
             {
-                string sql_getall = "UPDATE baitap SET tieude=@tieude,noidungbaitap=@noidungbaitap,noidungdapan=@noidungdapan,thoigianbatdau=@thoigianbatdau,thoigianketthuc=@thoigianketthuc WHERE mabaitap=@mabaitap";
+                string sql_getall = "UPDATE baitap SET tieude=@tieude,noidungbaitap=@noidungbaitap,noidungdapan=@noidungdapan,thoigianbatdau=@thoigianbatdau,thoigianketthuc=@thoigianketthuc,congkhaidapan=@congkhaidapan WHERE mabaitap=@mabaitap";
                 SqlCommand command = new SqlCommand(sql_getall, Ketnoisqlserver.GetConnection());
                 command.Parameters.AddWithValue("@tieude", bt.Tieude);
                 command.Parameters.AddWithValue("@noidungbaitap", bt.Noidungbaitap);
                 command.Parameters.AddWithValue("@noidungdapan", bt.Noidungdapan);
                 command.Parameters.AddWithValue("@thoigianbatdau", bt.Thoigianbatdau);
                 command.Parameters.AddWithValue("@thoigianketthuc", bt.Thoigianketthuc);
+                command.Parameters.AddWithValue("@congkhaidapan", bt.Congkhaidapan);
                 command.Parameters.AddWithValue("@mabaitap", Guid.Parse(bt.Mabaitap));
                 int index = command.ExecuteNonQuery();
 

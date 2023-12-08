@@ -115,7 +115,7 @@ namespace Hybrid.GUI.Home.HomeComponents
                     DialogResult isConfirmSubmited =  MessageBox.Show("Bạn đã hoàn thành bài kiểm tra !\nXem lại bài đã nộp ?", "Thông báo!", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                     if (isConfirmSubmited == DialogResult.No) return;
 
-                    XemBaiLamHocSinh frmBailam = new XemBaiLamHocSinh(this.panelChuong.Khfrm.Taikhoan, dekiemtra);
+                    XemBaiLamHocSinh frmBailam = new XemBaiLamHocSinh(this.panelChuong.Khfrm.Taikhoan, dekiemtra,false);
                     frmBailam.Show();
                     return;
                 }

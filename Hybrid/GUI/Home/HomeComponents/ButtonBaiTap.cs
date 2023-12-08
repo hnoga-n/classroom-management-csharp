@@ -20,7 +20,6 @@ namespace Hybrid.GUI.Home.HomeComponents
             InitializeComponent();
             this.panelChuong = panelChuong;
             this.baitap = bt;
-            this.blbtBUS = new BailambaitapBUS();
             this.lblTieuDeBT.Text = bt.Tieude;
             //this.lblChiTietBT.Text = bt.Thoihan.ToString();
             if (panelChuong.Khfrm.Lophoc.Daxoa == 1)
@@ -28,7 +27,8 @@ namespace Hybrid.GUI.Home.HomeComponents
                 this.btnSua.Visible = false;
                 this.btnXoa.Visible = false;
             }
-            baitapBUS = new BaiTapBUS();
+            this.blbtBUS = new BailambaitapBUS();
+            this.baitapBUS = new BaiTapBUS();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace Hybrid.GUI.Home.HomeComponents
                 // do exam
                 DialogResult isConfirmDoExam = MessageBox.Show("Tiến hành làm bài tập ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (isConfirmDoExam == DialogResult.No) return;
-                LamBaiTap lambaitapFrm = new LamBaiTap(this.panelChuong.Khfrm.Taikhoan,this.panelChuong.Chuong,this.baitap,this.blbtBUS);
+                LamBaiTap lambaitapFrm = new LamBaiTap(this.panelChuong.Khfrm.Taikhoan,this.baitap,this.blbtBUS);
                 lambaitapFrm.Show();
                 return;
             }
@@ -85,10 +85,9 @@ namespace Hybrid.GUI.Home.HomeComponents
                 return;
             }
             loading.ShowSplashScreen();
-            Chinhsuabaitap editBtFrm = new Chinhsuabaitap(this.panelChuong, this.panelChuong.Khfrm.Taikhoan,this.panelChuong.Khfrm.Lophoc, this.panelChuong.Chuong, this.baitap);
+            Chinhsuabaitap editBtFrm = new Chinhsuabaitap(this.panelChuong, this.panelChuong.Khfrm.Taikhoan,this.panelChuong.Khfrm.Lophoc, this.panelChuong.Chuong, this.baitap,this.baitapBUS);
             loading.CloseForm();
             editBtFrm.Show();
-            return;
         }
     }
 }

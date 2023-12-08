@@ -122,7 +122,6 @@ namespace Hybrid
             frmtt.ShowDialog();
             pictureBox1.Image = picha.Image;
             MakePictureBoxCircular(pictureBox1);
-
         }
 
         private void pnlContainer_Paint(object sender, PaintEventArgs e)

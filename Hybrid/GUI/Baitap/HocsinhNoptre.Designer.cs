@@ -31,9 +31,9 @@
             this.btnHocSinh = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lblState = new System.Windows.Forms.Label();
             this.lblHoten = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.avatar = new System.Windows.Forms.PictureBox();
             this.btnChamDiem = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHocSinh
@@ -81,15 +81,14 @@
             this.lblHoten.Size = new System.Drawing.Size(430, 24);
             this.lblHoten.TabIndex = 8;
             // 
-            // pictureBox1
+            // avatar
             // 
-            this.pictureBox1.BackgroundImage = global::Hybrid.Properties.Resources.trend_avatar_12;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 54);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.avatar.Location = new System.Drawing.Point(56, 3);
+            this.avatar.Name = "avatar";
+            this.avatar.Size = new System.Drawing.Size(63, 54);
+            this.avatar.TabIndex = 10;
+            this.avatar.TabStop = false;
             // 
             // btnChamDiem
             // 
@@ -146,13 +145,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnChamDiem);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.avatar);
             this.Controls.Add(this.lblState);
             this.Controls.Add(this.lblHoten);
             this.Controls.Add(this.btnHocSinh);
             this.Name = "HocsinhNoptre";
             this.Size = new System.Drawing.Size(802, 60);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,7 +159,7 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnHocSinh;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox avatar;
         private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.Label lblHoten;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnChamDiem;
