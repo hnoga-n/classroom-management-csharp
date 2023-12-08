@@ -177,7 +177,7 @@
             this.MaximizeBox = false;
             this.Name = "ThemDapAn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ThemDapAn";
+            this.Text = "Thêm đáp án";
             this.ResumeLayout(false);
             this.PerformLayout();
 

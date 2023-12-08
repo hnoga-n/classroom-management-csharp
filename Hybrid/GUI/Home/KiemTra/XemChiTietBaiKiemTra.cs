@@ -37,7 +37,6 @@ namespace Hybrid.GUI.Home.KiemTra
                 MessageBox.Show("Có lỗi xảy ra khi tải đề kiểm tra!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
-            listcauhoipanel.SuspendLayout();
             listcauhoipanel.Controls.Clear();
             int index = 0;
             foreach (ChiTietDeKiemTra ctdkt in listmacauhoi)
@@ -55,11 +54,14 @@ namespace Hybrid.GUI.Home.KiemTra
                 btnNav.getButtonNav().Click += new System.EventHandler(this.btnNavigate_Cliked);
                 navigatePanel.Controls.Add(btnNav);
             }
-            listcauhoipanel.ResumeLayout();
             listcauhoipanel.Refresh();
             this.lblNumberQuestion.Text = listmacauhoi.Count.ToString();
             this.lblTitleExam.Text = dkt.Tieude;
+            this.timeStart.Text = dkt.Thoigianbatdau.ToString("dd/MM/yyyy HH:mm:ss");
+            this.timeEnd.Text = dkt.Thoigianketthuc.ToString("dd/MM/yyyy HH:mm:ss");
+
         }
+
         public void btnNavigate_Cliked(object sender, EventArgs e)
         {
             int targetChildIndex;

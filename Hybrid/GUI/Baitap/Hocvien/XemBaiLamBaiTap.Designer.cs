@@ -58,7 +58,6 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1141, 48);
             this.lblTitle.TabIndex = 6;
-            this.lblTitle.Text = "Bài tập tuần 12:12";
             // 
             // pictureBox1
             // 

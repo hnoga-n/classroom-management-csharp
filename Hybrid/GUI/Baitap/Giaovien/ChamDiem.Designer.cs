@@ -112,7 +112,7 @@
             // score
             // 
             this.score.Location = new System.Drawing.Point(628, 83);
-            this.score.MaxLength = 2;
+            this.score.MaxLength = 4;
             this.score.Multiline = false;
             this.score.Name = "score";
             this.score.Size = new System.Drawing.Size(129, 114);
@@ -161,7 +161,6 @@
             this.lblSubmitTime.Name = "lblSubmitTime";
             this.lblSubmitTime.Size = new System.Drawing.Size(598, 23);
             this.lblSubmitTime.TabIndex = 30;
-            this.lblSubmitTime.Text = "23:23 thứ 3 10/10";
             // 
             // label6
             // 
@@ -180,7 +179,6 @@
             this.lblStudent.Name = "lblStudent";
             this.lblStudent.Size = new System.Drawing.Size(598, 23);
             this.lblStudent.TabIndex = 0;
-            this.lblStudent.Text = "hoanghuynguyen711@gmail.com";
             // 
             // flowFilePanel
             // 
@@ -257,7 +255,6 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1141, 48);
             this.lblTitle.TabIndex = 26;
-            this.lblTitle.Text = "Bài tập tuần 12:12";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblPlaceholder
@@ -308,7 +305,7 @@
             this.MaximizeBox = false;
             this.Name = "ChamDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DanhgiaBaitap";
+            this.Text = "Chấm điểm bài tập";
             this.Load += new System.EventHandler(this.ChamDiem_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -39,9 +39,12 @@
             this.listcauhoipanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCloseForm = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblNumberQuestion = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTitleExam = new System.Windows.Forms.Label();
+            this.navigatePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,27 +61,27 @@
             // 
             this.navigatePanel.BackColor = System.Drawing.Color.White;
             this.navigatePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.navigatePanel.Location = new System.Drawing.Point(1280, 81);
+            this.navigatePanel.Controls.Add(this.label2);
+            this.navigatePanel.Location = new System.Drawing.Point(1358, 43);
             this.navigatePanel.Margin = new System.Windows.Forms.Padding(0);
             this.navigatePanel.Name = "navigatePanel";
-            this.navigatePanel.Size = new System.Drawing.Size(259, 701);
+            this.navigatePanel.Size = new System.Drawing.Size(181, 739);
             this.navigatePanel.TabIndex = 1;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1332, 42);
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 24);
+            this.label2.Size = new System.Drawing.Size(180, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Phiếu câu trả lời:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(1280, 791);
+            this.btnSubmit.Location = new System.Drawing.Point(1358, 791);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(0);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.Control;
@@ -89,7 +92,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnSubmit.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnSubmit.OverrideDefault.Content.ShortText.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.btnSubmit.Size = new System.Drawing.Size(259, 39);
+            this.btnSubmit.Size = new System.Drawing.Size(181, 39);
             this.btnSubmit.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnSubmit.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnSubmit.StateCommon.Border.Color1 = System.Drawing.Color.White;
@@ -118,7 +121,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 791);
+            this.label3.Location = new System.Drawing.Point(377, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(197, 24);
             this.label3.TabIndex = 7;
@@ -126,19 +129,18 @@
             // 
             // timeStart
             // 
-            this.timeStart.AutoSize = true;
+            this.timeStart.AutoEllipsis = true;
             this.timeStart.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeStart.Location = new System.Drawing.Point(226, 791);
+            this.timeStart.Location = new System.Drawing.Point(580, 39);
             this.timeStart.Name = "timeStart";
-            this.timeStart.Size = new System.Drawing.Size(167, 24);
+            this.timeStart.Size = new System.Drawing.Size(240, 24);
             this.timeStart.TabIndex = 8;
-            this.timeStart.Text = "12:23 11/11/2023";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(472, 791);
+            this.label6.Location = new System.Drawing.Point(819, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 24);
             this.label6.TabIndex = 9;
@@ -146,27 +148,27 @@
             // 
             // timeEnd
             // 
-            this.timeEnd.AutoSize = true;
+            this.timeEnd.AutoEllipsis = true;
             this.timeEnd.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeEnd.Location = new System.Drawing.Point(527, 791);
+            this.timeEnd.Location = new System.Drawing.Point(870, 38);
             this.timeEnd.Name = "timeEnd";
-            this.timeEnd.Size = new System.Drawing.Size(167, 24);
+            this.timeEnd.Size = new System.Drawing.Size(240, 24);
             this.timeEnd.TabIndex = 10;
-            this.timeEnd.Text = "12:23 11/11/2023";
             // 
             // listcauhoipanel
             // 
             this.listcauhoipanel.AutoScroll = true;
+            this.listcauhoipanel.BackColor = System.Drawing.Color.White;
             this.listcauhoipanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listcauhoipanel.Location = new System.Drawing.Point(18, 122);
             this.listcauhoipanel.Margin = new System.Windows.Forms.Padding(0);
             this.listcauhoipanel.Name = "listcauhoipanel";
-            this.listcauhoipanel.Size = new System.Drawing.Size(1249, 663);
+            this.listcauhoipanel.Size = new System.Drawing.Size(1330, 708);
             this.listcauhoipanel.TabIndex = 6;
             // 
             // btnCloseForm
             // 
-            this.btnCloseForm.Location = new System.Drawing.Point(1499, 0);
+            this.btnCloseForm.Location = new System.Drawing.Point(1486, 0);
             this.btnCloseForm.Name = "btnCloseForm";
             this.btnCloseForm.Size = new System.Drawing.Size(53, 39);
             this.btnCloseForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -185,46 +187,70 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblName);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblNumberQuestion);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.timeEnd);
+            this.panel1.Controls.Add(this.timeStart);
             this.panel1.Controls.Add(this.lblTitleExam);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(18, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 77);
+            this.panel1.Size = new System.Drawing.Size(1330, 77);
             this.panel1.TabIndex = 13;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoEllipsis = true;
+            this.lblName.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(171, 38);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(200, 24);
+            this.lblName.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(20, 38);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(145, 24);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Họ tên thí sinh:";
             // 
             // lblNumberQuestion
             // 
-            this.lblNumberQuestion.AutoSize = true;
             this.lblNumberQuestion.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumberQuestion.Location = new System.Drawing.Point(678, 39);
+            this.lblNumberQuestion.Location = new System.Drawing.Point(1277, 39);
             this.lblNumberQuestion.Margin = new System.Windows.Forms.Padding(0);
             this.lblNumberQuestion.Name = "lblNumberQuestion";
-            this.lblNumberQuestion.Size = new System.Drawing.Size(32, 24);
+            this.lblNumberQuestion.Size = new System.Drawing.Size(36, 24);
             this.lblNumberQuestion.TabIndex = 8;
-            this.lblNumberQuestion.Text = "10";
+            this.lblNumberQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(497, 39);
+            this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1113, 39);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 24);
+            this.label4.Size = new System.Drawing.Size(164, 24);
             this.label4.TabIndex = 7;
             this.label4.Text = "Số lượng câu hỏi:";
             // 
             // lblTitleExam
             // 
             this.lblTitleExam.AutoEllipsis = true;
-            this.lblTitleExam.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleExam.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleExam.Location = new System.Drawing.Point(17, 0);
             this.lblTitleExam.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitleExam.Name = "lblTitleExam";
-            this.lblTitleExam.Size = new System.Drawing.Size(1219, 39);
+            this.lblTitleExam.Size = new System.Drawing.Size(1296, 34);
             this.lblTitleExam.TabIndex = 6;
-            this.lblTitleExam.Text = "Bài kiểm tra giữa học kì 1";
             this.lblTitleExam.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // LamKiemTra
@@ -234,23 +260,18 @@
             this.ClientSize = new System.Drawing.Size(1626, 842);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCloseForm);
-            this.Controls.Add(this.timeEnd);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.timeStart);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.listcauhoipanel);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.navigatePanel);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LamKiemTra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bài làm kiểm tra";
+            this.navigatePanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -269,5 +290,7 @@
         private System.Windows.Forms.Label lblNumberQuestion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTitleExam;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label5;
     }
 }

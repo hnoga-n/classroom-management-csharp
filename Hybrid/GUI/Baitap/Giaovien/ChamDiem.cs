@@ -37,7 +37,7 @@ namespace Hybrid.GUI.Baitap
         {
             this.lblTitle.Text = this.baitap.Tieude;
             this.lblStudent.Text = this.taikhoanhienhanh.Hoten;
-            this.lblSubmitTime.Text = this.blbt.Thoigiannopbai.ToString();
+            this.lblSubmitTime.Text = this.blbt.Thoigiannopbai.ToString("dd/MM/yyyy HH:mm:ss");
             this.txtContent.Text = this.blbt.Noidung;
             //load file
             this.flowFilePanel.Controls.Clear();
@@ -63,6 +63,10 @@ namespace Hybrid.GUI.Baitap
                             tmp.FileExtension = "xlsx";
                             break;
                         case "docx":
+                            tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
+                            tmp.FileExtension = "docx";
+                            break;
+                        case "doc":
                             tmp.getIcon().Image = Hybrid.Properties.Resources.icons8_word_40;
                             tmp.FileExtension = "docx";
                             break;
@@ -94,11 +98,14 @@ namespace Hybrid.GUI.Baitap
 
         private void score_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Check if the pressed key is a digit or a control key
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            // Allow digits (0-9) and a single decimal point
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != (char)Keys.Back)
             {
-                // If not a digit or a control key, suppress the key press
-                e.Handled = true;
+                e.Handled = true; // Ignore the keypress
+            }
+            if (e.KeyChar == '.' && score.Text.Contains("."))
+            {
+                e.Handled = true; // Ignore the keypress
             }
         }
 
@@ -127,9 +134,14 @@ namespace Hybrid.GUI.Baitap
                 e.Handled= true;
                 return;
             }
-            if (Convert.ToInt16(score.Text) > 10)
+            //if (!double.TryParse(score.Text, out double result) || result > 9)
+            //{
+            //    score.Text = "10";
+            //    score.SelectionStart = score.Text.Length;
+            //}
+            if (Convert.ToDouble(score.Text) > 10)
             {
-                score.Text = "10" ;
+                score.Text = "10";
                 score.SelectionStart = score.Text.Length;
             }
         }
@@ -139,6 +151,7 @@ namespace Hybrid.GUI.Baitap
             this.btnMark.Enabled = false;
             if(score.Text==string.Empty)
             {
+                this.btnMark.Enabled = true;
                 MessageBox.Show("Điểm không được bỏ trống !","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 return;
             }
@@ -172,7 +185,10 @@ namespace Hybrid.GUI.Baitap
             }
             catch (Exception ex)
             {
+                this.btnMark.Enabled = true;
+                MessageBox.Show("Có lỗi xảy ra ! Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Console.WriteLine(ex.Message);
+                return;
             }
         }
     }

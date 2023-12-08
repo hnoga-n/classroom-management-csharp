@@ -40,19 +40,21 @@
             this.avatar = new System.Windows.Forms.PictureBox();
             this.lblTitleExam = new System.Windows.Forms.Label();
             this.listcauhoipanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.navigatePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.listcauhoipanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
+            this.navigatePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.state);
             this.panel1.Controls.Add(this.lblNumberQuestion);
             this.panel1.Controls.Add(this.score);
@@ -64,7 +66,7 @@
             this.panel1.Controls.Add(this.avatar);
             this.panel1.Location = new System.Drawing.Point(18, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 77);
+            this.panel1.Size = new System.Drawing.Size(1327, 77);
             this.panel1.TabIndex = 15;
             // 
             // state
@@ -73,9 +75,8 @@
             this.state.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.state.Location = new System.Drawing.Point(97, 52);
             this.state.Name = "state";
-            this.state.Size = new System.Drawing.Size(53, 20);
+            this.state.Size = new System.Drawing.Size(0, 20);
             this.state.TabIndex = 9;
-            this.state.Text = "label1";
             // 
             // lblNumberQuestion
             // 
@@ -85,17 +86,15 @@
             this.lblNumberQuestion.Name = "lblNumberQuestion";
             this.lblNumberQuestion.Size = new System.Drawing.Size(57, 38);
             this.lblNumberQuestion.TabIndex = 8;
-            this.lblNumberQuestion.Text = "/10";
             // 
             // score
             // 
             this.score.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.score.ForeColor = System.Drawing.Color.Red;
+            this.score.ForeColor = System.Drawing.Color.Black;
             this.score.Location = new System.Drawing.Point(1024, 8);
             this.score.Name = "score";
             this.score.Size = new System.Drawing.Size(141, 56);
             this.score.TabIndex = 7;
-            this.score.Text = "100";
             this.score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
@@ -112,12 +111,11 @@
             // 
             this.rightAnswer.AutoSize = true;
             this.rightAnswer.Font = new System.Drawing.Font("Roboto", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rightAnswer.ForeColor = System.Drawing.Color.Lime;
+            this.rightAnswer.ForeColor = System.Drawing.Color.Black;
             this.rightAnswer.Location = new System.Drawing.Point(649, 19);
             this.rightAnswer.Name = "rightAnswer";
-            this.rightAnswer.Size = new System.Drawing.Size(55, 39);
+            this.rightAnswer.Size = new System.Drawing.Size(0, 39);
             this.rightAnswer.TabIndex = 5;
-            this.rightAnswer.Text = "10";
             // 
             // label7
             // 
@@ -135,9 +133,8 @@
             this.timeSubmit.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeSubmit.Location = new System.Drawing.Point(97, 31);
             this.timeSubmit.Name = "timeSubmit";
-            this.timeSubmit.Size = new System.Drawing.Size(244, 20);
+            this.timeSubmit.Size = new System.Drawing.Size(0, 20);
             this.timeSubmit.TabIndex = 3;
-            this.timeSubmit.Text = "Nộp vào : 11/15/2023 19:15:203";
             // 
             // studentName
             // 
@@ -147,11 +144,9 @@
             this.studentName.Name = "studentName";
             this.studentName.Size = new System.Drawing.Size(278, 26);
             this.studentName.TabIndex = 1;
-            this.studentName.Text = "Nguyễn Huy Hoàng";
             // 
             // avatar
             // 
-            this.avatar.BackgroundImage = global::Hybrid.Properties.Resources.DefaultImage;
             this.avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.avatar.Location = new System.Drawing.Point(3, 3);
             this.avatar.Name = "avatar";
@@ -166,39 +161,21 @@
             this.lblTitleExam.Location = new System.Drawing.Point(9, 9);
             this.lblTitleExam.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitleExam.Name = "lblTitleExam";
-            this.lblTitleExam.Size = new System.Drawing.Size(1258, 30);
+            this.lblTitleExam.Size = new System.Drawing.Size(1336, 30);
             this.lblTitleExam.TabIndex = 14;
             this.lblTitleExam.Text = "Bài kiểm tra giữa học kì 1";
             // 
             // listcauhoipanel
             // 
             this.listcauhoipanel.AutoScroll = true;
+            this.listcauhoipanel.BackColor = System.Drawing.Color.White;
+            this.listcauhoipanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listcauhoipanel.Controls.Add(this.splitContainer1);
             this.listcauhoipanel.Location = new System.Drawing.Point(18, 123);
             this.listcauhoipanel.Margin = new System.Windows.Forms.Padding(0);
             this.listcauhoipanel.Name = "listcauhoipanel";
-            this.listcauhoipanel.Size = new System.Drawing.Size(1249, 663);
+            this.listcauhoipanel.Size = new System.Drawing.Size(1327, 663);
             this.listcauhoipanel.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1328, 42);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Phiếu câu trả lời:";
-            // 
-            // navigatePanel
-            // 
-            this.navigatePanel.BackColor = System.Drawing.Color.White;
-            this.navigatePanel.Location = new System.Drawing.Point(1274, 77);
-            this.navigatePanel.Margin = new System.Windows.Forms.Padding(0);
-            this.navigatePanel.Name = "navigatePanel";
-            this.navigatePanel.Size = new System.Drawing.Size(259, 706);
-            this.navigatePanel.TabIndex = 3;
             // 
             // splitContainer1
             // 
@@ -209,18 +186,41 @@
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(171, 24);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Phiếu câu trả lời:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // navigatePanel
+            // 
+            this.navigatePanel.BackColor = System.Drawing.Color.White;
+            this.navigatePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.navigatePanel.Controls.Add(this.label2);
+            this.navigatePanel.Location = new System.Drawing.Point(1357, 42);
+            this.navigatePanel.Margin = new System.Windows.Forms.Padding(0);
+            this.navigatePanel.Name = "navigatePanel";
+            this.navigatePanel.Size = new System.Drawing.Size(181, 744);
+            this.navigatePanel.TabIndex = 3;
+            // 
             // XemBaiLamHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1547, 795);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1584, 795);
             this.Controls.Add(this.listcauhoipanel);
             this.Controls.Add(this.navigatePanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitleExam);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "XemBaiLamHocSinh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BaiLamDaNop";
             this.Load += new System.EventHandler(this.XemBaiLamHocSinh_Load);
             this.panel1.ResumeLayout(false);
@@ -229,8 +229,8 @@
             this.listcauhoipanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.navigatePanel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
