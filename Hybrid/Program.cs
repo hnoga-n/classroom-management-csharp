@@ -26,7 +26,7 @@ namespace Hybrid
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginUI());
+            Application.Run(new Loginfrm());
             //Application.Run(new Form1());
             //Application.Run(new DanhSachBaiDaNop());
             //Application.Run(new KiemTraFrm());

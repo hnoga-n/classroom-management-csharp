@@ -438,29 +438,23 @@
     <Compile Include="GUI\Dangnhap\Doimatkhaufrm.Designer.cs">
       <DependentUpon>Doimatkhaufrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Dangnhap\Forgetpass.cs">
+    <Compile Include="GUI\Dangnhap\Forgetpassfrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Dangnhap\Forgetpass.designer.cs">
-      <DependentUpon>Forgetpass.cs</DependentUpon>
+    <Compile Include="GUI\Dangnhap\Forgetpassfrm.Designer.cs">
+      <DependentUpon>Forgetpassfrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Dangnhap\LoginUI.cs">
+    <Compile Include="GUI\Dangnhap\Loginfrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Dangnhap\LoginUI.designer.cs">
-      <DependentUpon>LoginUI.cs</DependentUpon>
+    <Compile Include="GUI\Dangnhap\Loginfrm.Designer.cs">
+      <DependentUpon>Loginfrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Dangnhap\SignupUI.cs">
+    <Compile Include="GUI\Dangnhap\Signupfrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Dangnhap\SignupUI.designer.cs">
-      <DependentUpon>SignupUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Dangnhap\test1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Dangnhap\test1.Designer.cs">
-      <DependentUpon>test1.cs</DependentUpon>
+    <Compile Include="GUI\Dangnhap\Signupfrm.Designer.cs">
+      <DependentUpon>Signupfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Dangnhap\Thongtintaikhoan.cs">
       <SubType>Form</SubType>
@@ -468,11 +462,11 @@
     <Compile Include="GUI\Dangnhap\Thongtintaikhoan.designer.cs">
       <DependentUpon>Thongtintaikhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Dangnhap\xacnhanma.cs">
+    <Compile Include="GUI\Dangnhap\Verifyfrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Dangnhap\xacnhanma.designer.cs">
-      <DependentUpon>xacnhanma.cs</DependentUpon>
+    <Compile Include="GUI\Dangnhap\Verifyfrm.Designer.cs">
+      <DependentUpon>Verifyfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\Chonhinhanhlop.cs">
       <SubType>Form</SubType>
@@ -807,23 +801,20 @@
     <EmbeddedResource Include="GUI\Dangnhap\Doimatkhaufrm.resx">
       <DependentUpon>Doimatkhaufrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Dangnhap\Forgetpass.resx">
-      <DependentUpon>Forgetpass.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Dangnhap\Forgetpassfrm.resx">
+      <DependentUpon>Forgetpassfrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Dangnhap\LoginUI.resx">
-      <DependentUpon>LoginUI.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Dangnhap\Loginfrm.resx">
+      <DependentUpon>Loginfrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Dangnhap\SignupUI.resx">
-      <DependentUpon>SignupUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Dangnhap\test1.resx">
-      <DependentUpon>test1.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Dangnhap\Signupfrm.resx">
+      <DependentUpon>Signupfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dangnhap\Thongtintaikhoan.resx">
       <DependentUpon>Thongtintaikhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Dangnhap\xacnhanma.resx">
-      <DependentUpon>xacnhanma.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Dangnhap\Verifyfrm.resx">
+      <DependentUpon>Verifyfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\Chonhinhanhlop.resx">
       <DependentUpon>Chonhinhanhlop.cs</DependentUpon>
@@ -1164,6 +1155,14 @@
     <None Include="Resources\icon8s_word_40.jpg" />
     <None Include="Resources\icons8-word-40.png" />
     <None Include="Resources\icons8-power-point-40.png" />
+    <Content Include="Resources\hide_24.png" />
+    <Content Include="Resources\mail.png" />
+    <Content Include="Resources\padlock.png" />
+    <Content Include="Resources\padlock_1.png" />
+    <Content Include="Resources\pass.png" />
+    <Content Include="Resources\show_1.png" />
+    <Content Include="Resources\show_24.png" />
+    <Content Include="Resources\videoconference.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\anh_lophoc1.jpg" />
     <None Include="Resources\anh_lophoc.jpg" />
@@ -1173,7 +1172,6 @@
     <None Include="Resources\icons8-txt-40.png" />
     <None Include="Resources\icons8-pdf-40.png" />
     <None Include="Resources\icons8-excel-40.png" />
-    <None Include="Resources\icon8s-word-40.png" />
     <None Include="Resources\icons8-up-50.png" />
     <None Include="Resources\icons8-copy-24.png" />
     <None Include="Resources\icons8-upload-30.png" />

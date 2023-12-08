@@ -25,6 +25,8 @@ namespace Hybrid.GUI.Home
         ChuongBUS chuongBUS = new ChuongBUS();
         BailamKiemtraBUS blktBUS = new BailamKiemtraBUS();
         BailambaitapBUS blbtBUS = new BailambaitapBUS();
+        ThamGiaBUS tgbus = new ThamGiaBUS();
+        TaikhoanBUS tkbus = new TaikhoanBUS();
         Dictionary<string,string> chuongDict = new Dictionary<string, string>();
         Dictionary<string,string> dekiemtraDict;
         Dictionary<string,string> baitapDict;
@@ -40,7 +42,28 @@ namespace Hybrid.GUI.Home
 
         public void FillDataGridViewDanhSachHocSinh_DeKiemTra(string madekiemtra)
         {
-            dt = blktBUS.ThongKeDiemHocSinhTheoMaDeKiemTra(madekiemtra);
+            DataTable dtDAO = blktBUS.ThongKeDiemHocSinhTheoMaDeKiemTra(madekiemtra);
+            
+            ArrayList dshs = tgbus.getDanhSachLopWithMaLopHoc(lophoc.Malop);
+            ArrayList dshskhongnopbai = new ArrayList();
+            foreach (string matk in dshs)
+            {
+                int index2 = this.blktBUS.getBaiLamKiemTraWithMaTaiKhoanAndMaDeKiemTra(matk, madekiemtra);
+                if (index2 < 0)
+                    dshskhongnopbai.Add(matk);
+            }
+            foreach (string matk in dshskhongnopbai)
+            {
+                Taikhoan tk = tkbus.List[tkbus.GetTaiKhoanByMaTaiKhoan(matk)];
+                DataRow newRow = dtDAO.NewRow();
+                newRow[0] = tk.Hoten;
+                newRow[1] = 0;
+                newRow[2] = 0;
+                newRow[3] = 0;
+                newRow[4] = new DateTime();
+                dtDAO.Rows.Add(newRow);
+            }
+            dt = dtDAO;
             this.dgvDanhSachHocSinh.DataSource = dt;
             this.dgvDanhSachHocSinh.Columns[0].Width = 200;
             this.dgvDanhSachHocSinh.Columns[1].Width = 80;
@@ -55,7 +78,27 @@ namespace Hybrid.GUI.Home
         }
         public void FillDataGridViewDanhSachHocSinh_BaiTap(string mabaitap)
         {
-            dt = blbtBUS.ThongKeDiemThongKeDiemHocSinhTheoMaBaiTap(mabaitap);
+            DataTable dtDAO = blbtBUS.ThongKeDiemThongKeDiemHocSinhTheoMaBaiTap(mabaitap);
+
+            ArrayList dshs = tgbus.getDanhSachLopWithMaLopHoc(lophoc.Malop);
+            ArrayList dshskhongnopbai = new ArrayList();
+            foreach (string matk in dshs)
+            {
+                int index2 = this.blbtBUS.GetBaiLamBaiTapWithMaTaiKhoanAndMaBaiTap(matk, mabaitap);
+                if (index2 < 0)
+                    dshskhongnopbai.Add(matk);
+            }
+            foreach (string matk in dshskhongnopbai)
+            {
+                Taikhoan tk = tkbus.List[tkbus.GetTaiKhoanByMaTaiKhoan(matk)];
+                DataRow newRow = dtDAO.NewRow();
+                newRow[0] = tk.Hoten;
+                newRow[1] = 0;
+                newRow[2] = 0;
+                newRow[3] = new DateTime();
+                dtDAO.Rows.Add(newRow);
+            }
+            dt = dtDAO;
             this.dgvDanhSachHocSinh.DataSource = dt;
             this.dgvDanhSachHocSinh.Columns[0].Width = 250;
             this.dgvDanhSachHocSinh.Columns[1].Width = 100;
@@ -254,6 +297,11 @@ namespace Hybrid.GUI.Home
 
         private void ExportToExcel_DeKiemTra(DataGridView dataGridView, string excelFilePath)
         {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
+
+            // If you use EPPlus in a noncommercial context
+            // according to the Polyform Noncommercial license:
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             using (var package = new ExcelPackage())
             {
                 // Tạo một Sheet trong Excel
