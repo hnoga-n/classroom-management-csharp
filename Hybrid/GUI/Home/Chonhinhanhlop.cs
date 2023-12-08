@@ -83,7 +83,6 @@ namespace Hybrid.GUI.Home
                             {
                                 System.Resources.ResourceManager rm = global::Hybrid.Properties.Resources.ResourceManager;
                                 btn.PictureBox1.Image = (Image)rm.GetObject(ThongTinLopHocFrm.tenhinh);
-                                MessageBox.Show(btn.Lophoc.Avatar);
                                 break;
                             }
                         }

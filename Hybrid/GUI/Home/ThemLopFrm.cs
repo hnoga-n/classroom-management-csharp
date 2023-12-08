@@ -18,6 +18,7 @@ namespace Hybrid.GUI.Home
     {
         HomeFrm homeFrm;
         LopHocBUS lophocBus;
+        NhomChatBUS nhomchatBUS;
         string filelocal_hinhlop = null;
         public static string tenhinh = "imglop1";
         public ThemLopFrm(HomeFrm homeFrm)
@@ -25,6 +26,7 @@ namespace Hybrid.GUI.Home
             InitializeComponent();
             this.homeFrm = homeFrm;
             lophocBus = new LopHocBUS();
+            nhomchatBUS = new NhomChatBUS();
         }
 
         private void txtTenLop_TextChanged(object sender, EventArgs e)
@@ -72,7 +74,8 @@ namespace Hybrid.GUI.Home
                 return;
             }
             LopHoc lophoc = new LopHoc(Guid.NewGuid().ToString(), txtTenLop.Text, "",tenhinh, homeFrm.Tk.Mataikhoan, 0);
-            if (lophocBus.ThemLopHoc(lophoc))
+            NhomChat nhomchat = new NhomChat(Guid.NewGuid().ToString(), txtTenLop.Text, lophoc.Malop);
+            if (lophocBus.ThemLopHoc(lophoc) && nhomchatBUS.ThemNhomChat(nhomchat))
             {
                 ButtonClass buttonClass = new ButtonClass(lophoc, this.homeFrm);
                 this.homeFrm.PnlLopHocContainer.Controls.Add(buttonClass);

@@ -201,7 +201,7 @@
             this.txtTimKiem.StateCommon.Border.Rounding = 5;
             this.txtTimKiem.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTimKiem.TabIndex = 3;
-            this.txtTimKiem.Text = "Tìm kiếm";
+            this.txtTimKiem.Text = "Tìm kiếm theo tiêu đề";
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             this.txtTimKiem.Enter += new System.EventHandler(this.txtTimKiem_Enter);
             this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);
@@ -210,8 +210,6 @@
             // 
             this.dgvDanhSachHocSinh.AllowUserToAddRows = false;
             this.dgvDanhSachHocSinh.AllowUserToDeleteRows = false;
-            this.dgvDanhSachHocSinh.AllowUserToResizeColumns = false;
-            this.dgvDanhSachHocSinh.AllowUserToResizeRows = false;
             this.dgvDanhSachHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachHocSinh.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDanhSachHocSinh.Location = new System.Drawing.Point(8, 425);
@@ -221,7 +219,6 @@
             this.dgvDanhSachHocSinh.RowHeadersVisible = false;
             this.dgvDanhSachHocSinh.RowHeadersWidth = 51;
             this.dgvDanhSachHocSinh.RowTemplate.Height = 30;
-            this.dgvDanhSachHocSinh.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDanhSachHocSinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSachHocSinh.Size = new System.Drawing.Size(915, 310);
             this.dgvDanhSachHocSinh.StateCommon.Background.Color1 = System.Drawing.Color.White;

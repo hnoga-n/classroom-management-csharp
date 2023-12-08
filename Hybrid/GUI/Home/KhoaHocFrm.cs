@@ -53,14 +53,14 @@ namespace Hybrid.GUI.Home
         {
             if (string.IsNullOrEmpty(txtTimKiem.Text))
             {
-                txtTimKiem.Text = "Tìm kiếm";
+                txtTimKiem.Text = "Tìm kiếm theo tiêu đề hoạt động";
                 txtTimKiem.ForeColor = SystemColors.Control; // Đặt màu chữ thành màu xám
             }
         }
 
         private void txtTimKiem_Enter(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "Tìm kiếm")
+            if (txtTimKiem.Text == "Tìm kiếm theo tiêu đề hoạt động")
             {
                 txtTimKiem.Text = "";
                 txtTimKiem.ForeColor = SystemColors.WindowText; // Đặt màu chữ về màu mặc định của hệ thống
@@ -75,9 +75,10 @@ namespace Hybrid.GUI.Home
 
         private void cbLoaiHoatDong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "Tìm kiếm") txtTimKiem.Text = "";
-            this.txtTimKiem.Clear();
-            HienThiTimKiem(txtTimKiem.Text,this.cbLoaiHoatDong.SelectedIndex);
+            if (txtTimKiem.Text == "Tìm kiếm theo tiêu đề hoạt động")
+                HienThiTimKiem("", this.cbLoaiHoatDong.SelectedIndex);
+            else
+                HienThiTimKiem(txtTimKiem.Text,this.cbLoaiHoatDong.SelectedIndex);
         }
 
         public void HienThiTimKiem(string tukhoa, int loaihoatdong)
@@ -117,8 +118,15 @@ namespace Hybrid.GUI.Home
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "Tìm kiếm") txtTimKiem.Text = "";
+            if (txtTimKiem.Text == "Tìm kiếm theo tiêu đề hoạt động") txtTimKiem.Text = "";
             HienThiTimKiem(txtTimKiem.Text, this.cbLoaiHoatDong.SelectedIndex);
+        }
+
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            txtTimKiem.Text = "Tìm kiếm theo tiêu đề hoạt động";
+            cbLoaiHoatDong.SelectedIndex = 0;
+            HienThiDanhSachChuong();
         }
     }
 }

@@ -88,6 +88,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txt_matkhau.StateCommon.Border.Rounding = 10;
             this.txt_matkhau.TabIndex = 11;
+            this.txt_matkhau.TextChanged += new System.EventHandler(this.txt_matkhau_TextChanged);
             // 
             // lab_matkhau
             // 
@@ -98,6 +99,7 @@
             this.lab_matkhau.Size = new System.Drawing.Size(98, 24);
             this.lab_matkhau.TabIndex = 10;
             this.lab_matkhau.Text = "Mật khẩu:";
+            this.lab_matkhau.Click += new System.EventHandler(this.lab_matkhau_Click);
             // 
             // txt_email
             // 
@@ -130,6 +132,7 @@
             this.label2.Size = new System.Drawing.Size(187, 24);
             this.label2.TabIndex = 13;
             this.label2.Text = "Xác nhận mật khẩu:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txt_matkhau2
             // 
@@ -143,6 +146,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txt_matkhau2.StateCommon.Border.Rounding = 10;
             this.txt_matkhau2.TabIndex = 14;
+            this.txt_matkhau2.TextChanged += new System.EventHandler(this.txt_matkhau2_TextChanged);
             // 
             // but_quaylai
             // 

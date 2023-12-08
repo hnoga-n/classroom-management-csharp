@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using Hybrid.GUI;
-using Hybrid.GUI.Danhba;
 using Hybrid.GUI.Home;
 //using Hybrid.GUI.Todo;
 using Hybrid.GUI.Home.HomeComponents;
@@ -85,18 +84,19 @@ namespace Hybrid
 
         private void btnTodo_Click(object sender, EventArgs e)
         {
-            addFormtoPanelContainer(new TodoFrm(this.tk,this.btBUS,this.lopBUS,this.dktBUS,this.chuongBUS));
+            addFormtoPanelContainer(new TodoFrm(this.tk, this.btBUS, this.lopBUS, this.dktBUS, this.chuongBUS));
         }
 
         private void btnContacts_Click(object sender, EventArgs e)
         {
-            addFormtoPanelContainer(new DanhbaFrm());
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             PictureBox pic = taikhoanBUS.load_hinhdaidien(tk.Anhdaidien);
             pictureBox1.Image = pic.Image;
+            picha.Image = pic.Image;
             cn.loadggdrive();
             //cn.load_hinhanhcanhan(this.taikhoanhienhanh.Anhdaidien, pictureBox1);
             MakePictureBoxCircular(pictureBox1);

@@ -31,11 +31,17 @@
             this.tpWellChosen = new System.Windows.Forms.TabPage();
             this.flpBu = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlBu = new System.Windows.Forms.Panel();
+            this.pic6 = new System.Windows.Forms.PictureBox();
+            this.pic3 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pic5 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pic2 = new System.Windows.Forms.PictureBox();
+            this.pic4 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pic1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -54,10 +60,13 @@
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic3)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic5)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tpWellChosen
@@ -105,6 +114,34 @@
             this.pnlBu.Size = new System.Drawing.Size(618, 303);
             this.pnlBu.TabIndex = 0;
             // 
+            // pic6
+            // 
+            this.pic6.BackColor = System.Drawing.Color.White;
+            this.pic6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic6.Image = global::Hybrid.Properties.Resources.imglop6;
+            this.pic6.Location = new System.Drawing.Point(459, 164);
+            this.pic6.Margin = new System.Windows.Forms.Padding(0);
+            this.pic6.Name = "pic6";
+            this.pic6.Size = new System.Drawing.Size(94, 94);
+            this.pic6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic6.TabIndex = 32;
+            this.pic6.TabStop = false;
+            this.pic6.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
+            // pic3
+            // 
+            this.pic3.BackColor = System.Drawing.Color.White;
+            this.pic3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic3.Image = global::Hybrid.Properties.Resources.imglop3;
+            this.pic3.Location = new System.Drawing.Point(456, 30);
+            this.pic3.Margin = new System.Windows.Forms.Padding(0);
+            this.pic3.Name = "pic3";
+            this.pic3.Size = new System.Drawing.Size(94, 94);
+            this.pic3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic3.TabIndex = 22;
+            this.pic3.TabStop = false;
+            this.pic3.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
@@ -133,6 +170,20 @@
             this.panel5.Size = new System.Drawing.Size(100, 100);
             this.panel5.TabIndex = 33;
             // 
+            // pic5
+            // 
+            this.pic5.BackColor = System.Drawing.Color.White;
+            this.pic5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic5.Image = global::Hybrid.Properties.Resources.imglop5;
+            this.pic5.Location = new System.Drawing.Point(3, 3);
+            this.pic5.Margin = new System.Windows.Forms.Padding(0);
+            this.pic5.Name = "pic5";
+            this.pic5.Size = new System.Drawing.Size(94, 94);
+            this.pic5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic5.TabIndex = 18;
+            this.pic5.TabStop = false;
+            this.pic5.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
@@ -143,6 +194,34 @@
             this.panel2.Size = new System.Drawing.Size(100, 100);
             this.panel2.TabIndex = 23;
             // 
+            // pic2
+            // 
+            this.pic2.BackColor = System.Drawing.Color.White;
+            this.pic2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic2.Image = global::Hybrid.Properties.Resources.imglop2;
+            this.pic2.Location = new System.Drawing.Point(3, 3);
+            this.pic2.Margin = new System.Windows.Forms.Padding(0);
+            this.pic2.Name = "pic2";
+            this.pic2.Size = new System.Drawing.Size(94, 94);
+            this.pic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic2.TabIndex = 18;
+            this.pic2.TabStop = false;
+            this.pic2.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
+            // pic4
+            // 
+            this.pic4.BackColor = System.Drawing.Color.White;
+            this.pic4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic4.Image = global::Hybrid.Properties.Resources.imglop4;
+            this.pic4.Location = new System.Drawing.Point(72, 164);
+            this.pic4.Margin = new System.Windows.Forms.Padding(0);
+            this.pic4.Name = "pic4";
+            this.pic4.Size = new System.Drawing.Size(94, 94);
+            this.pic4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic4.TabIndex = 30;
+            this.pic4.TabStop = false;
+            this.pic4.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
@@ -151,6 +230,20 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(100, 100);
             this.panel4.TabIndex = 31;
+            // 
+            // pic1
+            // 
+            this.pic1.BackColor = System.Drawing.Color.White;
+            this.pic1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic1.Image = global::Hybrid.Properties.Resources.imglop1;
+            this.pic1.Location = new System.Drawing.Point(69, 30);
+            this.pic1.Margin = new System.Windows.Forms.Padding(0);
+            this.pic1.Name = "pic1";
+            this.pic1.Size = new System.Drawing.Size(94, 94);
+            this.pic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic1.TabIndex = 20;
+            this.pic1.TabStop = false;
+            this.pic1.Click += new System.EventHandler(this.PictureBox_Click);
             // 
             // panel1
             // 
@@ -227,10 +320,10 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnOK.Size = new System.Drawing.Size(140, 39);
-            this.btnOK.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
-            this.btnOK.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
-            this.btnOK.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnOK.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnOK.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnOK.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnOK.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnOK.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnOK.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -239,18 +332,18 @@
             this.btnOK.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnOK.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnOK.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnOK.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnOK.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnOK.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnOK.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnOK.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.btnOK.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.btnOK.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
-            this.btnOK.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(137)))), ((int)(((byte)(98)))));
+            this.btnOK.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnOK.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnOK.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnOK.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnOK.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
-            this.btnOK.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(141)))));
+            this.btnOK.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnOK.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnOK.TabIndex = 10;
             this.btnOK.Values.Text = "OK";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click_1);
@@ -375,10 +468,13 @@
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic3)).EndInit();
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic5)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -61,7 +61,7 @@ namespace Hybrid.GUI.Home
                 if(!HienThiDanhSachBaiKiemTra(chuong.Machuong,tukhoa))
                     this.Visible = false;
             }
-            else if (loaihoatdong == 2)
+            else if (loaihoatdong == 3)
             {
                 if (!HienThiDanhSachHocLieu(chuong.Machuong, tukhoa))
                     this.Visible = false;
@@ -205,8 +205,8 @@ namespace Hybrid.GUI.Home
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            new ThemChuongFrm(chuong).ShowDialog();
-            this.Khfrm.HienThiDanhSachChuong();
+            new ThemChuongFrm(chuong,this.khfrm).ShowDialog();
+            //this.Khfrm.HienThiDanhSachChuong();
         }
     }
 }

@@ -138,7 +138,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnThanhTich.Location = new System.Drawing.Point(232, 0);
             this.btnThanhTich.Name = "btnThanhTich";
             this.btnThanhTich.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
-            this.btnThanhTich.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnThanhTich.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnThanhTich.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
             this.btnThanhTich.OverrideDefault.Border.Color1 = System.Drawing.Color.White;
             this.btnThanhTich.OverrideDefault.Border.Color2 = System.Drawing.Color.White;
@@ -165,7 +165,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnThanhTich.StatePressed.Back.Color1 = System.Drawing.Color.White;
-            this.btnThanhTich.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnThanhTich.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnThanhTich.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
             this.btnThanhTich.StatePressed.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.btnThanhTich.StatePressed.Border.Color1 = System.Drawing.Color.White;
@@ -176,7 +176,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnThanhTich.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnThanhTich.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnThanhTich.StateTracking.Back.Color1 = System.Drawing.Color.White;
-            this.btnThanhTich.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnThanhTich.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnThanhTich.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
             this.btnThanhTich.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnThanhTich.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.Black;
@@ -189,7 +189,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnKhoaHoc.Location = new System.Drawing.Point(106, 0);
             this.btnKhoaHoc.Name = "btnKhoaHoc";
             this.btnKhoaHoc.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
-            this.btnKhoaHoc.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnKhoaHoc.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnKhoaHoc.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
             this.btnKhoaHoc.OverrideDefault.Border.Color1 = System.Drawing.Color.White;
             this.btnKhoaHoc.OverrideDefault.Border.Color2 = System.Drawing.Color.White;
@@ -216,7 +216,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnKhoaHoc.StatePressed.Back.Color1 = System.Drawing.Color.White;
-            this.btnKhoaHoc.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnKhoaHoc.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnKhoaHoc.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
             this.btnKhoaHoc.StatePressed.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.btnKhoaHoc.StatePressed.Border.Color1 = System.Drawing.Color.White;
@@ -227,7 +227,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnKhoaHoc.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnKhoaHoc.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnKhoaHoc.StateTracking.Back.Color1 = System.Drawing.Color.White;
-            this.btnKhoaHoc.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnKhoaHoc.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnKhoaHoc.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
             this.btnKhoaHoc.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnKhoaHoc.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.Black;
@@ -240,7 +240,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnChat.Location = new System.Drawing.Point(0, 0);
             this.btnChat.Name = "btnChat";
             this.btnChat.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
-            this.btnChat.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnChat.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnChat.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
             this.btnChat.OverrideDefault.Border.Color1 = System.Drawing.Color.White;
             this.btnChat.OverrideDefault.Border.Color2 = System.Drawing.Color.White;
@@ -267,7 +267,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnChat.StatePressed.Back.Color1 = System.Drawing.Color.White;
-            this.btnChat.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnChat.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnChat.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
             this.btnChat.StatePressed.Back.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.btnChat.StatePressed.Border.Color1 = System.Drawing.Color.White;
@@ -278,7 +278,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.btnChat.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnChat.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnChat.StateTracking.Back.Color1 = System.Drawing.Color.White;
-            this.btnChat.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(101)))));
+            this.btnChat.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnChat.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
             this.btnChat.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnChat.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.Black;

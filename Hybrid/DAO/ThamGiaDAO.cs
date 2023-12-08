@@ -13,7 +13,7 @@ namespace Hybrid.DAO
 {
     public class ThamGiaDAO
     {
-
+        DataTable dt = new DataTable();
         public ThamGiaDAO()
         {
         }
@@ -47,8 +47,56 @@ namespace Hybrid.DAO
             }
             return listTmp;
         }
+        public DataTable LayAllThamGiaLopHocByMyID(String str)
+        {
 
-        public DataTable DanhSachHocSinhTheoMaLop(string malop) {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "select * from thamgialophoc where (mataikhoan=N'" + str + @"')";
+            command.Connection = Ketnoisqlserver.GetConnection();
+            adapter.SelectCommand = command;
+            dt.Clear();
+            adapter.Fill(dt);
+            Ketnoisqlserver.CloseConnection();
+            return dt;
+        }
+        public DataTable LayAllThamGiaLopHocByIDLopHoc(String str)
+        {
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "select * from thamgialophoc where (malophoc=N'" + str + @"')";
+            command.Connection = Ketnoisqlserver.GetConnection();
+            adapter.SelectCommand = command;
+            dt.Clear();
+            adapter.Fill(dt);
+            Ketnoisqlserver.CloseConnection();
+            return dt;
+        }
+        public Boolean RoiKhoiLopHoc(String str, String maLH)
+        {
+
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "DELETE FROM thamgialophoc where  (mataikhoan=@matk AND malophoc=@malophoc)";
+                command.Parameters.AddWithValue("@matk", str);
+                command.Parameters.AddWithValue("@malophoc", maLH);
+                command.Connection = Ketnoisqlserver.GetConnection();
+                command.ExecuteNonQuery();
+                Ketnoisqlserver.CloseConnection();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public DataTable DanhSachHocSinhTheoMaLop(string malop)
+        {
             try
             {
                 string sql_thamgia = "select t.mataikhoan,t.hoten,t.email,t.sodienthoai\r\n" +
@@ -94,7 +142,8 @@ namespace Hybrid.DAO
             {
                 Ketnoisqlserver.CloseConnection();
             }
-        }public bool XoaThamGia(ThamGia thamgia)
+        }
+        public bool XoaThamGia(ThamGia thamgia)
         {
             try
             {

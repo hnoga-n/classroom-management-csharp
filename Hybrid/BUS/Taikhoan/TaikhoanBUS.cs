@@ -23,6 +23,7 @@ namespace Hybrid.BUS
     {
         private List<Taikhoan> list = new List<Taikhoan>();
         public TaikhoanDAO dao = new TaikhoanDAO();
+        DataTable dt = new DataTable();
 
         public List<Taikhoan> List { get => list; set => list = value; }
 
@@ -32,9 +33,37 @@ namespace Hybrid.BUS
         {
             list = dao.get_danhsach();
         }
+
+        public void thaydoimatkhau(string email, string matkhau)
+        {
+            dao.update_matkhau_taikhoan(email, matkhau);
+            list = dao.get_danhsach();
+        }
         public List<Taikhoan> get_list()
         {
             return list;
+        }
+
+        public Boolean UpdateTaiKhoan(Taikhoan tk)
+        {
+            if (dao.UpdateTaiKhoan(tk))
+            {
+                return true;
+            }
+            else { return false; }
+
+        }
+
+        public DataTable LayThongTinTaiKhoanByID(String str)
+        {
+            dt = dao.LayThongTinTaiKhoanByID(str);
+            return dt;
+        }
+
+        public DataTable LayAllTaiKhoan()
+        {
+            dt = dao.LayAllTaiKhoan();
+            return dt;
         }
         public bool kt_email(string email)
         {
@@ -74,6 +103,26 @@ namespace Hybrid.BUS
             else
             { return false; }
         }
+
+        public int kt_daxoa_taikhoan(string email)
+        {
+            foreach (Taikhoan t in list)
+            {
+                if (t.Email == email)
+                    return t.Daxoa;
+            }
+            return 1;
+        }
+        public int kt_quyenhan_taikhoan(string email)
+        {
+            foreach (Taikhoan t in list)
+            {
+                if (t.Email == email)
+                    return t.Manhomquyen;
+            }
+            return 1;
+        }
+
         public Boolean kt_dinhdang_matkhau(string matkhau)
         {
             string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).{8,}$";
@@ -145,9 +194,12 @@ namespace Hybrid.BUS
             checkBoxColumn.HeaderText = "Đã Xóa";
             checkBoxColumn.Name = "daxoa";
             dataGridView.Columns.Add(checkBoxColumn);
+            dataGridView.Columns[0].HeaderText = "Họ tên";
+            dataGridView.Columns[1].HeaderText = "Email";
+            dataGridView.Columns[2].HeaderText = "Số điện thoại";
             dataGridView.Columns[0].Width = 300;
-            dataGridView.Columns[1].Width = 320;
-            dataGridView.Columns[2].Width = 200;
+            dataGridView.Columns[1].Width = 300;
+            dataGridView.Columns[2].Width = 280;
             dataGridView.Columns[3].Visible = false;
 
         }

@@ -312,21 +312,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\Chinhsuabaitap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\Chinhsuabaitap.Designer.cs">
-      <DependentUpon>Chinhsuabaitap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\CloudFile.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\CloudFile.Designer.cs">
-      <DependentUpon>CloudFile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="GUI\Admin\Classfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,20 +330,23 @@
     <Compile Include="GUI\Admin\Userfrm.Designer.cs">
       <DependentUpon>Userfrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.Designer.cs">
-      <DependentUpon>XemChiTietBaiTap.cs</DependentUpon>
+    <Compile Include="GUI\Baitap\CloudFile.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\XemTienDoBaitap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Baitap\Giaovien\XemTienDoBaitap.Designer.cs">
-      <DependentUpon>XemTienDoBaitap.cs</DependentUpon>
+    <Compile Include="GUI\Baitap\CloudFile.Designer.cs">
+      <DependentUpon>CloudFile.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Baitap\Giaovien\ChamDiem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Baitap\Giaovien\ChamDiem.Designer.cs">
       <DependentUpon>ChamDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\Chinhsuabaitap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\Chinhsuabaitap.Designer.cs">
+      <DependentUpon>Chinhsuabaitap.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Baitap\Giaovien\TaoBaiTap.cs">
       <SubType>Form</SubType>
@@ -371,6 +359,18 @@
     </Compile>
     <Compile Include="GUI\Baitap\Giaovien\ThemDapAn.Designer.cs">
       <DependentUpon>ThemDapAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.Designer.cs">
+      <DependentUpon>XemChiTietBaiTap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\XemTienDoBaitap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Baitap\Giaovien\XemTienDoBaitap.Designer.cs">
+      <DependentUpon>XemTienDoBaitap.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Baitap\HocsinhNoptre.cs">
       <SubType>UserControl</SubType>
@@ -413,12 +413,6 @@
     </Compile>
     <Compile Include="GUI\ChatBox\lbl_notifiication_chatbox.Designer.cs">
       <DependentUpon>lbl_notifiication_chatbox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\ChatBox\lbl_save_clipboard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\ChatBox\lbl_save_clipboard.designer.cs">
-      <DependentUpon>lbl_save_clipboard.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ChatBox\lbl_time_create_chatbox.cs">
       <SubType>UserControl</SubType>
@@ -480,42 +474,6 @@
     <Compile Include="GUI\Dangnhap\xacnhanma.designer.cs">
       <DependentUpon>xacnhanma.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Danhba\Banbe.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Danhba\Banbe.designer.cs">
-      <DependentUpon>Banbe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Danhba\BanbeCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Danhba\BanbeCard.designer.cs">
-      <DependentUpon>BanbeCard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Danhba\DanhbaFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Danhba\DanhbaFrm.Designer.cs">
-      <DependentUpon>DanhbaFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Danhba\LophocPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Danhba\LophocPanel.designer.cs">
-      <DependentUpon>LophocPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Danhba\LophocCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Danhba\LophocCard.designer.cs">
-      <DependentUpon>LophocCard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Danhba\ThanhvienCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Danhba\ThanhvienCard.designer.cs">
-      <DependentUpon>ThanhvienCard.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Home\Chonhinhanhlop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -527,18 +485,6 @@
     </Compile>
     <Compile Include="GUI\Home\HienThiMaLopHocFrm.Designer.cs">
       <DependentUpon>HienThiMaLopHocFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Home\HomeComponents\fileshow.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\HomeComponents\fileshow.designer.cs">
-      <DependentUpon>fileshow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Home\HomeComponents\filetemp.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\HomeComponents\filetemp.designer.cs">
-      <DependentUpon>filetemp.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\Hienthitailieufrm.cs">
       <SubType>Form</SubType>
@@ -570,17 +516,17 @@
     <Compile Include="GUI\Home\HomeComponents\ButtonHocLieu.Designer.cs">
       <DependentUpon>ButtonHocLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.cs">
+    <Compile Include="GUI\Home\HomeComponents\fileshow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.Designer.cs">
-      <DependentUpon>EmptyPanel.cs</DependentUpon>
+    <Compile Include="GUI\Home\HomeComponents\fileshow.designer.cs">
+      <DependentUpon>fileshow.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.cs">
+    <Compile Include="GUI\Home\HomeComponents\filetemp.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.Designer.cs">
-      <DependentUpon>HocSinhCard.cs</DependentUpon>
+    <Compile Include="GUI\Home\HomeComponents\filetemp.designer.cs">
+      <DependentUpon>filetemp.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\HomeComponents\PanelChuongDropDown.cs">
       <SubType>UserControl</SubType>
@@ -606,29 +552,41 @@
     <Compile Include="GUI\Home\KhoaHocFrm.Designer.cs">
       <DependentUpon>KhoaHocFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\XemBaiLamHocSinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\KiemTra\XemBaiLamHocSinh.Designer.cs">
-      <DependentUpon>XemBaiLamHocSinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.Designer.cs">
       <DependentUpon>ChiTietCauHoiFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\XemTienDoBaiKiemTra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\KiemTra\XemTienDoBaiKiemTra.Designer.cs">
-      <DependentUpon>XemTienDoBaiKiemTra.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.Designer.cs">
       <DependentUpon>ButtonCauHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiNavigate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiNavigate.designer.cs">
+      <DependentUpon>CauhoiNavigate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.designer.cs">
+      <DependentUpon>CauhoiPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.Designer.cs">
+      <DependentUpon>EmptyPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.Designer.cs">
+      <DependentUpon>HocSinhCard.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\KiemTraComponents\PanelChiTietCauHoi.cs">
       <SubType>UserControl</SubType>
@@ -648,29 +606,29 @@
     <Compile Include="GUI\Home\KiemTra\KiemTraFrm.Designer.cs">
       <DependentUpon>KiemTraFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Home\KiemTra\LamKiemTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\LamKiemTra.designer.cs">
+      <DependentUpon>LamKiemTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home\KiemTra\ThemCauHoiFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\ThemCauHoiFrm.Designer.cs">
       <DependentUpon>ThemCauHoiFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiNavigate.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiNavigate.designer.cs">
-      <DependentUpon>CauhoiNavigate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.designer.cs">
-      <DependentUpon>CauhoiPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Home\KiemTra\LamKiemTra.cs">
+    <Compile Include="GUI\Home\KiemTra\XemBaiKiemTra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\LamKiemTra.designer.cs">
-      <DependentUpon>LamKiemTra.cs</DependentUpon>
+    <Compile Include="GUI\Home\KiemTra\XemBaiKiemTra.Designer.cs">
+      <DependentUpon>XemBaiKiemTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\XemBaiLamHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\XemBaiLamHocSinh.Designer.cs">
+      <DependentUpon>XemBaiLamHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\XemChiTietBaiKiemTra.cs">
       <SubType>Form</SubType>
@@ -690,17 +648,17 @@
     <Compile Include="GUI\Home\ThamGiaLopFrm.Designer.cs">
       <DependentUpon>ThamGiaLopFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\ThanhTichFrm_HS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Home\ThanhTichFrm_HS.Designer.cs">
-      <DependentUpon>ThanhTichFrm_HS.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Home\ThanhTichFrm_GV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Home\ThanhTichFrm_GV.Designer.cs">
       <DependentUpon>ThanhTichFrm_GV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home\ThanhTichFrm_HS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\ThanhTichFrm_HS.Designer.cs">
+      <DependentUpon>ThanhTichFrm_HS.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\ThemChuongFrm.cs">
       <SubType>Form</SubType>
@@ -786,15 +744,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Giaovien\Chinhsuabaitap.resx">
-      <DependentUpon>Chinhsuabaitap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\CloudFile.resx">
-      <DependentUpon>CloudFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.resx">
-      <DependentUpon>XemChiTietBaiTap.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\Classfrm.resx">
       <DependentUpon>Classfrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -804,17 +753,26 @@
     <EmbeddedResource Include="GUI\Admin\Userfrm.resx">
       <DependentUpon>Userfrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Baitap\Giaovien\XemTienDoBaitap.resx">
-      <DependentUpon>XemTienDoBaitap.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Baitap\CloudFile.resx">
+      <DependentUpon>CloudFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\Giaovien\ChamDiem.resx">
       <DependentUpon>ChamDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\Chinhsuabaitap.resx">
+      <DependentUpon>Chinhsuabaitap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\Giaovien\TaoBaiTap.resx">
       <DependentUpon>TaoBaiTap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\Giaovien\ThemDapAn.resx">
       <DependentUpon>ThemDapAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\XemChiTietBaiTap.resx">
+      <DependentUpon>XemChiTietBaiTap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Baitap\Giaovien\XemTienDoBaitap.resx">
+      <DependentUpon>XemTienDoBaitap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Baitap\HocsinhNoptre.resx">
       <DependentUpon>HocsinhNoptre.cs</DependentUpon>
@@ -836,9 +794,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChatBox\lbl_notifiication_chatbox.resx">
       <DependentUpon>lbl_notifiication_chatbox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ChatBox\lbl_save_clipboard.resx">
-      <DependentUpon>lbl_save_clipboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChatBox\lbl_time_create_chatbox.resx">
       <DependentUpon>lbl_time_create_chatbox.cs</DependentUpon>
@@ -870,34 +825,8 @@
     <EmbeddedResource Include="GUI\Dangnhap\xacnhanma.resx">
       <DependentUpon>xacnhanma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Danhba\Banbe.resx">
-      <DependentUpon>Banbe.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Danhba\BanbeCard.resx">
-      <DependentUpon>BanbeCard.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Danhba\DanhbaFrm.resx">
-      <DependentUpon>DanhbaFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Danhba\LophocPanel.resx">
-      <DependentUpon>LophocPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Danhba\LophocCard.resx">
-      <DependentUpon>LophocCard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Danhba\ThanhvienCard.resx">
-      <DependentUpon>ThanhvienCard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\Chonhinhanhlop.resx">
       <DependentUpon>Chonhinhanhlop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\HomeComponents\fileshow.resx">
-      <DependentUpon>fileshow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\HomeComponents\filetemp.resx">
-      <DependentUpon>filetemp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\Hienthitailieufrm.resx">
       <DependentUpon>Hienthitailieufrm.cs</DependentUpon>
@@ -914,11 +843,11 @@
     <EmbeddedResource Include="GUI\Home\HomeComponents\ButtonHocLieu.resx">
       <DependentUpon>ButtonHocLieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.resx">
-      <DependentUpon>EmptyPanel.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\fileshow.resx">
+      <DependentUpon>fileshow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.resx">
-      <DependentUpon>HocSinhCard.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\HomeComponents\filetemp.resx">
+      <DependentUpon>filetemp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\HomeComponents\PanelChuongDropDown.resx">
       <DependentUpon>PanelChuongDropDown.cs</DependentUpon>
@@ -941,11 +870,20 @@
     <EmbeddedResource Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.resx">
       <DependentUpon>ChiTietCauHoiFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\XemTienDoBaiKiemTra.resx">
-      <DependentUpon>XemTienDoBaiKiemTra.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.resx">
       <DependentUpon>ButtonCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiNavigate.resx">
+      <DependentUpon>CauhoiNavigate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.resx">
+      <DependentUpon>CauhoiPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.resx">
+      <DependentUpon>EmptyPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.resx">
+      <DependentUpon>HocSinhCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\PanelChiTietCauHoi.resx">
       <DependentUpon>PanelChiTietCauHoi.cs</DependentUpon>
@@ -956,17 +894,20 @@
     <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraFrm.resx">
       <DependentUpon>KiemTraFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\LamKiemTra.resx">
+      <DependentUpon>LamKiemTra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\ThemCauHoiFrm.resx">
       <DependentUpon>ThemCauHoiFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiNavigate.resx">
-      <DependentUpon>CauhoiNavigate.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\XemBaiKiemTra.resx">
+      <DependentUpon>XemBaiKiemTra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.resx">
-      <DependentUpon>CauhoiPanel.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\XemBaiLamHocSinh.resx">
+      <DependentUpon>XemBaiLamHocSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\LamKiemTra.resx">
-      <DependentUpon>LamKiemTra.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Home\KiemTra\XemTienDoBaiKiemTra.resx">
+      <DependentUpon>XemTienDoBaiKiemTra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\Taotailieufrm.resx">
       <DependentUpon>Taotailieufrm.cs</DependentUpon>
@@ -974,11 +915,11 @@
     <EmbeddedResource Include="GUI\Home\ThamGiaLopFrm.resx">
       <DependentUpon>ThamGiaLopFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\ThanhTichFrm_HS.resx">
-      <DependentUpon>ThanhTichFrm_HS.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThanhTichFrm_GV.resx">
       <DependentUpon>ThanhTichFrm_GV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\ThanhTichFrm_HS.resx">
+      <DependentUpon>ThanhTichFrm_HS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThemChuongFrm.resx">
       <DependentUpon>ThemChuongFrm.cs</DependentUpon>
@@ -1021,6 +962,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="bin\Debug\ggdrivelink.json" />
+    <None Include="bin\Debug\Hybrid.exe.config" />
+    <None Include="bin\Debug\token.json\Google.Apis.Auth.OAuth2.Responses.TokenResponse-user" />
     <None Include="Filemau\maucauhoi.docx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -1042,6 +986,164 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\BCrypt.Net.dll" />
+    <Content Include="bin\Debug\BCrypt.Net.xml" />
+    <Content Include="bin\Debug\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Debug\ComponentFactory.Krypton.Docking.dll" />
+    <Content Include="bin\Debug\ComponentFactory.Krypton.Docking.pdb" />
+    <Content Include="bin\Debug\ComponentFactory.Krypton.Navigator.dll" />
+    <Content Include="bin\Debug\ComponentFactory.Krypton.Navigator.pdb" />
+    <Content Include="bin\Debug\ComponentFactory.Krypton.Ribbon.dll" />
+    <Content Include="bin\Debug\ComponentFactory.Krypton.Ribbon.pdb" />
+    <Content Include="bin\Debug\ComponentFactory.Krypton.Toolkit.dll" />
+    <Content Include="bin\Debug\ComponentFactory.Krypton.Toolkit.pdb" />
+    <Content Include="bin\Debug\ComponentFactory.Krypton.Workspace.dll" />
+    <Content Include="bin\Debug\ComponentFactory.Krypton.Workspace.pdb" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\EnvDTE.dll" />
+    <Content Include="bin\Debug\EPPlus.dll" />
+    <Content Include="bin\Debug\EPPlus.Interfaces.dll" />
+    <Content Include="bin\Debug\EPPlus.System.Drawing.dll" />
+    <Content Include="bin\Debug\EPPlus.xml" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\Filemau\maucauhoi.txt" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\Google.Apis.Auth.dll" />
+    <Content Include="bin\Debug\Google.Apis.Auth.pdb" />
+    <Content Include="bin\Debug\Google.Apis.Auth.PlatformServices.dll" />
+    <Content Include="bin\Debug\Google.Apis.Auth.xml" />
+    <Content Include="bin\Debug\Google.Apis.Core.dll" />
+    <Content Include="bin\Debug\Google.Apis.Core.pdb" />
+    <Content Include="bin\Debug\Google.Apis.Core.xml" />
+    <Content Include="bin\Debug\Google.Apis.dll" />
+    <Content Include="bin\Debug\Google.Apis.Drive.v3.dll" />
+    <Content Include="bin\Debug\Google.Apis.Drive.v3.pdb" />
+    <Content Include="bin\Debug\Google.Apis.Drive.v3.xml" />
+    <Content Include="bin\Debug\Google.Apis.pdb" />
+    <Content Include="bin\Debug\Google.Apis.PlatformServices.dll" />
+    <Content Include="bin\Debug\Google.Apis.xml" />
+    <Content Include="bin\Debug\Google.Protobuf.dll" />
+    <Content Include="bin\Debug\Google.Protobuf.pdb" />
+    <Content Include="bin\Debug\Google.Protobuf.xml" />
+    <Content Include="bin\Debug\GumroadLicensing.dll" />
+    <Content Include="bin\Debug\Hybrid.exe" />
+    <Content Include="bin\Debug\Hybrid.pdb" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.xml" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.dll" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.xml" />
+    <Content Include="bin\Debug\Kimtoo.BindingProvider.dll" />
+    <Content Include="bin\Debug\Kimtoo.ButtonGroup.dll" />
+    <Content Include="bin\Debug\Kimtoo.DbManager.dll" />
+    <Content Include="bin\Debug\Kimtoo.ValidationProvider.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml" />
+    <Content Include="bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll" />
+    <Content Include="bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.DataVisualization.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.Design.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.WebDesign.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="bin\Debug\NavigationMenu.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\Npgsql.dll" />
+    <Content Include="bin\Debug\Npgsql.xml" />
+    <Content Include="bin\Debug\Oracle.ManagedDataAccess.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ServiceStack.Common.dll" />
+    <Content Include="bin\Debug\ServiceStack.Common.xml" />
+    <Content Include="bin\Debug\ServiceStack.Interfaces.dll" />
+    <Content Include="bin\Debug\ServiceStack.OrmLite.dll" />
+    <Content Include="bin\Debug\ServiceStack.OrmLite.MySql.dll" />
+    <Content Include="bin\Debug\ServiceStack.OrmLite.MySql.xml" />
+    <Content Include="bin\Debug\ServiceStack.OrmLite.Oracle.dll" />
+    <Content Include="bin\Debug\ServiceStack.OrmLite.Oracle.xml" />
+    <Content Include="bin\Debug\ServiceStack.OrmLite.PostgreSQL.dll" />
+    <Content Include="bin\Debug\ServiceStack.OrmLite.PostgreSQL.xml" />
+    <Content Include="bin\Debug\ServiceStack.OrmLite.SqlServer.dll" />
+    <Content Include="bin\Debug\ServiceStack.OrmLite.SqlServer.xml" />
+    <Content Include="bin\Debug\ServiceStack.OrmLite.xml" />
+    <Content Include="bin\Debug\ServiceStack.Text.dll" />
+    <Content Include="bin\Debug\ServiceStack.Text.xml" />
+    <Content Include="bin\Debug\stdole.dll" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Buffers.xml" />
+    <Content Include="bin\Debug\System.CodeDom.dll" />
+    <Content Include="bin\Debug\System.CodeDom.xml" />
+    <Content Include="bin\Debug\System.ComponentModel.Annotations.dll" />
+    <Content Include="bin\Debug\System.Memory.dll" />
+    <Content Include="bin\Debug\System.Memory.xml" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="bin\Debug\System.Text.Encodings.Web.dll" />
+    <Content Include="bin\Debug\System.Text.Encodings.Web.xml" />
+    <Content Include="bin\Debug\System.Text.Json.dll" />
+    <Content Include="bin\Debug\System.Text.Json.xml" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="bin\Debug\System.ValueTuple.dll" />
+    <Content Include="bin\Debug\System.ValueTuple.xml" />
+    <Content Include="bin\Debug\Ubiety.Dns.Core.dll" />
+    <Content Include="bin\Debug\Unidecode.NET.dll" />
+    <Content Include="bin\Debug\Unidecode.NET.xml" />
+    <Content Include="bin\Debug\msvcr120.dll" />
+    <Content Include="bin\Debug\SqlServerSpatial140.dll" />
+    <Content Include="bin\Debug\Zstandard.Net.dll" />
     <Content Include="bin\Debug\msvcr120.dll" />
     <Content Include="bin\Debug\SqlServerSpatial140.dll" />
     <Content Include="image\anh_lophoc.jpg" />
@@ -1068,6 +1170,7 @@
     <None Include="Resources\icon8s_word_40.jpg" />
     <None Include="Resources\icons8-word-40.png" />
     <None Include="Resources\icons8-clock-40.png" />
+    <None Include="Resources\icons8-power-point-40.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\anh_lophoc1.jpg" />
     <None Include="Resources\anh_lophoc.jpg" />
@@ -1075,7 +1178,6 @@
     <None Include="Resources\icons8-book-50.png" />
     <None Include="Resources\icons8-file-40.png" />
     <None Include="Resources\icons8-txt-40.png" />
-    <None Include="Resources\icons8-power-point-40.png" />
     <None Include="Resources\icons8-pdf-40.png" />
     <None Include="Resources\icons8-excel-40.png" />
     <None Include="Resources\icon8s-word-40.png" />
@@ -1108,7 +1210,10 @@
     <Content Include="icon\Animation - 1699327889806.gif" />
     <Content Include="icon\yo yo ma meme.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="GUI\Danhba\" />
+  </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Interop.Word">
       <Guid>{00020905-0000-0000-C000-000000000046}</Guid>

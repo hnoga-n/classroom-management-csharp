@@ -146,5 +146,20 @@ namespace Hybrid.BUS
             }
             return rslist;
         }
+
+        public void SuaHocLieu(HocLieu hoclieu)
+        {
+            HocLieuDAO.update_hoclieu(hoclieu);
+            foreach(HocLieu hl in this.listhoclieu)
+            {
+                if(hl.Mahoclieu.Equals(hoclieu.Mahoclieu))
+                {
+                    hl.Daxoa = hoclieu.Daxoa;
+                    hl.Tieude = hoclieu.Tieude;
+                    hl.Noidung = hoclieu.Noidung;
+                    break;
+                }
+            }    
+        }
     }
 }

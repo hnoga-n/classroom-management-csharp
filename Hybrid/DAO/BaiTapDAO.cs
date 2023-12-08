@@ -161,9 +161,9 @@ namespace Hybrid.DAO
             {
                 string sql = "SELECT bt.mabaitap,c.machuong,tieude,noidungbaitap,noidungdapan,bt.thoigiantao,thoigianbatdau,thoigianketthuc,congkhaidapan,bt.daxoa FROM baitap bt JOIN chuong c ON bt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc JOIN bailambaitap bl ON bl.mabaitap=bt.mabaitap WHERE l.malophoc=@malophoc ";
                 SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
-                command.Parameters.AddWithValue("@malophoc",Guid.Parse(malop));
+                command.Parameters.AddWithValue("@malophoc", Guid.Parse(malop));
                 SqlDataReader dr = command.ExecuteReader();
-                
+
                 while (dr.Read())
                 {
                     BaiTap tmp = new BaiTap

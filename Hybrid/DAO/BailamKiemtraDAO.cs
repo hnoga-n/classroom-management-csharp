@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Hybrid.DAO
 {
-    public class BailamKiemtraDAO
+    public class BailamKiemtraDAO   
     {
 
         public BailamKiemtraDAO()

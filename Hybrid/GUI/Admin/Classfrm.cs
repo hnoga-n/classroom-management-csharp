@@ -14,8 +14,8 @@ namespace Hybrid.GUI.Admin
 {
     public partial class Classfrm : Form
     {
-        LopHocBUS lophocBUS=new LopHocBUS();
-        LopHocDAO LopHocDAO=new LopHocDAO();
+        LopHocBUS lophocBUS = new LopHocBUS();
+        LopHocDAO LopHocDAO = new LopHocDAO();
         string malop;
         string tinhtrang;
         int vitri;
@@ -45,14 +45,14 @@ namespace Hybrid.GUI.Admin
                 if (comboBox1.SelectedIndex == 1)
                     lophocBUS.timkiem_lop_tenlop(txt_timkiem.Text, dataGridView1);
                 int rowCount = dataGridView1.Rows.Count;
-                if(rowCount<=1)
-                    lab_timkiem.Text = "1\nlớp học";
+                if (rowCount <= 1)
+                    lab_timkiem.Text = "1";
                 else
                 {
-                    rowCount = dataGridView1.Rows.Count - 1;
-                    lab_timkiem.Text = rowCount.ToString() + "\nlớp học";
-                }    
-               
+                    rowCount = dataGridView1.Rows.Count;
+                    lab_timkiem.Text = rowCount.ToString();
+                }
+
             }
         }
         private void reload_data()
@@ -64,10 +64,10 @@ namespace Hybrid.GUI.Admin
             dataGridView1.DataSource = dataTable;
 
             int rowCount = dataGridView1.Rows.Count;
-            lab_tong.Text = rowCount.ToString() + "\nlớp học";
-            lab_timkiem.Text = rowCount.ToString() + "\nlớp học";
-            lab_hoatdong.Text = lophocBUS.count_class_unban(dataGridView1).ToString() + "\nlớp học";
-            lab_xoa.Text = lophocBUS.count_class_ban(dataGridView1).ToString() + "\nlớp học";
+            lab_tong.Text = rowCount.ToString();
+            lab_timkiem.Text = rowCount.ToString();
+            lab_hoatdong.Text = lophocBUS.count_class_unban(dataGridView1).ToString();
+            lab_xoa.Text = lophocBUS.count_class_ban(dataGridView1).ToString(); 
         }
 
         private void button1_Click(object sender, EventArgs e)

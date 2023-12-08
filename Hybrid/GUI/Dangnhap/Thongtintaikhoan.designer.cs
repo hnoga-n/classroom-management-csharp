@@ -38,9 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_sodienthoai = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lab_doimatkhau = new System.Windows.Forms.Label();
+            this.btnTaoLop = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanh)).BeginInit();
             this.SuspendLayout();
@@ -60,10 +60,11 @@
             // 
             // lab_chinhsua
             // 
+            this.lab_chinhsua.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lab_chinhsua.ForeColor = System.Drawing.Color.Linen;
-            this.lab_chinhsua.Location = new System.Drawing.Point(290, 12);
+            this.lab_chinhsua.Location = new System.Drawing.Point(252, 9);
             this.lab_chinhsua.Name = "lab_chinhsua";
-            this.lab_chinhsua.Size = new System.Drawing.Size(98, 20);
+            this.lab_chinhsua.Size = new System.Drawing.Size(127, 28);
             this.lab_chinhsua.TabIndex = 15;
             this.lab_chinhsua.Text = "Chỉnh sửa";
             this.lab_chinhsua.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -95,10 +96,11 @@
             // 
             // lab_xacnhan
             // 
+            this.lab_xacnhan.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lab_xacnhan.ForeColor = System.Drawing.Color.Linen;
-            this.lab_xacnhan.Location = new System.Drawing.Point(290, 9);
+            this.lab_xacnhan.Location = new System.Drawing.Point(252, 9);
             this.lab_xacnhan.Name = "lab_xacnhan";
-            this.lab_xacnhan.Size = new System.Drawing.Size(98, 20);
+            this.lab_xacnhan.Size = new System.Drawing.Size(127, 28);
             this.lab_xacnhan.TabIndex = 16;
             this.lab_xacnhan.Text = "Xác nhận";
             this.lab_xacnhan.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -157,15 +159,74 @@
             this.txt_sodienthoai.TabIndex = 9;
             this.txt_sodienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sodienthoai_KeyPress);
             // 
-            // button1
+            // label2
             // 
-            this.button1.Location = new System.Drawing.Point(106, 335);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 38);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label2.Location = new System.Drawing.Point(141, 282);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "**************";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lab_doimatkhau
+            // 
+            this.lab_doimatkhau.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lab_doimatkhau.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lab_doimatkhau.Location = new System.Drawing.Point(221, 277);
+            this.lab_doimatkhau.Name = "lab_doimatkhau";
+            this.lab_doimatkhau.Size = new System.Drawing.Size(158, 29);
+            this.lab_doimatkhau.TabIndex = 14;
+            this.lab_doimatkhau.Text = "Đổi mật khẩu";
+            this.lab_doimatkhau.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lab_doimatkhau.Click += new System.EventHandler(this.lab_doimatkhau_Click);
+            // 
+            // btnTaoLop
+            // 
+            this.btnTaoLop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTaoLop.Location = new System.Drawing.Point(144, 343);
+            this.btnTaoLop.Margin = new System.Windows.Forms.Padding(0);
+            this.btnTaoLop.Name = "btnTaoLop";
+            this.btnTaoLop.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnTaoLop.OverrideDefault.Border.Rounding = 5;
+            this.btnTaoLop.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnTaoLop.Size = new System.Drawing.Size(120, 40);
+            this.btnTaoLop.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnTaoLop.StateCommon.Border.Rounding = 5;
+            this.btnTaoLop.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, 2, -1, -1);
+            this.btnTaoLop.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnTaoLop.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnTaoLop.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTaoLop.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.btnTaoLop.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.btnTaoLop.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.StateTracking.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnTaoLop.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnTaoLop.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
+            this.btnTaoLop.TabIndex = 15;
+            this.btnTaoLop.Values.Text = "Thoát";
+            this.btnTaoLop.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -186,24 +247,14 @@
             this.lab_doimatkhau.Text = "Đổi mật khẩu";
             this.lab_doimatkhau.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(177, 390);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Thongtintaikhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 392);
+            this.Controls.Add(this.btnTaoLop);
             this.Controls.Add(this.lab_doimatkhau);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_sodienthoai);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.label3);
@@ -233,11 +284,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_sodienthoai;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_ten;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lab_doimatkhau;
         private System.Windows.Forms.Label lab_chinhsua;
         private System.Windows.Forms.Label lab_xacnhan;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnTaoLop;
     }
 }

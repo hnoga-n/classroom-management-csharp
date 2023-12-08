@@ -159,6 +159,7 @@
             this.btnMinimizeForm.StateTracking.Border.Rounding = 20;
             this.btnMinimizeForm.TabIndex = 3;
             this.btnMinimizeForm.Values.Text = "";
+            this.btnMinimizeForm.Click += new System.EventHandler(this.btnMinimizeForm_Click);
             // 
             // kryptonPanel1
             // 
@@ -214,7 +215,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnCalendar.TabIndex = 9;
-            this.btnCalendar.Values.Text = "Class";
+            this.btnCalendar.Values.Text = "Lớp học";
             this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
             // 
             // btnContacts
@@ -245,7 +246,7 @@
             this.btnContacts.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 25, 5, 0);
             this.btnContacts.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnContacts.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnContacts.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnContacts.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnContacts.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnContacts.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnContacts.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -257,7 +258,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnContacts.TabIndex = 8;
-            this.btnContacts.Values.Text = "User";
+            this.btnContacts.Values.Text = "Tài khoản";
             this.btnContacts.Click += new System.EventHandler(this.btnContacts_Click_1);
             // 
             // pictureBox1
@@ -280,7 +281,9 @@
             this.Controls.Add(this.kryptonPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Homeadminfrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Homeadminfrm";
+            this.Load += new System.EventHandler(this.Homeadminfrm_Load);
             this.pnlContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);

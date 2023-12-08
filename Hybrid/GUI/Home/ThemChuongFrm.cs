@@ -29,10 +29,11 @@ namespace Hybrid.GUI.Home
             this.btnTaoChuong.Visible = true;
             this.btnCapNhat.Visible = false;
         }
-        public ThemChuongFrm(Chuong chuong)
+        public ThemChuongFrm(Chuong chuong, KhoaHocFrm khfrm)
         {
             InitializeComponent();
             this.chuong = chuong;
+            this.khfrm = khfrm;
             this.Text = "Sửa chương";
             this.btnTaoChuong.Visible = false;
             this.btnCapNhat.Visible = true;
@@ -107,6 +108,14 @@ namespace Hybrid.GUI.Home
             if(chuongBUS.SuaChuong(chuong))
             {
                 MessageBox.Show("Cập nhật chương thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                foreach(PanelChuongDropDown panel in this.khfrm.PnlChuongContainer.Controls)
+                {
+                    if(panel.Chuong.Machuong.Equals(this.chuong.Machuong))
+                    {
+                        panel.LblTenChuong.Text = chuong.Tenchuong;
+                        break;
+                    }
+                }
                 this.Close();
             }
             else

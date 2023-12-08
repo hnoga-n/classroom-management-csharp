@@ -58,10 +58,10 @@ namespace Hybrid.BUS
 
         public bool ThemDeKiemTra(DeKiemTra dekiemtra)
         {
-            if( dekiemtra == null ) return false;
-            if(dektDAO.ThemDeKiemTra(dekiemtra))
+            if (dekiemtra == null) return false;
+            if (dektDAO.ThemDeKiemTra(dekiemtra))
             {
-                this.list.Add( dekiemtra );
+                this.list.Add(dekiemtra);
                 return true;
             }
             return false;
@@ -69,11 +69,11 @@ namespace Hybrid.BUS
 
         public bool SuaDeKiemTra(DeKiemTra dkt)
         {
-            if(dektDAO.SuaDeKiemTra(dkt))
+            if (dektDAO.SuaDeKiemTra(dkt))
             {
-                foreach(DeKiemTra d in this.list)
+                foreach (DeKiemTra d in this.list)
                 {
-                    if(d.Madekiemtra.Equals(dkt.Madekiemtra))
+                    if (d.Madekiemtra.Equals(dkt.Madekiemtra))
                     {
                         d.Thoigianbatdau = dkt.Thoigianbatdau;
                         d.Thoigianketthuc = dkt.Thoigianketthuc;
@@ -81,16 +81,17 @@ namespace Hybrid.BUS
                     }
                 }
                 return true;
-            } else 
+            }
+            else
                 return false;
         }
         public bool XoaDeKiemTra(DeKiemTra dekiemtra)
         {
             if (dektDAO.XoaDeKiemTra(dekiemtra))
             {
-                foreach(DeKiemTra dkt in this.list)
+                foreach (DeKiemTra dkt in this.list)
                 {
-                    if(dkt.Madekiemtra.Equals(dekiemtra.Madekiemtra))
+                    if (dkt.Madekiemtra.Equals(dekiemtra.Madekiemtra))
                     {
                         dkt.Daxoa = 1;
                         return true;
@@ -103,13 +104,13 @@ namespace Hybrid.BUS
                 return false;
         }
 
-        public ArrayList GetDanhSachDeKiemTraTheoMaChuong(string machuong,string tukhoa = "")
+        public ArrayList GetDanhSachDeKiemTraTheoMaChuong(string machuong, string tukhoa = "")
         {
             ArrayList rslist = new ArrayList();
-            foreach(DeKiemTra dkt in this.list)
+            foreach (DeKiemTra dkt in this.list)
             {
-                if(dkt.Machuong.Equals(machuong) && dkt.Tieude.ToLower().Contains(tukhoa.ToLower()) && dkt.Daxoa == 0)
-                    rslist.Add( dkt );  
+                if (dkt.Machuong.Equals(machuong) && dkt.Tieude.ToLower().Contains(tukhoa.ToLower()) && dkt.Daxoa == 0)
+                    rslist.Add(dkt);
             }
             return rslist;
         }
