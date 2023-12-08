@@ -45,6 +45,7 @@ namespace Hybrid.DAO
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi xảy ra ở file LophocDAO:" + ex.Message);
+                Console.WriteLine(ex);
             }
             finally
             {

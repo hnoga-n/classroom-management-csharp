@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using Hybrid.GUI;
 using Hybrid.GUI.Home;
-//using Hybrid.GUI.Todo;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.DTO;
 using Hybrid.BUS;
@@ -18,6 +17,7 @@ using System.Drawing.Drawing2D;
 using Hybrid.GUI.Todo;
 using Hybrid.GUI.Utilities;
 using Hybrid.GUI.Dangnhap;
+using Hybrid.GUI.Danhba;
 
 namespace Hybrid
 {
@@ -90,7 +90,7 @@ namespace Hybrid
 
         private void btnContacts_Click(object sender, EventArgs e)
         {
-
+            addFormtoPanelContainer(new DanhbaFrm(this.tk));
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -312,6 +312,7 @@
     <Compile Include="BUS\Taikhoan\TaikhoanBUS.cs" />
     <Compile Include="BUS\ThamGiaBUS.cs" />
     <Compile Include="BUS\TinNhanBanBeBUS.cs" />
+    <Compile Include="DAO\TinNhanBanBeDAO.cs" />
     <Compile Include="BUS\TinNhanNhomChatBUS.cs" />
     <Compile Include="Comparer\BailambaitapComparer.cs" />
     <Compile Include="Comparer\BailamkiemtraComparer.cs" />
@@ -343,7 +344,6 @@
     <Compile Include="DAO\NhomQuyenDAO.cs" />
     <Compile Include="DAO\Taikhoan\TaikhoanDAO.cs" />
     <Compile Include="DAO\ThamGiaDAO.cs" />
-    <Compile Include="DAO\TinNhanBanBeDAO.cs" />
     <Compile Include="DAO\TinNhanNhomChatDAO.cs" />
     <Compile Include="database\Ketnoisqlserver.cs" />
     <Compile Include="DTO\BaiLamBaiTap.cs" />
@@ -528,6 +528,66 @@
     </Compile>
     <Compile Include="GUI\Dangnhap\Verifyfrm.Designer.cs">
       <DependentUpon>Verifyfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\Banbe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\Banbe.designer.cs">
+      <DependentUpon>Banbe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\BanbeCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\BanbeCard.designer.cs">
+      <DependentUpon>BanbeCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\DanhbaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\DanhbaFrm.Designer.cs">
+      <DependentUpon>DanhbaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\LophocCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\LophocCard.designer.cs">
+      <DependentUpon>LophocCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\LophocPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\LophocPanel.designer.cs">
+      <DependentUpon>LophocPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\ThanhvienCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\ThanhvienCard.designer.cs">
+      <DependentUpon>ThanhvienCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\TinNhanCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\TinNhanCard.Designer.cs">
+      <DependentUpon>TinNhanCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\TinNhanCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\TinNhanCell.Designer.cs">
+      <DependentUpon>TinNhanCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\TinNhanSend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\TinNhanSend.Designer.cs">
+      <DependentUpon>TinNhanSend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Danhba\TrangCaNhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Danhba\TrangCaNhan.Designer.cs">
+      <DependentUpon>TrangCaNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\Chonhinhanhlop.cs">
       <SubType>Form</SubType>
@@ -876,6 +936,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dangnhap\Verifyfrm.resx">
       <DependentUpon>Verifyfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\Banbe.resx">
+      <DependentUpon>Banbe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\BanbeCard.resx">
+      <DependentUpon>BanbeCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\DanhbaFrm.resx">
+      <DependentUpon>DanhbaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\LophocCard.resx">
+      <DependentUpon>LophocCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\LophocPanel.resx">
+      <DependentUpon>LophocPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\ThanhvienCard.resx">
+      <DependentUpon>ThanhvienCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\TinNhanCard.resx">
+      <DependentUpon>TinNhanCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\TinNhanCell.resx">
+      <DependentUpon>TinNhanCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\TinNhanSend.resx">
+      <DependentUpon>TinNhanSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Danhba\TrangCaNhan.resx">
+      <DependentUpon>TrangCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\Chonhinhanhlop.resx">
       <DependentUpon>Chonhinhanhlop.cs</DependentUpon>
@@ -1277,7 +1367,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
-    <Folder Include="GUI\Danhba\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Interop.Word">

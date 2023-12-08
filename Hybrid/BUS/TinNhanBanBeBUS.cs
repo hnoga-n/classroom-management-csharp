@@ -12,10 +12,10 @@ namespace Hybrid.BUS
     public class TinNhanBanBeBUS
     {
         private ArrayList list;
-        private TinNhanBanBeDAO dao;
+        private TinNhanBanBeDAO tnbbDAO;
         public TinNhanBanBeBUS()
         {
-            dao = new TinNhanBanBeDAO();
+            tnbbDAO = new TinNhanBanBeDAO();
             //loadList();
         }
 
@@ -23,25 +23,21 @@ namespace Hybrid.BUS
         {
             return list;
         }
-
-        public TinNhanBanBe getLatest(String currentID, String friendAccountID)
+        /*public void loadList()
         {
-            return dao.getLatest(currentID, friendAccountID);
-        }
-        public void loadList(int perMess, int mess_index_value, String currentID, String friendAccountID)
+            list = tnbbDAO.loadList();
+            list.Sort();
+        }*/
+        public List<TinNhanBanBe> GetList(string u, string f)
         {
-            list = dao.loadList(perMess, mess_index_value, currentID, friendAccountID);
-            //list.Sort();
-        }
-
-        public void insert(string maTN, String maNguoiGui, String maNguoiNhan, string message, string thoiGianGui)
-        {
-            dao.insert(maTN, maNguoiGui, maNguoiNhan, message, thoiGianGui);
+            List<TinNhanBanBe> list = tnbbDAO.GetList(u, f);
+            return list;
         }
 
-        public void delete(string maTN)
+        public void AddMessage(string g, string n, string nd)
         {
-            dao.delete(maTN);
+            if (nd != "" || nd != "\n")
+            tnbbDAO.AddMessage(g, n, nd);
         }
     }
 }
