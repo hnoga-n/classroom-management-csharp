@@ -1,5 +1,4 @@
 ﻿using Hybrid.BUS;
-using Hybrid.BUS;
 using Hybrid.DTO;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.GUI.Home.KiemTra.KiemTraComponents;

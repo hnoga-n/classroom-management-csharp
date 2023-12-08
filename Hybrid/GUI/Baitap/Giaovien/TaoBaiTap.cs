@@ -240,7 +240,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
                 btBUS.deleteBaitap(mabaitap.ToString());
                 loading.CloseForm();
                 MessageBox.Show("Có lỗi đã xảy ra !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                Console.WriteLine(ex);
             }
         }
 

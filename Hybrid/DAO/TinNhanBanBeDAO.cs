@@ -16,7 +16,7 @@ namespace Hybrid.DAO
 
         public TinNhanBanBeDAO()
         {
-            list = loadList();
+            //list = loadList();
         }
 
         public ArrayList loadList()
@@ -36,7 +36,7 @@ namespace Hybrid.DAO
                     tmp.Manguoigui = dr["manguoigui"].ToString();
                     tmp.Manguoinhan = dr["manguoinhan"].ToString();
                     tmp.Noidung = dr["noidung"].ToString();
-                    tmp.Thoigiangui = DateTime.Parse(dr["thoigiangui"].ToString());
+                    tmp.Thoigiangui= DateTime.Parse(dr["thoigiangui"].ToString());
                     tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
                     listTmp.Add(tmp);
                 }
@@ -53,109 +53,100 @@ namespace Hybrid.DAO
             return listTmp;
         }
 
-        public TinNhanBanBe getLatest(String currentID, String friendAccountID)
+
+        public List<TinNhanBanBe> GetList(string user, string friend)
         {
-            TinNhanBanBe tmp = null;
+            List<TinNhanBanBe> list = new List<TinNhanBanBe>();
+
             try
             {
+                string sql = string.Format("SELECT * FROM tinnhanbanbe WHERE (manguoigui = '{0}' AND manguoinhan = '{1}') OR (manguoigui = '{1}' AND manguoinhan = '{0}') ORDER BY thoigiangui", user, friend);
 
-                string sql_get_all = string.Format("SELECT TOP 1 * FROM tinnhanbanbe WHERE (manguoigui = '{0}' OR manguoinhan = '{0}') AND (manguoigui = '{1}' OR manguoinhan = '{1}') AND daxoa = 0 ORDER BY thoigiangui DESC", currentID, friendAccountID);
-                SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    tmp = new TinNhanBanBe();
-                    tmp.Matinnhan = dr["matinnhan"].ToString();
-                    tmp.Manguoigui = dr["manguoigui"].ToString();
-                    tmp.Manguoinhan = dr["manguoinhan"].ToString();
-                    tmp.Noidung = dr["noidung"].ToString();
-                    tmp.Thoigiangui = DateTime.Parse(dr["thoigiangui"].ToString());
-                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
-                }
-                dr.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi xảy ra ở file TinNhanBanBeDAO getLatest:" + ex.Message);
-            }
-            finally
-            {
-                Ketnoisqlserver.CloseConnection();
-            }
-            return tmp;
-        }
+                SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
+                SqlDataReader reader = command.ExecuteReader();
 
-        public ArrayList loadList(int perMess, int mess_index_value, String currentID, String friendAccountID)
-        {
-            ArrayList listTmp = new ArrayList();
-            int start = (mess_index_value - 1) * perMess;
-            try
-            {
-
-                string sql_get_all = string.Format("SELECT * FROM tinnhanbanbe WHERE (manguoigui = '{2}' OR manguoinhan = '{2}') AND (manguoigui = '{3}' OR manguoinhan = '{3}') AND daxoa = 0 ORDER BY thoigiangui DESC  OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", start, perMess, currentID, friendAccountID);
-                Console.WriteLine(sql_get_all);
-                SqlCommand cmd = new SqlCommand(sql_get_all, Ketnoisqlserver.GetConnection());
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                while (reader.Read())
                 {
                     TinNhanBanBe tmp = new TinNhanBanBe();
-                    tmp.Matinnhan = dr["matinnhan"].ToString();
-                    tmp.Manguoigui = dr["manguoigui"].ToString();
-                    tmp.Manguoinhan = dr["manguoinhan"].ToString();
-                    tmp.Noidung = dr["noidung"].ToString();
-                    tmp.Thoigiangui = DateTime.Parse(dr["thoigiangui"].ToString());
-                    tmp.Daxoa = int.Parse(dr["daxoa"].ToString());
-                    listTmp.Add(tmp);
+                    tmp.Matinnhan = reader["matinnhan"].ToString();
+                    tmp.Manguoigui = reader["manguoigui"].ToString();
+                    tmp.Manguoinhan = reader["manguoinhan"].ToString();
+                    tmp.Noidung = reader["noidung"].ToString();
+                    tmp.Thoigiangui = DateTime.Parse(reader["thoigiangui"].ToString());
+                    tmp.Daxoa = int.Parse(reader["daxoa"].ToString());
+                    list.Add(tmp);
                 }
-                dr.Close();
+
+                reader.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi xảy ra ở file TinNhanBanBeDAO loadList:" + ex.Message);
+                Console.WriteLine(ex.Message);
             }
             finally
             {
-                Ketnoisqlserver.CloseConnection();
+                Ketnoisqlserver.GetConnection().Close();
             }
-            return listTmp;
+
+            return list;
         }
 
 
-        public void insert(string maTN, String maNguoiGui, String maNguoiNhan, string message, string thoiGianGui)
+        public void AddMessage(string Manguoigui, string Manguoinhan, string Noidung)
         {
+            //Guid matinnhan = Guid.NewGuid();
+
             try
             {
-                string sql = string.Format("INSERT INTO tinnhanbanbe VALUES  ('{0}', '{1}', '{2}', N'{3}', '{4}', 0)", maTN, maNguoiGui, maNguoiNhan, message, thoiGianGui);
-                SqlCommand cmd = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
-                cmd.ExecuteNonQuery();
+                string sql = "INSERT INTO tinnhanbanbe (matinnhan,manguoigui ,manguoinhan ,noidung,thoigiangui,daxoa) VALUES (NEWID() ,@manguoigui , @manguoinhan, @noidung ,GETDATE(),0)";
+
+                SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
+                
+                    //command.Parameters.AddWithValue("@matinnhan", matinnhan);
+                    command.Parameters.AddWithValue("@manguoigui", Manguoigui);
+                    command.Parameters.AddWithValue("@manguoinhan", Manguoinhan);
+                    command.Parameters.AddWithValue("@noidung", Noidung);
+                    //command.Parameters.AddWithValue("@thoigiangui", a.Thoigiangui);
+                    //command.Parameters.AddWithValue("@daxoa", 0);
+
+                    command.ExecuteNonQuery();
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi xảy ra ở file TinNhanBanBeDAO insert:" + ex.Message);
+                Console.WriteLine(ex.Message);
             }
             finally
             {
-                Ketnoisqlserver.CloseConnection();
+                Ketnoisqlserver.GetConnection().Close();
             }
         }
 
-        public void delete(string maTN)
+        public void StatusMessage(string a)
         {
+
             try
             {
-                string sql = string.Format("update tinnhan set antinnhan = '1' WHERE matinnhan = '{0}'", maTN);
-                SqlCommand cmd = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
-                cmd.ExecuteNonQuery();
+
+                string sql = "UPDATE tinnhanbanbe SET daxoa = 1 WHERE matinnhan = @matinnhan";
+
+
+                SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
+
+                command.Parameters.AddWithValue("@matinnhan", a);
+
+                command.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi xảy ra ở file TinNhanBanBeDAO delete:" + ex.Message);
+                Console.WriteLine(ex.Message);
             }
             finally
             {
-                Ketnoisqlserver.CloseConnection();
+                Ketnoisqlserver.GetConnection().Close();
             }
         }
+
     }
 }
