@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
@@ -59,7 +58,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(450, 0);
@@ -71,25 +70,13 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Roboto", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(126, 87);
+            this.label4.Location = new System.Drawing.Point(128, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(208, 72);
             this.label4.TabIndex = 11;
             this.label4.Text = "Hybrid";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Roboto", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(67, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(329, 52);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Chào mừng đến";
             // 
             // pictureBox5
             // 
@@ -211,9 +198,9 @@
             // 
             this.pictureBox6.BackgroundImage = global::Hybrid.Properties.Resources.icons8_close_30;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox6.Location = new System.Drawing.Point(414, 12);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox6.Size = new System.Drawing.Size(24, 21);
             this.pictureBox6.TabIndex = 18;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
@@ -269,7 +256,6 @@
             this.ClientSize = new System.Drawing.Size(900, 600);
             this.Controls.Add(this.but_dangky);
             this.Controls.Add(this.but_dangnhap);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.chx_nhomatkhau);
             this.Controls.Add(this.quenmatkhau);
             this.Controls.Add(this.pic_showpass);
@@ -313,7 +299,6 @@
         private System.Windows.Forms.PictureBox pic_showpass;
         private System.Windows.Forms.PictureBox pic_hidepass;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label quenmatkhau;
         private System.Windows.Forms.CheckBox chx_nhomatkhau;

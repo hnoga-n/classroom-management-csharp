@@ -1,19 +1,6 @@
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.exe.config
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.exe
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.pdb
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\BCrypt.Net.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\EPPlus.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.pdb
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Auth.pdb
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Auth.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Core.pdb
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Core.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Drive.v3.pdb
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Google.Apis.Drive.v3.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\System.CodeDom.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Unidecode.NET.xml
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.AssemblyReference.cache
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.ResolveComReference.cache
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.Form1.resources
@@ -126,7 +113,6 @@ D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Micro
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.Options.xml
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.Primitives.xml
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Signupfrm.resources
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Forgetpassfrm.resources
 D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Verifyfrm.resources
