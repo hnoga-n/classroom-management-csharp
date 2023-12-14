@@ -1,6 +1,7 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using Hybrid.BUS;
 using Hybrid.DAO;
+using Hybrid.GUI.Kiemtra;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -102,6 +103,14 @@ namespace Hybrid.GUI.Dangnhap
             txt_mkxacnhan.PasswordChar = '\0';
             hien_mkxacnhan.Visible = false;
             an_mkxacnhan.Visible = true;
+        }
+
+        private void txt_mkmoi_TextChanged(object sender, EventArgs e)
+        {
+            if (taikhoanBUS.kt_dinhdang_matkhau(txt_mkmoi.Text))
+                lab_thongtin.ForeColor = Color.Blue;
+            else
+                lab_thongtin.ForeColor = Color.Red;
         }
     }
 }

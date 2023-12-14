@@ -9,7 +9,8 @@ namespace Hybrid.DAO
     public class Ketnoisqlserver
     {
         private static SqlConnection _connection;
-        private static string _connectionString = @"Data Source=DESKTOP-319D2UA\SQLEXPRESS;Initial Catalog=hybrid;Persist Security Info=True;User ID=sa;Password=123;";
+        //private static string _connectionString = @"Data Source=DESKTOP-319D2UA\SQLEXPRESS;Initial Catalog=hybrid;Persist Security Info=True;User ID=sa;Password=123";
+        private static string _connectionString = @"Data Source=DESKTOP-OSKDV3G\SQLEXPRESS;Initial Catalog=hybrid;Integrated Security=True";
 
         private Ketnoisqlserver() { }
 

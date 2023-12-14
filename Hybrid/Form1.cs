@@ -128,6 +128,8 @@ namespace Hybrid
         {
             Thongtintaikhoan frmtt = new Thongtintaikhoan(this.tk, this, pictureBox1);
             frmtt.ShowDialog();
+            taikhoanBUS = new TaikhoanBUS();
+            this.tk = taikhoanBUS.GetTaiKhoanByEmail(this.tk.Email);
             pictureBox1.Image = picha.Image;
             MakePictureBoxCircular(pictureBox1);
         }

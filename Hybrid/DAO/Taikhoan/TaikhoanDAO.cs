@@ -114,7 +114,7 @@ namespace Hybrid.DAO
                     command.Parameters.AddWithValue("@email", tk.Email);
                     command.Parameters.AddWithValue("@matkhau", hash);
                     command.Parameters.AddWithValue("@sodienthoai", DBNull.Value);
-                    command.Parameters.AddWithValue("@anhdaidien", DBNull.Value);
+                    command.Parameters.AddWithValue("@anhdaidien", "canhan1");
                     command.Parameters.AddWithValue("@manhomquyen", tk.Manhomquyen);
 
                     int rowsAffected = command.ExecuteNonQuery();

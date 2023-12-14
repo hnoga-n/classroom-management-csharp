@@ -57,13 +57,13 @@ namespace Hybrid.GUI.Dangnhap
             if (count == 0)
             {
                 aTimer.Stop();
+                lbDem.Visible = false;
                 but_guilai.Visible = true;
                 count = 30;
             }
 
             lbDem.Text = "Lần gửi lại sẽ xuất hiện sau:" + count.ToString();
-            if (count == 30)
-                lbDem.Text = "";
+
         }
 
         private void but_xacnhan_Click(object sender, EventArgs e)
@@ -112,8 +112,10 @@ namespace Hybrid.GUI.Dangnhap
 
         private void but_guilai_Click(object sender, EventArgs e)
         {
+            count = 30;
             lbDem.Visible = true;
             but_guilai.Visible = false;
+            lbDem.Text = "Lần gửi lại sẽ xuất hiện sau:" + count.ToString();
             DemThoiGian();
             maXacNhan = cn.TaoSo();
             if (trangthai1 == 1)
@@ -127,5 +129,6 @@ namespace Hybrid.GUI.Dangnhap
         {
             Application.Exit();
         }
+
     }
 }

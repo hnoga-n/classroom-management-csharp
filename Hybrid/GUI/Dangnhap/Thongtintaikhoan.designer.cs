@@ -86,6 +86,7 @@
             // hinhanh
             // 
             this.hinhanh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hinhanh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.hinhanh.Location = new System.Drawing.Point(12, 12);
             this.hinhanh.Name = "hinhanh";
             this.hinhanh.Size = new System.Drawing.Size(113, 108);
@@ -172,9 +173,9 @@
             // 
             this.lab_doimatkhau.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lab_doimatkhau.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lab_doimatkhau.Location = new System.Drawing.Point(221, 277);
+            this.lab_doimatkhau.Location = new System.Drawing.Point(219, 278);
             this.lab_doimatkhau.Name = "lab_doimatkhau";
-            this.lab_doimatkhau.Size = new System.Drawing.Size(158, 29);
+            this.lab_doimatkhau.Size = new System.Drawing.Size(143, 20);
             this.lab_doimatkhau.TabIndex = 14;
             this.lab_doimatkhau.Text = "Đổi mật khẩu";
             this.lab_doimatkhau.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -228,29 +229,11 @@
             this.btnTaoLop.Values.Text = "Thoát";
             this.btnTaoLop.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(141, 282);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "**************";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lab_doimatkhau
-            // 
-            this.lab_doimatkhau.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lab_doimatkhau.Location = new System.Drawing.Point(221, 282);
-            this.lab_doimatkhau.Name = "lab_doimatkhau";
-            this.lab_doimatkhau.Size = new System.Drawing.Size(98, 20);
-            this.lab_doimatkhau.TabIndex = 14;
-            this.lab_doimatkhau.Text = "Đổi mật khẩu";
-            this.lab_doimatkhau.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // Thongtintaikhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(400, 392);
             this.Controls.Add(this.btnTaoLop);
             this.Controls.Add(this.lab_doimatkhau);
@@ -266,7 +249,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Thongtintaikhoan";
             this.Load += new System.EventHandler(this.Thongtintaikhoan_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Thongtintaikhoan_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanh)).EndInit();

@@ -164,6 +164,7 @@ namespace Hybrid.GUI.Dangnhap
             this.Hide();
             Form form = new Forgetpassfrm();
             form.ShowDialog();
+            tkbus = new TaikhoanBUS();
             this.Show();
         }
 
@@ -172,6 +173,7 @@ namespace Hybrid.GUI.Dangnhap
             this.Hide();
             Form form = new Signupfrm();
             form.ShowDialog();
+            tkbus = new TaikhoanBUS();
             this.Show();
         }
 
