@@ -130,7 +130,7 @@ namespace Hybrid.DAO
             ArrayList listBaitap = new ArrayList();
             try
             {
-                string sql = "SELECT madekiemtra,c.machuong,tieude,thoigianbatdau,thoigianketthuc,hinhphat,xemdapan,dkt.thoigiantao,troncauhoi,dkt.daxoa FROM dekiemtra dkt JOIN chuong c ON dkt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc WHERE l.malophoc=@malophoc AND dkt.madekiemtra NOT IN (SELECT dkt.madekiemtra FROM dekiemtra dkt JOIN bailamkiemtra bl ON dkt.madekiemtra=bl.madekiemtra)";
+                string sql = "SELECT madekiemtra,c.machuong,tieude,thoigianbatdau,thoigianketthuc,hinhphat,xemdapan,dkt.thoigiantao,troncauhoi,dkt.daxoa FROM dekiemtra dkt JOIN chuong c ON dkt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc WHERE l.malophoc=@malophoc AND dkt.thoigianketthuc > GETDATE() AND dkt.madekiemtra NOT IN (SELECT dkt.madekiemtra FROM dekiemtra dkt JOIN bailamkiemtra bl ON dkt.madekiemtra=bl.madekiemtra)";
                 SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
                 command.Parameters.AddWithValue("@malophoc", Guid.Parse(malop));
                 SqlDataReader dr = command.ExecuteReader();
@@ -167,14 +167,15 @@ namespace Hybrid.DAO
 
             return listBaitap;
         }
-        public ArrayList GetTatCaBaiKiemTraDaNopByMaLopHoc(string malop)
+        public ArrayList GetTatCaBaiKiemTraDaNopByMaLopHoc(string malop,string mataikhoan)
         {
             ArrayList listBaitap = new ArrayList();
             try
             {
-                string sql = "SELECT madekiemtra,c.machuong,tieude,thoigianbatdau,thoigianketthuc,hinhphat,xemdapan,dkt.thoigiantao,troncauhoi,dkt.daxoa FROM dekiemtra dkt JOIN chuong c ON dkt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc WHERE l.malophoc=@malophoc AND dkt.madekiemtra IN (SELECT dkt.madekiemtra FROM dekiemtra dkt JOIN bailamkiemtra bl ON dkt.madekiemtra=bl.madekiemtra)";
+                string sql = "SELECT dkt.madekiemtra,c.machuong,tieude,thoigianbatdau,thoigianketthuc,hinhphat,xemdapan,dkt.thoigiantao,troncauhoi,dkt.daxoa FROM dekiemtra dkt JOIN chuong c ON dkt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc JOIN bailamkiemtra blkt ON dkt.madekiemtra=blkt.madekiemtra WHERE l.malophoc=@malophoc AND mataikhoan=@mataikhoan";
                 SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
                 command.Parameters.AddWithValue("@malophoc", Guid.Parse(malop));
+                command.Parameters.AddWithValue("@mataikhoan", Guid.Parse(mataikhoan));
                 SqlDataReader dr = command.ExecuteReader();
                 DeKiemTra tmp;
                 while (dr.Read())

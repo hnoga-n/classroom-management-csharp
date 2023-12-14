@@ -35,6 +35,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBoxHomework = new System.Windows.Forms.PictureBox();
             this.btnDoHomework = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lophoc = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHomework)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +75,6 @@
             this.lblDeadline.Name = "lblDeadline";
             this.lblDeadline.Size = new System.Drawing.Size(402, 16);
             this.lblDeadline.TabIndex = 6;
-            this.lblDeadline.Text = "23:23 03/03/2024 Hạn chót |";
             // 
             // lblTypeclass
             // 
@@ -92,9 +92,8 @@
             this.lblTitle.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(153, 14);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(603, 20);
+            this.lblTitle.Size = new System.Drawing.Size(279, 20);
             this.lblTitle.TabIndex = 8;
-            this.lblTitle.Text = "Bài tập 10/20";
             // 
             // pictureBoxHomework
             // 
@@ -122,14 +121,24 @@
             this.btnDoHomework.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnDoHomework.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoHomework.TabIndex = 11;
-            this.btnDoHomework.Values.Text = "Xem/Làm bài tập";
+            this.btnDoHomework.Values.Text = "";
             this.btnDoHomework.Click += new System.EventHandler(this.baitapnDoHomework_Click);
+            // 
+            // lophoc
+            // 
+            this.lophoc.AutoEllipsis = true;
+            this.lophoc.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lophoc.Location = new System.Drawing.Point(438, 12);
+            this.lophoc.Name = "lophoc";
+            this.lophoc.Size = new System.Drawing.Size(279, 20);
+            this.lophoc.TabIndex = 12;
             // 
             // TaskHomework
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lophoc);
             this.Controls.Add(this.btnDoHomework);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
@@ -152,5 +161,6 @@
         private System.Windows.Forms.PictureBox pictureBoxHomework;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnDoHomework;
         private System.Windows.Forms.Label lblDeadline;
+        private System.Windows.Forms.Label lophoc;
     }
 }

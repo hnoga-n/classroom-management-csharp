@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using Hybrid.GUI;
 using Hybrid.GUI.Home;
-//using Hybrid.GUI.Todo;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.DTO;
 using Hybrid.BUS;
@@ -18,17 +17,20 @@ using System.Drawing.Drawing2D;
 using Hybrid.GUI.Todo;
 using Hybrid.GUI.Utilities;
 using Hybrid.GUI.Dangnhap;
+using Hybrid.GUI.Danhba;
 
 namespace Hybrid
 {
     public partial class Form1 : KryptonForm
     {
-        private BaiTapBUS btBUS = new BaiTapBUS();
-        private DeKiemTraBUS dktBUS = new DeKiemTraBUS();
-        private ChuongBUS chuongBUS = new ChuongBUS();
-        private LopHocBUS lopBUS = new LopHocBUS();
+        private BaiTapBUS btBUS;
+        private DeKiemTraBUS dktBUS;
+        private ChuongBUS chuongBUS;
+        private LopHocBUS lopBUS;
+        private BailambaitapBUS blbtBUS;
+        private BailamKiemtraBUS blktBUS;
         Chucnang cn = new Chucnang();
-        TaikhoanBUS taikhoanBUS = new TaikhoanBUS();
+        TaikhoanBUS taikhoanBUS;
 
         private Taikhoan tk ;
 
@@ -42,6 +44,11 @@ namespace Hybrid
             this.tk = tk;
             chuongBUS = new ChuongBUS();
             lopBUS = new LopHocBUS();
+            dktBUS = new DeKiemTraBUS();
+            btBUS = new BaiTapBUS();
+            taikhoanBUS = new TaikhoanBUS();
+            blbtBUS = new BailambaitapBUS();
+            blktBUS = new BailamKiemtraBUS();
             loading.CloseForm();
         }
         public Form1()
@@ -85,12 +92,12 @@ namespace Hybrid
 
         private void btnTodo_Click(object sender, EventArgs e)
         {
-            addFormtoPanelContainer(new TodoFrm(this.tk, this.btBUS, this.lopBUS, this.dktBUS, this.chuongBUS));
+            addFormtoPanelContainer(new TodoFrm(this.tk, this.btBUS, this.lopBUS, this.dktBUS, this.chuongBUS,this.blbtBUS,this.blktBUS));
         }
 
         private void btnContacts_Click(object sender, EventArgs e)
         {
-
+            addFormtoPanelContainer(new DanhbaFrm(this.tk));
         }
 
         private void Form1_Load(object sender, EventArgs e)

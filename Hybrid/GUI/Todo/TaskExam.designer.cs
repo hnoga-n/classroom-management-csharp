@@ -78,11 +78,11 @@
             // 
             // btnDoExam
             // 
-            this.btnDoExam.Location = new System.Drawing.Point(809, 15);
+            this.btnDoExam.Location = new System.Drawing.Point(784, 15);
             this.btnDoExam.Name = "btnDoExam";
             this.btnDoExam.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnDoExam.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.btnDoExam.Size = new System.Drawing.Size(166, 45);
+            this.btnDoExam.Size = new System.Drawing.Size(136, 45);
             this.btnDoExam.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btnDoExam.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnDoExam.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -92,24 +92,23 @@
             this.btnDoExam.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnDoExam.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoExam.TabIndex = 16;
-            this.btnDoExam.Values.Text = "Làm kiểm tra";
+            this.btnDoExam.Values.Text = "";
             this.btnDoExam.Click += new System.EventHandler(this.btnDoExam_Click);
             // 
             // lblStart
             // 
             this.lblStart.AutoEllipsis = true;
             this.lblStart.BackColor = System.Drawing.Color.White;
-            this.lblStart.Location = new System.Drawing.Point(429, 12);
+            this.lblStart.Location = new System.Drawing.Point(410, 13);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(224, 18);
             this.lblStart.TabIndex = 6;
-            this.lblStart.Text = "Bắt đầu: 23:23 03/03/2024";
             // 
             // lblExam
             // 
             this.lblExam.AutoSize = true;
             this.lblExam.Font = new System.Drawing.Font("Roboto Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExam.Location = new System.Drawing.Point(179, 53);
+            this.lblExam.Location = new System.Drawing.Point(160, 54);
             this.lblExam.Name = "lblExam";
             this.lblExam.Size = new System.Drawing.Size(63, 15);
             this.lblExam.TabIndex = 3;
@@ -120,11 +119,10 @@
             this.lblExamTitle.AutoEllipsis = true;
             this.lblExamTitle.BackColor = System.Drawing.Color.White;
             this.lblExamTitle.Font = new System.Drawing.Font("Roboto Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExamTitle.Location = new System.Drawing.Point(178, 14);
+            this.lblExamTitle.Location = new System.Drawing.Point(159, 15);
             this.lblExamTitle.Name = "lblExamTitle";
             this.lblExamTitle.Size = new System.Drawing.Size(245, 26);
             this.lblExamTitle.TabIndex = 17;
-            this.lblExamTitle.Text = "Kiểm tra";
             // 
             // kryptonButton3
             // 
@@ -157,21 +155,19 @@
             // 
             this.lblClass.AutoEllipsis = true;
             this.lblClass.BackColor = System.Drawing.Color.White;
-            this.lblClass.Location = new System.Drawing.Point(659, 35);
+            this.lblClass.Location = new System.Drawing.Point(640, 36);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(138, 16);
             this.lblClass.TabIndex = 7;
-            this.lblClass.Text = "Công nghệ phần mềm";
             // 
             // lblEnd
             // 
             this.lblEnd.AutoEllipsis = true;
             this.lblEnd.BackColor = System.Drawing.Color.White;
-            this.lblEnd.Location = new System.Drawing.Point(429, 50);
+            this.lblEnd.Location = new System.Drawing.Point(410, 51);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(224, 18);
             this.lblEnd.TabIndex = 18;
-            this.lblEnd.Text = "Kết thúc: 23:23 03/03/2024";
             // 
             // TaskExam
             // 

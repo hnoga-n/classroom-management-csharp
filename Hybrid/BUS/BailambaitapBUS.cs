@@ -15,12 +15,14 @@ namespace Hybrid.BUS
     {
         private ArrayList list;
         private BailambaitapDAO bailambtDAO;
+        private BaiTapBUS btbus;
 
         public ArrayList List { get => list; set => list = value; }
 
         public BailambaitapBUS()
         {
             bailambtDAO = new BailambaitapDAO();
+            btbus = new BaiTapBUS();
             loadList();
         }
         public void loadList()
@@ -70,7 +72,7 @@ namespace Hybrid.BUS
             Dictionary<string, float> rslist = new Dictionary<string, float>();
             foreach (BaiLamBaiTap blbt in this.list)
             {
-                if (blbt.Mataikhoan.Equals(matk) && blbt.Diem!=-1)
+                if (blbt.Mataikhoan.Equals(matk) && blbt.Diem!=-1 && btbus.GetBaiTapByMaBaiTap(blbt.Mabaitap).Congkhaidapan == 1)
                 {
                     rslist.Add(blbt.Mabaitap, blbt.Diem);
                 }

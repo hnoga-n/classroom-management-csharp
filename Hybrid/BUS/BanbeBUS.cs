@@ -18,18 +18,14 @@ namespace Hybrid.BUS
         public BanbeBUS()
         {
             banbeDAO = new BanbeDAO();
-            //loadList();
         }
 
-        public ArrayList getList()
+        public List<BanBe> GetList()
         {
+            List<BanBe> list = banbeDAO.GetList();
             return list;
         }
-        /* public void loadList()
-         {
-             list = banbeDAO.loadList();
-             //list.Sort();
-         }*/
+
         public DataTable LayAllBanBe()
         {
             dt = banbeDAO.LayAllBanBe();
@@ -71,6 +67,26 @@ namespace Hybrid.BUS
             }
             else { return false; }
 
+        }
+        public void SuaTrangThai(BanBe banbe)
+        {
+            banbeDAO.SuaTrangThai(banbe);
+        }
+
+        public void ThemLoiMoi(BanBe banbe)
+        {
+            banbeDAO.ThemLoiMoi(banbe);
+        }
+
+        public void XoaLoiMoi(BanBe banbe)
+        {
+            banbeDAO.XoaLoiMoi(banbe);
+        }
+
+        public List<Taikhoan> TimKiem(string a)
+        {
+            List<Taikhoan> list = banbeDAO.TimKiem(a);
+            return list;
         }
     }
 }

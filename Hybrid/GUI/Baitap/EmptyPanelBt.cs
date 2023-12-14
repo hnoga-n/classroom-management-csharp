@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ubiety.Dns.Core.Records;
 
-namespace Hybrid.GUI.Todo
+namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
 {
-    public partial class TaskDiscuss : UserControl
+    public partial class EmptyPanelBt : UserControl
     {
-        public TaskDiscuss()
+        public EmptyPanelBt()
         {
             InitializeComponent();
         }
-
-        private void lblTtitle_Click(object sender, EventArgs e)
+        public EmptyPanelBt(string title)
         {
-
+            InitializeComponent();
+            this.title.Text  = title;
         }
     }
 }

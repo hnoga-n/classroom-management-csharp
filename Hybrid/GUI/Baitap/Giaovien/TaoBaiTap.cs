@@ -149,7 +149,8 @@ namespace Hybrid.GUI.Baitap.Giaovien
                 Thoigianbatdau = DateTime.Parse(this.dtpThoiGianBatDau.Value.ToString()),
                 Thoigianketthuc = DateTime.Parse(this.dtpThoiGianKetThuc.Value.ToString()),
                 Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0,
-                Daxoa = 0
+                Daxoa = 0,
+                Nopbu = (cbkLateSubmit.Checked ? 1 : 0),
             };
 
             ArrayList fileBTvaDA = new ArrayList();
@@ -240,7 +241,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
                 btBUS.deleteBaitap(mabaitap.ToString());
                 loading.CloseForm();
                 MessageBox.Show("Có lỗi đã xảy ra !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                Console.WriteLine(ex);
             }
         }
 

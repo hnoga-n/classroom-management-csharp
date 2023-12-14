@@ -7,20 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ubiety.Dns.Core.Records;
 
-namespace Hybrid.GUI.Home.KiemTra.KiemTraComponents
+namespace Hybrid.GUI.Home.KiemTra
 {
-    public partial class EmptyPanel : UserControl
+    public partial class EmptyPanelKt : UserControl
     {
-        public EmptyPanel()
+        public EmptyPanelKt()
         {
             InitializeComponent();
         }
-        public EmptyPanel(string title)
+        public EmptyPanelKt(string title)
         {
             InitializeComponent();
-            this.title.Text  = title;
+            this.title.Text = title;
         }
     }
 }

@@ -44,6 +44,7 @@
             this.pic_showpass = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pic_hidepass = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -51,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_showpass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_hidepass)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +139,7 @@
             this.txt_matkhau.ForeColor = System.Drawing.Color.Silver;
             this.txt_matkhau.Location = new System.Drawing.Point(85, 317);
             this.txt_matkhau.Name = "txt_matkhau";
+            this.txt_matkhau.PasswordChar = '*';
             this.txt_matkhau.Size = new System.Drawing.Size(287, 28);
             this.txt_matkhau.TabIndex = 4;
             this.txt_matkhau.Text = "Mật khẩu";
@@ -236,6 +239,16 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::Hybrid.Properties.Resources.videoconference;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Location = new System.Drawing.Point(76, 181);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(321, 255);
+            this.pictureBox5.TabIndex = 10;
+            this.pictureBox5.TabStop = false;
+            // 
             // pic_hidepass
             // 
             this.pic_hidepass.BackgroundImage = global::Hybrid.Properties.Resources.hide_24;
@@ -280,6 +293,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_showpass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_hidepass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

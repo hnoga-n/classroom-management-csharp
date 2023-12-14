@@ -115,9 +115,9 @@ namespace Hybrid.BUS
             return rslist;
         }
 
-        public ArrayList GetTatCaBaiKiemTraDaNopByMaLopHoc(string malophoc)
+        public ArrayList GetTatCaBaiKiemTraDaNopByMaLopHoc(string malophoc,string mataikhoan)
         {
-            return dektDAO.GetTatCaBaiKiemTraDaNopByMaLopHoc(malophoc);
+            return dektDAO.GetTatCaBaiKiemTraDaNopByMaLopHoc(malophoc,mataikhoan);
         }
         public ArrayList GetTatCaBaiKiemTraChuaNopByMaLopHoc(string malophoc)
         {
