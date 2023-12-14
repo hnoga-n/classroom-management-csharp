@@ -685,6 +685,12 @@
     <Compile Include="GUI\Home\KiemTra\ChiTietCauHoiFrm.Designer.cs">
       <DependentUpon>ChiTietCauHoiFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanelKt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanelKt.Designer.cs">
+      <DependentUpon>EmptyPanelKt.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home\KiemTra\KiemTraComponents\ButtonCauHoi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -703,11 +709,11 @@
     <Compile Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.designer.cs">
       <DependentUpon>CauhoiPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.cs">
+    <Compile Include="GUI\Baitap\EmptyPanelBt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.Designer.cs">
-      <DependentUpon>EmptyPanel.cs</DependentUpon>
+    <Compile Include="GUI\Baitap\EmptyPanelBt.Designer.cs">
+      <DependentUpon>EmptyPanelBt.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.cs">
       <SubType>UserControl</SubType>
@@ -810,12 +816,6 @@
     </Compile>
     <Compile Include="GUI\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskDiscuss.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Todo\TaskDiscuss.Designer.cs">
-      <DependentUpon>TaskDiscuss.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Todo\TaskDoneButton.cs">
       <SubType>UserControl</SubType>
@@ -1021,6 +1021,9 @@
     <EmbeddedResource Include="GUI\Home\KhoaHocFrm.resx">
       <DependentUpon>KhoaHocFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanelKt.resx">
+      <DependentUpon>EmptyPanelKt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\XemChiTietBaiKiemTra.resx">
       <DependentUpon>XemChiTietBaiKiemTra.cs</DependentUpon>
     </EmbeddedResource>
@@ -1039,8 +1042,8 @@
     <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\CauhoiPanel.resx">
       <DependentUpon>CauhoiPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\EmptyPanel.resx">
-      <DependentUpon>EmptyPanel.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Baitap\EmptyPanelBt.resx">
+      <DependentUpon>EmptyPanelBt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\KiemTra\KiemTraComponents\HocSinhCard.resx">
       <DependentUpon>HocSinhCard.cs</DependentUpon>
@@ -1083,9 +1086,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home\ThongTinLopHocFrm.resx">
       <DependentUpon>ThongTinLopHocFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Todo\TaskDiscuss.resx">
-      <DependentUpon>TaskDiscuss.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Todo\TaskDoneButton.resx">
       <DependentUpon>TaskDoneButton.cs</DependentUpon>
@@ -1344,6 +1344,8 @@
     <None Include="Resources\hide_24.png" />
     <None Include="Resources\padlock_1.png" />
     <None Include="Resources\videoconference.png" />
+    <None Include="Resources\icons8-exam-50 %281%29.png" />
+    <None Include="Resources\icons8-exam-50 %282%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\anh_lophoc1.jpg" />
     <None Include="Resources\anh_lophoc.jpg" />

@@ -51,6 +51,7 @@
             this.flowFilePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.txtTitle = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.txtContent = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.cbkLateSubmit = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,6 +172,7 @@
             this.flowLayoutPanel2.Controls.Add(this.dtpThoiGianBatDau);
             this.flowLayoutPanel2.Controls.Add(this.label14);
             this.flowLayoutPanel2.Controls.Add(this.dtpThoiGianKetThuc);
+            this.flowLayoutPanel2.Controls.Add(this.cbkLateSubmit);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(1034, 46);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(266, 629);
@@ -292,6 +294,7 @@
             this.dtpThoiGianKetThuc.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpThoiGianKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpThoiGianKetThuc.Location = new System.Drawing.Point(3, 360);
+            this.dtpThoiGianKetThuc.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.dtpThoiGianKetThuc.MinDate = this.dtpThoiGianBatDau.Value;
             this.dtpThoiGianKetThuc.Name = "dtpThoiGianKetThuc";
             this.dtpThoiGianKetThuc.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Black;
@@ -373,6 +376,17 @@
             this.txtContent.Text = "";
             this.txtContent.TextChanged += new System.EventHandler(this.txtContent_TextChanged_1);
             // 
+            // cbkLateSubmit
+            // 
+            this.cbkLateSubmit.AutoSize = true;
+            this.cbkLateSubmit.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbkLateSubmit.Location = new System.Drawing.Point(3, 417);
+            this.cbkLateSubmit.Name = "cbkLateSubmit";
+            this.cbkLateSubmit.Size = new System.Drawing.Size(181, 28);
+            this.cbkLateSubmit.TabIndex = 16;
+            this.cbkLateSubmit.Text = "Cho phép nộp bù";
+            this.cbkLateSubmit.UseVisualStyleBackColor = true;
+            // 
             // Chinhsuabaitap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,6 +411,7 @@
             this.Text = "Chỉnh sửa bài tập";
             this.Load += new System.EventHandler(this.Chinhsuabaitap_Load);
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,5 +442,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowFilePanel;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtTitle;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtContent;
+        private System.Windows.Forms.CheckBox cbkLateSubmit;
     }
 }

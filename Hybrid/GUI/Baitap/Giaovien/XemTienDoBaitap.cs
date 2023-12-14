@@ -142,7 +142,7 @@ namespace Hybrid.GUI.Baitap
                 this.flowHocSinhPnl.Controls.Clear();
                 if (this.listNotSubmited.Count == 0)
                 {
-                    EmptyPanel emptPnl = new EmptyPanel("Không có học sinh chưa nộp bài");
+                    EmptyPanelBt emptPnl = new EmptyPanelBt("Không có học sinh chưa nộp bài");
                     flowHocSinhPnl.Controls.Add(emptPnl);
                     return;
                 }
@@ -170,8 +170,8 @@ namespace Hybrid.GUI.Baitap
                 this.flowHocSinhPnl.Controls.Clear();
                 if (this.listSubmited.Count == 0)
                 {
-                    EmptyPanel emptPnl = new EmptyPanel("Không có bài làm cần chấm điểm.");
-                    flowHocSinhPnl.Controls.Add(emptPnl);
+                    EmptyPanelBt emptpnl = new EmptyPanelBt("không có bài làm cần chấm điểm.");
+                    flowHocSinhPnl.Controls.Add(emptpnl);
                     return;
                 }
 
@@ -200,7 +200,7 @@ namespace Hybrid.GUI.Baitap
                 this.flowHocSinhPnl.Controls.Clear();
                 if (this.listSubmited.Count == 0)
                 {
-                    EmptyPanel emptPnl = new EmptyPanel("Không có bài làm nào đã chấm.");
+                    EmptyPanelBt emptPnl = new EmptyPanelBt("Không có bài làm nào đã chấm.");
                     flowHocSinhPnl.Controls.Add(emptPnl);
                     return;
                 }
@@ -306,7 +306,7 @@ namespace Hybrid.GUI.Baitap
                 }
                 if (this.flowHocSinhPnl.Controls.Count == 0)
                 {
-                    EmptyPanel emptPnl = new EmptyPanel("Không tìm thấy học sinh!");
+                    EmptyPanelBt emptPnl = new EmptyPanelBt("Không tìm thấy học sinh!");
                     flowHocSinhPnl.Controls.Add(emptPnl);
                     return;
                 }

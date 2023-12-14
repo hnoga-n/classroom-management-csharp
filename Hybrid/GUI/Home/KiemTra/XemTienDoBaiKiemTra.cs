@@ -1,4 +1,5 @@
 ﻿using Hybrid.BUS;
+using Hybrid.BUS;
 using Hybrid.DTO;
 using Hybrid.GUI.Home.HomeComponents;
 using Hybrid.GUI.Home.KiemTra.KiemTraComponents;
@@ -128,7 +129,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 this.flowpanelHocSinh.Controls.Clear();
                 if (this.listNotSubmited.Count == 0)
                 {
-                    EmptyPanel emptPnl = new EmptyPanel("Không có học sinh chưa nộp bài");
+                    EmptyPanelKt emptPnl = new EmptyPanelKt("Không có học sinh chưa nộp bài");
                     flowpanelHocSinh.Controls.Add(emptPnl);
                     return;
                 }
@@ -152,9 +153,9 @@ namespace Hybrid.GUI.Home.KiemTra
             {
                 whichIsClick = true;
                 this.flowpanelHocSinh.Controls.Clear();
-                if (this.listNotSubmited.Count == 0)
+                if (this.listSubmited.Count == 0)
                 {
-                    EmptyPanel emptPnl = new EmptyPanel("Không có học sinh nộp bài");
+                    EmptyPanelKt emptPnl = new EmptyPanelKt("Không có học sinh nào nộp bài");
                     flowpanelHocSinh.Controls.Add(emptPnl);
                     return;
                 }
@@ -223,7 +224,7 @@ namespace Hybrid.GUI.Home.KiemTra
                 }
                 if (this.flowpanelHocSinh.Controls.Count == 0)
                 {
-                    EmptyPanel emptPnl = new EmptyPanel("Không tìm thấy học sinh!");
+                    EmptyPanelKt emptPnl = new EmptyPanelKt("Không tìm thấy học sinh!");
                     flowpanelHocSinh.Controls.Add(emptPnl);
                     return;
                 }

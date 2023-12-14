@@ -16,6 +16,8 @@ namespace Hybrid.GUI.Todo
         private bool flagBtnClicked;
         private Taikhoan taikhoanhienhanh;
         private BaiTapBUS btBUS;
+        private BailambaitapBUS blbtBUS;
+        private BailamKiemtraBUS blktBUS;
         private DeKiemTraBUS ktBUS;
         private ChuongBUS chuongBUS;
         private LopHocBUS lopHocBUS;
@@ -32,7 +34,7 @@ namespace Hybrid.GUI.Todo
         {
             InitializeComponent();
         }
-        public TodoFrm(Taikhoan taikhoanhienhanh, BaiTapBUS btBUS, LopHocBUS lopHocBUS, DeKiemTraBUS dktBUS, ChuongBUS chuongBUS)
+        public TodoFrm(Taikhoan taikhoanhienhanh, BaiTapBUS btBUS, LopHocBUS lopHocBUS, DeKiemTraBUS dktBUS, ChuongBUS chuongBUS, BailambaitapBUS blbtBUS, BailamKiemtraBUS blktBUS)
         {
             InitializeComponent();
             this.flagBtnClicked = false;
@@ -41,6 +43,8 @@ namespace Hybrid.GUI.Todo
             this.ktBUS = dktBUS;
             this.lopHocBUS = lopHocBUS;
             this.chuongBUS = chuongBUS;
+            this.blbtBUS = blbtBUS;
+            this.blktBUS = blktBUS;
         }
 
         private void TodoFrm_Load(object sender, EventArgs e)
@@ -57,15 +61,20 @@ namespace Hybrid.GUI.Todo
             btnDone.getBtnDone().Click += new System.EventHandler(this.btnDaxuly_Click);
             leftFlowPanel.Controls.Add(btnNot);
             leftFlowPanel.Controls.Add(btnDone);
+            this.btnNot.btnNotDone().PerformClick();
         }
 
         private void LoadList()
         {
+            baitapDxl.Clear();
+            baitapCxl.Clear();
+            kiemtraDxl.Clear();
+            kiemtraCxl.Clear();
             foreach (LopHoc lh in listClass)
             {
-                baitapDxl.AddRange(btBUS.GetTatCaBaiTapDaNopByMaLopHoc(lh.Malop));
+                baitapDxl.AddRange(btBUS.GetTatCaBaiTapDaNopByMaLopHoc(lh.Malop,this.taikhoanhienhanh.Mataikhoan));
                 baitapCxl.AddRange(btBUS.GetTatCaBaiTapChuaNopByMaLopHoc(lh.Malop));
-                kiemtraDxl.AddRange(ktBUS.GetTatCaBaiKiemTraDaNopByMaLopHoc(lh.Malop));
+                kiemtraDxl.AddRange(ktBUS.GetTatCaBaiKiemTraDaNopByMaLopHoc(lh.Malop,this.taikhoanhienhanh.Mataikhoan));
                 kiemtraCxl.AddRange(ktBUS.GetTatCaBaiKiemTraChuaNopByMaLopHoc(lh.Malop));
             }
         }
@@ -81,8 +90,9 @@ namespace Hybrid.GUI.Todo
                 {
                     Chuong chuongcuabaitap = chuongBUS.getChuongWithMaChuong(bt.Machuong);
                     LopHoc lophoccuabaitap = this.lopHocBUS.getLophocWithMaLop(chuongcuabaitap.Malop);
-                    TaskHomework hw = new TaskHomework(this.taikhoanhienhanh, bt, lophoccuabaitap, chuongcuabaitap);
+                    TaskHomework hw = new TaskHomework(this.taikhoanhienhanh, bt, lophoccuabaitap, chuongcuabaitap,blbtBUS);
                     taskListPanel.getTaskListPanel().Controls.Add(hw);
+                    taskListPanel.Tasks.Add(hw);
                 }
             }
 
@@ -92,9 +102,10 @@ namespace Hybrid.GUI.Todo
                 {
                     Chuong chuongcuadkt = chuongBUS.getChuongWithMaChuong(dekt.Machuong);
                     LopHoc lophoccuabaikt = this.lopHocBUS.getLophocWithMaLop(chuongcuadkt.Malop);
-                    TaskExam ex = new TaskExam(this.taikhoanhienhanh, dekt, lophoccuabaikt, chuongcuadkt);
+                    TaskExam ex = new TaskExam(this.taikhoanhienhanh, dekt, lophoccuabaikt, chuongcuadkt,blktBUS);
                     ex.getLabelClass().Text = this.lopHocBUS.getLophocWithMaLop(chuongcuadkt.Malop).Tenlop;
                     taskListPanel.getTaskListPanel().Controls.Add(ex);
+                    taskListPanel.Tasks.Add(ex);
                 }
             }
 
@@ -115,26 +126,28 @@ namespace Hybrid.GUI.Todo
             flagBtnClicked = false;
             this.rightFlowPanel.Controls.Clear();
             TaskList taskListPanel = new TaskList();
-            if (baitapCxl.Count != 0)
+            if (baitapDxl.Count != 0)
             {
                 foreach (BaiTap bt in this.baitapDxl)
                 {
                     Chuong chuongcuabaitap = chuongBUS.getChuongWithMaChuong(bt.Machuong);
                     LopHoc lophoccuabaitap = this.lopHocBUS.getLophocWithMaLop(chuongcuabaitap.Malop);
-                    TaskHomework hw = new TaskHomework(this.taikhoanhienhanh, bt, lophoccuabaitap, chuongcuabaitap);
+                    TaskHomework hw = new TaskHomework(this.taikhoanhienhanh, bt, lophoccuabaitap, chuongcuabaitap, blbtBUS);
                     taskListPanel.getTaskListPanel().Controls.Add(hw);
+                    taskListPanel.Tasks.Add(hw);
                 }
             }
 
-            if (kiemtraCxl.Count != 0)
+            if (kiemtraDxl.Count != 0)
             {
                 foreach (DeKiemTra dekt in this.kiemtraDxl)
                 {
                     Chuong chuongcuadkt = chuongBUS.getChuongWithMaChuong(dekt.Machuong);
                     LopHoc lophoccuabaikt = this.lopHocBUS.getLophocWithMaLop(chuongcuadkt.Malop);
-                    TaskExam ex = new TaskExam(this.taikhoanhienhanh,dekt,lophoccuabaikt,chuongcuadkt);
+                    TaskExam ex = new TaskExam(this.taikhoanhienhanh,dekt,lophoccuabaikt,chuongcuadkt, blktBUS);
                     ex.getLabelClass().Text = this.lopHocBUS.getLophocWithMaLop(chuongcuadkt.Malop).Tenlop;
                     taskListPanel.getTaskListPanel().Controls.Add(ex);
+                    taskListPanel.Tasks.Add(ex);
                 }
             }
 
@@ -150,7 +163,7 @@ namespace Hybrid.GUI.Todo
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            this.lopHocBUS.loadList();
+            LoadList();
             if (flagBtnClicked)
                 this.btnNot.btnNotDone().PerformClick();
             else
