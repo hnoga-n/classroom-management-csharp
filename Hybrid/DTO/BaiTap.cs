@@ -19,23 +19,20 @@ namespace Hybrid.DTO
         private DateTime thoigianketthuc;
         private int daxoa;
         private int congkhaidapan;
-
-        public BaiTap()
+        private int nopbu;
+        public BaiTap(string mabaitap = null, string machuong = null, string tieude = null, string noidungbaitap = null, string noidungdapan = null, DateTime thoigiantao = default, DateTime thoigianbatdau = default, DateTime thoigianketthuc = default, int daxoa = 0, int congkhaidapan = 0, int nopbu = 0)
         {
-        }
-
-        public BaiTap(string mabaitap, string machuong, string tieude, string noidungbaitap, string noidungdapan, DateTime thoigiantao, DateTime thoigianbatdau, DateTime thoigianketthuc, int daxoa, int congkhaidapan)
-        {
-            this.mabaitap = mabaitap;
-            this.machuong = machuong;
-            this.tieude = tieude;
-            this.noidungbaitap = noidungbaitap;
-            this.noidungdapan = noidungdapan;
-            this.thoigiantao = thoigiantao;
-            this.thoigianbatdau = thoigianbatdau;
-            this.thoigianketthuc = thoigianketthuc;
-            this.daxoa = daxoa;
-            this.congkhaidapan = congkhaidapan;
+            this.Mabaitap = mabaitap;
+            this.Machuong = machuong;
+            this.Tieude = tieude;
+            this.Noidungbaitap = noidungbaitap;
+            this.Noidungdapan = noidungdapan;
+            this.Thoigiantao = thoigiantao;
+            this.Thoigianbatdau = thoigianbatdau;
+            this.Thoigianketthuc = thoigianketthuc;
+            this.Daxoa = daxoa;
+            this.Congkhaidapan = congkhaidapan;
+            this.Nopbu = nopbu;
         }
 
         public string Mabaitap { get => mabaitap; set => mabaitap = value; }
@@ -48,28 +45,29 @@ namespace Hybrid.DTO
         public DateTime Thoigianketthuc { get => thoigianketthuc; set => thoigianketthuc = value; }
         public int Daxoa { get => daxoa; set => daxoa = value; }
         public int Congkhaidapan { get => congkhaidapan; set => congkhaidapan = value; }
+        public int Nopbu { get => nopbu; set => nopbu = value; }
 
         public int CompareTo(Object obj)
         {
             BaiTap BaiTap = (BaiTap)obj;
-            return this.mabaitap.CompareTo(BaiTap.mabaitap);
+            return this.Mabaitap.CompareTo(BaiTap.Mabaitap);
         }
         public int CompareTo(BaiTap c1, BaiTapComparer.ComparisonType type)
         {
             switch (type)
             {
                 case BaiTapComparer.ComparisonType.mabaitap:
-                    return this.mabaitap.CompareTo(c1.mabaitap);
+                    return this.Mabaitap.CompareTo(c1.Mabaitap);
             }
             return 0;
         }
         public override string ToString()
         {
-            return $"Mabaitap: {mabaitap}, Machuong: {machuong}, Tieude: {tieude}, " +
-                   $"Noidungbaitap: {noidungbaitap}, Noidungdapan: {noidungdapan}, " +
-                   $"Thoigiantao: {thoigiantao}, Thoigianbatdau: {thoigianbatdau}, " +
-                   $"Thoigianketthuc: {thoigianketthuc}, Daxoa: {daxoa}, " +
-                   $"Congkhaidapan: {congkhaidapan}";
+            return $"Mabaitap: {Mabaitap}, Machuong: {Machuong}, Tieude: {Tieude}, " +
+                   $"Noidungbaitap: {Noidungbaitap}, Noidungdapan: {Noidungdapan}, " +
+                   $"Thoigiantao: {Thoigiantao}, Thoigianbatdau: {Thoigianbatdau}, " +
+                   $"Thoigianketthuc: {Thoigianketthuc}, Daxoa: {Daxoa}, " +
+                   $"Congkhaidapan: {Congkhaidapan}";
         }
     }
 }

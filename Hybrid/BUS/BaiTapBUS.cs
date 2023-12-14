@@ -109,9 +109,9 @@ namespace Hybrid.BUS
             return null;
         }
 
-        public ArrayList GetTatCaBaiTapDaNopByMaLopHoc(string malophoc)
+        public ArrayList GetTatCaBaiTapDaNopByMaLopHoc(string malophoc,string mataikhoan)
         {
-            return btDAO.GetTatCaBaiTapDaNopByMaLopHoc(malophoc);
+            return btDAO.GetTatCaBaiTapDaNopByMaLopHoc(malophoc,mataikhoan);
         }
         public ArrayList GetTatCaBaiTapChuaNopByMaLopHoc(string malophoc)
         {

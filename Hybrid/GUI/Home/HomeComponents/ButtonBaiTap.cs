@@ -34,7 +34,7 @@ namespace Hybrid.GUI.Home.HomeComponents
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult confirm = MessageBox.Show("Xác nhận xóa bài tập ?","Thông báo !",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult confirm = MessageBox.Show("Xác nhận xóa bài tập ?", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.No) return;
 
             this.baitapBUS.DeleteBaitapByChangeState(this.baitap.Mabaitap);
@@ -54,25 +54,42 @@ namespace Hybrid.GUI.Home.HomeComponents
                 // already submited
 
                 int index = blbtBUS.GetBaiLamBaiTapWithMaTaiKhoanAndMaBaiTap(this.panelChuong.Khfrm.Taikhoan.Mataikhoan, this.baitap.Mabaitap);
-                if (index >=0)
+                if (index >= 0)
                 {
                     DialogResult isConfirmSubmited = MessageBox.Show("Bạn đã hoàn thành bài tập !\nXem lại bài đã nộp ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (isConfirmSubmited == DialogResult.No) return;
 
-                    XemBaiLamBaiTap blbtFrm = new XemBaiLamBaiTap(this.panelChuong.Khfrm.Taikhoan, this.baitap, (BaiLamBaiTap) this.blbtBUS.List[index]);
+                    XemBaiLamBaiTap blbtFrm = new XemBaiLamBaiTap(this.panelChuong.Khfrm.Taikhoan, this.baitap, (BaiLamBaiTap)this.blbtBUS.List[index]);
                     blbtFrm.Show();
                     return;
                 }
+                if (this.baitap.Thoigianketthuc < DateTime.Now)
+                {
+                    if (this.baitap.Nopbu == 1)
+                    {
+                        DialogResult confirmLamBu = MessageBox.Show("Tiến hành làm bài tập bù ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (confirmLamBu == DialogResult.No) return;
+                        LamBaiTap lambaitapbuFrm = new LamBaiTap(this.panelChuong.Khfrm.Taikhoan, this.baitap, this.blbtBUS);
+                        lambaitapbuFrm.Show();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bài tập đã kết thúc ! Không chấp nhận nộp bù !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+
                 // do exam
                 DialogResult isConfirmDoExam = MessageBox.Show("Tiến hành làm bài tập ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (isConfirmDoExam == DialogResult.No) return;
-                LamBaiTap lambaitapFrm = new LamBaiTap(this.panelChuong.Khfrm.Taikhoan,this.baitap,this.blbtBUS);
+                LamBaiTap lambaitapFrm = new LamBaiTap(this.panelChuong.Khfrm.Taikhoan, this.baitap, this.blbtBUS);
                 lambaitapFrm.Show();
                 return;
             }
             else // teacher
             {
-                XemTienDoBaitap xemtiendoFrm = new XemTienDoBaitap(this.baitap,this.panelChuong.Khfrm.Lophoc,this.panelChuong.Chuong);
+                XemTienDoBaitap xemtiendoFrm = new XemTienDoBaitap(this.baitap, this.panelChuong.Khfrm.Lophoc, this.panelChuong.Chuong);
                 xemtiendoFrm.Show();
             }
             return;
@@ -86,7 +103,7 @@ namespace Hybrid.GUI.Home.HomeComponents
                 return;
             }
             loading.ShowSplashScreen();
-            Chinhsuabaitap editBtFrm = new Chinhsuabaitap(this.panelChuong, this.panelChuong.Khfrm.Taikhoan,this.panelChuong.Khfrm.Lophoc, this.panelChuong.Chuong, this.baitap,this.baitapBUS);
+            Chinhsuabaitap editBtFrm = new Chinhsuabaitap(this.panelChuong, this.panelChuong.Khfrm.Taikhoan, this.panelChuong.Khfrm.Lophoc, this.panelChuong.Chuong, this.baitap, this.baitapBUS);
             loading.CloseForm();
             editBtFrm.Show();
         }
@@ -135,5 +152,6 @@ namespace Hybrid.GUI.Home.HomeComponents
             if (trangthai == "Đã kết thúc")
                 this.timerCapNhatTrangThai.Stop();
         }
+
     }
 }

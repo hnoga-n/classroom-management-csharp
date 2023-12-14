@@ -36,8 +36,10 @@
             // 
             // leftFlowPanel
             // 
+            this.leftFlowPanel.BackColor = System.Drawing.Color.White;
             this.leftFlowPanel.Location = new System.Drawing.Point(12, 79);
             this.leftFlowPanel.Name = "leftFlowPanel";
+            this.leftFlowPanel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.leftFlowPanel.Size = new System.Drawing.Size(300, 744);
             this.leftFlowPanel.TabIndex = 0;
             // 
@@ -46,9 +48,10 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 57);
+            this.label1.Size = new System.Drawing.Size(240, 57);
             this.label1.TabIndex = 1;
             this.label1.Text = "Todo";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // rightFlowPanel
             // 

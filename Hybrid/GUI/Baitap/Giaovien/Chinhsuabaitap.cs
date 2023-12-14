@@ -51,14 +51,18 @@ namespace Hybrid.GUI.Baitap
             this.lblTeacher.Text = taikhoangiangvien.Hoten;
             this.txtTitle.Text = this.bt.Tieude;
             this.txtContent.Text = this.bt.Noidungbaitap;
-            this.answerPanel.Noidungdapan.Text = this.bt.Noidungdapan;
+            answerPanel.Noidungdapan.Text = this.bt.Noidungdapan;
             this.dtpThoiGianBatDau.Value = this.bt.Thoigianbatdau;
             this.dtpThoiGianBatDau.Enabled = false;
             this.dtpThoiGianKetThuc.Value = this.bt.Thoigianketthuc;
             if (this.bt.Congkhaidapan == 1)
-                this.answerPanel.CkbPublicAnswer.Checked = true;
+                answerPanel.CkbPublicAnswer.Checked = true;
             else
-                this.answerPanel.CkbPublicAnswer.Checked = false;
+                answerPanel.CkbPublicAnswer.Checked = false;
+            if (this.bt.Nopbu == 1)
+                this.cbkLateSubmit.Checked = true;
+            else
+                this.cbkLateSubmit.Checked = false;
             loadFile();
         }
         private void loadFile()

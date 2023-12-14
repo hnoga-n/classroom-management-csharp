@@ -154,14 +154,15 @@ namespace Hybrid.DAO
             return true;
         }
 
-        public ArrayList GetTatCaBaiTapDaNopByMaLopHoc(string malop)
+        public ArrayList GetTatCaBaiTapDaNopByMaLopHoc(string malop,string mataikhoan)
         {
             ArrayList listBaitap = new ArrayList();
             try
             {
-                string sql = "SELECT bt.mabaitap,c.machuong,tieude,noidungbaitap,noidungdapan,bt.thoigiantao,thoigianbatdau,thoigianketthuc,congkhaidapan,bt.daxoa FROM baitap bt JOIN chuong c ON bt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc JOIN bailambaitap bl ON bl.mabaitap=bt.mabaitap WHERE l.malophoc=@malophoc ";
+                string sql = "SELECT bt.mabaitap,c.machuong,tieude,noidungbaitap,noidungdapan,bt.thoigiantao,thoigianbatdau,thoigianketthuc,congkhaidapan,bt.daxoa FROM baitap bt JOIN chuong c ON bt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc JOIN bailambaitap bl ON bl.mabaitap=bt.mabaitap WHERE l.malophoc=@malophoc AND bl.mataikhoan=@mataikhoan ";
                 SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
                 command.Parameters.AddWithValue("@malophoc", Guid.Parse(malop));
+                command.Parameters.AddWithValue("@mataikhoan", Guid.Parse(mataikhoan));
                 SqlDataReader dr = command.ExecuteReader();
 
                 while (dr.Read())
@@ -198,7 +199,7 @@ namespace Hybrid.DAO
             ArrayList listBaitap = new ArrayList();
             try
             {
-                string sql = "SELECT bt.mabaitap,c.machuong,tieude,noidungbaitap,noidungdapan,bt.thoigiantao,thoigianbatdau,thoigianketthuc,congkhaidapan,bt.daxoa FROM baitap bt JOIN chuong c ON bt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc  WHERE l.malophoc=@malophoc AND bt.mabaitap NOT IN (SELECT bt2.mabaitap FROM baitap bt2 JOIN bailambaitap bl2 ON bl2.mabaitap=bt2.mabaitap)";
+                string sql = "SELECT bt.mabaitap,c.machuong,tieude,noidungbaitap,noidungdapan,bt.thoigiantao,thoigianbatdau,thoigianketthuc,congkhaidapan,bt.daxoa FROM baitap bt JOIN chuong c ON bt.machuong=c.machuong JOIN lophoc l ON c.malophoc=l.malophoc  WHERE l.malophoc=@malophoc AND (bt.nopbu=1 OR bt.thoigianketthuc > GETDATE()) bt.mabaitap NOT IN (SELECT bt2.mabaitap FROM baitap bt2 JOIN bailambaitap bl2 ON bl2.mabaitap=bt2.mabaitap)";
                 SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
                 command.Parameters.AddWithValue("@malophoc", Guid.Parse(malop));
                 SqlDataReader dr = command.ExecuteReader();
