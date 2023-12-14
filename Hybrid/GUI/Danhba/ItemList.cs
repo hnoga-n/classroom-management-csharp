@@ -79,6 +79,26 @@ namespace Hybrid.GUI.Danhba
         {
             if (button1.Text.Equals("Gửi lời mời"))
             {
+                List<BanBe> list = new BanbeBUS().GetList();
+                foreach (BanBe b in list)
+                {
+                    if (b.Manguoiketban.Equals(mabanbe) && b.Manguoiduocketban.Equals(mataikhoan) && b.Trangthaiketban == 2)
+                    {
+                        BanBe bancu = new BanBe();
+                        bancu.Manguoiduocketban = mataikhoan;
+                        bancu.Manguoiketban = mabanbe;
+                        bancu.Trangthaiketban = 0;
+
+                        new BanbeDAO().LoiMoiSauXoaBan(bancu);
+
+                        MessageBox.Show("Gửi lời mời kết bạn thành công!", "Thông báo");
+                        button1.Enabled = false;
+                        button1.Text = "Đã gửi lời mời";
+                        return;
+                    }
+                    
+                }
+
                 BanBe banmoi = new BanBe();
                 banmoi.Manguoiduocketban = mataikhoan;
                 banmoi.Manguoiketban = mabanbe;

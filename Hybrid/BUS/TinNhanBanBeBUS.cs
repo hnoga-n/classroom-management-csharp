@@ -39,5 +39,10 @@ namespace Hybrid.BUS
             if (nd != "" || nd != "\n")
             tnbbDAO.AddMessage(g, n, nd);
         }
+
+        public void UnFriendMessage(BanBe a)
+        {
+            tnbbDAO.UnFriendMessage(a);
+        }
     }
 }

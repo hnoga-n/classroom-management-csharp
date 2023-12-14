@@ -18,6 +18,8 @@ namespace Hybrid.GUI.Danhba
     {
         string maUser;
         string maFriend;
+
+        public event EventHandler btXoaBan;
         public TinNhanCard(BanBe a)
         {
             InitializeComponent();
@@ -95,12 +97,6 @@ namespace Hybrid.GUI.Danhba
         {
 
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(textBox1.Text) && textBox1.Text != Environment.NewLine)
@@ -128,31 +124,41 @@ namespace Hybrid.GUI.Danhba
                 button1.Enabled = true;
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-           /* if (e.KeyCode == Keys.Enter)
-            {
-                button1_Click(sender, e);
-                textBox1.SelectionStart = 0;
-            }*/
-        }
-
-        private void TinNhanCard_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
+            if (label2.Text.Equals("*  *  *"))
+            {
+                label2.Text = "Xóa bạn";
+                return;
+            }
+            if (label2.Text.Equals("Xóa bạn"))
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa bạn bè với người này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Xác định lựa chọn của người dùng
+                if (result == DialogResult.Yes)
+                {
+                    BanBe b = new BanBe();
+                    b.Manguoiketban = maUser;
+                    b.Manguoiduocketban = maFriend;
+                    new BanbeDAO().XoaBan(b);
+                    new TinNhanBanBeBUS().UnFriendMessage(b);
+                }
+                else if (result == DialogResult.No)
+                {
+                    label2.Text = "*  *  *";
+                    return;
+                }
+
+                btXoaBan?.Invoke(this, EventArgs.Empty);
+                label2.Text = "*  *  *";
+                return;
+            }
         }
     }
 }

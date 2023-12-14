@@ -154,44 +154,6 @@ namespace Hybrid.DAO
                 return false;
             }
         }
-        public void SuaTrangThai(BanBe a)
-        {
-            string sqlQuery = "UPDATE banbe SET trangthaiketban = @trangthaiketban WHERE manguoiketban = @manguoiketban AND manguoiduocketban = @manguoiduocketban";
-
-            try
-            {
-                SqlCommand cmd = new SqlCommand(sqlQuery, Ketnoisqlserver.GetConnection());
-
-                cmd.Parameters.AddWithValue("@trangthaiketban", a.Trangthaiketban);
-                cmd.Parameters.AddWithValue("@manguoiketban", a.Manguoiketban);
-                cmd.Parameters.AddWithValue("@manguoiduocketban", a.Manguoiduocketban);
-
-
-                cmd.ExecuteNonQuery();
-                Ketnoisqlserver.GetConnection().Close();
-
-            }
-            catch (Exception ex) { Console.WriteLine(); }
-
-            string sqlQuery2 = "INSERT INTO banbe (manguoiketban,manguoiduocketban,thoigianketban,trangthaiketban) VALUES (@manguoiketban,@manguoiduocketban,GETDATE(),@trangthaiketban)";
-
-            try
-            {
-                SqlCommand cmd2 = new SqlCommand(sqlQuery2, Ketnoisqlserver.GetConnection());
-
-                //cmd2.Parameters.AddWithValue("@thoigianketban", DateTime.Now.ToString());
-                cmd2.Parameters.AddWithValue("@trangthaiketban", 1);
-                cmd2.Parameters.AddWithValue("@manguoiketban", a.Manguoiduocketban);
-                cmd2.Parameters.AddWithValue("@manguoiduocketban", a.Manguoiketban);
-
-
-                cmd2.ExecuteNonQuery();
-                Ketnoisqlserver.GetConnection().Close();
-
-            }
-            catch (Exception ex) { Console.WriteLine(); }
-
-        }
 
         public void XoaLoiMoi(BanBe a)
         {
@@ -267,6 +229,121 @@ namespace Hybrid.DAO
                 }
             }
             return ketQuaTimKiem;
+        }
+
+        public void XoaBan(BanBe a)
+        {
+            string sqlQuery = "UPDATE banbe SET trangthaiketban = @trangthaiketban WHERE manguoiketban = @manguoiketban AND manguoiduocketban = @manguoiduocketban";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sqlQuery, Ketnoisqlserver.GetConnection());
+
+                cmd.Parameters.AddWithValue("@trangthaiketban", 2);
+                cmd.Parameters.AddWithValue("@manguoiketban", a.Manguoiketban);
+                cmd.Parameters.AddWithValue("@manguoiduocketban", a.Manguoiduocketban);
+
+
+                cmd.ExecuteNonQuery();
+                Ketnoisqlserver.GetConnection().Close();
+
+            }
+            catch (Exception ex) { Console.WriteLine(); }
+
+            string sqlQuery2 = "UPDATE banbe SET trangthaiketban = @trangthaiketban WHERE manguoiketban = @manguoiketban AND manguoiduocketban = @manguoiduocketban";
+            try
+            {
+                SqlCommand cmd2 = new SqlCommand(sqlQuery2, Ketnoisqlserver.GetConnection());
+
+                //cmd2.Parameters.AddWithValue("@thoigianketban", DateTime.Now.ToString());
+                cmd2.Parameters.AddWithValue("@trangthaiketban", 2);
+                cmd2.Parameters.AddWithValue("@manguoiketban", a.Manguoiduocketban);
+                cmd2.Parameters.AddWithValue("@manguoiduocketban", a.Manguoiketban);
+
+
+                cmd2.ExecuteNonQuery();
+                Ketnoisqlserver.GetConnection().Close();
+
+            }
+            catch (Exception ex) { Console.WriteLine(); }
+
+        }
+
+        public void LoiMoiSauXoaBan(BanBe a)
+        {
+            string sqlQuery = "UPDATE banbe SET trangthaiketban = @trangthaiketban WHERE manguoiketban = @manguoiketban AND manguoiduocketban = @manguoiduocketban";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sqlQuery, Ketnoisqlserver.GetConnection());
+
+                cmd.Parameters.AddWithValue("@trangthaiketban", 0);
+                cmd.Parameters.AddWithValue("@manguoiketban", a.Manguoiketban);
+                cmd.Parameters.AddWithValue("@manguoiduocketban", a.Manguoiduocketban);
+
+
+                cmd.ExecuteNonQuery();
+                Ketnoisqlserver.GetConnection().Close();
+
+            }
+            catch (Exception ex) { Console.WriteLine(); }
+
+
+        }
+
+        public void SuaTrangThai(BanBe a)
+        {
+            string sqlQuery = "UPDATE banbe SET trangthaiketban = @trangthaiketban WHERE manguoiketban = @manguoiketban AND manguoiduocketban = @manguoiduocketban";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sqlQuery, Ketnoisqlserver.GetConnection());
+
+                cmd.Parameters.AddWithValue("@trangthaiketban", a.Trangthaiketban);
+                cmd.Parameters.AddWithValue("@manguoiketban", a.Manguoiketban);
+                cmd.Parameters.AddWithValue("@manguoiduocketban", a.Manguoiduocketban);
+
+
+                cmd.ExecuteNonQuery();
+                Ketnoisqlserver.GetConnection().Close();
+
+            }
+            catch (Exception ex) { Console.WriteLine(); }
+
+            string sqlQuery2 = "INSERT INTO banbe (manguoiketban,manguoiduocketban,thoigianketban,trangthaiketban) VALUES (@manguoiketban,@manguoiduocketban,GETDATE(),@trangthaiketban)";
+
+            try
+            {
+                SqlCommand cmd2 = new SqlCommand(sqlQuery2, Ketnoisqlserver.GetConnection());
+
+                //cmd2.Parameters.AddWithValue("@thoigianketban", DateTime.Now.ToString());
+                cmd2.Parameters.AddWithValue("@trangthaiketban", 1);
+                cmd2.Parameters.AddWithValue("@manguoiketban", a.Manguoiduocketban);
+                cmd2.Parameters.AddWithValue("@manguoiduocketban", a.Manguoiketban);
+
+
+                cmd2.ExecuteNonQuery();
+                Ketnoisqlserver.GetConnection().Close();
+
+            }
+            catch (Exception ex) { Console.WriteLine(); }
+
+            string sqlQuery3 = "UPDATE banbe SET trangthaiketban = @trangthaiketban WHERE manguoiketban = @manguoiketban AND manguoiduocketban = @manguoiduocketban";
+
+            try
+            {
+                SqlCommand cmd3 = new SqlCommand(sqlQuery3, Ketnoisqlserver.GetConnection());
+
+                cmd3.Parameters.AddWithValue("@trangthaiketban", 1);
+                cmd3.Parameters.AddWithValue("@manguoiketban", a.Manguoiduocketban);
+                cmd3.Parameters.AddWithValue("@manguoiduocketban", a.Manguoiketban);
+
+
+                cmd3.ExecuteNonQuery();
+                Ketnoisqlserver.GetConnection().Close();
+
+            }
+            catch (Exception ex) { Console.WriteLine(); }
         }
     }
 }

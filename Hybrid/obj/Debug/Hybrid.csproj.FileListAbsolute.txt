@@ -128,3 +128,7 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.exe
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.pdb
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.ItemList.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.SearchList.resources
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\BouncyCastle.Cryptography.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.bouncy-castle-adapter.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\BouncyCastle.Cryptography.xml
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.bouncy-castle-adapter.xml
