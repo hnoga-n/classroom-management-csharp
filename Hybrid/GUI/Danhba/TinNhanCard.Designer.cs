@@ -43,16 +43,16 @@
             this.flowKhungChat.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowKhungChat.Location = new System.Drawing.Point(0, 87);
             this.flowKhungChat.Name = "flowKhungChat";
-            this.flowKhungChat.Size = new System.Drawing.Size(820, 657);
+            this.flowKhungChat.Size = new System.Drawing.Size(1000, 730);
             this.flowKhungChat.TabIndex = 0;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(60, 747);
+            this.textBox1.Location = new System.Drawing.Point(58, 823);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(640, 53);
+            this.textBox1.Size = new System.Drawing.Size(824, 53);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
@@ -66,7 +66,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(706, 747);
+            this.button1.Location = new System.Drawing.Point(888, 823);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 53);
             this.button1.TabIndex = 2;
@@ -80,7 +80,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.button2.Location = new System.Drawing.Point(2, 747);
+            this.button2.Location = new System.Drawing.Point(0, 823);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(52, 50);
             this.button2.TabIndex = 3;
@@ -123,7 +123,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.flowKhungChat);
             this.Name = "TinNhanCard";
-            this.Size = new System.Drawing.Size(823, 811);
+            this.Size = new System.Drawing.Size(1000, 878);
             this.Load += new System.EventHandler(this.TinNhanCard_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TinNhanCard_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

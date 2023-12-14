@@ -83,5 +83,10 @@ namespace Hybrid.BUS
             banbeDAO.XoaLoiMoi(banbe);
         }
 
+        public List<Taikhoan> TimKiem(string a)
+        {
+            List<Taikhoan> list = banbeDAO.TimKiem(a);
+            return list;
+        }
     }
 }
