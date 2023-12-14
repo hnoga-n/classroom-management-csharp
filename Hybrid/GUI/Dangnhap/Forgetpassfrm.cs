@@ -32,6 +32,24 @@ namespace Hybrid.GUI.Dangnhap
             this.Close();
         }
 
+        private void txt_email_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txt_email.Text))
+            {
+                txt_email.Text = "Email";
+                txt_email.ForeColor = System.Drawing.Color.Silver;
+            }
+        }
+
+        private void txt_email_Enter(object sender, EventArgs e)
+        {
+            if (txt_email.Text == "Email")
+            {
+                txt_email.Text = string.Empty;
+            }
+            txt_email.ForeColor = System.Drawing.Color.Black;
+        }
+
         private void but_guima_Click(object sender, EventArgs e)
         {
             //lay email

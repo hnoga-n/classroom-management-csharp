@@ -80,6 +80,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(41, 25);
@@ -88,6 +89,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.btnBaiTap_Click);
             // 
             // lblChiTietBT
             // 
@@ -99,6 +101,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblChiTietBT.StateCommon.ShortText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChiTietBT.TabIndex = 4;
             this.lblChiTietBT.Values.Text = "Chi tiết bài tập";
+            this.lblChiTietBT.Click += new System.EventHandler(this.btnBaiTap_Click);
             // 
             // btnSua
             // 
@@ -236,6 +239,7 @@ namespace Hybrid.GUI.Home.HomeComponents
             this.lblTieuDeBT.Size = new System.Drawing.Size(614, 28);
             this.lblTieuDeBT.TabIndex = 15;
             this.lblTieuDeBT.Text = "Lập trình C#";
+            this.lblTieuDeBT.Click += new System.EventHandler(this.btnBaiTap_Click);
             // 
             // timerCapNhatTrangThai
             // 

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doimatkhaufrm));
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
-            this.label4 = new System.Windows.Forms.Label();
+            this.lab_thongtin = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lab_matkhau = new System.Windows.Forms.Label();
             this.hien_mkxacnhan = new System.Windows.Forms.PictureBox();
@@ -76,17 +76,17 @@
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.ButtonEdgeInset = 10;
             this.kryptonPalette2.HeaderStyles.HeaderCommon.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             // 
-            // label4
+            // lab_thongtin
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(23, 267);
-            this.label4.MaximumSize = new System.Drawing.Size(350, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(350, 40);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Mật khẩu có ít nhất 8 kí tự,bao gồm 1 chữ cái in hoa,1 chữ thường 1 con số,1 kí t" +
+            this.lab_thongtin.AutoSize = true;
+            this.lab_thongtin.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_thongtin.ForeColor = System.Drawing.Color.Red;
+            this.lab_thongtin.Location = new System.Drawing.Point(23, 267);
+            this.lab_thongtin.MaximumSize = new System.Drawing.Size(350, 100);
+            this.lab_thongtin.Name = "lab_thongtin";
+            this.lab_thongtin.Size = new System.Drawing.Size(349, 40);
+            this.lab_thongtin.TabIndex = 22;
+            this.lab_thongtin.Text = "Mật khẩu có ít nhất 8 kí tự,bao gồm 1 chữ cái in hoa,1 chữ thường 1 con số,1 kí t" +
     "ự đặc biệt";
             // 
             // label5
@@ -175,6 +175,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txt_mkmoi.StateCommon.Border.Rounding = 10;
             this.txt_mkmoi.TabIndex = 25;
+            this.txt_mkmoi.TextChanged += new System.EventHandler(this.txt_mkmoi_TextChanged);
             // 
             // txt_mkxacnhan
             // 
@@ -306,7 +307,7 @@
             this.Controls.Add(this.an_mkmoi);
             this.Controls.Add(this.txt_mkmoi);
             this.Controls.Add(this.txt_mkxacnhan);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lab_thongtin);
             this.Name = "Doimatkhaufrm";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
@@ -328,7 +329,7 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lab_thongtin;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lab_matkhau;
         private System.Windows.Forms.PictureBox hien_mkxacnhan;

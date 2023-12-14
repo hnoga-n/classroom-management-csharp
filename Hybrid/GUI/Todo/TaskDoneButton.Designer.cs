@@ -39,7 +39,7 @@
             this.kryptonButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonButton1.Location = new System.Drawing.Point(0, 0);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.Control;
+            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton1.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.kryptonButton1.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.kryptonButton1.OverrideDefault.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
@@ -47,7 +47,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton1.Size = new System.Drawing.Size(284, 74);
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton1.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
             this.kryptonButton1.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
@@ -67,6 +67,7 @@
             // 
             // tickPic
             // 
+            this.tickPic.BackColor = System.Drawing.Color.White;
             this.tickPic.BackgroundImage = global::Hybrid.Properties.Resources.icons8_tick_50;
             this.tickPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tickPic.Location = new System.Drawing.Point(45, 12);
@@ -74,20 +75,21 @@
             this.tickPic.Size = new System.Drawing.Size(43, 46);
             this.tickPic.TabIndex = 8;
             this.tickPic.TabStop = false;
+            this.tickPic.Click += new System.EventHandler(this.tickPic_Click);
             // 
             // lblNotDone
             // 
             this.lblNotDone.AutoSize = true;
+            this.lblNotDone.BackColor = System.Drawing.Color.White;
             this.lblNotDone.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotDone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(121)))), ((int)(((byte)(126)))));
+            this.lblNotDone.ForeColor = System.Drawing.Color.Black;
             this.lblNotDone.Location = new System.Drawing.Point(118, 24);
             this.lblNotDone.Name = "lblNotDone";
             this.lblNotDone.Size = new System.Drawing.Size(89, 24);
             this.lblNotDone.TabIndex = 11;
             this.lblNotDone.Text = "Đã xử lý";
             this.lblNotDone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblNotDone.MouseEnter += new System.EventHandler(this.lblNotDone_MouseEnter);
-            this.lblNotDone.MouseLeave += new System.EventHandler(this.lblNotDone_MouseLeave);
+            this.lblNotDone.Click += new System.EventHandler(this.lblNotDone_Click);
             // 
             // TaskDoneButton
             // 

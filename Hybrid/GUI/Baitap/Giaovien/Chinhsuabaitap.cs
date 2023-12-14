@@ -51,14 +51,18 @@ namespace Hybrid.GUI.Baitap
             this.lblTeacher.Text = taikhoangiangvien.Hoten;
             this.txtTitle.Text = this.bt.Tieude;
             this.txtContent.Text = this.bt.Noidungbaitap;
-            this.answerPanel.Noidungdapan.Text = this.bt.Noidungdapan;
+            answerPanel.Noidungdapan.Text = this.bt.Noidungdapan;
             this.dtpThoiGianBatDau.Value = this.bt.Thoigianbatdau;
             this.dtpThoiGianBatDau.Enabled = false;
             this.dtpThoiGianKetThuc.Value = this.bt.Thoigianketthuc;
             if (this.bt.Congkhaidapan == 1)
-                this.answerPanel.CkbPublicAnswer.Checked = true;
+                answerPanel.CkbPublicAnswer.Checked = true;
             else
-                this.answerPanel.CkbPublicAnswer.Checked = false;
+                answerPanel.CkbPublicAnswer.Checked = false;
+            if (this.bt.Nopbu == 1)
+                this.cbkLateSubmit.Checked = true;
+            else
+                this.cbkLateSubmit.Checked = false;
             loadFile();
         }
         private void loadFile()
@@ -197,6 +201,7 @@ namespace Hybrid.GUI.Baitap
                 Thoigianketthuc = DateTime.Parse(this.dtpThoiGianKetThuc.Value.ToString()),
                 Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0,
                 Daxoa = 0,
+                Nopbu = (this.cbkLateSubmit.Checked) ? 1 : 0
             };
 
             ArrayList fileBTvaDA = new ArrayList();
@@ -245,35 +250,33 @@ namespace Hybrid.GUI.Baitap
                         {
                             loading.CloseForm();
                             MessageBox.Show("Chỉnh sửa bài tập thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.btBUS.loadList();
-                            this.bt.Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0;
-                            this.Dispose();
+                            ReLoadBaiTap(bt);
+                            this.Close();
                             return;
                         }
                         else
                         {
                             loading.CloseForm();
+                            ReLoadBaiTap(bt);
                             MessageBox.Show("Upload file thất bại !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            this.bt.Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0;
-                            this.btBUS.loadList();
                             return;
                         }
                     }
                     else
                     {
                         loading.CloseForm();
+                        ReLoadBaiTap(bt);
                         MessageBox.Show("Chỉnh sửa bài tập thành công !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.bt.Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0;
-                        //this.btBUS.loadList();
-                        this.Dispose();
+                        this.Close();
                         return;
                     }
                 }
                 else
                 {
                     loading.CloseForm();
-                    this.bt.Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0;
+                    ReLoadBaiTap(bt);
                     this.btBUS.loadList();
+                    ReLoadBaiTap(bt);
                     MessageBox.Show("Chỉnh sửa bài tập thất bại !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -282,14 +285,26 @@ namespace Hybrid.GUI.Baitap
             {
 
                 loading.CloseForm();
-                this.bt.Congkhaidapan = (this.answerPanel.Congkhaidapan) ? 1 : 0;
-
-                //this.btBUS.loadList();
+                ReLoadBaiTap(bt);
                 MessageBox.Show("Có lỗi đã xảy ra !\n Vui lòng thử lại sau.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex);
             }
         }
 
+        private void ReLoadBaiTap(BaiTap bt)
+        {
+            this.bt.Mabaitap = bt.Mabaitap;
+            this.bt.Machuong = bt.Machuong;
+            this.bt.Tieude = bt.Tieude;
+            this.bt.Noidungbaitap = bt.Noidungbaitap;
+            this.bt.Noidungdapan = bt.Noidungdapan;
+            this.bt.Thoigiantao = bt.Thoigiantao;
+            this.bt.Thoigianbatdau = bt.Thoigianbatdau;
+            this.bt.Thoigianketthuc = bt.Thoigianketthuc;
+            this.bt.Congkhaidapan = bt.Congkhaidapan;
+            this.bt.Daxoa = bt.Daxoa;
+            this.bt.Nopbu = bt.Nopbu;
+        }
         private void addAnswer_Click(object sender, EventArgs e)
         {
             this.answerPanel.ShowDialog();

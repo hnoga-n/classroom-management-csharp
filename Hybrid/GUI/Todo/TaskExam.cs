@@ -26,16 +26,23 @@ namespace Hybrid.GUI.Todo
             InitializeComponent();
         }
 
-        public TaskExam(Taikhoan taikhoan, DeKiemTra dkt, LopHoc lh, Chuong chuong)
+        public TaskExam(Taikhoan taikhoan, DeKiemTra dkt, LopHoc lh, Chuong chuong,BailamKiemtraBUS blktBUS)
         {
             InitializeComponent();
-            this.dkt = dkt;
-            this.taikhoan = taikhoan;
-            this.lh = lh;
-            this.chuong = chuong;
-            blktBUS = new BailamKiemtraBUS();
+            this.Dkt = dkt;
+            this.Taikhoan = taikhoan;
+            this.Lh = lh;
+            this.Chuong = chuong;
+            BlktBUS = blktBUS;
             loadTaskExam();
         }
+
+        public DeKiemTra Dkt { get => dkt; set => dkt = value; }
+        public BailamKiemtraBUS BlktBUS { get => blktBUS; set => blktBUS = value; }
+        public Taikhoan Taikhoan { get => taikhoan; set => taikhoan = value; }
+        public LopHoc Lh { get => lh; set => lh = value; }
+        public Chuong Chuong { get => chuong; set => chuong = value; }
+
         public Label getLabelClass()
         {
             return this.lblClass;
@@ -43,50 +50,50 @@ namespace Hybrid.GUI.Todo
 
         public void loadTaskExam()
         {
-            this.lblExamTitle.Text = this.dkt.Tieude;
-            this.lblStart.Text = "Bắt đầu:"  + dkt.Thoigianbatdau.ToString();
-            this.lblEnd.Text = "Kết thúc:"+dkt.Thoigianketthuc.ToString();
-            if(dkt.Daxoa==1)
+            this.lblExamTitle.Text = this.Dkt.Tieude;
+            this.lblStart.Text = "Bắt đầu:"  + Dkt.Thoigianbatdau.ToString();
+            this.lblEnd.Text = "Kết thúc:"+Dkt.Thoigianketthuc.ToString();
+            if(Dkt.Daxoa==1)
                 this.btnDoExam.Visible= false;
             else
                 this.btnDoExam.Visible = true;
+
+            if (this.lh.Magiangvien.Equals(this.taikhoan.Mataikhoan))
+            {
+                this.btnDoExam.Text = "Xem tiến độ";
+            }else if(BlktBUS.isSubmited(this.Taikhoan.Mataikhoan, this.Dkt.Madekiemtra) == 1)
+            {
+                this.btnDoExam.Text = "Xem bài làm";
+            }else
+            {
+                this.btnDoExam.Text = "Làm kiểm tra";
+            }
+
         }
 
         private void btnDoExam_Click(object sender, EventArgs e)
         {
-            if (!this.lh.Magiangvien.Equals(this.taikhoan.Mataikhoan))// student
+            if (!this.Lh.Magiangvien.Equals(this.Taikhoan.Mataikhoan))// student
             {
                 // Not start yet
-                if (DateTime.Now < this.dkt.Thoigianbatdau)
+                if (DateTime.Now < this.Dkt.Thoigianbatdau)
                 {
                     MessageBox.Show("Bài kiểm tra chưa bắt đầu !", "Thông báo!", MessageBoxButtons.OK);
                     return;
                 }
                 // already submited
-                if (blktBUS.isSubmited(this.taikhoan.Mataikhoan, this.dkt.Madekiemtra) == 1)
+                if (BlktBUS.isSubmited(this.Taikhoan.Mataikhoan, this.Dkt.Madekiemtra) == 1)
                 {
-                    // TODO: mở form xem bài đã làm
-                    DialogResult isConfirmSubmited = MessageBox.Show("Bạn đã hoàn thành bài kiểm tra !\nXem lại bài đã nộp ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (isConfirmSubmited == DialogResult.No) return;
-
-                    XemBaiLamHocSinh frmBailam = new XemBaiLamHocSinh(this.taikhoan, this.dkt, false);
+                    XemBaiLamHocSinh frmBailam = new XemBaiLamHocSinh(this.Taikhoan, this.Dkt, false);
                     frmBailam.Show();
                     return;
                 }
-                if (this.dkt.Thoigianketthuc < DateTime.Now)
-                {
-                    MessageBox.Show("Bài kiểm tra đã kết thúc !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                // do exam
-                DialogResult isConfirmDoExam = MessageBox.Show("Xác nhận tiến hành làm bài kiểm tra ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (isConfirmDoExam == DialogResult.No) return;
-                LamKiemTra bailamkiemtra = new LamKiemTra(this.dkt, this.taikhoan, this.blktBUS);
+                LamKiemTra bailamkiemtra = new LamKiemTra(this.Dkt, this.Taikhoan, this.BlktBUS);
                 bailamkiemtra.Show();
             }
             else
             {
-                XemTienDoBaiKiemTra checkingFrm = new XemTienDoBaiKiemTra(this.taikhoan, this.dkt, this.lh, this.chuong);
+                XemTienDoBaiKiemTra checkingFrm = new XemTienDoBaiKiemTra(this.Taikhoan, this.Dkt, this.Lh, this.Chuong);
                 checkingFrm.Show();
             }
         }

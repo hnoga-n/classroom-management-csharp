@@ -14,7 +14,6 @@ namespace Hybrid.GUI.Todo
 {
     public partial class TaskDoneButton : UserControl
     {
-        private Taikhoan taikhoanhienhanh;
         public TaskDoneButton()
         {
             InitializeComponent();
@@ -24,29 +23,16 @@ namespace Hybrid.GUI.Todo
         {
             return this.kryptonButton1;
         }
-        private void label2_Click(object sender, EventArgs e)
-        {
 
+        private void lblNotDone_Click(object sender, EventArgs e)
+        {
+            this.kryptonButton1.PerformClick();
         }
 
-        private void lblNotDone_MouseEnter(object sender, EventArgs e)
+        private void tickPic_Click(object sender, EventArgs e)
         {
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
-            this.kryptonButton1.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212))))); ;
-            this.kryptonButton1.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.kryptonButton1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-        }
+            this.kryptonButton1.PerformClick();
 
-        private void lblNotDone_MouseLeave(object sender, EventArgs e)
-        {
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
-            this.kryptonButton1.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
-            this.kryptonButton1.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.kryptonButton1.StateCommon.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom;
         }
     }
 }
