@@ -51,7 +51,8 @@ namespace Hybrid.GUI.Danhba
             h = labelSize.Height;
             panel1.Size = new Size(w+20, h);
             this.Size = new Size(w+35, panel1.Height+30);
-            this.Margin = new System.Windows.Forms.Padding(490-w, this.Margin.Top, this.Margin.Right, this.Margin.Bottom);
+            this.Margin = new System.Windows.Forms.Padding(610-w, this.Margin.Top, 0, this.Margin.Bottom);
+            this.Padding = new System.Windows.Forms.Padding(this.Padding.Left, this.Padding.Top, 0, this.Padding.Bottom);
             label1.Location = new System.Drawing.Point(label1.Location.X, label2.Height+35);
         }
 
@@ -111,7 +112,12 @@ namespace Hybrid.GUI.Danhba
             }
         }
 
-        
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+       
     }
 
 }

@@ -233,5 +233,40 @@ namespace Hybrid.DAO
             catch (Exception ex) { Console.WriteLine(ex); }
 
         }
+
+        public List<Taikhoan> TimKiem(string tuKhoa)
+        {
+            List<Taikhoan> ketQuaTimKiem = new List<Taikhoan>();
+            using (SqlConnection connection = Ketnoisqlserver.GetConnection())
+            {
+                string sqlQuery = "SELECT mataikhoan, hoten, email, matkhau, sodienthoai, anhdaidien, manhomquyen, daxoa FROM dbo.taikhoan " +
+                                  "WHERE hoten LIKE @tuKhoa OR sodienthoai LIKE @tuKhoa OR email LIKE @tuKhoa";
+
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@tuKhoa", "%" + tuKhoa + "%");
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Taikhoan taiKhoan = new Taikhoan
+                            {
+                                Mataikhoan = reader["mataikhoan"].ToString(),
+                                Hoten = reader["hoten"].ToString(),
+                                Email = reader["email"].ToString(),
+                                Matkhau = reader["matkhau"].ToString(),
+                                Sodienthoai = reader["sodienthoai"].ToString(),
+                                Anhdaidien = reader["anhdaidien"].ToString(),
+                                Manhomquyen = Convert.ToInt32(reader["manhomquyen"]),
+                                Daxoa = Convert.ToInt32(reader["daxoa"])
+                            };
+                            ketQuaTimKiem.Add(taiKhoan);
+                        }
+                    }
+                }
+            }
+            return ketQuaTimKiem;
+        }
     }
 }

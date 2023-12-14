@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Google.Protobuf.WellKnownTypes;
 using Hybrid.BUS;
 using Hybrid.DAO;
 using Hybrid.DTO;
@@ -101,9 +102,9 @@ namespace Hybrid.GUI.Danhba
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
             timer1.Start();
-            for (int i = Controls.Count - 1; i >= 0; i--)
+            /*for (int i = Controls.Count - 1; i >= 0; i--)
             {
-                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is TrangCaNhan)
+                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is SearchList)
                 {
                     // Nếu là Card, xóa khỏi Controls của Form
                     Controls.RemoveAt(i);
@@ -112,7 +113,7 @@ namespace Hybrid.GUI.Danhba
             TrangCaNhan a = new TrangCaNhan();
             a.Visible = true;
             a.Location = new System.Drawing.Point(325, 15);
-            this.Controls.Add(a);
+            this.Controls.Add(a);*/
         }
 
         private void kryptonButton2_Click(object sender, EventArgs e)
@@ -124,6 +125,9 @@ namespace Hybrid.GUI.Danhba
         {
             timer3.Start();
         }
+
+        string ma;//= "58824edd-2ce6-46e8-97f3-8ca6970d8cbf"; //Mã tài khoản của người đang đăng nhập
+                                                            //string ma = "17593a02-3763-4b70-9454-d71c3af0bd19";
 
         private void DanhbaFrm_Load(object sender, EventArgs e)
         {
@@ -141,8 +145,7 @@ namespace Hybrid.GUI.Danhba
                     panelDropDown3.Controls.RemoveAt(i);
                 }
             }
-            //string ma = "58824edd-2ce6-46e8-97f3-8ca6970d8cbf"; //Mã tài khoản của người đang đăng nhập
-            //string ma = "17593a02-3763-4b70-9454-d71c3af0bd19";
+            
             List<BanBe> list = new BanbeBUS().GetList();
             foreach (BanBe b in list)
             {
@@ -160,6 +163,7 @@ namespace Hybrid.GUI.Danhba
                     panelDropDown.Controls.Add(ban);
                 }
             }
+            textBox1.Multiline = false;
         }
 
        
@@ -168,7 +172,7 @@ namespace Hybrid.GUI.Danhba
         {
             for (int i = Controls.Count - 1; i >= 0; i--)
             {
-                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is TrangCaNhan)
+                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is SearchList)
                 {
                     // Nếu là Card, xóa khỏi Controls của Form
                     Controls.RemoveAt(i);
@@ -194,7 +198,7 @@ namespace Hybrid.GUI.Danhba
             MessageBox.Show("Bạn đã chấp nhận lời mời kết bạn !\nHiện tại các bạn có thể nhắn tin.","Thông báo!");
             for (int i = Controls.Count - 1; i >= 0; i--)
             {
-                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is TrangCaNhan)
+                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is SearchList)
                 {
                     // Nếu là Card, xóa khỏi Controls của Form
                     Controls.RemoveAt(i);
@@ -208,7 +212,7 @@ namespace Hybrid.GUI.Danhba
             MessageBox.Show("Bạn đã xóa lời mời kết bạn", "Thông báo");
             for (int i = Controls.Count - 1; i >= 0; i--)
             {
-                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is TrangCaNhan)
+                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is SearchList)
                 {
                     // Nếu là Card, xóa khỏi Controls của Form
                     Controls.RemoveAt(i);
@@ -221,7 +225,7 @@ namespace Hybrid.GUI.Danhba
         {
             for (int i = Controls.Count - 1; i >= 0; i--)
             {
-                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is TrangCaNhan)
+                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is SearchList)
                 {
                     // Nếu là Card, xóa khỏi Controls của Form
                     Controls.RemoveAt(i);
@@ -232,9 +236,11 @@ namespace Hybrid.GUI.Danhba
             {
                 TinNhanCard a = new TinNhanCard(click.dto());
                 a.Visible = true;
-                a.Location = new System.Drawing.Point(325, 15);
+                a.Location = new System.Drawing.Point(325, 60);
                 this.Controls.Add(a);
             }
+
+            
         }
 
         private void panelDropDown3_Paint(object sender, PaintEventArgs e)
@@ -244,60 +250,54 @@ namespace Hybrid.GUI.Danhba
 
         private void btGui_Click(object sender, EventArgs e)
         {
-            BanBe banmoi = new BanBe();
-            bool duplicate = true, exist = false, empty = true;
-            banmoi.Manguoiduocketban =  this.taikhoanhienhanh.Mataikhoan;
-            banmoi.Thoigianketban = DateTime.Now;
-            List<Taikhoan> list = new TaikhoanDAO().get_danhsach();
+           
+            for (int i = Controls.Count - 1; i >= 0; i--)
+            {
+                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is SearchList)
+                {
+                    // Nếu là Card, xóa khỏi Controls của Form
+                    Controls.RemoveAt(i);
+                }
+            }
             if (textBox1.Text.Length <= 0)
             {
-                MessageBox.Show("Vui lòng nhập email!", "Thông báo");
-                empty = false;
-                exist = false;
+                MessageBox.Show("Vui lòng nhập văn bản để tìm kiếm!", "Thông báo");
+                return;
             }
-            if (!IsEmailValid(textBox1.Text.Trim()) && empty == true)
-            {
-                MessageBox.Show("Vui lòng nhập đúng định dạng email!\nVD: abc123@exmail.com", "Thông báo");
-                exist = false;
-            }
-            foreach (Taikhoan t in list)
-            {
-                if (t.Email == textBox1.Text.Trim())
-                {
-                    banmoi.Manguoiketban = t.Mataikhoan;
-                    exist = true;
-                    break;
-                }
-                exist = false;
-            }
-            if (exist)
-            {
-                List<BanBe> listbb = banbeBUS.GetList() ;
-                foreach (BanBe bb in listbb)
-                {
-                    if (banmoi.Manguoiketban == bb.Manguoiketban && banmoi.Manguoiduocketban == bb.Manguoiduocketban)
-                    {
-                        MessageBox.Show("Bạn đã gửi lời mời với người bạn này!", "Thông báo");
-                        duplicate = false;
-                    }
-                }
-                if (duplicate)
-                {
-                    try
-                    {
-                        banbeBUS.ThemLoiMoi(banmoi);
-
-                        MessageBox.Show("Gửi lời mời kết bạn thành công!", "Thông báo");
-                        textBox1.Text = string.Empty;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                }
-            }
-            else if (empty) MessageBox.Show("Email này chưa đăng kí tài khoản!", "Thông báo");
+            List<Taikhoan> list = new BanbeBUS().TimKiem(textBox1.Text);
+            Console.WriteLine(list.Count);
+            SearchList a = new SearchList(list,this.taikhoanhienhanh.Mataikhoan);
+            a.btChapNhan += ChapNhanLoiMoi;
+            a.btTN += TinNhan;
+            a.Visible = true;
+            a.Location = new System.Drawing.Point(325, 60);
+            this.Controls.Add(a);
+            textBox1.Text = string.Empty;
         }
+
+        private void TinNhan(object sender, EventArgs e)
+        {
+            for (int i = Controls.Count - 1; i >= 0; i--)
+            {
+                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is SearchList)
+                {
+                    // Nếu là Card, xóa khỏi Controls của Form
+                    Controls.RemoveAt(i);
+                }
+            }
+            SearchList click = sender as SearchList;
+            if (click != null)
+            {
+                TinNhanCard a = new TinNhanCard(click.dto());
+                a.Visible = true;
+                a.Location = new System.Drawing.Point(325, 60);
+                this.Controls.Add(a);
+            }
+
+        }
+
+       
+
         bool IsEmailValid(string email)
         {
             string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";

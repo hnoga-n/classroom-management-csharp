@@ -157,7 +157,7 @@ namespace Hybrid.DAO
             {
                 string sql_thamgia = "select bt.tieude,bl.diem,bl.noptre,bl.thoigiannopbai\r\n" +
                     "from bailambaitap bl join baitap bt on bl.mabaitap = bt.mabaitap\r\n" +
-                    "where bt.machuong = @machuong AND bl.mataikhoan = @mataikhoan AND bl.diem <> -1";
+                    "where bt.machuong = @machuong AND bl.mataikhoan = @mataikhoan AND bl.diem <> -1 AND bt.congkhaidapan = 1";
                 SqlCommand cmd = new SqlCommand(sql_thamgia, Ketnoisqlserver.GetConnection());
                 cmd.Parameters.AddWithValue("@machuong", Guid.Parse(machuong));
                 cmd.Parameters.AddWithValue("@mataikhoan", Guid.Parse(mataikhoan));
