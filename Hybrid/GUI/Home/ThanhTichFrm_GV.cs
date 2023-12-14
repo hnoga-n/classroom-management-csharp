@@ -121,7 +121,14 @@ namespace Hybrid.GUI.Home
 
         public void FillComboBoxChuong()
         {
-            if (chuongBUS.getChuongWithMaLop(lophoc.Malop).Count <= 0) return;
+            if (chuongBUS.getChuongWithMaLop(lophoc.Malop).Count <= 0)
+            {
+                this.cbChuong.Enabled = false;
+                this.cbHoatDong.Enabled = false;
+                return;
+            }
+            this.cbChuong.Enabled = true;
+            this.cbHoatDong.Enabled = true;
             foreach (Chuong c in chuongBUS.getChuongWithMaLop(lophoc.Malop))
                 chuongDict.Add(c.Machuong, c.Tenchuong);
             cbChuong.Items.Clear();

@@ -136,7 +136,7 @@
             // 
             // btGui
             // 
-            this.btGui.Location = new System.Drawing.Point(1188, 58);
+            this.btGui.Location = new System.Drawing.Point(1188, 55);
             this.btGui.Name = "btGui";
             this.btGui.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
             this.btGui.OverrideDefault.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;

@@ -1,8 +1,9 @@
-<<<<<<< HEAD
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.exe.config
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.exe
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\Hybrid.pdb
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\BouncyCastle.Cryptography.dll
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.barcodes.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.bouncy-castle-adapter.dll
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.bouncy-castle-connector.dll
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.commons.dll
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.forms.dll
@@ -21,7 +22,9 @@ D:\NAM_3\C#\Project\Hybrid\bin\Debug\Microsoft.Extensions.Logging.dll
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\Microsoft.Extensions.Options.dll
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\Microsoft.Extensions.Primitives.dll
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\BouncyCastle.Cryptography.xml
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.barcodes.xml
+D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.bouncy-castle-adapter.xml
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.bouncy-castle-connector.xml
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.commons.xml
 D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.forms.xml
@@ -72,8 +75,10 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Verifyfrm.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.Banbe.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.BanbeCard.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.DanhbaFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.ItemList.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocCard.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocPanel.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.SearchList.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.ThanhvienCard.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.TinNhanCard.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.TinNhanCell.resources
@@ -91,13 +96,14 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.PanelChuongDropDown.resourc
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.PanelGiaoDienLopHoc.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeFrm.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KhoaHocFrm.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.EmptyPanelKt.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiKiemTra.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiLamHocSinh.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ChiTietCauHoiFrm.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.ButtonCauHoi.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiNavigate.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiPanel.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.EmptyPanel.resources
+D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.EmptyPanelBt.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.HocSinhCard.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauHoi.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauTraLoi.resources
@@ -112,7 +118,6 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_HS.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemChuongFrm.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemLopFrm.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Home.ThongTinLopHocFrm.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskDiscuss.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskDoneButton.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskEmpty.resources
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskExam.resources
@@ -127,141 +132,3 @@ D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.CoreCompileInputs.cache
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.exe
 D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.pdb
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.ItemList.resources
-D:\NAM_3\C#\Project\Hybrid\obj\Debug\Hybrid.GUI.Danhba.SearchList.resources
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\BouncyCastle.Cryptography.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.bouncy-castle-adapter.dll
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\BouncyCastle.Cryptography.xml
-D:\NAM_3\C#\Project\Hybrid\bin\Debug\itext.bouncy-castle-adapter.xml
-=======
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.exe.config
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.exe
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Hybrid.pdb
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.barcodes.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.bouncy-castle-connector.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.commons.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.forms.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.io.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.kernel.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.layout.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.pdfa.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.sign.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.styledxmlparser.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.svg.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itextsharp.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.Logging.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.Options.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.Primitives.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.barcodes.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.bouncy-castle-connector.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.commons.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.forms.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.io.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.kernel.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.layout.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.pdfa.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.sign.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.styledxmlparser.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itext.svg.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\itextsharp.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.Logging.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.Options.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\Microsoft.Extensions.Primitives.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.AssemblyReference.cache
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.ResolveComReference.cache
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.Form1.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Admin.Classfrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Admin.Homeadminfrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Admin.Userfrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.CloudFile.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.ChamDiem.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Chinhsuabaitap.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.TaoBaiTap.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.ThemDapAn.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Giaovien.XemChiTietBaiTap.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.XemTienDoBaitap.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.HocsinhNoptre.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocsinh.LamBaiTap.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.Hocvien.XemBaiLamBaiTap.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Baitap.LocalFile.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.ChatBoxFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.IncomingMessage.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.lbl_notifiication_chatbox.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.lbl_time_create_chatbox.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.ChatBox.OutgoingMessage.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ChonHinhFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Doimatkhaufrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Forgetpassfrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Loginfrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Signupfrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Thongtintaikhoan.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Dangnhap.Verifyfrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.Banbe.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.BanbeCard.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.DanhbaFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.ItemList.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocCard.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.LophocPanel.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.SearchList.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.ThanhvienCard.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.TinNhanCard.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.TinNhanCell.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.TinNhanSend.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Danhba.TrangCaNhan.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Chonhinhanhlop.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Tailieu.Hienthitailieufrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiKT.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonBaiTap.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ButtonClass.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.ButtonHocLieu.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Tailieu.fileshow.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.filetemp.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.PanelChuongDropDown.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.PanelGiaoDienLopHoc.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KhoaHocFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.EmptyPanelKt.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiKiemTra.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemBaiLamHocSinh.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ChiTietCauHoiFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.ButtonCauHoi.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiNavigate.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.CauhoiPanel.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.EmptyPanelBt.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.HomeComponents.HocSinhCard.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauHoi.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraComponents.PanelChiTietCauTraLoi.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.KiemTraFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Kiemtra.LamKiemTra.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.ThemCauHoiFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.KiemTra.XemTienDoBaiKiemTra.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.Taotailieufrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThamGiaLopFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_GV.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThanhTichFrm_HS.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemChuongFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThemLopFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Home.ThongTinLopHocFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskDoneButton.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskEmpty.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskExam.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskHomework.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskList.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Todo.TaskNotDoneButton.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Todo.TodoFrm.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.GUI.Utilities.loading.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.Properties.Resources.resources
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.GenerateResource.cache
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.CoreCompileInputs.cache
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.csproj.CopyComplete
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.exe
-D:\code\visual studio\project\classroom-management-csharp\Hybrid\obj\Debug\Hybrid.pdb
->>>>>>> main
