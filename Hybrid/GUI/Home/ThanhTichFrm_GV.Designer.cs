@@ -276,7 +276,7 @@ namespace Hybrid.GUI.Home
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(286, 7);
+            this.txtTimKiem.Location = new System.Drawing.Point(400, 7);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(500, 36);
             this.txtTimKiem.StateActive.Border.Color1 = System.Drawing.Color.Black;

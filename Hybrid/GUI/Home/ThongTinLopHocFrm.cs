@@ -68,6 +68,7 @@ namespace Hybrid.GUI.Home
         private void btnCopy_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtMaLop.Text);
+            MessageBox.Show("Đã chép vào bộ nhớ tạm thời!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void btnMoRong_Click(object sender, EventArgs e)
