@@ -66,6 +66,10 @@ namespace Hybrid.GUI.Todo
 
         private void LoadList()
         {
+            baitapDxl.Clear();
+            baitapCxl.Clear();
+            kiemtraDxl.Clear();
+            kiemtraCxl.Clear();
             foreach (LopHoc lh in listClass)
             {
                 baitapDxl.AddRange(btBUS.GetTatCaBaiTapDaNopByMaLopHoc(lh.Malop,this.taikhoanhienhanh.Mataikhoan));

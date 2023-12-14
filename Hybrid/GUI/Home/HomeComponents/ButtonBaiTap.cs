@@ -103,11 +103,16 @@ namespace Hybrid.GUI.Home.HomeComponents
                 return;
             }
             loading.ShowSplashScreen();
-            Chinhsuabaitap editBtFrm = new Chinhsuabaitap(this.panelChuong, this.panelChuong.Khfrm.Taikhoan, this.panelChuong.Khfrm.Lophoc, this.panelChuong.Chuong, this.baitap, this.baitapBUS);
+            Chinhsuabaitap editBtFrm = new Chinhsuabaitap(this.panelChuong, this.panelChuong.Khfrm.Taikhoan, this.panelChuong.Khfrm.Lophoc, this.panelChuong.Chuong, this.baitap,this.baitapBUS);
+            editBtFrm.FormClosing += EditBtFrm_FormClosing;
             loading.CloseForm();
             editBtFrm.Show();
         }
-
+        private void EditBtFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.baitapBUS.loadList();
+            this.lblTieuDeBT.Text = this.baitap.Tieude;
+        }
         public string XacDinhTrangThaiDeKiemTra(DateTime startTime, DateTime endTime)
         {
             DateTime currentTime = DateTime.Now;
