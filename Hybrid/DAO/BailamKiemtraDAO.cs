@@ -102,7 +102,7 @@ namespace Hybrid.DAO
                     "where mataikhoan = @mataikhoan and madekiemtra in " +
                     "(\r\n\tselect madekiemtra\r\n\t" +
                     "from dekiemtra \r\n\t" +
-                    "where machuong = @machuong\r\n)";
+                    "where machuong = @machuong and xemdapan = 1\r\n)";
                 SqlCommand cmd = new SqlCommand(sql_thamgia, Ketnoisqlserver.GetConnection());
                 cmd.Parameters.AddWithValue("@mataikhoan", Guid.Parse(mataikhoan));
                 cmd.Parameters.AddWithValue("@machuong", Guid.Parse(machuong));

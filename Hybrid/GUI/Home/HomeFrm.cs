@@ -74,6 +74,7 @@ namespace Hybrid.GUI.Home
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             if (txtTimKiem.Text == "Tìm kiếm tên lớp học") return;
+            if (txtTimKiem.Text.Trim() == " ") return;
             ArrayList rslist = new ArrayList();
             foreach (LopHoc l in lophocBUS.GetDanhSachTatCaLopHocByMaTaiKhoan(tk.Mataikhoan))
             {

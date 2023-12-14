@@ -49,6 +49,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pic_hidepass = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lab_kiemtra = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_hidepass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -125,6 +127,7 @@
             this.txt_matkhau.ForeColor = System.Drawing.Color.Silver;
             this.txt_matkhau.Location = new System.Drawing.Point(528, 269);
             this.txt_matkhau.Name = "txt_matkhau";
+            this.txt_matkhau.PasswordChar = '*';
             this.txt_matkhau.Size = new System.Drawing.Size(287, 28);
             this.txt_matkhau.TabIndex = 3;
             this.txt_matkhau.Text = "Mật khẩu";
@@ -194,6 +197,7 @@
             this.txt_xacnhanmatkhau.ForeColor = System.Drawing.Color.Silver;
             this.txt_xacnhanmatkhau.Location = new System.Drawing.Point(528, 360);
             this.txt_xacnhanmatkhau.Name = "txt_xacnhanmatkhau";
+            this.txt_xacnhanmatkhau.PasswordChar = '*';
             this.txt_xacnhanmatkhau.Size = new System.Drawing.Size(287, 28);
             this.txt_xacnhanmatkhau.TabIndex = 4;
             this.txt_xacnhanmatkhau.Text = "Xác nhận mật khẩu";
@@ -297,6 +301,16 @@
             this.pic_hidepass.TabStop = false;
             this.pic_hidepass.Click += new System.EventHandler(this.pic_hidepass_Click);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::Hybrid.Properties.Resources.videoconference;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Location = new System.Drawing.Point(76, 181);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(321, 255);
+            this.pictureBox5.TabIndex = 10;
+            this.pictureBox5.TabStop = false;
+            // 
             // lab_kiemtra
             // 
             this.lab_kiemtra.AutoSize = true;
@@ -350,6 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_hidepass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

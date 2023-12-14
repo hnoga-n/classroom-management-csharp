@@ -41,7 +41,7 @@
             this.label1.AutoEllipsis = true;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(341, 220);
+            this.label1.Location = new System.Drawing.Point(421, 231);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(326, 32);
             this.label1.TabIndex = 13;
@@ -51,7 +51,7 @@
             // 
             // kryptonButton2
             // 
-            this.kryptonButton2.Location = new System.Drawing.Point(222, 494);
+            this.kryptonButton2.Location = new System.Drawing.Point(254, 494);
             this.kryptonButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.kryptonButton2.Name = "kryptonButton2";
             this.kryptonButton2.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
@@ -79,7 +79,7 @@
             // 
             // kryptonButton4
             // 
-            this.kryptonButton4.Location = new System.Drawing.Point(483, 494);
+            this.kryptonButton4.Location = new System.Drawing.Point(579, 494);
             this.kryptonButton4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.kryptonButton4.Name = "kryptonButton4";
             this.kryptonButton4.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(212)))));
@@ -109,7 +109,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(217, 377);
+            this.label6.Location = new System.Drawing.Point(249, 369);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(347, 29);
             this.label6.TabIndex = 23;
@@ -119,7 +119,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::Hybrid.Properties.Resources.canhan1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(222, 175);
+            this.pictureBox1.Location = new System.Drawing.Point(254, 179);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(112, 125);
@@ -138,7 +138,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BanbeCard";
-            this.Size = new System.Drawing.Size(1006, 951);
+            this.Size = new System.Drawing.Size(1000, 950);
             this.Load += new System.EventHandler(this.BanbeCard_Load_2);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

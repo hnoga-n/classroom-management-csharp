@@ -62,7 +62,7 @@ namespace Hybrid.GUI.Danhba
             h = labelSize.Height;
             panel1.Size = new Size(w, h);
             this.Size = new Size(panel1.Width+58, panel1.Height);
-            this.Margin = new System.Windows.Forms.Padding(this.Margin.Left, this.Margin.Top, 300-panel1.Width-60-20, this.Margin.Bottom);
+            this.Margin = new System.Windows.Forms.Padding(this.Margin.Left, this.Margin.Top, 400-panel1.Width-60-20, this.Margin.Bottom);
             label1.Location = new System.Drawing.Point(label1.Location.X,h+30);
         }
 
@@ -70,6 +70,7 @@ namespace Hybrid.GUI.Danhba
         {
 
         }
+
 
         private string WrapText(string text, int maxCharsPerLine)
         {
