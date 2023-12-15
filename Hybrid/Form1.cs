@@ -145,7 +145,7 @@ namespace Hybrid
             cn.remove_file();
             this.Hide();
             Form form = new Loginfrm();
-            form.Show();
+            form.ShowDialog();
             
         }
         private void LoadHinh(Image image)
