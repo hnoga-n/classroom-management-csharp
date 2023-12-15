@@ -78,7 +78,7 @@ namespace Hybrid.GUI.Home
             ArrayList rslist = new ArrayList();
             foreach (LopHoc l in lophocBUS.GetDanhSachTatCaLopHocByMaTaiKhoan(tk.Mataikhoan))
             {
-                if (l.Tenlop.ToLower().Contains(txtTimKiem.Text.ToLower()))
+                if (l.Tenlop.ToLower().Contains(txtTimKiem.Text.Trim().ToLower()))
                     rslist.Add(l);
             }
             HienThiDanhSachLopHoc(rslist);

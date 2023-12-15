@@ -148,5 +148,46 @@ namespace Hybrid.DAO
             }
         }
 
+        public void UnFriendMessage(BanBe a)
+        {
+
+            try
+            {
+                string sql = "UPDATE tinnhanbanbe SET daxoa = 1 WHERE manguoigui = @manguoigui AND manguoinhan = @manguoinhan";
+
+                SqlCommand command = new SqlCommand(sql, Ketnoisqlserver.GetConnection());
+
+                command.Parameters.AddWithValue("@manguoigui", a.Manguoiketban);
+                command.Parameters.AddWithValue("@manguoinhan", a.Manguoiduocketban);
+
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                string sql2 = "UPDATE tinnhanbanbe SET daxoa = 1 WHERE manguoigui = @manguoigui AND manguoinhan = @manguoinhan";
+
+                SqlCommand command2 = new SqlCommand(sql2, Ketnoisqlserver.GetConnection());
+
+                command2.Parameters.AddWithValue("@manguoigui", a.Manguoiduocketban);
+                command2.Parameters.AddWithValue("@manguoinhan", a.Manguoiketban);
+
+                command2.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Ketnoisqlserver.GetConnection().Close();
+            }
+        }
     }
 }

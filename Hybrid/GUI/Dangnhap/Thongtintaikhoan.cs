@@ -73,20 +73,13 @@ namespace Hybrid.GUI
             txt_sodienthoai.ReadOnly = false;
         }
 
-        private void Thongtintaikhoan_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                // Đóng form
-                this.Close();
-            }
-        }
+
 
         private void lab_xacnhan_Click(object sender, EventArgs e)
         {
-            if(!cn.IsPhoneNumber(txt_sodienthoai.Text))
+            if(!cn.IsPhoneNumber(txt_sodienthoai.Text)&&txt_sodienthoai.Text.Length!=0)
             {
-                MessageBox.Show("Số điện thoại không đúng định dạng!","Cảnh bảo",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Số điện thoại không đúng định dạng!\nVD:0912345678","Cảnh bảo",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -102,12 +95,16 @@ namespace Hybrid.GUI
                             taikhoanBUS.update_ten_sodienthoai_bymataikhoan(txt_ten.Text, txt_sodienthoai.Text, this.tk.Mataikhoan);
                             lab_xacnhan.Visible = false;
                             lab_chinhsua.Visible = true;
+                            txt_ten.ReadOnly = false;
+                            txt_sodienthoai.ReadOnly = false;
                             break;
                         case DialogResult.No:
                             txt_ten.Text = this.tk.Hoten;
                             txt_sodienthoai.Text = this.tk.Sodienthoai;
                             lab_xacnhan.Visible = false;
                             lab_chinhsua.Visible = true;
+                            txt_ten.ReadOnly = true;
+                            txt_sodienthoai.ReadOnly = true;
                             break;
                         case DialogResult.Cancel:
                             break;
@@ -117,6 +114,8 @@ namespace Hybrid.GUI
                 {
                     lab_xacnhan.Visible = false;
                     lab_chinhsua.Visible = true;
+                    txt_ten.ReadOnly = true;
+                    txt_sodienthoai.ReadOnly = true;
                 }    
             }    
             

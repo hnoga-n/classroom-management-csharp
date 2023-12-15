@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Hybrid",
+    "\\Hybrid\\database",
     "\\Hybrid\\GUI",
-    "\\Hybrid\\GUI\\Dangnhap"
+    "\\Hybrid\\GUI\\Dangnhap",
+    "\\Hybrid\\GUI\\Todo"
   ],
   "SelectedNode": "\\Hybrid\\GUI\\Dangnhap\\Loginfrm.cs",
   "PreviewInSolutionExplorer": false
