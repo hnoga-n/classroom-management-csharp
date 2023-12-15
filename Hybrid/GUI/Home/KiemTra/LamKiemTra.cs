@@ -138,18 +138,24 @@ namespace Hybrid.GUI.Kiemtra
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             int index = 1;
+            bool flag = false;
             StringBuilder str = new StringBuilder();
             str.Append("Câu hỏi số ");
             foreach (CauhoiPanel cauhoipanel in this.listcauhoipanel.Controls)
             {
                 if (cauhoipanel.Madapanchon == string.Empty)
+                {
                     str.Append(index.ToString() + ", ");
+                    flag = true;
+                }
                 index++;
             }
             str.Append("chưa chọn câu trả lời. Bạn vẫn muốn nộp bài chứ ?");
-
-            DialogResult isEmptyConfirm = MessageBox.Show(str.ToString(), "Thông báo !", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if (isEmptyConfirm == DialogResult.No) return;
+            if (flag)
+            {
+                DialogResult isEmptyConfirm = MessageBox.Show(str.ToString(), "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (isEmptyConfirm == DialogResult.No) return;
+            }
 
             DialogResult isConfirm = MessageBox.Show("Xác nhận nộp bài kiểm tra ?", "Thông báo !", MessageBoxButtons.YesNo);
             if (isConfirm == DialogResult.No) return;

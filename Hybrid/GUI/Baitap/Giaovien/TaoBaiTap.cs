@@ -127,7 +127,7 @@ namespace Hybrid.GUI.Baitap.Giaovien
                 return;
             }
 
-            if (this.answerPanel.HomeworkContent.Length == 0)
+            if (this.answerPanel.HomeworkContent.Length == 0 && this.answerPanel.FilePanel.Controls.Count ==0)
             {
                 DialogResult confirm = MessageBox.Show("Bài tập không có đáp án. Xác nhận ?", "Thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm == DialogResult.No) return;

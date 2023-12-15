@@ -59,6 +59,12 @@ namespace Hybrid.GUI.Baitap
                 this.state.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
                 this.state.ForeColor = System.Drawing.Color.Red;
             }
+            else if(DateTime.Now < this.baitap.Thoigianbatdau)
+            {
+                this.state.Text = "Chưa bắt đầu";
+                this.state.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+                this.state.ForeColor = System.Drawing.Color.DarkGray;
+            }
             else
             {
                 this.state.Text = "Đang tiến hành";

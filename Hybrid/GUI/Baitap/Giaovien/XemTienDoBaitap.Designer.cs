@@ -553,9 +553,9 @@
             // state
             // 
             this.state.AutoSize = true;
-            this.state.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
+            this.state.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.state.Font = new System.Drawing.Font("Roboto Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.state.ForeColor = System.Drawing.Color.Red;
+            this.state.ForeColor = System.Drawing.Color.DarkGray;
             this.state.Location = new System.Drawing.Point(94, 36);
             this.state.Name = "state";
             this.state.Size = new System.Drawing.Size(91, 20);

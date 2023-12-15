@@ -172,7 +172,7 @@
             this.MaximizeBox = false;
             this.Name = "XemBaiKiemTra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "XemBaiKiemTra";
+            this.Text = "Xem chi tiết đề kiểm tra";
             this.navigatePanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

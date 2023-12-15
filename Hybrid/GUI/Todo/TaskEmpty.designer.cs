@@ -38,13 +38,12 @@
             this.lblTitle.Font = new System.Drawing.Font("Roboto", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(406, 283);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(171, 39);
+            this.lblTitle.Size = new System.Drawing.Size(0, 39);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Xuất sắc !!";
             // 
             // body
             // 
-            this.body.BackColor = System.Drawing.SystemColors.Control;
+            this.body.BackColor = System.Drawing.Color.White;
             this.body.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.body.Enabled = false;
             this.body.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -52,7 +51,7 @@
             this.body.Name = "body";
             this.body.ReadOnly = true;
             this.body.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.body.Size = new System.Drawing.Size(639, 86);
+            this.body.Size = new System.Drawing.Size(713, 86);
             this.body.TabIndex = 1;
             this.body.Text = "";
             // 
@@ -60,6 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.body);
             this.Controls.Add(this.lblTitle);
             this.Name = "TaskEmpty";

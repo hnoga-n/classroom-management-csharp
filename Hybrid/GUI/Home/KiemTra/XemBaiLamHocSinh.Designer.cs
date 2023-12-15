@@ -221,7 +221,7 @@
             this.MaximizeBox = false;
             this.Name = "XemBaiLamHocSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BaiLamDaNop";
+            this.Text = "Xem bài làm kiểm tra";
             this.Load += new System.EventHandler(this.XemBaiLamHocSinh_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

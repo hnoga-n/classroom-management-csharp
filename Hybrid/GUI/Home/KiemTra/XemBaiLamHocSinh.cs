@@ -109,6 +109,8 @@ namespace Hybrid.GUI.Home.KiemTra
                 this.state.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(242)))), ((int)(((byte)(199)))));
                 this.state.ForeColor = System.Drawing.Color.Green;
             }
+            System.Resources.ResourceManager rm = global::Hybrid.Properties.Resources.ResourceManager;
+            this.avatar.BackgroundImage = (Image)rm.GetObject(this.taikhoanhienhanh.Anhdaidien);
         }
 
         public void btnNavigate_Cliked(object sender, EventArgs e)

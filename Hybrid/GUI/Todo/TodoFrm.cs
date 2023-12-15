@@ -108,7 +108,7 @@ namespace Hybrid.GUI.Todo
                     taskListPanel.Tasks.Add(ex);
                 }
             }
-
+            loading.CloseForm();
             if (taskListPanel.getTaskListPanel().Controls.Count <= 0)
             {
                 TaskEmpty emptPanel = new TaskEmpty("Tuyệt vời !", "Hãy tận hưởng cuộc sống không có deadline, dù chỉ là vài giờ <3, hoặc vài phút....");
@@ -116,7 +116,6 @@ namespace Hybrid.GUI.Todo
                 return;
             }
             this.rightFlowPanel.Controls.Add(taskListPanel);
-            loading.CloseForm();
         }
 
 
@@ -150,6 +149,7 @@ namespace Hybrid.GUI.Todo
                     taskListPanel.Tasks.Add(ex);
                 }
             }
+            loading.CloseForm();
 
             if (taskListPanel.getTaskListPanel().Controls.Count <= 0)
             {
@@ -158,7 +158,6 @@ namespace Hybrid.GUI.Todo
                 return;
             }
             this.rightFlowPanel.Controls.Add(taskListPanel);
-            loading.CloseForm();
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)
