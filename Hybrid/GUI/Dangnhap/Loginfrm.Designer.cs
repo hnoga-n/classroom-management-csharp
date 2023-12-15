@@ -74,7 +74,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(128, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(208, 72);
+            this.label4.Size = new System.Drawing.Size(205, 72);
             this.label4.TabIndex = 11;
             this.label4.Text = "Hybrid";
             // 
@@ -251,6 +251,7 @@
             // 
             // Loginfrm
             // 
+            this.AcceptButton = this.but_dangnhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

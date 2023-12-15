@@ -126,9 +126,6 @@ namespace Hybrid.GUI.Danhba
             timer3.Start();
         }
 
-        string ma;//= "58824edd-2ce6-46e8-97f3-8ca6970d8cbf"; //Mã tài khoản của người đang đăng nhập
-                                                            //string ma = "17593a02-3763-4b70-9454-d71c3af0bd19";
-
         private void DanhbaFrm_Load(object sender, EventArgs e)
         {
             for (int i = panelDropDown.Controls.Count - 1; i >= 0; i--)
@@ -156,7 +153,7 @@ namespace Hybrid.GUI.Danhba
                     panelDropDown3.Controls.Add(ban);
 
                 }
-                else if (b.Manguoiketban.Equals(this.taikhoanhienhanh.Mataikhoan))
+                else if (b.Manguoiketban.Equals(this.taikhoanhienhanh.Mataikhoan) && b.Trangthaiketban == 1)
                 {
                     Banbe ban = new Banbe(b);
                     ban.ButtonClicked += GuiTinNhan;
@@ -184,7 +181,7 @@ namespace Hybrid.GUI.Danhba
             {
                 BanbeCard a = new BanbeCard(clickedControl.dto());
                 a.Visible = true;
-                a.Location = new System.Drawing.Point(325,15);
+                a.Location = new System.Drawing.Point(325,75);
                 a.noAccept();
                 a.btChapNhan += ChapNhanLoiMoi;
                 a.btXoa += XoaLoiMoi;
@@ -235,8 +232,9 @@ namespace Hybrid.GUI.Danhba
             if (click != null)
             {
                 TinNhanCard a = new TinNhanCard(click.dto());
+                a.btXoaBan += XoaBanBe;
                 a.Visible = true;
-                a.Location = new System.Drawing.Point(325, 60);
+                a.Location = new System.Drawing.Point(325, 75);
                 this.Controls.Add(a);
             }
 
@@ -270,7 +268,7 @@ namespace Hybrid.GUI.Danhba
             a.btChapNhan += ChapNhanLoiMoi;
             a.btTN += TinNhan;
             a.Visible = true;
-            a.Location = new System.Drawing.Point(325, 60);
+            a.Location = new System.Drawing.Point(325, 75);
             this.Controls.Add(a);
             textBox1.Text = string.Empty;
         }
@@ -289,14 +287,26 @@ namespace Hybrid.GUI.Danhba
             if (click != null)
             {
                 TinNhanCard a = new TinNhanCard(click.dto());
+                a.btXoaBan += XoaBanBe;
                 a.Visible = true;
-                a.Location = new System.Drawing.Point(325, 60);
+                a.Location = new System.Drawing.Point(325, 75);
                 this.Controls.Add(a);
             }
 
         }
 
-       
+        private void XoaBanBe(object sender, EventArgs e)
+        {
+            for (int i = Controls.Count - 1; i >= 0; i--)
+            {
+                if (Controls[i] is BanbeCard || Controls[i] is TinNhanCard || Controls[i] is SearchList)
+                {
+                    // Nếu là Card, xóa khỏi Controls của Form
+                    Controls.RemoveAt(i);
+                }
+            }
+            DanhbaFrm_Load(sender, e);
+        }
 
         bool IsEmailValid(string email)
         {
@@ -311,5 +321,7 @@ namespace Hybrid.GUI.Danhba
         {
 
         }
+
+
     }
 }

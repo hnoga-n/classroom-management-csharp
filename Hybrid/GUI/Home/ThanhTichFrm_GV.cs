@@ -14,6 +14,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Kernel.Exceptions;
+using iText.IO.Font.Constants;
+using iText.Kernel.Font;
+using iText.IO.Font;
+using static iText.Kernel.Font.PdfFontFactory;
+using iTextSharp.text.pdf;
 
 namespace Hybrid.GUI.Home
 {
@@ -27,23 +36,23 @@ namespace Hybrid.GUI.Home
         BailambaitapBUS blbtBUS = new BailambaitapBUS();
         ThamGiaBUS tgbus = new ThamGiaBUS();
         TaikhoanBUS tkbus = new TaikhoanBUS();
-        Dictionary<string,string> chuongDict = new Dictionary<string, string>();
-        Dictionary<string,string> dekiemtraDict;
-        Dictionary<string,string> baitapDict;
+        Dictionary<string, string> chuongDict = new Dictionary<string, string>();
+        Dictionary<string, string> dekiemtraDict;
+        Dictionary<string, string> baitapDict;
         DataTable dt = new DataTable();
         public ThanhTichFrm_GV(LopHoc lophoc)
         {
             InitializeComponent();
             this.lophoc = lophoc;
             FillComboBoxChuong();
-            if(lophoc.Daxoa == 1) 
+            if (lophoc.Daxoa == 1)
                 this.btnXuatExcel.Visible = false;
         }
 
         public void FillDataGridViewDanhSachHocSinh_DeKiemTra(string madekiemtra)
         {
             DataTable dtDAO = blktBUS.ThongKeDiemHocSinhTheoMaDeKiemTra(madekiemtra);
-            
+
             ArrayList dshs = tgbus.getDanhSachLopWithMaLopHoc(lophoc.Malop);
             ArrayList dshskhongnopbai = new ArrayList();
             foreach (string matk in dshs)
@@ -110,14 +119,22 @@ namespace Hybrid.GUI.Home
             this.dgvDanhSachHocSinh.Columns[3].HeaderText = "Thời gian nộp";
         }
 
-        public void FillComboBoxChuong() {
-            if (chuongBUS.getChuongWithMaLop(lophoc.Malop).Count <= 0) return;
+        public void FillComboBoxChuong()
+        {
+            if (chuongBUS.getChuongWithMaLop(lophoc.Malop).Count <= 0)
+            {
+                this.cbChuong.Enabled = false;
+                this.cbHoatDong.Enabled = false;
+                return;
+            }
+            this.cbChuong.Enabled = true;
+            this.cbHoatDong.Enabled = true;
             foreach (Chuong c in chuongBUS.getChuongWithMaLop(lophoc.Malop))
-                chuongDict.Add(c.Machuong,c.Tenchuong);
+                chuongDict.Add(c.Machuong, c.Tenchuong);
             cbChuong.Items.Clear();
             cbChuong.ValueMember = "Key";
             cbChuong.DisplayMember = "Value";
-            cbChuong.DataSource = new BindingSource(chuongDict,null); 
+            cbChuong.DataSource = new BindingSource(chuongDict, null);
         }
 
         public void FillComboBoxHoatDongWithBaiKiemTra(string machuong)
@@ -129,7 +146,7 @@ namespace Hybrid.GUI.Home
                     dekiemtraDict.Add(dkt.Madekiemtra, dkt.Tieude);
                 cbHoatDong.ValueMember = "Key";
                 cbHoatDong.DisplayMember = "Value";
-                cbHoatDong.DataSource = new BindingSource(dekiemtraDict,null);
+                cbHoatDong.DataSource = new BindingSource(dekiemtraDict, null);
             }
             else
             {
@@ -143,10 +160,10 @@ namespace Hybrid.GUI.Home
             {
                 baitapDict = new Dictionary<string, string>();
                 foreach (BaiTap bt in btBUS.GetDanhSachBaiTapTheoMaChuong(machuong))
-                     baitapDict.Add(bt.Mabaitap, bt.Tieude);
+                    baitapDict.Add(bt.Mabaitap, bt.Tieude);
                 cbHoatDong.ValueMember = "Key";
                 cbHoatDong.DisplayMember = "Value";
-                cbHoatDong.DataSource = new BindingSource(baitapDict,null);
+                cbHoatDong.DataSource = new BindingSource(baitapDict, null);
             }
             else
             {
@@ -159,28 +176,28 @@ namespace Hybrid.GUI.Home
         public void FillChart2_DeKiemTra(string madekiemtra)
         {
             chart1.Series[0].Points.Clear();
-            foreach(var pair in blktBUS.ThongKePhoDiemTheoMaDeKiemTra(madekiemtra))
+            foreach (var pair in blktBUS.ThongKePhoDiemTheoMaDeKiemTra(madekiemtra))
             {
-                chart1.Series[0].Points.AddXY(pair.Key,pair.Value);
+                chart1.Series[0].Points.AddXY(pair.Key, pair.Value);
             }
         }
         public void FillChart2_BaiTap(string mabaitap)
         {
             chart1.Series[0].Points.Clear();
-            foreach(var pair in blbtBUS.ThongKePhoDiemTheoMaBaiTap(mabaitap))
+            foreach (var pair in blbtBUS.ThongKePhoDiemTheoMaBaiTap(mabaitap))
             {
-                chart1.Series[0].Points.AddXY(pair.Key,pair.Value);
+                chart1.Series[0].Points.AddXY(pair.Key, pair.Value);
             }
         }
 
         private void cbChuong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbLoaiHoatDong.SelectedIndex == 0 && cbChuong.SelectedValue != null) 
+            if (cbLoaiHoatDong.SelectedIndex == 0 && cbChuong.SelectedValue != null)
             {
                 FillComboBoxHoatDongWithBaiKiemTra(cbChuong.SelectedValue.ToString());
 
             }
-            else if(cbLoaiHoatDong.SelectedIndex == 1 && cbChuong.SelectedValue != null)
+            else if (cbLoaiHoatDong.SelectedIndex == 1 && cbChuong.SelectedValue != null)
             {
                 FillComboBoxHoatDongWithBaiTap(cbChuong.SelectedValue.ToString());
             }
@@ -217,7 +234,7 @@ namespace Hybrid.GUI.Home
                     FillDataGridViewDanhSachHocSinh_BaiTap(this.cbHoatDong.SelectedValue.ToString());
                 }
             }
-            
+
         }
 
 
@@ -265,33 +282,42 @@ namespace Hybrid.GUI.Home
 
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            if (dgvDanhSachHocSinh.Rows.Count == 0)
+            try
             {
-                MessageBox.Show("Dữ liệu rỗng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            using (var saveFileDialog = new SaveFileDialog())
-            {
-                saveFileDialog.Filter = "Excel Files|*.xlsx|All Files|*.*";
-                saveFileDialog.Title = "Chọn nơi lưu file Excel";
-                saveFileDialog.FileName = "DanhSachHocSinh.xlsx";
 
-                DialogResult result = saveFileDialog.ShowDialog();
-
-                if (result == DialogResult.OK)
+                if (dgvDanhSachHocSinh.Rows.Count == 0)
                 {
-                    string excelFilePath = saveFileDialog.FileName;
+                    MessageBox.Show("Dữ liệu rỗng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                using (var saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "Excel Files|*.xlsx|All Files|*.*";
+                    saveFileDialog.Title = "Chọn nơi lưu file Excel";
+                    saveFileDialog.FileName = "DanhSachHocSinh.xlsx";
 
-                    if (cbLoaiHoatDong.SelectedIndex == 0 && cbChuong.SelectedValue != null)
+                    DialogResult result = saveFileDialog.ShowDialog();
+
+                    if (result == DialogResult.OK)
                     {
-                        // Gọi phương thức xuất Excel và truyền đường dẫn file Excel
-                        ExportToExcel_DeKiemTra(dgvDanhSachHocSinh, excelFilePath);
-                    }
-                    else if (cbLoaiHoatDong.SelectedIndex == 1 && cbChuong.SelectedValue != null)
-                    {
-                        ExportToExcel_BaiTap(dgvDanhSachHocSinh, excelFilePath);
+                        string excelFilePath = saveFileDialog.FileName;
+
+                        if (cbLoaiHoatDong.SelectedIndex == 0 && cbChuong.SelectedValue != null)
+                        {
+                            // Gọi phương thức xuất Excel và truyền đường dẫn file Excel
+                            ExportToExcel_DeKiemTra(dgvDanhSachHocSinh, excelFilePath);
+                        }
+                        else if (cbLoaiHoatDong.SelectedIndex == 1 && cbChuong.SelectedValue != null)
+                        {
+                            ExportToExcel_BaiTap(dgvDanhSachHocSinh, excelFilePath);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Có lỗi khi xuất file", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -310,40 +336,52 @@ namespace Hybrid.GUI.Home
                 // Đổ dữ liệu từ DataGridView vào Excel
                 for (int col = 1; col <= dataGridView.Columns.Count; col++)
                 {
-                    worksheet.Cells[2, col].Value = dataGridView.Columns[col - 1].HeaderText;
-                    worksheet.Cells[2, col].Style.Font.Bold = true;
-                    worksheet.Cells[2, col].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                    worksheet.Cells[3, col].Value = dataGridView.Columns[col - 1].HeaderText;
+                    worksheet.Cells[3, col].Style.Font.Bold = true;
+                    worksheet.Cells[3, col].Style.Border.BorderAround(ExcelBorderStyle.Thin);
                 }
 
-                for (int row = 3; row < dataGridView.Rows.Count; row++)
+                for (int row = 0; row < dataGridView.Rows.Count; row++)
                 {
                     for (int col = 0; col < dataGridView.Columns.Count; col++)
                     {
-                        worksheet.Cells[row, col + 1].Value = dataGridView.Rows[row].Cells[col].Value;
-                        if(col + 1 == 5)
-                            worksheet.Cells[row, col + 1].Value = dataGridView.Rows[row].Cells[col].Value.ToString();
-                        worksheet.Cells[row, col + 1].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                        worksheet.Cells[row + 4, col + 1].Value = dataGridView.Rows[row].Cells[col].Value;
+                        if (col + 1 == 5)
+                            worksheet.Cells[row + 4, col + 1].Value = dataGridView.Rows[row].Cells[col].Value.ToString();
+                        worksheet.Cells[row + 4, col + 1].Style.Border.BorderAround(ExcelBorderStyle.Thin);
                     }
                 }
 
                 // Merge ô từ A1 đến C5
-                using (var range = worksheet.Cells[1,1,1,5])
+                worksheet.Cells[1, 1, 1, 5].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                using (var range = worksheet.Cells[1, 1, 1, 5])
                 {
                     range.Merge = true;
                     range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     range.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                     range.Style.Font.Bold = true;
-                    range.Value = "BẢNG ĐIỂM";
+                    range.Value = "BẢNG ĐIỂM BÀI KIỂM TRA: " + cbHoatDong.Text;
+                }
+                worksheet.Cells[2, 1, 2, 5].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                using (var range = worksheet.Cells[2, 1, 2, 5])
+                {
+                    range.Merge = true;
+                    range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    range.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                    range.Style.Font.Bold = true;
+                    range.Value = "Lớp: " + this.lophoc.Tenlop;
                 }
 
+                // Sau khi ghi dữ liệu, thực hiện AutoFit cho các cột
+                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
 
                 // Lưu file Excel vào đường dẫn đã chọn
                 File.WriteAllBytes(excelFilePath, package.GetAsByteArray());
 
-                MessageBox.Show("Xuất Excel thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        
+
         private void ExportToExcel_BaiTap(DataGridView dataGridView, string excelFilePath)
         {
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
@@ -359,30 +397,40 @@ namespace Hybrid.GUI.Home
                 // Đổ dữ liệu từ DataGridView vào Excel
                 for (int col = 1; col <= dataGridView.Columns.Count; col++)
                 {
-                    worksheet.Cells[2, col].Value = dataGridView.Columns[col - 1].HeaderText;
-                    worksheet.Cells[2, col].Style.Font.Bold = true;
-                    worksheet.Cells[2, col].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                    worksheet.Cells[3, col].Value = dataGridView.Columns[col - 1].HeaderText;
+                    worksheet.Cells[3, col].Style.Font.Bold = true;
+                    worksheet.Cells[3, col].Style.Border.BorderAround(ExcelBorderStyle.Thin);
                 }
 
-                for (int row = 3; row < dataGridView.Rows.Count; row++)
+                for (int row = 0; row < dataGridView.Rows.Count; row++)
                 {
                     for (int col = 0; col < dataGridView.Columns.Count; col++)
                     {
-                        worksheet.Cells[row, col + 1].Value = dataGridView.Rows[row].Cells[col].Value;
-                        if(col + 1 == 3)
-                            worksheet.Cells[row, col + 1].Value = dataGridView.Rows[row].Cells[col].Value.ToString();
-                        worksheet.Cells[row, col + 1].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                        worksheet.Cells[row + 4, col + 1].Value = dataGridView.Rows[row].Cells[col].Value;
+                        if (col + 1 == 4)
+                            worksheet.Cells[row + 4, col + 1].Value = dataGridView.Rows[row].Cells[col].Value.ToString();
+                        worksheet.Cells[row + 4, col + 1].Style.Border.BorderAround(ExcelBorderStyle.Thin);
                     }
                 }
 
                 // Merge ô từ A1 đến C5
-                using (var range = worksheet.Cells[1,1,1,3])
+                worksheet.Cells[1, 1, 1, 4].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                using (var range = worksheet.Cells[1, 1, 1, 4])
                 {
                     range.Merge = true;
                     range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     range.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                     range.Style.Font.Bold = true;
-                    range.Value = "BẢNG ĐIỂM";
+                    range.Value = "BẢNG ĐIỂM BÀI TẬP " + cbHoatDong.Text;
+                }
+                worksheet.Cells[2, 1, 2, 4].Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                using (var range = worksheet.Cells[2, 1, 2, 4])
+                {
+                    range.Merge = true;
+                    range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    range.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                    range.Style.Font.Bold = true;
+                    range.Value = "Lớp: " + this.lophoc.Tenlop;
                 }
 
 
@@ -391,10 +439,9 @@ namespace Hybrid.GUI.Home
                 // Lưu file Excel vào đường dẫn đã chọn
                 File.WriteAllBytes(excelFilePath, package.GetAsByteArray());
 
-                MessageBox.Show("Xuất Excel thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        
     }
 }
