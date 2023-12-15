@@ -95,8 +95,8 @@ namespace Hybrid.GUI
                             taikhoanBUS.update_ten_sodienthoai_bymataikhoan(txt_ten.Text, txt_sodienthoai.Text, this.tk.Mataikhoan);
                             lab_xacnhan.Visible = false;
                             lab_chinhsua.Visible = true;
-                            txt_ten.ReadOnly = false;
-                            txt_sodienthoai.ReadOnly = false;
+                            txt_ten.ReadOnly = true;
+                            txt_sodienthoai.ReadOnly = true;
                             break;
                         case DialogResult.No:
                             txt_ten.Text = this.tk.Hoten;
