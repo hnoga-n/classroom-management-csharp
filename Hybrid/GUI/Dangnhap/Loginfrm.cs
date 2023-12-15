@@ -28,6 +28,7 @@ namespace Hybrid.GUI.Dangnhap
 
         private void Loginfrm_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = but_dangnhap;
             //this.ActiveControl = null;
             if (cn.lay_nhomk() == "1")
             {
@@ -184,5 +185,14 @@ namespace Hybrid.GUI.Dangnhap
             else
                 txt_matkhau.PasswordChar = '\0';
         }
+
+        private void but_dangnhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Xử lý sự kiện khi phím Enter được nhấn
+                but_dangnhap.PerformClick(); // Kích hoạt sự kiện Click của Button
+            }
+        }   
     }
 }

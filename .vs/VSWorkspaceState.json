@@ -4,8 +4,9 @@
     "\\Hybrid",
     "\\Hybrid\\database",
     "\\Hybrid\\GUI",
-    "\\Hybrid\\GUI\\Dangnhap"
+    "\\Hybrid\\GUI\\Dangnhap",
+    "\\Hybrid\\GUI\\Todo"
   ],
-  "SelectedNode": "\\Hybrid\\GUI\\Dangnhap\\Thongtintaikhoan.cs",
+  "SelectedNode": "\\Hybrid\\GUI\\Todo\\TodoFrm.cs",
   "PreviewInSolutionExplorer": false
 }

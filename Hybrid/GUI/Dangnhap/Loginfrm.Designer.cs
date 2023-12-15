@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
@@ -40,19 +41,16 @@
             this.chx_nhomatkhau = new System.Windows.Forms.CheckBox();
             this.but_dangnhap = new System.Windows.Forms.Button();
             this.but_dangky = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pic_showpass = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pic_hidepass = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_showpass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_hidepass)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +77,17 @@
             this.label4.Size = new System.Drawing.Size(208, 72);
             this.label4.TabIndex = 11;
             this.label4.Text = "Hybrid";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::Hybrid.Properties.Resources.icons8_close_30;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.Location = new System.Drawing.Point(414, 12);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox6.TabIndex = 18;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox5
             // 
@@ -183,6 +192,7 @@
             this.but_dangnhap.Text = "Đăng nhập";
             this.but_dangnhap.UseVisualStyleBackColor = false;
             this.but_dangnhap.Click += new System.EventHandler(this.but_dangnhap_Click);
+            this.but_dangnhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.but_dangnhap_KeyDown);
             // 
             // but_dangky
             // 
@@ -196,17 +206,6 @@
             this.but_dangky.Text = "Đăng ký";
             this.but_dangky.UseVisualStyleBackColor = false;
             this.but_dangky.Click += new System.EventHandler(this.but_dangky_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackgroundImage = global::Hybrid.Properties.Resources.icons8_close_30;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(414, 12);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(24, 21);
-            this.pictureBox6.TabIndex = 18;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pic_showpass
             // 
@@ -238,16 +237,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(46, 32);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::Hybrid.Properties.Resources.videoconference;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(76, 181);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(321, 255);
-            this.pictureBox5.TabIndex = 10;
-            this.pictureBox5.TabStop = false;
             // 
             // pic_hidepass
             // 
@@ -288,12 +277,11 @@
             this.Load += new System.EventHandler(this.Loginfrm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_showpass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_hidepass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
